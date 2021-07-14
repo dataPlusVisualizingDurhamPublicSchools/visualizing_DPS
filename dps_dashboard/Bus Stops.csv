@@ -1,0 +1,1047 @@
+STOP_NAME,STOP_ID,LATITUDE,LONGITUDE,SHARED_ROUTES,SHELTERED,SIDEWALK
+Renaissance Pkwy at Leonardo Dr (EB),1029,35.9013089,-78.956555,"14, 800, 800S",0,NA
+Renaissance Pkwy at The Lodge Apts (EB),1030,35.902772,-78.952381,"14, 800, 800S",1,NA
+Old Chapel Hill Rd at Garrett Rd (EB),1072,35.949715,-78.967443,"10, 10A, 400",0,1
+University Dr at American Red Cross,1074,35.952773,-78.966079,"10, 10A, 400",0,1
+University Dr at Ivy Creek Blvd,1075,35.9592534,-78.964615,"10, 10A, 20, 400",1,1
+Erwin Rd at Fulton St (VA Hospital),1105,36.0083266,-78.937789,"6B, 400, 405, BCC, D H5",1,1
+NC 54 at Blanchard Rd (EB),1160,35.902637,-78.906531,"14, 800, 805",0,NA
+NC 54 at Residence Inn Blvd (EB),1161,35.9025753,-78.898189,"14, 800, 805, RTP OD",0,NA
+NC 54 at Blanchard Rd (WB),1171,35.9027996,-78.906619,"14, 800, 805",0,NA
+NC 54 at Fayetteville Rd (Duke Health),1175,35.910427,-78.933087,"14, 800, 805",1,1
+Woodcroft Pkwy at Fayetteville Rd (WB),1182,35.9239254,-78.928006,"14, 805",1,1
+Woodcroft Pkwy at Highgate Dr (WB),1203,35.922145,-78.935741,"14, 805",0,NA
+Hope Valley Rd at Garrett Rd (SB),1207,35.921278,-78.958634,"14, 805",0,NA
+Erwin Rd at Towerview Rd,1553,36.0037987,-78.950504,"6, 6B, 400, 405",0,NA
+Woodcroft Pkwy at Weathersfield Dr (WB),1778,35.923262,-78.940549,"14, 805",0,NA
+NC 54 at Revere Rd (EB),1781,35.90325,-78.909932,"14, 800, 805",0,NA
+Renaissance Pkwy at Leonardo Dr (WB),1804,35.90158,-78.95663,"5, 14, 800, 800S",0,NA
+NC 54 at Amhurst St (EB),1805,35.9071385,-78.922734,"14, 800, 805",0,NA
+NC 54 at S Alston Ave (WB),1871,35.900791,-78.889875,"12, 12B, 14, 800, 805, RTP OD",0,NA
+NC 54 at NC 55 (WB),1872,35.9024948,-78.894874,"12, 12B, 14, 800, 805, RTP OD",0,NA
+Fayetteville Rd at Renaissance Pkwy,1892,35.902031,-78.939739,"14, 800",0,NA
+NC 54 at The Hamptons Apts (EB),1893,35.902653,-78.903462,"14, 800, 805",0,NA
+McFarland Dr at Witherspoon Blvd,1901,35.9506329,-78.989975,"10, 10A, 400",0,1
+University Dr at University Pl (EB),1914,35.9564897,-78.965978,"10, 10A, 400",0,1
+UNC Morehead Planetarium,1928,35.914188,-79.051263,RSX,-,NA
+Woodcroft Pkwy at Homeplace II,1938,35.922665,-78.931442,"14, 805",-,NA
+Riddle Rd at Ancroft Ave,5002,35.95263,-78.89703,"12, 12B",0,NA
+Cornwallis Rd at Industry Ln,5005,35.94235,-78.8996,"12, 12B",0,NA
+Alston Ave at Durham Freeway (NB),5006,35.9799484,-78.891431,"12, 12B",0,NA
+S Alston Ave at Massey Ave (NB),5008,35.978159,-78.892187,"12, 12B",0,NA
+Chapel Hill Rd at McGehee St (NB),5017,35.981294,-78.934076,"10, 10A, 10B",0,NA
+Morehead Ave at Vickers Ave (WB),5018,35.991663,-78.911791,"10, 10A, 10B",0,1
+Club Blvd at Chandler's Garage,5019,36.0253973,-78.872557,"9, 9A, 9B",0,NA
+Fayetteville Rd at Laurel Springs Dr,5020,35.9137025,-78.932968,"5, 14, 0805",0,1
+Chapel Hill Rd at W Cornwallis Rd,5021,35.97547,-78.93672,"10, 10A, 10B",0,NA
+N Alston Ave at Drew St (SB),5022,36.000814,-78.88586,"9, 9A, 9B",0,NA
+Avondale Dr at E Markham Ave (SB),5023,36.008351,-78.885933,"9, 9A, 9B",0,NA
+W Club Blvd at Gregson St,5027,36.016743,-78.908658,"1, 1A, 1B",0,NA
+Duke St at Main St,5030,35.999585,-78.907942,"1, 1A, 1B",0,NA
+Carver St at Guess Rd,5031,36.03778,-78.93043,"1, 1A, 1B",0,NA
+Roxboro Rd at Hammond St,5032,36.02485,-78.88987,4,0,NA
+Roxboro Rd at Bush Dr,5033,36.07577,-78.90968,9B,0,NA
+Angier Ave at Pleasant Dr,5035,35.96362,-78.85662,"2, 2A",0,NA
+Roxboro Rd at Markham Ave (north),5036,36.01065,-78.8915,4,0,NA
+Liberty St at Queen St,5038,35.99365,-78.89555,"3, 3B, 3C",0,NA
+Fayetteville St at Piedmont Ave (SB),5039,35.984334,-78.899181,"5, 5K",0,NA
+University Dr at Weymouth St,5042,35.96702,-78.94998,"10, 10A, 10B, 20",0,NA
+Holloway St at S Adams St,5043,35.988808,-78.852489,"3B, 3C, 23",0,NA
+Duke St at Harper Pl,5044,36.006837,-78.905495,"1, 1A, 1B",0,NA
+Roxboro Rd at Edgewood Dr,5045,36.02775,-78.89,4,0,NA
+Roxboro Rd at Markham Ave (south),5047,36.009347,-78.891827,4,0,NA
+Chapel Hill Rd at Pinecrest Rd,5048,35.97935,-78.9352,"10, 10A, 10B",0,NA
+Fayetteville Rd at Herndon Rd,5050,35.905263,-78.937514,"14, 800",0,NA
+University Dr at Larchmont Dr,5054,35.960943,-78.962345,"10, 10A",0,NA
+Gregson St at Englewood Ave,5055,36.01513,-78.90835,"1, 1A, 1B",0,1
+Lawson St at Sima Ave (EB),5056,35.97451,-78.89105,8,0,0
+Angier Ave at Driver St (EB),5057,35.9821,-78.87797,"2, 2A, 2B",0,NA
+Dearborn Dr at Ruth St,5060,36.037338,-78.871582,"9, 9A, 9B",0,NA
+Wedgedale Ave at Lynn Rd,5061,35.98235,-78.84277,"3C, 23",0,NA
+NC 54 at Residence Inn Blvd (WB),5063,35.9027843,-78.89821,"14, 800, 805, RTP OD",0,NA
+Otis St at Red Oak Ave,5064,35.970147,-78.909488,7,0,NA
+Mangum St at Geer St,5067,36.0039,-78.89463,4,0,NA
+Holloway St at Junction Rd,5068,35.990079,-78.857383,3C,0,NA
+Holloway St at Mineral Springs Rd,5069,35.981814,-78.822973,"3B, 23",0,NA
+Milton Rd at Eno Valley Elementary (SB),5075,36.08612,-78.91153,9B,0,NA
+Trent Dr at Duke Hospital South (WB),5078,36.004779,-78.934944,"6, 6B, DRX, D H2, D H5",1,1
+Buchanan Blvd at Trinity Ave (NB),5079,36.00535,-78.91232,11,0,NA
+Fayetteville St at Homeland Ave (NB),5080,35.962229,-78.908606,"5, 5K",0,1
+Trent Dr at Duke Circle Parking Deck,5081,36.006277,-78.934438,"6, 6B, D H2, D H5",0,NA
+Old Farm Rd at N Roxboro St (JFK Towers),5084,36.065632,-78.904357,"9, 9B",1,1
+S Alston Ave at Massey Ave (SB),5088,35.97835,-78.89238,"12, 12B",0,NA
+Duke St at Englewood Ave,5089,36.015543,-78.905404,"1, 1A, 1B",0,NA
+E Club Blvd at Glenbrook Dr (SB),5091,36.02387,-78.87682,"9, 9A, 9B",0,NA
+Tower Blvd at Pickett Rd,5092,35.97308,-78.957975,10B,1,1
+University Dr at South Square Mall,5093,35.965545,-78.957312,"10, 10A",1,1
+Lakewood Ave at Blackwell St,5094,35.987322,-78.907022,7,0,NA
+Roxboro Rd at Murray Ave,5097,36.0295,-78.89038,4,0,NA
+Carver St at Patrick Henry Dr (EB),5099,36.040557,-78.897692,"9, 9A",0,1
+Weaver St at Weaver St Park,5100,35.963836,-78.91454,7,0,NA
+E Club Blvd at Thorne St,5101,36.020647,-78.884432,"9, 9A, 9B",0,NA
+Shirley St at Crest St,5102,36.012625,-78.93977,6,1,0
+Duke Regional Hospital (NB),5105,36.038303,-78.898968,"4, 9, 9A",1,1
+Erwin Rd at Research Dr,5106,36.008689,-78.94159,"6, 6B, 11, 20, D H5, D H6",0,1
+Fayetteville Rd at Wortley Dr,5110,35.933818,-78.91338,5,0,NA
+Lawson St at Merrick St (Pearson Cafeteria),5111,35.976382,-78.899468,8,Yx2,1
+Angier Ave at Commonwealth St,5112,35.97067,-78.86345,"2, 2A",0,NA
+Blackwell St at Forest Hills Apts (SB),5113,35.9886969,-78.906685,"5, 5K, 7",0,1
+Alston Ave at Dayton St (SB),5115,35.973833,-78.89409,"12, 12B",0,NA
+Roxboro Rd at Duke St (Autozone),5116,36.057,-78.90312,"9, 9B",0,NA
+Glenbrook Dr at Dubonnet Pl (SB),5117,36.026391,-78.878737,"9, 9A, 9B",0,NA
+Martin Luther King Jr Pkwy at Lake Camp Rd,5118,35.942511,-78.918833,7,1,1
+Roxboro Rd at Ellerbee St (NB),5119,36.0214,-78.8898,4,0,NA
+Garrett Rd at Hope Valley Rd (Jordan High School),5120,35.9217186,-78.960952,20,0,NA
+University Dr at Weymouth St,5121,35.96685,-78.9499,"10, 10A, 10B, 20",0,NA
+Hillsborough Rd at W Knox St,5125,36.01302,-78.93168,11,0,NA
+Avondale Dr at E Knox St (SB),5126,36.011805,-78.886721,"9, 9A, 9B",1,0
+Seven Oaks Rd at Riverview Shopping Center,5127,36.0677343,-78.90593,"9, 9B",1,1
+Roxboro Rd at Monk Rd (SB),5128,36.05803,-78.90328,"9, 9B",0,NA
+NC 54 at The Hamptons Apts (WB),5129,35.902816,-78.903274,"14, 800, 805",0,NA
+NC 54 at Seasons of Southpoint (EB),5131,35.906433,-78.920381,"14, 800, 805",0,NA
+Roxboro Rd at Carver St,5132,36.039512,-78.899275,"4, 9, 9A",0,NA
+University Dr at Westgate Dr (WB),5133,35.964173,-78.959182,"10, 10A, 20",0,1
+Rummel St at Hwy 98,5134,35.98717,-78.84775,"3C, 23",0,NA
+Fayetteville Rd at Pearson Dr,5136,35.93408,-78.91325,5,0,NA
+Angier Ave at Driver St (WB),5138,35.9822977,-78.878305,"2, 2A, 2B",0,NA
+Gregson St at Dacian Ave,5139,36.007956,-78.908324,"1, 1A, 1B",0,1
+Avondale Dr at Trinity Ave (NB),5141,36.00682,-78.885356,"9, 9A, 9B",0,1
+Gregson St at Trinity Ave,5142,36.005107,-78.908341,"1, 1A, 1B",0,NA
+Dowd St at Roxboro Rd (WB),5144,36.000385,-78.893682,"9, 9A, 9B",0,NA
+Erwin Rd at Morreene Rd,5145,36.0039072,-78.950719,"6, 6B, 400, 405",0,NA
+E Main St at Alston Ave (WB),5148,35.987892,-78.888487,"2, 2A, 2B",0,1
+NC 55 at Riddle Rd (NB),5149,35.95695,-78.891949,"12, 12B",0,NA
+Erwin Rd at Duke Eye Center,5150,36.00837,-78.93972,"6, 6B",0,NA
+Mangum St at Seeman St,5152,36.00637,-78.89395,4,0,NA
+Garrett Rd at Old Chapel Hill Rd,5153,35.94967,-78.96942,"10, 10A",0,NA
+Alston Ave at Durham Freeway (SB),5154,35.9807212,-78.891321,"12, 12B",0,NA
+Chapel Hill Rd at Bivins St (EB),5156,35.986437,-78.927927,"10, 10A, 10B",0,NA
+Fulton St at Pratt St,5157,36.010778,-78.937067,"6, 11, D H6",0,NA
+Roxboro St at Lawson St (NB),5158,35.977117,-78.906669,"7, 8",0,1
+NC 55 at Meredith Dr (NB),5161,35.90075,-78.89593,"12, 14, RTP OD",0,NA
+Willard St at Yancey St (Ramada Inn),5162,35.9943945,-78.907674,"5, 5K, 7, 10, 10A, 10B",0,NA
+Erwin Rd at Downing St (EB),5165,36.008652,-78.943929,"6, 6B, 11, 400, 405",0,1
+Morehead Ave at Moreland Ave,5169,35.991919,-78.920876,"10, 10A, 10B",0,1
+Club Blvd at Northgate Mall,5178,36.01706,-78.909822,"1, 1A, 1B",1,1
+Roxboro St at Lodge St (Hillside Park),5179,35.9812896,-78.904222,"7, 8",0,1
+James St at Durham Chapel Hill Blvd,5183,35.97518,-78.92528,"10, 10A",0,NA
+Service Rd at Davidson Ave (NB),5184,36.018023,-78.887484,"9, 9A, 9B",1,1
+Chapel Hill Rd at Pickett Rd,5185,35.97682,-78.9361,"10, 10A, 10B",0,NA
+University Dr at Snowcrest Tr,5189,35.959562,-78.964667,"10, 10A, 20, 400",0,NA
+Nation Ave at Bedford St,5190,35.9777,-78.92807,"10, 10A",1,0
+Fayetteville Rd at Woodcroft Pkwy (SB),5191,35.9225285,-78.927688,5,0,NA
+Midvale Rd at Bedford St,5193,35.974894,-78.928535,"10, 10A",1,0
+Mineral Springs Rd at Hwy 98,5195,35.98193,-78.8209,"3B, 23",0,NA
+Morehead Ave at Arnette Ave (EB),5197,35.9916492,-78.914469,"10, 10A, 10B",0,1
+Holloway St at Hyde Park Ave (EB),5198,35.994423,-78.882105,"3, 3B, 3C",0,1
+Angier Ave at Wrenn Rd,5199,35.9525,-78.84937,"2, 2A",0,NA
+Roxboro Rd at Edwards St,5202,36.00438,-78.89272,4,0,NA
+Avondale Dr at E Markham Ave (NB),5203,36.009118,-78.88593,"9, 9A, 9B",1,1
+S Alston Ave at Dupree St (SB),5204,35.976409,-78.893068,"12, 12B",0,NA
+Angier Ave at Vine St (WB),5205,35.983446,-78.88124,"2, 2A, 2B",0,NA
+Lawson St at Rosewood St (Eastbound),5206,35.975104,-78.892376,8,0,NA
+LaSalle St at Grace Healthcare,5207,36.014183,-78.947841,"11, D LL",0,NA
+Foushee St at Avondale Dr (WB),5209,36.016485,-78.887403,"9, 9A, 9B",0,NA
+MLK Pkwy at Shannon Rd,5210,35.96096,-78.95807,10B,0,NA
+Fulton St at Shirley St,5211,36.01117,-78.93717,11,0,NA
+Woodcroft Pkwy at Sandstone Ridge Dr,5212,35.921851,-78.948992,"14, 805",0,NA
+Fayetteville St at Lawson St (SB),5215,35.976834,-78.900879,"5, 5K",0,1
+Holloway St at Elm St (EB),5218,35.994479,-78.887371,"3, 3B, 3C",0,NA
+Duke St at Demerius St,5220,36.01201,-78.905369,"1, 1A, 1B",0,NA
+E Weaver St at Jesmond St,5221,35.966673,-78.91146,7,0,NA
+Duke St at Morehead Ave (Henderson Towers),5222,35.99083,-78.908895,7,1,1
+Fayetteville St at Burlington Ave (NB),5224,35.968734,-78.902611,"5, 5K",0,1
+Fayetteville St at Brant St (NB),5225,35.975318,-78.901228,"5, 5K",0,1
+Roxboro Rd at Old Oxford Rd (Oxford Commons),5226,36.035705,-78.893237,4,0,NA
+Fulton St at Erwin Rd (VA Hospital),5228,36.008813,-78.93743,11,1,1
+Roxboro Rd at Hugo St,5229,36.02552,-78.88973,4,0,NA
+University Dr at Beech Lake Apts,5231,35.956761,-78.966252,"10, 10A, 400",0,NA
+Freeman Rd at Clayton Rd (Southern HS),5233,35.99778,-78.82977,"3B, 23",0,1
+Fayetteville Rd at Woodcroft Pkwy (NB),5234,35.923674,-78.926495,5,0,NA
+University Dr at University Pl (WB),5235,35.952803,-78.966321,"10, 10A, 400",0,1
+Pleasant Dr at US 70,5237,35.965547,-78.848094,"2, 2A",0,NA
+Avondale Dr at E Knox St (NB),5238,36.012681,-78.886735,"9, 9A, 9B",0,1
+Cornwallis Rd at Spring Ridge Apt,5239,35.93833,-78.8954,"12, 12B",0,NA
+Freeman Rd at Valmet Dr,5240,35.9958,-78.818,"3B, 23",0,NA
+Lawson St at DTCC F Lot (EB),5241,35.974292,-78.882723,8,0,1
+Riddle Rd at Kirby St (NB),5242,35.955642,-78.893107,"12, 12B",0,NA
+Woodcroft Shopping Center (WB),5244,35.922698,-78.955644,"14, 805",0,0
+Holloway St at Alston Ave (EB),5245,35.994434,-78.884853,"3, 3B, 3C",0,NA
+Fayetteville Rd at Juliette Dr (NB),5247,35.931864,-78.91652,5,0,NA
+Guess Rd at Duke Homestead Rd (SB),5248,36.031564,-78.928864,"1, 1B",0,NA
+Holloway St at Brye St,5253,35.99348,-78.87232,"3, 3B, 3C",0,NA
+Erwin Rd at Lambeth Cir,5255,36.006647,-78.9474,"6, 6B, 400, 405, D H5",1,1
+Shirley St at Ratcale Ln,5257,36.011406,-78.938079,6,0,NA
+N Alston Ave at Geer St (NB),5259,36.003437,-78.885966,"9, 9A, 9B",0,NA
+University Dr at Westgate Dr (EB),5261,35.964264,-78.958767,"10, 10A, 20",1,1
+NC 55 at Dakota St,5262,35.967711,-78.895455,"12, 12B",0,NA
+Gregson St at Green St,5263,36.01118,-78.90832,"1, 1A, 1B",0,1
+Bacon St at Lawson St,5264,35.974484,-78.8849,8,0,NA
+E Main St at Blacknall St,5265,35.98657,-78.8859,"2, 2A, 2B",0,NA
+Waring St at Davinci St,5268,36.03172,-78.8806,"9, 9A, 9B",0,NA
+Stadium Dr at Horton Rd,5269,36.05507,-78.91937,9A,0,NA
+Dearborn Dr at Thelma St (south),5271,36.032051,-78.87009,"9, 9A, 9B",0,NA
+Duke University Rd at Anderson St (EB),5272,35.99833,-78.930561,"6, 6B",0,NA
+Roxboro Rd at Hewitt St,5273,36.0359,-78.89403,4,0,NA
+Holloway St at Hoover Rd,5274,35.99043,-78.85912,"3B, 3C, 23",0,NA
+Green St at Lancaster St (WB),5275,36.011548,-78.913275,11,0,1
+Broad St at Forest Rd (NB),5276,36.024855,-78.916989,"1, 1A",0,1
+Dearborn Dr at Apollo St,5277,36.03713,-78.8704,"9, 9A, 9B",0,NA
+Markham Ave at Ninth St,5278,36.010083,-78.921615,11,0,1
+E Main St at Dillard St (EB),5280,35.9919181,-78.895442,"2, 2A, 2B, BCC",0,1
+Dearborn Dr at Maplewood Dr,5281,36.03419,-78.868488,"9, 9A, 9B",0,NA
+Hillsborough Rd at W Main St,5282,36.01574,-78.936579,11,0,NA
+Chapel Hill Rd at Valley Terrace (SB),5285,35.972397,-78.937688,"10, 10A, 10B",0,NA
+Duke University Rd at Underwood Ave (EB),5286,35.996755,-78.922429,"6, 6B",0,NA
+Bacon St at Durham Public Schools Warehouse (NB),5290,35.975756,-78.884757,8,0,NA
+Holloway St at Chester St,5291,35.994526,-78.882673,"3, 3B, 3C",0,NA
+Hillsborough Rd at Neal Rd (WB),5292,36.02303,-78.95468,11,0,NA
+NC 55 at Cornwallis Rd,5296,35.931922,-78.888286,"12, 12B",1,1
+Chapel Hill Rd at University Dr (SB),5298,35.968683,-78.939883,"10, 10A, 10B",0,NA
+Leon St at Haverford St (EB),5300,36.025419,-78.913527,"1, 1A",0,NA
+E Main St at Mangum St (WB),5305,35.994917,-78.900251,"2, BCC",1,1
+Morehead Ave at Arnette Ave (WB),5306,35.991739,-78.91422,"10, 10A, 10B",0,0
+Shannon Rd at University Dr (Bank of America),5307,35.964973,-78.955505,10B,0,1
+Angier Ave at Guthrie Ave (WB),5310,35.981417,-78.875848,"2, 2A, 23",1,1
+Roxboro Rd at Maynard Ave (SB),5311,36.02637,-78.88983,4,0,NA
+Alston Ave at Lawson St (SB),5313,35.974877,-78.893695,"12, 12B",0,NA
+North Pointe Dr at Broad St,5314,36.02825,-78.91543,"1, 1A",0,NA
+NC 55 at Carpenter Fletcher Rd,5315,35.91447,-78.8917,"12, 12B",0,NA
+Lawson St at DTCC Public Safety (EB),5316,35.974268,-78.880604,8,Yx2,1
+Duke University Rd at Anderson St (WB),5317,35.998434,-78.929787,"6, 6B",0,NA
+Old Oxford Rd at Danube Ln (EB),5319,36.036239,-78.888041,"9, 9A, 9B",0,NA
+Gregson St at W Knox St,5320,36.013206,-78.90833,"1, 1A, 1B",0,1
+Meriwether Dr at E Carver St,5322,36.0434,-78.89157,"9, 9A, 9B",0,NA
+Roxboro St at Dunstan Ave,5324,35.980167,-78.905172,"7, 8",1,1
+Meriwether Dr at Carver Pond Apts,5325,36.038451,-78.89035,"9, 9A, 9B",0,NA
+Chapel Hill St at Arnette Ave (EB),5326,35.996796,-78.914645,"6, 6B",0,1
+Briggs Ave at Riddle Rd (NB),5329,35.958706,-78.879061,8,0,1
+Dearborn Dr at Old Oxford Rd,5331,36.038482,-78.884325,"9, 9A, 9B",0,NA
+University Dr at Shannon Rd,5332,35.96613,-78.95403,"10, 10A, 10B",0,NA
+Angier Ave at Jones Cir,5333,35.95724,-78.85315,"2, 2A",0,NA
+Old Oxford Rd at Danube Ln (WB),5334,36.036506,-78.887861,"9, 9A, 9B",0,NA
+Angier Ave at Guthrie Ave (EB),5335,35.981461,-78.876298,"2, 2A, 2B",0,1
+Lakewood Ave at Heritage Square,5337,35.9875447,-78.900944,"5, 5K",0,NA
+Morehead Ave at Kent St,5340,35.991938,-78.919569,"10, 10A, 10B",1,0
+Chapel Hill Rd at University Dr (NB),5341,35.96873,-78.93965,"10, 10A, 10B",0,NA
+Morehead Ave at Carroll St (WB),5342,35.991794,-78.916041,"10, 10A, 10B",0,NA
+Chapel Hill Rd at Morehead Ave (NB),5344,35.99155,-78.92273,"10, 10A, 10B",0,NA
+University Dr at BB&T Plaza,5345,35.9654,-78.957118,"10, 10A",1,1
+Raynor St at Fidelity Dr (EB),5346,35.9954811,-78.867248,3,0,NA
+E Club Blvd at Stephenson St,5347,36.021535,-78.882139,"9, 9A, 9B",0,NA
+Gary St at Liberty St (NB),5350,35.99097,-78.87037,"2B, 23",0,NA
+LaSalle St at Bradford Ridge Apts‎,5351,36.008408,-78.947684,"11, D LL",0,NA
+NC 55 at Odyssey Dr (inbound),5354,35.92767,-78.88907,"12, 12B",0,NA
+NC 55 at Riddle Rd (SB),5355,35.956277,-78.8919,"12, 12B",0,NA
+Fayetteville St at Cecil St (SB),5357,35.9709,-78.901395,"5, 5K",0,1
+Holloway St at Bunn Terrace,5358,35.99383,-78.87373,"3, 3B, 3C",0,NA
+Sima Ave at Dorothy Dr,5360,35.9763,-78.88883,8,0,NA
+Westgate Dr at South Square (NB),5361,35.965602,-78.960766,"10B, 400",0,0
+NC 54 at Fayetteville Rd (EB),5363,35.910079,-78.932649,"14, 800, 805",0,NA
+Raynor St at Hardee St (EB),5365,35.995715,-78.865034,3,0,0
+Angier Ave at Clay St (WB),5367,35.982805,-78.879783,"2, 2A, 2B",0,NA
+Meriwether Dr at E Carver St (SB),5368,36.04296,-78.891173,"9, 9A, 9B",0,1
+Dearborn Dr at Martin St,5370,36.03798,-78.87578,"9, 9A, 9B",0,NA
+NC 54 at Boulder Rd (EB),5371,35.908578,-78.927689,"14, 800, 805",0,NA
+NC 54 at Boulder Rd (WB),5372,35.908687,-78.927446,"14, 800, 805",0,NA
+NC 54 at Barbee Rd (EB),5373,35.904926,-78.915647,"14, 800, 805",1,1
+Roxboro Rd at Monk Rd (NB),5377,36.05987,-78.9031,"9, 9B",0,NA
+University Dr at Chapel Hill Rd (Colonial Apts),5379,35.967861,-78.941834,"10, 10A, 10B",0,NA
+Garrett Rd at Hope Valley Rd (NB),5380,35.921348,-78.960547,20,1,1
+Lakewood Ave at S Mangum St (WB),5384,35.98774,-78.904867,"5, 5K",0,NA
+Cornwallis Rd at Yorktown Ave (NB),5387,35.936394,-78.893234,"12, 12B",0,0
+Fayetteville Rd at Geneva Dr (NB),5391,35.9209837,-78.928447,"5, 14, 0805",0,NA
+Chapel Hill Rd at Palmer St,5394,35.987554,-78.925959,"10, 10A, 10B",1,1
+Fayetteville St at Red Oak Ave (NB),5396,35.96657,-78.90462,"5, 5K",0,1
+Fayetteville St at Dunbar St,5397,35.978879,-78.900065,"5, 5K",0,1
+Constitution Dr at Forest Apts,5398,36.01328,-78.96642,6,0,NA
+Club Blvd at Duke St,5399,36.017019,-78.906174,"1, 1A, 1B",0,NA
+Roxboro Rd at Channing Ave (NB),5400,36.031871,-78.890738,4,0,NA
+Sima Ave at Lawson St,5401,35.9748,-78.891088,8,1,1
+Carver St at Patrick Henry Dr (WB),5403,36.040706,-78.897767,"9, 9A",1,1
+E Main St at Hyde Park Ave (WB),5404,35.9854,-78.88207,"2, 2A, 2B",0,NA
+Tom Wilkinson Rd at Northern High (Across),5407,36.0950656,-78.911676,"9B, NHS",0,NA
+Clayton Rd at Chandler Rd,5409,35.995997,-78.830995,"3B, 23",0,NA
+Hinson Dr at Waring St,5412,36.030322,-78.87764,"9, 9A, 9B",0,NA
+Duke St at North Duke Crossing,5415,36.0491,-78.90568,"4, 9, 9A",0,NA
+Glenbrook Dr at Dubonnet Pl (NB),5416,36.02645,-78.87767,"9, 9A, 9B",0,NA
+Holloway St at Chandler Rd,5419,35.985884,-78.840216,"3B, 23",0,NA
+E Main St at Corcoran St (WB),5420,35.9959029,-78.902109,BCC,0,1
+Enterprise St at Roxboro St (EB),5423,35.98357,-78.903452,7,0,1
+S Roxboro St at Bond St,5424,35.980161,-78.905344,"7, 8",0,NA
+Pacific Ave at Ben Franklin Blvd,5428,36.046557,-78.898522,9B,0,NA
+Hillsborough Rd at US 15-501 SB (Wendy's),5429,36.0215482,-78.951737,11,0,NA
+Riddle Rd at Kirby St (SB),5430,35.955723,-78.893212,"12, 12B",0,NA
+Main St at Morgan St (WB),5433,36.0016,-78.9117,"11, BCC",0,1
+Milton Rd at Long Cresent Dr,5434,36.091973,-78.91416,9B,0,NA
+NC 55 at Alston Ave (NCCU),5435,35.970693,-78.894832,"12, 12B",1,1
+Meriwether Dr at Pickwick Trail (SB),5436,36.041878,-78.889984,"9, 9A, 9B",1,1
+Duke St at Corporation St,5438,36.0023218,-78.90632,"1, 1A, 1B",0,NA
+Gregson St at Lamond Ave,5439,36.00233,-78.90835,"1, 1A, 1B",0,NA
+NC 54 at Waterford Valley Dr (WB),5441,35.903216,-78.909301,"14, 800, 805",0,NA
+NC 54 at Revere Rd (WB),5443,35.903912,-78.911687,"14, 800, 805",1,1
+Dowd St at Roxboro Rd (EB),5444,36.000292,-78.893429,"9, 9A, 9B",0,NA
+Raynor St at The Village (WB),5445,35.994284,-78.869756,"2B, 3, 3B, 3C, 23",1,1
+Guess Rd at Ellen St,5446,36.03985,-78.92963,"1, 1B",0,NA
+Chapel hill Rd at Dean St (SB),5447,35.988573,-78.925313,"10, 10A, 10B",0,NA
+Hillsborough Rd at Neal Rd (EB),5448,36.033183,-78.975641,"6B, 11",0,NA
+Meriwether Dr at Oxford Ct,5450,36.038614,-78.890029,"9, 9A, 9B",0,NA
+Olympic Ave at Roxboro Rd,5451,36.036787,-78.896935,"9, 9A",0,NA
+Cornwallis Rd at Fayetteville Rd,5453,35.960255,-78.911443,7,0,1
+Shannon Rd at MLK Jr Pkwy (Windsor Apts),5456,35.962793,-78.956407,10B,0,0
+Erwin Rd at LaSalle St (EB),5460,36.007986,-78.945586,"6, 6B, 11, 20, 400, 405",0,NA
+Fayetteville Rd at Obie Dr (SB),5463,35.926656,-78.92316,5,0,NA
+Morehead Ave at Vickers Ave (EB),5464,35.991578,-78.912047,"10, 10A, 10B",0,0
+Broad St at Markham Ave (NB),5465,36.01058,-78.91947,11,1,1
+Roxboro Rd at Argonne Dr (NB),5466,36.064273,-78.904586,"9, 9B",0,NA
+Front St at Croasdaile Office Park,5467,36.03348,-78.9378,1,0,NA
+Hillsborough Rd at LaSalle St (Auto Zone),5468,36.0197,-78.94693,11,0,NA
+Raynor St at Fidelity Dr (WB),5470,35.9955189,-78.867365,"2B, 3, 23",0,NA
+Erwin Rd at Lenox Baker Children's Hospital,5471,36.0048335,-78.949356,"6, 6B, D H5",0,NA
+Old Oxford Rd at Dearborn Dr,5472,36.037234,-78.886362,"9, 9A, 9B",0,NA
+Club Blvd at Stephenson St,5475,36.0216,-78.8825,"9, 9A, 9B",0,NA
+Ross Rd at Charlestowne Apts,5477,35.99243,-78.84488,"3B, 23",0,NA
+E Club Blvd at Miriam Cir,5478,36.02647,-78.87145,"9, 9A, 9B",0,NA
+Cornwallis Rd at Weaver St,5479,35.9626,-78.916008,7,0,1
+Flowers Dr at Duke Gardens (NB),5480,36.0012344,-78.936286,"6, 6B, D H5",0,NA
+Roxboro Rd at Davidson Ave (NB),5481,36.0187,-78.8899,4,0,NA
+Roxboro Rd at Lynch St,5482,36.00713,-78.89235,4,0,NA
+Duke University Rd at Underwood Ave (WB),5484,35.996844,-78.922128,"6, 6B",0,NA
+Dearborn Dr at Wiley Ave,5489,36.02918,-78.87035,"9, 9A, 9B",0,NA
+Chapel Hill Rd at Ward St,5490,35.983177,-78.930668,"10, 10A, 10B",0,NA
+Dearborn Dr at Cannada Ave,5492,36.038667,-78.882361,"9, 9A, 9B",0,NA
+Tower Blvd at Durham-Chapel Hill Blvd (NB),5493,35.970563,-78.957981,10B,0,NA
+W Club Blvd at Clarendon St,5495,36.017198,-78.918167,"1, 1A, 1B",0,NA
+Dearborn Dr at Maplewood Dr (north),5496,36.034596,-78.867901,"9, 9A, 9B",0,NA
+Roxboro St at Erie St (CC Spaulding Elementary),5497,35.978624,-78.906447,"7, 8",0,1
+Holloway St at Guthrie Ave (EB),5498,35.994147,-78.875505,"3, 3B, 3C",0,NA
+Meriwether Dr at Pickwick Trail (NB),5499,36.041873,-78.889813,"9, 9A, 9B",1,0
+Chapel Hill Rd at Chapel Ridge Apts,5501,35.984739,-78.929553,"10, 10A, 10B",0,NA
+North Pointe Dr at Red Roof Inn (Inbound),5503,36.030279,-78.923608,1A,0,NA
+Holloway St at Alston Ave (WB),5505,35.994556,-78.885356,"3, 3B, 3C",0,NA
+Lawson St at DTCC Library (WB),5506,35.974428,-78.882757,8,0,1
+Chapel Hill St at Gregson St (WB),5507,35.997049,-78.909564,"6, 6B, 400, 405",0,1
+Chapel Hill Rd at Morehead Ave (SB),5508,35.991518,-78.922917,"10, 10A, 10B",0,NA
+Old Farm Rd at Seven Oaks Rd,5509,36.067087,-78.904996,"9, 9B",0,1
+Hillsborough Rd at US 15-501 SB (Krispy Kreme),5511,36.021637,-78.951409,11,0,NA
+Alston Ave at Cecil St (NCCU),5512,35.972273,-78.894562,"12, 12B",0,NA
+Roxboro Rd at Horton Rd,5513,36.050261,-78.903612,"4, 9, 9A, 9B",1,1
+Glasson St at Morreene Rd,5515,36.005608,-78.954978,6,1,0
+Duke St at Carver St,5516,36.04005,-78.90587,"4, 9, 9A",0,NA
+Fayetteville Rd at Southpoint Crossing Dr (SB),5517,35.913491,-78.933378,"5, 805",0,1
+Fayetteville St at Pekoe St,5518,35.97398,-78.90115,"5, 5K",0,NA
+University Dr at Hill St (Forest Hills Shopping Center),5519,35.985437,-78.910176,7,1,0
+Dearborn Dr at Disciples Church,5522,36.03849,-78.880851,"9, 9A, 9B",0,NA
+Miami Blvd at Geer St,5523,36.00258,-78.877147,"2B, 23",0,0
+Mangum St at Trinity Ave,5524,36.00548,-78.89418,4,0,NA
+Hinson Dr at Davinci St,5525,36.03179,-78.878167,"9, 9A, 9B",0,NA
+Hillsborough Rd at Erwin Square,5526,36.01043,-78.9257,11,0,NA
+Green St at Clarendon St (EB),5527,36.011655,-78.918536,11,0,1
+MLK Pkwy at Fayetteville Rd (EB),5528,35.939743,-78.908493,7,0,NA
+Cornwallis Rd at Century Oaks Dr,5530,35.94103,-78.89807,"12, 12B",0,NA
+Erwin Rd at LaSalle St (WB),5531,36.008207,-78.945747,"6, 6B, 11, 400, 405, D H5",1,1
+S Alston Ave at Dupree St (NB),5532,35.976341,-78.892879,"12, 12B",0,NA
+University Dr at Old Chapel Hill Rd,5533,35.96717,-78.94603,"10, 10A, 10B",0,NA
+Buchanan Blvd at Markham Ave (SB),5537,36.0098014,-78.912391,11,0,1
+Chapel Hill Rd at Pickett Rd,5540,35.97678,-78.93625,"10, 10A, 10B",0,NA
+Guess Rd at Lombard Ave,5543,36.0361,-78.92928,"1, 1A, 1B",0,NA
+Fayetteville St at Homeland Ave (SB),5544,35.96207,-78.9089,"5, 5K",0,1
+Sima Ave at Bacon St,5547,35.97767,-78.88435,8,0,NA
+Fayetteville St at Linwood Ave,5549,35.981217,-78.899269,"5, 5K",1,1
+Hardee St at Delano St (Hardee Terrace),5550,35.9974965,-78.864402,3,0,0
+NC 55 at Meridian Pkwy (Outbound),5552,35.9121981,-78.892648,"12, 12B",0,NA
+Milton Rd at Eno Valley Elementary (NB),5553,36.08645,-78.912,9B,0,NA
+Morreene Rd at Andrews Rd,5557,36.013029,-78.95629,"6, 6B",0,0
+Willard St at Blackwell St (South Parking Deck),5559,35.9918619,-78.906599,"5, 5K, 10, 10A, 10B",0,NA
+Leon St at N Buchanan Blvd (EB),5561,36.025475,-78.910534,"1, 1A",1,0
+Duke St at Fairfield St,5563,36.04727,-78.90572,"4, 9, 9A",0,NA
+Morreene Rd at Erwin Rd,5564,36.00382,-78.95275,"6, 6B, D LL",0,NA
+Fayetteville St at Elmira Ave (Fayetteville Street Elementary),5565,35.964905,-78.906124,"5, 5K",0,1
+Fayetteville Rd at Juliette Dr (SB),5567,35.931954,-78.916697,5,0,NA
+Meriwether Dr at Old Oxford Rd,5568,36.03602,-78.89013,"9, 9A, 9B",0,NA
+Hillsborough Rd at LaSalle St (Durham Festival Center),5569,36.0197523,-78.947568,11,1,1
+Garrett Rd at Durham-Chapel Hill Blvd (NB),5570,35.958731,-78.974587,"10, 10A",1,1
+Cornwallis Rd at Bainbridge Dr (SB),5572,35.9396366,-78.896774,"12, 12B",0,NA
+Holloway St at Elizabeth St (EB),5573,35.994511,-78.890385,"3, 3B, 3C",0,NA
+US 15-501 at Pawn America,5574,35.97392,-78.93305,"10, 10A",0,NA
+Roxboro St at Charles St,5575,35.966886,-78.916428,7,0,NA
+Fayetteville St at Simmons St,5578,35.982258,-78.899053,"5, 5K",0,NA
+North Pointe Dr at North Pointe Shopping Center (WB),5579,36.028632,-78.920304,"1, 1A",1,1
+Fayetteville St at Burlington Ave (SB),5580,35.968923,-78.902649,"5, 5K",0,1
+E Club Blvd at Lindbergh St,5581,36.022849,-78.878892,"9, 9A, 9B",0,NA
+Angier Ave at East End Ave,5582,35.97445,-78.86823,"2, 2A",0,NA
+Hardee St at Fiske St,5584,35.998797,-78.864541,"2B, 3, 23",0,NA
+Hillandale Rd at Croasdaile Crossing,5590,36.031655,-78.935952,"1, 1A",1,1
+Roxboro St at Apt 2519,5591,35.96605,-78.91755,7,0,NA
+Lednum St at Murray Ave,5593,36.0272093,-78.909612,"1, 1A",0,NA
+Hillsborough Rd at Trent Dr (WB),5594,36.012039,-78.930439,11,0,NA
+Duke St at Markham Ave,5595,36.009649,-78.905438,"1, 1A, 1B",0,NA
+Foushee St at Avondale Dr (EB),5596,36.016151,-78.887701,"9, 9A, 9B",0,NA
+Fayetteville Rd at Geneva Dr (SB),5598,35.920992,-78.928701,"5, 805",0,NA
+Riddle Rd at Fayetteville Rd,5599,35.9498287,-78.902913,"12, 12B",0,NA
+Carver St at Commons Blvd (WB),5600,36.041499,-78.894746,"9, 9A",1,1
+Cornwallis Rd at Industry Ln,5601,35.94278,-78.89973,"12, 12B",0,NA
+E Main St at Goley St (WB),5602,35.986111,-78.884607,"2, 2A, 2B",0,NA
+Hardee St at Landon St (NB),5603,35.999635,-78.865018,3,1,0
+Crest St at Zelko Ct,5604,36.01276,-78.941013,6,0,NA
+Pacific Ave at Roxboro Rd,5606,36.046075,-78.901628,9B,0,NA
+Erwin Rd at Trent Dr (EB),5607,36.007683,-78.933199,BCC,0,1
+Hyde Park Ave at E Main St (Trosa Inc.),5608,35.984603,-78.881685,"2, 2A, 2B",0,NA
+Chapel Hill St at Gregson St (EB),5612,35.996873,-78.911517,"6, 6B",0,1
+University Dr at Old Chapel Hill Rd (WB),5613,35.9673517,-78.947182,"10, 10A, 10B",0,NA
+Gary St at Liberty St (SB),5615,35.990937,-78.870593,"2B, 23",0,NA
+Cornwallis Rd at Yorktown Ave (SB),5616,35.936476,-78.893543,"12, 12B",0,1
+Holloway St at Joyland Ave,5618,35.98938,-78.855086,"3B, 3C, 23",0,NA
+Front St at Hillandale Rd (Courtyard Marriott),5621,36.030296,-78.937173,1,1,1
+Glenbrook Dr at Club Blvd (NB),5622,36.02425,-78.87708,"9, 9A, 9B",0,NA
+Sparger Rd at Hillsborough Rd,5625,36.03212,-78.9816,"6B, 11",0,NA
+New Castle Rd at FoxFire Apartments (SB),5626,36.05002,-78.9232,9A,0,NA
+Holloway St at Spruce St,5627,35.994405,-78.880198,"3, 3B, 3C",0,NA
+Hinson Dr at Glenbrook Dr (SB),5630,36.02845,-78.87915,"9, 9A, 9B",0,NA
+Green St at Lancaster St (EB),5632,36.011461,-78.913544,11,0,1
+Fayetteville Rd at Sutton Station,5633,35.919207,-78.93007,"5, 805",0,NA
+Roxboro Rd at St Paul St,5634,36.01758,-78.89008,4,0,NA
+Angier Ave at Clay St (EB),5635,35.982831,-78.880138,"2, 2A, 2B",0,NA
+Main St at Gregson St (EB),5637,35.999831,-78.909079,BCC,0,1
+Main St at Morgan St (EB),5639,36.000859,-78.910686,"11, BCC",0,1
+Guess Rd at Lombard Ave,5642,36.03542,-78.929409,"1, 1B",0,NA
+Club Blvd at Midland Terrace,5645,36.027057,-78.870507,"9, 9A, 9B",0,NA
+Roxboro Rd at Davison Ave (SB),5646,36.018651,-78.890106,4,0,NA
+Angier Ave at Bingham St (WB),5647,35.9794268,-78.872118,"2, 2A",0,NA
+LaSalle St at Campus Walk Ave (Belmont Apts),5648,36.0100523,-78.948501,11,0,NA
+Tower Blvd at Durham-Chapel Hill Blvd (McDonalds),5649,35.970438,-78.958133,10B,0,NA
+Durham Chapel Hill Blvd at Fosters,5650,35.974231,-78.931046,"10, 10A",0,NA
+Fayetteville Rd at Riddle Rd (NB),5653,35.94915,-78.90373,"5, 5K, 7, 12, 12B",0,NA
+Horton Rd at Roxboro Rd,5654,36.051043,-78.904403,"4, 9, 9A",1,0
+Chapel Hill St at Kent St (WB),5657,35.99675,-78.91785,"6, 6B",0,NA
+Durham Chapel Hill Blvd at James St,5658,35.974825,-78.926443,"10, 10A",0,NA
+Pickett Rd at Structure House Dr,5659,35.97465,-78.96238,10B,0,NA
+Holloway St at N Driver St (EB),5661,35.994382,-78.878173,"3, 3B, 3C",0,NA
+Roxboro Rd at Lavender Ave,5662,36.023384,-78.889811,4,0,NA
+New Hope Commons,5663,35.954424,-78.996621,"10, 10A",1,0
+Dearborn Dr at Thelma St (north),5664,36.03753,-78.87295,"9, 9A, 9B",0,NA
+E Main St at Elm St (WB),5665,35.988531,-78.88932,"2, 2A, 2B",0,1
+Holloway St at Elm St (WB),5671,35.994577,-78.887442,"3, 3B, 3C",0,NA
+Fayetteville St at Timothy Ave (SB),5672,35.956916,-78.908791,"5, 5K, 7",0,NA
+University Dr at Springfield Apts,5674,35.958283,-78.966036,"10, 10A",0,NA
+Otis St at Alton St,5675,35.970754,-78.908293,7,0,NA
+Broad St at Guess Rd,5677,36.023722,-78.918491,1A,0,NA
+Morehead Ave at Cornell St,5678,35.99181,-78.919109,"10, 10A, 10B",0,1
+Crutchfield St at Crabtree Ave,5679,36.03892,-78.90312,"4, 9, 9A",0,NA
+Hillsborough Rd at Ample Storage,5682,36.033748,-78.970623,11,0,NA
+W Club Blvd at Clarendon St,5684,36.017035,-78.918244,"1, 1A, 1B",0,NA
+Fayetteville Rd at Cook Rd (NB),5686,35.928882,-78.9199,5,0,NA
+S Roxboro St at Umstead St (NB),5689,35.982516,-78.903207,"7, 8",1,1
+NC 54 at NC 55 (EB),5690,35.90229,-78.895006,"12, 12B, 800, 805, RTP OD",0,1
+Bedford St at Balmoray Ct,5693,35.976893,-78.928676,"10, 10A",1,0
+Hillandale Rd at Fawn Ave (Croasdaile Office Park),5695,36.033816,-78.935869,"1, 1A",0,NA
+Roxboro St at Summit St,5700,35.971234,-78.915069,7,0,NA
+Fayetteville St at Price Ave,5701,35.97997,-78.89975,"5, 5K",0,NA
+Roxboro Rd at E Knox St,5702,36.0128198,-78.890896,4,0,NA
+Guess Rd at Carver St,5703,36.03712,-78.92958,"1, 1B",0,NA
+Guess Rd at Duke Homestead Rd (NB),5704,36.031931,-78.928742,"1, 1A, 1B",0,NA
+Roxboro St at Masondale Ave,5706,35.975603,-78.908421,7,0,NA
+Angier Ave at Hoover Rd (WB),5708,35.977963,-78.870444,"2, 2A",1,0
+Roxboro Rd at Markham Ave,5709,36.01043,-78.89173,4,0,NA
+Angier Ave at Carter Ave,5710,35.96833,-78.8606,"2, 2A",0,NA
+N Alston Ave at Lee St (NB),5711,36.002009,-78.885772,"9, 9A, 9B",0,NA
+Rummel St at Walton St,5713,35.98585,-78.84565,"3C, 23",0,NA
+Morreene Rd at Sherwood Dr (NB),5714,36.007155,-78.954687,"6, 6B, D LL",0,NA
+Hillsborough Rd at Hicks St,5716,36.01312,-78.93185,11,0,NA
+Hillsborough Rd at Frazee Carpet,5717,36.0162,-78.93737,11,0,NA
+LaSalle St at Campus Walk Dr (Holly Hill Apts),5718,36.010006,-78.94864,"11, D LL",1,0
+Roxboro St at W Knox St,5719,36.012825,-78.891059,4,0,NA
+Junction Rd at NC 98,5720,35.99053,-78.8579,"3B, 23",0,NA
+Chapel Hill Rd at Vineyard St,5721,35.97795,-78.93567,"10, 10A, 10B",0,NA
+Carver St at Danube Ln (Carver Creek Apts),5722,36.044844,-78.890487,9B,1,1
+Page Rd at Angier Ave,5724,35.938013,-78.822425,"2, 2A",0,NA
+Broad St at Sprunt Ave (NB),5727,36.02054,-78.918845,"1, 1A, 1B",0,NA
+Fayetteville Rd at United Dr,5728,35.93697,-78.9079,5,0,NA
+Chapel Hill Rd at Crosswind Ave (Lakewood YMCA),5730,35.984934,-78.929065,"10, 10A, 10B",0,NA
+Hillsborough Rd at Carolina Ave,5732,36.010538,-78.925131,11,0,NA
+Lawson St at Wabash St (WB),5733,35.973842,-78.888908,8,0,NA
+Hillsborough Rd at Rutherford St,5734,36.01047,-78.92755,11,0,NA
+Holloway St at S Woodcrest St,5735,35.988399,-78.850757,"3B, 3C, 23",1,0
+Lawson St at Alston Ave (EB),5738,35.975412,-78.894269,8,1,1
+Chandler Rd at Chance Dr,5740,35.99492,-78.83363,"3B, 23",0,NA
+E Main St at Roxboro St (WB),5741,35.993961,-78.898635,"2, BCC",1,1
+Mangum St at Parrish St,5742,35.995829,-78.900135,"9, 9A, 9B",1,1
+Trent Dr at Duke Hospital South (EB),5743,36.00456,-78.935073,"6, 6B, 20, DRX, D H2, D H5",1,1
+Holloway St at Brye St,5744,35.993267,-78.871888,"3, 3B, 3C",0,NA
+Roxboro St at Normandy St,5746,35.973566,-78.912206,7,0,NA
+E Weaver St at Pilot St,5749,35.967722,-78.910178,7,0,NA
+Chapel Hill Rd at Lakewood Ave (Shopping Center),5754,35.98692,-78.927131,"10, 10A, 10B",1,1
+Lakewood Ave at S Mangum St (EB),5756,35.9875919,-78.905069,"5, 5K",1,1
+Dearborn Dr at Forrester St,5764,36.0377,-78.87483,"9, 9A, 9B",0,NA
+Hillsborough Rd at Rosehill Ave,5765,36.010649,-78.927815,11,0,NA
+NC 55 at Cherry Dr,5767,35.9604,-78.89348,"12, 12B",0,NA
+NC 55 at Gaston Ave,5768,35.9625229,-78.894307,"12, 12B",0,NA
+Lawson St at Wabash St (EB),5769,35.973878,-78.889521,8,0,NA
+LaSalle St at Hillsborough Rd (Tire King),5770,36.0176826,-78.945628,"11, D LL",0,NA
+Lawson St at Durham Tech Community College (WB),5773,35.974402,-78.880704,8,1,1
+Durham Station,5774,35.995954,-78.906005,"1, 1A, 1B, 2, 2A, 2B, 3, 3B, 3C, 3T, 4, 5, 5K, 6, 6B, 7, 8, 9, 9A, 9B, 10, 10A, 10B, 11, 12, 12B, 15, 400, 405, 700, DRX, NHS, ODX",1,1
+Duke University Rd at Swift Ave (EB),5775,35.997076,-78.924248,"6, 6B",0,NA
+NC 54 at Paradigm Park,5776,35.901136,-78.891803,"12, 12B, 800, 805, RTP OD",0,NA
+Hillsborough Rd at Lawndale Ave (WB),5778,36.014786,-78.933818,11,0,1
+Capps St at Athens St (WB),5779,35.963386,-78.885637,8,0,0
+E Main St at Driver St (EB),5780,35.9858023,-78.877705,"2B, 23",0,NA
+W Enterprise St at Fargo St,5781,35.98373,-78.90752,7,0,NA
+Woodcroft Pkwy at Autumn Woods Dr,5782,35.92379,-78.944203,"14, 805",0,NA
+Buchanan Blvd at Gloria Ave (SB),5785,36.003663,-78.912544,11,0,1
+LaSalle St at Hillsborough Rd (NB),5786,36.0179747,-78.94547,"11, D LL",0,NA
+Roxboro Rd at Argonne Dr (SB),5787,36.062833,-78.90424,"9, 9B",0,NA
+Rummel St at Wedgedale Ave,5790,35.98623,-78.84737,"3C, 23",0,NA
+Lawson St at Rosewood St,5792,35.9750129,-78.891944,8,0,NA
+Fayetteville Rd at Crooked Creek Pkwy,5793,35.912022,-78.933837,"5, 14, 0805",0,1
+N Alston Ave at Lee St (SB),5794,36.002141,-78.88599,"9, 9A, 9B",0,NA
+Hinson St at DeMille St,5795,36.02937,-78.8786,"9, 9A, 9B",0,NA
+Mineral Springs Rd at Sapphire St,5797,35.98772,-78.81872,"3B, 23",0,NA
+Durham-Chapel Hill Blvd at Garrett Rd,5798,35.961312,-78.977905,"10, 10A",0,0
+Roxboro Rd at Fairfield Rd (North Duke Crossing),5800,36.047605,-78.903298,"4, 9, 9A, 9B",0,NA
+Broad St at Markham Ave (SB),5801,36.010453,-78.919662,11,0,NA
+Broad St at F St (NB),5802,36.01887,-78.91898,"1, 1A, 1B",0,1
+Milton Rd at Fire Department,5803,36.088965,-78.913505,9B,0,NA
+US 70 at Angier Ave,5804,35.941671,-78.824036,"2, 2A",0,NA
+Fayetteville St at Red Oak Ave (SB),5805,35.96677,-78.904576,"5, 5K",0,1
+Murray Ave at Broad St,5806,36.02912,-78.91203,"1, 1A",0,NA
+Hillsborough Rd at Self Storage,5809,36.03357,-78.97142,"6B, 11",0,NA
+Service Rd at Davidson Ave (SB),5811,36.01797,-78.88757,"9, 9A, 9B",0,1
+Fayetteville St at Dunstan St,5816,35.978925,-78.900163,"5, 5K",0,1
+Holloway St at Hoover Rd,5818,35.990265,-78.858925,"3B, 3C, 23",0,NA
+E Main St at Dillard St (Oldham Towers),5819,35.9918921,-78.895096,"2, 2A, 2B, BCC",1,1
+Cornwallis Rd at Century Oaks (SB),5820,35.94093,-78.89815,"12, 12B",0,NA
+Holloway St at Briggs Ave,5821,35.99377,-78.87362,"3, 3B, 3C",0,NA
+NC 55 at NC 54 (NB),5822,35.9029881,-78.895181,"12, 12B, RTP OD",1,1
+University Dr at Academy Rd,5823,35.96737,-78.94497,"10, 10A, 10B",0,NA
+Lawson St at Concord St (EB),5824,35.976343,-78.903071,"7, 8",1,1
+Roxboro Rd at Ellerbee St (SB),5826,36.021653,-78.89006,4,0,NA
+Angier Ave at Hoover Rd (EB),5827,35.978289,-78.870944,"2, 2A",0,0
+Fayetteville St at Pilot St (SB),5829,35.963923,-78.90724,"5, 5K",1,1
+Dearborn Dr at Apollo St,5832,36.03681,-78.869716,"9, 9A, 9B",0,NA
+Dearborn Dr at Lakeview School,5833,36.038217,-78.877666,"9, 9A, 9B",0,NA
+Dearborn Dr at Maplewood Dr (south),5836,36.033188,-78.869395,"9, 9A, 9B",0,NA
+Roxboro Rd at Infinity Rd,5837,36.07848,-78.91027,9B,0,NA
+Cornwallis Rd at Jan Ct,5838,35.960445,-78.912622,7,0,1
+Fayetteville St at Cornwallis Rd (SB),5841,35.960367,-78.910426,"5, 5K",0,1
+University Dt at Dixon Rd,5842,35.967879,-78.940767,"10, 10A, 10B",0,NA
+Concord St at Otis St,5843,35.975553,-78.902811,7,0,NA
+Hillandale Rd at Carver St (Durham Public Schools),5845,36.035777,-78.935801,"1, 1A",0,NA
+Chapel Hill Rd at Vineyard St,5846,35.97798,-78.93575,"10, 10A, 10B",0,NA
+Pickett Rd at Coachmans Way,5847,35.97525,-78.96407,10B,0,NA
+Flowers Dr at Duke Gardens (SB),5848,36.0011576,-78.936439,"6, 6B, 20",0,NA
+Dearborn Dr at Thelma St,5849,36.037318,-78.872481,"9, 9A, 9B",0,NA
+Glenbrook Dr at Dubonnet Pl (SB),5850,36.0260874,-78.876979,"9, 9A, 9B",0,NA
+Lawson St at Ridgeway Ave,5851,35.973947,-78.887482,8,0,NA
+Fayetteville Rd at Dunhill Dr (Triangle Family Practice),5854,35.9163107,-78.931996,"5, 805",0,1
+Riddle Rd at Triangle Day Care,5857,35.95137,-78.89937,"12, 12B",0,NA
+Chapel Hill Rd at Wa Wa Ave,5858,35.979646,-78.934904,"10, 10A, 10B",0,NA
+MLK Pkwy at Lake Cook Dr,5859,35.942065,-78.916912,7,1,1
+Roxboro Rd at Channing Ave (SB),5860,36.0318,-78.89087,4,0,NA
+Front St at Carver St (Carver Terrace Apts),5861,36.036232,-78.938973,1,0,0
+Cornwallis Rd at Bainbridge Dr (NB),5862,35.93994,-78.896922,"12, 12B",0,NA
+University Dr at Hill St,5864,35.985515,-78.910318,7,0,1
+Chapel Hill Rd at McGehee St (SB),5865,35.980865,-78.934583,"10, 10A, 10B",0,NA
+Hinson Dr at Glenbrook Dr (NB),5866,36.028598,-78.878889,"9, 9A, 9B",0,NA
+Fayetteville St at Utah Ave (SB),5867,35.965544,-78.905724,"5, 5K",0,1
+Club Blvd at Cascadilla St,5868,36.020002,-78.886482,"9, 9A, 9B",0,NA
+Broad St at F St (NC School of Science and Math),5869,36.018429,-78.919169,"1, 1A, 1B",1,1
+Holloway St at Herbert St (EB),5870,35.9916,-78.86453,"3B, 3C, 23",0,0
+Tower Blvd at Conifer Glen Ln,5871,35.972609,-78.957782,10B,0,NA
+Hillsborough Rd at Hilton Durham (EB),5874,36.02548,-78.95765,11,0,NA
+Ross Rd at Melbourne St,5876,35.99258,-78.8534,"3B, 23",0,NA
+S Roxboro St at Umstead St (SB),5877,35.982575,-78.903331,"7, 8",0,0
+Club Blvd at Glenbrook Dr,5880,36.023854,-78.876399,"9, 9A, 9B",0,NA
+NC 54 at Fayetteville Rd (Homestead Market),5881,35.910922,-78.936739,"5, 14",0,NA
+Holloway St at Adams St,5882,35.98893,-78.85252,3C,0,NA
+Mangum St at W Seminary Ave,5883,35.998961,-78.897459,"9, 9A, 9B",0,NA
+Chapel Hill St at Brewster St,5884,35.996732,-78.919163,"6, 6B",0,NA
+Holloway St at Rochelle St,5887,35.98817,-78.84932,3C,1,0
+Sima Ave at Building 18,5892,35.977291,-78.887383,8,0,NA
+Roxboro Rd at Old Oxford Rd (SB),5896,36.03512,-78.89275,4,0,NA
+Club Blvd at Dollar Ave (Northgate Mall),5897,36.016827,-78.910102,"1, 1A, 1B",1,1
+Holloway St at N Driver St (WB),5898,35.994476,-78.878297,"3, 3B, 3C",0,NA
+Briggs Ave at Person St (NB),5899,35.969283,-78.877145,8,1,1
+Chapel Hill St at Kent St (EB),5900,35.9966706,-78.916957,"6, 6B",1,1
+Chapel Hill Rd at Anderson St,5904,35.981954,-78.933386,"10, 10A, 10B",0,NA
+Garrett Rd at Eno River Church,5906,35.952195,-78.970986,"10, 10A",0,NA
+Fayetteville St at Piedmont Ave (NB),5907,35.98352,-78.89882,"5, 5K",0,NA
+Chapel Hill Rd at House St,5908,35.99033,-78.92395,"10, 10A, 10B",0,NA
+Chapel Hill Rd at Colonial Apts (SB),5909,35.970417,-78.938818,"10, 10A, 10B",0,NA
+Angier Ave at Ellis Rd,5910,35.97297,-78.8668,"2, 2A",0,NA
+Fayetteville Rd at Obie Dr (NB),5911,35.926332,-78.923325,5,0,NA
+Morehead Ave at Carroll St (EB),5914,35.991715,-78.916333,"10, 10A, 10B",1,1
+Hillsborough Rd at Operations Dr (WB),5915,36.0337,-78.968504,11,0,NA
+University Dr at Mossdale Ave,5918,35.967701,-78.941843,"10, 10A, 10B",0,NA
+Hardee St at Mimosa St (NB),5920,36.001542,-78.866645,3,0,0
+Holloway St at Southerland St,5921,35.99078,-78.86062,"3B, 3C, 23",0,NA
+Main St at S Blacknall St,5922,35.98652,-78.886,"2, 2A, 2B",0,NA
+James St at Nation Ave,5928,35.977255,-78.926258,"10, 10A",0,0
+Briggs Ave at Community Gardens,5929,35.9653,-78.879303,8,0,0
+Broad St at Sprunt Ave (SB),5930,36.021278,-78.918981,"1, 1A, 1B",0,NA
+Fayetteville St at Brant St (NCCU),5931,35.975694,-78.901329,"5, 5K",1,1
+Chalk Level Rd at Horton Rd (EB),5932,36.0511808,-78.910598,"9, 9A",0,NA
+Riddle Rd at Triangle Day Care,5933,35.951297,-78.90022,"12, 12B",0,NA
+Duke St at Jackson St,5934,35.995202,-78.908724,"7, 12, 12B, 15, 700",0,NA
+S Roxboro St at Erie St (SB),5938,35.978418,-78.906686,"7, 8",0,NA
+Otis St at Nelson St,5939,35.97325,-78.905,7,0,NA
+Hardee St at Benning St (SB),5940,36.003223,-78.86718,"2B, 3, 23",1,0
+Green St at Broad St,5941,36.011794,-78.919254,11,0,1
+Roxboro St at Mallard Ave,5942,35.997705,-78.894992,"9, 9A, 9B",0,NA
+University Dr at Weymouth St,5943,35.96713,-78.94822,"10, 10A, 10B",0,NA
+Freeman Rd at Obsidian Way (Southern HS),5944,35.997104,-78.825341,"3B, 23",0,NA
+Roxboro Rd at Berwyn Ave,5945,36.0343,-78.89153,4,0,NA
+Cornwallis Rd at Rogers Herr School,5946,35.97407,-78.93567,"10, 10A",0,NA
+E Weaver St at Cornwallis Rd,5947,35.962847,-78.916025,7,0,NA
+Enterprise St at Scout Dr,5948,35.983737,-78.904744,7,0,0
+Dearborn Dr at Deer Run,5949,36.031599,-78.870344,"9, 9A, 9B",0,NA
+Buchanan Blvd at Markham Ave (NB),5951,36.0096164,-78.912347,11,0,1
+Chapel Hill St at Duke St (Durham Police Dept),5952,35.996903,-78.909033,"1, 1A, 1B, 6, 6B, 11, 400, 405",0,1
+Dowd St at Hazel St (WB),5954,36.000459,-78.888702,"9, 9A, 9B",0,NA
+The Streets at Southpoint,5956,35.90513,-78.946474,"5, 14, 800, 800S",Yx2,1
+Duke University Rd at Chapel Hill Rd,5957,35.996628,-78.92073,"6, 6B",1,NA
+Gary St at N Miami Blvd (NB),5960,35.99211,-78.869367,"2B, 23",0,NA
+Buchanan Blvd at Trinity Ave (SB),5962,36.005766,-78.912457,11,0,NA
+Roxboro Rd at Maynard Ave (NB),5964,36.02707,-78.889746,4,0,NA
+Green St at Berkeley St (WB),5965,36.011652,-78.91573,11,0,1
+Chapel Hill Rd at Vesson Ave,5966,35.983018,-78.930887,"10, 10A, 10B",0,NA
+Markham Ave at Iredell St,5967,36.009958,-78.921242,11,0,1
+Glenbrook St at Club Blvd (SB),5968,36.024384,-78.877255,"9, 9A, 9B",0,NA
+Fayetteville Rd at Cook Rd (SB),5970,35.92917,-78.919856,5,0,NA
+University Dr at Myra St (WB),5971,35.9665,-78.95292,"10, 10A, 10B",0,NA
+Carver St at Charlotte St,5972,36.037715,-78.934167,"1, 1A, 1B",0,NA
+NC 55 at Meridian Pkwy,5973,35.9102936,-78.892919,"12, 12B",0,NA
+Buchanan Blvd at Gloria Ave (NB),5974,36.003373,-78.912423,11,0,1
+Miami Blvd at Robinhood Rd,5977,36.000821,-78.875526,"2B, 23",0,0
+Emerald Pond Ln at Pickett Rd,5979,35.97532,-78.96993,10B,1,NA
+University Dr at Martin Luther King Jr Pkwy (WB),5980,35.963085,-78.960194,"10, 10A, 400",1,1
+N Alston Ave at Geer St (SB),5981,36.003172,-78.886093,"9, 9A, 9B",0,NA
+Duke University Rd at Swift Ave (WB),5982,35.997328,-78.924603,"6, 6B",0,NA
+Duke St at Kinder Care,5983,36.042654,-78.905756,"4, 9, 9A",0,NA
+NC 55 at Dakota St,5984,35.967234,-78.895287,"12, 12B",0,NA
+Mangum St at Markham Ave,5985,36.008015,-78.893528,4,0,NA
+Otis St at Cecil St,5987,35.97208,-78.90627,7,0,NA
+Roxboro St at Gray St,5988,35.999005,-78.894099,"9, 9A, 9B",0,NA
+Avondale Dr at Trinity Ave (SB),5989,36.006855,-78.885575,"9, 9A, 9B",0,0
+Durham-Chapel Hill Blvd at Car Wash,5990,35.97408,-78.93042,"10, 10A",0,NA
+Lynn Rd at Holloway St,5991,35.98652,-78.84353,"3C, 23",0,NA
+E Club Blvd at Cascadilla St,5992,36.019858,-78.88636,"9, 9A, 9B",0,NA
+Duke St at Trinity Ave,5993,36.00497,-78.90555,"1, 1A, 1B",0,NA
+Green St at Berkeley St (EB),5995,36.011557,-78.915981,11,0,1
+Meriwether Dr at Old Oxford Rd,5996,36.035929,-78.889875,"9, 9A, 9B",0,NA
+Hillsborough Rd at Hilton Durham (WB),5997,36.02485,-78.95708,11,0,NA
+Chapel Hill Rd at W Cornwallis Rd,5999,35.97543,-78.93652,"10, 10A, 10B",0,NA
+NC 54 at Pine Glen Trail (WB),6000,35.9073197,-78.922869,"14, 800, 805",1,1
+Roxboro Rd at Bon Air Ave,6003,36.028286,-78.889972,4,0,NA
+NC 55 at Crete St,6004,35.959794,-78.893333,"12, 12B",0,NA
+Ben Franklin Blvd at Danube Ln (EB),6005,36.047712,-78.889843,9B,0,1
+Buchanan Blvd at Green St,6006,36.0113411,-78.912148,11,0,1
+Service Rd at Hillandale Rd (EB),6007,36.0164994,-78.93665,11,0,NA
+Angier Ave at Beldon Dr,6008,35.94652,-78.83895,"2, 2A",0,NA
+Erwin Rd at Fulton St (Duke University Hospital),6012,36.008087,-78.937774,"6, 6B, 20, 400, 405, BCC, D H5",1,1
+Roxboro St at Holloway St,6014,35.99632,-78.8962,"9, 9A, 9B",1,NA
+Lawson St at Bacon St (WB),6016,35.97435,-78.884612,8,0,NA
+Hillsborough Rd at Lawndale Ave (Food Lion),6018,36.014123,-78.933193,11,1,1
+Otis St at Pilot St,6020,35.969541,-78.910683,7,0,NA
+Fayetteville St at Lawson St (NCCU),6023,35.9771,-78.900667,"5, 5K",1,1
+LaSalle St at Duke Manor Apts (Inbound),6024,36.0152631,-78.946997,11,0,NA
+Cornwallis Rd at Beechwood Ave,6026,35.960998,-78.914996,7,0,0
+Dowd St at Alston Ave (EB),6031,36.000356,-78.886682,"9, 9A, 9B",0,NA
+Fayetteville St at Cecil St (NB),6032,35.97103,-78.901186,"5, 5K",0,1
+University Dr at Martin Luther King Jr Pkwy (EB),6036,35.962671,-78.960307,"10, 10A, 10B, 400",1,1
+E Main St at Goley St (EB),6039,35.985963,-78.884518,"2, 2A, 2B",0,NA
+Hillsborough Rd at Trent Dr (EB),6040,36.011796,-78.93026,11,0,NA
+American Dr at White Pine Dr,6042,36.016519,-78.96679,6,0,0
+LaSalle St at Blue Crest Ln (Blue Crest Apts),6045,36.013763,-78.948249,"11, D LL",1,NA
+Green St at Buchanan Blvd,6047,36.011418,-78.91239,11,0,1
+Dearborn Dr at Ora St,6048,36.029329,-78.87017,"9, 9A, 9B",0,NA
+Service Rd at Hillandale Rd (WB),6049,36.0167732,-78.936882,11,0,NA
+Pickett Rd at Colony Rd,6050,35.975403,-78.964025,10B,0,NA
+Lawson St at Ridgeway Ave,6052,35.973721,-78.887892,8,1,NA
+Lawson St at S Briggs Ave (Durham Exchange Club),6053,35.974354,-78.87704,8,1,1
+Cornwallis Rd at Spring Ridge Apt,6054,35.93817,-78.8951,"12, 12B",0,NA
+Green St at Clarendon St (WB),6055,36.011747,-78.91814,11,0,1
+Chapel Hill Rd at Huron St,6057,35.981986,-78.932409,"10, 10A, 10B",0,NA
+Lawson St at S Briggs Ave (Ferguson),6058,35.974223,-78.877328,8,0,1
+Chapel Hill Rd at Chesterfield Apts,6059,35.990191,-78.924186,"10, 10A, 10B",0,NA
+Bennett Memorial Rd at Gentry Dr (WB),6060,36.0312096,-78.979047,"6B, 11",0,NA
+Ross Rd at Fernando St,6061,35.9924,-78.84257,"3B, 23",0,NA
+E Main St at Alston Ave (EB),6063,35.98756,-78.888283,"2, 2A, 2B",0,1
+Roxboro Rd at Omega Rd,6064,36.07557,-78.9095,9B,0,NA
+Crutchfield St at Pendergrass St,6065,36.03897,-78.90478,"4, 9, 9A",0,NA
+Olympic Ave at Roxboro Rd,6067,36.036822,-78.897146,"4, 9, 9A",0,NA
+Erwin Rd at Downing St (WB),6068,36.008863,-78.943709,"6, 6B, 11, 400, 405",Yx2,1
+Chapel Hill St at Carroll St,6069,35.99687,-78.91558,"6, 6B",0,1
+Morehead Ave at Fairview St,6071,35.991874,-78.917911,"10, 10A, 10B",0,0
+Gary St at N Miami Blvd (SB),6073,35.992292,-78.869468,"2B, 23",0,NA
+Douglas St at Pratt St,6076,36.01117,-78.94275,6,0,NA
+Fayetteville St at Eagle Campus Dr,6077,35.97352,-78.900919,"5, 5K",1,NA
+Mordecai St at Holston St,6078,36.00417,-78.9555,6,0,NA
+Chapel Hill St at Arnette Ave (WB),6079,35.9969316,-78.914077,"6, 6B",0,1
+Angier Ave at E Main St (Hosiery Mills),6085,35.989321,-78.892003,BCC,0,1
+E Main St at Hyde Park Ave (EB),6086,35.98532,-78.88195,"2, 2A, 2B",0,NA
+US 70 at Miami Blvd,6087,35.94837,-78.83663,"2, 2A",0,NA
+Angier Ave at E Main St (WB),6088,35.989392,-78.891881,"2, 2A, 2B",1,1
+Hardee St at Cheek Rd (SB),6092,36.004544,-78.867021,"2B, 3, 23",1,0
+Miami Blvd at Holloway St,6093,35.99337,-78.8699,"2B, 3, 3B, 3C, 23",1,NA
+Duke Regional Hospital (SB),6095,36.038147,-78.899033,"9, 9A",1,1
+Roxboro Rd at Higbee St,6096,36.01662,-78.89012,4,0,NA
+NC 55 at Corona St,6097,35.961685,-78.894217,"12, 12B",0,NA
+Riddle Rd at Ancroft Ave,6098,35.95272,-78.897066,"12, 12B",0,NA
+Fulton St at Erwin Rd (Duke Hospital Parking Garage),6104,36.008773,-78.937102,"6, 11, DRX, ODX, D H2, D H6",1,1
+Guess Rd at Hillcrest Dr,6105,36.02425,-78.91972,1B,0,NA
+Guess Rd at Lamar St,6106,36.02685,-78.92308,1B,0,NA
+Guess Rd at North Pointe Dr (NB),6107,36.029968,-78.926933,"1A, 1B",0,NA
+North Pointe Dr at North Pointe Shopping Center (EB),6109,36.02893,-78.921299,1A,1,1
+North Pointe Dr at Broad St (EB),6110,36.028016,-78.91508,1A,1,1
+Guess Rd at Lamar St (SB),6114,36.026669,-78.923042,"1, 1B",0,1
+Guess Rd at Hillcrest Dr,6115,36.024448,-78.920269,"1, 1B",0,NA
+North Pointe Dr at Woodmont Dr,6116,36.03087,-78.92688,"1, 1A",0,NA
+Horton Rd at Duke St,6125,36.051277,-78.90699,"9, 9A",0,1
+Chalk Level Rd at Horton Rd (Westbound),6126,36.0512776,-78.911004,"9, 9A",0,NA
+Stadium Dr at Wyldewood Rd (Foxfire Apts),6128,36.053469,-78.919688,9A,0,NA
+New Castle Rd at Wyldewood Rd (SB),6129,36.05138,-78.92357,9A,0,NA
+Lawson St at Bacon St (EB),6130,35.974105,-78.885177,8,0,NA
+Briggs Ave at Person St (SB 2),6132,35.963091,-78.877635,8,0,1
+Briggs Ave at Riddle Rd,6133,35.9588,-78.8792,8,0,NA
+Capps St at S Alston Ave,6136,35.962295,-78.886911,8,0,NA
+Capps St at Bacon St,6137,35.965196,-78.88354,8,0,NA
+Hearthside St at Bacon St,6138,35.9664135,-78.882231,8,0,NA
+Hearthside St at Welch Pl,6139,35.967593,-78.883525,8,0,NA
+Fayetteville St at Tralea Dr (SB),6142,35.95593,-78.907567,"5, 5K, 7",0,NA
+Pickett Rd at Western Bypass Rd,6145,35.97373,-78.95925,10B,0,NA
+Fayetteville St at Pilot St (NB),6146,35.963849,-78.907069,"5, 5K",1,1
+Fayetteville St at Cornwallis Rd (NB),6147,35.960317,-78.910241,"5, 5K",0,NA
+Fayetteville Rd at Dunhill Dr (Pine Ridge Center),6153,35.9162891,-78.931658,"5, 14, 0805",0,1
+Roxboro St at Cornwallis Rd,6154,35.965529,-78.918751,7,0,NA
+Roxboro Rd at Crutchfield St (Duke Regional Hospital),6155,36.038368,-78.898424,"4, 9, 9A",0,NA
+Carver St at Meriwether Dr,6156,36.043206,-78.891931,"9, 9A",0,NA
+Club Blvd at Lindbergh St,6157,36.023083,-78.878771,"9, 9A, 9B",0,NA
+Dowd St at Gurley St (WB),6158,36.000394,-78.891915,"9, 9A, 9B",0,NA
+Dowd St at Gurley St (EB),6159,36.000316,-78.891527,"9, 9A, 9B",0,NA
+Dowd St at Hazel St (EB),6160,36.000336,-78.888906,"9, 9A, 9B",0,NA
+Dowd St at Alston Ave (WB),6161,36.000449,-78.88648,"9, 9A, 9B",0,NA
+Duke St at Cobb St,6162,35.98903,-78.908858,7,0,NA
+Chapel Hill Rd at Yates Church,6163,35.97405,-78.93693,"10, 10A, 10B",0,NA
+University Dr at Shannon Rd,6164,35.966229,-78.954307,"10, 10A",0,NA
+Old Chapel Hill Rd at Garrett Rd (WB),6165,35.949879,-78.96766,"10, 10A, 400",0,1
+Chapel Hill Rd at Colonial Apts (NB),6167,35.9704917,-78.938627,"10, 10A, 10B",0,NA
+Buchanan Blvd at Minerva Ave,6168,36.00442,-78.91237,11,0,NA
+LaSalle St at Duke Manor Apts (NB),6169,36.0152375,-78.946814,"11, D LL",0,NA
+Hillsborough Rd at Sparger Rd (Food Lion),6170,36.03292,-78.97917,"6B, 11",0,NA
+Lawson St at NCCU Track (EB),6171,35.976159,-78.896717,8,0,NA
+Hardee St at Holloway St,6172,35.99245,-78.865885,"3B, 3C",0,NA
+Holloway St at Southerland St,6173,35.990587,-78.860324,"3B, 3C, 23",0,NA
+E Main St at Driver St (WB),6176,35.985903,-78.877454,"2B, 23",0,NA
+Lawson St at Sima Ave (WB),6177,35.974569,-78.890915,8,0,1
+Morgan St at Mangum St,6182,35.99747,-78.89833,4,0,NA
+Shannon Rd at Auto Dr (Sams Club),6191,35.967547,-78.95519,10B,0,1
+Fayetteville Rd at Turmeric Ln,6193,35.937202,-78.907995,5,0,NA
+University Dr at Myra St (EB),6196,35.966524,-78.951709,"10, 10A, 10B",0,NA
+Witherspoon Blvd at McFarland Dr,6197,35.9509,-78.989783,"10, 10A, 400",1,1
+Mt. Moriah Rd at Danziger Dr,6198,35.9495031,-78.994395,"10, 10A, 400",0,NA
+Hillandale Rd at Hillandale Elementary,6201,36.05318,-78.93487,"1, 1B",0,NA
+Horton Rd at Sugarwood Pl,6202,36.05733,-78.933825,"1, 1B, 9A",0,0
+Horton Rd at Guess Rd (Harris Teeter),6203,36.057324,-78.931269,"1, 1B, 9A",1,1
+Guess Rd at Horton Rd (Walgreens),6204,36.0568763,-78.929312,"1, 1B",1,NA
+Guess Rd at Peppertree St,6205,36.05456,-78.92945,"1, 1B",0,NA
+Guess Rd at Crystal Lake Rd,6206,36.0497,-78.92945,"1, 1B",0,NA
+Guess Rd at Bogarde St,6207,36.04375,-78.92957,"1, 1B",0,NA
+Hillandale Rd at Pinetree Ct,6210,36.044065,-78.935233,"1, 1B",0,1
+Hillandale Rd at Samuel Dr,6211,36.04822,-78.93616,"1, 1B",1,NA
+Hillandale Rd at Croasdaile Farms,6212,36.050761,-78.935439,"1, 1B",0,NA
+Page Rd at US 70,6217,35.931455,-78.810467,"2, 2A",0,1
+Brier Leaf Ln at Brier Creek Pkwy,6221,35.90902,-78.7863,15,0,1
+Brier Leaf Ln at Little Brier Creek Ln,6224,35.91134,-78.7859,15,0,0
+Brier Creek Pkwy at Little Brier Creek Ln,6225,35.90927,-78.78484,15,0,1
+TW Alexander Dr at Glenwood Ave,6226,35.918259,-78.786511,15,1,1
+Rigsbee Ave at Seminary St,6241,35.999,-78.89989,4,1,NA
+Rigsbee Ave at Corporation St (NB),6242,36.001766,-78.899917,4,0,NA
+Geer St at Rigsbee Ave,6243,36.00374,-78.89963,4,0,NA
+Geer St at Glendale Ave,6244,36.00376,-78.89647,4,0,NA
+Geer St at Glendale Ave,6245,36.00384,-78.89649,4,0,NA
+Geer St at Rigsbee Ave,6246,36.00382,-78.89951,4,0,NA
+Rigsbee Ave at Corporation St (SB),6247,36.002316,-78.900042,4,0,1
+Rigsbee Ave at Seminary St,6248,35.99942,-78.89997,4,0,NA
+Renaissance Shopping Center,6251,35.904003,-78.937392,5,1,1
+Renaissance Pkwy at Renaissance Village,6252,35.902963,-78.953911,"5, 14, 800, 800S",1,1
+Highgate Dr at Audubon Lake Dr,6253,35.910733,-78.945155,"5, 14",0,NA
+Highgate Dr at Harrier Ct,6254,35.91058,-78.94274,"5, 14",0,NA
+Highgate Dr at NC 54,6255,35.9102,-78.94089,"5, 14",0,NA
+Fayetteville St at Cook Rd (SB),6256,35.952898,-78.90558,"5, 5K, 7",0,NA
+Fayetteville St at Cook Rd (Hillside HS),6257,35.95325,-78.90559,"5, 5K, 7",1,NA
+Fayetteville Rd at Tralea Dr (Mt Zion Church),6258,35.955957,-78.907293,"5, 5K, 7",0,NA
+Miami Blvd at Stirrup Creek Dr (PBM Graphics),6261,35.920121,-78.848985,"15, RTP OD",0,NA
+Miami Blvd at Bethesda Elementary,6263,35.941329,-78.839052,15,0,NA
+Holloway St at Rummel St,6264,35.987727,-78.847973,"3B, 3C, 23",1,NA
+Holloway St at Lynn Rd,6265,35.9868,-78.84421,3B,0,NA
+Miami Blvd at New Haven Dr,6266,35.9363548,-78.842472,15,0,NA
+TW Alexander Dr at Miami Blvd (EB),6267,35.923375,-78.84512,"15, RTP OD",1,1
+TW Alexander Dr at Center Point (EB),6268,35.921978,-78.83374,"15, RTP OD",0,NA
+TW Alexander Dr at Roche Dr (LabCorp),6269,35.9187826,-78.824637,"15, RTP OD",0,NA
+TW Alexander Dr at Creekside Townhomes,6270,35.9224038,-78.837375,"15, RTP OD",0,NA
+TW Alexander Dr at Miami Blvd (WB),6272,35.9239,-78.845353,"15, RTP OD",0,NA
+Miami Blvd at Methodist St,6273,35.9364122,-78.842152,15,0,NA
+NC 54 at S Alston Ave (EB),6274,35.9005997,-78.889397,"12, 12B, 14, 800, 805, RTP OD",0,NA
+S Alston Ave at Kestrel Heights School (SB),6275,35.89857,-78.88909,"12, 14, RTP OD",0,NA
+S Alston Ave at Duke Health (SB),6276,35.887359,-78.885144,"12, 14, RTP OD",0,NA
+S Alston Ave at Falls Pointe Apts (SB),6277,35.8842178,-78.885886,"12, 14, RTP OD",0,1
+NC 55 at Sedwick Dr (NB),6278,35.89021,-78.89596,"12, 14, RTP OD",0,NA
+NC 55 at Golden Corral (NB),6279,35.8971,-78.89687,"12, 14, RTP OD",0,NA
+TW Alexander Dr at Stirrup Creek Dr,6281,35.921917,-78.841865,"15, RTP OD",1,1
+NC 55 at Allendown Dr (NB),6283,35.89872,-78.89655,"12, 14, RTP OD",0,NA
+Chapel Dr at Duke University Rd (Duke News),6286,35.9980674,-78.933441,"6, 6B, DRX, D C2, D C3, D C4, D CCX, D SWX",0,NA
+S Alston Ave at Englert Dr,6287,35.8955,-78.88905,"12, 14, RTP OD",0,NA
+E Geer St at Fay St,6288,36.004209,-78.875693,"2B, 23",0,NA
+E Geer St at Midland Terrace (out),6289,36.01428,-78.86316,3,0,NA
+E Geer St at Landon Farms (out),6290,36.01994,-78.84943,3,1,NA
+E Geer St at Landon Farms Ln (WB),6293,36.02016,-78.84949,3,1,NA
+E Geer St at Midland Terrace (WB),6294,36.01463,-78.86303,3,0,NA
+Roxboro Rd at Liberty St,6297,35.994534,-78.89762,"3, 3B, 3C, 9, 9A, 9B",0,NA
+Pettigrew St at Mangum St (WB),6299,35.994282,-78.901765,"2A, 2B, 3, 3B, 3C, 8, 9, 9A, 9B",0,NA
+Pettigrew St at Roxboro St (EB),6300,35.992053,-78.898873,"2A, 2B",0,NA
+E Geer St at Glenview Station,6304,36.02681,-78.84196,3,1,1
+E Chapel Hill St at Main St,6305,35.996922,-78.904454,"2, 4",1,1
+E Main St at Corcoran St (EB),6306,35.995616,-78.901917,"2, BCC",0,1
+E Main St at Mangum St (EB),6307,35.994748,-78.900248,"2, BCC",0,1
+E Chapel Hill St at Market St,6308,35.99694,-78.902543,4,1,NA
+Dillard St at E Main St (Urban Ministries),6309,35.9928523,-78.895217,"3, 3B, 3C",1,1
+US 70 at Laurel Dr,6310,35.95604,-78.84148,"2, 2A",0,NA
+Angier Ave at Wood Chapel Ln (WB),6311,35.94205,-78.832415,"2, 2A",0,NA
+Angier Ave at Miami Blvd,6312,35.945405,-78.837467,"2, 2A",0,NA
+Angier Ave at Bungalow Ave,6313,35.94963,-78.84415,"2, 2A",0,NA
+Angier Ave at Midway Ave,6314,35.96667,-78.85914,"2, 2A",0,NA
+Roxboro Rd at Foushee St,6315,36.01658,-78.88992,4,0,NA
+W Morgan St at Foster St (Downtown YMCA),6316,35.998204,-78.901495,4,0,NA
+Pettigrew St at Mangum St (EB),6317,35.994004,-78.901578,"2A, 2B, 3, 3B, 3C, 8, 9, 9A, 9B",0,NA
+Martin Luther King Jr Pkwy at Stratford Lakes Dr (WB),6319,35.941419,-78.912389,7,0,1
+MLK Pkwy at Stratford Lake Dr,6320,35.941049,-78.912265,7,0,NA
+Cornwallis Rd at Roxboro Rd,6322,35.96455,-78.91784,7,1,NA
+Lakewood Ave at Fayetteville St,6330,35.986421,-78.899168,"5, 5K",0,NA
+Erwin Rd at Trent Dr (WB),6331,36.008035,-78.934803,"6, 6B, BCC",0,1
+American Dr at Constitution Dr,6333,36.016633,-78.966937,6,0,0
+Chapel Dr at Duke University Rd (Alumni House),6334,35.9979148,-78.933508,"6, 6B, DRX, D C3",0,NA
+Hillsborough Rd at Cole Mill Rd (CVS),6335,36.0221326,-78.953116,11,1,NA
+Gregson St at Main St (Brightleaf Square),6336,35.9995663,-78.909754,"1, 1A, 1B, 11",0,1
+Cornwallis Rd at Laurel Oaks Dr (SB),6337,35.9346544,-78.891561,"12, 12B",0,NA
+NC 55 at Martin Luther King Jr Pkwy,6338,35.9319987,-78.888631,"12, 12B",0,NA
+NC 55 at Odyssey Dr (out),6339,35.9283056,-78.889281,"12, 12B",0,NA
+NC 55 at Carpenter Fletcher Rd (out),6340,35.9145571,-78.891884,"12, 12B",0,NA
+Highway 98 at Joyland Ave,6343,35.989426,-78.854731,3C,0,NA
+Holloway St at Herbert St (WB),6344,35.9917388,-78.864677,"3B, 3C, 23",0,0
+Taylor St at Driver St (Holton Career Center),6345,35.988947,-78.879199,"2B, 23",1,1
+Taylor St at Driver St (EB),6347,35.988829,-78.877644,"2B, 23",0,1
+Holloway St at Durham Ridge Assisted Living,6348,35.9833961,-78.8297,"3B, 23",1,0
+Mineral Springs Rd at Destrier Dr,6349,35.991105,-78.817519,"3B, 23",0,NA
+Freeman Rd at Mineral Springs Rd,6350,35.994912,-78.815221,"3B, 23",0,NA
+Ross Rd at Idlewood Rd,6351,35.992538,-78.848785,"3B, 23",0,NA
+Carver St at Commons Blvd (EB),6366,36.041285,-78.895036,"9, 9A",0,1
+Chapel Hill Rd at E Cornwallis Rd,6375,35.974099,-78.936789,"10, 10A, 10B",0,NA
+Anderson St at Main St,6377,36.007677,-78.929325,BCC,0,NA
+Main St at Swift Ave,6379,36.005919,-78.919933,BCC,0,0
+Main St at Campus Dr (EB),6380,36.0033,-78.914666,BCC,1,1
+Main St at West Village (EB),6381,35.9982965,-78.906512,BCC,0,1
+E Main St at Roxboro St (EB),6382,35.993266,-78.897749,"2, BCC",0,1
+E Main St at Morning Glory Ave (Golden Belt),6383,35.989592,-78.891093,BCC,1,1
+Main St at West Village (WB),6386,35.998085,-78.90595,BCC,0,1
+Main St at Gregson St (WB),6387,35.999935,-78.909003,"11, BCC",0,1
+Main St at Campus Dr (WB),6389,36.00379,-78.91528,BCC,0,1
+Main St at Iredell St,6390,36.006403,-78.920878,BCC,0,1
+Erwin Rd at Anderson St (Westbound),6392,36.00706,-78.93043,BCC,0,NA
+Holloway St at Hyde Park Ave (WB),6393,35.994507,-78.881001,"3, 3B, 3C",1,1
+Capps St at Athens St (EB),6394,35.963236,-78.885675,8,0,0
+Briggs Ave at Person St (SB 1),6395,35.969367,-78.8773,8,0,0
+Briggs Ave at Person St (UniFirst Uniforms),6396,35.962986,-78.877357,8,0,1
+Alston Ave at Riddle Rd (NB),6397,35.957049,-78.883391,8,0,0
+Capps St at S Alston Ave,6398,35.962358,-78.887144,8,0,NA
+Capps St at Bacon St,6399,35.96525,-78.883684,8,0,NA
+W Club Blvd at Onslow St (Walltown Park),6424,36.017045,-78.914519,"1, 1A, 1B",1,1
+Broad St at Hillcrest Dr,6426,36.023967,-78.917948,"1, 1A",0,NA
+W Club Blvd at Onslow St (EB),6430,36.016904,-78.914418,"1, 1A, 1B",0,1
+Hardee St at Benning St (Naples Terrace),6433,36.003308,-78.867023,3,1,1
+Holloway St at Alma St,6435,35.994379,-78.87607,"3, 3B, 3C",0,NA
+Fayetteville St at Umstead St,6439,35.982668,-78.898808,"5, 5K",0,1
+Hillsborough Rd at Operations Dr (EB),6440,36.033563,-78.969258,"6B, 11",0,NA
+Duke University Rd at Chapel Dr,6441,35.997635,-78.93254,"6, 6B, D C3",0,NA
+Lakewood Ave at Roxboro St (Southside Lofts),6442,35.9874564,-78.901112,"5, 5K",0,NA
+Cornwallis Rd at Campus Crossings (SB),6444,35.9443743,-78.900797,"12, 12B",0,NA
+S Alston Ave at Capitola Dr (SB),6446,35.891477,-78.886676,"12, 14, RTP OD",0,NA
+Cornwallis Rd at Laurel Oaks,6447,35.93505,-78.891641,"12, 12B",0,NA
+Cornwallis Rd at Campus Crossings (NB),6448,35.94424,-78.900473,"12, 12B",0,NA
+Ellis Rd at New Haven Dr,6450,35.9391957,-78.846375,"15, RTP OD",0,NA
+Ellis Rd at Research Triangle Academy (EB),6451,35.938172,-78.85094,15,0,NA
+Ellis Rd at Research Triangle Academy (WB),6452,35.938344,-78.850555,15,0,NA
+Roxboro Rd at Ryan St (NB),6455,36.053445,-78.903186,"9, 9B",0,NA
+Roxboro Rd at Riverside Square,6459,36.0739649,-78.909004,9B,0,NA
+Milton Rd at Durham County Library,6463,36.087335,-78.913132,9B,0,NA
+Roxboro Rd at Latta Rd,6464,36.078482,-78.910402,9B,0,NA
+Roxboro Rd at Rippling Stream Rd,6465,36.070482,-78.908085,9B,0,NA
+New Castle Rd at Stadium Dr (Strawberry Hill Apts),6466,36.050294,-78.920754,9A,0,NA
+Lawson St at BRITE Science Complex,6470,35.976326,-78.904745,"7, 8",0,1
+Herndon Rd at Fayetteville Rd,6472,35.905677,-78.93684,5,0,NA
+Chapel Hill Rd at Valley Terrace (NB),6473,35.972362,-78.93754,"10, 10A, 10B",0,NA
+Fayetteville Rd at Torrey Pine Ln,6474,35.917921,-78.930635,"5, 14",0,1
+Fayetteville Rd at Geneva Dr (Southpoint Glen Apts),6475,35.919261,-78.929701,"5, 14, 0805",0,NA
+Fayetteville Rd at Timothy Ave (WG Pearson Elementary),6476,35.957075,-78.90865,"5, 5K, 7",0,1
+NC 98 at Little Wonders,6478,35.982391,-78.825472,"3B, 23",0,1
+Holloway St at Ganyard Farm Way (Dollar General),6479,35.9843423,-78.833886,"3B, 23",1,1
+Broad St at Forest Rd (SB),6484,36.024962,-78.917114,1A,0,1
+Hardee St at Mimosa St (SB),6485,36.001442,-78.866822,"2B, 3, 23",0,0
+Hardee St at Landon St (SB),6486,35.999863,-78.865405,"2B, 3, 23",0,0
+Hardee St at Delano St (SB),6487,35.99722,-78.864613,"2B, 3, 23",0,0
+Raynor St at Hardee St (WB),6488,35.995867,-78.865219,"2B, 3, 23",0,0
+Raynor St at The Village (EB),6489,35.994215,-78.869617,"3, 3B, 3C",0,1
+Holloway St at Elizabeth St (WB),6490,35.994603,-78.890416,"3, 3B, 3C",0,NA
+E Main St at Elm St (EB),6491,35.988444,-78.889471,"2, 2A, 2B",0,1
+North Pointe Dr at Red Roof Inn (Outbound),6492,36.030418,-78.923664,"1, 1A",0,NA
+Willard St at Blackwell St (EB),6493,35.9913861,-78.905971,"5, 5K, 7, 10, 10A, 10B",0,NA
+Blackwell St at Forest Hills Apts (NB),6494,35.988819,-78.906473,"5, 5K",1,1
+Martin Luther King Jr Pkwy at Bay Point Dr,6495,35.942215,-78.918796,7,0,1
+Milton Rd at Long Cresent Dr,6498,36.091955,-78.914271,9B,0,NA
+Trent Dr at Erwin Rd (Clipp Research Bldg),6499,36.0068223,-78.934392,"6, 6B, D H5",0,1
+MLK Pkwy at Fayetteville Rd (WB),6501,35.939808,-78.907484,"5K , 7",0,NA
+Main St at Erwin Rd,6502,36.00648,-78.92242,"BCC, D H5",0,0
+E Main St at Hood St (Durham Police Dept),6503,35.990518,-78.892972,"2, 2A, 2B, BCC",1,1
+E Main St at Elizabeth St,6505,35.990614,-78.892867,"2, 2A, 2B, BCC",1,1
+E Main St at Queen St (WB),6506,35.993207,-78.897352,"2, BCC",0,1
+E Geer St at Faucette Ave (WB),6507,36.012116,-78.86558,3,0,NA
+Buchanan Blvd at Urban Ave (NB),6510,36.008645,-78.912297,11,0,1
+Buchanan Blvd at Urban Ave (SB),6515,36.008853,-78.912459,11,0,0
+Ellis Rd at Miami Blvd (EB),6520,35.942398,-78.838773,15,0,NA
+Roxboro Rd at Pacific Ave,6521,36.046059,-78.902897,"4, 9, 9A",0,NA
+Carver St at Danube Ln,6523,36.045234,-78.889708,9B,0,NA
+Ben Franklin Blvd at Danube Ln (WB),6524,36.04796,-78.888989,9B,0,1
+Dowd St at Mangum St,6527,36.0003191,-78.8959,"9, 9A, 9B",1,NA
+Junction Rd at Ross Rd,6530,35.992522,-78.856781,"3B, 23",0,NA
+Pettigrew St at Roxboro St (WB),6531,35.992954,-78.899523,"2A, 2B, 3, 3B, 3C, 8",0,NA
+TW Alexander Dr at Roche Dr (Implus),6532,35.918901,-78.823652,"15, RTP OD",0,1
+Mangum St at Ramseur St,6533,35.994536,-78.901181,"9, 9A, 9B",1,1
+Ben Franklin Blvd at Medical Park Dr (Voyager Academy),6536,36.047566,-78.893889,9B,0,1
+W Enterprise St at E Forest Hills Blvd (ATT),6538,35.9836734,-78.909319,7,0,1
+Carver St at Hillandale Rd,6541,36.037238,-78.936703,1,0,1
+Lednum St at Leon St,6543,36.0270032,-78.90973,1A,0,NA
+Leon St at N Buchanan Blvd (WB),6544,36.025586,-78.911295,1A,0,1
+Morreene Rd at Campus Walk Ave (NB),6545,36.008762,-78.954635,"6, 6B, D LL",0,NA
+American Dr at Hillgrand Dr (WB),6546,36.015459,-78.962606,6,0,0
+American Dr at Hillgrand Dr (EB),6547,36.015324,-78.962568,6,0,0
+Morreene Rd at American Dr (SB),6548,36.013095,-78.956523,"6, 6B",0,0
+Morreene Rd at Campus Walk Ave (SB),6549,36.009157,-78.954751,"6, 6B",0,NA
+Morreene Rd at Sherwood Dr,6550,36.006584,-78.954799,"6, 6B",0,NA
+Morreene Rd at Glasson St (SB),6551,36.005412,-78.954752,"6, 6B",0,1
+Morreene Rd at Erwin Rd,6552,36.0037163,-78.952824,"6, 6B",0,NA
+Morreene Rd at Tremont Dr (WB),6554,36.018082,-78.95777,6B,0,NA
+Neal Rd at Bennett Memorial Rd,6555,36.02942,-78.973334,6B,0,NA
+Neal Rd at Bennett Memorial Rd (Triangle Day School),6557,36.0288964,-78.973275,6B,0,NA
+Morreene Rd at Tremont Dr (EB),6558,36.018111,-78.957885,6B,0,NA
+Neal Rd at Hillsborough Rd,6559,36.0323227,-78.973551,"6B, 11",0,NA
+W Murray Ave at Broad St,6562,36.028975,-78.911807,1A,0,NA
+NC 751 at Southpoint Autopark Dr (Sheetz),6563,35.907411,-78.960493,14,0,1
+Leon St at Haverford St (WB),6564,36.025574,-78.9133,1A,0,NA
+Angier Ave at Vine St (EB),6565,35.983261,-78.88106,"2, 2A, 2B",0,NA
+Page Rd at Foxridge Crescent,6566,35.929722,-78.814172,"2, 2A",0,NA
+Guthrie Ave at Main St,6567,35.985709,-78.87608,2B,0,NA
+Miami Blvd at Raynor St,6568,35.99431,-78.870582,"2B, 23",0,NA
+Cheek Rd at Andover Dr,6569,36.004663,-78.868752,"2B, 23",0,NA
+Main St at Guthrie Ave,6570,35.985825,-78.876276,"2B, 23",0,NA
+Guthrie Ave at Angier Ave,6571,35.981641,-78.876153,2B,0,1
+Liberty St at Elizabeth St (EB),6572,35.992955,-78.891777,"3, 3B, 3C",0,NA
+Hardee St at Cheek Rd (NB),6573,36.004669,-78.86686,3,0,0
+Liberty St at Elizabeth St (WB),6574,35.993047,-78.891945,"3, 3B, 3C",0,NA
+Angier Ave at Bingham St (EB),6575,35.9794449,-78.872427,"2, 2A",0,NA
+Fayetteville St at Riddle Rd (SB),6576,35.950458,-78.904077,"5, 5K, 7",0,NA
+NC 751 at Southpoint Autopark Dr,6577,35.908967,-78.960339,"5, 14",0,NA
+NC 751 at NC 54 (NB),6578,35.917406,-78.961259,"5, 14",0,NA
+Hope Valley Commons Park-and-Ride,6579,35.919043,-78.959804,"5, 14, 20",0,NA
+NC 55 at Meredith Dr (SB),6580,35.899714,-78.896512,"14, RTP OD",0,NA
+NC 55 at Allendown Dr (SB),6581,35.897584,-78.897057,"14, RTP OD",0,NA
+NC 55 at Crossland Hotel (SB),6582,35.896328,-78.897209,"14, RTP OD",0,NA
+NC 55 at Sedwick Dr (Greenwood Commons),6583,35.890444,-78.896371,"14, RTP OD",0,NA
+S Alston Ave at Falls Pointe Apts (NB),6584,35.884425,-78.885701,"14, RTP OD",0,0
+S Alston Ave at Duke Health (NB),6585,35.887872,-78.884827,"14, RTP OD",0,NA
+S Alston Ave at Capitola Dr (NB),6586,35.891605,-78.886506,"14, RTP OD",0,NA
+S Alston Ave at Triangle Dr,6587,35.895733,-78.888837,"12B, 14, RTP OD",0,NA
+S Alston Ave at Kestrel Heights School (NB),6588,35.898591,-78.888912,"12B, 14, RTP OD",0,NA
+NC 751 at NC 54 (SB),6589,35.917645,-78.961602,14,0,NA
+MLK Pkwy at Cook Rd,6590,35.9465,-78.922034,7,1,NA
+S Roxboro St at Kroger,6591,35.949189,-78.922821,7,1,NA
+MLK Pkwy at Cook Rd,6592,35.947241,-78.923393,7,0,NA
+S Roxboro St at Chestnut St (SB),6593,35.9856024,-78.902793,8,0,NA
+Alston Ave at Chenault Dr,6594,35.959272,-78.884819,8,0,0
+Alston Ave at Riddle Rd (SB),6595,35.956898,-78.883489,8,0,0
+Lawson Ave at NCCU Track (WB),6597,35.975917,-78.895638,8,0,NA
+Lawson Ave at Fayetteville St,6598,35.976496,-78.9003,8,0,NA
+Lawson Ave at Concord St (WB),6599,35.976459,-78.903385,8,0,1
+Roxboro Rd at Dillard St,6600,35.991461,-78.900016,8,0,NA
+New Castle Rd at Stadium Dr (WB),6601,36.05058,-78.919955,"9, 9A",0,NA
+New Castle Rd at Foxfire Apartments (NB),6602,36.050248,-78.923365,"9, 9A",0,NA
+New Castle Rd at Wyldewood Rd (NB),6603,36.051544,-78.923509,"9, 9A",0,NA
+Stadium Dr at Wyldewood Rd (NB),6604,36.053475,-78.919532,"9, 9A",0,NA
+Horton Rd at Delbert Ave (WB),6605,36.057551,-78.924872,9A,0,NA
+Guess Rd at Horton Rd (Cross Creek Shopping Center),6606,36.058349,-78.92896,9A,0,NA
+Rose of Sharon at Riverside High School,6607,36.062281,-78.94431,9A,0,NA
+Horton Rd at Guess Rd (Rite-Aid),6608,36.057407,-78.927739,9A,0,1
+Horton Rd at Delbert Ave (EB),6609,36.057416,-78.924842,9A,0,NA
+Stadium Dr at Horton Rd,6610,36.055213,-78.9195,9A,0,NA
+Ben Franklin Blvd at Medical Park Dr (WB),6611,36.047275,-78.895773,9B,0,1
+Pacific Ave at Capital St,6612,36.046661,-78.898592,9B,0,NA
+Roxboro Rd at Fairfield Rd (NB),6613,36.048652,-78.903264,9B,0,NA
+Roxboro Rd at Denfield Rd,6614,36.050798,-78.903468,9B,0,NA
+Milton Rd at Post Office,6615,36.089576,-78.913768,9B,0,NA
+Roxboro Rd at Ryan St (SB),6616,36.053843,-78.90335,"9, 9B",0,NA
+Stadium Dr at Wyldewood Rd (SB),6617,36.052875,-78.919698,9,0,NA
+Morehead Ave at Duke St (WB),6618,35.991603,-78.90854,"10, 10A, 10B",1,1
+Cornwallis Rd at Rogers Herr School,6619,35.97422,-78.935676,"10, 10A",0,NA
+Garrett Rd at Durham-Chapel Hill Blvd (Goodwill),6620,35.958347,-78.974535,"10, 10A",0,1
+Garrett Rd at Glenbrook West Apartments,6621,35.9525233,-78.97144,"10, 10A",1,1
+Morehead Ave at Duke St (EB),6622,35.9913495,-78.908139,"10, 10A, 10B",0,1
+Pacific Ave at Roxboro Rd,6624,36.046149,-78.901773,9B,0,NA
+NC 55 at Service Station,6627,35.9121716,-78.892364,"12, 12B",0,NA
+Alston Ave at Dayton St (NB),6628,35.97355,-78.893831,"12, 12B",0,NA
+TW Alexander Dr at Page Rd (EB),6629,35.919018,-78.810352,"15, RTP OD",0,NA
+TW Alexander at WakeMed (WB),6630,35.918865,-78.783619,15,0,NA
+TW Alexander Dr at Page Rd (WB),6631,35.919395,-78.811042,"15, RTP OD",0,NA
+S Roxboro St at Chestnut St (NB),6632,35.986956,-78.902653,8,0,NA
+Neal Rd at Bishopstone Dr,6633,36.0268317,-78.965132,6B,0,NA
+Neal Rd at Wildberry Ln (McMannen UMC),6634,36.0268322,-78.963069,6B,0,NA
+Geer St at Faucette Ave,6635,36.012037,-78.865488,3,0,NA
+Fayetteville Rd at MLK Pkwy (SB),6637,35.941599,-78.906351,"5, 5K, 7",0,NA
+Fayetteville Rd at MLK Pkwy (NB),6638,35.941304,-78.905965,"5, 7",0,NA
+Garrett Rd at Carillon Assisted Living Center,6643,35.9544477,-78.972491,"10, 10A",0,NA
+Garrett Rd at Yates Baptist Association,6644,35.954134,-78.972551,"10, 10A",0,NA
+Ellis Rd at Miami Blvd (WB),6645,35.942709,-78.8393,15,0,NA
+Stratford Lakes Dr at Fayetteville Rd,6646,35.942775,-78.908427,5K,0,1
+LaSalle St at Kangaroo St (The Heights Apts),6647,36.0126271,-78.948254,"11, D LL",0,NA
+Wedgedale Ave at Manson Pl,6648,35.983262,-78.843685,"3C, 23",0,NA
+MLK Pkwy at Lakeside Gardens,6649,35.9433901,-78.920001,7,1,NA
+Roxboro Rd at Frasier St,6650,36.04258,-78.9007,"4, 9, 9A",1,NA
+Roxboro Rd at Faith Community Church,6652,36.065788,-78.905836,"9, 9B",0,NA
+Morreene Rd at Glasson St (NB),6657,36.005668,-78.954668,6B,0,1
+E Main St at Angier Ave,6658,35.989672,-78.891537,"2, 2A, 2B",0,1
+Taylor St at Gary St (EB),6659,35.988566,-78.872156,"2B, 23",0,NA
+Taylor St at Gary St (WB),6660,35.988696,-78.872383,"2B, 23",0,NA
+Dillard St at E Main St (County Public Health),6661,35.9916377,-78.89627,"2A, 2B, 3, 3B, 3C",0,1
+Operations Dr at Western Park Pl,6662,36.033041,-78.969131,6B,0,NA
+Fayetteville Rd at Hillside High School,6663,35.9515327,-78.904549,"5, 5K, 7",0,NA
+TW Alexander at Fun Park Dr (Inbound),6664,35.918285,-78.796504,15,0,NA
+TW Alexander Dr at Center Point (WB),6665,35.922153,-78.833104,"15, RTP OD",0,NA
+Research Dr at Circuit Dr,6670,36.00656,-78.941307,BCC,0,NA
+Main St at Chapel Hill St (EB),6671,35.996508,-78.903376,BCC,0,1
+Main St at Chapel Hill St (WB),6672,35.9974439,-78.904852,BCC,0,1
+Main St at 9th St (WB),6673,36.00668,-78.92383,BCC,0,NA
+Main St at Rutherford St,6674,36.007204,-78.926381,BCC,0,NA
+Research Dr at Erwin Rd,6675,36.008053,-78.942535,BCC,0,NA
+Guess Rd at Victory Blvd,6676,36.06131,-78.92903,9A,0,NA
+Angier Ave at East End Ave,6677,35.97419,-78.86827,"2, 2A",0,NA
+Angier Ave at Midway Ave,6678,35.96698,-78.85955,"2, 2A",0,NA
+Pleasant Dr at Angier Ave,6679,35.963711,-78.856163,"2, 2A",0,NA
+Great Jones St at Main St (Museum of Durham History),6680,35.9978305,-78.905309,4,0,1
+SW Durham Dr at Durham-Chapel Hill Blvd,6681,35.9536015,-78.990104,"10, 10A",0,1
+North Pointe Dr at Woodmont Dr (EB),6684,36.030337,-78.926126,1A,0,NA
+US 70 at Peyton Ave (Family Dollar),6685,35.952251,-78.839188,"2, 2A",0,NA
+Ivey Wood Ln at Springwood Park Apts,6686,35.971231,-78.847688,3C,0,NA
+Cameron Blvd at Science Dr,6687,35.99479,-78.94658,20,0,NA
+Little Brier Creek Ln at TW Alexander Dr,6688,35.915749,-78.790733,15,0,NA
+Brier Creek Pkwy at Skyland Ridge Pkwy,6689,35.9139799,-78.780543,"15, GOR 70X",0,NA
+Madden Ave at Roxboro Rd,6691,36.101322,-78.910826,9B,0,NA
+W Enterprise St at E Forest Hills Blvd (EB),6693,35.9835981,-78.909237,7,0,NA
+West Campus Chapel,12018,36.0009589,-78.938264,"RSX, D C1, D C2, D C4, D CCX, D CSW, D SWX",NA,NA
+Research Dr at Erwin Rd (Eye Center Garage),12042,36.0079738,-78.942294,"BCC, D H5, D H6",NA,NA
