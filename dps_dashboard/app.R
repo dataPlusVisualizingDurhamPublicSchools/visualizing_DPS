@@ -72,16 +72,6 @@ iconSet <- iconList(
 sidebar <- {dashboardSidebar(
     sidebarMenu(
         menuItem("Our Ten Community Schools - Home", tabName = "home"),
-        menuItem(tabName = "CCS", text = "C.C. Spaulding"),
-        menuItem(tabName = "EastWay", text = "Eastway"),
-        menuItem(tabName = "EKPowe", text = "E.K. Powe"),
-        menuItem(tabName = "FayettevilleSt", text = "Fayetteville St"),
-        menuItem(tabName = "ForestView", text = "Forest View"),
-        menuItem(tabName = "Lakewood", text = "Lakewood"),
-        menuItem(tabName = "Parkwood", text = "Parkwood"),
-        menuItem(tabName = "Southeast", text = "Southeast"),
-        menuItem(tabName = "Hillside", text = "Hillside"),
-        menuItem(tabName = "Jordan", text = "C E Jordan"),
         menuItem("School Statistics", tabName = "statstab"),
         menuItem("Maps", tabName = "mapstab")
     )
@@ -207,38 +197,6 @@ body <- {dashboardBody(
                  br(),
                  br()
         )},
-        
-        #School Pages
-        tabItem(tabName = "CCS",
-                h2("Insert cc Info")
-        ),
-        tabItem(tabName = "EastWay",
-                h2("Insert Eastway Info")
-        ),
-        tabItem(tabName = "EKPowe",
-                h2("Insert EK Powe Info")
-        ),
-        tabItem(tabName = "FayettevilleSt",
-                h2("Insert Fayetteville St Info")
-        ),
-        tabItem(tabName = "ForestView",
-                h2("Insert Forest View Info")
-        ),
-        tabItem(tabName = "Lakewood",
-                h2("Insert Lakewood Info")
-        ),
-        tabItem(tabName = "Parkwood",
-                h2("Insert Parkwood Info")
-        ),
-        tabItem(tabName = "Southeast",
-                h2("Insert Southeast Info")
-        ),
-        tabItem(tabName = "Hillside",
-                h2("Insert Hillside Info")
-        ),
-        tabItem(tabName = "Jordan",
-                h2("Insert CE Jordan Info")
-        ),
         
         #School Stats
         {tabItem(tabName = "statstab",
