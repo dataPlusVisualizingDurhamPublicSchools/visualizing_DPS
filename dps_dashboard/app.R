@@ -71,6 +71,7 @@ iconSet <- iconList(
 
 sidebar <- {dashboardSidebar(
     sidebarMenu(
+        id = "TabItems",
         menuItem("Our Ten Schools - Home", tabName = "home"),
         menuItem("Maps", tabName = "mapstab"),
         menuItem("School Statistics", tabName = "statstab")
@@ -82,120 +83,25 @@ body <- {dashboardBody(
     tabItems(
         #Landing Page
         {tabItem(tabName = "home",
-                 br(),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", height = 200)),
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", height = 200)),
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", height = 200)),
-                 ),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4, h1("CC Spaulding Elementary")),
-                          column(width=4, h1("Eastway Elementary")),
-                          column(width=4, h1("E K Powe Elementary"))
-                 ),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4, h4("Click below to view info on C.C. Spaulding Elementary.")),
-                          column(width=4, h4("Click below to view info on Eastway Elementary.")),
-                          column(width=4, h4("Click below to view info on E.K. Powe Elementary."))
-                 ),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4,
-                                 actionButton("button", "View C.C. Spaulding Elementary >>")),
-                          column(width=4,
-                                 actionButton("button", "View Eastway Elementary >>")),
-                          column(width=4,
-                                 actionButton("button", "View E.K. Powe Elementary >>"))
-                 ),
-                 br(),
-                 br(),
-                 br(),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", width=200)),
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", width=200)),
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", width=200))
-                 ),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4, h1("Fayetteville St Elementary")),
-                          column(width=4, h1("Forest View Elementary")),
-                          column(width=4, h1("Lakewood Elementary"))
-                 ),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4, h4("Click below to view info on Fayetteville Street Elementary.")),
-                          column(width=4, h4("Click below to view info on Forest View Elementary")),
-                          column(width=4, h4("Click below to view info on Lakewood Elementary."))
-                 ),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4,
-                                 actionButton("button", "View Fayetteville Street Elementary >>")),
-                          column(width=4,
-                                 actionButton("button", "View Forest View Elementary >>")),
-                          column(width=4,
-                                 actionButton("button", "View Lakewood Elementary >>"))
-                 ),
-                 br(),
-                 br(),
-                 br(),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", width=200)),
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", width=200)),
-                          column(width=4,
-                                 img(src="School Image_nocircle.png", width=200))
-                 ),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4, h1("Parkwood Elementary")),
-                          column(width=4, h1("Southwest Elementary")),
-                          column(width=4, h1("Hillside High"))
-                 ),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4, h4("Click below to view info on Parkwood Elementary.")),
-                          column(width=4, h4("Click below to view info on Southwest Elementary.")),
-                          column(width=4, h4("Click below to view info on Hillside High."))
-                 ),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=4,
-                                 actionButton("button", "View Parkwood Elementary >>")),
-                          column(width=4,
-                                 actionButton("button", "View Southwest Elementary >>")),
-                          column(width=4,
-                                 actionButton("button", "View Hillside High >>"))
-                 ),
-                 br(),
-                 br(),
-                 br(),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=12,
-                                 img(src="School Image_nocircle.png", width=200))
-                 ),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=12, h1("Jordan High"))
-                 ),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=12, h4("Click below to view info on Jordan High."))
-                 ),
-                 br(),
-                 fluidRow(class = "text-center", width=12,
-                          column(width=12,
-                                 actionButton("button", "View Jordan High >>"))
-                 ),
-                 br(),
-                 br()
+                 fluidRow(
+                     class = "text-center",
+                     box(title = "Visualizing Durham Public Schools",
+                         width = 12,
+                         background = "navy"),
+                     box(title = "Project Objective",
+                         width = 6,
+                         background = "light-blue",
+                         box(width = 12)),
+                     box(title = "How Will We Do This?",
+                         width =6,
+                         background = "light-blue",
+                         box(width = 12)),
+                     box(title = "View Our 10 Schools",
+                         width = 12,
+                         background = "navy",
+                         actionButton("viewMap", "View Spatial Data"),
+                         actionButton("viewStat", "View School Statistics"))
+                 )
         )},
         
         #School Stats
@@ -206,14 +112,14 @@ body <- {dashboardBody(
                      ),
                      #Drop Down Widget for Box Plots
                      box(title = strong("Measurements, Context, and Resources"), box(width = 12,
-                                                                                                      title = strong("Select a Measurement"),
-                                                                                                      selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                                                                                                  choices = list("Average Class Size","Bachelor Degree Rate","Diversity per District", "Enrollment","ESL Students","Experienced Teacher Ratio",
-                                                                                                                                 "Free/Red Lunch","Funding Per Pupil","Homesale Price","Household Income", "In-School Suspensions (ISS)",
-                                                                                                                                 "Median Age","POC per School","Race per School", "Racial Demographics", "Racial Differential","School and Zone Racial Breakdown",
-                                                                                                                                 "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                                                                                                                 "Students With Disabilities")
-                                                                                                      )),
+                        title = strong("Select a Measurement"),
+                        selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
+                        choices = list("Average Class Size","Bachelor Degree Rate","Diversity per District", "Enrollment","ESL Students","Experienced Teacher Ratio",
+                                "Free/Red Lunch","Funding Per Pupil","Homesale Price","Household Income", "In-School Suspensions (ISS)",
+                                "Median Age","POC per School","Race per School", "Racial Demographics", "Racial Differential","School and Zone Racial Breakdown",
+                                "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                "Students With Disabilities")
+                                                           )),
                          box(width = 12,
                              title = strong("Context & Resources"),
                              htmlOutput("resources")
@@ -265,7 +171,7 @@ shinyApp(
         sidebar,
         body
     ),
-    server = function(input, output) { 
+    server = function(input, output, session) { 
         output$barplots <- renderPlotly({
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
@@ -695,6 +601,19 @@ shinyApp(
                            clusterOptions = markerClusterOptions()) %>%
                 addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, 
                            label = displaySchool()["name"], )
+        })
+        
+        output$Icons <- renderImage({
+            return(list(src = "home_icons.png", contentType = "image/png",
+                        align = "left", height = "50%", width = "50%"))
+        })
+        
+        observeEvent(input$viewMap, {
+            updateTabItems(session, "TabItems", selected = "mapstab")
+        })
+        
+        observeEvent(input$viewStat, {
+            updateTabItems(session, "TabItems", selected = "statstab")
         })
         
     }
