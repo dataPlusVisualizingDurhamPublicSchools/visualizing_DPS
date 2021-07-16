@@ -71,9 +71,9 @@ iconSet <- iconList(
 
 sidebar <- {dashboardSidebar(
     sidebarMenu(
-        menuItem("Our Ten Community Schools - Home", tabName = "home"),
-        menuItem("School Statistics", tabName = "statstab"),
-        menuItem("Maps", tabName = "mapstab")
+        menuItem("Our Ten Schools - Home", tabName = "home"),
+        menuItem("Maps", tabName = "mapstab"),
+        menuItem("School Statistics", tabName = "statstab")
     )
 )
 }
@@ -226,21 +226,21 @@ body <- {dashboardBody(
         tabItem(tabName = "mapstab",
                 fluidRow(
                     box(width  = 12,
-                        title = "Map",
+                        title = strong("Interactive Map"),
                         leafletOutput("map"))
                 ),
                 fluidRow(
                     box(width = 4,
-                        title = "Drop Down Select",
+                        title = strong("Measurement"),
                         selectInput("var",
-                                    label = "Choose a variable to display",
+                                    label = em("Choose a variable to display"),
                                     choices = c("Bus Stops", 
                                                 "Childcare Centers", "Community & Cultural Centers", "Gardens",
                                                 "Grocery Stores", "Libraries", "Parks", 
                                                 "Recreation Centers", "Religious Centers"),
                                     multiple = FALSE),
                         selectInput("zone",
-                                    label = "Choose a school zone to display",
+                                    label = em("Choose a school zone to display"),
                                     choices = c("All", "C.C. Spaulding Elementary", "Eastway Elementary",
                                                 "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                                 "Forest View Elementary", "Hillside High",
@@ -248,11 +248,11 @@ body <- {dashboardBody(
                                                 "Parkwood Elementary", "Southwest Elementary"),
                                     multiple = FALSE)),
                     box(width = 8,
-                        title = "Pop Up Description"),
+                        title = strong("Context")),
                 ),
                 fluidRow(
                     box(width = 4,
-                        title = "Additional Resources")
+                        title = strong("Additional Resources"))
                 )
         )
     )
@@ -688,13 +688,13 @@ shinyApp(
                 addPolygons(data = displayZone(),
                             fillColor = displayColor(),
                             stroke = TRUE,
-                            fillOpacity = 0.75,
+                            fillOpacity = 0.45,
                             smoothFactor = 1) %>%
                 addMarkers(data = displayVar(), lng = ~LONGITUDE, lat= ~LATITUDE, 
                            label = displayVar()$name, icon = displayIcon(), 
                            clusterOptions = markerClusterOptions()) %>%
                 addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, 
-                           label = displaySchool()["name"])
+                           label = displaySchool()["name"], )
         })
         
     }
