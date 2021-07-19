@@ -58,15 +58,15 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
 #Icons
 
 iconSet <- iconList(
-    parks = makeIcon("https://img.icons8.com/material-rounded/24/000000/deciduous-tree.png", iconWidth=20, iconHeight=20),
-    rec = makeIcon("https://img.icons8.com/ios-glyphs/30/000000/children.png", iconWidth=20, iconHeight=20),
-    gardens = makeIcon("https://img.icons8.com/doodle/48/000000/flower--v1.png", iconWidth=20, iconHeight=20),
-    bus = makeIcon("https://img.icons8.com/material-rounded/24/000000/bus.png", iconWidth=20, iconHeight=20),
-    childcare = makeIcon("https://img.icons8.com/material-rounded/24/000000/rocking-horse.png", iconWidth=20, iconHeight=20),
-    cultural = makeIcon("https://img.icons8.com/ios-filled/30/000000/crowd.png", iconWidth=20, iconHeight=20),
-    grocery = makeIcon("https://img.icons8.com/ios-glyphs/30/000000/grocery-store.png", iconWidth=20, iconHeight=20),
-    libraries = makeIcon("https://img.icons8.com/fluent-systems-filled/50/000000/book.png", iconWidth=20, iconHeight=20),
-    religious = makeIcon("https://img.icons8.com/ios-filled/50/000000/chapel.png", iconWidth=20, iconHeight=20)
+    parks = makeIcon("https://img.icons8.com/windows/32/000000/tree.png", iconWidth=20, iconHeight=20),
+    rec = makeIcon("https://img.icons8.com/material-outlined/24/000000/children.png", iconWidth=20, iconHeight=20),
+    gardens = makeIcon("https://img.icons8.com/dotty/80/000000/flower.png", iconWidth=20, iconHeight=20),
+    bus = makeIcon("https://img.icons8.com/material-outlined/24/000000/bus.png", iconWidth=20, iconHeight=20),
+    childcare = makeIcon("https://img.icons8.com/material-outlined/24/000000/rocking-horse.png", iconWidth=20, iconHeight=20),
+    cultural = makeIcon("https://img.icons8.com/windows/32/000000/crowd.png", iconWidth=20, iconHeight=20),
+    grocery = makeIcon("https://img.icons8.com/ios/50/000000/grocery-store.png", iconWidth=20, iconHeight=20),
+    libraries = makeIcon("https://img.icons8.com/windows/32/000000/book--v1.png", iconWidth=20, iconHeight=20),
+    religious = makeIcon("https://img.icons8.com/fluent-systems-regular/48/000000/chapel.png", iconWidth=20, iconHeight=20)
 )
 
 sidebar <- {dashboardSidebar(
@@ -585,7 +585,7 @@ shinyApp(
                    "Lakewood Elementary" = "darkred", 
                    "Parkwood Elementary" = "lightblue", 
                    "Southwest Elementary" = "brown", 
-                   "All" = "gray")
+                   "All" = "#fafaf8")
         })
         
         output$map <- renderLeaflet({
