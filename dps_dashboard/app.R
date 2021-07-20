@@ -87,7 +87,19 @@ body <- {dashboardBody(
                      class = "text-center",
                      box(title = "Visualizing Durham Public Schools",
                          width = 12,
-                         background = "navy"),
+                         background = "navy",
+                         p("This project is inspired by an inter-institutional Bass Connections team from Duke and
+                               North Carolina Central University that is committed to developing more responsible and
+                               imaginative ways of partnering with Durham Public Schools.
+                               Students will use existing data sets combined with historic and contemporary city context
+                               to better understand the complex and nuanced details of different school communities.
+                               Students will prioritize the public schools that most commonly partner with each respective university.
+                               Our research aims to inform future pre-service trainings for university students, support local
+                               neighborhood schools in visualizing their communities, and help varied university offices
+                               articulate what “community” actually looks like. Visit the",
+                            a("Visualizing DPS and Bass Connections Website",
+                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021"),
+                            "for more information!")),
                      box(title = "Project Objective",
                          width = 6,
                          background = "light-blue",
@@ -602,7 +614,7 @@ shinyApp(
                            label = displayVar()$name, icon = displayIcon(), 
                            clusterOptions = markerClusterOptions()) %>%
                 addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, 
-                           label = displaySchool()["name"], )
+                           label = displaySchool()["name"])
         })
         
         output$Icons <- renderImage({
