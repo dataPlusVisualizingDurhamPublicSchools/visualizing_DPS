@@ -126,12 +126,12 @@ body <- {dashboardBody(
                      box(title = strong("Measurements, Context, and Resources"), box(width = 12,
                         title = strong("Select a Measurement"),
                         selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                        choices = list("Average Class Size","Bachelor Degree Rate","Diversity per District", "Enrollment","ESL Students","Experienced Teacher Ratio",
-                                "Free/Red Lunch","Funding Per Pupil","Homesale Price","Household Income", "In-School Suspensions (ISS)",
-                                "Median Age","POC per School","Race per School", "Racial Demographics", "Racial Differential","School and Zone Racial Breakdown",
-                                "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                "Students With Disabilities")
-                                                           )),
+                        choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Enrollment Rate, High School","Diversity per School Zone", "Enrollment","ESL Students","Experienced Teacher Ratio",
+                                       "Free/Red Lunch","Funding Per Pupil","Graduation Rate","Homesale Price","Household Income", "In-School Suspensions (ISS)",
+                                       "Median Age","POC per School","Race per School", "Racial Demographics", "Racial Differential","School and Zone Racial Breakdown",
+                                       "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                       "Students With Disabilities")
+                                       )),
                          box(width = 12,
                              title = strong("Context & Resources"),
                              htmlOutput("resources")
@@ -417,6 +417,35 @@ shinyApp(
                     facet_wrap(~school)+
                     labs(title = "Racial Composition", subtitle="Faceted by School" , x = "Race", y = "Percentage of Students (%)")
                 ggplotly(p)
+            } else if(input$select == "CTE Enrollment Rate, High School") {
+                schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
+                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_text(aes(label = CTE_RATE), hjust = -.1, color = "black") + #no Durham County AVG
+                    coord_flip() +
+                    theme_minimal() +
+                    labs(title = "Percent of Students Enrolled in CTE Courses", x = "School", y = "Percent of Students")
+                ggplotly(p)
+            } else if(input$select == "Graduation Rate") {
+                schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
+                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_text(aes(label = GRADUATION_RATE), hjust = -.1, color = "black") +
+                    geom_hline(aes(text="Durham County Average", yintercept = 83.5), color ='red') +
+                    coord_flip() +
+                    theme_minimal() +
+                    labs(title = "Graduation Rate", x = "School", y = "Percent of Students")
+                ggplotly(p, tooltip = c("text", "yintercept"))
+            }else if(input$select == "Advanced Placement (AP) Course Enrollment") {
+                schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
+                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_text(aes(label = ADV_COURSES_PERCENT), hjust = -.1, color = "black") +
+                    geom_hline(aes(text="Durham County Average", yintercept = 9.22), color ='red') +
+                    coord_flip() +
+                    theme_minimal() +
+                    labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Percent of Students")
+                ggplotly(p, tooltip = c("text", "yintercept"))
             }
         })
         
