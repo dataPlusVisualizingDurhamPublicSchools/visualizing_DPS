@@ -167,7 +167,9 @@ body <- {dashboardBody(
 
 shinyApp(
     ui = dashboardPage(
-        dashboardHeader(title = "Visualizing DPS"),
+            skin = "black",
+        dashboardHeader(
+            title = "Visualizing DPS"),
         sidebar,
         body
     ),
