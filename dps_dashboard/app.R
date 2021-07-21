@@ -206,8 +206,7 @@ shinyApp(
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
                     geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average", yintercept = .79), color ='red') +
-                    scale_y_continuous(labels = scales::percent) +
+                    geom_hline(aes(text="Durham County Average", yintercept = 79), color ='red') +
                     coord_flip() +
                     theme_minimal() +
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Ratio")
@@ -217,8 +216,7 @@ shinyApp(
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
                     geom_text(aes(label = FREE_RED_PERCENT), hjust = 2, color = "black") +
-                    scale_y_continuous(labels = scales::percent) +
-                    geom_hline(aes(text="Durham County Average", yintercept = .5165), color ='red') +
+                    geom_hline(aes(text="Durham County Average", yintercept = 51.65), color ='red') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -257,13 +255,21 @@ shinyApp(
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text", "yintercept"))
-            } else if(input$select == "Students Per Device") {
+            } else if(input$select == "Enrollment") {
+                schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
+                p <-  ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
+                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    coord_flip() +
+                    theme_minimal() +
+                    geom_text(aes(label = ENROLLMENT_NA), vjust = 0)+
+                    labs(title = "Enrollment per School" , x = "School", y = "Enrollment")
+                ggplotly(p)
+            }else if(input$select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
                     geom_text(aes(label = STUDENTS_PER_DEVICE), hjust = 1.5, color = "black") +
                     geom_hline(aes(text="Durham County Average", yintercept = .8), color ='red') +
-                    scale_y_continuous(labels = scales::percent) +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -284,9 +290,8 @@ shinyApp(
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
                     geom_text(aes(label = DISABLED_PERCENT), hjust = 1.5, color = "black") +
-                    scale_y_continuous(labels = scales::percent) +
                     coord_flip() +
-                    geom_hline(aes(text="Durham County Average", yintercept = .133), color ='red') +
+                    geom_hline(aes(text="Durham County Average", yintercept = 13.3), color ='red') +
                     theme_minimal() +
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Percent of Students")
                 ggplotly(p, tooltip = c("label"))
@@ -295,10 +300,9 @@ shinyApp(
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
                     geom_text(aes(label = ESL_PERCENT), hjust = 1.5, color = "black") +
-                    scale_y_continuous(labels = scales::percent) +
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average", yintercept = .158), color ='red') +
+                    geom_hline(aes(text="Durham County Average", yintercept = 15.8), color ='red') +
                     labs(title = "Percent of ESL Enrolled Students Per School", x = "School", y = "Percent of Students")
                 ggplotly(p, tooltip = c("label"))
             } else if(input$select == "In-School Suspensions (ISS)") {
@@ -311,15 +315,6 @@ shinyApp(
                     theme_minimal() +
                     labs(title = "In-School Suspensions Per School", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text", "yintercept"))
-            }else if(input$select == "Enrollment") {
-                schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
-                p <-  ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_text(aes(label = ENROLLMENT), vjust = 0)+
-                    labs(title = "Enrollment per School" , x = "School", y = "Enrollment")
-                ggplotly(p)
             }else if(input$select == "Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
@@ -346,7 +341,7 @@ shinyApp(
                     geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average", yintercept = .441), color ='red') +
+                    geom_hline(aes(text="Durham County Average", yintercept = 44.1), color ='red') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     labs(title = "Bachelor Degree Rate per School Zone", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p)
@@ -357,7 +352,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
-                    geom_hline(aes(text="Durham County Average", yintercept = .35), color ='red') +
+                    geom_hline(aes(text="Durham County Average", yintercept = 35), color ='red') +
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p)
             }else if(input$select == "Diversity per District") {
@@ -453,9 +448,32 @@ shinyApp(
         })
         
         output$resources <- renderText({
-            if(input$select == "Median Age") {
-                paste("Here are some resouces for Median Age.")
-            } else if (input$select == "Experienced Teacher Ratio") {
+            if(input$select == "Advanced Placement (AP) Course Enrollment") {
+                paste("Advanced Placement (AP) courses are challenging, collegiate-level courses high school 
+                students can take for an opportunity to receive college credit upon scoring a 3 or higher on 
+                the standardized assessment. Additionally, it weighs more than an honors course on the high 
+                school level. Hillside High offers 26 AP courses while Jordan High offers 19.", "<br>","<br>",
+                      "Below is more information about AP courses:", "<br>", 
+                      a("NCDPI AP Courses", 
+                        href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
+                      a("DPS AP Courses", 
+                        href = "https://www.dpsnc.net/Page/430"),
+                      a("College Board",
+                        href="https://apstudents.collegeboard.org/course-index-page"))
+            }else if (input$select == "Average Class Size"){
+                paste("Research proves smaller class sizes are beneficial to student achievement. Smaller classes 
+              allow for the teacher to focus less on classroom management and more on centralized learning. 
+              Students stated they feel more comfortable in smaller classes as well.","<br>","<br>",
+                      "Resources Discussing the Importance of Class Size:","<br>",
+                      a("The Benefits of Investing in Smaller Class Sizes",
+                        href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
+                      a("State Policy View on Class Size",
+                        href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
+            }else if (input$select == "Bachelor Degree Rate"){
+                
+            }else if (input$select == "CTE Enrollment Rate, High School"){
+                
+            }else if (input$select == "Experienced Teacher Ratio") {
                 paste("Research shows teacher experience does not directly correlate to effective teaching. 
         With the evolution of research-based practices, it is important to continue to educate new and 
         returning teachers on the best teaching practices that are scientifically-proven to promote 
@@ -496,15 +514,6 @@ shinyApp(
                       "Resources on Student-Teacher Ratios:","<br>",
                       a("Infographics and Information on Student-Teacher Ratios",
                         href = "https://www.hunschool.org/resources/student-teacher-ratios"))
-            } else if (input$select == "Average Class Size"){
-                paste("Research proves smaller class sizes are beneficial to student achievement. Smaller classes 
-              allow for the teacher to focus less on classroom management and more on centralized learning. 
-              Students stated they feel more comfortable in smaller classes as well.","<br>","<br>",
-                      "Resources Discussing the Importance of Class Size:","<br>",
-                      a("The Benefits of Investing in Smaller Class Sizes",
-                        href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
-                      a("State Policy View on Class Size",
-                        href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
             } else if (input$select == "Students Per Device"){
                 paste("Living in a digital age, technology usage in the classroom has increased tremendously, 
         especially because of the COVID-19 pandemic. Although technology is a great resource, students 
@@ -517,13 +526,33 @@ shinyApp(
                         href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
                       a("Equitable Access to Technology",
                         href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
-            } else if (input$select == "Funding Per Pupil"){
-                paste("Here are some resouces on school funding.")
-            } else if (input$select == "Students With Disabilities"){
-                paste("Here are some resouces on students with disabilities.")
-            } else if (input$select == "ESL Students"){
+            } 
+            else if (input$select == "Funding Per Pupil"){
+                paste("It’s important for public schools to receive equitable funding so every student has 
+                      equal opportunity to reach their full potential with the necessary resources for success.", "<br>", "<br>",
+                      "Resources on public school funding:", "<br>",
+                      a("Interactive Summary of Local - Federal Public School Funding:",
+                        href="https://www.dpsnc.net/Page/3771"))
+            } 
+            else if (input$select == "Students With Disabilities"){
+                paste("It is integral to make sure students with disabilities are provided with accessibility services to 
+                      achieve their full potential in the classroom. Resources like assistive technology, transportation, 
+                      Exceptional Children (EC) programs, etc. are mandatory for every school to provide regardless of the 
+                      number of students with disabilities or even the type based on the civil rights law Section 504.", "<br>", "<br>",
+                      "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
+                      a("DPS EC Services",
+                        href="https://www.dpsnc.net/Page/169"),
+                      a("Section 504",
+                        href="https://www.dpsnc.net/Page/336"),
+                      a("NCDPI’s EC Division",
+                        href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
+                      a("Assistive Technology",
+                        href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"))
+            } 
+            else if (input$select == "ESL Students"){
                 paste("Here are some resouces on ESL students and programs.")
-            } else if (input$select == "In-School Suspensions (ISS)"){
+            } 
+            else if (input$select == "In-School Suspensions (ISS)"){
                 paste("Students of color are more susceptible to harsher punishments in schools.
              Black students are subject to higher disciplinary actions compared to their white peers.
              A reason for this is racial bias leading to the overpolicing of Black students, fueling the school-to-prison pipeline.", "<br>","<br>",
@@ -532,7 +561,8 @@ shinyApp(
                         href = "https://www.pnas.org/content/116/17/8255"), "<br>",
                       a("School-to-Prison Pipeline", 
                         href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"))
-            }else if(input$select == "Enrollment") {
+            }
+            else if(input$select == "Enrollment") {
                 paste("Here are some resouces for school enrollment numbers.")
             }
             else if (input$select == "School and Zone Racial Breakdown") {
@@ -544,9 +574,6 @@ shinyApp(
             else if (input$select == "POC per School"){
                 paste("Here are some resouces for the number of students of color in a school.")
                 
-            }
-            else if (input$select == "Funding per Pupil"){
-                paste("Here are some resouces for school funding.")
             }
             else if (input$select == "Racial Demographics"){
                 paste("Here are some resouces for racial demographics.")
@@ -570,8 +597,8 @@ shinyApp(
             
             else if (input$select == "Diversity per District"){
                 paste("Here are some resouces about diversity in school districts.")
+                
             }
-            
         })
         
         displayVar <- reactive({
