@@ -184,7 +184,7 @@ shinyApp(
     ui = dashboardPage(
             skin = "black",
         dashboardHeader(
-            title = "Visualizing DPS"),
+            title = "Visualizing DPS", tags$li(class = "dropdown", actionButton("Our Ten Schools - Home", "Home"))),
         sidebar,
         body
     ),
