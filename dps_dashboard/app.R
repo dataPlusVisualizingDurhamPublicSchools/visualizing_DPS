@@ -129,9 +129,12 @@ body <- {dashboardBody(
                      box(title = strong("Measurements, Context, and Resources"), box(width = 12,
                                                                                      title = strong("Select a Measurement"),
                                                                                      selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                                                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Enrollment Rate, High School","Diversity per School Zone", "Enrollment","ESL Students","Experienced Teacher Ratio",
+                                                                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Enrollment Rate, High School",#"Diversity per School Zone", 
+                                                                                                                "Enrollment","ESL Students","Experienced Teacher Ratio",
                                                                                                                 "Free/Red Lunch","Funding Per Pupil","Graduation Rate","Homesale Price","Household Income", "In-School Suspensions (ISS)",
-                                                                                                                "Median Age","POC per School","Race per School", "Racial Demographics", "Racial Differential","School and Zone Racial Breakdown",
+                                                                                                                "Median Age","POC per School",#"Race per School", 
+                                                                                                                "Racial Demographics", #"Racial Differential",
+                                                                                                                "School and Zone Racial Breakdown",
                                                                                                                 "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
                                                                                                                 "Students With Disabilities")
                                                                                      )),
@@ -337,6 +340,7 @@ shinyApp(
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
                     coord_flip() +
+                    scale_y_continuous(labels=scales::dollar_format()) +
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average", yintercept = 278000), color ='red') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
@@ -384,16 +388,18 @@ shinyApp(
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Racial Composition of Schools vs. School Zones" , x = "School", y = "Percentage of Students of Color", fill=" ")
                 ggplotly(p)
-            } else if(input$select == "Racial Differential"){
-                p <- ggplot(race_diff, aes(reorder(place, -number), number)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_text(aes(label = number), vjust = 0)+
-                    theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Difference in % of Students of Color between Schools and Zones" , x = "School/School Zones", y = "Difference in Students of Color (%)")
-                ggplotly(p)
-            } else if(input$select == "POC per School") {
+            }
+            # } else if(input$select == "Racial Differential"){
+            #     p <- ggplot(race_diff, aes(reorder(place, -number), number)) + 
+            #         geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+            #         coord_flip() +
+            #         theme_minimal() +
+            #         geom_text(aes(label = number), vjust = 0)+
+            #         theme(plot.title = element_text(hjust = .5)) +
+            #         labs(title = "Difference in % of Students of Color between Schools and Zones" , x = "School/School Zones", y = "Difference in Students of Color (%)")
+            #     ggplotly(p)
+        
+              else if(input$select == "POC per School") {
                 p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
                     coord_flip() +
@@ -423,16 +429,17 @@ shinyApp(
                 ggplotly(p3)
             } 
             
-            else if(input$select == "Race per School") {
-                p <- ggplot(all_race, aes(factor(x=school), y=number, fill=race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    facet_wrap(~school)+
-                    theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Racial Composition", subtitle="Faceted by School" , x = "Race", y = "Percentage of Students (%)")
-                ggplotly(p)
-            } else if(input$select == "CTE Enrollment Rate, High School") {
+            # else if(input$select == "Race per School") {
+            #     p <- ggplot(all_race, aes(factor(x=school), y=number, fill=race)) + 
+            #         geom_bar(stat="identity", position = "dodge") + 
+            #         coord_flip() +
+            #         theme_minimal() +
+            #         facet_wrap(~school)+
+            #         theme(plot.title = element_text(hjust = .5)) +
+            #         labs(title = "Racial Composition", subtitle="Faceted by School" , x = "Race", y = "Percentage of Students (%)")
+            #     ggplotly(p)
+            # } 
+            else if(input$select == "CTE Enrollment Rate, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
@@ -583,7 +590,7 @@ shinyApp(
                         href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"))
             }
             else if(input$select == "Enrollment") {
-                paste("Here are some resouces for school enrollment numbers.")
+                paste("This dataset shows the enrollment numbers at each school.")
             }
             else if (input$select == "School and Zone Racial Breakdown") {
                 paste("Here are some resouces for differences in school zone and school racial demographics.")
@@ -592,31 +599,73 @@ shinyApp(
                 paste("Here are some resouces for differences in school zone and school racial demographics.")
             }
             else if (input$select == "POC per School"){
-                paste("Here are some resouces for the number of students of color in a school.")
+                paste("This dataset shows the percentage of students of color in each of the ten schools.", "<br>","<br>",
+                      "Below is more information about students of color:", "<br>",
+                      a("Racial/Ethnic Enrollment in NC Public Schools",
+                        href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"))
                 
             }
             else if (input$select == "Racial Demographics"){
-                paste("Here are some resouces for racial demographics.")
+                paste("This dataset shows the racial breakdown of each of the ten public schools. 
+                      The racial demographics of all 10 schools has changed over time, specifically in the past 30 years. 
+                      The number of white students has decreased, while the number of students of color has increased.", "<br>","<br>",
+                      "Below is more information about racial demographics in schools:", "<br>",
+                      a("See how Racial Demographics have changed",
+                        href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
+                      a("More students of color in public schools",
+                        href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"))
             }
             else if (input$select == "Race per School"){
                 paste("Here are some resouces on racial demographics.")
             }
             else if (input$select == "Household Income"){
-                paste("Here are some resouces on household income rates.")
+                paste("This graph shows the average household income for each school zone. 
+                The average household income in the United States is $62,843 according to the US census as of 2019. 
+                This average household income in North Carolina is $54,602, according to the US census as of 2019.", "<br>","<br>",
+                "Below are links to the US Census Information:", "<br>",
+                a("Nationwide Census", 
+                  href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
+                a("North Carolina Census",
+                  href="https://www.census.gov/quickfacts/NC"))
             }
             else if (input$select == "Homesale Price"){
-                paste("Here are some resouces on homesale prices..")
+                paste("This graph shows the average home sale price for each school zone. 
+                      The average home sale price in the United States is $287,148, according to Zillow.
+                      This average home sale price in North Carolina is $210,766, according to Zillow. 
+                      Due to the Covid-19 Pandemic, home prices increased.", "<br>", "<br>",
+                      "Below is more information about home sale price:", "<br>",
+                      a("Zillow Resource",
+                        href="https://www.zillow.com/research/zillow-may-2021-market-report-29635/"), "<br>",
+                      a("Covid-19 Increase",
+                        href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"))
             }
             else if (input$select == "Bachelor Degree Rate"){
-                paste("Here are some resouces about bachelor degree rates.")
+                paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.
+", "<br>", "<br>",
+                      "Below is more information about bachelor degree rates:", "<br>",
+                      a("Bachelor’s Degrees and Race",
+                        href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
+                      a("Bachelor’s Degrees and Income",
+                        href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
             }
             
             else if (input$select == "Sidewalk Coverage"){
-                paste("Here are some resouces about sidewalk coverage.")
+                paste("Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, 
+                both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, 
+                parks, etc. High income areas tend to have more sidewalk coverage than lower income areas.", "<br>", "<br>",
+                      "Below is more information about sidewalk coverage:", "<br>",
+                      a("Importance of Sidewalks",
+                        href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
+                      a("Income disparities and Sidewalk Coverage",
+                        href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
             }
             
             else if (input$select == "Diversity per District"){
                 paste("Here are some resouces about diversity in school districts.")
+                
+            }
+            else if (input$select == "Median Age"){
+                paste("Here are some resouces about Median Age.")
                 
             }
         })
