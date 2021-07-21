@@ -72,9 +72,9 @@ iconSet <- iconList(
 sidebar <- {dashboardSidebar(
     sidebarMenu(
         id = "TabItems",
-        menuItem("Our Ten Schools - Home", tabName = "home"),
-        menuItem("Maps", tabName = "mapstab"),
-        menuItem("School Statistics", tabName = "statstab")
+        menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
+        menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
+        menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar"))
     )
 )
 }
@@ -103,7 +103,10 @@ body <- {dashboardBody(
                      box(title = "Project Objective",
                          width = 6,
                          background = "light-blue",
-                         box(width = 12)),
+                         p("Our project objective is to provide a web application that will serve as a tool for
+                            those entering Durham Public Schools. Through spatial and stastical data, along with 
+                            contextual resources, we hope to provide a wholistic view of our schools and their communities -
+                            highlighting their resources and assets.")),
                      box(title = "How Will We Do This?",
                          width =6,
                          background = "light-blue",
