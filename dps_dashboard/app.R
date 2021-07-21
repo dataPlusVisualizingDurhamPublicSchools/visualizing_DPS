@@ -496,9 +496,8 @@ shinyApp(
                         href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
                       a("State Policy View on Class Size",
                         href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
-            }else if (input$select == "Bachelor Degree Rate"){
-                
-            }else if (input$select == "CTE Enrollment Rate, High School"){
+            }
+           else if (input$select == "CTE Enrollment Rate, High School"){
                 
             }else if (input$select == "Experienced Teacher Ratio") {
                 paste("Research shows teacher experience does not directly correlate to effective teaching. 
