@@ -98,7 +98,7 @@ body <- {dashboardBody(
                                neighborhood schools in visualizing their communities, and help varied university offices
                                articulate what “community” actually looks like. Visit the",
                             a("Visualizing DPS and Bass Connections Website",
-                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021"),
+                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
                             "for more information!")),
                      box(title = "Project Objective",
                          width = 6,
@@ -475,20 +475,20 @@ output$barplots <- renderPlotly({
                 school level. Hillside High offers 26 AP courses while Jordan High offers 19.", "<br>","<br>",
                       "Below is more information about AP courses:", "<br>", 
                       a("NCDPI AP Courses", 
-                        href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
+                        href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement", target="_blank"), "<br>",
                       a("DPS AP Courses", 
-                        href = "https://www.dpsnc.net/Page/430"),
+                        href = "https://www.dpsnc.net/Page/430", target="_blank"),
                       a("College Board",
-                        href="https://apstudents.collegeboard.org/course-index-page"))
+                        href="https://apstudents.collegeboard.org/course-index-page", target="_blank"))
             }else if (input$select == "Average Class Size"){
                 paste("Research proves smaller class sizes are beneficial to student achievement. Smaller classes 
               allow for the teacher to focus less on classroom management and more on centralized learning. 
               Students stated they feel more comfortable in smaller classes as well.","<br>","<br>",
                       "Resources Discussing the Importance of Class Size:","<br>",
                       a("The Benefits of Investing in Smaller Class Sizes",
-                        href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
+                        href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate", target="_blank"), "<br>",
                       a("State Policy View on Class Size",
-                        href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
+                        href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/", target="_blank"))
             }else if (input$select == "Bachelor Degree Rate"){
                 
             }else if (input$select == "CTE Enrollment Rate, High School"){
@@ -501,13 +501,13 @@ output$barplots <- renderPlotly({
         culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
               Experience and Professional Development:", "<br>",
                       a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
-                        href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
+                        href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research", target="_blank"),"<br>",
                       a("Teacher Experience in Relation to Teacher Effectiveness", 
-                        href ="https://www.nea.org/advocating-for-change/new-from-nea/does-teaching-experience-matter-lets-count-ways"),"<br>",
+                        href ="https://www.nea.org/advocating-for-change/new-from-nea/does-teaching-experience-matter-lets-count-ways", target="_blank"),"<br>",
                       a("NCDPI Educator Professional Development", 
-                        href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
+                        href ="https://www.dpi.nc.gov/educators/professional-development", target="_blank"),"<br>",
                       a("Importance and Resources for Professional Development", 
-                        href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
+                        href ="https://www.nea.org/professional-excellence/professional-learning/teachers", target="_blank"))
             } else if (input$select == "Free/Red Lunch") {
                 paste("The percent of students receiving free and reduced lunch is a great indicator of 
         socioeconomic statuses. The percentage of students that fall below the poverty line 
@@ -517,23 +517,23 @@ output$barplots <- renderPlotly({
         not a limit, it is a barrier.", "<br>","<br>",
                       "Below are articles on Free/Reduced Lunch and its connection to Title 1 schools:", "<br>",
                       a("Rural Schools and Free/Reduced Lunch", 
-                        href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
+                        href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools", target="_blank"), "<br>",
                       a("NC Community Free/Reduced Lunch Eligibility",
-                        href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"))
+                        href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals", target="_blank"))
             } else if (input$select == "Student-Teacher Ratio, Elementary School"){
                 paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. 
         By allowing for more centralized and one-on-one instruction, smaller student-teacher ratios 
         can increase test scores, lower dropout rates, and increase graduation rates.","<br>","<br>",
                       "Resources on Student-Teacher Ratios:","<br>",
                       a("Infographics and Information on Student-Teacher Ratios",
-                        href = "https://www.hunschool.org/resources/student-teacher-ratios"))
+                        href = "https://www.hunschool.org/resources/student-teacher-ratios", target="_blank"))
             } else if (input$select == "Student-Teacher Ratio, High School"){
                 paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. 
         By allowing for more centralized and one-on-one instruction, smaller student-teacher ratios 
         can increase test scores, lower dropout rates, and increase graduation rates.","<br>","<br>",
                       "Resources on Student-Teacher Ratios:","<br>",
                       a("Infographics and Information on Student-Teacher Ratios",
-                        href = "https://www.hunschool.org/resources/student-teacher-ratios"))
+                        href = "https://www.hunschool.org/resources/student-teacher-ratios", target="_blank"))
             } else if (input$select == "Students Per Device"){
                 paste("Living in a digital age, technology usage in the classroom has increased tremendously, 
         especially because of the COVID-19 pandemic. Although technology is a great resource, students 
@@ -543,16 +543,16 @@ output$barplots <- renderPlotly({
         entering the classroom to create the most effective learning environment.","<br>","<br>",
                       "Resources on Access and Technology in the Classroom:", "<br>",
                       a("Durham Public Schools’ Technological Services",
-                        href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
+                        href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738", target="_blank"), "<br>",
                       a("Equitable Access to Technology",
-                        href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
+                        href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/", target="_blank"))
             } 
             else if (input$select == "Funding Per Pupil"){
                 paste("It’s important for public schools to receive equitable funding so every student has 
                       equal opportunity to reach their full potential with the necessary resources for success.", "<br>", "<br>",
                       "Resources on public school funding:", "<br>",
                       a("Interactive Summary of Local - Federal Public School Funding:",
-                        href="https://www.dpsnc.net/Page/3771"))
+                        href="https://www.dpsnc.net/Page/3771", target="_blank"))
             } 
             else if (input$select == "Students With Disabilities"){
                 paste("It is integral to make sure students with disabilities are provided with accessibility services to 
@@ -561,13 +561,13 @@ output$barplots <- renderPlotly({
                       number of students with disabilities or even the type based on the civil rights law Section 504.", "<br>", "<br>",
                       "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
                       a("DPS EC Services",
-                        href="https://www.dpsnc.net/Page/169"),
+                        href="https://www.dpsnc.net/Page/169", target="_blank"),
                       a("Section 504",
-                        href="https://www.dpsnc.net/Page/336"),
+                        href="https://www.dpsnc.net/Page/336", target="_blank"),
                       a("NCDPI’s EC Division",
-                        href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
+                        href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division", target="_blank"),
                       a("Assistive Technology",
-                        href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"))
+                        href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/", target="_blank"))
             } 
             else if (input$select == "ESL Students"){
                 paste("Here are some resouces on ESL students and programs.")
@@ -578,9 +578,9 @@ output$barplots <- renderPlotly({
              A reason for this is racial bias leading to the overpolicing of Black students, fueling the school-to-prison pipeline.", "<br>","<br>",
                       "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
                       a("Racial Bias in School Discipline", 
-                        href = "https://www.pnas.org/content/116/17/8255"), "<br>",
+                        href = "https://www.pnas.org/content/116/17/8255", target="_blank"), "<br>",
                       a("School-to-Prison Pipeline", 
-                        href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"))
+                        href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down", target="_blank"))
             }
             else if(input$select == "Enrollment") {
                 paste("Here are some resouces for school enrollment numbers.")
