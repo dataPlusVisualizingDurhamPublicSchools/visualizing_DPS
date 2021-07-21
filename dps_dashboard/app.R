@@ -104,8 +104,8 @@ body <- {dashboardBody(
                          width = 6,
                          background = "light-blue",
                          p("Our project objective is to provide a web application that will serve as a tool for
-                            those entering Durham Public Schools. Through spatial and stastical data, along with 
-                            contextual resources, we hope to provide a wholistic view of our schools and their communities -
+                            those entering Durham Public Schools. Through spatial and statistical data, along with 
+                            contextual resources, we hope to provide a holistic view of our schools and their communities -
                             highlighting their resources and assets.")),
                      box(title = "How Will We Do This?",
                          width =6,
@@ -662,6 +662,9 @@ shinyApp(
             updateTabItems(session, "TabItems", selected = "statstab")
         })
         
+        observeEvent(input$"Our Ten Schools - Home", {
+            updateTabItems(session, "TabItems", selected = "home")
+        })
     }
 )
 
