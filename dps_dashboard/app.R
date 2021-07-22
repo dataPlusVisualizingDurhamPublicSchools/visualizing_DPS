@@ -128,21 +128,28 @@ body <- {dashboardBody(
         {tabItem(tabName = "statstab",
                  fluidRow(
                      #Box Plot Outputs
-                     box(title = strong("Charts"), plotlyOutput("barplots",width="auto",height = "auto")
+                     box(background = "navy", 
+                         solidHeader = TRUE, 
+                         title = strong("Charts"), 
+                         plotlyOutput("barplots",
+                                        width="auto",
+                                        height = "auto")
                      ),
                      #Drop Down Widget for Box Plots
-                     box(title = strong("Measurements, Context, and Resources"), box(width = 12,
-                                                                                     title = strong("Select a Measurement"),
-                                                                                     selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                                                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Enrollment Rate, High School",#"Diversity per School Zone", 
-                                                                                                                "Enrollment","ESL Students","Experienced Teacher Ratio",
-                                                                                                                "Free/Red Lunch","Funding Per Pupil","Graduation Rate","Homesale Price","Household Income", "In-School Suspensions (ISS)",
-                                                                                                                "Median Age","POC per School",#"Race per School", 
-                                                                                                                "Racial Demographics", #"Racial Differential",
-                                                                                                                "School and Zone Racial Breakdown",
-                                                                                                                "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                                                                                                "Students With Disabilities")
-                                                                                     )),
+                     box(solidHeader = TRUE, 
+                         title = strong("Measurements, Context, and Resources"), 
+                         box(width = 12,
+                            title = strong("Select a Measurement"),
+                            selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
+                            choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Enrollment Rate, High School",#"Diversity per School Zone", 
+                                   "Enrollment","ESL Students","Experienced Teacher Ratio",
+                                    "Free/Red Lunch","Funding Per Pupil","Graduation Rate","Homesale Price","Household Income", "In-School Suspensions (ISS)",
+                                    "Median Age","POC per School",#"Race per School", 
+                                    "Racial Demographics", #"Racial Differential",
+                                    "School and Zone Racial Breakdown",
+                                    "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                    "Students With Disabilities")
+                        )),
                          box(width = 12,
                              title = strong("Context & Resources"),
                              htmlOutput("resources")
@@ -155,11 +162,14 @@ body <- {dashboardBody(
         tabItem(tabName = "mapstab",
                 fluidRow(
                     box(width  = 12,
+                        background = "navy",
+                        solidHeader = TRUE,
                         title = strong("Interactive Map"),
                         leafletOutput("map"))
                 ),
                 fluidRow(
                     box(width = 4,
+                        solidHeader = TRUE,
                         title = strong("Measurement"),
                         selectInput("var",
                                     label = em("Choose a variable to display"),
@@ -177,10 +187,12 @@ body <- {dashboardBody(
                                                 "Parkwood Elementary", "Southwest Elementary"),
                                     multiple = FALSE)),
                     box(width = 8,
+                        solidHeader = TRUE,
                         title = strong("Context")),
                 ),
                 fluidRow(
                     box(width = 4,
+                        solidHeader = TRUE,
                         title = strong("Additional Resources"))
                 )
         )
