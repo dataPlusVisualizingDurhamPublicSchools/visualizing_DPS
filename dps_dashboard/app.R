@@ -192,7 +192,7 @@ shinyApp(
         body
     ),
     server = function(input, output, session) { 
-                output$barplots <- renderPlotly({
+                        output$barplots <- renderPlotly({
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
@@ -388,7 +388,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Racial Composition of Schools vs. School Zones" , x = "School", y = "Percentage of Students of Color", fill=" ")
+                    labs(title = "Racial Composition of Schools vs. School Zones" , x = "School/School Zone", y = "Percentage of Students of Color", fill=" ")
                 ggplotly(p)
             }
             # } else if(input$select == "Racial Differential"){
@@ -406,6 +406,7 @@ shinyApp(
                     geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
                     coord_flip() +
                     theme_minimal() +
+                    geom_hline(aes(text="Durham County Average", yintercept = 80.7), color ='red') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Percentage of Students of Color" , x = "School", y = "Students of Color (%)")
@@ -448,6 +449,7 @@ shinyApp(
                     geom_text(aes(label = CTE_RATE), hjust = -.1, color = "black") + #no Durham County AVG
                     coord_flip() +
                     theme_minimal() +
+                    geom_hline(aes(text="Durham County Average", yintercept = 53), color ='red') +
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Percent of Students Enrolled in CTE Courses", x = "School", y = "Percent of Students")
                 ggplotly(p)
