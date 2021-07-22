@@ -86,7 +86,7 @@ body <- {dashboardBody(
         {tabItem(tabName = "home",
                  fluidRow(
                      class = "text-center",
-                     box(title = "Visualizing Durham Public Schools",
+                     box(title = strong("Visualizing Durham Public Schools"),
                          width = 12,
                          background = "navy",
                          p("This project is inspired by an inter-institutional Bass Connections team from Duke and
@@ -102,16 +102,20 @@ body <- {dashboardBody(
                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
                            "for more information!")),
                      box(title = "Project Objective",
+                         solidHeader = TRUE,
                          width = 6,
-                         background = "light-blue",
                          p("Our project objective is to provide a web application that will serve as a tool for
                             those entering Durham Public Schools. Through spatial and statistical data, along with 
                             contextual resources, we hope to provide a holistic view of our schools and their communities -
                             highlighting their resources and assets.")),
                      box(title = "Our 10 Schools",
+                         solidHeader = TRUE,
                          width =6,
-                         background = "blue",
-                         slickROutput("slickr", width = "auto")),
+                         slickROutput("slickr", width = "auto"),
+                         p(br(),
+                          "Our project focuses on the 10 schools most partnered with by Duke and NCCU.
+                           These include the 8 elementary schools: CC Spaulding, Eastway, E.K. Powe, Fayetteville, Forest View,
+                           Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan.")),
                      box(title = "View Our 10 Schools",
                          width = 12,
                          background = "navy",
@@ -763,7 +767,7 @@ shinyApp(
         
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
-            slickR(imgs, width = 200, height = 200)
+            slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE)
         })
     }
 )
