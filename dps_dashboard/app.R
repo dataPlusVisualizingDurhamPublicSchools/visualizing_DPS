@@ -10,6 +10,7 @@
 # Packages
 library(shiny)
 library(shinydashboard)
+library(slickR)
 library(leaflet)
 library(tidyverse)
 library(plotly)
@@ -107,10 +108,10 @@ body <- {dashboardBody(
                             those entering Durham Public Schools. Through spatial and statistical data, along with 
                             contextual resources, we hope to provide a holistic view of our schools and their communities -
                             highlighting their resources and assets.")),
-                     box(title = "How Will We Do This?",
+                     box(title = "Our 10 Schools",
                          width =6,
-                         background = "light-blue",
-                         box(width = 12)),
+                         background = "blue",
+                         slickROutput("slickr", width = "auto")),
                      box(title = "View Our 10 Schools",
                          width = 12,
                          background = "navy",
@@ -748,11 +749,6 @@ shinyApp(
                            label = displaySchool()["name"])
         })
         
-        output$Icons <- renderImage({
-            return(list(src = "home_icons.png", contentType = "image/png",
-                        align = "left", height = "50%", width = "50%"))
-        })
-        
         observeEvent(input$viewMap, {
             updateTabItems(session, "TabItems", selected = "mapstab")
         })
@@ -763,6 +759,11 @@ shinyApp(
         
         observeEvent(input$"Our Ten Schools - Home", {
             updateTabItems(session, "TabItems", selected = "home")
+        })
+        
+        output$slickr <- renderSlickR({
+            imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
+            slickR(imgs, width = 200, height = 200)
         })
     }
 )
