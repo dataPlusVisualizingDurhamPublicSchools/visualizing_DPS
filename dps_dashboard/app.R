@@ -784,7 +784,7 @@ shinyApp(
         
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
-            slickR(imgs, width = 400, height = 400) + settings(autoplay = TRUE)
+            slickR(imgs, width = 300, height = 300) + settings(autoplay = TRUE)
         })
     }
 )
