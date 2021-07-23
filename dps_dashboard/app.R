@@ -105,7 +105,9 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          width = 6,
                          p("Our project objective is to provide a web application that will serve as a tool for
-                            those entering Durham Public Schools. Through spatial and statistical data, along with 
+                            those entering Durham Public Schools. Our research aims to inform future pre-service trainings for university students, 
+                           support local neighborhood schools in visualizing their communities, 
+                           and help varied university offices articulate what “community” actually looks like. Through spatial and statistical data, along with 
                             contextual resources, we hope to provide a holistic view of our schools and their communities -
                             highlighting their resources and assets.")),
                      box(title = "Our 10 Schools",
@@ -189,7 +191,8 @@ body <- {dashboardBody(
                     box(width = 8,
                         solidHeader = TRUE,
                         title = strong("Context")),
-                ),
+                )
+                ,
                 fluidRow(
                     box(width = 4,
                         solidHeader = TRUE,
@@ -199,6 +202,8 @@ body <- {dashboardBody(
     )
 )
 }
+
+
 
 shinyApp(
     ui = dashboardPage(
@@ -536,13 +541,13 @@ shinyApp(
                       a("Importance and Resources for Professional Development", 
                         href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
             } else if (input$select == "Free/Red Lunch") {
-                paste("The percent of students receiving free and reduced lunch is a great indicator of 
+                paste("The percent of students receiving free and reduced lunch is a strong indicator of 
         socioeconomic statuses. The percentage of students that fall below the poverty line 
-        determines if a school is considered Title 1. Title 1 schools are eligible to receive grants 
+        determines if a school is considered Title I. Title I schools are eligible to receive grants 
         through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ 
         socioeconomic statuses without being condescending and prejudiced. Socioeconomic status is 
         not a limit, it is a barrier.", "<br>","<br>",
-                      "Below are articles on Free/Reduced Lunch and its connection to Title 1 schools:", "<br>",
+                      "Below are articles on Free/Reduced Lunch and its connection to Title I schools:", "<br>",
                       a("Rural Schools and Free/Reduced Lunch", 
                         href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
                       a("NC Community Free/Reduced Lunch Eligibility",
@@ -747,7 +752,7 @@ shinyApp(
                    "Lakewood Elementary" = "darkred", 
                    "Parkwood Elementary" = "lightblue", 
                    "Southwest Elementary" = "brown", 
-                   "All" = "#fafaf8")
+                   "All" = "transparent")
         })
         
         output$map <- renderLeaflet({
@@ -756,7 +761,7 @@ shinyApp(
                 addPolygons(data = displayZone(),
                             fillColor = displayColor(),
                             stroke = TRUE,
-                            fillOpacity = 0.45,
+                            fillOpacity = 0.39,
                             smoothFactor = 1) %>%
                 addMarkers(data = displayVar(), lng = ~LONGITUDE, lat= ~LATITUDE, 
                            label = displayVar()$name, icon = displayIcon(), 
@@ -779,7 +784,7 @@ shinyApp(
         
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
-            slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE)
+            slickR(imgs, width = 400, height = 400) + settings(autoplay = TRUE)
         })
     }
 )
