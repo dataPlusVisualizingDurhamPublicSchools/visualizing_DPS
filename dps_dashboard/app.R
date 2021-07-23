@@ -644,7 +644,7 @@ shinyApp(
                 paste("Here are some resouces on racial demographics.")
             }
             else if (input$select == "Household Income"){
-                paste("This graph shows the average household income for each school zone. 
+                paste("This graph shows the median household income for each school zone. 
                 The average household income in the United States is $62,843 according to the US census as of 2019. 
                 This average household income in North Carolina is $54,602, according to the US census as of 2019.", "<br>","<br>",
                 "Below are links to the US Census Information:", "<br>",
@@ -654,7 +654,7 @@ shinyApp(
                   href="https://www.census.gov/quickfacts/NC"))
             }
             else if (input$select == "Homesale Price"){
-                paste("This graph shows the average home sale price for each school zone. 
+                paste("This graph shows the median home sale price for each school zone. 
                       The average home sale price in the United States is $287,148, according to Zillow.
                       This average home sale price in North Carolina is $210,766, according to Zillow. 
                       Due to the Covid-19 Pandemic, home prices increased.", "<br>", "<br>",
