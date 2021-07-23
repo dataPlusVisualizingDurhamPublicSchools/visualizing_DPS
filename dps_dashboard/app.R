@@ -86,38 +86,51 @@ body <- {dashboardBody(
         {tabItem(tabName = "home",
                  fluidRow(
                      class = "text-center",
-                     box(title = strong("Visualizing Durham Public Schools"),
+                     box(h3(strong("Visualizing Durham Public Schools")),
                          width = 12,
                          background = "navy",
+                         br(),
                          p("This project is inspired by an inter-institutional Bass Connections team from Duke and
                                North Carolina Central University that is committed to developing more responsible and
                                imaginative ways of partnering with Durham Public Schools.
                                Students will use existing data sets combined with historic and contemporary city context
                                to better understand the complex and nuanced details of different school communities.
-                               Students will prioritize the public schools that most commonly partner with each respective university.
-                               Our research aims to inform future pre-service trainings for university students, support local
-                               neighborhood schools in visualizing their communities, and help varied university offices
-                               articulate what “community” actually looks like. Visit the",
-                           a("Visualizing DPS and Bass Connections Website",
-                             href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
-                           "for more information!")),
-                     box(title = "Project Objective",
-                         solidHeader = TRUE,
-                         width = 6,
+                               Students will prioritize the public schools that most commonly partner with each respective university."),
+                         br(),
                          p("Our project objective is to provide a web application that will serve as a tool for
                             those entering Durham Public Schools. Our research aims to inform future pre-service trainings for university students, 
                            support local neighborhood schools in visualizing their communities, 
                            and help varied university offices articulate what “community” actually looks like. Through spatial and statistical data, along with 
                             contextual resources, we hope to provide a holistic view of our schools and their communities -
-                            highlighting their resources and assets.")),
+                            highlighting their resources and assets."),
+                         p("Visit the", a("Visualizing DPS and Bass Connections Website",
+                             href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
+                           "for more information!"))),
+                 fluidRow(
+                     class = "text-center",
+                     box(
+                         solidHeader = TRUE,
+                         br(),
+                         width = 12,
+                         valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
+                         valueBox(21, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
+                 fluidRow(
+                     class = "text-center",
+                     box(title = "About Durham Public Schools",
+                         solidHeader = TRUE,
+                         width = 6,
+                         p("Durham County is a X mile radius. Durham Public Schools contains X schools.")
+                     ),
                      box(title = "Our 10 Schools",
                          solidHeader = TRUE,
-                         width =6,
+                         width = 6,
                          slickROutput("slickr", width = "auto"),
                          p(br(),
                           "Our project focuses on the 10 schools most partnered with by Duke and NCCU.
                            These include the 8 elementary schools: CC Spaulding, Eastway, E.K. Powe, Fayetteville, Forest View,
-                           Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan.")),
+                           Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan."))),
+                 fluidRow(
                      box(title = "View Our 10 Schools",
                          width = 12,
                          background = "navy",
