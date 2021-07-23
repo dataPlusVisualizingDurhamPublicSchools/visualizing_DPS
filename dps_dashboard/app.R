@@ -50,6 +50,7 @@ libraries <- read.csv("renamed_Libraries.csv")
 parks <- read.csv("renamed_Parks.csv")
 rec <- read.csv("renamed_Recreation Centers.csv")
 religious <- read.csv("renamed_Religious Centers.csv")
+schools <- read.csv("schools.csv")
 
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
@@ -91,18 +92,16 @@ body <- {dashboardBody(
                          background = "navy",
                          br(),
                          p("This project is inspired by an inter-institutional Bass Connections team from Duke and
-                               North Carolina Central University that is committed to developing more responsible and
-                               imaginative ways of partnering with Durham Public Schools.
-                               Students will use existing data sets combined with historic and contemporary city context
-                               to better understand the complex and nuanced details of different school communities.
-                               Students will prioritize the public schools that most commonly partner with each respective university."),
-                         br(),
-                         p("Our project objective is to provide a web application that will serve as a tool for
+                            North Carolina Central University that is committed to developing more responsible and
+                            imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a 
+                            centralized web application that will serve as a tool for
                             those entering Durham Public Schools. Our research aims to inform future pre-service trainings for university students, 
-                           support local neighborhood schools in visualizing their communities, 
-                           and help varied university offices articulate what “community” actually looks like. Through spatial and statistical data, along with 
-                            contextual resources, we hope to provide a holistic view of our schools and their communities -
-                            highlighting their resources and assets."),
+                            support local neighborhood schools in visualizing their communities, 
+                            and help varied university offices articulate what “community” actually looks like."),
+                         br(),
+                         p("Through spatial and school-specific data, along with 
+                            contextual resources, we hope to provide a holistic view of Durham Public schools and their communities -
+                            highlighting their resources and assets." ),
                          p("Visit the", a("Visualizing DPS and Bass Connections Website",
                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
                            "for more information!"))),
@@ -117,19 +116,21 @@ body <- {dashboardBody(
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                      class = "text-center",
-                     box(title = "About Durham Public Schools",
+                     box(title = "Project Focus",
                          solidHeader = TRUE,
                          width = 6,
-                         p("Durham County is a X mile radius. Durham Public Schools contains X schools.")
-                     ),
-                     box(title = "Our 10 Schools",
-                         solidHeader = TRUE,
-                         width = 6,
-                         slickROutput("slickr", width = "auto"),
-                         p(br(),
-                          "Our project focuses on the 10 schools most partnered with by Duke and NCCU.
+                         p("Durham County is a X mile radius. Durham Public Schools contains X schools.
+                            Our project focuses on the 10 schools most partnered with by Duke and NCCU.
                            These include the 8 elementary schools: CC Spaulding, Eastway, E.K. Powe, Fayetteville, Forest View,
-                           Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan."))),
+                           Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan.")),
+                     box(width = 6,
+                         solidHeader = TRUE,
+                         leafletOutput("home"))),
+                 fluidRow(
+                     box(
+                         solidHeader = TRUE,
+                         width = 6,
+                         slickROutput("slickr", width = "auto"))),
                  fluidRow(
                      box(title = "View Our 10 Schools",
                          width = 12,
@@ -781,6 +782,12 @@ shinyApp(
                            clusterOptions = markerClusterOptions()) %>%
                 addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, 
                            label = displaySchool()["name"])
+        })
+        
+        output$home <- renderLeaflet({
+            leaflet() %>%
+                addProviderTiles("CartoDB.Positron") %>%
+                addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE)
         })
         
         observeEvent(input$viewMap, {
