@@ -68,7 +68,8 @@ iconSet <- iconList(
     cultural = makeIcon("https://img.icons8.com/windows/32/000000/crowd.png", iconWidth=20, iconHeight=20),
     grocery = makeIcon("https://img.icons8.com/ios/50/000000/grocery-store.png", iconWidth=20, iconHeight=20),
     libraries = makeIcon("https://img.icons8.com/windows/32/000000/book--v1.png", iconWidth=20, iconHeight=20),
-    religious = makeIcon("https://img.icons8.com/fluent-systems-regular/48/000000/chapel.png", iconWidth=20, iconHeight=20)
+    religious = makeIcon("https://img.icons8.com/fluent-systems-regular/48/000000/chapel.png", iconWidth=20, iconHeight=20),
+    school = makeIcon("https://img.icons8.com/wired/64/000000/university-campus.png", iconWidth = 40, iconHeight = 40)
 )
 
 sidebar <- {dashboardSidebar(
@@ -787,6 +788,8 @@ shinyApp(
         output$home <- renderLeaflet({
             leaflet() %>%
                 addProviderTiles("CartoDB.Positron") %>%
+                addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$school) %>%
+                addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$school) %>%
                 addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE)
         })
         
