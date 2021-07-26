@@ -121,22 +121,26 @@ body <- {dashboardBody(
                         box(title = strong("2 Universities, 10 Public Schools"),
                             solidHeader = TRUE,
                             width = 7,
-                            p("Durham County is a X mile radius. Durham Public Schools contains X schools.
-                              Our project focuses on the 10 schools most partnered with by Duke and NCCU.
-                             These include the 8 elementary schools: CC Spaulding, Eastway, E.K. Powe, Fayetteville, Forest View,
-                             Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan."),
+                            p("The Durham Public Schools District contains 54 public schools: 
+                                30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 
+                                1 hospital. Our project focuses on the 10 schools that are most 
+                                partnered with by Duke University and North Carolina Central 
+                                University. These include 8 elementary schools: C.C. Spaulding, 
+                                Eastway, E.K. Powe, Fayetteville, Forest View, Lakewood, Parkwood, 
+                                Southwest, and 2 high schools: Hillside and Jordan."),
                             br(),
-                            p("need to add a lot of text here for formatting. kdfsj;alkjf;laskdjf;lkjd;flkja;flkjad;slkj;lksdjf
-                              fd;lkja;dslkj;sdalkj;flskj;lsdkj;ldksfj;skldfj;sdlkfj;lskdjf;lksdjf;lkdjf;lkdsj;lkjf;lkjdsf;lkjf;"),
+                            p("The shared goal of both universities is to foster equitable partnernships with 
+                            Durham Public Schools. Based on previous Bass Connections research, an issue preventing 
+                            meaningful engagement between Duke, NCCU, and the public schools is that “many 
+                            university students lack an understanding of city and community dynamics”. Additionally, 
+                            there is a “lack of student volunteer training with Durham’s context, particularly in 
+                            the areas of history, school-specific demographics, and implicit bias and power dynamics 
+                            that may manifest in schools."),
                             br(),
-                            p("fd;lkjsd;alkfj;;;;;;;;;;;;;;;;;;;;;;sda;lkfj;lskjf;lkjs;dlkjf;laksj;flkja;slkjfd;lkjsdf;lkjs;dlfj
-                              fd;salkjf;lkjas;dlfkj;lskdfj;alskdjf;lksdjf;lkjsfd;lkjfsd;lkjsd;lkfj;sdlkjf;lksdjf;lskdfj;lkfdsf;
-                              ds;lfkj;sldkfj;slkfj;lksjdf;lkjsdf;lkjf;dslkjs;dlkfj;sldfkj;dslfj;dslkj;slkjd;lkjfd;lkjdsf;lkjf
-                              fdl;kjads;lkj;sdlkfncva;lzdrknsfzeroijfnvoa34erijkldfv;anslfdknc;lkwdns.a,mfn.s,mdnf.,"),
-                            br(),
-                            p("msdfnfsd,mn.fdas;lkf.,amsnzf.d,ncslkdfn;cas/,mdfncvlsknf,dc;lafdkjgl;ksjgdrofdiajw;elksfh;lkjf;l
-                              lsafdj;lkjdf;lkjsr;flkja;weslkfj;alskfj;alksjdf;lkajsd;flkjsa;dlkfnsa.d,mcvn.dfkajv;lkajsdf;lkjas;dflkjsd
-                              dsf;lkja;slfdkj;aslkf;sc,m;rlkjfd;lwkrsjfd;lkjrsf;dlkjars;lkdfj;slkajdf;lksajf;lkjas;lfkj;alkjf;dlkja;lkja")),
+                            p(strong("Inspired by the community schools model, our project 
+                            explores a way of visualizing schools as the “center of the community that 
+                            brings together academics, health and social services, youth and community development 
+                            and community engagement under one roof."))),
                         box(width = 5,
                             background = "light-blue",
                             solidHeader = TRUE,
