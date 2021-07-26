@@ -69,7 +69,8 @@ iconSet <- iconList(
     grocery = makeIcon("https://img.icons8.com/ios/50/000000/grocery-store.png", iconWidth=20, iconHeight=20),
     libraries = makeIcon("https://img.icons8.com/windows/32/000000/book--v1.png", iconWidth=20, iconHeight=20),
     religious = makeIcon("https://img.icons8.com/fluent-systems-regular/48/000000/chapel.png", iconWidth=20, iconHeight=20),
-    school = makeIcon("https://img.icons8.com/wired/64/000000/university-campus.png", iconWidth = 40, iconHeight = 40)
+    uni = makeIcon("https://img.icons8.com/wired/64/000000/university-campus.png", iconWidth = 40, iconHeight = 40),
+    schools = makeIcon("https://img.icons8.com/material-sharp/24/000000/school-building.png", iconWidth = 20, iconHeight = 20)
 )
 
 sidebar <- {dashboardSidebar(
@@ -116,23 +117,45 @@ body <- {dashboardBody(
                          valueBox(21, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
-                     class = "text-center",
-                     box(title = "Project Focus",
-                         solidHeader = TRUE,
-                         width = 6,
-                         p("Durham County is a X mile radius. Durham Public Schools contains X schools.
-                            Our project focuses on the 10 schools most partnered with by Duke and NCCU.
-                           These include the 8 elementary schools: CC Spaulding, Eastway, E.K. Powe, Fayetteville, Forest View,
-                           Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan.")),
-                     box(width = 6,
-                         solidHeader = TRUE,
-                         leafletOutput("home"))),
+                        class = "text-center",
+                        box(title = strong("2 Universities, 10 Public Schools"),
+                            solidHeader = TRUE,
+                            width = 7,
+                            p("Durham County is a X mile radius. Durham Public Schools contains X schools.
+                              Our project focuses on the 10 schools most partnered with by Duke and NCCU.
+                             These include the 8 elementary schools: CC Spaulding, Eastway, E.K. Powe, Fayetteville, Forest View,
+                             Lakewood, Parkwood, Southwest, and the 2 high schools: Hillside and Jordan."),
+                            br(),
+                            p("need to add a lot of text here for formatting. kdfsj;alkjf;laskdjf;lkjd;flkja;flkjad;slkj;lksdjf
+                              fd;lkja;dslkj;sdalkj;flskj;lsdkj;ldksfj;skldfj;sdlkfj;lskdjf;lksdjf;lkdjf;lkdsj;lkjf;lkjdsf;lkjf;"),
+                            br(),
+                            p("fd;lkjsd;alkfj;;;;;;;;;;;;;;;;;;;;;;sda;lkfj;lskjf;lkjs;dlkjf;laksj;flkja;slkjfd;lkjsdf;lkjs;dlfj
+                              fd;salkjf;lkjas;dlfkj;lskdfj;alskdjf;lksdjf;lkjsfd;lkjfsd;lkjsd;lkfj;sdlkjf;lksdjf;lskdfj;lkfdsf;
+                              ds;lfkj;sldkfj;slkfj;lksjdf;lkjsdf;lkjf;dslkjs;dlkfj;sldfkj;dslfj;dslkj;slkjd;lkjfd;lkjdsf;lkjf
+                              fdl;kjads;lkj;sdlkfncva;lzdrknsfzeroijfnvoa34erijkldfv;anslfdknc;lkwdns.a,mfn.s,mdnf.,"),
+                            br(),
+                            p("msdfnfsd,mn.fdas;lkf.,amsnzf.d,ncslkdfn;cas/,mdfncvlsknf,dc;lafdkjgl;ksjgdrofdiajw;elksfh;lkjf;l
+                              lsafdj;lkjdf;lkjsr;flkja;weslkfj;alskfj;alksjdf;lkajsd;flkjsa;dlkfnsa.d,mcvn.dfkajv;lkajsdf;lkjas;dflkjsd
+                              dsf;lkja;slfdkj;aslkf;sc,m;rlkjfd;lwkrsjfd;lkjrsf;dlkjars;lkdfj;slkajdf;lksajf;lkjas;lfkj;alkjf;dlkja;lkja")),
+                        box(width = 5,
+                            background = "light-blue",
+                            solidHeader = TRUE,
+                            leafletOutput("home"))),
                  fluidRow(
-                     box(
+                     box(width = 12,
                          solidHeader = TRUE,
-                         width = 6,
-                         slickROutput("slickr", width = "auto"))),
+                         background = "light-blue",
+                         class = "text-center",
+                         h3(strong("Meet Our Team")))),
+                 fluidRow(box(width = 12,
+                          solidHeader = TRUE,
+                          class = "text-center",
+                          p("thinking about including all of our pictures and short bios"))),
                  fluidRow(
+                        box(width = 5,
+                            solidHeader = TRUE,
+                            slickROutput("slickr", width = "auto"))),
+                 fluidRow(class = "text-center",
                      box(title = "View Our 10 Schools",
                          width = 12,
                          background = "navy",
@@ -788,9 +811,9 @@ shinyApp(
         output$home <- renderLeaflet({
             leaflet() %>%
                 addProviderTiles("CartoDB.Positron") %>%
-                addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$school) %>%
-                addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$school) %>%
-                addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE)
+                addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$uni, label = "Duke University") %>%
+                addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$uni, label = "North Carolina Central University") %>%
+                addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schools$NAME)
         })
         
         observeEvent(input$viewMap, {
