@@ -145,27 +145,30 @@ body <- {dashboardBody(
                             background = "light-blue",
                             solidHeader = TRUE,
                             leafletOutput("home"))),
+                 fluidRow(class = "text-center",
+                          box(title = "View Our 10 Schools",
+                              width = 12,
+                              background = "navy",
+                              actionButton("viewMap", "View Spatial Data"),
+                              actionButton("viewStat", "View School Statistics"))),
                  fluidRow(
-                     box(width = 12,
-                         solidHeader = TRUE,
-                         background = "light-blue",
-                         class = "text-center",
-                         h3(strong("Meet Our Team")))),
-                 fluidRow(box(width = 12,
-                          solidHeader = TRUE,
-                          class = "text-center",
-                          p("thinking about including all of our pictures and short bios"))),
+                       box(width = 12,
+                           solidHeader = TRUE,
+                           background = "light-blue",
+                           fluidRow(width = 12,
+                                    class = "text-center",
+                                    h3(strong("Meet Our Team"))),
+                           fluidRow(width = 12,
+                                    imageOutput("ally")),
+                                #imageOutput("patience"),
+                                #imageOutput("rhea"),
+                                #imageOutput("drew")),
+                           fluidRow(width = 12,
+                                    p("thinking about including all of our pictures and short bios")))),
                  fluidRow(
                         box(width = 5,
                             solidHeader = TRUE,
-                            slickROutput("slickr", width = "auto"))),
-                 fluidRow(class = "text-center",
-                     box(title = "View Our 10 Schools",
-                         width = 12,
-                         background = "navy",
-                         actionButton("viewMap", "View Spatial Data"),
-                         actionButton("viewStat", "View School Statistics"))
-                 )
+                            slickROutput("slickr", width = "auto")))
         )},
         
         #School Stats
@@ -881,6 +884,10 @@ shinyApp(
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
             slickR(imgs, width = 300, height = 300) + settings(autoplay = TRUE)
+        })
+        
+        output$ally <- renderImage({
+            return(list(src = "ally.jpg", contentType = "image/png", width = "200px"))
         })
     }
 )
