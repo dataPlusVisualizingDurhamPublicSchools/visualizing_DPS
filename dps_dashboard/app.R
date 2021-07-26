@@ -561,7 +561,18 @@ shinyApp(
                       a("State Policy View on Class Size",
                         href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
             }
-           else if (input$select == "CTE Enrollment Rate, High School"){
+            else if (input$select == "CTE Enrollment Rate, High School"){
+                paste("Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience 
+                      in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where 
+                      all high school students are required to take 3 CTE courses, participate in 2 career exposure activities, and get an 
+                      internship or a job before they graduate. This initiative, as well as all of CTE courses, are created to develop 
+                      students’ soft skills, gain real-world experience, and help students decide on their post-graduate plans.", "<br>","<br>",
+                    "Below is more information about CTE courses in Durham Public Schools and North Carolina:", "<br>",
+                    a("DPS CTE Course Initiative",
+                      href = "https://www.dpsnc.net/domain/293"), "<br>",
+                    a("NCDPI CTE Course Overview",
+                      href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education")
+                )
                 
             }else if (input$select == "Experienced Teacher Ratio") {
                 paste("Research shows teacher experience does not directly correlate to effective teaching. 
@@ -581,7 +592,7 @@ shinyApp(
             } else if (input$select == "Free/Red Lunch") {
                 paste("The percent of students receiving free and reduced lunch is a strong indicator of 
         socioeconomic statuses. The percentage of students that fall below the poverty line 
-        determines if a school is considered Title I. Title I schools are eligible to receive grants 
+        determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", "Title I schools are eligible to receive grants 
         through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ 
         socioeconomic statuses without being condescending and prejudiced. Socioeconomic status is 
         not a limit, it is a barrier.", "<br>","<br>",
@@ -589,7 +600,10 @@ shinyApp(
                       a("Rural Schools and Free/Reduced Lunch", 
                         href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
                       a("NC Community Free/Reduced Lunch Eligibility",
-                        href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"))
+                        href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"),
+                      "<br>","<br>", HTML(paste0(tags$sup("1"))),
+                      strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
+                )
             } else if (input$select == "Student-Teacher Ratio, Elementary School"){
                 paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. 
         By allowing for more centralized and one-on-one instruction, smaller student-teacher ratios 
@@ -618,16 +632,24 @@ shinyApp(
                         href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
             } 
             else if (input$select == "Funding Per Pupil"){
-                paste("It’s important for public schools to receive equitable funding so every student has 
-                      equal opportunity to reach their full potential with the necessary resources for success.", "<br>", "<br>",
+                paste("This indicator represents the amount that local, state, and federal governments spend 
+                on elementary and secondary education, adjusted for the size of the student body. It is 
+                calculated by dividing the current expenditures over the entire academic year for prekindergarten 
+                through grade 12 by the number of students in those grades in public schools. Current expenditures 
+                include instruction and instruction-related costs, student support services, administration, and 
+                operations and exclude funds for school construction and other capital outlays, debt service, and 
+                programs outside of public elementary and secondary education. North Carolina ranks 39th in per 
+                pupil spending out of 50.", "<br>", "<br>",
                       "Resources on public school funding:", "<br>",
                       a("Interactive Summary of Local - Federal Public School Funding:",
-                        href="https://www.dpsnc.net/Page/3771"))
+                        href="https://www.dpsnc.net/Page/3771"),
+                      a("New Per Pupil Expenditure Requirements",
+                        href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
             } 
             else if (input$select == "Students With Disabilities"){
                 paste("It is integral to make sure students with disabilities are provided with accessibility services to 
-                      achieve their full potential in the classroom. Resources like assistive technology, transportation, 
-                      Exceptional Children (EC) programs, etc. are mandatory for every school to provide regardless of the 
+                      achieve their full potential in the classroom. Resources like", HTML(paste0(strong("assistive technology"),tags$sup("1"))), ", transportation,", 
+                      HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", etc. are mandatory for every school to provide regardless of the 
                       number of students with disabilities or even the type based on the civil rights law Section 504.", "<br>", "<br>",
                       "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
                       a("DPS EC Services",
@@ -637,20 +659,43 @@ shinyApp(
                       a("NCDPI’s EC Division",
                         href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
                       a("Assistive Technology",
-                        href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"))
+                        href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
+                      "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
+                      and functionality of people with varying disabilities",
+                      "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
+                      individualized instruction in addition to their standard course of study"
+                      )
             } 
             else if (input$select == "ESL Students"){
-                paste("Here are some resouces on ESL students and programs.")
+                paste("This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. 
+                      ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs
+                      are created to help children learn English along with other subjects necessary to complete each grade. Unfortunately, ESL students can 
+                      face racial bias, discrimination, and bullying in the classroom. Teachers may barr them from participation from school activities, 
+                      extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual 
+                      development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their 
+                      native language entirely.", "<br>","<br>",
+                      "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
+                      a("How to Advocate for ESL/ELL Students",
+                        href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+                      a("Real-World Experiences and Anecdotes",
+                        href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+                      a("DPS ESL Office",
+                        href = "https://central.dpsnc.net/esl"),
+                      a("ESL/ELL Teachers",
+                        href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
             } 
             else if (input$select == "In-School Suspensions (ISS)"){
                 paste("Students of color are more susceptible to harsher punishments in schools.
              Black students are subject to higher disciplinary actions compared to their white peers.
-             A reason for this is racial bias leading to the overpolicing of Black students, fueling the school-to-prison pipeline.", "<br>","<br>",
+             A reason for this is racial bias leading to the overpolicing of Black students, fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
                       "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
                       a("Racial Bias in School Discipline", 
                         href = "https://www.pnas.org/content/116/17/8255"), "<br>",
                       a("School-to-Prison Pipeline", 
-                        href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"))
+                        href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
+                      "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
+                      that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
+                      )
             }
             else if(input$select == "Enrollment") {
                 paste("This dataset shows the enrollment numbers at each school.")
@@ -685,11 +730,11 @@ shinyApp(
                 paste("This graph shows the median household income for each school zone. 
                 The average household income in the United States is $62,843 according to the US census as of 2019. 
                 This average household income in North Carolina is $54,602, according to the US census as of 2019.", "<br>","<br>",
-                "Below are links to the US Census Information:", "<br>",
-                a("Nationwide Census", 
-                  href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
-                a("North Carolina Census",
-                  href="https://www.census.gov/quickfacts/NC"))
+                      "Below are links to the US Census Information:", "<br>",
+                      a("Nationwide Census", 
+                        href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
+                      a("North Carolina Census",
+                        href="https://www.census.gov/quickfacts/NC"))
             }
             else if (input$select == "Homesale Price"){
                 paste("This graph shows the median home sale price for each school zone. 
@@ -703,8 +748,9 @@ shinyApp(
                         href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"))
             }
             else if (input$select == "Bachelor Degree Rate"){
-                paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.
-", "<br>", "<br>",
+                paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals 
+                      with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with 
+                      more degrees tend to have greater household incomes.", "<br>", "<br>",
                       "Below is more information about bachelor degree rates:", "<br>",
                       a("Bachelor’s Degrees and Race",
                         href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
@@ -728,8 +774,8 @@ shinyApp(
                 
             }
             else if (input$select == "Median Age"){
-                paste("Here are some resouces about Median Age.")
-                
+                paste("This dataset shows the median age of residents in each of the school zones. The median age of residents in a 
+                      specific school zone can determine the various assets available in that designated area.")
             }
         })
         
