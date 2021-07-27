@@ -146,7 +146,7 @@ body <- {dashboardBody(
                             solidHeader = TRUE,
                             leafletOutput("home"))),
                  fluidRow(class = "text-center",
-                          box(title = "View Our 10 Schools",
+                          box(title = strong("View Our 10 Schools"),
                               width = 12,
                               background = "navy",
                               actionButton("viewMap", "View Spatial Data"),
@@ -166,7 +166,7 @@ body <- {dashboardBody(
                            fluidRow(width = 12,
                                     p("thinking about including all of our pictures and short bios")))),
                  fluidRow(
-                        box(width = 5,
+                        box(width = 12,
                             solidHeader = TRUE,
                             slickROutput("slickr", width = "auto")))
         )},
@@ -883,7 +883,9 @@ shinyApp(
         
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
-            slickR(imgs, width = 300, height = 300) + settings(autoplay = TRUE)
+            slickR(imgs, width = 250, height = 250) + settings(autoplay = TRUE,
+                                                               slidesToShow = 3,
+                                                               slidesToScroll = 1)
         })
         
         output$ally <- renderImage({
