@@ -149,13 +149,13 @@ body <- {dashboardBody(
                  fluidRow(class = "text-center",
                           box(title = strong("View Our 10 Schools"),
                               width = 12,
-                              background = "navy",
+                              background = "light-blue",
                               actionButton("viewMap", "View Spatial Data"),
                               actionButton("viewStat", "View School Statistics"))),
                  fluidRow(
                        box(width = 12,
                            solidHeader = TRUE,
-                           background = "light-blue",
+                           background = "navy",
                            fluidRow(width = 12,
                                     class = "text-center",
                                     h3(strong("Meet Our Team"))),
@@ -166,8 +166,21 @@ body <- {dashboardBody(
                                 #imageOutput("drew")),
                            fluidRow(width = 12,
                                     p("thinking about including all of our pictures and short bios")))),
-                 fluidRow(
-                        box(width = 12,
+                 fluidRow(class = "text-center",
+                     box(width = 5,
+                         background = "light-blue",
+                         solidHeader = TRUE,
+                         title = strong("Our Partners"),
+                         box(width = 12,
+                             solidHeader = TRUE,
+                            p(h4(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
+                            br(),
+                            p(a("Duke University", href = "https://duke.edu/")),
+                            br(),
+                            p(a("Data+", href = "https://bigdata.duke.edu/")),
+                            br(),
+                            p(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
+                        box(width = 7,
                             solidHeader = TRUE,
                             slickROutput("slickr", width = "auto"),
                             use_gotop()))
@@ -891,7 +904,7 @@ shinyApp(
         })
         
         output$ally <- renderImage({
-            return(list(src = "ally.jpg", contentType = "image/png", width = "200px", deleteFile = FALSE))
+            return(list(src = "ally.jpg", contentType = "image/png", width = "200px"))
         })
     }
 )
