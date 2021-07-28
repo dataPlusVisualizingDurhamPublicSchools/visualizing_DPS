@@ -294,13 +294,13 @@ shinyApp(
     ),
     server = function(input, output, session) { 
         
-      output$barplots <- renderPlotly({
+     output$barplots <- renderPlotly({
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = MED_AGE), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 35.2", yintercept = 35.2), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 35.2", yintercept = 35.2), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -309,9 +309,9 @@ shinyApp(
             } else if(input$select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 79%", yintercept = 79), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 79%", yintercept = 79), color ='#01016D') +
                     coord_flip() +
                     theme(plot.title = element_text(hjust = .5)) +
                     theme_minimal() +
@@ -320,9 +320,9 @@ shinyApp(
             } else if(input$select == "Free/Red Lunch"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = FREE_RED_PERCENT), hjust = 2, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 51.65%", yintercept = 51.65), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 51.65%", yintercept = 51.65), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -331,9 +331,9 @@ shinyApp(
             } else if(input$select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = STUDENT_TEACHER_ELEM), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 20.5", yintercept = 20.5), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 20.5", yintercept = 20.5), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -342,9 +342,9 @@ shinyApp(
             } else if(input$select == "Student-Teacher Ratio, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = STUDENT_TEACHER_HS), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 24", yintercept = 24), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 24", yintercept = 24), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -353,9 +353,9 @@ shinyApp(
             } else if(input$select == "Average Class Size") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = AVG_CLASS_SIZE), hjust = 2, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -364,7 +364,7 @@ shinyApp(
             } else if(input$select == "Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats_summary[!is.na(schoolstats_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA), vjust = 0)+
@@ -374,9 +374,9 @@ shinyApp(
             }else if(input$select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = STUDENTS_PER_DEVICE), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = .8", yintercept = .8), color ='red') +
+                    geom_hline(aes(text="Durham County Average = .8", yintercept = .8), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -385,9 +385,9 @@ shinyApp(
             } else if(input$select == "Funding Per Pupil") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = FUNDING_PER_PUPIL), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = $11,672", yintercept = 11672), color ='red') +
+                    geom_hline(aes(text="Durham County Average = $11,672", yintercept = 11672), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
@@ -397,10 +397,10 @@ shinyApp(
             } else if(input$select == "Students With Disabilities") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = DISABLED_PERCENT), hjust = 1.5, color = "black") +
                     coord_flip() +
-                    geom_hline(aes(text="Durham County Average = 13.3%", yintercept = 13.3), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 13.3%", yintercept = 13.3), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Percent of Students")
@@ -408,20 +408,20 @@ shinyApp(
             } else if(input$select == "ESL Students") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = ESL_PERCENT), hjust = 1.5, color = "black") +
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Percent of ESL Enrolled Students Per School", x = "School", y = "Percent of Students")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "In-School Suspensions (ISS)") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = IN_SCHOOL_SUSP_PER_1000), hjust = -.1, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 188.92", yintercept = 188.92), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 188.92", yintercept = 188.92), color ='#01016D') +
                     coord_flip(y=c(0,900)) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -430,11 +430,11 @@ shinyApp(
             }else if(input$select == "Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
-                    geom_hline(aes(text="Durham County Average = $58,190", yintercept = 58190), color ='red') +
+                    geom_hline(aes(text="Durham County Average = $58,190", yintercept = 58190), color ='#01016D') +
                     geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
@@ -442,11 +442,11 @@ shinyApp(
             }else if(input$select == "Homesale Price") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = $278,000", yintercept = 278000), color ='red') +
+                    geom_hline(aes(text="Durham County Average = $278,000", yintercept = 278000), color ='#01016D') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
@@ -454,10 +454,10 @@ shinyApp(
             }else if(input$select == "Bachelor Degree Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Bachelor Degree Rate per School Zone", y = "Bachelor Degree Rate", x = "School Zone")
@@ -465,21 +465,21 @@ shinyApp(
             }else if(input$select == "Sidewalk Coverage") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
-                    geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }else if(input$select == "Diversity per School Zone") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_DISTRICT)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_DISTRICT), DIVERSITY_DISTRICT)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 51%", yintercept = 51), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 51%", yintercept = 51), color ='#01016D') +
                     geom_text(aes(label = DIVERSITY_DISTRICT), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
@@ -488,17 +488,18 @@ shinyApp(
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
+                    scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Racial Composition of Schools vs. School Zones" , x = "School/School Zone", y = "Percentage of Students of Color", fill=" ")
-                ggplotly(p)
+                ggplotly(p, tooltip = c("number", "place"))
             }
             else if(input$select == "POC per School") {
                 p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="powder blue") + 
+                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Percentage of Students of Color" , x = "School", y = "Students of Color (%)")
@@ -506,6 +507,8 @@ shinyApp(
             } else if(input$select == "Racial Demographics") {
                 p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
+                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
+                                                 "#76B9F0", "#D1E3F4")) +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -515,20 +518,20 @@ shinyApp(
             else if(input$select == "CTE Enrollment Rate, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = CTE_RATE), hjust = -.1, color = "black") +
                     coord_flip() +
                     theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 53%", yintercept = 53), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 53%", yintercept = 53), color ='#01016D') +
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Percent of Students Enrolled in CTE Courses", x = "School", y = "Percent of Students")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Graduation Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = GRADUATION_RATE), hjust = -.1, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 83.5%", yintercept = 83.5), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 83.5%", yintercept = 83.5), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
@@ -537,9 +540,9 @@ shinyApp(
             }else if(input$select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
-                    geom_bar(stat = 'identity', fill = "powder blue", color = "white") +
+                    geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = ADV_COURSES_PERCENT), hjust = -.1, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 9.22%", yintercept = 9.22), color ='red') +
+                    geom_hline(aes(text="Durham County Average = 9.22%", yintercept = 9.22), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
