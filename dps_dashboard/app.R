@@ -17,6 +17,7 @@ library(plotly)
 library(dplyr)
 library(tidyr)
 library(readxl)
+library(gotop)
 
 #Load School Stats Data
 Race_SCHOOL_ONLY <- read_excel("Race SCHOOL ONLY.xlsx")
@@ -168,7 +169,8 @@ body <- {dashboardBody(
                  fluidRow(
                         box(width = 12,
                             solidHeader = TRUE,
-                            slickROutput("slickr", width = "auto")))
+                            slickROutput("slickr", width = "auto"),
+                            use_gotop()))
         )},
         
         #School Stats
@@ -889,7 +891,7 @@ shinyApp(
         })
         
         output$ally <- renderImage({
-            return(list(src = "ally.jpg", contentType = "image/png", width = "200px"))
+            return(list(src = "ally.jpg", contentType = "image/png", width = "200px", deleteFile = FALSE))
         })
     }
 )
