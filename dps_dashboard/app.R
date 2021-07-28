@@ -156,16 +156,35 @@ body <- {dashboardBody(
                        box(width = 12,
                            solidHeader = TRUE,
                            background = "navy",
-                           fluidRow(width = 12,
-                                    class = "text-center",
-                                    h3(strong("Meet Our Team"))),
-                           fluidRow(width = 12,
-                                    imageOutput("ally")),
-                                #imageOutput("patience"),
+                           class = "text-center",
+                           h3(strong("Meet Our Team")),
+                           box(width = 3,
+                               background = "navy",
+                               imageOutput("ally"),
+                               p("Allyson Ashekun is a junior at Duke University and
+                               is from Clearwater, Florida. Currently, she is studying
+                               Public Policy and Computer Science - her academic interests
+                               focus primarily on the intersection of these two in areas like
+                               Data Science. Allyson joined the Data+ project team because
+                               she is passionate about equitable education and enjoys coding.
+                               She hopes this dashboard will be a helpful tool for those entering
+                               Durham Public Schools and will help improve the quality of partnerships")),
+                           box(width = 3,
+                               background = "navy",
+                                imageOutput("patience"),
+                                p("Patience Jones is a senior at North Carolina Central University 
+                                    and is from Durham, NC. Currently, she is studying English, 
+                                    Secondary Education, and General Psychology. Patience joined the 
+                                    Data+ project team because she was interested 
+                                    in learning more about data science and its integration into 
+                                    education policy. She hopes this dashboard makes an impact on not 
+                                    just only these ten community schools in the dataset, but students 
+                                    in all Durham Public Schools and beyond, in hopes to make education 
+                                    more accessible to all students.")))),
                                 #imageOutput("rhea"),
                                 #imageOutput("drew")),
-                           fluidRow(width = 12,
-                                    p("thinking about including all of our pictures and short bios")))),
+                           #fluidRow(width = 12,
+                                    #p("thinking about including all of our pictures and short bios")))),
                  fluidRow(class = "text-center",
                      box(width = 5,
                          background = "light-blue",
@@ -905,6 +924,10 @@ shinyApp(
         
         output$ally <- renderImage({
             return(list(src = "ally.jpg", contentType = "image/png", width = "200px"))
+        })
+        
+        output$patience <- renderImage({
+            return(list(src = "patience.jpg", contentType = "image/png", width = "200px"))
         })
     }
 )
