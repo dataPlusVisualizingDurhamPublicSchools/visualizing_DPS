@@ -222,14 +222,12 @@ body <- {dashboardBody(
                          box(width = 12,
                             title = strong("Select a Measurement"),
                             selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                            choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Enrollment Rate, High School",#"Diversity per School Zone", 
-                                   "Enrollment","ESL Students","Experienced Teacher Ratio",
-                                    "Free/Red Lunch","Funding Per Pupil","Graduation Rate","Homesale Price","Household Income", "In-School Suspensions (ISS)",
-                                    "Median Age","POC per School",#"Race per School", 
-                                    "Racial Demographics", #"Racial Differential",
-                                    "School and Zone Racial Breakdown",
-                                    "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                    "Students With Disabilities")
+                            choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Course Enrollment Rate, High School", 
+                                                        "Enrollment","English as a Second Language (ESL) Student Enrollment","Experienced Teacher Ratio",
+                                                        "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","Median Homesale Price","Median Household Income", "In-School Suspensions (ISS)",
+                                                        "Median Age","BIPOC Students per School","Racial Demographics","School and Zone BIPOC Comparison",
+                                                        "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                        "Students With Disabilities")
                         )),
                          box(width = 12,
                              title = strong("Context & Resources"),
@@ -294,7 +292,7 @@ shinyApp(
     ),
     server = function(input, output, session) { 
         
-     output$barplots <- renderPlotly({
+      output$barplots <- renderPlotly({
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
@@ -304,7 +302,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Median Age of School Assignment Zones", x = "School Zone", y = "Median Age", caption= "line represents Durham County Avg")
+                    labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age", caption= "line represents Durham County Avg")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
@@ -315,9 +313,9 @@ shinyApp(
                     coord_flip() +
                     theme(plot.title = element_text(hjust = .5)) +
                     theme_minimal() +
-                    labs(title = "Experienced Teacher Ratio", x = "School", y = "Ratio")
+                    labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
-            } else if(input$select == "Free/Red Lunch"){
+            } else if(input$select == "Free and Reduced Lunch"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -326,7 +324,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Students Enrolled in Free and Reduced Lunch", x = "School", y = "Number of Students")
+                    labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
@@ -337,7 +335,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Ratio")
+                    labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Student-Teacher Ratio, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
@@ -348,7 +346,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "High School Student-Teacher Ratio", x = "School", y = "Ratio")
+                    labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Average Class Size") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
@@ -369,7 +367,7 @@ shinyApp(
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Enrollment per School" , x = "School", y = "Enrollment")
+                    labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p)
             }else if(input$select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
@@ -380,7 +378,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Students Per Device", x = "School", y = "Number of Students")
+                    labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Funding Per Pupil") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
@@ -392,7 +390,7 @@ shinyApp(
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding in USD")
+                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Students With Disabilities") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
@@ -403,9 +401,9 @@ shinyApp(
                     geom_hline(aes(text="Durham County Average = 13.3%", yintercept = 13.3), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Percent of Students")
+                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
-            } else if(input$select == "ESL Students") {
+            } else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -414,7 +412,7 @@ shinyApp(
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Percent of ESL Enrolled Students Per School", x = "School", y = "Percent of Students")
+                    labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "In-School Suspensions (ISS)") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
@@ -425,9 +423,9 @@ shinyApp(
                     coord_flip(y=c(0,900)) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "In-School Suspensions Per School", x = "School", y = "Students Per 1000")
+                    labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
-            }else if(input$select == "Household Income") {
+            }else if(input$select == "Median Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -439,7 +437,7 @@ shinyApp(
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
-            }else if(input$select == "Homesale Price") {
+            }else if(input$select == "Median Homesale Price") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -460,7 +458,7 @@ shinyApp(
                     geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Bachelor Degree Rate per School Zone", y = "Bachelor Degree Rate", x = "School Zone")
+                    labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }else if(input$select == "Sidewalk Coverage") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
@@ -484,17 +482,17 @@ shinyApp(
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
-            }else if(input$select == "School and Zone Racial Breakdown"){
+            }else if(input$select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Racial Composition of Schools vs. School Zones" , x = "School/School Zone", y = "Percentage of Students of Color", fill=" ")
-                ggplotly(p, tooltip = c("number", "place"))
+                    labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+                ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "POC per School") {
+            else if(input$select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -502,7 +500,7 @@ shinyApp(
                     geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Percentage of Students of Color" , x = "School", y = "Students of Color (%)")
+                    labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Racial Demographics") {
                 p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
@@ -512,10 +510,10 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Racial Composition of Schools" , x = "School", y = "Percentage of Students", fill="Race")
+                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             } 
-            else if(input$select == "CTE Enrollment Rate, High School") {
+            else if(input$select == "CTE Course Enrollment Rate, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -524,7 +522,7 @@ shinyApp(
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 53%", yintercept = 53), color ='#01016D') +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Percent of Students Enrolled in CTE Courses", x = "School", y = "Percent of Students")
+                    labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Graduation Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
@@ -535,7 +533,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Graduation Rate", x = "School", y = "Percent of Students")
+                    labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }else if(input$select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
@@ -546,10 +544,11 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = .5)) +
-                    labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Percent of Students")
+                    labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
         })
+
         
         output$resources <- renderText({
             if(input$select == "Advanced Placement (AP) Course Enrollment") {
