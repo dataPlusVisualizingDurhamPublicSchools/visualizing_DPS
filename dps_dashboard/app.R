@@ -25,7 +25,7 @@ race <- read_excel("race.xlsx")
 race_diff <- read_excel("race diff.xlsx")
 poc_per_school <- read_excel("poc per school.xlsx")
 funding <- read_excel("funding.xlsx")
-all_race <- read_excel("all race (1).xlsx")
+all_race <- read_excel("all race 1.xlsx")
 schoolstats <- read.csv("Data + School Info - School Statistics.csv")
 
 #Load Map Data
