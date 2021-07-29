@@ -292,7 +292,7 @@ shinyApp(
     ),
     server = function(input, output, session) { 
         
-      output$barplots <- renderPlotly({
+output$barplots <- renderPlotly({
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
@@ -365,10 +365,10 @@ shinyApp(
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
-                    geom_text(aes(label = ENROLLMENT_NA), vjust = 0)+
+                    geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
                     theme(plot.title = element_text(hjust = .5)) +
                     labs(title = "School Enrollment" , x = "School", y = "Students")
-                ggplotly(p)
+                ggplotly(p, tooltip = c("text"))
             }else if(input$select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
