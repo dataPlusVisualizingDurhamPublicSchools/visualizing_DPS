@@ -103,9 +103,9 @@ body <- {dashboardBody(
                             and help varied university offices articulate what “community” actually looks like."),
                          br(),
                          p("Through spatial and school-specific data, along with 
-                            contextual resources, we hope to provide a holistic view of Durham Public schools and their communities -
+                            contextual resources, we hope to provide a holistic view of Durham schools and their communities -
                             highlighting their resources and assets." ),
-                         p("Visit the", a("Visualizing DPS and Bass Connections Website",
+                         p("Visit the", a("Visualizing DPS and Bass Connections website",
                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
                            "for more information!"))),
                  fluidRow(
@@ -115,22 +115,21 @@ body <- {dashboardBody(
                          br(),
                          width = 12,
                          valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
-                         valueBox(21, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(22, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                         class = "text-center",
                         box(title = strong("2 Universities, 10 Public Schools"),
                             solidHeader = TRUE,
                             width = 7,
-                            p("The Durham Public Schools District contains 54 public schools: 
+                            p("Durham Public Schools contains 54 public schools: 
                                 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 
-                                1 hospital. Our project focuses on the 10 schools that are most 
-                                partnered with by Duke University and North Carolina Central 
+                                1 hospital. Our project focuses on the 10 schools that most frequently partner with Duke University and North Carolina Central 
                                 University. These include 8 elementary schools: C.C. Spaulding, 
-                                Eastway, E.K. Powe, Fayetteville, Forest View, Lakewood, Parkwood, 
+                                Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, 
                                 Southwest, and 2 high schools: Hillside and Jordan."),
                             br(),
-                            p("The shared goal of both universities is to foster equitable partnernships with 
+                            p("The shared goal of both universities is to foster equitable partnerships with 
                             Durham Public Schools. Based on previous Bass Connections research, an issue preventing 
                             meaningful engagement between Duke, NCCU, and the public schools is that “many 
                             university students lack an understanding of city and community dynamics”. Additionally, 
@@ -150,7 +149,7 @@ body <- {dashboardBody(
                           box(title = strong("View Our 10 Schools"),
                               width = 12,
                               background = "light-blue",
-                              actionButton("viewMap", "View Spatial Data"),
+                              actionButton("viewMap", "View Geospatial Data"),
                               actionButton("viewStat", "View School Statistics"))),
                  fluidRow(
                         box(width = 12,
@@ -169,7 +168,7 @@ body <- {dashboardBody(
                                             Data Science. Allyson joined the Data+ project team because
                                             she is passionate about equitable education and enjoys coding.
                                             She hopes this dashboard will be a helpful tool for those entering
-                                            Durham Public Schools and will help improve the quality of partnerships")),
+                                            Durham Public Schools and will help improve the quality of partnerships.")),
                                 column(width = 3,
                                         img(src = "drew.jpg")),
                                 column(width = 3,
@@ -803,7 +802,7 @@ output$barplots <- renderPlotly({
                       "Below is more information about sidewalk coverage:", "<br>",
                       a("Importance of Sidewalks",
                         href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-                      a("Income disparities and Sidewalk Coverage",
+                      a("Income Disparities and Sidewalk Coverage",
                         href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
             }
             
