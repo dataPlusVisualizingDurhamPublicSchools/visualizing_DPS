@@ -153,53 +153,70 @@ body <- {dashboardBody(
                               actionButton("viewMap", "View Spatial Data"),
                               actionButton("viewStat", "View School Statistics"))),
                  fluidRow(
-                       box(width = 12,
-                           solidHeader = TRUE,
+                        box(width = 12,
                            background = "navy",
                            class = "text-center",
                            h3(strong("Meet Our Team")),
-                           box(width = 3,
-                               background = "navy",
-                               imageOutput("ally"),
-                               p("Allyson Ashekun is a junior at Duke University and
-                               is from Clearwater, Florida. Currently, she is studying
-                               Public Policy and Computer Science - her academic interests
-                               focus primarily on the intersection of these two in areas like
-                               Data Science. Allyson joined the Data+ project team because
-                               she is passionate about equitable education and enjoys coding.
-                               She hopes this dashboard will be a helpful tool for those entering
-                               Durham Public Schools and will help improve the quality of partnerships")),
-                           box(width = 3,
-                               background = "navy",
-                                imageOutput("patience"),
-                                p("Patience Jones is a senior at North Carolina Central University 
-                                    and is from Durham, NC. Currently, she is studying English, 
+                           column(width = 2,
+                               img(src = "ally.JPG"),
+                               p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. 
+                               Currently, she is studying
+                                 Public Policy and Computer Science - her academic interests
+                                 focus primarily on the intersection of those two disciplines in areas like
+                                 Data Science. Allyson joined the Data+ project team because
+                                 she is passionate about equitable education and enjoys coding.
+                                 She hopes this dashboard will be a helpful tool for those entering
+                                 Durham Public Schools and will help improve the quality of partnerships")),
+                           column(width = 2,
+                                img(src = "drew.jpg"),
+                                p("Drew Greene is a sophomore at Duke University from Richmond, Virginia. 
+                                He intends to study Public Policy with minors in Education and Inequality 
+                                Studies. His academic interests include educational equity and the 
+                                school-to-prison pipeline. Drew joined this project because of the opportunity 
+                                to develop his data science skills. He hopes this project will help adequately
+                                prepare college students to enter schools as well as allow Durham residents to
+                                locate the myriad resources accessible to help form an even stronger community 
+                                built around the schools.")),
+                           column(width = 2,
+                                  img(src = "patience.jpg"),
+                                  p("Patience Jones is a senior at North Carolina Central University 
+                                    from Durham, North Carolina. Currently, she is studying English, 
                                     Secondary Education, and General Psychology. Patience joined the 
                                     Data+ project team because she was interested 
                                     in learning more about data science and its integration into 
                                     education policy. She hopes this dashboard makes an impact on not 
                                     just only these ten community schools in the dataset, but students 
                                     in all Durham Public Schools and beyond, in hopes to make education 
-                                    more accessible to all students.")))),
-                                #imageOutput("rhea"),
-                                #imageOutput("drew")),
-                           #fluidRow(width = 12,
-                                    #p("thinking about including all of our pictures and short bios")))),
+                                    more accessible to all students.")),
+                           column(width = 2,
+                                  img(src = "rhea.jpg"),
+                                  p("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey.
+                                  She is studying Computer Science and Economics. Rhea decided to join this
+                                  project team because she has a passion for data science and hopes that 
+                                  this app will help local universities have a productive relationship with
+                                  the community. She is proud of the work the team accomplished and is 
+                                  excited to see the long term impacts that this web app has!")),
+                           column(width = 2,
+                                  img(src = "nico.jpg"),
+                                  p("Nico is a PhD candidate at Duke's sociology department. He's interested
+                                  in how habits and beliefs change, both at the individual and collective 
+                                  level. He uses longitudinal data, networks, and simulations to try to 
+                                  get at this question. He had the privilege to be the project manager for
+                                  this team. The team was efficient and industrious so his job was easy. The
+                                  team claims he was helpful. He likes to believe that is true.")))),
                  fluidRow(class = "text-center",
                      box(width = 5,
-                         background = "light-blue",
                          solidHeader = TRUE,
                          title = strong("Our Partners"),
-                         box(width = 12,
-                             solidHeader = TRUE,
-                            p(h4(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
-                            br(),
-                            p(a("Duke University", href = "https://duke.edu/")),
-                            br(),
-                            p(a("Data+", href = "https://bigdata.duke.edu/")),
-                            br(),
-                            p(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
+                         p(h4(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
+                         br(),
+                         p(h4(a("Duke University", href = "https://duke.edu/"))),
+                         br(),
+                         p(h4(a("Data+", href = "https://bigdata.duke.edu/"))),
+                         br(),
+                         p(h4(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
                         box(width = 7,
+                            background = "light-blue",
                             solidHeader = TRUE,
                             slickROutput("slickr", width = "auto"),
                             use_gotop()))
@@ -893,12 +910,8 @@ output$barplots <- renderPlotly({
                                                                slidesToScroll = 1)
         })
         
-        output$ally <- renderImage({
-            return(list(src = "ally.jpg", contentType = "image/png", width = "200px"))
-        })
-        
-        output$patience <- renderImage({
-            return(list(src = "patience.jpg", contentType = "image/png", width = "200px"))
+        output$team <- renderImage({
+            return(list(src = "team.png", contentType = "image/png", width = "900px"))
         })
     }
 )
