@@ -159,7 +159,7 @@ body <- {dashboardBody(
                            br(),
                            fluidRow(
                                 column(width = 3,
-                                        img(src = "ally.JPG")),
+                                        img(src = "ally3.JPG")),
                                 column(width =3,
                                         p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. 
                                             Currently, she is studying
@@ -170,7 +170,7 @@ body <- {dashboardBody(
                                             She hopes this dashboard will be a helpful tool for those entering
                                             Durham Public Schools and will help improve the quality of partnerships.")),
                                 column(width = 3,
-                                        img(src = "drew.jpg")),
+                                        img(src = "drew3.jpg")),
                                 column(width = 3,
                                         p("Drew Greene is a sophomore at Duke University from Richmond, Virginia. 
                                         He intends to study Public Policy with minors in Education and Inequality 
@@ -182,7 +182,7 @@ body <- {dashboardBody(
                                         built around the schools."))),
                            fluidRow(
                                 column(width = 3,
-                                  img(src = "patience.jpg")),
+                                  img(src = "patience3.jpg")),
                                 column(width = 3,
                                   p("Patience Jones is a senior at North Carolina Central University 
                                     from Durham, North Carolina. Currently, she is studying English, 
@@ -194,7 +194,7 @@ body <- {dashboardBody(
                                     in all Durham Public Schools and beyond, in hopes to make education 
                                     more accessible to all students.")),
                                 column(width = 3,
-                                  img(src = "rhea.jpg")),
+                                  img(src = "rhea3.jpg")),
                                 column(width = 3,
                                   p("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey.
                                   She is studying Computer Science and Economics. Rhea decided to join this
@@ -204,7 +204,7 @@ body <- {dashboardBody(
                                   excited to see the long term impacts that this web app has!"))),
                            fluidRow(
                                 column(width = 3,
-                                  img(src = "nico.jpg")),
+                                  img(src = "nico3.jpg")),
                                 column(width = 3,
                                   p("Nico is a PhD candidate at Duke's sociology department. He's interested
                                   in how habits and beliefs change, both at the individual and collective 
