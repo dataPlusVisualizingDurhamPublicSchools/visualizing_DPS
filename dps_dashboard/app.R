@@ -157,28 +157,34 @@ body <- {dashboardBody(
                            background = "navy",
                            class = "text-center",
                            h3(strong("Meet Our Team")),
-                           column(width = 2,
-                               img(src = "ally.JPG"),
-                               p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. 
-                               Currently, she is studying
-                                 Public Policy and Computer Science - her academic interests
-                                 focus primarily on the intersection of those two disciplines in areas like
-                                 Data Science. Allyson joined the Data+ project team because
-                                 she is passionate about equitable education and enjoys coding.
-                                 She hopes this dashboard will be a helpful tool for those entering
-                                 Durham Public Schools and will help improve the quality of partnerships")),
-                           column(width = 2,
-                                img(src = "drew.jpg"),
-                                p("Drew Greene is a sophomore at Duke University from Richmond, Virginia. 
-                                He intends to study Public Policy with minors in Education and Inequality 
-                                Studies. His academic interests include educational equity and the 
-                                school-to-prison pipeline. Drew joined this project because of the opportunity 
-                                to develop his data science skills. He hopes this project will help adequately
-                                prepare college students to enter schools as well as allow Durham residents to
-                                locate the myriad resources accessible to help form an even stronger community 
-                                built around the schools.")),
-                           column(width = 2,
-                                  img(src = "patience.jpg"),
+                           br(),
+                           fluidRow(
+                                column(width = 3,
+                                        img(src = "ally.JPG")),
+                                column(width =3,
+                                        p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. 
+                                            Currently, she is studying
+                                            Public Policy and Computer Science - her academic interests
+                                            focus primarily on the intersection of those two disciplines in areas like
+                                            Data Science. Allyson joined the Data+ project team because
+                                            she is passionate about equitable education and enjoys coding.
+                                            She hopes this dashboard will be a helpful tool for those entering
+                                            Durham Public Schools and will help improve the quality of partnerships")),
+                                column(width = 3,
+                                        img(src = "drew.jpg")),
+                                column(width = 3,
+                                        p("Drew Greene is a sophomore at Duke University from Richmond, Virginia. 
+                                        He intends to study Public Policy with minors in Education and Inequality 
+                                        Studies. His academic interests include educational equity and the 
+                                        school-to-prison pipeline. Drew joined this project because of the opportunity 
+                                        to develop his data science skills. He hopes this project will help adequately
+                                        prepare college students to enter schools as well as allow Durham residents to
+                                        locate the myriad resources accessible to help form an even stronger community 
+                                        built around the schools."))),
+                           fluidRow(
+                                column(width = 3,
+                                  img(src = "patience.jpg")),
+                                column(width = 3,
                                   p("Patience Jones is a senior at North Carolina Central University 
                                     from Durham, North Carolina. Currently, she is studying English, 
                                     Secondary Education, and General Psychology. Patience joined the 
@@ -188,22 +194,25 @@ body <- {dashboardBody(
                                     just only these ten community schools in the dataset, but students 
                                     in all Durham Public Schools and beyond, in hopes to make education 
                                     more accessible to all students.")),
-                           column(width = 2,
-                                  img(src = "rhea.jpg"),
+                                column(width = 3,
+                                  img(src = "rhea.jpg")),
+                                column(width = 3,
                                   p("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey.
                                   She is studying Computer Science and Economics. Rhea decided to join this
                                   project team because she has a passion for data science and hopes that 
                                   this app will help local universities have a productive relationship with
                                   the community. She is proud of the work the team accomplished and is 
-                                  excited to see the long term impacts that this web app has!")),
-                           column(width = 2,
-                                  img(src = "nico.jpg"),
+                                  excited to see the long term impacts that this web app has!"))),
+                           fluidRow(
+                                column(width = 3,
+                                  img(src = "nico.jpg")),
+                                column(width = 3,
                                   p("Nico is a PhD candidate at Duke's sociology department. He's interested
                                   in how habits and beliefs change, both at the individual and collective 
                                   level. He uses longitudinal data, networks, and simulations to try to 
                                   get at this question. He had the privilege to be the project manager for
                                   this team. The team was efficient and industrious so his job was easy. The
-                                  team claims he was helpful. He likes to believe that is true.")))),
+                                  team claims he was helpful. He likes to believe that is true."))))),
                  fluidRow(class = "text-center",
                      box(width = 5,
                          solidHeader = TRUE,
