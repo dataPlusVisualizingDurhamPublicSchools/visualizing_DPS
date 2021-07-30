@@ -219,11 +219,9 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          title = strong("Our Partners"),
                          p(h4(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
-                         br(),
                          p(h4(a("Duke University", href = "https://duke.edu/"))),
-                         br(),
+                         p(h4(a("North Carolina Central University", href = "https://www.nccu.edu/"))),
                          p(h4(a("Data+", href = "https://bigdata.duke.edu/"))),
-                         br(),
                          p(h4(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
                      box(width = 7,
                             background = "light-blue",
@@ -915,7 +913,7 @@ output$barplots <- renderPlotly({
         
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
-            slickR(imgs, width = 250, height = 250) + settings(autoplay = TRUE,
+            slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
                                                                slidesToShow = 3,
                                                                slidesToScroll = 1)
         })
