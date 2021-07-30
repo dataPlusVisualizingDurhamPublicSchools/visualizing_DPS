@@ -235,31 +235,34 @@ body <- {dashboardBody(
         {tabItem(tabName = "statstab",
                  fluidRow(
                      #Box Plot Outputs
-                     box(background = "navy", 
+                     box(width = 12,
+                         background = "navy", 
                          solidHeader = TRUE, 
                          title = strong("Charts"), 
                          plotlyOutput("barplots",
-                                        width="auto",
-                                        height = "auto")
-                     ),
+                                      width="auto",
+                                      height = "auto")
+                     )),
+                 fluidRow(
                      #Drop Down Widget for Box Plots
-                     box(solidHeader = TRUE, 
-                         title = strong("Measurements, Context, and Resources"), 
-                         box(width = 12,
-                            title = strong("Select a Measurement"),
-                            selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                            choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Course Enrollment Rate, High School", 
+                         box(width = 6,
+                             solidHeader = TRUE,
+                             title = strong("Select a Measurement"),
+                             selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                         choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","CTE Course Enrollment Rate, High School", 
                                                         "Enrollment","English as a Second Language (ESL) Student Enrollment","Experienced Teacher Ratio",
                                                         "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","Median Homesale Price","Median Household Income", "In-School Suspensions (ISS)",
-                                                        "Median Age","BIPOC Students per School","Racial Demographics","School and Zone BIPOC Comparison",
+                                                        "Median Age","BIPOC Students per School",
+                                                        "Racial Demographics", 
+                                                        "School and Zone BIPOC Comparison",
                                                         "Sidewalk Coverage","Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
                                                         "Students With Disabilities")
-                        )),
-                         box(width = 12,
+                             )),
+                         box(width = 6,
+                             solidHeader = TRUE,
                              title = strong("Context & Resources"),
                              htmlOutput("resources")
                          )
-                     ),
                  )
         )},
         
