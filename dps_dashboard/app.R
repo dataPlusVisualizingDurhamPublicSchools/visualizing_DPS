@@ -98,12 +98,12 @@ body <- {dashboardBody(
                             North Carolina Central University that is committed to developing more responsible and
                             imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a 
                             centralized web application that will serve as a tool for
-                            those entering Durham Public Schools. Our research aims to inform future pre-service trainings for university students, 
+                            those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, 
                             support local neighborhood schools in visualizing their communities, 
                             and help varied university offices articulate what “community” actually looks like."),
                          br(),
-                         p("Through spatial and school-specific data, along with 
-                            contextual resources, we hope to provide a holistic view of Durham schools and their communities -
+                         p("By using spatial data and school-specific data, along with 
+                            contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while
                             highlighting their resources and assets." ),
                          p("Visit the", a("Visualizing DPS and Bass Connections website",
                              href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
@@ -122,25 +122,25 @@ body <- {dashboardBody(
                         box(title = strong("2 Universities, 10 Public Schools"),
                             solidHeader = TRUE,
                             width = 7,
-                            p("Durham Public Schools contains 54 public schools: 
+                            p("The Durham Public Schools District contains 54 public schools: 
                                 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 
                                 1 hospital. Our project focuses on the 10 schools that most frequently partner with Duke University and North Carolina Central 
                                 University. These include 8 elementary schools: C.C. Spaulding, 
                                 Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, 
                                 Southwest, and 2 high schools: Hillside and Jordan."),
                             br(),
-                            p("The shared goal of both universities is to foster equitable partnerships with 
-                            Durham Public Schools. Based on previous Bass Connections research, an issue preventing 
-                            meaningful engagement between Duke, NCCU, and the public schools is that “many 
+                            p("The shared goal of both Duke and NCCU is to foster equitable partnerships with 
+                            Durham Public Schools. Prior Bass Connections research focused on understanding how to
+                            achieve this goal and found that an issue preventing meaningful engagement between
+                            Duke, NCCU, and Durham public schools is that “many 
                             university students lack an understanding of city and community dynamics”. Additionally, 
-                            there is a “lack of student volunteer training with Durham’s context, particularly in 
-                            the areas of history, school-specific demographics, and implicit bias and power dynamics 
-                            that may manifest in schools."),
+                            they found that there is a “lack of student volunteer training with Durham’s context, 
+                            particularly in the areas of history, school-specific demographics, and implicit bias 
+                            and power dynamics that may manifest in schools."),
                             br(),
-                            p(strong("Inspired by the community schools model, our project 
-                            explores a way of visualizing schools as the “center of the community that 
-                            brings together academics, health and social services, youth and community development 
-                            and community engagement under one roof."))),
+                            p(strong("Motivated by this research, our project explores a way of visualizing schools 
+                            as the center of the community that brings together academics, health and social services, 
+                            youth and community development and community engagement under one roof."))),
                         box(width = 5,
                             background = "light-blue",
                             solidHeader = TRUE,
