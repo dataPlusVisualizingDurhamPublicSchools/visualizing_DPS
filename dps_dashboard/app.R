@@ -180,9 +180,10 @@ body <- {dashboardBody(
                                         prepare college students to enter schools as well as allow Durham residents to
                                         locate the myriad resources accessible to help form an even stronger community 
                                         built around the schools."))),
+                           br(),
                            fluidRow(
                                 column(width = 3,
-                                  img(src = "patience3.jpg")),
+                                  img(src = "patience3.jpeg")),
                                 column(width = 3,
                                   p("Patience Jones is a senior at North Carolina Central University 
                                     from Durham, North Carolina. Currently, she is studying English, 
@@ -202,6 +203,7 @@ body <- {dashboardBody(
                                   this app will help local universities have a productive relationship with
                                   the community. She is proud of the work the team accomplished and is 
                                   excited to see the long term impacts that this web app has!"))),
+                           br(),
                            fluidRow(
                                 column(width = 3,
                                   img(src = "nico3.jpg")),
@@ -223,7 +225,7 @@ body <- {dashboardBody(
                          p(h4(a("Data+", href = "https://bigdata.duke.edu/"))),
                          br(),
                          p(h4(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
-                        box(width = 7,
+                     box(width = 7,
                             background = "light-blue",
                             solidHeader = TRUE,
                             slickROutput("slickr", width = "auto"),
