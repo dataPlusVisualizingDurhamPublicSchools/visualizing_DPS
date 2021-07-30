@@ -159,7 +159,7 @@ body <- {dashboardBody(
                            br(),
                            fluidRow(
                                 column(width = 3,
-                                        img(src = "ally3.JPG")),
+                                        img(src = "ally3.jpg")),
                                 column(width =3,
                                         p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. 
                                             Currently, she is studying
@@ -208,7 +208,7 @@ body <- {dashboardBody(
                                 column(width = 3,
                                   img(src = "nico3.jpg")),
                                 column(width = 3,
-                                  p("Nico is a PhD candidate at Duke's sociology department. He's interested
+                                  p("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested
                                   in how habits and beliefs change, both at the individual and collective 
                                   level. He uses longitudinal data, networks, and simulations to try to 
                                   get at this question. He had the privilege to be the project manager for
@@ -218,11 +218,12 @@ body <- {dashboardBody(
                      box(width = 5,
                          solidHeader = TRUE,
                          title = strong("Our Partners"),
-                         p(h4(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
-                         p(h4(a("Duke University", href = "https://duke.edu/"))),
-                         p(h4(a("North Carolina Central University", href = "https://www.nccu.edu/"))),
-                         p(h4(a("Data+", href = "https://bigdata.duke.edu/"))),
-                         p(h4(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
+                         p(h5(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
+                         p(h5(a("Durham Public Schools Foundation", href = "https://www.bullcityschools.org/"))),
+                         p(h5(a("Duke University", href = "https://duke.edu/"))),
+                         p(h5(a("North Carolina Central University", href = "https://www.nccu.edu/"))),
+                         p(h5(a("Data+", href = "https://bigdata.duke.edu/"))),
+                         p(h5(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
                      box(width = 7,
                             background = "light-blue",
                             solidHeader = TRUE,
@@ -916,10 +917,6 @@ output$barplots <- renderPlotly({
             slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
                                                                slidesToShow = 3,
                                                                slidesToScroll = 1)
-        })
-        
-        output$team <- renderImage({
-            return(list(src = "team.png", contentType = "image/png", width = "900px"))
         })
     }
 )
