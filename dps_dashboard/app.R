@@ -316,7 +316,7 @@ shinyApp(
     ),
     server = function(input, output, session) { 
         
-output$barplots <- renderPlotly({
+        output$barplots <- renderPlotly({
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
@@ -443,8 +443,8 @@ output$barplots <- renderPlotly({
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = IN_SCHOOL_SUSP_PER_1000), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 188.92", yintercept = 188.92), color ='#01016D') +
-                    coord_flip(y=c(0,900)) +
+                    geom_hline(aes(text="Durham County Average = 188.92", yintercept = 93.69), color ='#01016D') +
+                    coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
@@ -530,7 +530,7 @@ output$barplots <- renderPlotly({
                 p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#76B9F0", "#D1E3F4")) +
+                                                 "#D1E3F4", "#C6CBCF")) +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
@@ -572,14 +572,12 @@ output$barplots <- renderPlotly({
                 ggplotly(p, tooltip = c("text"))
             }
         })
-
         
         output$resources <- renderText({
             if(input$select == "Advanced Placement (AP) Course Enrollment") {
-                paste("Advanced Placement (AP) courses are challenging, collegiate-level courses high school 
-                students can take for an opportunity to receive college credit upon scoring a 3 or higher on 
-                the standardized assessment. Additionally, it weighs more than an honors course on the high 
-                school level. Hillside High offers 26 AP courses while Jordan High offers 19.", "<br>","<br>",
+                paste("Advanced Placement (AP) courses are challenging, collegiate-level courses high school students can take for an opportunity to receive college credit upon 
+                      scoring a 3 or higher on the standardized assessment. Additionally, it weighs more than an honors course on the high school level. Hillside High offers 26 
+                      AP courses while Jordan High offers 19.", "<br>","<br>",
                       "Below is more information about AP courses:", "<br>", 
                       a("NCDPI AP Courses", 
                         href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
@@ -597,7 +595,7 @@ output$barplots <- renderPlotly({
                       a("State Policy View on Class Size",
                         href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
             }
-            else if (input$select == "CTE Enrollment Rate, High School"){
+            else if (input$select == "CTE Course Enrollment Rate, High School"){
                 paste("Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience 
                       in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where 
                       all high school students are required to take 3 CTE courses, participate in 2 career exposure activities, and get an 
@@ -611,11 +609,11 @@ output$barplots <- renderPlotly({
                 )
                 
             }else if (input$select == "Experienced Teacher Ratio") {
-                paste("Research shows teacher experience does not directly correlate to effective teaching. 
-        With the evolution of research-based practices, it is important to continue to educate new and 
-        returning teachers on the best teaching practices that are scientifically-proven to promote 
-        student success. Good professional development workshops are paramount to provide effective, 
-        culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
+                paste("Although more experienced teachers do tend to perform better on their evaluations, research shows teacher experience does 
+                not directly correlate to effective teaching. Some schools tend to be more attracted to veteran teachers whereas other schools 
+                may see them as less appealing. With the evolution of research-based practices, it is important to continue to educate new and 
+                returning teachers on the best teaching practices that are scientifically-proven to promote student success. Good professional 
+                development workshops are paramount to provide effective, culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
               Experience and Professional Development:", "<br>",
                       a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
                         href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
@@ -626,12 +624,10 @@ output$barplots <- renderPlotly({
                       a("Importance and Resources for Professional Development", 
                         href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
             } else if (input$select == "Free/Red Lunch") {
-                paste("The percent of students receiving free and reduced lunch is a strong indicator of 
-        socioeconomic statuses. The percentage of students that fall below the poverty line 
-        determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", "Title I schools are eligible to receive grants 
-        through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ 
-        socioeconomic statuses without being condescending and prejudiced. Socioeconomic status is 
-        not a limit, it is a barrier.", "<br>","<br>",
+                paste("The percent of students receiving free and reduced lunch is a strong indicator of socioeconomic statuses. The percentage of 
+                students that fall below the poverty line determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
+                "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ 
+                socioeconomic statuses without being condescending and prejudiced. Socioeconomic status is not a limit, it is a barrier.", "<br>","<br>",
                       "Below are articles on Free/Reduced Lunch and its connection to Title I schools:", "<br>",
                       a("Rural Schools and Free/Reduced Lunch", 
                         href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
@@ -641,9 +637,9 @@ output$barplots <- renderPlotly({
                       strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
                 )
             } else if (input$select == "Student-Teacher Ratio, Elementary School"){
-                paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. 
-        By allowing for more centralized and one-on-one instruction, smaller student-teacher ratios 
-        can increase test scores, lower dropout rates, and increase graduation rates.","<br>","<br>",
+                paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing 
+                for more centralized and one-on-one instruction, smaller student-teacher ratios can increase test scores, lower 
+                dropout rates, and increase graduation rates.","<br>","<br>",
                       "Resources on Student-Teacher Ratios:","<br>",
                       a("Infographics and Information on Student-Teacher Ratios",
                         href = "https://www.hunschool.org/resources/student-teacher-ratios"))
@@ -655,12 +651,11 @@ output$barplots <- renderPlotly({
                       a("Infographics and Information on Student-Teacher Ratios",
                         href = "https://www.hunschool.org/resources/student-teacher-ratios"))
             } else if (input$select == "Students Per Device"){
-                paste("Living in a digital age, technology usage in the classroom has increased tremendously, 
-        especially because of the COVID-19 pandemic. Although technology is a great resource, students 
-        may not have equitable access to these devices. It is important for students and teachers to 
-        not only have access to these technological devices, but also understand how to use them. 
-        Professional development is necessary to keep educators up to date on any new technology 
-        entering the classroom to create the most effective learning environment.","<br>","<br>",
+                paste("Living in a digital age, technology usage in the classroom has increased tremendously, especially because of the 
+                COVID-19 pandemic. Although technology is a great resource, students may not have equitable access to these devices. 
+                It is important for students and teachers to not only have access to these technological devices, but also understand 
+                how to use them, this is why professional development is so important. Professional development is necessary to keep 
+                educators up to date on any new technology entering the classroom to create the most effective learning environment.","<br>","<br>",
                       "Resources on Access and Technology in the Classroom:", "<br>",
                       a("Durham Public Schools’ Technological Services",
                         href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
@@ -668,17 +663,15 @@ output$barplots <- renderPlotly({
                         href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
             } 
             else if (input$select == "Funding Per Pupil"){
-                paste("This indicator represents the amount that local, state, and federal governments spend 
-                on elementary and secondary education, adjusted for the size of the student body. It is 
-                calculated by dividing the current expenditures over the entire academic year for prekindergarten 
-                through grade 12 by the number of students in those grades in public schools. Current expenditures 
-                include instruction and instruction-related costs, student support services, administration, and 
-                operations and exclude funds for school construction and other capital outlays, debt service, and 
-                programs outside of public elementary and secondary education. North Carolina ranks 39th in per 
-                pupil spending out of 50.", "<br>", "<br>",
+                paste("This indicator represents the amount that local, state, and federal governments spend on elementary and secondary 
+                education, adjusted for the size of the student body. It is calculated by dividing the current expenditures over the entire 
+                academic year for prekindergarten through grade 12 by the number of students in those grades in public schools. Current 
+                expenditures include instruction and instruction-related costs, student support services, administration, and operations 
+                and exclude funds for school construction and other capital outlays, debt service, and programs outside of public elementary 
+                and secondary education. North Carolina ranks 39th in per pupil spending out of 50.", "<br>", "<br>",
                       "Resources on public school funding:", "<br>",
                       a("Interactive Summary of Local - Federal Public School Funding:",
-                        href="https://www.dpsnc.net/Page/3771"),
+                        href="https://www.dpsnc.net/Page/3771"),"<br>",
                       a("New Per Pupil Expenditure Requirements",
                         href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
             } 
@@ -702,14 +695,14 @@ output$barplots <- renderPlotly({
                       individualized instruction in addition to their standard course of study"
                       )
             } 
-            else if (input$select == "ESL Students"){
-                paste("This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. 
-                      ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs
-                      are created to help children learn English along with other subjects necessary to complete each grade. Unfortunately, ESL students can 
-                      face racial bias, discrimination, and bullying in the classroom. Teachers may barr them from participation from school activities, 
-                      extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual 
-                      development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their 
-                      native language entirely.", "<br>","<br>",
+            else if (input$select == "English as a Second Language (ESL) Student Enrollment"){
+                paste("This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) 
+                Program. ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. 
+                These programs are created to help children learn English along with other subjects necessary to complete each grade. Unfortunately, 
+                ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may barr them from participation from school 
+                activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not 
+                stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing 
+                the identity of their native language entirely.", "<br>","<br>",
                       "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
                       a("How to Advocate for ESL/ELL Students",
                         href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
@@ -734,59 +727,90 @@ output$barplots <- renderPlotly({
                       )
             }
             else if(input$select == "Enrollment") {
-                paste("This dataset shows the enrollment numbers at each school.")
+                paste("This dataset shows the enrollment numbers at each school. Due to COVID-19, there has been a 5% decrease in enrollment. Normally, enrollment or average daily membership (ADM) is 
+                      used to determine funding for each school. The higher the ADM, the more money a school receives. Recently, lawmakers passed a bill stating that they would omit schools from 
+                      reduction in funding as part of COVID-19 relief. Durham Public Schools continues to strive for increased enrollment so that all programs can continue to receive adequate funding.", "<br>","<br>", 
+                      "Below is information about enrollment numbers:", "<br>",
+                      a("The Decrease in Enrollment in North Carolina", 
+                        href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
+                )
             }
-            else if (input$select == "School and Zone Racial Breakdown") {
-                paste("Here are some resouces for differences in school zone and school racial demographics.")
+            else if (input$select == "School and Zone BIPOC Comparison") {
+                paste("This plot shows the percent of students of color in the school compared to the percent of people of color in the school zone. 
+                      This measurement shows the huge disparities in community representation for students of color as most of these schools are not 
+                      racially reflective of the school zones they inhabit. A contributing factor of this is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", "Gentrification has been 
+                      an increasing problem, and COVID-19 has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive 
+                      forcing families out of their homes, which ultimately changes the demographics of those neighborhoods.", "<br>", "<br>",
+                      "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
+                      a("COVID-19 and Gentrification in Durham", 
+                        href = "https://www.dukechronicle.com/article/2020/08/duke-university-covid-rages-housing-hits-home-gentrification-durham"), "<br>",
+                      a("Redlining in Durham", 
+                        href = "https://abc11.com/redlining-gentrification-black-neighborhoods-triangle/10373290/"),
+                      a("Durham’s Racial Inequality, Poverty, and Gentrification", 
+                        href = "https://fpg.unc.edu/publications/racial-inequality-poverty-and-gentrification-durham-north-carolina"),
+                      "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
+                      people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
             }
-            else if (input$select == "Racial Differential") {
-                paste("Here are some resouces for differences in school zone and school racial demographics.")
-            }
-            else if (input$select == "POC per School"){
-                paste("This dataset shows the percentage of students of color in each of the ten schools.", "<br>","<br>",
-                      "Below is more information about students of color:", "<br>",
+
+            else if (input$select == "BIPOC Students per School"){
+                paste("This dataset shows the percentage of students of color in each of the ten schools. Each of the ten schools are 
+                majority students of color which means representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral 
+                for student success. Too often students of color are underrepresented and cannot relate to the content because of 
+                cultural differences. Students who are able to connect with their tutors, their teachers, their administrators, and the 
+                content tend to engage with the content more.", "<br>","<br>",
+                      "Below is more information about students of color::", "<br>",
                       a("Racial/Ethnic Enrollment in NC Public Schools",
-                        href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"))
+                        href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
+                      a("Why Representation Matters",
+                        href="https://givingcompass.org/article/why-teacher-representation-matters-to-students-of-color/"),
+                      a("Benefits of POC Representation",
+                        href="https://educationpost.org/students-of-color-need-to-see-more-people-of-color-that-shouldnt-be-controversial/"),
+                      "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+                      cultures and ethnicities of the classroom"
+                      )
                 
             }
             else if (input$select == "Racial Demographics"){
-                paste("This dataset shows the racial breakdown of each of the ten public schools. 
-                      The racial demographics of all 10 schools has changed over time, specifically in the past 30 years. 
-                      The number of white students has decreased, while the number of students of color has increased.", "<br>","<br>",
+                paste("This dataset shows the racial breakdown of each of the ten public schools. Durham Public Schools’s student population is 80.7% 
+                students of color, but only 57% of Durham County is people of color. The racial demographics of all 10 schools has changed over time, 
+                specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased. 
+                Representation of these students and culturally-responsive pedagogy* is integral for student success. Too often students of color are 
+                underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, 
+                their teachers, their administrators, and the content tend to engage with the content more.", "<br>","<br>",
                       "Below is more information about racial demographics in schools:", "<br>",
                       a("See how Racial Demographics have changed",
                         href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
                       a("More students of color in public schools",
                         href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"))
             }
-            else if (input$select == "Race per School"){
-                paste("Here are some resouces on racial demographics.")
-            }
-            else if (input$select == "Household Income"){
-                paste("This graph shows the median household income for each school zone. 
-                The average household income in the United States is $62,843 according to the US census as of 2019. 
-                This average household income in North Carolina is $54,602, according to the US census as of 2019.", "<br>","<br>",
-                      "Below are links to the US Census Information:", "<br>",
+            else if (input$select == "Median Household Income"){
+                paste("This graph shows the median household income for each school zone. The average household income in the United States 
+                is $62,843, while the median is $68,703, according to the US census as of 2019. This average household income in North 
+                Carolina is $54,602, while the median is $65,534, according to the US census as of 2019. Most of these schools fall below the 
+                NC and US median, a cause for concern. Poverty directly affects how students learn. Students’ basic human needs must be met in 
+                order to excel in the classroom.", "<br>", "<br>", "Below are links to the US Census Information::", "<br>",
                       a("Nationwide Census", 
                         href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
                       a("North Carolina Census",
                         href="https://www.census.gov/quickfacts/NC"))
             }
-            else if (input$select == "Homesale Price"){
-                paste("This graph shows the median home sale price for each school zone. 
-                      The average home sale price in the United States is $287,148, according to Zillow.
-                      This average home sale price in North Carolina is $210,766, according to Zillow. 
-                      Due to the Covid-19 Pandemic, home prices increased.", "<br>", "<br>",
+            else if (input$select == "Median Homesale Price"){
+                paste("This graph shows the average home sale price for each school zone. The median home sale price for the United States 
+                is $374,900, according to the US Census Bureau. The median home sale price in North Carolina is $248,950, according to Zillow.
+                Due to the Covid-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
+                "). Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly
+                expensive city to live in, many of these students in the ten schools required free and reduced lunch.", "<br>", "<br>",
                       "Below is more information about home sale price:", "<br>",
                       a("Zillow Resource",
                         href="https://www.zillow.com/research/zillow-may-2021-market-report-29635/"), "<br>",
                       a("Covid-19 Increase",
-                        href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"))
+                        href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
+                "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
+                them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
             }
             else if (input$select == "Bachelor Degree Rate"){
-                paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals 
-                      with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with 
-                      more degrees tend to have greater household incomes.", "<br>", "<br>",
+                paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees greatly differs 
+                across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.", "<br>", "<br>",
                       "Below is more information about bachelor degree rates:", "<br>",
                       a("Bachelor’s Degrees and Race",
                         href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
@@ -795,23 +819,23 @@ output$barplots <- renderPlotly({
             }
             
             else if (input$select == "Sidewalk Coverage"){
-                paste("Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, 
-                both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, 
-                parks, etc. High income areas tend to have more sidewalk coverage than lower income areas.", "<br>", "<br>",
+                paste("Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, both private and public. Sidewalks are needed 
+                      for individuals to safely walk to places such as school, grocery stores, parks, etc. High income areas tend to have more sidewalk coverage than lower income areas.", "<br>", "<br>",
                       "Below is more information about sidewalk coverage:", "<br>",
                       a("Importance of Sidewalks",
                         href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-                      a("Income Disparities and Sidewalk Coverage",
+                      a("Income disparities and Sidewalk Coverage",
                         href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
             }
             
-            else if (input$select == "Diversity per District"){
+            else if (input$select == "Graduation Rate"){
                 paste("Here are some resouces about diversity in school districts.")
                 
             }
             else if (input$select == "Median Age"){
                 paste("This dataset shows the median age of residents in each of the school zones. The median age of residents in a 
-                      specific school zone can determine the various assets available in that designated area.")
+                      specific school zone can determine the various assets available, identify beneficial resources in the community,  
+                      and give some insight about school enrollment numbers in the future.")
             }
         })
         
