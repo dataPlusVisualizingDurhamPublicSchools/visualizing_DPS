@@ -1006,13 +1006,23 @@ shinyApp(
                       a("The Importance of Preschool and Child Care For Working Mothers",
                             href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
             }
-            else if(input$var == "Community & Cultural Centers"){
-                paste("Waiting for final version",
+             else if(input$var == "Community & Cultural Centers"){
+                paste("The benefits of building community outside the school building contributes to 
+                      more powerful relationships and organizing within the school building. 
+                      Community centers have been found to promote community cohesion and sense of
+                      belonging while providing programming that supports self-esteem, health, and 
+                      academic success. Cultural centers also positively contribute to youth 
+                      development by providing positive self-images as well as opportunities to 
+                      learn about cultural practices and traditions of diverse groups.  ",
                       "<br>",
                       "<br>",
                       "Below is more information about community and cultural centers:",
                       "<br>",
-                      "NEED LINK")
+                      a("The Positive Impact of Community Centers",
+                        href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
+                      "<br>",
+                      a("Culture and Arts Centers",
+                        href = "https://trianglecf.org/impact/impact-cultural-arts/"))
             }
             else if(input$var == "Grocery Stores"){
                 paste(" In order to live a healthy life, people must have access 
