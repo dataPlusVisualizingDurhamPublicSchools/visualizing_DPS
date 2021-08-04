@@ -827,7 +827,14 @@ shinyApp(
             }
             
             else if (input$select == "Graduation Rate"){
-                paste("Here are some resouces about diversity in school districts.")
+                paste("The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for 
+                North Carolina is 86% and plans to raise that percentage to 95% by 2030. Graduation rates are important because delayed graduations can 
+                lead to risk for student dropout rates to increase. Dropping out is a gateway that leads students to live disadvantaged lifestyles. It is 
+                important for stakeholders (especially school counselors and social workers) to reach out to students with extended absences. External 
+                factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.", "<br>", "<br>",
+                      "Below are more resources on graduation rates:", "<br>",
+                      a("Dashboard with Articles and Quick Facts abour Graduation Rates",
+                        href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
                 
             }
             else if (input$select == "Median Age"){
