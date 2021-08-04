@@ -920,7 +920,7 @@ shinyApp(
         })
         
         output$context <- renderText({
-            if(input$var == "Parks"){
+             if(input$var == "Parks"){
                 paste("The presence of parks in a community is vital to increase 
                         community engagement, assist in the economic development 
                         of cities, bolster public health, and help children learn. 
@@ -932,19 +932,28 @@ shinyApp(
                       "<br>",
                       "Below is more information about parks:",
                       "<br>",
-                      a("Why Parks Are Important", href = "https://www.brec.org/index.cfm/page/WhyParksareImportant"))
+                      a("Why Parks Are Important", href = "https://www.brec.org/index.cfm/page/WhyParksareImportant"),
+                        "<br>",
+                      a("Why Parks and Recreation are Essential Public Services",
+                          href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
             }
             else if(input$var == "Recreation Centers"){
-               paste("Recreation centers have varying amenities, frequently including
+                paste("Recreation centers have varying amenities, frequently including
                 fitness centers, basketball courts, and multipurpose rooms. These 
                 facilities can be utilized for afterschool programs, both indoor 
                 and outdoor recreation, and meeting spaces. Similar to parks, recreation
                 centers promote active lifestyles. Benefits include: Functions as a 
                 community hub, ability to host after- and before-school care programs, 
                 and may offer inexpensive or even free tutoring.",
+                      "<br>",
+                      "<br>",
+                      "Below is more information about recreation centers:",
                 "<br>",
+                a("The Positive Impact of Community Recreation Center",
+                  href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
                 "<br>",
-                "Below is more information about recreation centers: *NEED LINK")
+                a("Recreation Centers Play an Important Role in Communities",
+                  href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
             }
             else if(input$var == "Gardens"){
                 paste("Gardens offer numerous benefits to the community including nature
@@ -966,14 +975,14 @@ shinyApp(
                       "Below is more information about parks:",
                       "<br>",
                       a("A Survey of Community Gardens in Upstate New York", 
-                            href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchArmstrongSurveyNYHealthCommunityDevelopment.pdf?fwd=no"),
+                        href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchArmstrongSurveyNYHealthCommunityDevelopment.pdf?fwd=no"),
                       "<br>",
-                      a("Low-income consumers’ attitudes and behaviour towards
-                            access, availability...",
-                            href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchDibsdallLambertBobbinFrewerAccesstoProduce.pdf?fwd=no"),
+                      a("Low-income Consumers’ Attitudes and Behaviour Towards
+                            Access, Availability and Motivation to Eat Fruit and Vegetables",
+                        href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchDibsdallLambertBobbinFrewerAccesstoProduce.pdf?fwd=no"),
                       "<br>",
                       a("Research and Benefits of Community Gardens",
-                            href = "https://nccommunitygardens.ces.ncsu.edu/resources-3/nccommunitygardens-research/"))
+                        href = "https://nccommunitygardens.ces.ncsu.edu/resources-3/nccommunitygardens-research/"))
             }
             else if(input$var == "Bus Stops"){
                 paste("For those without their own vehicles, GoDurham and GoTriangle 
@@ -1088,7 +1097,8 @@ shinyApp(
                       "<br>",
                       "Below is more information about religious centers:",
                       "<br>",
-                      "NEED LINK")
+                      a("The Benefits of Religiosity and Spirituality on Mental Health",
+                        href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
             }
         })
             
