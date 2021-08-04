@@ -1058,7 +1058,10 @@ shinyApp(
                       "Below is more information about libraries:",
                       "<br>",
                       a("How Public Libraries Help Build Healthy Communities",
-                            href = "https://www.brookings.edu/blog/up-front/2017/03/30/how-public-libraries-help-build-healthy-communities/"))
+                        href = "https://www.brookings.edu/blog/up-front/2017/03/30/how-public-libraries-help-build-healthy-communities/"),
+                      "<br>",
+                        a("Durham County Library",
+                          href = "https://durhamcountylibrary.org"))
             }
             else if(input$var == "Religious Centers"){
                 paste("Religious centers are huge assets to the community because 
