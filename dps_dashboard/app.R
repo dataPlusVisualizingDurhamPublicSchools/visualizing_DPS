@@ -941,8 +941,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 fitness centers, basketball courts, and multipurpose rooms. These 
                 facilities can be utilized for afterschool programs, both indoor 
                 and outdoor recreation, and meeting spaces. Similar to parks, recreation
-                centers promote active lifestyles. Benefits include: Functions as a 
-                community hub, ability to host after- and before-school care programs, 
+                centers promote active lifestyles. They function as a 
+                community hub, have the ability to host after- and before-school care programs, 
                 and may offer inexpensive or even free tutoring.",
                       "<br>",
                       "<br>",
@@ -1083,8 +1083,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
             }
             else if(input$var == "Religious Centers"){
                 paste("Religious centers are huge assets to the community because 
-                      of various services they provide. These services include donations,
-                      food drives, and fundraisers, providing safe spaces for various 
+                      of numerous services they offer. These services include donations,
+                      food drives, and fundraisers, providing safe spaces for many 
                       cultures, counseling services, daycare, summer programs, and 
                       much more. Additionally, the Durham community has established
                       a rich inter-religion culture, especially in advocacy efforts
