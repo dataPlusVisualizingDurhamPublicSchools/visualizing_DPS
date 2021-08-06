@@ -621,7 +621,7 @@ shinyApp(
                         href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
                       a("Importance and Resources for Professional Development", 
                         href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
-            } else if (input$select == "Free/Red Lunch") {
+            } else if (input$select == "Free and Reduced Lunch") {
                 paste("The percent of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of 
                 students that fall below the poverty line determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
                 "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ 
