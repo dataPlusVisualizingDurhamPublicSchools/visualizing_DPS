@@ -170,7 +170,7 @@ body <- {dashboardBody(
                                             She hopes this dashboard will be a helpful tool for those entering
                                             Durham Public Schools and will help improve the quality of partnerships.")),
                                 column(width = 3,
-                                        img(src = "drew3.jpg")),
+                                        img(src = "drewheadshot3 copy.jpg")),
                                 column(width = 3,
                                         p("Drew Greene is a sophomore at Duke University from Richmond, Virginia. 
                                         He intends to study Public Policy with minors in Education and Inequality 
