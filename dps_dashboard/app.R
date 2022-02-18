@@ -132,11 +132,11 @@ body <- {dashboardBody(
                             p("The shared goal of both Duke and NCCU is to foster equitable partnerships with 
                             Durham Public Schools. Prior Bass Connections research focused on understanding how to
                             achieve this goal and found that an issue preventing meaningful engagement between
-                            Duke, NCCU, and Durham public schools is that “many 
-                            university students lack an understanding of city and community dynamics”. Additionally, 
-                            they found that there is a “lack of student volunteer training with Durham’s context, 
+                            Duke, NCCU, and Durham public schools is that 'many 
+                            university students lack an understanding of city and community dynamics.' Additionally, 
+                            they found that there is a 'lack of student volunteer training with Durham’s context, 
                             particularly in the areas of history, school-specific demographics, and implicit bias 
-                            and power dynamics that may manifest in schools."),
+                            and power dynamics that may manifest in schools.'"),
                             br(),
                             p(strong("Motivated by this research, our project explores a way of visualizing schools 
                             as the center of the community that brings together academics, health and social services, 
@@ -775,9 +775,9 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, 
                 their teachers, their administrators, and the content tend to engage with the content more.", "<br>","<br>",
                       "Below is more information about racial demographics in schools:", "<br>",
-                      a("See how Racial Demographics have changed",
+                      a("Changing School Racial Demographics in Recent Decades",
                         href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-                      a("More students of color in public schools",
+                      a("More Students of Color in Public schools",
                         href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"))
             }
             else if (input$select == "Median Household Income"){
@@ -821,7 +821,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       "Below is more information about sidewalk coverage:", "<br>",
                       a("Importance of Sidewalks",
                         href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-                      a("Income disparities and Sidewalk Coverage",
+                      a("Income Disparities and Sidewalk Coverage",
                         href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
             }
             
@@ -832,7 +832,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 important for stakeholders (especially school counselors and social workers) to reach out to students with extended absences. External 
                 factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.", "<br>", "<br>",
                       "Below are more resources on graduation rates:", "<br>",
-                      a("Dashboard with Articles and Quick Facts abour Graduation Rates",
+                      a("Dashboard with Articles and Quick Facts about Graduation Rates",
                         href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
                 
             }
