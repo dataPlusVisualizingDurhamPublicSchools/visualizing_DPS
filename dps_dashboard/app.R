@@ -79,7 +79,8 @@ sidebar <- {dashboardSidebar(
         id = "TabItems",
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
-        menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar"))
+        menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
+        
     )
 )
 }
@@ -94,13 +95,14 @@ body <- {dashboardBody(
                          width = 12,
                          background = "navy",
                          br(),
-                         p("This project is inspired by an inter-institutional Bass Connections team from Duke and
-                            North Carolina Central University that is committed to developing more responsible and
-                            imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a 
-                            centralized web application that will serve as a tool for
-                            those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, 
-                            support local neighborhood schools in visualizing their communities, 
-                            and help varied university offices articulate what “community” actually looks like."),
+                         p("This project is inspired by an inter-institutional Bass Connections team from Duke University
+                            and North Carolina Central University that is committed to developing more responsible
+                           and imaginative ways of partnering with Durham Public Schools.
+                            The objective of this project is to provide a centralized web application that will 
+                           serve as a tool for those entering Durham Public Schools. Our application aims to 
+                           inform future pre-service trainings for university students, support local neighborhood 
+                           schools in visualizing their communities, and help varied university offices articulate 
+                           what “community” actually looks like."),
                          br(),
                          p("By using spatial data and school-specific data, along with 
                             contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while
@@ -123,24 +125,25 @@ body <- {dashboardBody(
                             solidHeader = TRUE,
                             width = 7,
                             p("The Durham Public Schools District contains 54 public schools: 
-                                30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 
-                                1 hospital. Our project focuses on the 10 schools that most frequently partner with Duke University and North Carolina Central 
-                                University. These include 8 elementary schools: C.C. Spaulding, 
-                                Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, 
-                                Southwest, and 2 high schools: Hillside and Jordan."),
+                            30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. 
+                            Our project focuses on the 10 schools that most frequently partner with Duke University 
+                            and North Carolina Central University. These include 8 elementary schools: 
+                            C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood,
+                            Parkwood, Southwest, and 2 high schools: Hillside and Jordan."),
                             br(),
-                            p("The shared goal of both Duke and NCCU is to foster equitable partnerships with 
-                            Durham Public Schools. Prior Bass Connections research focused on understanding how to
-                            achieve this goal and found that an issue preventing meaningful engagement between
-                            Duke, NCCU, and Durham public schools is that 'many 
-                            university students lack an understanding of city and community dynamics.' Additionally, 
-                            they found that there is a 'lack of student volunteer training with Durham’s context, 
-                            particularly in the areas of history, school-specific demographics, and implicit bias 
-                            and power dynamics that may manifest in schools.'"),
+                            p("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham
+                              Public Schools. Prior Bass Connections research focused on understanding how to achieve
+                              this goal and found that an issue preventing meaningful engagement between Duke, NCCU, 
+                              and Durham public schools is that ‘many university students lack an understanding of 
+                              city and community dynamics.’ Additionally, they found that there is a 
+                              ‘lack of student volunteer training with Durham’s context, particularly in the areas 
+                              of history, school-specific demographics, and implicit bias and power dynamics that
+                              may manifest in schools.’"),
                             br(),
                             p(strong("Motivated by this research, our project explores a way of visualizing schools 
-                            as the center of the community that brings together academics, health and social services, 
-                            youth and community development and community engagement under one roof."))),
+                                     as the center of the community that brings together academics, health and 
+                                     social services, youth and community development, and community engagement 
+                                     under one roof."))),
                         box(width = 5,
                             background = "light-blue",
                             solidHeader = TRUE,
@@ -161,14 +164,13 @@ body <- {dashboardBody(
                                 column(width = 3,
                                         img(src = "ally3.jpg")),
                                 column(width =3,
-                                        p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. 
-                                            Currently, she is studying
-                                            Public Policy and Computer Science - her academic interests
-                                            focus primarily on the intersection of those two disciplines in areas like
-                                            Data Science. Allyson joined the Data+ project team because
-                                            she is passionate about equitable education and enjoys coding.
-                                            She hopes this dashboard will be a helpful tool for those entering
-                                            Durham Public Schools and will help improve the quality of partnerships.")),
+                                        p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida.
+                                        Currently, she is studying Public Policy and Computer Science, and her 
+                                        academic interests focus primarily on the intersection of those two 
+                                        disciplines in areas such as Data Science. Allyson joined the Data+ project
+                                        team because she is passionate about equitable education and enjoys coding. 
+                                        She hopes this dashboard will be a helpful tool for those entering Durham
+                                        Public Schools, and will help improve the quality of partnerships.")),
                                 column(width = 3,
                                         img(src = "drewheadshot3 copy.jpg")),
                                 column(width = 3,
@@ -185,35 +187,33 @@ body <- {dashboardBody(
                                 column(width = 3,
                                   img(src = "patience3.jpeg")),
                                 column(width = 3,
-                                  p("Patience Jones is a senior at North Carolina Central University 
-                                    from Durham, North Carolina. Currently, she is studying English, 
-                                    Secondary Education, and General Psychology. Patience joined the 
-                                    Data+ project team because she was interested 
-                                    in learning more about data science and its integration into 
-                                    education policy. She hopes this dashboard makes an impact on not 
-                                    just only these ten community schools in the dataset, but students 
-                                    in all Durham Public Schools and beyond, in hopes to make education 
-                                    more accessible to all students.")),
+                                  p("Patience Jones is a senior at North Carolina Central University from Durham, 
+                                  North Carolina. Currently, she is studying English, Secondary Education, and 
+                                  General Psychology. Patience joined the Data+ project team because she was 
+                                  interested in learning more about data science and its integration into education
+                                  policy. She hopes this dashboard makes an impact on not only these ten community
+                                  schools in the dataset, but students in all Durham Public Schools and beyond, 
+                                  in hopes to make education more accessible to all students.")),
                                 column(width = 3,
                                   img(src = "rhea3.jpg")),
                                 column(width = 3,
-                                  p("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey.
-                                  She is studying Computer Science and Economics. Rhea decided to join this
-                                  project team because she has a passion for data science and hopes that 
-                                  this app will help local universities have a productive relationship with
-                                  the community. She is proud of the work the team accomplished and is 
-                                  excited to see the long term impacts that this web app has!"))),
+                                  p("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey. She is 
+                                    studying Computer Science and Economics. Rhea decided to join this project team
+                                    because she has a passion for data science and hopes that this app will help 
+                                    local universities have a productive relationship with the community. She is 
+                                    proud of the work the team accomplished, and is excited to see the long term 
+                                    impacts that this web app has!"))),
                            br(),
                            fluidRow(
                                 column(width = 3,
                                   img(src = "nico3.jpg")),
                                 column(width = 3,
-                                  p("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested
-                                  in how habits and beliefs change, both at the individual and collective 
-                                  level. He uses longitudinal data, networks, and simulations to try to 
-                                  get at this question. He had the privilege to be the project manager for
-                                  this team. The team was efficient and industrious so his job was easy. The
-                                  team claims he was helpful. He likes to believe that is true."))))),
+                                  p("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's
+                                  interested in how habits and beliefs change, both at the individual and collective
+                                  level, and uses longitudinal data, networks, and simulations to try to get at 
+                                  this question. He had the privilege to be the project manager for this team, and
+                                  believes the team was efficient and industrious so his job was easy. The team 
+                                  claims he was helpful, and he likes to believe that is true."))))),
                  fluidRow(class = "text-center",
                      box(width = 5,
                          solidHeader = TRUE,
