@@ -74,7 +74,10 @@ iconSet <- iconList(
     libraries = makeIcon("https://img.icons8.com/windows/32/000000/book--v1.png", iconWidth=20, iconHeight=20),
     religious = makeIcon("https://img.icons8.com/fluent-systems-regular/48/000000/chapel.png", iconWidth=20, iconHeight=20),
     uni = makeIcon("https://img.icons8.com/wired/64/000000/university-campus.png", iconWidth = 40, iconHeight = 40),
-    schools = makeIcon("https://img.icons8.com/material-sharp/24/000000/school-building.png", iconWidth = 20, iconHeight = 20)
+    schools = makeIcon("https://img.icons8.com/material-sharp/24/000000/school-building.png", iconWidth = 20, iconHeight = 20),
+    hospitals = makeIcon("https://img.icons8.com/pastel-glyph/64/000000/hospital-wagon-without-a-siren.png", iconWidth = 20, iconHeight = 20),
+    pantries = makeIcon("https://img.icons8.com/ios/50/000000/can-soup.png", iconWidth = 20, iconHeight = 20),
+    afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20)
 )
 
 sidebar <- {dashboardSidebar(
@@ -403,9 +406,9 @@ body <- {dashboardBody(
                                     multiple = FALSE),
                         selectInput("var",
                                     label = em("Choose a variable to display"),
-                                    choices = c("Bus Stops", 
-                                                "Childcare Centers", "Community & Cultural Centers", "Gardens",
-                                                "Grocery Stores", "Libraries", "Parks", 
+                                    choices = c("After-School Care Programs", "Bus Stops", 
+                                                "Childcare Centers", "Community & Cultural Centers", "Food Pantries", "Gardens",
+                                                "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                 "Recreation Centers", "Religious Centers"),
                                     multiple = FALSE)),
                     box(width = 8,
