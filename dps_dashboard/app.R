@@ -89,6 +89,14 @@ body <- {dashboardBody(
     tabItems(
         #Landing Page
         {tabItem(tabName = "home",
+                 
+                 fluidRow(
+                   class = "text-center",
+                   column(width = 12,
+                          img(src = "landing.jpg"))
+                 ),
+                 br(), 
+                 
                  fluidRow(
                      class = "text-center",
                      box(h3(strong("Visualizing Durham Public Schools")),
@@ -116,8 +124,8 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          br(),
                          width = 12,
-                         valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
-                         valueBox(22, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4, href="#shiny-tab-mapstab"),
+                         valueBox(22, "School-Specific Variables",  href = "#shiny-tab-statstab", icon = icon("pencil"), color = "light-blue", width = 4),
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                         class = "text-center",
@@ -156,20 +164,60 @@ body <- {dashboardBody(
                               actionButton("viewStat", "View School Statistics"))),
                  
                  fluidRow(class = "text-center",
-                     box(width = 5,
+                     box(width = 12,
                          solidHeader = TRUE,
                          title = strong("Our Partners"),
-                         p(h5(a("Durham Public Schools", href = "https://www.dpsnc.net/"))),
-                         p(h5(a("Durham Public Schools Foundation", href = "https://www.bullcityschools.org/"))),
-                         p(h5(a("Duke University", href = "https://duke.edu/"))),
-                         p(h5(a("North Carolina Central University", href = "https://www.nccu.edu/"))),
-                         p(h5(a("Data+", href = "https://bigdata.duke.edu/"))),
-                         p(h5(a("Bass Connections", href = "https://bassconnections.duke.edu/")))),
-                     box(width = 7,
-                            background = "light-blue",
-                            solidHeader = TRUE,
-                            slickROutput("slickr", width = "auto"),
-                            use_gotop()))
+                         column(class = 'text-center', width = 2,
+                                tags$a(
+                                  href="https://www.dpsnc.net/", 
+                                  tags$img(src="dpsnc.png", 
+                                           title="DPSNC Logo",
+                                           class= "img-responsive")
+                                )),
+                         column(class = 'text-center', width = 2,
+                                tags$a(
+                                  href="https://www.bullcityschools.org/", 
+                                  tags$img(src="dpsf.jpg", 
+                                           title="DPSF Logo",
+                                           class= "img-responsive")
+                                )),
+                         column(class = 'text-center', width = 2,
+                                tags$a(
+                                  href="https://duke.edu/", 
+                                  tags$img(src="duke.png", 
+                                           title="Duke Logo",
+                                           class= "img-responsive")
+                                )),
+                         column(class = 'text-center', width = 2,
+                                tags$a(
+                                  href="https://www.nccu.edu/", 
+                                  tags$img(src="nccu.png", 
+                                           title="NCCU Logo",
+                                           class= "img-responsive")
+                                )),
+                         column(class = 'text-center', width = 2,
+                                tags$a(
+                                  href="https://bigdata.duke.edu/", 
+                                  tags$img(src="data+.jpg", 
+                                           title="Data+ Logo",
+                                           class= "img-responsive")
+                                )),
+                         column(class = 'text-center', width = 2,
+                                tags$a(
+                                  href="https://bassconnections.duke.edu/", 
+                                  tags$img(src="bass connections.png", 
+                                           title="Bass Connections Logo",
+                                           class= "img-responsive")
+                                ))),
+                     ),
+                 
+                fluidRow(
+                  box(width = 12,
+                      background = "light-blue",
+                      solidHeader = TRUE,
+                      slickROutput("slickr", width = "auto"),
+                      use_gotop())
+                )
         )},
         
         #School Stats
@@ -207,11 +255,71 @@ body <- {dashboardBody(
         
         #meet the team tab
         {tabItem(tabName = "teamstab",
+                 
+                 fluidRow(
+                   box(width = 12,
+                       background = "light-blue",
+                       class = "text-center",
+                       h3(strong("Meet Our Team - Data+ 2022")),
+                       br(),
+                       fluidRow(
+                         column(class='text-center', width = 3,
+                                img(src = "emily.jpg", class ='img-responsive')),
+                         column(width =3,
+                                p("Emily McReynolds is a sophomore at Duke University originally from Greensboro,
+                                  North Carolina. She intends to major in Public Policy and obtain a certificate 
+                                  in Markets and Management Studies. Emily is passionate about policy reform, 
+                                  specifically in our educational and healthcare systems. She hopes this project 
+                                  will bring more awareness to the available resources and community centers in 
+                                  Durham County that can support our public schools. Emily is eager to see how 
+                                  this partnership can build a stronger sense of unity for all.")),
+                         column(width = 3,
+                                img(src = "aryan.jpg")),
+                         column(width = 3,
+                                p("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently,
+                                  he is studying Data Science, with a minor in Political Science. He is especially interested
+                                  in using big data analyses to reveal politically and socially relevant insights to key issues
+                                  in policy and social justice. He joined the Data+ team to provide a clearer picture of the state
+                                  of Durham public schools, and find better paths to their improvement."))),
+                       br(),
+                       fluidRow(
+                         column(width = 3,
+                                img(src = "patience3.jpeg")),
+                         column(width = 3,
+                                p("Patience Jones is a senior at North Carolina Central University from Durham, 
+                                  North Carolina. Currently, she is studying English, Secondary Education, and 
+                                  General Psychology. Patience joined the Data+ project team because she was 
+                                  interested in learning more about data science and its integration into education
+                                  policy. She hopes this dashboard makes an impact on not only these ten community
+                                  schools in the dataset, but students in all Durham Public Schools and beyond, 
+                                  in hopes to make education more accessible to all students.")),
+                         column(width = 3,
+                                img(src = "melanie.jpg")),
+                         column(width = 3,
+                                p("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.
+                                  She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ 
+                                  project team to contribute to the previous research and efforts that have equipped the 
+                                  corresponding Bass Connections team with organized information and statistics to pinpoint the 
+                                  resources that would be most beneficial for specific schools. Melanie hopes this dashboard will 
+                                  help increase equity within schools, and promote a greater sense of community throughout Durham, 
+                                  North Carolina."))),
+                       br(),
+                       fluidRow(
+                         column(width = 3,
+                                img(src = "nico3.jpg")),
+                         column(width = 3,
+                                p("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's
+                                  interested in how habits and beliefs change, both at the individual and collective
+                                  level, and uses longitudinal data, networks, and simulations to try to get at 
+                                  this question. He had the privilege to be the project manager for this team, and
+                                  believes the team was efficient and industrious so his job was easy. The team 
+                                  claims he was helpful, and he likes to believe that is true."))))),
+                 
                  fluidRow(
                    box(width = 12,
                        background = "navy",
                        class = "text-center",
-                       h3(strong("Meet Our Team")),
+                       h3(strong("Meet Our Team - Data+ 2021")),
                        br(),
                        fluidRow(
                          column(width = 3,
