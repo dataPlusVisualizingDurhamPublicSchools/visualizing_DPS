@@ -250,7 +250,10 @@ body <- {dashboardBody(
                                                     "Median Age","Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                     "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
                                                     "Students With Disabilities")
-                             )),
+                             ),
+                             selectInput("year", em("Click the drop down menu to select which year you would like to view."), 
+                                          choices = list("2021", "2022")
+                            )),
                          box(width = 6,
                              solidHeader = TRUE,
                              title = strong("Context & Resources"),
@@ -434,6 +437,7 @@ shinyApp(
     server = function(input, output, session) { 
         
         output$barplots <- renderPlotly({
+            if(input$year == "2021"){
             if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
@@ -687,7 +691,7 @@ shinyApp(
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
-            }
+            }}
         })
         
         output$resources <- renderText({
