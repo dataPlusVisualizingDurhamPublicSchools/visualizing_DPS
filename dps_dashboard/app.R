@@ -52,6 +52,9 @@ parks <- read.csv("data/2020/spatial_data/renamed_Parks.csv")
 rec <- read.csv("data/2020/spatial_data/renamed_Recreation Centers.csv")
 religious <- read.csv("data/2020/spatial_data/renamed_Religious Centers.csv")
 schools <- read.csv("data/2020/spatial_data/schools.csv")
+hospitals <- read.csv("data/2020/spatial_data/renamed_Hospitals and Clinics.csv")
+pantries <- read.csv("data/2020/spatial_data/renamed_Food Pantries.csv")
+afterschool <- read.csv("data/2020/spatial_data/renamed_After-School Care Programs.csv")
 
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
