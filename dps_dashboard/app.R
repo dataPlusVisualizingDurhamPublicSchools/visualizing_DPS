@@ -43,7 +43,7 @@ southwest <- geojsonio::geojson_read("data/2020/map_data/Southwest.geojson", wha
 
 #Spatial Data
 bus <- read.csv("data/2020/spatial_data/renamed_Bus Stops.csv")
-childcare <- read.csv("data/2020/spatial_data/renamed_Childcare Centers.csv")
+childcare <- read.csv("data/2020/spatial_data/renamed_Childcare Centers_2022.csv")
 cultural <- read.csv("data/2020/spatial_data/renamed_Community & Cultural Centers.csv")
 gardens <- read.csv("data/2020/spatial_data/renamed_Community Gardens.csv")
 grocery <- read.csv("data/2020/spatial_data/renamed_Grocery Stores.csv") #note what we consider a grocery store, not food desert food apartheid
