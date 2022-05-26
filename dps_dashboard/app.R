@@ -969,10 +969,13 @@ actions compared to their white peers. A reason for this is racial bias leading 
                    "Gardens" = gardens, 
                    "Bus Stops" = bus, 
                    "Childcare Centers" = childcare, 
+                   "Food Pantries" = pantries,
                    "Community & Cultural Centers" = cultural, 
                    "Grocery Stores" = grocery, 
                    "Libraries" = libraries, 
-                   "Religious Centers" = religious)
+                   "Religious Centers" = religious,
+                   "Hospitals and Clinics" = hospitals,
+                   "After-School Care Programs" = afterschool)
         })
         
         displayIcon <- reactive({
@@ -983,9 +986,12 @@ actions compared to their white peers. A reason for this is racial bias leading 
                    "Bus Stops" = iconSet$bus, 
                    "Childcare Centers" = iconSet$childcare, 
                    "Community & Cultural Centers" = iconSet$cultural, 
+                   "Food Pantries" = iconSet$pantries,
                    "Grocery Stores" = iconSet$grocery, 
                    "Libraries" = iconSet$libraries, 
-                   "Religious Centers" = iconSet$religious)
+                   "Religious Centers" = iconSet$religious,
+                   "Hospitals and Clinics" = iconSet$hospitals,
+                   "After-School Care Programs" = iconSet$afterschool)
         })
         
         displaySchool <- reactive({
@@ -1038,7 +1044,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
         })
         
         output$context <- renderText({
-             if(input$var == "Parks"){
+            if(input$var == "Parks"){
                 paste("The presence of parks in a community is vital to increase 
                         community engagement, assist in the economic development 
                         of cities, bolster public health, and help children learn. 
@@ -1051,9 +1057,9 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       "Below is more information about parks:",
                       "<br>",
                       a("Why Parks Are Important", href = "https://www.brec.org/index.cfm/page/WhyParksareImportant"),
-                        "<br>",
+                      "<br>",
                       a("Why Parks and Recreation are Essential Public Services",
-                          href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
+                        href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
             }
             else if(input$var == "Recreation Centers"){
                 paste("Recreation centers have varying amenities, frequently including
@@ -1066,12 +1072,12 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       "<br>",
                       "<br>",
                       "Below is more information about recreation centers:",
-                "<br>",
-                a("The Positive Impact of Community Recreation Center",
-                  href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
-                "<br>",
-                a("Recreation Centers Play an Important Role in Communities",
-                  href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
+                      "<br>",
+                      a("The Positive Impact of Community Recreation Center",
+                        href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
+                      "<br>",
+                      a("Recreation Centers Play an Important Role in Communities",
+                        href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
             }
             else if(input$var == "Gardens"){
                 paste("Gardens offer numerous benefits to the community including nature
@@ -1118,7 +1124,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       "Below is more information about bus stops:",
                       "<br>",
                       a("Transit Equity Dashboard",
-                            href = "https://transitcenter.org/introducing-the-transit-equity-dashboard/"))
+                        href = "https://transitcenter.org/introducing-the-transit-equity-dashboard/"))
             }
             else if(input$var == "Childcare Centers"){
                 paste("Childcare centers allow for parents to work and earn money for 
@@ -1131,9 +1137,9 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       "Below is more information about childcare centers:",
                       "<br>",
                       a("The Importance of Preschool and Child Care For Working Mothers",
-                            href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
+                        href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
             }
-             else if(input$var == "Community & Cultural Centers"){
+            else if(input$var == "Community & Cultural Centers"){
                 paste("The benefits of building community outside the school building contributes to 
                       more powerful relationships and organizing within the school building. 
                       Community centers have been found to promote community cohesion and sense of
@@ -1168,13 +1174,13 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       "Below is more information about grocery stores:",
                       "<br>",
                       a("Food Apartheid: Racialized Access to Healthy Affordable Food", 
-                            href = "https://www.nrdc.org/experts/nina-sevilla/food-apartheid-racialized-access-healthy-affordable-food"),
+                        href = "https://www.nrdc.org/experts/nina-sevilla/food-apartheid-racialized-access-healthy-affordable-food"),
                       "<br>",
                       a("Food Desert VS. Food Apartheid",
-                            href = "https://forsythfarmersmarket.com/blog/foodapartheid"),
+                        href = "https://forsythfarmersmarket.com/blog/foodapartheid"),
                       "<br>",
                       a("What Are Food Deserts, and How Do They Impact Health?",
-                            href = "https://www.medicalnewstoday.com/articles/what-are-food-deserts"))
+                        href = "https://www.medicalnewstoday.com/articles/what-are-food-deserts"))
             }
             else if(input$var == "Libraries"){
                 paste("Found in urban, suburban, and rural areas, libraries often serve
@@ -1197,8 +1203,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       a("How Public Libraries Help Build Healthy Communities",
                         href = "https://www.brookings.edu/blog/up-front/2017/03/30/how-public-libraries-help-build-healthy-communities/"),
                       "<br>",
-                        a("Durham County Library",
-                          href = "https://durhamcountylibrary.org"))
+                      a("Durham County Library",
+                        href = "https://durhamcountylibrary.org"))
             }
             else if(input$var == "Religious Centers"){
                 paste("Religious centers are huge assets to the community because 
@@ -1218,8 +1224,35 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       a("The Benefits of Religiosity and Spirituality on Mental Health",
                         href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
             }
+            else if(input$var == "Hospitals and Clinics"){
+                paste("Something about hospitals.",
+                      "<br>",
+                      "<br>",
+                      "Below is more information about hospitals and clinics:",
+                      "<br>",
+                      a("A link",
+                        href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
+            }
+            else if(input$var == "Food Pantries"){
+                paste("Something about pantries",
+                      "<br>",
+                      "<br>",
+                      "Below is more information about pantries:",
+                      "<br>",
+                      a("A link",
+                        href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
+            }
+            else if(input$var == "After-School Care Programs"){
+                paste("Something about after",
+                      "<br>",
+                      "<br>",
+                      "Below is more information about after:",
+                      "<br>",
+                      a("A link",
+                        href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
+            }
         })
-            
+        
         output$home <- renderLeaflet({
             leaflet() %>%
                 addProviderTiles("CartoDB.Positron") %>%
