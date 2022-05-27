@@ -428,85 +428,85 @@ body <- {dashboardBody(
                             column(width = 1,
                                    img(src = "afterschool_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("After-School Care Programs", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("afterschoolicon")
+                                   )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "bus_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Bus Stops", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("busicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "childcare_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Childcare Centers", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("childcareicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Community and Cultural Centers", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("cultureicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "pantry_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Food Pantries", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("pantryicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Gardens", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("gardenicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "grocery_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Grocery Stores", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("groceryicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "hospital_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Hospitals and Clinics", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("hospitalicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "library_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Libraries", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("libraryicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "park_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Parks", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("parkicon")
+                            )),
                         br(),
                         fluidRow(
                             column( width = 1,
                                    img(src = "rec_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Recreation Centers", style = "font-size:18px;")))),
+                            column(width = 8, htmlOutput("recicon")
+                            )),
                         br(),
                         fluidRow(
                             column(width = 1,
                                    img(src = "religious_icon.png", width = 40, height = 40)),
                             column(width = 1),
-                            column(width = 8,
-                                   p(strong("Religious Centers",style = "font-size:18px;"))))
+                            column(width = 8, htmlOutput("religiousicon")
+                            )),
                 )},
                 )
         )
@@ -1346,6 +1346,333 @@ actions compared to their white peers. A reason for this is racial bias leading 
                         href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
             }
         })
+        
+        #Icon Legend Outputs
+        {
+        output$afterschoolicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(HTML(paste0(strong("After-School Care Programs")))))
+            else if (input$var == "Parks")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Gardens")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Bus Stops")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Libraries")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Religious Centers")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("After-School Care Programs"))
+            else if(input$var == "Food Pantries")
+                paste(h4("After-School Care Programs"))
+        })
+        
+        output$busicon <- renderText({
+                if(input$var == "After-School Care Programs")
+                    paste(h4("Bus Stops"))
+                else if (input$var == "Parks")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Recreation Centers")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Gardens")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Bus Stops")
+                    paste(h4(HTML(paste0(strong("Bus Stops")))))
+                else if(input$var == "Childcare Centers")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Community & Cultural Centers")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Grocery Stores")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Libraries")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Religious Centers")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Hospitals and Clinics")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Food Pantries")
+                    paste(h4("Bus Stops"))
+            })
+        
+        output$childcareicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Childcare Centers"))
+            else if (input$var == "Parks")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Gardens")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Childcare Centers")
+                paste(h4(HTML(paste0(strong("Childcare Centers")))))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Libraries")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Childcare Centers"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Childcare Centers"))
+        })
+        
+        output$parkicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Parks"))
+            else if (input$var == "Parks")
+                paste(h4(HTML(paste0(strong("Parks")))))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Parks"))
+            else if(input$var == "Gardens")
+                paste(h4("Parks"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Parks"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Parks"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Parks"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Parks"))
+            else if(input$var == "Libraries")
+                paste(h4("Parks"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Parks"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Parks"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Parks"))
+        })
+        
+        output$recicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Recreation Centers"))
+            else if (input$var == "Parks")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Recreation Centers")
+                paste(h4(HTML(paste0(strong("Recreation Centers")))))
+            else if(input$var == "Gardens")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Libraries")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Recreation Centers"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Recreation Centers"))
+        })
+        
+        output$gardenicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Gardens"))
+            else if (input$var == "Parks")
+                paste(h4("Gardens"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Gardens"))
+            else if(input$var == "Gardens")
+                paste(h4(HTML(paste0(strong("Gardens")))))
+            else if(input$var == "Bus Stops")
+                paste(h4("Gardens"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Gardens"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Gardens"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Gardens"))
+            else if(input$var == "Libraries")
+                paste(h4("Gardens"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Gardens"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Gardens"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Gardens"))
+        })
+        
+        output$cultureicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Community & Cultural Centers"))
+            else if (input$var == "Parks")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Gardens")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4(HTML(paste0(strong("Community & Cultural Centers")))))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Libraries")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Community & Cultural Centers"))
+        })
+        
+        output$groceryicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Grocery Stores"))
+            else if (input$var == "Parks")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Gardens")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Grocery Stores")
+                paste(h4(HTML(paste0(strong("Grocery Stores")))))
+            else if(input$var == "Libraries")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Grocery Stores"))
+        })
+        
+        output$libraryicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Libraries"))
+            else if (input$var == "Parks")
+                paste(h4("Libraries"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Libraries"))
+            else if(input$var == "Gardens")
+                paste(h4("Libraries"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Libraries"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Libraries"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Libraries"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Libraries"))
+            else if(input$var == "Libraries")
+                paste(h4(HTML(paste0(strong("Libraries")))))
+            else if(input$var == "Religious Centers")
+                paste(h4("Libraries"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Libraries"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Libraries"))
+        })
+        
+        output$religiousicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Religious Centers"))
+            else if (input$var == "Parks")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Gardens")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Libraries")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Religious Centers")
+                paste(h4(HTML(paste0(strong("Religious Centers")))))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Religious Centers"))
+        })
+        
+        output$hospitalicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Hospitals & Clinics"))
+            else if (input$var == "Parks")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Gardens")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Libraries")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(HTML(paste0(strong("Hospitals & Clinics")))))
+            else if(input$var == "Food Pantries")
+                paste(h4("Hospitals & Clinics"))
+        })
+        
+        output$pantryicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Food Pantries"))
+            else if (input$var == "Parks")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Gardens")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Libraries")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Food Pantries"))
+            else if(input$var == "Food Pantries")
+                paste(h4(HTML(paste0(strong("Food Pantries")))))
+        })
+        }
         
         output$home <- renderLeaflet({
             leaflet() %>%
