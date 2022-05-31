@@ -549,7 +549,7 @@ shinyApp(
                 p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = MED_AGE), hjust = 1.5, color = "black") +
-                    geom_hline(aes(text="Durham County Average = 35.2", yintercept = 35.3), color ='#01016D') +
+                    geom_hline(aes(text="Durham County Average = 35.2", yintercept = 35.2), color ='#01016D') +
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
