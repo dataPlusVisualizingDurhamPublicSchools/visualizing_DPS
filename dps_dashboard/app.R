@@ -20,41 +20,42 @@ library(readxl)
 library(gotop)
 
 #Load School Stats Data
-Race_SCHOOL_ONLY <- read_excel("data/2020/school_stats_data/Race SCHOOL ONLY.xlsx")
-race <- read_excel("data/2020/school_stats_data/race.xlsx")
-race_diff <- read_excel("data/2020/school_stats_data/race diff.xlsx")
-poc_per_school <- read_excel("data/2020/school_stats_data/poc per school.xlsx")
-funding <- read_excel("data/2020/school_stats_data/funding.xlsx")
-all_race <- read_excel("data/2020/school_stats_data/all race 1.xlsx")
-schoolstats <- read.csv("data/2020/school_stats_data/Data + School Info - School Statistics.csv")
+Race_SCHOOL_ONLY <- read_excel("data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
+race <- read_excel("data/2021/school_stats_data/race.xlsx")
+race_diff <- read_excel("data/2021/school_stats_data/race diff.xlsx")
+poc_per_school <- read_excel("data/2021/school_stats_data/poc per school.xlsx")
+funding <- read_excel("data/2021/school_stats_data/funding.xlsx")
+all_race <- read_excel("data/2021/school_stats_data/all race 1.xlsx")
+schoolstats <- read.csv("data/2021/school_stats_data/Data + School Info - School Statistics.csv")
 
 #Load Map Data
-durham <- geojsonio::geojson_read("data/2020/map_data/Ten Schools.geojson", what = "sp")
-cc <- geojsonio::geojson_read("data/2020/map_data/CC Spaulding.geojson", what = "sp")
-eastway <- geojsonio::geojson_read("data/2020/map_data/Eastway.geojson", what = "sp")
-ek <- geojsonio::geojson_read("data/2020/map_data/EK Powe.geojson", what = "sp")
-fayetteville <- geojsonio::geojson_read("data/2020/map_data/Fayetteville St.geojson", what = "sp")
-forest <- geojsonio::geojson_read("data/2020/map_data/Forest View.geojson", what = "sp")
-hillside <- geojsonio::geojson_read("data/2020/map_data/Hillside.geojson", what = "sp")
-jordan <- geojsonio::geojson_read("data/2020/map_data/CEJordan.geojson", what = "sp")
-lakewood <- geojsonio::geojson_read("data/2020/map_data/Lakewood.geojson", what = "sp")
-parkwood <- geojsonio::geojson_read("data/2020/map_data/Parkwood.geojson", what = "sp")
-southwest <- geojsonio::geojson_read("data/2020/map_data/Southwest.geojson", what = "sp")
+durham <- geojsonio::geojson_read("data/2021/map_data/Ten Schools.geojson", what = "sp")
+cc <- geojsonio::geojson_read("data/2021/map_data/CC Spaulding.geojson", what = "sp")
+eastway <- geojsonio::geojson_read("data/2021/map_data/Eastway.geojson", what = "sp")
+ek <- geojsonio::geojson_read("data/2021/map_data/EK Powe.geojson", what = "sp")
+fayetteville <- geojsonio::geojson_read("data/2021/map_data/Fayetteville St.geojson", what = "sp")
+forest <- geojsonio::geojson_read("data/2021/map_data/Forest View.geojson", what = "sp")
+hillside <- geojsonio::geojson_read("data/2021/map_data/Hillside.geojson", what = "sp")
+jordan <- geojsonio::geojson_read("data/2021/map_data/CEJordan.geojson", what = "sp")
+lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood.geojson", what = "sp")
+parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood.geojson", what = "sp")
+southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest.geojson", what = "sp")
 
 #Spatial Data
-bus <- read.csv("data/2020/spatial_data/renamed_Bus Stops.csv")
-childcare <- read.csv("data/2020/spatial_data/renamed_Childcare Centers_2022.csv")
-cultural <- read.csv("data/2020/spatial_data/renamed_Community & Cultural Centers.csv")
-gardens <- read.csv("data/2020/spatial_data/renamed_Community Gardens.csv")
-grocery <- read.csv("data/2020/spatial_data/renamed_Grocery Stores.csv") #note what we consider a grocery store, not food desert food apartheid
-libraries <- read.csv("data/2020/spatial_data/renamed_Libraries.csv")
-parks <- read.csv("data/2020/spatial_data/renamed_Parks.csv")
-rec <- read.csv("data/2020/spatial_data/renamed_Recreation Centers.csv")
-religious <- read.csv("data/2020/spatial_data/renamed_Religious Centers.csv")
-schools <- read.csv("data/2020/spatial_data/schools.csv")
-hospitals <- read.csv("data/2020/spatial_data/renamed_Hospitals and Clinics.csv")
-pantries <- read.csv("data/2020/spatial_data/renamed_Food Pantries.csv")
-afterschool <- read.csv("data/2020/spatial_data/renamed_After-School Care Programs.csv")
+bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
+childcare <- read.csv("data/2021/spatial_data/renamed_Childcare Centers_2022.csv")
+cultural <- read.csv("data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
+gardens <- read.csv("data/2021/spatial_data/renamed_Community Gardens.csv")
+grocery <- read.csv("data/2021/spatial_data/renamed_Grocery Stores.csv") #note what we consider a grocery store, not food desert food apartheid
+libraries <- read.csv("data/2021/spatial_data/renamed_Libraries.csv")
+parks <- read.csv("data/2021/spatial_data/renamed_Parks.csv")
+rec <- read.csv("data/2021/spatial_data/renamed_Recreation Centers.csv")
+religious <- read.csv("data/2021/spatial_data/renamed_Religious Centers.csv")
+schools <- read.csv("data/2021/spatial_data/schools.csv")
+hospitals <- read.csv("data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
+pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
+afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
+
 
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
@@ -80,7 +81,22 @@ iconSet <- iconList(
     afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20)
 )
 
+#customizing the go to top button
+
 sidebar <- {dashboardSidebar(
+  
+  tags$head(tags$script(HTML('
+        var fakeClick = function(tabName) {
+          var dropdownList = document.getElementsByTagName("a");
+          for (var i = 0; i < dropdownList.length; i++) {
+            var link = dropdownList[i];
+            if(link.getAttribute("data-value") == tabName) {
+              link.click();
+            };
+          }
+        };
+      '))),
+  
     sidebarMenu(
         id = "TabItems",
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
@@ -130,7 +146,7 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          br(),
                          width = 12,
-                         valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4, href="#shiny-tab-mapstab"),
+                         valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
                          valueBox(22, "School-Specific Variables",  href = "#shiny-tab-statstab", icon = icon("pencil"), color = "light-blue", width = 4),
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
@@ -222,7 +238,7 @@ body <- {dashboardBody(
                       background = "light-blue",
                       solidHeader = TRUE,
                       slickROutput("slickr", width = "auto"),
-                      use_gotop())
+                      use_gotop(color = "black"))
                 )
         )},
         
@@ -315,9 +331,9 @@ body <- {dashboardBody(
                        br(),
                        fluidRow(
                          column(width = 3,
-                                img(src = "nico3.jpg")),
+                                img(src = "surabhi.jpg")),
                          column(width = 3,
-                                p("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's
+                                p("Surabhi Trivedi is a PhD candidate at Duke's sociology department. He's
                                   interested in how habits and beliefs change, both at the individual and collective
                                   level, and uses longitudinal data, networks, and simulations to try to get at 
                                   this question. He had the privilege to be the project manager for this team, and
