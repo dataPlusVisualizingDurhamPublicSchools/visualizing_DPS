@@ -553,7 +553,7 @@ shinyApp(
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
+                    labs(title = "Med Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } else if(input$select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
