@@ -59,6 +59,7 @@ schools <- read.csv("data/2021/spatial_data/schools.csv")
 hospitals <- read.csv("data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
 pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
 afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
+farmersmark <- read.csv("data/2020/url_Farmer's Markets.csv")
 
 
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
@@ -84,7 +85,8 @@ iconSet <- iconList(
     schools = makeIcon("https://img.icons8.com/material-sharp/24/000000/school-building.png", iconWidth = 20, iconHeight = 20),
     hospitals = makeIcon("https://img.icons8.com/pastel-glyph/64/000000/hospital-wagon-without-a-siren.png", iconWidth = 20, iconHeight = 20),
     pantries = makeIcon("https://img.icons8.com/ios/50/000000/can-soup.png", iconWidth = 20, iconHeight = 20),
-    afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20)
+    afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20),
+    farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20)
 )
 
 #customizing the go to top button
@@ -432,7 +434,7 @@ body <- {dashboardBody(
                         selectInput("var",
                                     label = em("Choose a variable to display"),
                                     choices = c("After-School Care Programs", "Bus Stops", 
-                                                "Childcare Centers", "Community & Cultural Centers", "Food Pantries", "Gardens",
+                                                "Childcare Centers", "Community & Cultural Centers", "Farmers' Markets", "Food Pantries", "Gardens",
                                                 "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                 "Recreation Centers", "Religious Centers"),
                                     multiple = FALSE)),
@@ -472,6 +474,13 @@ body <- {dashboardBody(
                                    img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
                             column(width = 8, htmlOutput("cultureicon")
+                            )),
+                        br(),
+                        fluidRow(
+                            column(width = 1,
+                                   img(src = "market_icon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("marketicon")
                             )),
                         br(),
                         fluidRow(
@@ -1344,6 +1353,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
                    "Bus Stops" = bus, 
                    "Childcare Centers" = childcare, 
                    "Food Pantries" = pantries,
+                   "Farmers' Markets" = farmersmark,
                    "Community & Cultural Centers" = cultural, 
                    "Grocery Stores" = grocery, 
                    "Libraries" = libraries, 
@@ -1361,6 +1371,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
                    "Childcare Centers" = iconSet$childcare, 
                    "Community & Cultural Centers" = iconSet$cultural, 
                    "Food Pantries" = iconSet$pantries,
+                   "Farmers' Markets" = iconSet$farmersmark,
                    "Grocery Stores" = iconSet$grocery, 
                    "Libraries" = iconSet$libraries, 
                    "Religious Centers" = iconSet$religious,
@@ -1625,6 +1636,15 @@ actions compared to their white peers. A reason for this is racial bias leading 
                       a("A link",
                         href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
             }
+            else if(input$var == "Farmer's Markets"){
+                paste("Something about after",
+                      "<br>",
+                      "<br>",
+                      "Below is more information about after:",
+                      "<br>",
+                      a("A link",
+                        href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
+            }
         })
         
         #Icon Legend Outputs
@@ -1654,6 +1674,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4("After-School Care Programs"))
             else if(input$var == "Food Pantries")
                 paste(h4("After-School Care Programs"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("After-School Care Programs"))
         })
         
         output$busicon <- renderText({
@@ -1680,6 +1702,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 else if(input$var == "Hospitals and Clinics")
                     paste(h4("Bus Stops"))
                 else if(input$var == "Food Pantries")
+                    paste(h4("Bus Stops"))
+                else if(input$var == "Farmer's Markets")
                     paste(h4("Bus Stops"))
             })
         
@@ -1708,6 +1732,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4("Childcare Centers"))
             else if(input$var == "Food Pantries")
                 paste(h4("Childcare Centers"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("Childcare Centers"))
         })
         
         output$parkicon <- renderText({
@@ -1734,6 +1760,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
             else if(input$var == "Hospitals and Clinics")
                 paste(h4("Parks"))
             else if(input$var == "Food Pantries")
+                paste(h4("Parks"))
+            else if(input$var == "Farmers' Markets")
                 paste(h4("Parks"))
         })
         
@@ -1762,6 +1790,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4("Recreation Centers"))
             else if(input$var == "Food Pantries")
                 paste(h4("Recreation Centers"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("Recreation Centers"))
         })
         
         output$gardenicon <- renderText({
@@ -1788,6 +1818,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
             else if(input$var == "Hospitals and Clinics")
                 paste(h4("Gardens"))
             else if(input$var == "Food Pantries")
+                paste(h4("Gardens"))
+            else if(input$var == "Farmers' Markets")
                 paste(h4("Gardens"))
         })
         
@@ -1816,6 +1848,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4("Community & Cultural Centers"))
             else if(input$var == "Food Pantries")
                 paste(h4("Community & Cultural Centers"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("Community & Cultural Centers"))
         })
         
         output$groceryicon <- renderText({
@@ -1842,6 +1876,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
             else if(input$var == "Hospitals and Clinics")
                 paste(h4("Grocery Stores"))
             else if(input$var == "Food Pantries")
+                paste(h4("Grocery Stores"))
+            else if(input$var == "Farmers' Markets")
                 paste(h4("Grocery Stores"))
         })
         
@@ -1870,6 +1906,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4("Libraries"))
             else if(input$var == "Food Pantries")
                 paste(h4("Libraries"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("Libraries"))
         })
         
         output$religiousicon <- renderText({
@@ -1896,6 +1934,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
             else if(input$var == "Hospitals and Clinics")
                 paste(h4("Religious Centers"))
             else if(input$var == "Food Pantries")
+                paste(h4("Religious Centers"))
+            else if(input$var == "Farmers' Markets")
                 paste(h4("Religious Centers"))
         })
         
@@ -1924,6 +1964,8 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4(HTML(paste0(strong("Hospitals & Clinics")))))
             else if(input$var == "Food Pantries")
                 paste(h4("Hospitals & Clinics"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("Hospitals & Clinics"))
         })
         
         output$pantryicon <- renderText({
@@ -1951,7 +1993,39 @@ actions compared to their white peers. A reason for this is racial bias leading 
                 paste(h4("Food Pantries"))
             else if(input$var == "Food Pantries")
                 paste(h4(HTML(paste0(strong("Food Pantries")))))
+            else if(input$var == "Farmers' Markets")
+                paste(h4("Food Pantries"))
         })
+        
+        output$marketicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4("Farmers' Markets"))
+            else if (input$var == "Parks")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Recreation Centers")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Gardens")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Bus Stops")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Childcare Centers")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Community & Cultural Centers")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Grocery Stores")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Libraries")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Religious Centers")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4("Farmers' Markets"))
+            else if(input$var == "Food Pantries")
+                paste(h4("Farmer's Markets"))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(HTML(paste0(strong("Farmers' Markets")))))
+            })
+        
         }
         
         output$home <- renderLeaflet({
