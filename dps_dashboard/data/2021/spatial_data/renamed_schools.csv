@@ -1,11 +1,11 @@
-name,NAME,LATITUDE,LONGITUDE
-C.C. Spaulding Elementary,C.C. Spaulding Elementary,35.978199737836,-78.906145498632
-Eastway Elementary,Eastway Elementary,35.990902554065,-78.885189188831
-E.K. Powe Elementary,E.K. Powe Elementary,36.012904588185,-78.9225416465
-Fayetteville Street Elementary,Fayetteville Street Elementary,35.964640375315,-78.905933790678
-Forest View Elementary,Forest View Elementary,35.98923712587,-78.992318038546
-Lakewood Elementary,Lakewood Elementary,35.982883074736,-78.935345837269
-Parkwood Elementary,Parkwood Elementary,35.891690373351,-78.906629063835
-Southwest Elementary,Southwest Elementary,35.928896708229,-78.923587788832
-Hillside High,Hillside High,35.953392764034,-78.903574088831
-Jordan High,Jordan High,35.923908414727,-78.961330898634
+,Unnamed: 0,name,NAME,LATITUDE,LONGITUDE,school_zones
+0,0,C.C. Spaulding Elementary,C.C. Spaulding Elementary,35.978199737836,-78.906145498632,"CC Spaulding,CEJordan,Ten Schools"
+1,1,Eastway Elementary,Eastway Elementary,35.990902554065,-78.885189188831,"Eastway,Ten Schools"
+2,2,E.K. Powe Elementary,E.K. Powe Elementary,36.012904588185,-78.9225416465,"EK Powe,Ten Schools"
+3,3,Fayetteville Street Elementary,Fayetteville Street Elementary,35.964640375315,-78.905933790678,"Fayetteville St,Hillside,Ten Schools"
+4,4,Forest View Elementary,Forest View Elementary,35.98923712587,-78.992318038546,"CEJordan,Forest View,Ten Schools"
+5,5,Lakewood Elementary,Lakewood Elementary,35.982883074736,-78.935345837269,"CEJordan,Lakewood,Ten Schools"
+6,6,Parkwood Elementary,Parkwood Elementary,35.891690373351,-78.906629063835,"Hillside,Parkwood,Ten Schools"
+7,7,Southwest Elementary,Southwest Elementary,35.928896708229,-78.923587788832,"CEJordan,Southwest,Ten Schools"
+8,8,Hillside High,Hillside High,35.953392764034,-78.903574088831,"Fayetteville St,Hillside,Ten Schools"
+9,9,Jordan High,Jordan High,35.923908414727,-78.961330898634,"CEJordan,Ten Schools"
