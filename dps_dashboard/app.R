@@ -47,7 +47,7 @@ southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest.geojson", wha
 
 #Spatial Data
 bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
-childcare <- read.csv("data/2021/spatial_data/renamed_Childcare Centers_2022.csv")
+childcare <- read_csv("data/2021/spatial_data/renamed_Childcare Centers_2022.csv")
 cultural <- read.csv("data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
 gardens <- read.csv("data/2021/spatial_data/renamed_Community Gardens.csv")
 grocery <- read.csv("data/2021/spatial_data/renamed_Grocery Stores.csv") #note what we consider a grocery store, not food desert food apartheid
@@ -65,6 +65,8 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                       "Forest View Elementary", "Lakewood Elementary", "Parkwood Elementary",
                       "Southwest Elementary", "Hillside High","Jordan High", "All")
+
+
 
 #Icons
 
@@ -1409,7 +1411,7 @@ actions compared to their white peers. A reason for this is racial bias leading 
                             fillOpacity = 0.39,
                             smoothFactor = 1) %>%
                 addMarkers(data = displayVar(), lng = ~LONGITUDE, lat= ~LATITUDE, 
-                           label = displayVar()$name, icon = displayIcon(), 
+                           label = displayVar()$name, popup = displayVar()$URL, icon = displayIcon(), 
                            clusterOptions = markerClusterOptions()) %>%
                 addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, 
                            label = displaySchool()["name"])
