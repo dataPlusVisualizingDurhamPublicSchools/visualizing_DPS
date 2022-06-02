@@ -12,6 +12,7 @@ library(shiny)
 library(shinydashboard)
 library(slickR)
 library(leaflet)
+library(leaflet.extras)
 library(tidyverse)
 library(plotly)
 library(dplyr)
@@ -66,7 +67,6 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                       "Forest View Elementary", "Lakewood Elementary", "Parkwood Elementary",
                       "Southwest Elementary", "Hillside High","Jordan High", "All")
-
 
 
 #Icons
@@ -297,7 +297,7 @@ body <- {dashboardBody(
                        br(),
                        fluidRow(
                          column(width = 3,
-                                img(src = "emily2.jpg")),
+                                img(align = "center", src = "emily2.jpg")),
                          column(width =3,
                                 p("Emily McReynolds is a sophomore at Duke University originally from Greensboro,
                                   North Carolina. She intends to major in Public Policy and obtain a certificate 
@@ -1414,8 +1414,11 @@ actions compared to their white peers. A reason for this is racial bias leading 
         })
         
         output$map <- renderLeaflet({
-            leaflet(displayZone()) %>%
+            leaflet(
+                displayZone()) %>%
                 addProviderTiles("CartoDB.Positron") %>%
+                addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+                addResetMapButton() %>%
                 addPolygons(data = displayZone(),
                             fillColor = displayColor(),
                             stroke = TRUE,
