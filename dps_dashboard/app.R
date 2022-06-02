@@ -296,8 +296,8 @@ body <- {dashboardBody(
                        h3(strong("Meet Our Team - Data+ 2022")),
                        br(),
                        fluidRow(
-                         column(class='text-center', width = 3,
-                                img(src = "emily.jpg", class ='img-responsive')),
+                         column(width = 3,
+                                img(src = "emily2.jpg")),
                          column(width =3,
                                 p("Emily McReynolds is a sophomore at Duke University originally from Greensboro,
                                   North Carolina. She intends to major in Public Policy and obtain a certificate 
@@ -327,7 +327,7 @@ body <- {dashboardBody(
                                   schools in the dataset, but students in all Durham Public Schools and beyond, 
                                   in hopes to make education more accessible to all students.")),
                          column(width = 3,
-                                img(src = "melanie.jpg")),
+                                img(src = "melanie2.png")),
                          column(width = 3,
                                 p("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.
                                   She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ 
