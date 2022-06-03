@@ -259,8 +259,14 @@ body <- {dashboardBody(
                          title = strong("Charts"), 
                          plotlyOutput("barplots",
                                       width="auto",
-                                      height = "auto")
-                     )),
+                                      height = "auto"),
+                         h4("All data was derived from ",
+                            a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
+                            ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
+                            ", ", a("Durham Public Schools", href="https://dpsnc.net"),
+                            ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
+                            "."
+                     ))),
                  fluidRow(
                      #Drop Down Widget for Box Plots
                          box(width = 6,
@@ -2117,8 +2123,6 @@ Students can take these classes for an opportunity to receive college credit upo
         observeEvent(input$viewStat, {
             updateTabItems(session, "TabItems", selected = "statstab")
         })
-        
-
         
         #Home Page - Carousal
         output$slickr <- renderSlickR({
