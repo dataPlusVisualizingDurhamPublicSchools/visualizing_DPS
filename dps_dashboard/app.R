@@ -7,7 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 
-# Packages
+# Load Packages
 library(shiny)
 library(shinydashboard)
 library(slickR)
@@ -20,7 +20,7 @@ library(tidyr)
 library(readxl)
 library(gotop)
 
-#Load School Stats Data
+# Load/Rename School Stats Data
 Race_SCHOOL_ONLY <- read_excel("data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
 race <- read_excel("data/2021/school_stats_data/race.xlsx")
 race_diff <- read_excel("data/2021/school_stats_data/race diff.xlsx")
@@ -33,7 +33,7 @@ all_race22 <- read_excel("data/2020/school_stats_data/all race 2022.xlsx")
 poc_per_school22 <- read_excel("data/2020/school_stats_data/poc per school22.xlsx")
 race22 <- read_excel("data/2020/school_stats_data/race2022.xlsx")
 
-#Load Map Data
+# Load/Rename Map Data
 durham <- geojsonio::geojson_read("data/2021/map_data/Ten Schools.geojson", what = "sp")
 cc <- geojsonio::geojson_read("data/2021/map_data/CC Spaulding.geojson", what = "sp")
 eastway <- geojsonio::geojson_read("data/2021/map_data/Eastway.geojson", what = "sp")
@@ -46,7 +46,7 @@ lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood.geojson", what 
 parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood.geojson", what = "sp")
 southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest.geojson", what = "sp")
 
-#Spatial Data
+# Load/Rename Spatial Data
 bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
 childcare <- read_csv("data/2021/spatial_data/renamed_Childcare Centers_2022.csv")
 cultural <- read.csv("data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
@@ -62,15 +62,14 @@ pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
 afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
 farmersmark <- read.csv("data/2021/spatial_data/url_Farmer's Markets.csv")
 
-
+# Load/Rename Schools' Names
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                       "Forest View Elementary", "Lakewood Elementary", "Parkwood Elementary",
                       "Southwest Elementary", "Hillside High","Jordan High", "All")
 
 
-#Icons
-
+# Load/Rename Icons
 iconSet <- iconList(
     parks = makeIcon("https://img.icons8.com/windows/32/000000/tree.png", iconWidth=20, iconHeight=20),
     rec = makeIcon("https://img.icons8.com/glyph-neue/64/000000/basketball.png", iconWidth=20, iconHeight=20),
@@ -89,7 +88,7 @@ iconSet <- iconList(
     farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20)
 )
 
-#customizing the go to top button
+# customizing the go to top button
 
 sidebar <- {dashboardSidebar(
   
@@ -117,7 +116,7 @@ sidebar <- {dashboardSidebar(
 
 body <- {dashboardBody(
     tabItems(
-        #Landing Page
+        #Home Page
         {tabItem(tabName = "home",
                  
                  fluidRow(
@@ -250,7 +249,7 @@ body <- {dashboardBody(
                 )
         )},
         
-        #School Stats
+        #School Stats Tab
         {tabItem(tabName = "statstab",
                  fluidRow(
                      #Box Plot Outputs
@@ -268,10 +267,12 @@ body <- {dashboardBody(
                              solidHeader = TRUE,
                              title = strong("Select a Measurement"),
                              selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                         choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate","BIPOC Students per School","CTE Course Enrollment Rate, High School", 
-                                                    "Enrollment","English as a Second Language (ESL) Student Enrollment","Experienced Teacher Ratio",
-                                                    "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","Median Homesale Price","Median Household Income", "In-School Suspensions (ISS)",
-                                                    "Median Age","Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
+                                         choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
+                                                        "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
+                                                    "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
+                                                    "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
+                                                    "Median Age","Median Homesale Price","Median Household Income",
+                                                    "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                     "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
                                                     "Students With Disabilities")
                              ),
@@ -286,7 +287,7 @@ body <- {dashboardBody(
                  )
         )},
         
-        #meet the team tab
+        #Meet the team tab
         {tabItem(tabName = "teamstab",
                  
                  fluidRow(
@@ -410,8 +411,8 @@ body <- {dashboardBody(
                                   claims he was helpful, and he likes to believe that is true.")))))
         )}, 
         
-        #Map Data
-        tabItem(tabName = "mapstab",
+        #Maps Tab
+        {tabItem(tabName = "mapstab",
                 fluidRow(
                     box(width  = 12,
                         background = "navy",
@@ -443,7 +444,8 @@ body <- {dashboardBody(
                         solidHeader = TRUE,
                         title = strong("Context"),
                         htmlOutput("context")),
-                    #Icon Legend
+                   
+                     #Icon Legend
                     {box(width = 4,
                         solidHeader = TRUE,
                         title = strong("Icon Legend"),
@@ -541,7 +543,7 @@ body <- {dashboardBody(
                             )),
                 )},
                 )
-        )
+        )}
     )
 )
 }
@@ -558,6 +560,7 @@ shinyApp(
     ),
     server = function(input, output, session) { 
         
+        # SchoolStats - GGPlots
         output$barplots <- renderPlotly({
             if(input$year == "2021"){
               if(input$select == "Advanced Placement (AP) Course Enrollment") {
@@ -1104,6 +1107,7 @@ shinyApp(
               }
         })
         
+        # SchoolStats - Context and Resources
         output$resources <- renderText({
           if(input$select == "Advanced Placement (AP) Course Enrollment") {
             paste("Advanced Placement (AP) courses are challenging, collegiate-level courses that are offered to high school students. AP courses weigh more than honors courses on the high school level.
@@ -1374,7 +1378,9 @@ Students can take these classes for an opportunity to receive college credit upo
                   in a specific school zone can determine the various assets available, identify beneficial resources in 
                   the community, and give some insight about school enrollment numbers in the future.")
       }
-    })        
+    })       
+        
+        # Maps - Connecting variable drop down menu to variable info
         displayVar <- reactive({
             switch(input$var,
                    "Parks" = parks, 
@@ -1392,6 +1398,7 @@ Students can take these classes for an opportunity to receive college credit upo
                    "After-School Care Programs" = afterschool)
         })
         
+        # Maps - Connecting map variables to their icons
         displayIcon <- reactive({
             switch(input$var,
                    "Parks" = iconSet$parks, 
@@ -1409,10 +1416,12 @@ Students can take these classes for an opportunity to receive college credit upo
                    "After-School Care Programs" = iconSet$afterschool)
         })
         
+        # Maps - Connecting name of school to input
         displaySchool <- reactive({
             schoolstats %>% filter(name == input$zone)
         })
         
+        # Maps - Connecting school zone drop down menu to school info
         displayZone <- reactive({
             switch(input$zone,
                    "C.C. Spaulding Elementary" = cc, 
@@ -1428,6 +1437,7 @@ Students can take these classes for an opportunity to receive college credit upo
                    "All" = durham)
         })
         
+        # Maps - School zone colors
         displayColor <- reactive({
             switch(input$zone,
                    "C.C. Spaulding Elementary" = "red", 
@@ -1443,6 +1453,7 @@ Students can take these classes for an opportunity to receive college credit upo
                    "All" = "transparent")
         })
         
+        # Maps - Leaflet aesthetics
         output$map <- renderLeaflet({
             leaflet(
                 displayZone()) %>%
@@ -1457,10 +1468,11 @@ Students can take these classes for an opportunity to receive college credit upo
                 addMarkers(data = displayVar(), lng = ~LONGITUDE, lat= ~LATITUDE, 
                            label = displayVar()$name, popup = displayVar()$URL, icon = displayIcon(), 
                            clusterOptions = markerClusterOptions()) %>%
-                addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, 
+                addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools,
                            label = displaySchool()["name"])
         })
         
+        # Maps - Context and Resources
         output$context <- renderText({
           if(input$var == "Parks"){
             paste("The presence of parks in a community is vital to increase community engagement, 
@@ -1706,7 +1718,7 @@ Students can take these classes for an opportunity to receive college credit upo
         }
         })
         
-        #Icon Legend Outputs
+        # Maps - Icon legend outputs
         {
         output$afterschoolicon <- renderText({
             if(input$var == "After-School Care Programs")
@@ -2087,6 +2099,7 @@ Students can take these classes for an opportunity to receive college credit upo
         
         }
         
+        #Home Page - Leaflet Map showing Duke, NCCU, and the Ten Schools
         output$home <- renderLeaflet({
             leaflet() %>%
                 addProviderTiles("CartoDB.Positron") %>%
@@ -2095,18 +2108,19 @@ Students can take these classes for an opportunity to receive college credit upo
                 addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schools$NAME)
         })
         
+        #Home Page - Got to Maps tab button
         observeEvent(input$viewMap, {
             updateTabItems(session, "TabItems", selected = "mapstab")
         })
         
+        #Home Page - Go to School Stats tab button
         observeEvent(input$viewStat, {
             updateTabItems(session, "TabItems", selected = "statstab")
         })
         
-        observeEvent(input$"Our Ten Schools - Home", {
-            updateTabItems(session, "TabItems", selected = "home")
-        })
+
         
+        #Home Page - Carousal
         output$slickr <- renderSlickR({
             imgs <- list.files(path = "slideshow", pattern = "*.jpg", full.names = TRUE)
             slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
