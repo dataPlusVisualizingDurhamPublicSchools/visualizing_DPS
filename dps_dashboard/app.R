@@ -439,6 +439,13 @@ body <- {dashboardBody(
                         solidHeader = TRUE,
                         title = strong("Interactive Map"),
                         h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
+                        leafletOutput("map")),
+                    
+                    box(width = 5,
+                        solidHeader = TRUE,
+                        dataTableOutput("list"),
+                        title = strong("List Of Selected Resource In Selected Schoolzone")
+                        )
                 ),
                 fluidRow(
                     box(width = 4,
