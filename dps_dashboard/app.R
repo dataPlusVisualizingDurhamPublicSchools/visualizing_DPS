@@ -33,6 +33,7 @@ all_race22 <- read_excel("data/2020/school_stats_data/all race 2022.xlsx")
 poc_per_school22 <- read_excel("data/2020/school_stats_data/poc per school22.xlsx")
 race22 <- read_excel("data/2020/school_stats_data/race2022.xlsx")
 
+<<<<<<< Updated upstream
 # Load/Rename Map Data
 durham <- geojsonio::geojson_read("data/2021/map_data/Ten Schools.geojson", what = "sp")
 cc <- geojsonio::geojson_read("data/2021/map_data/CC Spaulding.geojson", what = "sp")
@@ -45,6 +46,20 @@ jordan <- geojsonio::geojson_read("data/2021/map_data/CEJordan.geojson", what = 
 lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood.geojson", what = "sp")
 parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood.geojson", what = "sp")
 southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest.geojson", what = "sp")
+=======
+#Load Map Data
+durham <- geojsonio::geojson_read("data/2021/map_data/All.geojson", what = "sp")
+cc <- geojsonio::geojson_read("data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
+eastway <- geojsonio::geojson_read("data/2021/map_data/Eastway Elementary.geojson", what = "sp")
+ek <- geojsonio::geojson_read("data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
+fayetteville <- geojsonio::geojson_read("data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
+forest <- geojsonio::geojson_read("data/2021/map_data/Forest View Elementary.geojson", what = "sp")
+hillside <- geojsonio::geojson_read("data/2021/map_data/Hillside High.geojson", what = "sp")
+jordan <- geojsonio::geojson_read("data/2021/map_data/Jordan High.geojson", what = "sp")
+lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
+parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
+southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest Elementary.geojson", what = "sp")
+>>>>>>> Stashed changes
 
 # Load/Rename Spatial Data
 bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
@@ -420,12 +435,10 @@ body <- {dashboardBody(
         #Maps Tab
         {tabItem(tabName = "mapstab",
                 fluidRow(
-                    box(width  = 12,
-                        background = "navy",
+                    box(width  = 7,
                         solidHeader = TRUE,
                         title = strong("Interactive Map"),
                         h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
-                        leafletOutput("map"))
                 ),
                 fluidRow(
                     box(width = 4,
@@ -1478,7 +1491,33 @@ Students can take these classes for an opportunity to receive college credit upo
                            label = displaySchool()["name"])
         })
         
+<<<<<<< Updated upstream
         # Maps - Context and Resources
+=======
+        
+        #helper function to make links look better and be clickable
+        createLink <- function(val) {
+          sprintf('<a href="%s" target="_blank">%s</a>',val, val)
+        }
+        
+        #outputting the list of resources for that subset
+        output$list <- renderDataTable({
+          if(input$var == "Parks")
+          {
+            temp_df <- parks[grepl(input$zone, parks$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS","URL")]
+          }
+          else if(input$var == "Recreation Centers")
+          {
+            temp_df <- rec[grepl(input$zone, rec$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("NAME","ADDRESS","URL")]
+          }
+        }, escape = FALSE, options = list(pageLength = 5)
+        )
+        
+>>>>>>> Stashed changes
         output$context <- renderText({
           if(input$var == "Parks"){
             paste("The presence of parks in a community is vital to increase community engagement, 
