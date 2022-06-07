@@ -33,20 +33,20 @@ all_race22 <- read_excel("data/2020/school_stats_data/all race 2022.xlsx")
 poc_per_school22 <- read_excel("data/2020/school_stats_data/poc per school22.xlsx")
 race22 <- read_excel("data/2020/school_stats_data/race2022.xlsx")
 
-<<<<<<< Updated upstream
+
 # Load/Rename Map Data
-durham <- geojsonio::geojson_read("data/2021/map_data/Ten Schools.geojson", what = "sp")
-cc <- geojsonio::geojson_read("data/2021/map_data/CC Spaulding.geojson", what = "sp")
-eastway <- geojsonio::geojson_read("data/2021/map_data/Eastway.geojson", what = "sp")
-ek <- geojsonio::geojson_read("data/2021/map_data/EK Powe.geojson", what = "sp")
-fayetteville <- geojsonio::geojson_read("data/2021/map_data/Fayetteville St.geojson", what = "sp")
-forest <- geojsonio::geojson_read("data/2021/map_data/Forest View.geojson", what = "sp")
-hillside <- geojsonio::geojson_read("data/2021/map_data/Hillside.geojson", what = "sp")
-jordan <- geojsonio::geojson_read("data/2021/map_data/CEJordan.geojson", what = "sp")
-lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood.geojson", what = "sp")
-parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood.geojson", what = "sp")
-southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest.geojson", what = "sp")
-=======
+durham <- geojsonio::geojson_read("data/2021/map_data/All.geojson", what = "sp")
+cc <- geojsonio::geojson_read("data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
+eastway <- geojsonio::geojson_read("data/2021/map_data/Eastway Elementary.geojson", what = "sp")
+ek <- geojsonio::geojson_read("data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
+fayetteville <- geojsonio::geojson_read("data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
+forest <- geojsonio::geojson_read("data/2021/map_data/Forest View Elementary.geojson", what = "sp")
+hillside <- geojsonio::geojson_read("data/2021/map_data/Hillside High.geojson", what = "sp")
+jordan <- geojsonio::geojson_read("data/2021/map_data/Jordan High.geojson", what = "sp")
+lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
+parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
+southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest Elementary.geojson", what = "sp")
+
 #Load Map Data
 durham <- geojsonio::geojson_read("data/2021/map_data/All.geojson", what = "sp")
 cc <- geojsonio::geojson_read("data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
@@ -59,7 +59,7 @@ jordan <- geojsonio::geojson_read("data/2021/map_data/Jordan High.geojson", what
 lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
 parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
 southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest Elementary.geojson", what = "sp")
->>>>>>> Stashed changes
+
 
 # Load/Rename Spatial Data
 bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
@@ -1498,9 +1498,7 @@ Students can take these classes for an opportunity to receive college credit upo
                            label = displaySchool()["name"])
         })
         
-<<<<<<< Updated upstream
         # Maps - Context and Resources
-=======
         
         #helper function to make links look better and be clickable
         createLink <- function(val) {
@@ -1521,10 +1519,73 @@ Students can take these classes for an opportunity to receive college credit upo
             temp_df$URL <- createLink(temp_df$URL)
             temp_df[c("NAME","ADDRESS","URL")]
           }
+          else if(input$var == "Gardens")
+          {
+            temp_df <- gardens[grepl(input$zone, gardens$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("NAME","ADDRESS","URL")]
+          }
+          else if(input$var == "Bus Stops")
+          {
+            temp_df <- bus[grepl(input$zone, bus$school_zones), ]
+            temp_df[c("STOP_NAME")]
+          }
+          else if(input$var == "Childcare Centers")
+          {
+            temp_df <- childcare[grepl(input$zone, childcare$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","URL")]
+          }
+          else if(input$var == "Community & Cultural Centers")
+          {
+            temp_df <- cultural[grepl(input$zone, cultural$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+          }
+          else if(input$var == "Grocery Stores")
+          {
+            temp_df <- grocery[grepl(input$zone, grocery$school_zones), ]
+            temp_df[c("STORE_NAME","ADDRESS")]
+          }
+          else if(input$var == "Libraries")
+          {
+            temp_df <- libraries[grepl(input$zone, libraries$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+          }
+          else if(input$var == "Religious Centers")
+          {
+            temp_df <- religious[grepl(input$zone, religious$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name", "URL")]
+          }
+          else if(input$var == "Hospitals and Clinics")
+          {
+            temp_df <- hospitals[grepl(input$zone, hospitals$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+          }
+          else if(input$var == "After-School Care Programs")
+          {
+            temp_df <- afterschool[grepl(input$zone, afterschool$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+          }
+          else if(input$var == "Food Pantries")
+          {
+            temp_df <- pantries[grepl(input$zone, pantries$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+          }
+          else if(input$var == "Farmers' Markets")
+          {
+            temp_df <- farmersmark[grepl(input$zone, farmersmark$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+          }
         }, escape = FALSE, options = list(pageLength = 5)
         )
         
->>>>>>> Stashed changes
         output$context <- renderText({
           if(input$var == "Parks"){
             paste("The presence of parks in a community is vital to increase community engagement, 
