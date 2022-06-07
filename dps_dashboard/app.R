@@ -440,12 +440,11 @@ body <- {dashboardBody(
                         title = strong("Interactive Map"),
                         h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
                         leafletOutput("map")),
-                    
                     box(width = 5,
                         solidHeader = TRUE,
-                        dataTableOutput("list"),
-                        title = strong("List Of Selected Resource In Selected Schoolzone")
-                        )
+                        title = strong("Context"),
+                        htmlOutput("context")),
+                   
                 ),
                 fluidRow(
                     box(width = 4,
@@ -468,8 +467,9 @@ body <- {dashboardBody(
                                     multiple = FALSE)),
                     box(width = 4,
                         solidHeader = TRUE,
-                        title = strong("Context"),
-                        htmlOutput("context")),
+                        dataTableOutput("list"),
+                        title = strong("List Of Selected Resource In Selected Schoolzone")
+                    ),
                    
                      #Icon Legend
                     {box(width = 4,
@@ -1583,7 +1583,7 @@ Students can take these classes for an opportunity to receive college credit upo
             temp_df$URL <- createLink(temp_df$URL)
             temp_df[c("name","ADDRESS", "URL")]
           }
-        }, escape = FALSE, options = list(pageLength = 5)
+        }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
         )
         
         output$context <- renderText({
