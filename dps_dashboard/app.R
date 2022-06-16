@@ -1129,6 +1129,18 @@ shinyApp(
                         labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                     ggplotly(p, tooltip = c("text")) 
               } 
+              else if(input$select == "Titles Per Student") {
+                    schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+                    p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=DISABLED_PERCENT)) +
+                        geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+                        geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+                        coord_flip() +
+                        geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
+                        theme_minimal() +
+                        theme(plot.title = element_text(hjust = 1.5)) +
+                        labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+                    ggplotly(p, tooltip = c("text")) 
+              } 
               #not on WebApp
               else if(input$select == "Diversity per School Zone") {
                     schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
