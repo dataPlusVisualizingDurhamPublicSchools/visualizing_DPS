@@ -75,7 +75,7 @@ schools <- read.csv("data/2021/spatial_data/schools.csv")
 hospitals <- read.csv("data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
 pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
 afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
-farmersmark <- read.csv("data/2021/spatial_data/url_Farmer's Markets.csv")
+farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv")
 
 # Load/Rename Schools' Names
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
@@ -124,6 +124,7 @@ sidebar <- {dashboardSidebar(
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
+        menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-analytics")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
 )
@@ -308,6 +309,19 @@ body <- {dashboardBody(
                          )
                  )
         )},
+        
+        #Data Insights tab
+        {tabItem(tabName = "insightstab",
+        
+                 fluidRow(
+                   box(width  = 12,
+                       solidHeader = TRUE,
+                       title = strong("Map Comparison Of School Districts"),
+                       h4("Different school districts are differently colored according to the variable selected."),
+                       leafletOutput("choropleth")),
+                 )
+        )},
+                       
         
         #Meet the team tab
         {tabItem(tabName = "teamstab",
@@ -1588,6 +1602,19 @@ Students can take these classes for an opportunity to receive college credit upo
           }
         }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
         )
+        
+        output$choropleth <- renderLeaflet({
+          leaflet(
+            displayZone()) %>%
+            addProviderTiles("CartoDB.Positron") %>%
+            addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+            addResetMapButton() %>%
+            addPolygons(data = durham,
+                        fillColor = displayColor(),
+                        stroke = TRUE,
+                        fillOpacity = 0.39,
+                        smoothFactor = 1)
+        })
         
         output$context <- renderText({
           if(input$var == "Parks"){
