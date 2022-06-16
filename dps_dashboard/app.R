@@ -28,10 +28,10 @@ poc_per_school <- read_excel("data/2021/school_stats_data/poc per school.xlsx")
 funding <- read_excel("data/2021/school_stats_data/funding.xlsx")
 all_race <- read_excel("data/2021/school_stats_data/all race 1.xlsx")
 schoolstats <- read.csv("data/2021/school_stats_data/Data + School Info - School Statistics.csv")
-schoolstats22 <- read.csv("data/2020/school_stats_data/School Statistics 2022.csv")
-all_race22 <- read_excel("data/2020/school_stats_data/all race 2022.xlsx")
-poc_per_school22 <- read_excel("data/2020/school_stats_data/poc per school22.xlsx")
-race22 <- read_excel("data/2020/school_stats_data/race2022.xlsx")
+schoolstats22 <- read.csv("data/2022/school_stats_data/School Statistics 2022.csv")
+all_race22 <- read_excel("data/2022/school_stats_data/all race 2022.xlsx")
+poc_per_school22 <- read_excel("data/2022/school_stats_data/poc per school22.xlsx")
+race22 <- read_excel("data/2022/school_stats_data/race2022.xlsx")
 
 
 # Load/Rename Map Data
@@ -267,21 +267,21 @@ body <- {dashboardBody(
         #School Stats Tab
         {tabItem(tabName = "statstab",
                  fluidRow(
-                     #Box Plot Outputs
-                     box(width = 12,
-                         background = "navy", 
-                         solidHeader = TRUE, 
-                         title = strong("Charts"), 
-                         plotlyOutput("barplots",
-                                      width="auto",
-                                      height = "auto"),
-                         h4("All data was derived from ",
-                            a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
-                            ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
-                            ", ", a("Durham Public Schools", href="https://dpsnc.net"),
-                            ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
-                            "."
-                     ))),
+                   #Box Plot Outputs
+                   box(width = 12,
+                       background = "navy", 
+                       solidHeader = TRUE, 
+                       title = strong("Charts"),
+                       plotlyOutput("barplots",
+                                    width="auto",
+                                    height = "auto"),
+                       h4("All data was derived from ",
+                          a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
+                          ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
+                          ", ", a("Durham Public Schools", href="https://dpsnc.net"),
+                          ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
+                          "."
+                       ))),
                  fluidRow(
                      #Drop Down Widget for Box Plots
                          box(width = 6,
@@ -299,7 +299,8 @@ body <- {dashboardBody(
                              ),
                              selectInput("year", em("Click the drop down menu to select which year you would like to view."), 
                                           choices = list("2021", "2022")
-                            )),
+                            )
+                            ),
                          box(width = 6,
                              solidHeader = TRUE,
                              title = strong("Context & Resources"),
@@ -587,8 +588,8 @@ shinyApp(
     server = function(input, output, session) { 
         
         # SchoolStats - GGPlots
-        output$barplots <- renderPlotly({
-            if(input$year == "2021"){
+    output$barplots <- renderPlotly({
+              if(input$year == "2021"){
               if(input$select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
@@ -1132,7 +1133,9 @@ shinyApp(
                 }
               }
         })
-        
+
+    
+      
         # SchoolStats - Context and Resources
         output$resources <- renderText({
           if(input$select == "Advanced Placement (AP) Course Enrollment") {
@@ -2229,6 +2232,11 @@ Students can take these classes for an opportunity to receive college credit upo
         #Home Page - Go to School Stats tab button
         observeEvent(input$viewStat, {
             updateTabItems(session, "TabItems", selected = "statstab")
+        })
+        
+        #Home Page - Leaflet Map
+        observeEvent(input$"Our Ten Schools - Home", {
+            updateTabItems(session, "TabItems", selected = "home")
         })
         
         #Home Page - Carousal
