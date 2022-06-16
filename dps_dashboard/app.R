@@ -43,23 +43,15 @@ fayetteville <- geojsonio::geojson_read("data/2021/map_data/Fayetteville Street 
 forest <- geojsonio::geojson_read("data/2021/map_data/Forest View Elementary.geojson", what = "sp")
 hillside <- geojsonio::geojson_read("data/2021/map_data/Hillside High.geojson", what = "sp")
 jordan <- geojsonio::geojson_read("data/2021/map_data/Jordan High.geojson", what = "sp")
-lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
+lakewoodES <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
 parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
 southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest Elementary.geojson", what = "sp")
-
-#Load Map Data
-durham <- geojsonio::geojson_read("data/2021/map_data/All.geojson", what = "sp")
-cc <- geojsonio::geojson_read("data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
-eastway <- geojsonio::geojson_read("data/2021/map_data/Eastway Elementary.geojson", what = "sp")
-ek <- geojsonio::geojson_read("data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
-fayetteville <- geojsonio::geojson_read("data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
-forest <- geojsonio::geojson_read("data/2021/map_data/Forest View Elementary.geojson", what = "sp")
-hillside <- geojsonio::geojson_read("data/2021/map_data/Hillside High.geojson", what = "sp")
-jordan <- geojsonio::geojson_read("data/2021/map_data/Jordan High.geojson", what = "sp")
-lakewood <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
-parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
-southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest Elementary.geojson", what = "sp")
-
+clubblv <- geojsonio::geojson_read("data/2021/map_data/Club Blv Elementary.geojson", what = "sp")
+lakewoodMS <- geojsonio::geojson_read("data/2021/map_data/Lakewood Middle.geojson", what = "sp")
+hillandale <- geojsonio::geojson_read("data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
+brogden <- geojsonio::geojson_read("data/2021/map_data/Brogden Middle.geojson", what = "sp")
+lowesgr <- geojsonio::geojson_read("data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
+riverside <- geojsonio::geojson_read("data/2021/map_data/Riverside High.geojson", what = "sp")
 
 # Load/Rename Spatial Data
 bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
@@ -71,7 +63,7 @@ libraries <- read.csv("data/2021/spatial_data/renamed_Libraries.csv")
 parks <- read.csv("data/2021/spatial_data/renamed_Parks.csv")
 rec <- read.csv("data/2021/spatial_data/renamed_Recreation Centers.csv")
 religious <- read.csv("data/2021/spatial_data/renamed_Religious Centers.csv")
-schools <- read.csv("data/2021/spatial_data/schools.csv")
+schools <- read.csv("data/2021/schools.csv")
 hospitals <- read.csv("data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
 pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
 afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
@@ -81,7 +73,11 @@ farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv")
 schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                       "Forest View Elementary", "Lakewood Elementary", "Parkwood Elementary",
-                      "Southwest Elementary", "Hillside High","Jordan High", "All")
+                      "Southwest Elementary", "Hillside High","Jordan High", "All",
+                      "Club Boulevard Elementary", "Hillandale Elementary",
+                      "Brogden Middle", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                      "Riverside High")
+
 
 
 # Load/Rename Icons
@@ -298,8 +294,8 @@ body <- {dashboardBody(
                                                     "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
                                                     "Students With Disabilities")
                              ),
-                             selectInput("year", em("Click the drop down menu to select which year you would like to view."), 
-                                          choices = list("2021", "2022")
+                             selectInput("year", em("Click the drop down menu to select which year of data collection you would like to view."), 
+                                          choices = list("Summer 2021", "Summer 2022")
                             )
                             ),
                          box(width = 6,
@@ -467,11 +463,12 @@ body <- {dashboardBody(
                         title = strong("Measurement"),
                         selectInput("zone",
                                     label = em("Choose a school zone to display"),
-                                    choices = c("All", "C.C. Spaulding Elementary", "Eastway Elementary",
-                                                "E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                                "Forest View Elementary", "Hillside High",
-                                                "Jordan High","Lakewood Elementary", 
-                                                "Parkwood Elementary", "Southwest Elementary"),
+                                    choices = c("All", "Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                                "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                                "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                                "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                                "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                                ),
                                     multiple = FALSE),
                         selectInput("var",
                                     label = em("Choose a variable to display"),
@@ -603,7 +600,7 @@ shinyApp(
         
         # SchoolStats - GGPlots
     output$barplots <- renderPlotly({
-              if(input$year == "2021"){
+              if(input$year == "Summer 2021"){
               if(input$select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
@@ -630,7 +627,7 @@ shinyApp(
               } 
               else if(input$select == "Bachelor Degree Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
-                p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$BACHELOR_DEG_RATE),], aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                   geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                   coord_flip() +
                   theme_minimal() +
@@ -676,7 +673,7 @@ shinyApp(
               }
               else if(input$select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
-                p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$EXP_TEACHER_RATIO),], aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                   geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                   geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
                   geom_hline(aes(text="Durham County Average = 79%", yintercept = 79), color ='#01016D') +
@@ -749,7 +746,7 @@ shinyApp(
               }
               else if(input$select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
-                p <- ggplot(schoolstats_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_AGE),], aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                     geom_text(aes(label = MED_AGE), hjust = 1.5, color = "black") +
                     geom_hline(aes(text="Durham County Average = 35.2", yintercept = 35.2), color ='#01016D') +
@@ -761,7 +758,7 @@ shinyApp(
               } 
               else if(input$select == "Median Homesale Price") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
-                p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOMESALE_PRICE),], aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                   geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                   coord_flip() +
                   scale_y_continuous(labels=scales::dollar_format()) +
@@ -774,7 +771,7 @@ shinyApp(
               }
               else if(input$select == "Median Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
-                p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOUSEHOLD_INC),], aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                   geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                   coord_flip() +
                   theme_minimal() +
@@ -808,7 +805,7 @@ shinyApp(
               }
               else if(input$select == "Sidewalk Coverage") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
-                p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$SIDEWALK_COVG),], aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                   geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                   coord_flip() +
                   theme_minimal() +
@@ -869,7 +866,7 @@ shinyApp(
               #not on WebApp
               else if(input$select == "Diversity per School Zone") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
-                p <- ggplot(schoolstats_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
+                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DIVERSITY_ZONE),], aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
@@ -881,7 +878,7 @@ shinyApp(
             }
               }
             
-            else if(input$year == "2022"){
+            else if(input$year == "Summer 2022"){
               if(input$select == "Average Class Size") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
@@ -1467,32 +1464,45 @@ Students can take these classes for an opportunity to receive college credit upo
         # Maps - Connecting school zone drop down menu to school info
         displayZone <- reactive({
             switch(input$zone,
-                   "C.C. Spaulding Elementary" = cc, 
+                   "Brogden Middle" = brogden,
+                   "C.C. Spaulding Elementary" = cc,
+                   "Club Boulevard Elementary" = clubblv,
                    "Eastway Elementary" = eastway,
                    "E.K. Powe Elementary" = ek, 
                    "Fayetteville Street Elementary" = fayetteville, 
                    "Forest View Elementary" = forest,
+                   "Hillandale Elementary" = hillandale,
                    "Hillside High" = hillside,
                    "Jordan High" = jordan,
-                   "Lakewood Elementary" = lakewood, 
+                   "Lakewood Elementary" = lakewoodES,
+                   "Lakewood Montessori Middle" = lakewoodMS,
+                   "Lowes Grove Middle" = lowesgr,
                    "Parkwood Elementary" = parkwood, 
-                   "Southwest Elementary" = southwest, 
-                   "All" = durham)
+                   "Riverside High" = riverside,
+                   "Southwest Elementary" = southwest,
+                   "All" = durham
+                   )
         })
         
         # Maps - School zone colors
         displayColor <- reactive({
             switch(input$zone,
+                   "Brogden Middle" = "purple",
                    "C.C. Spaulding Elementary" = "red", 
+                   "Club Boulevard Elementary" = "purple",
                    "Eastway Elementary" = "orange",
                    "E.K. Powe Elementary" = "yellow", 
                    "Fayetteville Street Elementary" = "green", 
                    "Forest View Elementary" = "blue",
+                   "Hillandale Elementary" = "purple",
                    "Hillside High" = "violet",
                    "Jordan High" = "pink",
                    "Lakewood Elementary" = "darkred", 
+                   "Lakewood Montessori Middle" = "purple",
+                   "Lowes Grove Middle" = "purple",
                    "Parkwood Elementary" = "lightblue", 
-                   "Southwest Elementary" = "brown", 
+                   "Riverside High" = "purple",
+                   "Southwest Elementary" = "brown",
                    "All" = "transparent")
         })
         
