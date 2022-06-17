@@ -292,7 +292,7 @@ body <- {dashboardBody(
                                                     "Median Age","Median Homesale Price","Median Household Income",
                                                     "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                     "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                                    "Students With Disabilities", "Titles Per Student")
+                                                    "Students With Disabilities", "Titles Per Student", "WiFi Access")
                              ),
                              selectInput("year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                           choices = list("Summer 2021", "Summer 2022")
@@ -1135,11 +1135,23 @@ shinyApp(
                         geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                         geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
                         coord_flip() +
-                        geom_hline(aes(text="Durham County Average = 16.16%", yintercept = 16.16), color ='#01016D') +
+                        geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
                         theme_minimal() +
                         theme(plot.title = element_text(hjust = 1.5)) +
                         labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                     ggplotly(p, tooltip = c("text")) 
+              } 
+              else if(input$select == "WiFi Access") {
+                schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+                p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+                  geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+                  geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+                  coord_flip() +
+                  geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+                  theme_minimal() +
+                  theme(plot.title = element_text(hjust = 1.5)) +
+                  labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                ggplotly(p, tooltip = c("text")) 
               } 
               #not on WebApp
               else if(input$select == "Diversity per School Zone") {
