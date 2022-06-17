@@ -1135,7 +1135,7 @@ shinyApp(
                         geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                         geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
                         coord_flip() +
-                        geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 16.16), color ='#01016D') +
+                        geom_hline(aes(text="Durham County Average = 16.16%", yintercept = 16.16), color ='#01016D') +
                         theme_minimal() +
                         theme(plot.title = element_text(hjust = 1.5)) +
                         labs(title = "Titles Per Student", x = "School", y = "Students (%)")
