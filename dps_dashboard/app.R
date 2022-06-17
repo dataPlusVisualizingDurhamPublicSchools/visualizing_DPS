@@ -350,7 +350,7 @@ body <- {dashboardBody(
                        br(),
                        fluidRow(
                          column(width = 3,
-                                img(src = "patience3.jpeg")),
+                                img(src = "patience3.jpg")),
                          column(width = 3,
                                 p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
@@ -360,7 +360,7 @@ body <- {dashboardBody(
                                   schools in the dataset, but students in all Durham Public Schools and beyond, 
                                   in hopes to make education more accessible to all students.")),
                          column(width = 3,
-                                img(src = "melanie2.png")),
+                                img(src = "mel250.jpg")),
                          column(width = 3,
                                 p("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.
                                   She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ 
