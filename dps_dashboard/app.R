@@ -1131,14 +1131,26 @@ shinyApp(
               } 
               else if(input$select == "Titles Per Student") {
                     schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
-                    p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=DISABLED_PERCENT)) +
+                    p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
                         geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                         geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
                         coord_flip() +
-                        geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
+                        geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
                         theme_minimal() +
                         theme(plot.title = element_text(hjust = 1.5)) +
                         labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+                    ggplotly(p, tooltip = c("text")) 
+              } 
+               else if(input$select == "WiFi Access") {
+                    schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+                    p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+                        geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+                        geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+                        coord_flip() +
+                        geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+                        theme_minimal() +
+                        theme(plot.title = element_text(hjust = 1.5)) +
+                        labs(title = "WiFi Access", x = "School", y = "Students (%)")
                     ggplotly(p, tooltip = c("text")) 
               } 
               #not on WebApp
