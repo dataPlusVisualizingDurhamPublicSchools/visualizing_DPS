@@ -330,7 +330,7 @@ body <- {dashboardBody(
                        br(),
                        fluidRow(
                          column(width = 3,
-                                img(align = "center", src = "Emily200.jpg")),
+                                img(align = "center", src = "emily250.jpg")),
                          column(width =3,
                                 p("Emily McReynolds is a sophomore at Duke University originally from Greensboro,
                                   North Carolina. She intends to major in Public Policy and obtain a certificate 
@@ -340,7 +340,7 @@ body <- {dashboardBody(
                                   Durham County that can support our public schools. Emily is eager to see how 
                                   this partnership can build a stronger sense of unity for all.")),
                          column(width = 3,
-                                img(src = "aryan.jpg")),
+                                img(src = "aryan250.jpg")),
                          column(width = 3,
                                 p("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently,
                                   he is studying Data Science, with a minor in Political Science. He is especially interested
