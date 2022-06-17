@@ -330,7 +330,7 @@ body <- {dashboardBody(
                        br(),
                        fluidRow(
                          column(width = 3,
-                                img(align = "center", src = "emily2.jpg")),
+                                img(align = "center", src = "Emily200.jpg")),
                          column(width =3,
                                 p("Emily McReynolds is a sophomore at Duke University originally from Greensboro,
                                   North Carolina. She intends to major in Public Policy and obtain a certificate 
