@@ -292,7 +292,7 @@ body <- {dashboardBody(
                                                     "Median Age","Median Homesale Price","Median Household Income",
                                                     "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                     "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                                    "Students With Disabilities")
+                                                    "Students With Disabilities", "Titles Per Student")
                              ),
                              selectInput("year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                           choices = list("Summer 2021", "Summer 2022")
@@ -1131,11 +1131,11 @@ shinyApp(
               } 
               else if(input$select == "Titles Per Student") {
                     schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
-                    p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=DISABLED_PERCENT)) +
+                    p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
                         geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
                         geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
                         coord_flip() +
-                        geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
+                        geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 16.16), color ='#01016D') +
                         theme_minimal() +
                         theme(plot.title = element_text(hjust = 1.5)) +
                         labs(title = "Titles Per Student", x = "School", y = "Students (%)")
@@ -2270,7 +2270,7 @@ Students can take these classes for an opportunity to receive college credit upo
                 addProviderTiles("CartoDB.Positron") %>%
                 addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$uni, label = "Duke University") %>%
                 addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$uni, label = "North Carolina Central University") %>%
-                addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schools$NAME)
+                addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schoolstats$SCHOOL_NAME)
         })
         
         #Home Page - Got to Maps tab button
