@@ -921,7 +921,7 @@ shinyApp(
                   geom_text(aes(label = CTE_RATE), hjust = -.1, color = "black") +
                   coord_flip() +
                   theme_minimal() +
-                  geom_hline(aes(text="Durham County Average = 53%", yintercept = 53), color ='#01016D') +
+                  geom_hline(aes(text="Durham County Average = 56%", yintercept = 56), color ='#01016D') +
                   theme(plot.title = element_text(hjust = 1.5)) +
                   labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
