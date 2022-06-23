@@ -47,7 +47,7 @@ library(gotop)
     lakewoodES <- geojsonio::geojson_read("data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
     parkwood <- geojsonio::geojson_read("data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
     southwest <- geojsonio::geojson_read("data/2021/map_data/Southwest Elementary.geojson", what = "sp")
-    clubblv <- geojsonio::geojson_read("data/2021/map_data/Club Blv Elementary.geojson", what = "sp")
+    clubblv <- geojsonio::geojson_read("data/2021/map_data/Club Boulevard Elementary.geojson", what = "sp")
     lakewoodMS <- geojsonio::geojson_read("data/2021/map_data/Lakewood Middle.geojson", what = "sp")
     hillandale <- geojsonio::geojson_read("data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
     brogden <- geojsonio::geojson_read("data/2021/map_data/Brogden Middle.geojson", what = "sp")
@@ -187,7 +187,7 @@ function(input, output, session) {
                     geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
                     geom_hline(aes(text="Durham County Average = 79%", yintercept = 79), color ='#01016D') +
                     coord_flip() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
+                    theme(plot.title = element_text(hjust = 0.5)) +
                     theme_minimal() +
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))

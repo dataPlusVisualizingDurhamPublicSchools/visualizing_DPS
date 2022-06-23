@@ -1,17 +1,17 @@
-,Unnamed: 0,Unnamed: 0.1,Unnamed: 0.1.1,Unnamed: 0.1.1.1,Unnamed: 0.1.1.1.1,Unnamed: 0.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,LIBRARY_NAME,name,ADDRESS,LATITUDE,LONGITUDE,URL,school_zones
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Main Library,Main Library,"300 N. Roxboro St.
-Durham, NC 27701",35.99505161,-78.89656493,https://durhamcountylibrary.org/location/main-library/,"All,Eastway Elementary"
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,East Regional Library,East Regional Library,"211 Lick Creek Ln.
-Durham, NC 27703",35.97861364,-78.80949397,https://durhamcountylibrary.org/location/east-regional-library/,All
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,North Regional Library,North Regional Library,"211 Milton Rd.
-Durham, NC 27712",36.08760124,-78.91441789,https://durhamcountylibrary.org/location/north-regional-library/,All
-3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,South Regional Library,South Regional Library,"4505 S. Alston Ave.
-Durham, NC 27713",35.90206524,-78.88821185,https://durhamcountylibrary.org/location/south-regional-library/,"All,Hillside High"
-4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,Southwest Regional Library,Southwest Regional Library,"3605 Shannon Rd.
-Durham, NC 27707",35.95929726,-78.95434813,https://durhamcountylibrary.org/location/southwest-regional-library/,"All,Jordan High"
-5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Stanford L. Warren Branch Library,Stanford L. Warren Branch Library,"1201 Fayetteville St.
-Durham, NC 27707",35.98265948,-78.89857763,,"All,Jordan High"
-6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,Bragtown Library Family Literacy Center,Bragtown Library Family Literacy Center,"3200 Dearborn Dr.
-Durham, NC 27704",36.03760676,-78.87182059,https://durhamcountylibrary.org/location/bragtown-branch-library/,All
-7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,James E. Shepard Memorial Library,James E. Shepard Memorial Library,"1801 Fayetteville St,
-Durham, NC 27707",35.97438089,-78.89855191,https://www.nccu.edu/james-e-shepard-memorial-library,"All,Hillside High"
+,Unnamed: 0,Unnamed: 0.1,Unnamed: 0.1.1,Unnamed: 0.1.1.1,Unnamed: 0.1.1.1.1,Unnamed: 0.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,LIBRARY_NAME,name,ADDRESS,LATITUDE,LONGITUDE,URL,school_zones
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Main Library,Main Library,"300 N. Roxboro St.
+Durham, NC 27701",35.99505161,-78.89656493,https://durhamcountylibrary.org/location/main-library/,"All,Brogden Middle,Eastway Elementary,Lakewood Middle,Riverside High"
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,East Regional Library,East Regional Library,"211 Lick Creek Ln.
+Durham, NC 27703",35.97861364,-78.80949397,https://durhamcountylibrary.org/location/east-regional-library/,"All,Lakewood Middle"
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,North Regional Library,North Regional Library,"211 Milton Rd.
+Durham, NC 27712",36.08760124,-78.91441789,https://durhamcountylibrary.org/location/north-regional-library/,"All,Lakewood Middle"
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,South Regional Library,South Regional Library,"4505 S. Alston Ave.
+Durham, NC 27713",35.90206524,-78.88821185,https://durhamcountylibrary.org/location/south-regional-library/,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,Southwest Regional Library,Southwest Regional Library,"3605 Shannon Rd.
+Durham, NC 27707",35.95929726,-78.95434813,https://durhamcountylibrary.org/location/southwest-regional-library/,"All,Jordan High,Lakewood Middle"
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Stanford L. Warren Branch Library,Stanford L. Warren Branch Library,"1201 Fayetteville St.
+Durham, NC 27707",35.98265948,-78.89857763,,"All,Jordan High,Lakewood Middle"
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,Bragtown Library Family Literacy Center,Bragtown Library Family Literacy Center,"3200 Dearborn Dr.
+Durham, NC 27704",36.03760676,-78.87182059,https://durhamcountylibrary.org/location/bragtown-branch-library/,"All,Lakewood Middle"
+7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,James E. Shepard Memorial Library,James E. Shepard Memorial Library,"1801 Fayetteville St,
+Durham, NC 27707",35.97438089,-78.89855191,https://www.nccu.edu/james-e-shepard-memorial-library,"All,Hillside High,Lakewood Middle"

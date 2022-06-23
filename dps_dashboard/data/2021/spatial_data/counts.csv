@@ -1,15 +1,15 @@
-,0,0,0,0,0,0,0,0,0,0,0
-varname,All,C.C. Spaulding Elementary,E.K. Powe Elementary,Eastway Elementary,Fayetteville Street Elementary,Forest View Elementary,Hillside High,Jordan High,Lakewood Elementary,Parkwood Elementary,Southwest Elementary
-After-School Care Programs,24.0,3.0,4.0,1.0,1.0,,4.0,9.0,2.0,,1.0
-Bus Stops,1037.0,87.0,117.0,51.0,34.0,55.0,251.0,222.0,41.0,52.0,32.0
-Childcare Centers_2022,258.0,8.0,13.0,7.0,16.0,7.0,87.0,52.0,7.0,24.0,17.0
-Community & Cultural Centers,9.0,,,1.0,,,,5.0,2.0,,1.0
-Community Gardens,6.0,,,1.0,,,1.0,2.0,2.0,,
-Farmer's Markets,5.0,,,1.0,1.0,,3.0,,,2.0,
-Food Pantries,63.0,5.0,2.0,6.0,6.0,1.0,16.0,10.0,3.0,3.0,
-Grocery Stores,91.0,8.0,12.0,4.0,2.0,4.0,13.0,31.0,4.0,5.0,2.0
-Hospitals and Clinics,16.0,,4.0,,,4.0,1.0,3.0,,,
-Libraries,8.0,,,1.0,,,2.0,2.0,,,
-Parks,73.0,6.0,8.0,6.0,3.0,3.0,13.0,17.0,3.0,1.0,3.0
-Recreation Centers,13.0,5.0,2.0,1.0,,,3.0,4.0,,,
-Religious Centers,217.0,16.0,23.0,10.0,10.0,7.0,45.0,56.0,7.0,7.0,9.0
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+varname,All School,Brogden Middle School,C.C. Spaulding Elementary School,Club Boulevard Elementary School,E.K. Powe Elementary School,Eastway Elementary School,Fayetteville Street Elementary School,Forest View Elementary School,Hillandale Elementary School,Hillside High School,Jordan High School,Lakewood Elementary School,Lakewood Middle School,Lowes Grove Middle School,Parkwood Elementary School,Riverside High School,Southwest Elementary School
+After-School Care Programs,24.0,13.0,3.0,1.0,4.0,1.0,1.0,0.0,0.0,4.0,9.0,2.0,24.0,3.0,0.0,8.0,1.0
+Bus Stops,1037.0,402.0,87.0,0.0,117.0,51.0,34.0,55.0,48.0,251.0,222.0,41.0,1037.0,197.0,52.0,340.0,32.0
+Childcare Centers_2022,258.0,41.0,8.0,1.0,13.0,7.0,16.0,7.0,6.0,87.0,52.0,7.0,258.0,78.0,24.0,39.0,17.0
+Community & Cultural Centers,9.0,5.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,5.0,2.0,9.0,0.0,0.0,2.0,1.0
+Community Gardens,6.0,5.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,2.0,2.0,6.0,1.0,0.0,2.0,0.0
+Farmer's Markets,5.0,2.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,3.0,0.0,0.0,5.0,3.0,2.0,1.0,0.0
+Food Pantries,63.0,20.0,5.0,0.0,2.0,6.0,6.0,1.0,2.0,16.0,10.0,3.0,63.0,12.0,3.0,13.0,0.0
+Grocery Stores,91.0,31.0,8.0,0.0,12.0,4.0,2.0,4.0,3.0,13.0,31.0,4.0,91.0,11.0,5.0,22.0,2.0
+Hospitals and Clinics,16.0,9.0,0.0,0.0,4.0,0.0,0.0,4.0,1.0,1.0,3.0,0.0,16.0,1.0,0.0,12.0,0.0
+Libraries,8.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,2.0,2.0,0.0,8.0,1.0,0.0,1.0,0.0
+Parks,73.0,32.0,6.0,1.0,8.0,6.0,3.0,3.0,2.0,13.0,17.0,3.0,73.0,8.0,1.0,21.0,3.0
+Recreation Centers,13.0,9.0,5.0,0.0,2.0,1.0,0.0,0.0,0.0,3.0,4.0,0.0,13.0,2.0,0.0,4.0,0.0
+Religious Centers,217.0,76.0,16.0,0.0,23.0,10.0,10.0,7.0,11.0,45.0,56.0,7.0,217.0,32.0,7.0,53.0,9.0

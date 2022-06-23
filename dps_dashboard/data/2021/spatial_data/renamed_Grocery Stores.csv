@@ -1,95 +1,95 @@
-,Unnamed: 0,Unnamed: 0.1,Unnamed: 0.1.1,Unnamed: 0.1.1.1,Unnamed: 0.1.1.1.1,Unnamed: 0.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,STORE_NAME,ADDRESS,LATITUDE,LONGITUDE,school_zones
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Triangle Mini Mart,4003 Fayetteville St,35.949211,-78.903282,"All,Hillside High"
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Morehead Mini Mart,1601 Morehead Ave,35.99189,-78.921532,"All,Jordan High,Lakewood Elementary"
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,Food Lion #939,4621 Hillsborough Rd,36.032082,-78.97963,All
-3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,Durham Food World,401 E Lakewood Ave # A,35.987774,-78.899963,"All,C.C. Spaulding Elementary,Jordan High"
-4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,Food Lion #747,3500 N Roxboro St,36.037621,-78.892548,All
-5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Walmart Supercenter #1614,1525 Glenn School Rd,36.02831257,-78.84345849,All
-6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,Mi Barrio Grocery,2405 Guess Rd,36.026218,-78.922592,"All,E.K. Powe Elementary"
-7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,Fay Street Grocery & Grill,1302 Fay St,35.99883,-78.880441,"All,Eastway Elementary"
-8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,Sunshine Mart,2014 Guess Rd,36.02301,-78.917839,"All,E.K. Powe Elementary"
-9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,Parkview Mini Mart,433 E Pilot St,35.964088,-78.907593,"All,Fayetteville Street Elementary,Hillside High"
-10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,Leone International Foods,810 Fayetteville St # 108,35.98531,-78.89904,"All,C.C. Spaulding Elementary,Jordan High"
-11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,Sprouts Farmers Market,105 W NC 54 Hwy,35.91002276,-78.93842678,"All,Jordan High"
-12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,New York Mini Mart,2929 Angier Ave,35.972988,-78.866417,"All,Hillside High"
-13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,Fresh Market,4215 University Dr # A3,35.962769,-78.95871,"All,Jordan High"
-14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,Joy Speed Mart,1624 Glenn School Rd,36.03125,-78.84041,All
-15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,Around The World Market,1708 E NC Highway 54,35.901958,-78.902428,"All,Hillside High,Parkwood Elementary"
-16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,Al-Taiba Market,1008 W Chapel Hill St,35.99713,-78.91571,"All,C.C. Spaulding Elementary,Jordan High"
-17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,Food Lion #2646,"2121 TW Alexander Dr # 107, Morrisville, NC 27560",35.92025,-78.810379,"All,Hillside High"
-18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,King's Red & White Supermarket,305 E Club Blvd,36.019871,-78.889549,All
-19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,One Hop Food Mart,2021 Guess Rd,36.022877,-78.918465,"All,E.K. Powe Elementary"
-20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,Whole Foods Market,621 Broad St,36.006992,-78.920631,"All,E.K. Powe Elementary"
-21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,Tortilleria Miguelena,4739 NC Highway 55,35.900902,-78.895836,"All,Hillside High,Parkwood Elementary"
-22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,Aldi,7906 NC Highway 751,35.900043,-78.960838,"All,Jordan High"
-23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,Harris Teeter #120,"116 W Barbee Chapel Rd, Chapel Hill, NC 27517",35.906368,-79.010422,
-24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,Target,4037 Durham Chapel Hill Blvd,35.966274,-78.959015,"All,Forest View Elementary,Jordan High"
-25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,Harris Teeter #172,1817 Martin Luther King Pkwy,35.959801,-78.959358,"All,Jordan High"
-26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,Halgo European Deli & Grocery,4520 S Alston Ave,35.90189,-78.889214,"All,Hillside High"
-27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,Harris Teeter #497,1802 North Pointe Dr,36.02923872,-78.92135065,All
-28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,Geer St. Mini Mart,201 E Geer St,36.003521,-78.892799,"All,Eastway Elementary"
-29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,Compare Foods,2000 Avondale Dr,36.01510506,-78.88813431,All
-30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,Harris Teeter #304,"10440 Glenwood Ave, Raleigh, NC 27617",35.967809,-78.84068,All
-31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,Compare Foods,1233 University Dr,35.985157,-78.909569,"All,C.C. Spaulding Elementary,Jordan High"
-32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,Walmart Supercenter #2137,5450 New Hope Commons Dr,35.95481446,-78.99896771,"All,Jordan High"
-33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,Walmart Supercenter,1525 Glenn School Rd,36.028511,-78.843781,All
-34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,Carlie C's IGA,3729 Wake Forest Rd,35.982334,-78.821747,All
-35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,U C Stop,710 S Alston Ave,35.97987,-78.891968,"All,Jordan High"
-36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,La Central Market,2022 Guess Rd #C,36.023293,-78.918121,"All,E.K. Powe Elementary"
-37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,Circus Food Store,3801 Wake Forest Rd,35.981747,-78.820549,All
-38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,Walmart Supercenter,5450 New Hope Commons Dr,35.954521,-78.998642,"All,Jordan High"
-39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,Shilla Oriental Market Llc,2107 Allendown Dr # 103,35.89912,-78.895309,"All,Hillside High,Parkwood Elementary"
-40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,Guess Road Minimart,2014 Guess Rd,36.02301,-78.917839,"All,E.K. Powe Elementary"
-41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,Save-A-Lot,812 Liberty St,35.99231,-78.886513,All
-42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,Harris Teeter #492,3457 Hillsborough Rd,36.01892963,-78.94845289,"All,E.K. Powe Elementary"
-43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,Plaza Latina,3801 Wake Forest Rd # 118,35.981747,-78.820549,All
-44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,Sheetz,3414 Hillsborough Rd,36.019539,-78.94593,"All,E.K. Powe Elementary"
-45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,Lighthouse Food Mart,2944 Holloway St,35.986542,-78.844269,All
-46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,Trinity Food Mart,403 W Trinity Ave,36.0051809,-78.90176467,All
-47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,Tienda Mi Tierra,4226 Garrett Rd #C,35.959518,-78.976059,"All,Jordan High"
-48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,Food Lion #420,3808 Guess Rd,36.05851,-78.927773,All
-49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,Food Lion #234,2400 Holloway St # C,35.989285,-78.859421,All
-50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,Bilboa Food Mart,3639 Angier Ave,35.956638,-78.851891,"All,Hillside High"
-51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,Food Lion #885,4900 NC Highway 55 # 300,35.899097,-78.898186,"All,Hillside High,Parkwood Elementary"
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,University Market,1108 W Chapel Hill St,35.997002,-78.916512,"All,C.C. Spaulding Elementary,Jordan High"
-53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,Harris Teeter #493,5116 N Roxboro St,36.06918,-78.906609,All
-54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,Food Lion #1343,2000 Chapel Hill Rd,35.987659,-78.927582,"All,Jordan High,Lakewood Elementary"
-55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,Sheetz,4010 Convenient Ln,35.858643,-78.894165,
-56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,Variety Mini Mart,2534 S Roxboro St #B,35.965839,-78.919061,"All,Jordan High,Lakewood Elementary"
-57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,Star Mini Mart,1708 E NC Highway 54,35.901957,-78.902424,"All,Hillside High,Parkwood Elementary"
-58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,Triangle Mini Mart,2508 Hillsborough Rd,36.010786,-78.928316,"All,E.K. Powe Elementary"
-59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,Buy Quick Food Marts,419 S Briggs Ave,35.981079,-78.874763,All
-60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,Li Ming's Global Mart,3400 Westgate Dr # 14A,35.96645,-78.961189,"All,Forest View Elementary,Jordan High"
-61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,Billy's Mart,3834 Cheek Rd,36.02174,-78.810081,All
-62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,Costco Wholesale,1510 N Pointe Dr,36.02919,-78.914497,All
-63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,Royal's Mini Mart,1907 Cheek Rd,36.00539,-78.866562,All
-64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,Sam's Club,4005 Durham-Chapel Hill Blvd,35.967388,-78.956627,"All,Forest View Elementary,Jordan High"
-65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,In & Out Food Mart,911 Fayetteville St,35.984447,-78.89859,"All,Jordan High"
-66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,Juma's Food Market,1026 Holloway St,35.994186,-78.881974,"All,Eastway Elementary"
-67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,Tortilleria Miguelena,3205 University Dr,35.96747115,-78.94152259,"All,Jordan High"
-68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,USA Mini Mart,1224 Fayetteville St,35.981471,-78.899459,"All,C.C. Spaulding Elementary,Jordan High"
-69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,Food Lion #274,4711 Hope Valley Rd,35.920921,-78.956421,"All,Jordan High,Southwest Elementary"
-70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,Handi Foods,518 E Trinity Ave,36.006927,-78.885864,"All,Eastway Elementary"
-71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,Durham Co-Op Market,1111 W Chapel Hill St,35.99643,-78.9166,"All,C.C. Spaulding Elementary,Jordan High"
-72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,R & M's Snack Shack,832 Ridgeway Ave,35.97678,-78.8907,"All,Hillside High"
-73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,Harris Teeter #394,2107 Hillsborough Rd,36.009769,-78.92408,"All,E.K. Powe Elementary"
-74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,Walmart Supercenter #5118,"10050 Glenwood Ave, Raleigh 27617",35.91251056,-78.77791508,
-75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,Harris Teeter #254,1501 Horton Rd,36.056541,-78.930969,All
-76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,Roxboro Pure Mart,101 E Cornwallis Rd,35.965435,-78.919334,"All,Jordan High,Lakewood Elementary"
-77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,Southside Tobacco And Grocery,1111 S Roxboro St,35.982906,-78.902504,"All,C.C. Spaulding Elementary,Jordan High"
-78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,Los Primos Supermarket,1109 E Main St,35.987991,-78.887939,All
-79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,Lagos Meat Market Llc,3438 Hillsborough Rd # C,36.0202,-78.94686,"All,E.K. Powe Elementary"
-80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,Food Lion #1099,2930 W Main St,36.014011,-78.933769,"All,E.K. Powe Elementary"
-81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,M&M Mini Mart,2128 Angier Ave,35.98114,-78.876518,All
-82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,Harris Teeter #224,1125 W NC Highway 54 # 310,35.917683,-78.95845,"All,Jordan High"
-83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,Food Lion #57,5279 N Roxboro Rd,36.076511,-78.911224,All
-84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,Little India,4201 University Dr # 110,35.964611,-78.957458,"All,Jordan High"
-85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,Fast Food Mart,5801 N Roxboro Rd,36.10164397,-78.91070886,All
-86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,Bulldega Urban Market,129 W Parrish St,35.99600795,-78.90141417,All
-87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,Stop 1 Foodmart,1103 N Miami Blvd,35.993885,-78.870476,All
-88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,Sam's Club Pharmacy,4005 Durham Chapel Hill Blvd,35.967388,-78.956627,"All,Forest View Elementary,Jordan High"
-89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,Target,8210 Renaissance Pkwy,35.903931,-78.953079,"All,Jordan High"
-90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,Compare Foods,2000 Avondale Dr # A,36.016449,-78.886009,All
-91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,Food Lion #2589,121 Sherron Rd # 210,35.974571,-78.792908,All
-92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,Food Lion Fayetteville Street,3022 Fayetteville St,35.96388114,-78.90861199,"All,Fayetteville Street Elementary,Hillside High"
-93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,Harris Teeter E 54,202 E NC Highway 54,35.91983708,-78.95943633,"All,Jordan High,Southwest Elementary"
+,Unnamed: 0,Unnamed: 0.1,Unnamed: 0.1.1,Unnamed: 0.1.1.1,Unnamed: 0.1.1.1.1,Unnamed: 0.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,STORE_NAME,ADDRESS,LATITUDE,LONGITUDE,school_zones
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Triangle Mini Mart,4003 Fayetteville St,35.949211,-78.903282,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,Morehead Mini Mart,1601 Morehead Ave,35.99189,-78.921532,"All,Brogden Middle,Jordan High,Lakewood Elementary,Lakewood Middle"
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,Food Lion #939,4621 Hillsborough Rd,36.032082,-78.97963,"All,Brogden Middle,Hillandale Elementary,Lakewood Middle,Riverside High"
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,Durham Food World,401 E Lakewood Ave # A,35.987774,-78.899963,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,Food Lion #747,3500 N Roxboro St,36.037621,-78.892548,"All,Lakewood Middle,Riverside High"
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Walmart Supercenter #1614,1525 Glenn School Rd,36.02831257,-78.84345849,"All,Lakewood Middle"
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,Mi Barrio Grocery,2405 Guess Rd,36.026218,-78.922592,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,Fay Street Grocery & Grill,1302 Fay St,35.99883,-78.880441,"All,Eastway Elementary,Lakewood Middle"
+8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,Sunshine Mart,2014 Guess Rd,36.02301,-78.917839,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,Parkview Mini Mart,433 E Pilot St,35.964088,-78.907593,"All,Fayetteville Street Elementary,Hillside High,Lakewood Middle"
+10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,Leone International Foods,810 Fayetteville St # 108,35.98531,-78.89904,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,Sprouts Farmers Market,105 W NC 54 Hwy,35.91002276,-78.93842678,"All,Jordan High,Lakewood Middle"
+12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,New York Mini Mart,2929 Angier Ave,35.972988,-78.866417,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,Fresh Market,4215 University Dr # A3,35.962769,-78.95871,"All,Jordan High,Lakewood Middle"
+14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,Joy Speed Mart,1624 Glenn School Rd,36.03125,-78.84041,"All,Lakewood Middle"
+15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,Around The World Market,1708 E NC Highway 54,35.901958,-78.902428,"All,Hillside High,Lakewood Middle,Lowes Grove Middle,Parkwood Elementary"
+16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,Al-Taiba Market,1008 W Chapel Hill St,35.99713,-78.91571,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,Food Lion #2646,"2121 TW Alexander Dr # 107, Morrisville, NC 27560",35.92025,-78.810379,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,King's Red & White Supermarket,305 E Club Blvd,36.019871,-78.889549,"All,Lakewood Middle"
+19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,One Hop Food Mart,2021 Guess Rd,36.022877,-78.918465,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,Whole Foods Market,621 Broad St,36.006992,-78.920631,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,Tortilleria Miguelena,4739 NC Highway 55,35.900902,-78.895836,"All,Hillside High,Lakewood Middle,Lowes Grove Middle,Parkwood Elementary"
+22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,Aldi,7906 NC Highway 751,35.900043,-78.960838,"All,Jordan High,Lakewood Middle"
+23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,Harris Teeter #120,"116 W Barbee Chapel Rd, Chapel Hill, NC 27517",35.906368,-79.010422,
+24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,Target,4037 Durham Chapel Hill Blvd,35.966274,-78.959015,"All,Forest View Elementary,Jordan High,Lakewood Middle"
+25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,Harris Teeter #172,1817 Martin Luther King Pkwy,35.959801,-78.959358,"All,Jordan High,Lakewood Middle"
+26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,Halgo European Deli & Grocery,4520 S Alston Ave,35.90189,-78.889214,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,Harris Teeter #497,1802 North Pointe Dr,36.02923872,-78.92135065,"All,Brogden Middle,Lakewood Middle,Riverside High"
+28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,Geer St. Mini Mart,201 E Geer St,36.003521,-78.892799,"All,Eastway Elementary,Lakewood Middle"
+29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,Compare Foods,2000 Avondale Dr,36.01510506,-78.88813431,"All,Lakewood Middle"
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,Harris Teeter #304,"10440 Glenwood Ave, Raleigh, NC 27617",35.967809,-78.84068,"All,Lakewood Middle"
+31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,Compare Foods,1233 University Dr,35.985157,-78.909569,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,Walmart Supercenter #2137,5450 New Hope Commons Dr,35.95481446,-78.99896771,"All,Jordan High,Lakewood Middle"
+33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,Walmart Supercenter,1525 Glenn School Rd,36.028511,-78.843781,"All,Lakewood Middle"
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,Carlie C's IGA,3729 Wake Forest Rd,35.982334,-78.821747,"All,Lakewood Middle"
+35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,U C Stop,710 S Alston Ave,35.97987,-78.891968,"All,Jordan High,Lakewood Middle"
+36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,La Central Market,2022 Guess Rd #C,36.023293,-78.918121,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,Circus Food Store,3801 Wake Forest Rd,35.981747,-78.820549,"All,Lakewood Middle"
+38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,Walmart Supercenter,5450 New Hope Commons Dr,35.954521,-78.998642,"All,Jordan High,Lakewood Middle"
+39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,Shilla Oriental Market Llc,2107 Allendown Dr # 103,35.89912,-78.895309,"All,Hillside High,Lakewood Middle,Lowes Grove Middle,Parkwood Elementary"
+40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,Guess Road Minimart,2014 Guess Rd,36.02301,-78.917839,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,Save-A-Lot,812 Liberty St,35.99231,-78.886513,"All,Brogden Middle,Lakewood Middle,Riverside High"
+42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,Harris Teeter #492,3457 Hillsborough Rd,36.01892963,-78.94845289,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,Plaza Latina,3801 Wake Forest Rd # 118,35.981747,-78.820549,"All,Lakewood Middle"
+44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,Sheetz,3414 Hillsborough Rd,36.019539,-78.94593,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,Lighthouse Food Mart,2944 Holloway St,35.986542,-78.844269,"All,Lakewood Middle"
+46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,Trinity Food Mart,403 W Trinity Ave,36.0051809,-78.90176467,"All,Brogden Middle,Lakewood Middle,Riverside High"
+47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,Tienda Mi Tierra,4226 Garrett Rd #C,35.959518,-78.976059,"All,Jordan High,Lakewood Middle"
+48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,Food Lion #420,3808 Guess Rd,36.05851,-78.927773,"All,Hillandale Elementary,Lakewood Middle,Riverside High"
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,Food Lion #234,2400 Holloway St # C,35.989285,-78.859421,"All,Lakewood Middle"
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,Bilboa Food Mart,3639 Angier Ave,35.956638,-78.851891,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,Food Lion #885,4900 NC Highway 55 # 300,35.899097,-78.898186,"All,Hillside High,Lakewood Middle,Lowes Grove Middle,Parkwood Elementary"
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,University Market,1108 W Chapel Hill St,35.997002,-78.916512,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,53,Harris Teeter #493,5116 N Roxboro St,36.06918,-78.906609,"All,Lakewood Middle"
+54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,Food Lion #1343,2000 Chapel Hill Rd,35.987659,-78.927582,"All,Brogden Middle,Jordan High,Lakewood Elementary,Lakewood Middle"
+55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,Sheetz,4010 Convenient Ln,35.858643,-78.894165,
+56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,Variety Mini Mart,2534 S Roxboro St #B,35.965839,-78.919061,"All,Brogden Middle,Jordan High,Lakewood Elementary,Lakewood Middle"
+57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,Star Mini Mart,1708 E NC Highway 54,35.901957,-78.902424,"All,Hillside High,Lakewood Middle,Lowes Grove Middle,Parkwood Elementary"
+58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,58,Triangle Mini Mart,2508 Hillsborough Rd,36.010786,-78.928316,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,59,Buy Quick Food Marts,419 S Briggs Ave,35.981079,-78.874763,"All,Lakewood Middle"
+60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,Li Ming's Global Mart,3400 Westgate Dr # 14A,35.96645,-78.961189,"All,Forest View Elementary,Jordan High,Lakewood Middle"
+61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,61,Billy's Mart,3834 Cheek Rd,36.02174,-78.810081,"All,Lakewood Middle"
+62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,Costco Wholesale,1510 N Pointe Dr,36.02919,-78.914497,"All,Brogden Middle,Lakewood Middle,Riverside High"
+63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,63,Royal's Mini Mart,1907 Cheek Rd,36.00539,-78.866562,"All,Lakewood Middle"
+64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,Sam's Club,4005 Durham-Chapel Hill Blvd,35.967388,-78.956627,"All,Forest View Elementary,Jordan High,Lakewood Middle"
+65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,In & Out Food Mart,911 Fayetteville St,35.984447,-78.89859,"All,Jordan High,Lakewood Middle"
+66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,Juma's Food Market,1026 Holloway St,35.994186,-78.881974,"All,Eastway Elementary,Lakewood Middle"
+67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,Tortilleria Miguelena,3205 University Dr,35.96747115,-78.94152259,"All,Jordan High,Lakewood Middle"
+68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,68,USA Mini Mart,1224 Fayetteville St,35.981471,-78.899459,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,69,Food Lion #274,4711 Hope Valley Rd,35.920921,-78.956421,"All,Jordan High,Lakewood Middle,Southwest Elementary"
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,Handi Foods,518 E Trinity Ave,36.006927,-78.885864,"All,Eastway Elementary,Lakewood Middle"
+71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,Durham Co-Op Market,1111 W Chapel Hill St,35.99643,-78.9166,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,R & M's Snack Shack,832 Ridgeway Ave,35.97678,-78.8907,"All,Hillside High,Lakewood Middle,Lowes Grove Middle"
+73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,Harris Teeter #394,2107 Hillsborough Rd,36.009769,-78.92408,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,74,Walmart Supercenter #5118,"10050 Glenwood Ave, Raleigh 27617",35.91251056,-78.77791508,
+75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,Harris Teeter #254,1501 Horton Rd,36.056541,-78.930969,"All,Hillandale Elementary,Lakewood Middle,Riverside High"
+76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,Roxboro Pure Mart,101 E Cornwallis Rd,35.965435,-78.919334,"All,Brogden Middle,Jordan High,Lakewood Elementary,Lakewood Middle"
+77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,Southside Tobacco And Grocery,1111 S Roxboro St,35.982906,-78.902504,"All,Brogden Middle,C.C. Spaulding Elementary,Jordan High,Lakewood Middle"
+78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78,Los Primos Supermarket,1109 E Main St,35.987991,-78.887939,"All,Brogden Middle,Lakewood Middle,Riverside High"
+79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,Lagos Meat Market Llc,3438 Hillsborough Rd # C,36.0202,-78.94686,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,Food Lion #1099,2930 W Main St,36.014011,-78.933769,"All,Brogden Middle,E.K. Powe Elementary,Lakewood Middle,Riverside High"
+81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,81,M&M Mini Mart,2128 Angier Ave,35.98114,-78.876518,"All,Lakewood Middle"
+82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,Harris Teeter #224,1125 W NC Highway 54 # 310,35.917683,-78.95845,"All,Jordan High,Lakewood Middle"
+83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,83,Food Lion #57,5279 N Roxboro Rd,36.076511,-78.911224,"All,Lakewood Middle"
+84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,84,Little India,4201 University Dr # 110,35.964611,-78.957458,"All,Jordan High,Lakewood Middle"
+85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,85,Fast Food Mart,5801 N Roxboro Rd,36.10164397,-78.91070886,"All,Lakewood Middle"
+86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,86,Bulldega Urban Market,129 W Parrish St,35.99600795,-78.90141417,"All,Brogden Middle,Lakewood Middle,Riverside High"
+87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,87,Stop 1 Foodmart,1103 N Miami Blvd,35.993885,-78.870476,"All,Lakewood Middle"
+88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,88,Sam's Club Pharmacy,4005 Durham Chapel Hill Blvd,35.967388,-78.956627,"All,Forest View Elementary,Jordan High,Lakewood Middle"
+89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,89,Target,8210 Renaissance Pkwy,35.903931,-78.953079,"All,Jordan High,Lakewood Middle"
+90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,Compare Foods,2000 Avondale Dr # A,36.016449,-78.886009,"All,Lakewood Middle"
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,Food Lion #2589,121 Sherron Rd # 210,35.974571,-78.792908,"All,Lakewood Middle"
+92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,92,Food Lion Fayetteville Street,3022 Fayetteville St,35.96388114,-78.90861199,"All,Fayetteville Street Elementary,Hillside High,Lakewood Middle"
+93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,Harris Teeter E 54,202 E NC Highway 54,35.91983708,-78.95943633,"All,Jordan High,Lakewood Middle,Southwest Elementary"

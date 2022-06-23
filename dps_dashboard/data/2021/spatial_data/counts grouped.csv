@@ -1,144 +1,222 @@
-,varname,schoolname,count
-0,After-School Care Programs,All,24.0
-1,Bus Stops,All,1037.0
-2,Childcare Centers_2022,All,258.0
-3,Community & Cultural Centers,All,9.0
-4,Community Gardens,All,6.0
-5,Farmer's Markets,All,5.0
-6,Food Pantries,All,63.0
-7,Grocery Stores,All,91.0
-8,Hospitals and Clinics,All,16.0
-9,Libraries,All,8.0
-10,Parks,All,73.0
-11,Recreation Centers,All,13.0
-12,Religious Centers,All,217.0
-13,After-School Care Programs,C.C. Spaulding Elementary,3.0
-14,Bus Stops,C.C. Spaulding Elementary,87.0
-15,Childcare Centers_2022,C.C. Spaulding Elementary,8.0
-16,Community & Cultural Centers,C.C. Spaulding Elementary,
-17,Community Gardens,C.C. Spaulding Elementary,
-18,Farmer's Markets,C.C. Spaulding Elementary,
-19,Food Pantries,C.C. Spaulding Elementary,5.0
-20,Grocery Stores,C.C. Spaulding Elementary,8.0
-21,Hospitals and Clinics,C.C. Spaulding Elementary,
-22,Libraries,C.C. Spaulding Elementary,
-23,Parks,C.C. Spaulding Elementary,6.0
-24,Recreation Centers,C.C. Spaulding Elementary,5.0
-25,Religious Centers,C.C. Spaulding Elementary,16.0
-26,After-School Care Programs,E.K. Powe Elementary,4.0
-27,Bus Stops,E.K. Powe Elementary,117.0
-28,Childcare Centers_2022,E.K. Powe Elementary,13.0
-29,Community & Cultural Centers,E.K. Powe Elementary,
-30,Community Gardens,E.K. Powe Elementary,
-31,Farmer's Markets,E.K. Powe Elementary,
-32,Food Pantries,E.K. Powe Elementary,2.0
-33,Grocery Stores,E.K. Powe Elementary,12.0
-34,Hospitals and Clinics,E.K. Powe Elementary,4.0
-35,Libraries,E.K. Powe Elementary,
-36,Parks,E.K. Powe Elementary,8.0
-37,Recreation Centers,E.K. Powe Elementary,2.0
-38,Religious Centers,E.K. Powe Elementary,23.0
-39,After-School Care Programs,Eastway Elementary,1.0
-40,Bus Stops,Eastway Elementary,51.0
-41,Childcare Centers_2022,Eastway Elementary,7.0
-42,Community & Cultural Centers,Eastway Elementary,1.0
-43,Community Gardens,Eastway Elementary,1.0
-44,Farmer's Markets,Eastway Elementary,1.0
-45,Food Pantries,Eastway Elementary,6.0
-46,Grocery Stores,Eastway Elementary,4.0
-47,Hospitals and Clinics,Eastway Elementary,
-48,Libraries,Eastway Elementary,1.0
-49,Parks,Eastway Elementary,6.0
-50,Recreation Centers,Eastway Elementary,1.0
-51,Religious Centers,Eastway Elementary,10.0
-52,After-School Care Programs,Fayetteville Street Elementary,1.0
-53,Bus Stops,Fayetteville Street Elementary,34.0
-54,Childcare Centers_2022,Fayetteville Street Elementary,16.0
-55,Community & Cultural Centers,Fayetteville Street Elementary,
-56,Community Gardens,Fayetteville Street Elementary,
-57,Farmer's Markets,Fayetteville Street Elementary,1.0
-58,Food Pantries,Fayetteville Street Elementary,6.0
-59,Grocery Stores,Fayetteville Street Elementary,2.0
-60,Hospitals and Clinics,Fayetteville Street Elementary,
-61,Libraries,Fayetteville Street Elementary,
-62,Parks,Fayetteville Street Elementary,3.0
-63,Recreation Centers,Fayetteville Street Elementary,
-64,Religious Centers,Fayetteville Street Elementary,10.0
-65,After-School Care Programs,Forest View Elementary,
-66,Bus Stops,Forest View Elementary,55.0
-67,Childcare Centers_2022,Forest View Elementary,7.0
-68,Community & Cultural Centers,Forest View Elementary,
-69,Community Gardens,Forest View Elementary,
-70,Farmer's Markets,Forest View Elementary,
-71,Food Pantries,Forest View Elementary,1.0
-72,Grocery Stores,Forest View Elementary,4.0
-73,Hospitals and Clinics,Forest View Elementary,4.0
-74,Libraries,Forest View Elementary,
-75,Parks,Forest View Elementary,3.0
-76,Recreation Centers,Forest View Elementary,
-77,Religious Centers,Forest View Elementary,7.0
-78,After-School Care Programs,Hillside High,4.0
-79,Bus Stops,Hillside High,251.0
-80,Childcare Centers_2022,Hillside High,87.0
-81,Community & Cultural Centers,Hillside High,
-82,Community Gardens,Hillside High,1.0
-83,Farmer's Markets,Hillside High,3.0
-84,Food Pantries,Hillside High,16.0
-85,Grocery Stores,Hillside High,13.0
-86,Hospitals and Clinics,Hillside High,1.0
-87,Libraries,Hillside High,2.0
-88,Parks,Hillside High,13.0
-89,Recreation Centers,Hillside High,3.0
-90,Religious Centers,Hillside High,45.0
-91,After-School Care Programs,Jordan High,9.0
-92,Bus Stops,Jordan High,222.0
-93,Childcare Centers_2022,Jordan High,52.0
-94,Community & Cultural Centers,Jordan High,5.0
-95,Community Gardens,Jordan High,2.0
-96,Farmer's Markets,Jordan High,
-97,Food Pantries,Jordan High,10.0
-98,Grocery Stores,Jordan High,31.0
-99,Hospitals and Clinics,Jordan High,3.0
-100,Libraries,Jordan High,2.0
-101,Parks,Jordan High,17.0
-102,Recreation Centers,Jordan High,4.0
-103,Religious Centers,Jordan High,56.0
-104,After-School Care Programs,Lakewood Elementary,2.0
-105,Bus Stops,Lakewood Elementary,41.0
-106,Childcare Centers_2022,Lakewood Elementary,7.0
-107,Community & Cultural Centers,Lakewood Elementary,2.0
-108,Community Gardens,Lakewood Elementary,2.0
-109,Farmer's Markets,Lakewood Elementary,
-110,Food Pantries,Lakewood Elementary,3.0
-111,Grocery Stores,Lakewood Elementary,4.0
-112,Hospitals and Clinics,Lakewood Elementary,
-113,Libraries,Lakewood Elementary,
-114,Parks,Lakewood Elementary,3.0
-115,Recreation Centers,Lakewood Elementary,
-116,Religious Centers,Lakewood Elementary,7.0
-117,After-School Care Programs,Parkwood Elementary,
-118,Bus Stops,Parkwood Elementary,52.0
-119,Childcare Centers_2022,Parkwood Elementary,24.0
-120,Community & Cultural Centers,Parkwood Elementary,
-121,Community Gardens,Parkwood Elementary,
-122,Farmer's Markets,Parkwood Elementary,2.0
-123,Food Pantries,Parkwood Elementary,3.0
-124,Grocery Stores,Parkwood Elementary,5.0
-125,Hospitals and Clinics,Parkwood Elementary,
-126,Libraries,Parkwood Elementary,
-127,Parks,Parkwood Elementary,1.0
-128,Recreation Centers,Parkwood Elementary,
-129,Religious Centers,Parkwood Elementary,7.0
-130,After-School Care Programs,Southwest Elementary,1.0
-131,Bus Stops,Southwest Elementary,32.0
-132,Childcare Centers_2022,Southwest Elementary,17.0
-133,Community & Cultural Centers,Southwest Elementary,1.0
-134,Community Gardens,Southwest Elementary,
-135,Farmer's Markets,Southwest Elementary,
-136,Food Pantries,Southwest Elementary,
-137,Grocery Stores,Southwest Elementary,2.0
-138,Hospitals and Clinics,Southwest Elementary,
-139,Libraries,Southwest Elementary,
-140,Parks,Southwest Elementary,3.0
-141,Recreation Centers,Southwest Elementary,
-142,Religious Centers,Southwest Elementary,9.0
+,varname,name,count
+0,After-School Care Programs,All School,24.0
+1,Bus Stops,All School,1037.0
+2,Childcare Centers_2022,All School,258.0
+3,Community & Cultural Centers,All School,9.0
+4,Community Gardens,All School,6.0
+5,Farmer's Markets,All School,5.0
+6,Food Pantries,All School,63.0
+7,Grocery Stores,All School,91.0
+8,Hospitals and Clinics,All School,16.0
+9,Libraries,All School,8.0
+10,Parks,All School,73.0
+11,Recreation Centers,All School,13.0
+12,Religious Centers,All School,217.0
+13,After-School Care Programs,Brogden Middle School,13.0
+14,Bus Stops,Brogden Middle School,402.0
+15,Childcare Centers_2022,Brogden Middle School,41.0
+16,Community & Cultural Centers,Brogden Middle School,5.0
+17,Community Gardens,Brogden Middle School,5.0
+18,Farmer's Markets,Brogden Middle School,2.0
+19,Food Pantries,Brogden Middle School,20.0
+20,Grocery Stores,Brogden Middle School,31.0
+21,Hospitals and Clinics,Brogden Middle School,9.0
+22,Libraries,Brogden Middle School,1.0
+23,Parks,Brogden Middle School,32.0
+24,Recreation Centers,Brogden Middle School,9.0
+25,Religious Centers,Brogden Middle School,76.0
+26,After-School Care Programs,C.C. Spaulding Elementary School,3.0
+27,Bus Stops,C.C. Spaulding Elementary School,87.0
+28,Childcare Centers_2022,C.C. Spaulding Elementary School,8.0
+29,Community & Cultural Centers,C.C. Spaulding Elementary School,0.0
+30,Community Gardens,C.C. Spaulding Elementary School,0.0
+31,Farmer's Markets,C.C. Spaulding Elementary School,0.0
+32,Food Pantries,C.C. Spaulding Elementary School,5.0
+33,Grocery Stores,C.C. Spaulding Elementary School,8.0
+34,Hospitals and Clinics,C.C. Spaulding Elementary School,0.0
+35,Libraries,C.C. Spaulding Elementary School,0.0
+36,Parks,C.C. Spaulding Elementary School,6.0
+37,Recreation Centers,C.C. Spaulding Elementary School,5.0
+38,Religious Centers,C.C. Spaulding Elementary School,16.0
+39,After-School Care Programs,Club Boulevard Elementary School,1.0
+40,Bus Stops,Club Boulevard Elementary School,0.0
+41,Childcare Centers_2022,Club Boulevard Elementary School,1.0
+42,Community & Cultural Centers,Club Boulevard Elementary School,0.0
+43,Community Gardens,Club Boulevard Elementary School,0.0
+44,Farmer's Markets,Club Boulevard Elementary School,0.0
+45,Food Pantries,Club Boulevard Elementary School,0.0
+46,Grocery Stores,Club Boulevard Elementary School,0.0
+47,Hospitals and Clinics,Club Boulevard Elementary School,0.0
+48,Libraries,Club Boulevard Elementary School,0.0
+49,Parks,Club Boulevard Elementary School,1.0
+50,Recreation Centers,Club Boulevard Elementary School,0.0
+51,Religious Centers,Club Boulevard Elementary School,0.0
+52,After-School Care Programs,E.K. Powe Elementary School,4.0
+53,Bus Stops,E.K. Powe Elementary School,117.0
+54,Childcare Centers_2022,E.K. Powe Elementary School,13.0
+55,Community & Cultural Centers,E.K. Powe Elementary School,0.0
+56,Community Gardens,E.K. Powe Elementary School,0.0
+57,Farmer's Markets,E.K. Powe Elementary School,0.0
+58,Food Pantries,E.K. Powe Elementary School,2.0
+59,Grocery Stores,E.K. Powe Elementary School,12.0
+60,Hospitals and Clinics,E.K. Powe Elementary School,4.0
+61,Libraries,E.K. Powe Elementary School,0.0
+62,Parks,E.K. Powe Elementary School,8.0
+63,Recreation Centers,E.K. Powe Elementary School,2.0
+64,Religious Centers,E.K. Powe Elementary School,23.0
+65,After-School Care Programs,Eastway Elementary School,1.0
+66,Bus Stops,Eastway Elementary School,51.0
+67,Childcare Centers_2022,Eastway Elementary School,7.0
+68,Community & Cultural Centers,Eastway Elementary School,1.0
+69,Community Gardens,Eastway Elementary School,1.0
+70,Farmer's Markets,Eastway Elementary School,1.0
+71,Food Pantries,Eastway Elementary School,6.0
+72,Grocery Stores,Eastway Elementary School,4.0
+73,Hospitals and Clinics,Eastway Elementary School,0.0
+74,Libraries,Eastway Elementary School,1.0
+75,Parks,Eastway Elementary School,6.0
+76,Recreation Centers,Eastway Elementary School,1.0
+77,Religious Centers,Eastway Elementary School,10.0
+78,After-School Care Programs,Fayetteville Street Elementary School,1.0
+79,Bus Stops,Fayetteville Street Elementary School,34.0
+80,Childcare Centers_2022,Fayetteville Street Elementary School,16.0
+81,Community & Cultural Centers,Fayetteville Street Elementary School,0.0
+82,Community Gardens,Fayetteville Street Elementary School,0.0
+83,Farmer's Markets,Fayetteville Street Elementary School,1.0
+84,Food Pantries,Fayetteville Street Elementary School,6.0
+85,Grocery Stores,Fayetteville Street Elementary School,2.0
+86,Hospitals and Clinics,Fayetteville Street Elementary School,0.0
+87,Libraries,Fayetteville Street Elementary School,0.0
+88,Parks,Fayetteville Street Elementary School,3.0
+89,Recreation Centers,Fayetteville Street Elementary School,0.0
+90,Religious Centers,Fayetteville Street Elementary School,10.0
+91,After-School Care Programs,Forest View Elementary School,0.0
+92,Bus Stops,Forest View Elementary School,55.0
+93,Childcare Centers_2022,Forest View Elementary School,7.0
+94,Community & Cultural Centers,Forest View Elementary School,0.0
+95,Community Gardens,Forest View Elementary School,0.0
+96,Farmer's Markets,Forest View Elementary School,0.0
+97,Food Pantries,Forest View Elementary School,1.0
+98,Grocery Stores,Forest View Elementary School,4.0
+99,Hospitals and Clinics,Forest View Elementary School,4.0
+100,Libraries,Forest View Elementary School,0.0
+101,Parks,Forest View Elementary School,3.0
+102,Recreation Centers,Forest View Elementary School,0.0
+103,Religious Centers,Forest View Elementary School,7.0
+104,After-School Care Programs,Hillandale Elementary School,0.0
+105,Bus Stops,Hillandale Elementary School,48.0
+106,Childcare Centers_2022,Hillandale Elementary School,6.0
+107,Community & Cultural Centers,Hillandale Elementary School,0.0
+108,Community Gardens,Hillandale Elementary School,0.0
+109,Farmer's Markets,Hillandale Elementary School,0.0
+110,Food Pantries,Hillandale Elementary School,2.0
+111,Grocery Stores,Hillandale Elementary School,3.0
+112,Hospitals and Clinics,Hillandale Elementary School,1.0
+113,Libraries,Hillandale Elementary School,0.0
+114,Parks,Hillandale Elementary School,2.0
+115,Recreation Centers,Hillandale Elementary School,0.0
+116,Religious Centers,Hillandale Elementary School,11.0
+117,After-School Care Programs,Hillside High School,4.0
+118,Bus Stops,Hillside High School,251.0
+119,Childcare Centers_2022,Hillside High School,87.0
+120,Community & Cultural Centers,Hillside High School,0.0
+121,Community Gardens,Hillside High School,1.0
+122,Farmer's Markets,Hillside High School,3.0
+123,Food Pantries,Hillside High School,16.0
+124,Grocery Stores,Hillside High School,13.0
+125,Hospitals and Clinics,Hillside High School,1.0
+126,Libraries,Hillside High School,2.0
+127,Parks,Hillside High School,13.0
+128,Recreation Centers,Hillside High School,3.0
+129,Religious Centers,Hillside High School,45.0
+130,After-School Care Programs,Jordan High School,9.0
+131,Bus Stops,Jordan High School,222.0
+132,Childcare Centers_2022,Jordan High School,52.0
+133,Community & Cultural Centers,Jordan High School,5.0
+134,Community Gardens,Jordan High School,2.0
+135,Farmer's Markets,Jordan High School,0.0
+136,Food Pantries,Jordan High School,10.0
+137,Grocery Stores,Jordan High School,31.0
+138,Hospitals and Clinics,Jordan High School,3.0
+139,Libraries,Jordan High School,2.0
+140,Parks,Jordan High School,17.0
+141,Recreation Centers,Jordan High School,4.0
+142,Religious Centers,Jordan High School,56.0
+143,After-School Care Programs,Lakewood Elementary School,2.0
+144,Bus Stops,Lakewood Elementary School,41.0
+145,Childcare Centers_2022,Lakewood Elementary School,7.0
+146,Community & Cultural Centers,Lakewood Elementary School,2.0
+147,Community Gardens,Lakewood Elementary School,2.0
+148,Farmer's Markets,Lakewood Elementary School,0.0
+149,Food Pantries,Lakewood Elementary School,3.0
+150,Grocery Stores,Lakewood Elementary School,4.0
+151,Hospitals and Clinics,Lakewood Elementary School,0.0
+152,Libraries,Lakewood Elementary School,0.0
+153,Parks,Lakewood Elementary School,3.0
+154,Recreation Centers,Lakewood Elementary School,0.0
+155,Religious Centers,Lakewood Elementary School,7.0
+156,After-School Care Programs,Lakewood Middle School,24.0
+157,Bus Stops,Lakewood Middle School,1037.0
+158,Childcare Centers_2022,Lakewood Middle School,258.0
+159,Community & Cultural Centers,Lakewood Middle School,9.0
+160,Community Gardens,Lakewood Middle School,6.0
+161,Farmer's Markets,Lakewood Middle School,5.0
+162,Food Pantries,Lakewood Middle School,63.0
+163,Grocery Stores,Lakewood Middle School,91.0
+164,Hospitals and Clinics,Lakewood Middle School,16.0
+165,Libraries,Lakewood Middle School,8.0
+166,Parks,Lakewood Middle School,73.0
+167,Recreation Centers,Lakewood Middle School,13.0
+168,Religious Centers,Lakewood Middle School,217.0
+169,After-School Care Programs,Lowes Grove Middle School,3.0
+170,Bus Stops,Lowes Grove Middle School,197.0
+171,Childcare Centers_2022,Lowes Grove Middle School,78.0
+172,Community & Cultural Centers,Lowes Grove Middle School,0.0
+173,Community Gardens,Lowes Grove Middle School,1.0
+174,Farmer's Markets,Lowes Grove Middle School,3.0
+175,Food Pantries,Lowes Grove Middle School,12.0
+176,Grocery Stores,Lowes Grove Middle School,11.0
+177,Hospitals and Clinics,Lowes Grove Middle School,1.0
+178,Libraries,Lowes Grove Middle School,1.0
+179,Parks,Lowes Grove Middle School,8.0
+180,Recreation Centers,Lowes Grove Middle School,2.0
+181,Religious Centers,Lowes Grove Middle School,32.0
+182,After-School Care Programs,Parkwood Elementary School,0.0
+183,Bus Stops,Parkwood Elementary School,52.0
+184,Childcare Centers_2022,Parkwood Elementary School,24.0
+185,Community & Cultural Centers,Parkwood Elementary School,0.0
+186,Community Gardens,Parkwood Elementary School,0.0
+187,Farmer's Markets,Parkwood Elementary School,2.0
+188,Food Pantries,Parkwood Elementary School,3.0
+189,Grocery Stores,Parkwood Elementary School,5.0
+190,Hospitals and Clinics,Parkwood Elementary School,0.0
+191,Libraries,Parkwood Elementary School,0.0
+192,Parks,Parkwood Elementary School,1.0
+193,Recreation Centers,Parkwood Elementary School,0.0
+194,Religious Centers,Parkwood Elementary School,7.0
+195,After-School Care Programs,Riverside High School,8.0
+196,Bus Stops,Riverside High School,340.0
+197,Childcare Centers_2022,Riverside High School,39.0
+198,Community & Cultural Centers,Riverside High School,2.0
+199,Community Gardens,Riverside High School,2.0
+200,Farmer's Markets,Riverside High School,1.0
+201,Food Pantries,Riverside High School,13.0
+202,Grocery Stores,Riverside High School,22.0
+203,Hospitals and Clinics,Riverside High School,12.0
+204,Libraries,Riverside High School,1.0
+205,Parks,Riverside High School,21.0
+206,Recreation Centers,Riverside High School,4.0
+207,Religious Centers,Riverside High School,53.0
+208,After-School Care Programs,Southwest Elementary School,1.0
+209,Bus Stops,Southwest Elementary School,32.0
+210,Childcare Centers_2022,Southwest Elementary School,17.0
+211,Community & Cultural Centers,Southwest Elementary School,1.0
+212,Community Gardens,Southwest Elementary School,0.0
+213,Farmer's Markets,Southwest Elementary School,0.0
+214,Food Pantries,Southwest Elementary School,0.0
+215,Grocery Stores,Southwest Elementary School,2.0
+216,Hospitals and Clinics,Southwest Elementary School,0.0
+217,Libraries,Southwest Elementary School,0.0
+218,Parks,Southwest Elementary School,3.0
+219,Recreation Centers,Southwest Elementary School,0.0
+220,Religious Centers,Southwest Elementary School,9.0

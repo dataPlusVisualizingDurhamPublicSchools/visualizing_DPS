@@ -4,3 +4,4 @@ When adding new data, follow these guidelines:
 2. Follow the same folder structure: the data should be similar to the folders and filetypes of the existing data.
 3. Ensure that the filenames of the schools' geojson files is the exact same as the names of the input choices in the website.
 4. For all the spatial_data community resources, standardize 3 columns: name should be "NAME", address should be "ADDRESS", and url to that resource should be "URL".
+5. For all spatial data files, they should be 'renamed_x' where x is the exact full name of the resource (x = "Bus Stops", "Gardens", etc.). There shouldn't be any trailing info like 2022 at the end of the name.
