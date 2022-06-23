@@ -83,20 +83,21 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          br(),
                          width = 12,
-                         valueBox(9, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
-                         valueBox(22, "School-Specific Variables",  href = "#shiny-tab-statstab", icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(13, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
+                         valueBox(24, "School-Specific Variables",  href = "#shiny-tab-statstab", icon = icon("pencil"), color = "light-blue", width = 4),
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                      class = "text-center",
-                     box(title = strong("2 Universities, 10 Public Schools"),
+                     box(title = strong("2 Universities, 16 Public Schools"),
                          solidHeader = TRUE,
                          width = 7,
                          p("The Durham Public Schools District contains 54 public schools: 
                             30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. 
-                            Our project focuses on the 10 schools that most frequently partner with Duke University 
-                            and North Carolina Central University. These include 8 elementary schools: 
+                            Our project focuses on the 16 schools that most frequently partner with Duke University 
+                            and North Carolina Central University. These include 10 elementary schools: 
                             C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood,
-                            Parkwood, Southwest, and 2 high schools: Hillside and Jordan."),
+                            Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, 
+                           Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside."),
                          br(),
                          p("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham
                               Public Schools. Prior Bass Connections research focused on understanding how to achieve
@@ -116,7 +117,7 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          leafletOutput("home"))),
                  fluidRow(class = "text-center",
-                          box(title = strong("View Our 10 Schools"),
+                          box(title = strong("View Our 16 Schools"),
                               width = 12,
                               background = "light-blue",
                               actionButton("viewMap", "View Geospatial Data"),
