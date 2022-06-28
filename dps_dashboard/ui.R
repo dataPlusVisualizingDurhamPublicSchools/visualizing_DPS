@@ -183,47 +183,131 @@ body <- {dashboardBody(
         #School Stats Tab
         {tabItem(tabName = "statstab",
                  fluidRow(
+                   tabBox(
+                     title = "Charts",
+                     # The id lets us use input$tabset1 on the server to find the current tab
+                     id = "tabset1", width = "auto",
                      #Box Plot Outputs
-                     box(width = 12,
-                         background = "navy", 
-                         solidHeader = TRUE, 
-                         title = strong("Charts"),
-                         plotlyOutput("barplots",
+                     tabPanel("Elementary School",
+                              box(width = 12,
+                                  background = "navy", 
+                                  solidHeader = TRUE, 
+                                  title = strong("Charts"),
+                                  plotlyOutput("es_barplots",
                                       width="auto",
                                       height = "auto"),
-                         h4("All data was derived from ",
-                            a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
-                            ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
-                            ", ", a("Durham Public Schools", href="https://dpsnc.net"),
-                            ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
-                            "."
-                         ))),
-                 fluidRow(
-                     #Drop Down Widget for Box Plots
-                     box(width = 6,
-                         solidHeader = TRUE,
-                         title = strong("Select a Measurement"),
-                         selectInput("select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                     choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
-                                                    "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
-                                                    "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
-                                                    "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
-                                                    "Median Age","Median Homesale Price","Median Household Income",
-                                                    "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
-                                                    "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
-                                                    "Students With Disabilities", "Titles Per Student", "WiFi Access")
-                         ),
-                         selectInput("year", em("Click the drop down menu to select which year of data collection you would like to view."), 
-                                     choices = list("Summer 2021", "Summer 2022")
-                         )
-                     ),
-                     box(width = 6,
-                         solidHeader = TRUE,
-                         title = strong("Context & Resources"),
-                         htmlOutput("resources")
-                     )
-                 )
-        )},
+                                  h4("All data was derived from ",
+                                     a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
+                                      ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
+                                      ", ", a("Durham Public Schools", href="https://dpsnc.net"),
+                                      ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
+                                      "."
+                                     )),
+                              fluidRow(
+                              #Drop Down Widget for Box Plots
+                                box(width = 6,
+                                    solidHeader = TRUE,
+                                    title = strong("Select a Measurement"),
+                                    selectInput("es_select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                       choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
+                                                      "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
+                                                      "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
+                                                      "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
+                                                      "Median Age","Median Homesale Price","Median Household Income",
+                                                      "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
+                                                      "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                      "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                       ),
+                                    selectInput("es_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
+                                       choices = list("Summer 2021", "Summer 2022")
+                                       )
+                                    ),
+                                box(width = 6,
+                                    solidHeader = TRUE,
+                                    title = strong("Context & Resources"),
+                                    htmlOutput("es_resources")
+                                    )
+                                )
+                              ),
+                     tabPanel("Middle School", box(width = 12,
+                                                   background = "navy", 
+                                                   solidHeader = TRUE, 
+                                                   title = strong("Charts"),
+                                                   plotlyOutput("ms_barplots",
+                                                                width="auto",
+                                                                height = "auto"),
+                                                   h4("All data was derived from ",
+                                                      a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
+                                                      ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
+                                                      ", ", a("Durham Public Schools", href="https://dpsnc.net"),
+                                                      ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
+                                                      "."
+                                                   )),
+                              fluidRow(
+                                #Drop Down Widget for Box Plots
+                                box(width = 6,
+                                    solidHeader = TRUE,
+                                    title = strong("Select a Measurement"),
+                                    selectInput("ms_select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                                choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
+                                                               "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
+                                                               "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
+                                                               "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
+                                                               "Median Age","Median Homesale Price","Median Household Income",
+                                                               "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
+                                                               "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                    ),
+                                    selectInput("ms_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
+                                                choices = list("Summer 2021", "Summer 2022")
+                                    )
+                                ),
+                                box(width = 6,
+                                    solidHeader = TRUE,
+                                    title = strong("Context & Resources"),
+                                    htmlOutput("ms_resources")
+                                )
+                              )),
+                     tabPanel("High School", box(width = 12,
+                                                 background = "navy", 
+                                                 solidHeader = TRUE, 
+                                                 title = strong("Charts"),
+                                                 plotlyOutput("hs_barplots",
+                                                              width="auto",
+                                                              height = "auto"),
+                                                 h4("All data was derived from ",
+                                                    a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
+                                                    ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
+                                                    ", ", a("Durham Public Schools", href="https://dpsnc.net"),
+                                                    ", and", a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
+                                                    "."
+                                                 )),
+                              fluidRow(
+                                #Drop Down Widget for Box Plots
+                                box(width = 6,
+                                    solidHeader = TRUE,
+                                    title = strong("Select a Measurement"),
+                                    selectInput("hs_select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                                choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
+                                                               "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
+                                                               "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
+                                                               "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
+                                                               "Median Age","Median Homesale Price","Median Household Income",
+                                                               "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
+                                                               "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                    ),
+                                    selectInput("hs_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
+                                                choices = list("Summer 2021", "Summer 2022")
+                                    )
+                                ),
+                                box(width = 6,
+                                    solidHeader = TRUE,
+                                    title = strong("Context & Resources"),
+                                    htmlOutput("hs_resources")
+                                )
+                              ))
+        )))},
         
         #Data Insights tab
         {tabItem(tabName = "insightstab",
@@ -398,8 +482,11 @@ body <- {dashboardBody(
                                      multiple = FALSE)),
                      box(width = 4,
                          solidHeader = TRUE,
+                         title = strong("Selected Variable Resources"),
+                         em("Select a variable to see a list of all the resources with the selected school zone."),
+                         br(),
+                         br(),
                          dataTableOutput("list"),
-                         title = strong("List Of Selected Resource In Selected Schoolzone")
                      ),
                      
                      #Icon Legend
