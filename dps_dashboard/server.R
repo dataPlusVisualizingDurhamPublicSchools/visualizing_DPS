@@ -32,7 +32,12 @@ library(gotop)
     all_race22 <- read_excel("data/2022/school_stats_data/all race 2022.xlsx")
     schoolstats <- read.csv("data/2021/school_stats_data/Data + School Info - School Statistics.csv")
     schoolstats22 <- read.csv("data/2022/school_stats_data/School Statistics 2022.csv")
-    
+    ES_stats_21 <- read.csv("data/2021/school_stats_data/ES_stats_21.csv")
+    MS_stats_21 <- read.csv("data/2021/school_stats_data/MS_stats_21.csv")
+    HS_stats_21 <- read.csv("data/2021/school_stats_data/HS_stats_21.csv")
+    ES_stats_22 <- read.csv("data/2022/school_stats_data/ES_stats_22.csv")
+    MS_stats_22 <- read.csv("data/2022/school_stats_data/MS_stats_22.csv")
+    HS_stats_22 <- read.csv("data/2022/school_stats_data/HS_stats_22.csv")
 }
 
 # Load/Rename Map Data
@@ -111,7 +116,7 @@ function(input, output, session) {
     # SchoolStats - GGPlots
     output$es_barplots <- renderPlotly({
         if(input$es_year == "Summer 2021"){
-            if(input$select == "Advanced Placement (AP) Course Enrollment") {
+            if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -123,7 +128,7 @@ function(input, output, session) {
                     labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Average Class Size") {
+            else if(input$es_select == "Average Class Size") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -135,7 +140,7 @@ function(input, output, session) {
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Bachelor Degree Rate") {
+            else if(input$es_select == "Bachelor Degree Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$BACHELOR_DEG_RATE),], aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -147,7 +152,7 @@ function(input, output, session) {
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "BIPOC Students per School") {
+            else if(input$es_select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -158,7 +163,7 @@ function(input, output, session) {
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "CTE Course Enrollment Rate, High School") {
+            else if(input$es_select == "CTE Course Enrollment Rate, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -170,7 +175,7 @@ function(input, output, session) {
                     labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Enrollment") {
+            else if(input$es_select == "Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats_summary[!is.na(schoolstats_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -181,7 +186,7 @@ function(input, output, session) {
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Experienced Teacher Ratio"){
+            else if(input$es_select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$EXP_TEACHER_RATIO),], aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -193,7 +198,7 @@ function(input, output, session) {
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Free and Reduced Lunch"){
+            else if(input$es_select == "Free and Reduced Lunch"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -205,7 +210,7 @@ function(input, output, session) {
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Funding Per Pupil") {
+            else if(input$es_select == "Funding Per Pupil") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -218,7 +223,7 @@ function(input, output, session) {
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
+            else if(input$es_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -230,7 +235,7 @@ function(input, output, session) {
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Graduation Rate") {
+            else if(input$es_select == "Graduation Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -242,7 +247,7 @@ function(input, output, session) {
                     labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "In-School Suspensions (ISS)") {
+            else if(input$es_select == "In-School Suspensions (ISS)") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -254,7 +259,7 @@ function(input, output, session) {
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Age") {
+            else if(input$es_select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_AGE),], aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -266,7 +271,7 @@ function(input, output, session) {
                     labs(title = "Med Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Median Homesale Price") {
+            else if(input$es_select == "Median Homesale Price") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOMESALE_PRICE),], aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -279,7 +284,7 @@ function(input, output, session) {
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Household Income") {
+            else if(input$es_select == "Median Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOUSEHOLD_INC),], aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -292,7 +297,7 @@ function(input, output, session) {
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Racial Demographics") {
+            else if(input$es_select == "Racial Demographics") {
                 p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
@@ -303,7 +308,7 @@ function(input, output, session) {
                     labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             }
-            else if(input$select == "School and Zone BIPOC Comparison"){
+            else if(input$es_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -313,7 +318,7 @@ function(input, output, session) {
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "Sidewalk Coverage") {
+            else if(input$es_select == "Sidewalk Coverage") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$SIDEWALK_COVG),], aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -325,7 +330,7 @@ function(input, output, session) {
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Students Per Device") {
+            else if(input$es_select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -337,7 +342,7 @@ function(input, output, session) {
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, Elementary School") {
+            else if(input$es_select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -361,7 +366,7 @@ function(input, output, session) {
                     labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Students With Disabilities") {
+            else if(input$es_select == "Students With Disabilities") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -374,7 +379,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
-            else if(input$select == "Diversity per School Zone") {
+            else if(input$es_select == "Diversity per School Zone") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DIVERSITY_ZONE),], aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -389,7 +394,7 @@ function(input, output, session) {
         }
         
         else if(input$es_year == "Summer 2022"){
-            if(input$select == "Average Class Size") {
+            if(input$es_select == "Average Class Size") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -401,7 +406,7 @@ function(input, output, session) {
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Bachelor Degree Rate") {
+            else if(input$es_select == "Bachelor Degree Rate") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -413,7 +418,7 @@ function(input, output, session) {
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "BIPOC Students per School") {
+            else if(input$es_select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -424,7 +429,7 @@ function(input, output, session) {
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "CTE Course Enrollment Rate, High School") {
+            else if(input$es_select == "CTE Course Enrollment Rate, High School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -436,7 +441,7 @@ function(input, output, session) {
                     labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Enrollment") {
+            else if(input$es_select == "Enrollment") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -447,7 +452,7 @@ function(input, output, session) {
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
+            else if(input$es_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -459,7 +464,7 @@ function(input, output, session) {
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Experienced Teacher Ratio"){
+            else if(input$es_select == "Experienced Teacher Ratio"){
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -471,7 +476,7 @@ function(input, output, session) {
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Free and Reduced Lunch"){
+            else if(input$es_select == "Free and Reduced Lunch"){
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -483,7 +488,7 @@ function(input, output, session) {
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Funding Per Pupil") {
+            else if(input$es_select == "Funding Per Pupil") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -496,7 +501,7 @@ function(input, output, session) {
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Graduation Rate") {
+            else if(input$es_select == "Graduation Rate") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -508,7 +513,7 @@ function(input, output, session) {
                     labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "In-School Suspensions (ISS)") {
+            else if(input$es_select == "In-School Suspensions (ISS)") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -520,7 +525,7 @@ function(input, output, session) {
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Age") {
+            else if(input$es_select == "Median Age") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -532,7 +537,7 @@ function(input, output, session) {
                     labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Median Homesale Price") {
+            else if(input$es_select == "Median Homesale Price") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -545,7 +550,7 @@ function(input, output, session) {
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Household Income") {
+            else if(input$es_select == "Median Household Income") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -558,7 +563,7 @@ function(input, output, session) {
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Racial Demographics") {
+            else if(input$es_select == "Racial Demographics") {
                 p3 <- ggplot(all_race22, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
@@ -569,7 +574,7 @@ function(input, output, session) {
                     labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             }
-            else if(input$select == "School and Zone BIPOC Comparison"){
+            else if(input$es_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -579,7 +584,7 @@ function(input, output, session) {
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "Sidewalk Coverage") {
+            else if(input$es_select == "Sidewalk Coverage") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -591,7 +596,7 @@ function(input, output, session) {
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Students Per Device") {
+            else if(input$es_select == "Students Per Device") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -603,7 +608,7 @@ function(input, output, session) {
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, Elementary School") {
+            else if(input$es_select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -615,7 +620,7 @@ function(input, output, session) {
                     labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, High School") {
+            else if(input$es_select == "Student-Teacher Ratio, High School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -627,7 +632,7 @@ function(input, output, session) {
                     labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Students With Disabilities") {
+            else if(input$es_select == "Students With Disabilities") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -639,7 +644,7 @@ function(input, output, session) {
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$select == "Titles Per Student") {
+            else if(input$es_select == "Titles Per Student") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -651,7 +656,7 @@ function(input, output, session) {
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$select == "WiFi Access") {
+            else if(input$es_select == "WiFi Access") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -664,7 +669,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
-            else if(input$select == "Diversity per School Zone") {
+            else if(input$es_select == "Diversity per School Zone") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -681,7 +686,7 @@ function(input, output, session) {
     
     output$ms_barplots <- renderPlotly({
         if(input$ms_year == "Summer 2021"){
-            if(input$select == "Advanced Placement (AP) Course Enrollment") {
+            if(input$ms_select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -693,7 +698,7 @@ function(input, output, session) {
                     labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Average Class Size") {
+            else if(input$ms_select == "Average Class Size") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -705,7 +710,7 @@ function(input, output, session) {
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Bachelor Degree Rate") {
+            else if(input$ms_select == "Bachelor Degree Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$BACHELOR_DEG_RATE),], aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -717,7 +722,7 @@ function(input, output, session) {
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "BIPOC Students per School") {
+            else if(input$ms_select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -728,7 +733,7 @@ function(input, output, session) {
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "CTE Course Enrollment Rate, High School") {
+            else if(input$ms_select == "CTE Course Enrollment Rate, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -740,7 +745,7 @@ function(input, output, session) {
                     labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Enrollment") {
+            else if(input$ms_select == "Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats_summary[!is.na(schoolstats_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -751,7 +756,7 @@ function(input, output, session) {
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Experienced Teacher Ratio"){
+            else if(input$ms_select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$EXP_TEACHER_RATIO),], aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -763,7 +768,7 @@ function(input, output, session) {
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Free and Reduced Lunch"){
+            else if(input$ms_select == "Free and Reduced Lunch"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -775,7 +780,7 @@ function(input, output, session) {
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Funding Per Pupil") {
+            else if(input$ms_select == "Funding Per Pupil") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -788,7 +793,7 @@ function(input, output, session) {
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
+            else if(input$ms_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -800,7 +805,7 @@ function(input, output, session) {
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Graduation Rate") {
+            else if(input$ms_select == "Graduation Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -812,7 +817,7 @@ function(input, output, session) {
                     labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "In-School Suspensions (ISS)") {
+            else if(input$ms_select == "In-School Suspensions (ISS)") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -824,7 +829,7 @@ function(input, output, session) {
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Age") {
+            else if(input$ms_select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_AGE),], aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -836,7 +841,7 @@ function(input, output, session) {
                     labs(title = "Med Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Median Homesale Price") {
+            else if(input$ms_select == "Median Homesale Price") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOMESALE_PRICE),], aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -849,7 +854,7 @@ function(input, output, session) {
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Household Income") {
+            else if(input$ms_select == "Median Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOUSEHOLD_INC),], aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -862,7 +867,7 @@ function(input, output, session) {
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Racial Demographics") {
+            else if(input$ms_select == "Racial Demographics") {
                 p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
@@ -873,7 +878,7 @@ function(input, output, session) {
                     labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             }
-            else if(input$select == "School and Zone BIPOC Comparison"){
+            else if(input$ms_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -883,7 +888,7 @@ function(input, output, session) {
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "Sidewalk Coverage") {
+            else if(input$ms_select == "Sidewalk Coverage") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$SIDEWALK_COVG),], aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -895,7 +900,7 @@ function(input, output, session) {
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Students Per Device") {
+            else if(input$ms_select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -907,7 +912,7 @@ function(input, output, session) {
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, Elementary School") {
+            else if(input$ms_select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -919,7 +924,7 @@ function(input, output, session) {
                     labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, High School") {
+            else if(input$ms_select == "Student-Teacher Ratio, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -931,7 +936,7 @@ function(input, output, session) {
                     labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Students With Disabilities") {
+            else if(input$ms_select == "Students With Disabilities") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -944,7 +949,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
-            else if(input$select == "Diversity per School Zone") {
+            else if(input$ms_select == "Diversity per School Zone") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DIVERSITY_ZONE),], aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -959,7 +964,7 @@ function(input, output, session) {
         }
         
         else if(input$ms_year == "Summer 2022"){
-            if(input$select == "Average Class Size") {
+            if(input$ms_select == "Average Class Size") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -971,7 +976,7 @@ function(input, output, session) {
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Bachelor Degree Rate") {
+            else if(input$ms_select == "Bachelor Degree Rate") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -983,7 +988,7 @@ function(input, output, session) {
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "BIPOC Students per School") {
+            else if(input$ms_select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -994,7 +999,7 @@ function(input, output, session) {
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "CTE Course Enrollment Rate, High School") {
+            else if(input$ms_select == "CTE Course Enrollment Rate, High School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1006,7 +1011,7 @@ function(input, output, session) {
                     labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Enrollment") {
+            else if(input$ms_select == "Enrollment") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1017,7 +1022,7 @@ function(input, output, session) {
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
+            else if(input$ms_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1029,7 +1034,7 @@ function(input, output, session) {
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Experienced Teacher Ratio"){
+            else if(input$ms_select == "Experienced Teacher Ratio"){
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1041,7 +1046,7 @@ function(input, output, session) {
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Free and Reduced Lunch"){
+            else if(input$ms_select == "Free and Reduced Lunch"){
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1053,7 +1058,7 @@ function(input, output, session) {
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Funding Per Pupil") {
+            else if(input$ms_select == "Funding Per Pupil") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1066,7 +1071,7 @@ function(input, output, session) {
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Graduation Rate") {
+            else if(input$ms_select == "Graduation Rate") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1078,7 +1083,7 @@ function(input, output, session) {
                     labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "In-School Suspensions (ISS)") {
+            else if(input$ms_select == "In-School Suspensions (ISS)") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1090,7 +1095,7 @@ function(input, output, session) {
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Age") {
+            else if(input$ms_select == "Median Age") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1102,7 +1107,7 @@ function(input, output, session) {
                     labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Median Homesale Price") {
+            else if(input$ms_select == "Median Homesale Price") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1115,7 +1120,7 @@ function(input, output, session) {
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Household Income") {
+            else if(input$ms_select == "Median Household Income") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1128,7 +1133,7 @@ function(input, output, session) {
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Racial Demographics") {
+            else if(input$ms_select == "Racial Demographics") {
                 p3 <- ggplot(all_race22, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
@@ -1139,7 +1144,7 @@ function(input, output, session) {
                     labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             }
-            else if(input$select == "School and Zone BIPOC Comparison"){
+            else if(input$ms_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -1149,7 +1154,7 @@ function(input, output, session) {
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "Sidewalk Coverage") {
+            else if(input$ms_select == "Sidewalk Coverage") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1161,7 +1166,7 @@ function(input, output, session) {
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Students Per Device") {
+            else if(input$ms_select == "Students Per Device") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1173,7 +1178,7 @@ function(input, output, session) {
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, Elementary School") {
+            else if(input$ms_select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1185,7 +1190,7 @@ function(input, output, session) {
                     labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, High School") {
+            else if(input$ms_select == "Student-Teacher Ratio, High School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1197,7 +1202,7 @@ function(input, output, session) {
                     labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Students With Disabilities") {
+            else if(input$ms_select == "Students With Disabilities") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1209,7 +1214,7 @@ function(input, output, session) {
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$select == "Titles Per Student") {
+            else if(input$ms_select == "Titles Per Student") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1221,7 +1226,7 @@ function(input, output, session) {
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$select == "WiFi Access") {
+            else if(input$ms_select == "WiFi Access") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1234,7 +1239,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
-            else if(input$select == "Diversity per School Zone") {
+            else if(input$ms_select == "Diversity per School Zone") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1251,7 +1256,7 @@ function(input, output, session) {
     
     output$hs_barplots <- renderPlotly({
         if(input$hs_year == "Summer 2021"){
-            if(input$select == "Advanced Placement (AP) Course Enrollment") {
+            if(input$hs_select == "Advanced Placement (AP) Course Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ADV_COURSES_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ADV_COURSES_PERCENT),], aes(x=reorder(SCHOOL_NAME, -ADV_COURSES_PERCENT), y=ADV_COURSES_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1263,7 +1268,7 @@ function(input, output, session) {
                     labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Average Class Size") {
+            else if(input$hs_select == "Average Class Size") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1275,7 +1280,7 @@ function(input, output, session) {
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Bachelor Degree Rate") {
+            else if(input$hs_select == "Bachelor Degree Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$BACHELOR_DEG_RATE),], aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1287,7 +1292,7 @@ function(input, output, session) {
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "BIPOC Students per School") {
+            else if(input$hs_select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -1298,7 +1303,7 @@ function(input, output, session) {
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "CTE Course Enrollment Rate, High School") {
+            else if(input$hs_select == "CTE Course Enrollment Rate, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1310,7 +1315,7 @@ function(input, output, session) {
                     labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Enrollment") {
+            else if(input$hs_select == "Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats_summary[!is.na(schoolstats_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1321,7 +1326,7 @@ function(input, output, session) {
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Experienced Teacher Ratio"){
+            else if(input$hs_select == "Experienced Teacher Ratio"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$EXP_TEACHER_RATIO),], aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1333,7 +1338,7 @@ function(input, output, session) {
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Free and Reduced Lunch"){
+            else if(input$hs_select == "Free and Reduced Lunch"){
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1345,7 +1350,7 @@ function(input, output, session) {
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Funding Per Pupil") {
+            else if(input$hs_select == "Funding Per Pupil") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1358,7 +1363,7 @@ function(input, output, session) {
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
+            else if(input$hs_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1370,7 +1375,7 @@ function(input, output, session) {
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Graduation Rate") {
+            else if(input$hs_select == "Graduation Rate") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1382,7 +1387,7 @@ function(input, output, session) {
                     labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "In-School Suspensions (ISS)") {
+            else if(input$hs_select == "In-School Suspensions (ISS)") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1394,7 +1399,7 @@ function(input, output, session) {
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Age") {
+            else if(input$hs_select == "Median Age") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_AGE),], aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1406,7 +1411,7 @@ function(input, output, session) {
                     labs(title = "Med Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Median Homesale Price") {
+            else if(input$hs_select == "Median Homesale Price") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOMESALE_PRICE),], aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1419,7 +1424,7 @@ function(input, output, session) {
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Household Income") {
+            else if(input$hs_select == "Median Household Income") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOUSEHOLD_INC),], aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1432,7 +1437,7 @@ function(input, output, session) {
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Racial Demographics") {
+            else if(input$hs_select == "Racial Demographics") {
                 p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
@@ -1443,7 +1448,7 @@ function(input, output, session) {
                     labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             }
-            else if(input$select == "School and Zone BIPOC Comparison"){
+            else if(input$hs_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -1453,7 +1458,7 @@ function(input, output, session) {
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "Sidewalk Coverage") {
+            else if(input$hs_select == "Sidewalk Coverage") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$SIDEWALK_COVG),], aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1465,7 +1470,7 @@ function(input, output, session) {
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Students Per Device") {
+            else if(input$hs_select == "Students Per Device") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1477,7 +1482,7 @@ function(input, output, session) {
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, Elementary School") {
+            else if(input$hs_select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1489,7 +1494,7 @@ function(input, output, session) {
                     labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, High School") {
+            else if(input$hs_select == "Student-Teacher Ratio, High School") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1501,7 +1506,7 @@ function(input, output, session) {
                     labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Students With Disabilities") {
+            else if(input$hs_select == "Students With Disabilities") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1514,7 +1519,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
-            else if(input$select == "Diversity per School Zone") {
+            else if(input$hs_select == "Diversity per School Zone") {
                 schoolstats_summary <- schoolstats %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
                 p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DIVERSITY_ZONE),], aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1529,7 +1534,7 @@ function(input, output, session) {
         }
         
         else if(input$hs_year == "Summer 2022"){
-            if(input$select == "Average Class Size") {
+            if(input$hs_select == "Average Class Size") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1541,7 +1546,7 @@ function(input, output, session) {
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Bachelor Degree Rate") {
+            else if(input$hs_select == "Bachelor Degree Rate") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1553,7 +1558,7 @@ function(input, output, session) {
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "BIPOC Students per School") {
+            else if(input$hs_select == "BIPOC Students per School") {
                 p <- ggplot(poc_per_school22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -1564,7 +1569,7 @@ function(input, output, session) {
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "CTE Course Enrollment Rate, High School") {
+            else if(input$hs_select == "CTE Course Enrollment Rate, High School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1576,7 +1581,7 @@ function(input, output, session) {
                     labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Enrollment") {
+            else if(input$hs_select == "Enrollment") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1587,7 +1592,7 @@ function(input, output, session) {
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "English as a Second Language (ESL) Student Enrollment") {
+            else if(input$hs_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1599,7 +1604,7 @@ function(input, output, session) {
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Experienced Teacher Ratio"){
+            else if(input$hs_select == "Experienced Teacher Ratio"){
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1611,7 +1616,7 @@ function(input, output, session) {
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Free and Reduced Lunch"){
+            else if(input$hs_select == "Free and Reduced Lunch"){
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1623,7 +1628,7 @@ function(input, output, session) {
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Funding Per Pupil") {
+            else if(input$hs_select == "Funding Per Pupil") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1636,7 +1641,7 @@ function(input, output, session) {
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Graduation Rate") {
+            else if(input$hs_select == "Graduation Rate") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1648,7 +1653,7 @@ function(input, output, session) {
                     labs(title = "Graduation Rate", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "In-School Suspensions (ISS)") {
+            else if(input$hs_select == "In-School Suspensions (ISS)") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1660,7 +1665,7 @@ function(input, output, session) {
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Age") {
+            else if(input$hs_select == "Median Age") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1672,7 +1677,7 @@ function(input, output, session) {
                     labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Median Homesale Price") {
+            else if(input$hs_select == "Median Homesale Price") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1685,7 +1690,7 @@ function(input, output, session) {
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Median Household Income") {
+            else if(input$hs_select == "Median Household Income") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1698,7 +1703,7 @@ function(input, output, session) {
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Racial Demographics") {
+            else if(input$hs_select == "Racial Demographics") {
                 p3 <- ggplot(all_race22, aes(factor(school), number, fill = race)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
@@ -1709,7 +1714,7 @@ function(input, output, session) {
                     labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
                 ggplotly(p3)
             }
-            else if(input$select == "School and Zone BIPOC Comparison"){
+            else if(input$hs_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -1719,7 +1724,7 @@ function(input, output, session) {
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$select == "Sidewalk Coverage") {
+            else if(input$hs_select == "Sidewalk Coverage") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -1731,7 +1736,7 @@ function(input, output, session) {
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$select == "Students Per Device") {
+            else if(input$hs_select == "Students Per Device") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1743,7 +1748,7 @@ function(input, output, session) {
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, Elementary School") {
+            else if(input$hs_select == "Student-Teacher Ratio, Elementary School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1755,7 +1760,7 @@ function(input, output, session) {
                     labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Student-Teacher Ratio, High School") {
+            else if(input$hs_select == "Student-Teacher Ratio, High School") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1767,7 +1772,7 @@ function(input, output, session) {
                     labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$select == "Students With Disabilities") {
+            else if(input$hs_select == "Students With Disabilities") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1779,7 +1784,7 @@ function(input, output, session) {
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$select == "Titles Per Student") {
+            else if(input$hs_select == "Titles Per Student") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1791,7 +1796,7 @@ function(input, output, session) {
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$select == "WiFi Access") {
+            else if(input$hs_select == "WiFi Access") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1804,7 +1809,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
-            else if(input$select == "Diversity per School Zone") {
+            else if(input$hs_select == "Diversity per School Zone") {
                 schoolstats22_summary <- schoolstats22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
