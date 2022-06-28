@@ -62,7 +62,7 @@ library(gotop)
     childcare <- read_csv("data/2021/spatial_data/renamed_Childcare Centers_2022.csv")
     cultural <- read.csv("data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
     gardens <- read.csv("data/2021/spatial_data/renamed_Community Gardens.csv")
-    grocery <- read.csv("data/2021/spatial_data/renamed_Grocery Stores.csv") #note what we consider a grocery store, not food desert food apartheid
+    grocery <- read.csv("data/2021/spatial_data/renamed_Grocery Stores.csv") 
     libraries <- read.csv("data/2021/spatial_data/renamed_Libraries.csv")
     parks <- read.csv("data/2021/spatial_data/renamed_Parks.csv")
     rec <- read.csv("data/2021/spatial_data/renamed_Recreation Centers.csv")

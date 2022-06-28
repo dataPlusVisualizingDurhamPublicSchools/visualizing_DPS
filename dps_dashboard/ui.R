@@ -84,7 +84,7 @@ body <- {dashboardBody(
                          br(),
                          width = 12,
                          valueBox(13, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
-                         valueBox(24, "School-Specific Variables",  href = "#shiny-tab-statstab", icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(23, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
                          valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                      class = "text-center",
@@ -209,13 +209,13 @@ body <- {dashboardBody(
                                     solidHeader = TRUE,
                                     title = strong("Select a Measurement"),
                                     selectInput("es_select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                       choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
-                                                      "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
+                                       choices = list("Average Class Size","Bachelor Degree Rate",
+                                                      "BIPOC Students per School",
                                                       "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
-                                                      "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
+                                                      "Free and Reduced Lunch","Funding Per Pupil","In-School Suspensions (ISS)",
                                                       "Median Age","Median Homesale Price","Median Household Income",
                                                       "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
-                                                      "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                      "Students Per Device","Student-Teacher Ratio, Elementary School", 
                                                       "Students With Disabilities", "Titles Per Student", "WiFi Access")
                                        ),
                                     selectInput("es_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
@@ -250,16 +250,16 @@ body <- {dashboardBody(
                                     title = strong("Select a Measurement"),
                                     selectInput("ms_select", em("Click the drop down menu to select which measurement you would like to view."), 
                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
-                                                               "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
+                                                               "BIPOC Students per School","CTE Course Enrollment Rate, Middle School", 
                                                                "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
-                                                               "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
+                                                               "Free and Reduced Lunch","Funding Per Pupil","In-School Suspensions (ISS)",
                                                                "Median Age","Median Homesale Price","Median Household Income",
                                                                "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
-                                                               "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                               "Students Per Device","Student-Teacher Ratio, Middle School", 
                                                                "Students With Disabilities", "Titles Per Student", "WiFi Access")
                                     ),
                                     selectInput("ms_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
-                                                choices = list("Summer 2021", "Summer 2022")
+                                                choices = list("Summer 2022")
                                     )
                                 ),
                                 box(width = 6,
@@ -294,7 +294,7 @@ body <- {dashboardBody(
                                                                "Free and Reduced Lunch","Funding Per Pupil","Graduation Rate","In-School Suspensions (ISS)",
                                                                "Median Age","Median Homesale Price","Median Household Income",
                                                                "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
-                                                               "Students Per Device","Student-Teacher Ratio, Elementary School","Student-Teacher Ratio, High School", 
+                                                               "Students Per Device","Student-Teacher Ratio, High School", 
                                                                "Students With Disabilities", "Titles Per Student", "WiFi Access")
                                     ),
                                     selectInput("hs_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
