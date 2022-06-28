@@ -249,7 +249,7 @@ body <- {dashboardBody(
                                     solidHeader = TRUE,
                                     title = strong("Select a Measurement"),
                                     selectInput("ms_select", em("Click the drop down menu to select which measurement you would like to view."), 
-                                                choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
+                                                choices = list("Average Class Size","Bachelor Degree Rate",
                                                                "BIPOC Students per School","CTE Course Enrollment Rate, Middle School", 
                                                                "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
                                                                "Free and Reduced Lunch","Funding Per Pupil","In-School Suspensions (ISS)",
