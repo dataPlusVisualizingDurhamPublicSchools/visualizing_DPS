@@ -69,12 +69,20 @@ View(durham_choro@data %>% group_by(varname))
 grouped_by_varname <- durham_choro@data %>% group_by(varname) %>% group_split()
 View(grouped_by_varname[[1]])
 
+variables <- as.factor(durham_choro@data$varname)
+View(variables)
+
+#for each var in variables:
+  #subset durham_choro@data
+durham_choro@data <- subset(durham_choro@data, durham_choro@data$varname == 'After-School Care Programs')
+View(durham_choro@data)
+
 # Create a color palette for the map:
-mypalette <- colorNumeric( palette="viridis", domain=grouped_by_varname[[1]]$count, na.color="transparent")
+mypalette <- colorNumeric(palette="viridis", domain=durham_choro@data$count, na.color="transparent")
 mypalette(c(45,43))
 
 # Basic choropleth with leaflet?
-m <- sf::st_as_sf(grouped_by_varname[[1]]) %>% leaflet() %>% 
+m <- sf::st_as_sf(durham_choro@data$) %>% leaflet() %>% 
   addTiles()  %>%  
   addPolygons( fillColor = ~mypalette(count), stroke=FALSE )
 
