@@ -23,7 +23,12 @@ library(gotop)
 {
     Race_SCHOOL_ONLY <- read_excel("data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
     race <- read_excel("data/2021/school_stats_data/race.xlsx")
+    ES_racecomp_21 <- read_excel("data/2021/school_stats_data/ES_racecomp_21.xlsx")
+    HS_racecomp_21 <- read_excel("data/2021/school_stats_data/HS_racecomp_21.xlsx")
     race22 <- read_excel("data/2022/school_stats_data/race2022.xlsx")
+    ES_racecomp_22 <- read_excel("data/2022/school_stats_data/ES_racecomp_22.xlsx")
+    MS_racecomp_22 <- read_excel("data/2022/school_stats_data/MS_racecomp_22.xlsx")
+    HS_racecomp_22 <- read_excel("data/2022/school_stats_data/HS_racecomp_22.xlsx")
     race_diff <- read_excel("data/2021/school_stats_data/race diff.xlsx")
     poc_per_school <- read_excel("data/2021/school_stats_data/poc per school.xlsx")
     poc_per_school22 <- read_excel("data/2022/school_stats_data/poc per school22.xlsx")
@@ -273,7 +278,7 @@ function(input, output, session) {
                 ggplotly(p3)
             }
             else if(input$es_select == "School and Zone BIPOC Comparison"){
-                p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
+                p <- ggplot(ES_racecomp_21, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
@@ -503,7 +508,7 @@ function(input, output, session) {
                 ggplotly(p3)
             }
             else if(input$es_select == "School and Zone BIPOC Comparison"){
-                p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
+                p <- ggplot(ES_racecomp_22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
@@ -977,7 +982,7 @@ function(input, output, session) {
                 ggplotly(p3)
             }
             else if(input$ms_select == "School and Zone BIPOC Comparison"){
-                p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
+                p <- ggplot(MS_racecomp_22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
@@ -1269,7 +1274,7 @@ function(input, output, session) {
                 ggplotly(p3)
             }
             else if(input$hs_select == "School and Zone BIPOC Comparison"){
-                p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
+                p <- ggplot(HS_racecomp_21, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
@@ -1535,7 +1540,7 @@ function(input, output, session) {
                 ggplotly(p3)
             }
             else if(input$hs_select == "School and Zone BIPOC Comparison"){
-                p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
+                p <- ggplot(HS_racecomp_22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
