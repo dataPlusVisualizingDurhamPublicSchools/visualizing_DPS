@@ -29,7 +29,15 @@ library(gotop)
     poc_per_school22 <- read_excel("data/2022/school_stats_data/poc per school22.xlsx")
     funding <- read_excel("data/2021/school_stats_data/funding.xlsx")
     all_race <- read_excel("data/2021/school_stats_data/all race 1.xlsx")
+    ES_all_race <- read_excel("data/2021/school_stats_data/ES_all race_2021.xlsx")
+    HS_all_race <- read_excel("data/2021/school_stats_data/HS_all race_2021.xlsx")
+    
     all_race22 <- read_excel("data/2022/school_stats_data/all race 2022.xlsx")
+    ES_all_race22 <- read_excel("data/2022/school_stats_data/ES_all race 2022.xlsx")
+    HS_all_race22 <- read_excel("data/2022/school_stats_data/HS_all race 2022.xlsx")
+    MS_all_race22 <- read_excel("data/2022/school_stats_data/MS_all race 2022.xlsx")
+   
+    
     schoolstats <- read.csv("data/2021/school_stats_data/Data + School Info - School Statistics.csv")
     schoolstats22 <- read.csv("data/2022/school_stats_data/School Statistics 2022.csv")
     ES_stats_21 <- read.csv("data/2021/school_stats_data/ES_stats_21.csv")
@@ -262,16 +270,16 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Racial Demographics") {
-                p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#D1E3F4", "#C6CBCF")) +
-                    coord_flip() +
-                    theme_minimal() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
+              
+              p3 <- ggplot(ES_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
+                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                coord_flip() +
+                theme_minimal() +
+                scale_fill_manual(values=cbPalette) +
+                theme(plot.title = element_text(hjust = 0.5))
                 ggplotly(p3)
-            }
+            
+                }
             else if(input$es_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
@@ -492,15 +500,13 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Racial Demographics") {
-                p3 <- ggplot(all_race22, aes(factor(school), number, fill = race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#D1E3F4", "#C6CBCF")) +
-                    coord_flip() +
-                    theme_minimal() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
-                ggplotly(p3)
+              p3 <- ggplot(ES_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
+                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                coord_flip() +
+                theme_minimal() +
+                scale_fill_manual(values=cbPalette) +
+                theme(plot.title = element_text(hjust = 0.5))
+              ggplotly(p3)
             }
             else if(input$es_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
@@ -748,15 +754,13 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$ms_select == "Racial Demographics") {
-                p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#D1E3F4", "#C6CBCF")) +
-                    coord_flip() +
-                    theme_minimal() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
-                ggplotly(p3)
+              p3 <- ggplot(MS_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
+                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                coord_flip() +
+                theme_minimal() +
+                scale_fill_manual(values=cbPalette) +
+                theme(plot.title = element_text(hjust = 0.5))
+              ggplotly(p3)
             }
             else if(input$ms_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
@@ -966,15 +970,13 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$ms_select == "Racial Demographics") {
-                p3 <- ggplot(all_race22, aes(factor(school), number, fill = race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#D1E3F4", "#C6CBCF")) +
-                    coord_flip() +
-                    theme_minimal() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
-                ggplotly(p3)
+              p3 <- ggplot(MS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
+                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                coord_flip() +
+                theme_minimal() +
+                scale_fill_manual(values=cbPalette) +
+                theme(plot.title = element_text(hjust = 0.5))
+              ggplotly(p3)
             }
             else if(input$ms_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 
@@ -1258,15 +1260,13 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Racial Demographics") {
-                p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#D1E3F4", "#C6CBCF")) +
-                    coord_flip() +
-                    theme_minimal() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
-                ggplotly(p3)
+              p3 <- ggplot(HS_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
+                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                coord_flip() +
+                theme_minimal() +
+                scale_fill_manual(values=cbPalette) +
+                theme(plot.title = element_text(hjust = 0.5))
+              ggplotly(p3)
             }
             else if(input$hs_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race, aes(factor(place), number, fill = sorz)) + 
@@ -1524,15 +1524,13 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Racial Demographics") {
-                p3 <- ggplot(all_race22, aes(factor(school), number, fill = race)) + 
-                    geom_bar(stat="identity", position = "dodge") + 
-                    scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
-                                                 "#D1E3F4", "#C6CBCF")) +
-                    coord_flip() +
-                    theme_minimal() +
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
-                ggplotly(p3)
+              p3 <- ggplot(HS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
+                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                coord_flip() +
+                theme_minimal() +
+                scale_fill_manual(values=cbPalette) +
+                theme(plot.title = element_text(hjust = 0.5))
+              ggplotly(p3)
             }
             else if(input$hs_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(race22, aes(factor(place), number, fill = sorz)) + 

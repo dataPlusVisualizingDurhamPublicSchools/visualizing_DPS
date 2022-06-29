@@ -104,6 +104,7 @@ ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) +
   scale_fill_manual(values=cbPalette) +
   theme(plot.title = element_text(hjust = 0.5))
 
+#the old racial demographics plot
 ggplot(all_race, aes(factor(school), number, fill = race)) + 
   geom_bar(stat="identity", position = "dodge") +   scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
                                "#D1E3F4", "#C6CBCF")) +
@@ -112,6 +113,8 @@ ggplot(all_race, aes(factor(school), number, fill = race)) +
   theme(plot.title = element_text(hjust = 1.5)) +
   labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
 ggplotly(p3)
+
+
 
 
 #a metric for comparing community wealth across school districts
