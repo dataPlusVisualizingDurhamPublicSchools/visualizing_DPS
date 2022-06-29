@@ -31,12 +31,16 @@ library(gotop)
     HS_racecomp_22 <- read_excel("data/2022/school_stats_data/HS_racecomp_22.xlsx")
     race_diff <- read_excel("data/2021/school_stats_data/race diff.xlsx")
     poc_per_school <- read_excel("data/2021/school_stats_data/poc per school.xlsx")
+    ES_poc_per_school_21 <- read_excel("data/2021/school_stats_data/ES_poc_per_school_21.xlsx")
+    HS_poc_per_school_21 <- read_excel("data/2021/school_stats_data/HS_poc_per_school_21.xlsx")
     poc_per_school22 <- read_excel("data/2022/school_stats_data/poc per school22.xlsx")
+    ES_poc_per_school_22 <- read_excel("data/2022/school_stats_data/ES_poc_per_school_22.xlsx")
+    MS_poc_per_school_22 <- read_excel("data/2022/school_stats_data/MS_poc_per_school_22.xlsx")
+    HS_poc_per_school_22 <- read_excel("data/2022/school_stats_data/HS_poc_per_school_22.xlsx")
     funding <- read_excel("data/2021/school_stats_data/funding.xlsx")
     all_race <- read_excel("data/2021/school_stats_data/all race 1.xlsx")
     ES_all_race <- read_excel("data/2021/school_stats_data/ES_all race_2021.xlsx")
     HS_all_race <- read_excel("data/2021/school_stats_data/HS_all race_2021.xlsx")
-    
     all_race22 <- read_excel("data/2022/school_stats_data/all race 2022.xlsx")
     ES_all_race22 <- read_excel("data/2022/school_stats_data/ES_all race 2022.xlsx")
     HS_all_race22 <- read_excel("data/2022/school_stats_data/HS_all race 2022.xlsx")
@@ -154,7 +158,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "BIPOC Students per School") {
-                p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
+                p <- ggplot(ES_poc_per_school_21, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
@@ -384,7 +388,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "BIPOC Students per School") {
-                p <- ggplot(poc_per_school22, aes(reorder(place, -number), number)) + 
+                p <- ggplot(ES_poc_per_school_22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
@@ -638,7 +642,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$ms_select == "BIPOC Students per School") {
-                p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
+                p <- ggplot(MS_poc_per_school_21, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
@@ -854,7 +858,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$ms_select == "BIPOC Students per School") {
-                p <- ggplot(poc_per_school22, aes(reorder(place, -number), number)) + 
+                p <- ggplot(MS_poc_per_school_22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
@@ -1120,7 +1124,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "BIPOC Students per School") {
-                p <- ggplot(poc_per_school, aes(reorder(place, -number), number)) + 
+                p <- ggplot(HS_poc_per_school_21, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
@@ -1384,7 +1388,7 @@ function(input, output, session) {
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "BIPOC Students per School") {
-                p <- ggplot(poc_per_school22, aes(reorder(place, -number), number)) + 
+                p <- ggplot(HS_poc_per_school_22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
                     theme_minimal() +
