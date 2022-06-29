@@ -3,6 +3,7 @@ library(cleaner)
 library(ggplot2)
 library(leaflet)
 library(sf)
+library(readxl)
 
 parks <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
 rec <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
@@ -82,8 +83,37 @@ mypalette <- colorNumeric(palette="viridis", domain=durham_choro@data$count, na.
 mypalette(c(45,43))
 
 # Basic choropleth with leaflet?
-m <- sf::st_as_sf(durham_choro@data$) %>% leaflet() %>% 
+m <- sf::st_as_sf(durham_choro@data) %>% leaflet() %>% 
   addTiles()  %>%  
   addPolygons( fillColor = ~mypalette(count), stroke=FALSE )
 
 m
+
+
+
+#fixing racial demographics
+all_race <- read_excel("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
+View(all_race)
+
+cbPalette <- c("#FFC0CB", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) + 
+  geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+  coord_flip() +
+  theme_minimal() +
+  scale_fill_manual(values=cbPalette) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(all_race, aes(factor(school), number, fill = race)) + 
+  geom_bar(stat="identity", position = "dodge") +   scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
+                               "#D1E3F4", "#C6CBCF")) +
+  coord_flip() +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 1.5)) +
+  labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
+ggplotly(p3)
+
+
+#a metric for comparing community wealth across school districts
+#community wealth of school zone x = (importance coefficient for parks * number of parks in school zone x) +(importance coefficient for gardens * number of gardens in school zone x)...
+#then compare this community wealth variable across school districts
