@@ -184,7 +184,6 @@ body <- {dashboardBody(
         {tabItem(tabName = "statstab",
                  fluidRow(
                    tabBox(
-                     title = "Charts",
                      # The id lets us use input$tabset1 on the server to find the current tab
                      id = "tabset1", width = "auto",
                      #Box Plot Outputs
@@ -192,7 +191,7 @@ body <- {dashboardBody(
                               box(width = 12,
                                   background = "navy", 
                                   solidHeader = TRUE, 
-                                  title = strong("Charts"),
+                                  title = strong("Elementary School Charts"),
                                   plotlyOutput("es_barplots",
                                       width="auto",
                                       height = "auto"),
@@ -232,7 +231,7 @@ body <- {dashboardBody(
                      tabPanel("Middle School", box(width = 12,
                                                    background = "navy", 
                                                    solidHeader = TRUE, 
-                                                   title = strong("Charts"),
+                                                   title = strong("Middle School Charts"),
                                                    plotlyOutput("ms_barplots",
                                                                 width="auto",
                                                                 height = "auto"),
@@ -271,7 +270,7 @@ body <- {dashboardBody(
                      tabPanel("High School", box(width = 12,
                                                  background = "navy", 
                                                  solidHeader = TRUE, 
-                                                 title = strong("Charts"),
+                                                 title = strong("High School Charts"),
                                                  plotlyOutput("hs_barplots",
                                                               width="auto",
                                                               height = "auto"),
