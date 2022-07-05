@@ -56,6 +56,8 @@ library(gotop)
     ES_stats_22 <- read.csv("data/2022/school_stats_data/ES_stats_22.csv")
     MS_stats_22 <- read.csv("data/2022/school_stats_data/MS_stats_22.csv")
     HS_stats_22 <- read.csv("data/2022/school_stats_data/HS_stats_22.csv")
+    
+    APCourses <- read.csv("data/2022/AP Courses.csv")
 }
 
 # Load/Rename Map Data
@@ -3129,7 +3131,8 @@ Students can take these classes for an opportunity to receive college credit upo
                                                            slidesToScroll = 1)
     })
     
-    
+    #AP Table
+    output$APTable <- renderTable(APCourses)
     
 }
 

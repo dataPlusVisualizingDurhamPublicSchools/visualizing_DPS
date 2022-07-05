@@ -38,6 +38,7 @@ sidebar <- {dashboardSidebar(
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
+        menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("fas fa-paint")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
@@ -180,6 +181,149 @@ body <- {dashboardBody(
                  )
         )},
         
+        #Maps Tab
+        {tabItem(tabName = "mapstab",
+                 fluidRow(
+                   box(width  = 7,
+                       solidHeader = TRUE,
+                       title = strong("Interactive Map"),
+                       h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
+                       leafletOutput("map")),
+                   box(width = 5,
+                       solidHeader = TRUE,
+                       title = strong("Context"),
+                       htmlOutput("context")),
+                   
+                 ),
+                 fluidRow(
+                   box(width = 4,
+                       solidHeader = TRUE,
+                       title = strong("Measurement"),
+                       selectInput("zone",
+                                   label = em("Choose a school zone to display"),
+                                   choices = c("All", "Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                               "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                               "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                               "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                               "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                   ),
+                                   multiple = FALSE),
+                       selectInput("var",
+                                   label = em("Choose a variable to display"),
+                                   choices = c("After-School Care Programs", "Bus Stops", 
+                                               "Childcare Centers", "Community & Cultural Centers", "Farmers' Markets", "Food Pantries", "Gardens",
+                                               "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
+                                               "Recreation Centers", "Religious Centers"),
+                                   multiple = FALSE)),
+                   box(width = 4,
+                       solidHeader = TRUE,
+                       title = strong("Selected Variable Resources"),
+                       em("Select a variable to see a list of all the resources with the selected school zone."),
+                       br(),
+                       br(),
+                       dataTableOutput("list"),
+                   ),
+                   
+                   #Icon Legend
+                   {box(width = 4,
+                        solidHeader = TRUE,
+                        title = strong("Icon Legend"),
+                        htmlOutput("legend"),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "afterschool_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("afterschoolicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "bus_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("busicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "childcare_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("childcareicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("cultureicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "market_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("marketicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "pantry_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("pantryicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("gardenicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "grocery_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("groceryicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "hospital_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("hospitalicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "library_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("libraryicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "park_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("parkicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column( width = 1,
+                                  img(src = "rec_icon.png", width = 40, height = 40, align = "left")),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("recicon")
+                          )),
+                        br(),
+                        fluidRow(
+                          column(width = 1,
+                                 img(src = "religious_icon.png", width = 40, height = 40)),
+                          column(width = 1),
+                          column(width = 8, htmlOutput("religiousicon")
+                          )),
+                   )},
+                 )
+        )},
+        
         #School Stats Tab
         {tabItem(tabName = "statstab",
                  fluidRow(
@@ -308,6 +452,18 @@ body <- {dashboardBody(
                               ))
         )))},
         
+        #Electives Tab
+        tabItem(tabName = "electivestab",
+                fluidRow(
+                  tabBox(
+                    id = "tabset1", width = "auto",
+                    tabPanel("Advanced Placement Courses",
+                             tableOutput("APTable")),
+                    tabPanel("CTE Courses"),
+                    tabPanel("Arts Programs")
+                  )
+                )
+        ),
         #Data Insights tab
         {tabItem(tabName = "insightstab",
                  
@@ -319,7 +475,6 @@ body <- {dashboardBody(
                          leafletOutput("choropleth")),
                  )
         )},
-        
         
         #Meet the team tab
         {tabItem(tabName = "teamstab",
@@ -443,150 +598,9 @@ body <- {dashboardBody(
                                   this question. He had the privilege to be the project manager for this team, and
                                   believes the team was efficient and industrious so his job was easy. The team 
                                   claims he was helpful, and he likes to believe that is true.")))))
-        )}, 
+        )} 
         
-        #Maps Tab
-        {tabItem(tabName = "mapstab",
-                 fluidRow(
-                     box(width  = 7,
-                         solidHeader = TRUE,
-                         title = strong("Interactive Map"),
-                         h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
-                         leafletOutput("map")),
-                     box(width = 5,
-                         solidHeader = TRUE,
-                         title = strong("Context"),
-                         htmlOutput("context")),
-                     
-                 ),
-                 fluidRow(
-                     box(width = 4,
-                         solidHeader = TRUE,
-                         title = strong("Measurement"),
-                         selectInput("zone",
-                                     label = em("Choose a school zone to display"),
-                                     choices = c("All", "Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
-                                                 "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                                 "Forest View Elementary", "Hillandale Elementary","Hillside High",
-                                                 "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                                 "Parkwood Elementary", "Riverside High", "Southwest Elementary"
-                                     ),
-                                     multiple = FALSE),
-                         selectInput("var",
-                                     label = em("Choose a variable to display"),
-                                     choices = c("After-School Care Programs", "Bus Stops", 
-                                                 "Childcare Centers", "Community & Cultural Centers", "Farmers' Markets", "Food Pantries", "Gardens",
-                                                 "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
-                                                 "Recreation Centers", "Religious Centers"),
-                                     multiple = FALSE)),
-                     box(width = 4,
-                         solidHeader = TRUE,
-                         title = strong("Selected Variable Resources"),
-                         em("Select a variable to see a list of all the resources with the selected school zone."),
-                         br(),
-                         br(),
-                         dataTableOutput("list"),
-                     ),
-                     
-                     #Icon Legend
-                     {box(width = 4,
-                          solidHeader = TRUE,
-                          title = strong("Icon Legend"),
-                          htmlOutput("legend"),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "afterschool_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("afterschoolicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "bus_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("busicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "childcare_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("childcareicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("cultureicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "market_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("marketicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "pantry_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("pantryicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("gardenicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "grocery_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("groceryicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "hospital_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("hospitalicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "library_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("libraryicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "park_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("parkicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column( width = 1,
-                                      img(src = "rec_icon.png", width = 40, height = 40, align = "left")),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("recicon")
-                              )),
-                          br(),
-                          fluidRow(
-                              column(width = 1,
-                                     img(src = "religious_icon.png", width = 40, height = 40)),
-                              column(width = 1),
-                              column(width = 8, htmlOutput("religiousicon")
-                              )),
-                     )},
-                 )
-        )}
+        
     )
 )
 }
