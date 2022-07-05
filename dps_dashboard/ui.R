@@ -414,7 +414,7 @@ body <- {dashboardBody(
                          br(),
                          fluidRow(
                              column(width = 3,
-                                    img(src = "patience3.jpeg")),
+                                    img(src = "patience3.jpg")),
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
