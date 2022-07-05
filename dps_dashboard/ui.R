@@ -38,6 +38,7 @@ sidebar <- {dashboardSidebar(
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
+        menuItem("Report by School", tabName = "summary", icon = icon ("list-alt")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
