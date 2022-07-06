@@ -311,13 +311,23 @@ body <- {dashboardBody(
         
         #Data Insights tab
         {tabItem(tabName = "insightstab",
-                 
                  fluidRow(
                      box(width  = 12,
                          solidHeader = TRUE,
                          title = strong("Map Comparison Of School Districts"),
                          h4("Different school districts are differently colored according to the variable selected."),
                          leafletOutput("choropleth")),
+                 ),
+                 fluidRow(
+                   box(width  = 8,
+                       solidHeader = TRUE,
+                       title = strong("Comparing Resources Across School Zones"),
+                       plotlyOutput("zones_barplots",
+                                    width="auto",
+                                    height = "auto")),
+                   box(width  = 4,
+                       solidHeader = TRUE,
+                       title = strong("Differences Across School Zones"))
                  )
         )},
         
