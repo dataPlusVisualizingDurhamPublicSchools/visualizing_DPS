@@ -60,6 +60,10 @@ library(DT)
     HS_stats_22 <- read.csv("data/2022/school_stats_data/HS_stats_22.csv")
     
     APCourses <- read_excel("data/2022/AP Courses.xlsx")
+    
+    #data for the data insights tab
+    counts_2021 <- read.csv("data/2021/spatial_data/counts.csv", skip = 1)
+    counts_grouped_2021 <- read.csv("data/2021/spatial_data/counts grouped.csv")
 }
 
 # Load/Rename Map Data
@@ -2460,6 +2464,16 @@ Students can take these classes for an opportunity to receive college credit upo
         }
     }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
     )
+    
+    
+    #Data Insight tab plots
+    
+    output$zones_barplots <- renderPlotly({
+      #removing all the rows of name 'All' because it's not relevant for comparison
+      new_counts_grouped<-counts_grouped_2021[!(counts_grouped$name=="All School"),]
+      ggplot(new_counts_grouped, aes(fill=name, y=count, x=as.factor(varname))) + 
+        geom_bar(position="fill", stat="identity")
+        })
     
     output$choropleth <- renderLeaflet({
         leaflet(
