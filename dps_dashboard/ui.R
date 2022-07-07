@@ -18,6 +18,8 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
+library(formattable)
+library(DT)
 
 sidebar <- {dashboardSidebar(
     
@@ -456,10 +458,66 @@ body <- {dashboardBody(
         tabItem(tabName = "electivestab",
                 fluidRow(
                   tabBox(
-                    id = "tabset1", width = "auto",
-                    tabPanel("Advanced Placement Courses",
-                             tableOutput("APTable")),
-                    tabPanel("CTE Courses"),
+                    id = "tabset1", width = "auto", 
+                    tabPanel("Advanced Placement Courses", class = "text-center",
+                             div(tableOutput("APTable"), style = "font-size:150%"),
+                               selectInput("ap_school", em("Choose a school to view the AP Courses available."), 
+                                         choices = list("Riverside High",
+                                                        "Hillside High",
+                                                        "Jordan High")
+                             ),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("English AP Courses"), background = "olive", solidHeader = TRUE,
+                                   htmlOutput("APEnglish", align="left")),
+                               box(width = 4,
+                                 title = strong("Math AP Courses"), background = "aqua", solidHeader = TRUE,
+                                 htmlOutput("APMath", align="left")),
+                               box(width = 4,
+                                 title = strong("Science AP Courses"), background = "light-blue", solidHeader = TRUE,
+                                 htmlOutput("APScience", align="left"))),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Social Sciences AP Courses"), background = "green", solidHeader = TRUE,
+                                   htmlOutput("APSocial", align="left")),
+                               box(width = 4,
+                                   title = strong("World Languages AP Courses"), background = "black", solidHeader = TRUE,
+                                   htmlOutput("APWLang", align="left")),
+                               box(width = 4,
+                                   title = strong("Music and Arts AP Courses"), background = "navy", solidHeader = TRUE,
+                                   htmlOutput("APMusArts", align="left"))),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Engineneering AP Courses"), background = "purple", solidHeader = TRUE,
+                                   htmlOutput("APEngine", align="left")))
+                             ),
+                    tabPanel("CTE Courses", class = "text-center",
+                             
+                             selectInput("cte_school", em("Choose a school to view the CTE Courses available."), 
+                                         choices = list("Riverside High",
+                                                        "Hillside High",
+                                                        "Jordan High")
+                             ),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Agricultural Education"), status = "primary" , solidHeader = TRUE,
+                                   htmlOutput("AgCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Business, Marketing, and Finance"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("BusCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Computer Science and Information Technology Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("CompCTE", align="left"))),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Family and Consumer Sciences Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("FamCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Health Science Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("HealthCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("TradeCTE", align="left")))),
                     tabPanel("Arts Programs")
                   )
                 )
