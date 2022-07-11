@@ -18,7 +18,6 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
-library(formattable)
 library(DT)
 
 sidebar <- {dashboardSidebar(
@@ -526,11 +525,30 @@ body <- {dashboardBody(
         {tabItem(tabName = "insightstab",
                  
                  fluidRow(
-                     box(width  = 12,
-                         solidHeader = TRUE,
-                         title = strong("Map Comparison Of School Districts"),
-                         h4("Different school districts are differently colored according to the variable selected."),
-                         leafletOutput("choropleth")),
+                   box(width  = 12,
+                       solidHeader = TRUE,
+                       title = strong("Map Comparison Of School Districts"),
+                       h4("Different school districts are differently colored according to the variable selected."),
+                       leafletOutput("choropleth")),
+                 ), 
+                 fluidRow(
+                   box(width = 2,
+                       solidHeader = TRUE,
+                       title = strong("School Zone"),
+                       selectInput("insights_zone",
+                                   label = em("Choose a school zone to display"),
+                                   choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                               "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                               "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                               "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                               "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                   ),
+                                   multiple = FALSE)),
+                   box(width = 10,
+                       title = strong("Resources In Each School Zone"),
+                       plotlyOutput("insights_individualplots",
+                                    width="auto",
+                                    height = "auto"))
                  )
         )},
         

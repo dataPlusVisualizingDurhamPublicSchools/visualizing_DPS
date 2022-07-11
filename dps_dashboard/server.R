@@ -14,11 +14,9 @@ library(leaflet)
 library(leaflet.extras)
 library(tidyverse)
 library(plotly)
-library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
-library(formattable)
 library(DT)
 
 
@@ -64,6 +62,7 @@ library(DT)
     #data for the data insights tab
     counts_2021 <- read.csv("data/2021/spatial_data/counts.csv", skip = 1)
     counts_grouped_2021 <- read.csv("data/2021/spatial_data/counts grouped.csv")
+    pop<- read.csv("data/2021/school_stats_data/population.csv")
 }
 
 # Load/Rename Map Data
@@ -2468,24 +2467,28 @@ Students can take these classes for an opportunity to receive college credit upo
     
     #Data Insight tab plots
     
-    output$zones_barplots <- renderPlotly({
-      #removing all the rows of name 'All' because it's not relevant for comparison
-      new_counts_grouped<-counts_grouped_2021[!(counts_grouped$name=="All School"),]
-      ggplot(new_counts_grouped, aes(fill=name, y=count, x=as.factor(varname))) + 
-        geom_bar(position="fill", stat="identity")
-        })
-    
     output$choropleth <- renderLeaflet({
-        leaflet(
-            displayZone()) %>%
-            addProviderTiles("CartoDB.Positron") %>%
-            addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
-            addResetMapButton() %>%
-            addPolygons(data = durham,
-                        fillColor = displayColor(),
-                        stroke = TRUE,
-                        fillOpacity = 0.39,
-                        smoothFactor = 1)
+      leaflet(
+        displayZone()) %>%
+        addProviderTiles("CartoDB.Positron") %>%
+        addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+        addResetMapButton() %>%
+        addPolygons(data = durham,
+                    fillColor = displayColor(),
+                    stroke = TRUE,
+                    fillOpacity = 0.39,
+                    smoothFactor = 1)
+    })
+    
+    output$insights_individualplots <- renderPlotly({
+      counts_grouped<-counts_grouped_2021
+      counts_grouped<-counts_grouped_2021[!(counts_grouped_2021$name=="All School"),]
+      counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Elementary School', 'Lakewood Elementary')
+      counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Middle School', 'Lakewood Middle')
+      counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
+      counts_grouped <- subset(counts_grouped, name == input$insights_zone)
+      ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
+        xlab("Number of Resource") + ylab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
     })
     
     output$context <- renderText({
