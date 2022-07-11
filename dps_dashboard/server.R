@@ -1,4 +1,4 @@
-#
+   #
 # This is the server logic of a Shiny web application. You can run the
 # application by clicking 'Run App' above.
 #
@@ -18,8 +18,6 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
-library(formattable)
-library(DT)
 
 
 # Load/Rename School Stats Data
@@ -59,11 +57,7 @@ library(DT)
     MS_stats_22 <- read.csv("data/2022/school_stats_data/MS_stats_22.csv")
     HS_stats_22 <- read.csv("data/2022/school_stats_data/HS_stats_22.csv")
     
-    APCourses <- read_excel("data/2022/AP Courses.xlsx")
-    
-    #data for the data insights tab
-    counts_2021 <- read.csv("data/2021/spatial_data/counts.csv", skip = 1)
-    counts_grouped_2021 <- read.csv("data/2021/spatial_data/counts grouped.csv")
+    APCourses <- read.csv("data/2022/AP Courses.csv")
 }
 
 # Load/Rename Map Data
@@ -114,6 +108,10 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "Brogden Middle", "Lakewood Montessori Middle", "Lowes Grove Middle",
                       "Riverside High")
 
+# Load/Rename Report by School
+{
+  report_by_school <- read_excel("data/2022/school_stats_data/Report by School 2022.xlsx")
+}
 
 # Load/Rename Icons
 {
@@ -2465,16 +2463,6 @@ Students can take these classes for an opportunity to receive college credit upo
     }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
     )
     
-    
-    #Data Insight tab plots
-    
-    output$zones_barplots <- renderPlotly({
-      #removing all the rows of name 'All' because it's not relevant for comparison
-      new_counts_grouped<-counts_grouped_2021[!(counts_grouped$name=="All School"),]
-      ggplot(new_counts_grouped, aes(fill=name, y=count, x=as.factor(varname))) + 
-        geom_bar(position="fill", stat="identity")
-        })
-    
     output$choropleth <- renderLeaflet({
         leaflet(
             displayZone()) %>%
@@ -3147,245 +3135,6 @@ Students can take these classes for an opportunity to receive college credit upo
     })
     
     #AP Table
-    output$APTable <- renderTable(APCourses, bordered = TRUE, striped = TRUE, width = "150%", align = "c", digits = 0)
-    
-    #AP Courses
-    {
-      output$APEnglish <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("- AP English Language"),
-                h4("- AP English Literature"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP Language and Composition"),
-                h4("- AP Literature and Composition"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP English Language"),
-                h4("- AP English Literature"))
-        }
-      })
-      output$APMath <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("- AP Statistics"),
-                h4("- AP Calculus AB"),
-                h4("- AP Calculus BC"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP Calculus"),
-                h4("- AP Statistics"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP Calculus AB "),
-                h4("- AP Calculus BC"),
-                h4("- AP Statistics"))
-        }
-      })
-      output$APScience <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("- AP Biology"),
-                h4("- AP Chemistry"),
-                h4("- AP Environmental Science"),
-                h4("- AP Physics C: Mechanics"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP Environmental Science"),
-                h4("- AP Physics I"),
-                h4("- AP Physics II"),
-                h4("- AP Biology"),
-                h4("- AP Physics C Mechanics"),
-                h4("- AP Physics C Electricity and Magnetism"),
-                h4("- AP Chemistry"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP Chemistry"),
-                h4("- AP Biology"),
-                h4("- AP Environmental Science"),
-                h4("- AP Physics C: Mechanic"),
-                h4("- AP Physics 1: Algebra Based"),
-                h4("- AP Physics 2: Algebra Based"))
-        }
-      })
-      output$APSocial <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("- AP Human Geography"),
-                h4("- AP World History"),
-                h4("- AP US History"),
-                h4("- AP Psychology"),
-                h4("- AP Macroeconomics"),
-                h4("- AP Government and Politics"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP European History"),
-                h4("- AP US Government and Politics"),
-                h4("- AP US History"),
-                h4("- AP World History: Modern"),
-                h4("- AP Human Geography"),
-                h4("- AP Microeconomics"),
-                h4("- AP Macroeconomics"),
-                h4("- AP Psychology"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP European History"),
-                h4("- AP Government and Politics"),
-                h4("- AP Human Geography"),
-                h4("- AP Psychology"),
-                h4("- AP Seminar"),
-                h4("- AP U.S. History"),
-                h4("- AP World History"))
-        }
-      })
-      output$APWLang <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("- AP Latin"),
-                h4("- AP Spanish Language"),
-                h4("- AP Spanish Literature"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP French Language"),
-                h4("- AP Spanish Language & Culture"),
-                h4("- AP Italian"),
-                h4("- AP Chinese"),
-                h4("- AP Vergil Latin"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP French Language"),
-                h4("- AP Spanish Language"),
-                h4("- AP Spanish Literature"))
-        }
-      })
-      output$APMusArts <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("N/A"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP Studio Art Drawing"),
-                h4("- AP Studio Art: 2D Design"),
-                h4("- AP Studio Art: 3D Design"),
-                h4("- AP Art History"),
-                h4("- AP Music Theory"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP Art History"),
-                h4("- AP Music Theory"),
-                h4("- AP Studio Art"))
-        }
-      })
-      output$APEngine <- renderText({
-        if(input$ap_school == "Riverside High"){
-          paste(h4("- AP Computer Science"),
-                h4("- AP Intro to Engineering Design"),
-                h4("- AP Principles of Engineering"),
-                h4("- AP Digital Electronics"),
-                h4("- AP Civil Engineering & Architecture"),
-                h4("- AP Aerospace Engineering"),
-                h4("- AP Computer Integrated Manufacturing"))
-        }
-        else if(input$ap_school == "Hillside High"){
-          paste(h4("- AP Computer Science Principles"),
-                h4("- AP Computer Science"))
-        }
-        else if(input$ap_school == "Jordan High"){
-          paste(h4("- AP Computer Science Principles"),
-                h4("- AP Computer Science A"))
-        }
-      })
-    }
-    
-    #CTE Courses
-    {
-      output$AgCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong("N/A")))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(strong("Financial Planning")),
-                h4(strong("NAF Academy of Finance")))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(strong("Animal Systems")),
-                h4(em("- Certified Veterinarian Assistant")),
-                h4(strong("Biotechnology and Agriscience Research (Local Pathway)")),
-                h4(strong("Plant Systems")))
-        }
-      })
-      output$BusCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong("Accounting")),
-                h4(strong("Entrepreneurship")),
-                h4(strong("Financial Planning")),
-                h4(strong("Sports & Entertainment Marketing")))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4("N/A"))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(strong("Entrepreneurship")),
-                h4(strong("Sports & Entertainment Marketing")),
-                h4(strong("Travel & Tourism")))
-        }
-      })
-      output$CompCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong("Adobe Academy")),
-                h4(em("- Adobe Illustrator")),
-                h4(em("- Adobe Photoshop")),
-                h4(strong("AP Computer Science")),
-                h4(strong("Digital Design and Animation")),
-                h4(strong("Autodesk 3DS Max")),
-                h4(strong("Game Art Design")))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(strong("Digital Design and Animation")),
-                h4(em("- Autodesk 3DS Max")),
-                h4(strong("NAF Academy of Information Technology")),
-                h4(strong("Python Programming")),
-                h4(em("- MTA 98-381 Introduction to Programming Using Python")),
-                h4(em("- PCAP Python Certified Associate")))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4("N/A"))
-        }
-      })
-      output$FamCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong("Early Childhood Development & Services")),
-                h4(strong("Food & Nutrition")))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(strong("Early Childhood Development & Services")),
-                h4(strong("Interior Design")))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(strong("Culinary Arts Applications")),
-                h4(em("- Pre-Professional Assessment and Certification in Culinary Arts")),
-                h4(strong("Food & Nutrition")))
-        }
-      })
-      output$HealthCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4("N/A"))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4("N/A"))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4("N/A"))
-        }
-      })
-      output$TradeCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong("PLTW Engineering")),
-                h4(strong("Technology Engineering and Design")))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4("N/A"))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4("N/A"))
-        }
-      })
-    }
+    output$APTable <- renderTable(APCourses)
     
 }
-
