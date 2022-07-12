@@ -108,9 +108,6 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "Brogden Middle", "Lakewood Montessori Middle", "Lowes Grove Middle",
                       "Riverside High")
 
-# Load/Rename Report by School
-
-
 # Load/Rename Icons
 {
     iconSet <- iconList(
