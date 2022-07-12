@@ -57,7 +57,8 @@ library(gotop)
     MS_stats_22 <- read.csv("data/2022/school_stats_data/MS_stats_22.csv")
     HS_stats_22 <- read.csv("data/2022/school_stats_data/HS_stats_22.csv")
     
-    APCourses <- read.csv("data/2022/AP Courses.csv")
+    APCourses <- read_excel("data/2022/AP Courses.xlsx")
+    CTECourses <- read_excel("data/2022/CTE Courses.xlsx")
 }
 
 # Load/Rename Map Data
