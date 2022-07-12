@@ -109,9 +109,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
                       "Riverside High")
 
 # Load/Rename Report by School
-{
-  report_by_school <- read_excel("data/2022/school_stats_data/Report by School 2022.xlsx")
-}
+
 
 # Load/Rename Icons
 {
