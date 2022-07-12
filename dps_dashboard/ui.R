@@ -38,6 +38,8 @@ sidebar <- {dashboardSidebar(
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
+        menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("fas fa-paint")),
+        menuItem("School Sports", tabName = "sportstab", icon = icon("fas fa-paint")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
@@ -307,7 +309,104 @@ body <- {dashboardBody(
                                 )
                               ))
         )))},
-      
+      #Electives Tab
+        {tabItem(tabName = "electivestab",
+                fluidRow(
+                  tabBox(
+                    id = "tabset2", width = "auto", 
+                    tabPanel("Advanced Placement Courses", class = "text-center",
+                             div(tableOutput("APTable"), style = "font-size:150%"),
+                               selectInput("ap_school", em("Choose a school to view the AP Courses available."), 
+                                         choices = list("Hillside High",
+                                                        "Jordan High",
+                                                        "Riverside High")
+                             ),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("English AP Courses"), background = "olive", solidHeader = TRUE,
+                                   htmlOutput("APEnglish", align="left")),
+                               box(width = 4,
+                                 title = strong("Math AP Courses"), background = "aqua", solidHeader = TRUE,
+                                 htmlOutput("APMath", align="left")),
+                               box(width = 4,
+                                 title = strong("Science AP Courses"), background = "light-blue", solidHeader = TRUE,
+                                 htmlOutput("APScience", align="left"))),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Social Sciences AP Courses"), background = "green", solidHeader = TRUE,
+                                   htmlOutput("APSocial", align="left")),
+                               box(width = 4,
+                                   title = strong("World Languages AP Courses"), background = "black", solidHeader = TRUE,
+                                   htmlOutput("APWLang", align="left")),
+                               box(width = 4,
+                                   title = strong("Music and Arts AP Courses"), background = "navy", solidHeader = TRUE,
+                                   htmlOutput("APMusArts", align="left"))),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Engineneering AP Courses"), background = "purple", solidHeader = TRUE,
+                                   htmlOutput("APEngine", align="left")))
+                             ),
+                    tabPanel("CTE Courses", class = "text-center",
+                             div(tableOutput("CTETable"), style = "font-size:150%"),
+                             selectInput("cte_school", em("Choose a school to view the CTE Courses available."), 
+                                         choices = list("Hillside High",
+                                                        "Jordan High",
+                                                        "Riverside High")
+                             ),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Agricultural Education"), status = "primary" , solidHeader = TRUE,
+                                   htmlOutput("AgCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Business, Marketing, and Finance"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("BusCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Computer Science and Information Technology Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("CompCTE", align="left"))),
+                             fluidRow(
+                               box(width = 4,
+                                   title = strong("Family and Consumer Sciences Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("FamCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Health Science Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("HealthCTE", align="left")),
+                               box(width = 4,
+                                   title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
+                                   htmlOutput("TradeCTE", align="left")))),
+                    tabPanel("Arts Programs")
+                  )
+                )
+        )},
+        
+        #Sports Tab
+        {tabItem(tabName = "sportstab",
+                 fluidRow(
+                   tabBox(
+                     id = "tabset3", width = "auto", 
+                     tabPanel("School Sports", class = "text-center",
+                              selectInput("school_sports", em("Choose a school to view the Sports available."), 
+                                          choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
+                                                         "Hillside High",
+                                                         "Jordan High",
+                                                         "Riverside High")
+                              ),
+                              fluidRow(
+                                box(width = 4,
+                                    title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
+                                    htmlOutput("fallsports", align="left")),
+                                box(width = 4,
+                                    title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
+                                    htmlOutput("wintersports", align="left")),
+                                box(width = 4,
+                                    title = strong("Sping Sports"), background = "light-blue", solidHeader = TRUE,
+                                    htmlOutput("springsports", align="left")))
+                     ),
+                     tabPanel("Community Sports", class = "text-center"
+                              
+                              )
+                   )
+                 )
+        )},
         #Data Insights tab
         {tabItem(tabName = "insightstab",
                  
