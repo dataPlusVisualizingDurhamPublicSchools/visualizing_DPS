@@ -309,7 +309,8 @@ body <- {dashboardBody(
                                 )
                               ))
         )))},
-      #Electives Tab
+        
+        #Electives Tab
         {tabItem(tabName = "electivestab",
                 fluidRow(
                   tabBox(
@@ -407,6 +408,7 @@ body <- {dashboardBody(
                    )
                  )
         )},
+      
         #Data Insights tab
         {tabItem(tabName = "insightstab",
                  
@@ -418,7 +420,6 @@ body <- {dashboardBody(
                          leafletOutput("choropleth")),
                  )
         )},
-        
         
         #Meet the team tab
         {tabItem(tabName = "teamstab",
