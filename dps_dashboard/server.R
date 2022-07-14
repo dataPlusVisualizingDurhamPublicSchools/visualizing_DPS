@@ -97,7 +97,8 @@ library(gotop)
     hospitals <- read.csv("data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
     pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
-    farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv")
+    farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
+    commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
 }
 
 # Load/Rename Schools' Names
@@ -126,7 +127,8 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
         hospitals = makeIcon("https://img.icons8.com/pastel-glyph/64/000000/hospital-wagon-without-a-siren.png", iconWidth = 20, iconHeight = 20),
         pantries = makeIcon("https://img.icons8.com/ios/50/000000/can-soup.png", iconWidth = 20, iconHeight = 20),
         afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20),
-        farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20)
+        farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20),
+        commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20)
     )
 }
 
@@ -2281,7 +2283,8 @@ Students can take these classes for an opportunity to receive college credit upo
                "Libraries" = libraries, 
                "Religious Centers" = religious,
                "Hospitals and Clinics" = hospitals,
-               "After-School Care Programs" = afterschool)
+               "After-School Care Programs" = afterschool,
+               "Community Arts" = commarts)
     })
     
     # Maps - Connecting map variables to their icons
@@ -2299,7 +2302,8 @@ Students can take these classes for an opportunity to receive college credit upo
                "Libraries" = iconSet$libraries, 
                "Religious Centers" = iconSet$religious,
                "Hospitals and Clinics" = iconSet$hospitals,
-               "After-School Care Programs" = iconSet$afterschool)
+               "After-School Care Programs" = iconSet$afterschool,
+               "Community Arts" = iconSet$commarts)
     })
     
     # Maps - Connecting name of school to input
@@ -2456,6 +2460,12 @@ Students can take these classes for an opportunity to receive college credit upo
             temp_df$URL <- createLink(temp_df$URL)
             temp_df[c("name","ADDRESS", "URL")]
         }
+      else if(input$var == "Community Arts")
+      {
+        temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+        temp_df$URL <- createLink(temp_df$URL)
+        temp_df[c("name","Type","ADDRESS", "URL")]
+      }
     }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
     )
     
@@ -2715,6 +2725,21 @@ Students can take these classes for an opportunity to receive college credit upo
                     href = "https://farmersmarketcoalition.org/education/qanda/"))
             
         }
+        else if(input$var == "Community Arts"){
+        paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
+        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
+        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
+        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
+        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
+        markets can be a more affordable option for local residents. ",
+              "<br>",
+              "<br>",
+              "Below is more information about Farmers' Markets:",
+              "<br>",
+              a("Farmers' Market Coalition", 
+                href = "https://farmersmarketcoalition.org/education/qanda/"))
+        
+      }
     })
     
     # Maps - Icon legend outputs
@@ -2746,6 +2771,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("After-School Care Programs"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("After-School Care Programs"))
+          else if(input$var == "Community Arts")
+            paste(h4("After-School Care Programs"))
         })
         
         output$busicon <- renderText({
@@ -2775,6 +2802,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Bus Stops"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Bus Stops"))
+          else if(input$var == "Community Arts")
+            paste(h4("Bus Stops"))
         })
         
         output$childcareicon <- renderText({
@@ -2804,6 +2833,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Childcare Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Childcare Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Childcare Centers"))
         })
         
         output$parkicon <- renderText({
@@ -2833,6 +2864,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Parks"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Parks"))
+          else if(input$var == "Community Arts")
+            paste(h4("Parks"))
         })
         
         output$recicon <- renderText({
@@ -2862,6 +2895,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Recreation Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Recreation Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Recreation Centers"))
         })
         
         output$gardenicon <- renderText({
@@ -2891,6 +2926,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Gardens"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Gardens"))
+          else if(input$var == "Community Arts")
+            paste(h4("Gardens"))
         })
         
         output$cultureicon <- renderText({
@@ -2920,6 +2957,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Community & Cultural Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Community & Cultural Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Community & Cultural Centers"))
         })
         
         output$groceryicon <- renderText({
@@ -2949,6 +2988,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Grocery Stores"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Grocery Stores"))
+          else if(input$var == "Community Arts")
+            paste(h4("Grocery Stores"))
         })
         
         output$libraryicon <- renderText({
@@ -2978,6 +3019,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Libraries"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Libraries"))
+          else if(input$var == "Community Arts")
+            paste(h4("Libraries"))
         })
         
         output$religiousicon <- renderText({
@@ -3007,6 +3050,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Religious Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Religious Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Religious Centers"))
         })
         
         output$hospitalicon <- renderText({
@@ -3036,6 +3081,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Hospitals & Clinics"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Hospitals & Clinics"))
+          else if(input$var == "Community Arts")
+            paste(h4("Hospitals & Clinics"))
         })
         
         output$pantryicon <- renderText({
@@ -3065,6 +3112,8 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4(HTML(paste0(strong("Food Pantries")))))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Food Pantries"))
+          else if(input$var == "Community Arts")
+            paste(h4("Food Pantries"))
         })
         
         output$marketicon <- renderText({
@@ -3094,6 +3143,39 @@ Students can take these classes for an opportunity to receive college credit upo
                 paste(h4("Farmer's Markets"))
             else if(input$var == "Farmers' Markets")
                 paste(h4(HTML(paste0(strong("Farmers' Markets")))))
+            else if(input$var == "Community Arts")
+                paste(h4("Farmer's Markets"))
+        })
+        
+        output$artsicon <- renderText({
+          if(input$var == "After-School Care Programs")
+            paste(h4("Community Arts"))
+          else if (input$var == "Parks")
+            paste(h4("Community Arts"))
+          else if(input$var == "Recreation Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Gardens")
+            paste(h4("Community Arts"))
+          else if(input$var == "Bus Stops")
+            paste(h4("Community Arts"))
+          else if(input$var == "Childcare Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Community & Cultural Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Grocery Stores")
+            paste(h4("Community Arts"))
+          else if(input$var == "Libraries")
+            paste(h4("Community Arts"))
+          else if(input$var == "Religious Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Hospitals and Clinics")
+            paste(h4("Community Arts"))
+          else if(input$var == "Food Pantries")
+            paste(h4("Community Arts"))
+          else if(input$var == "Farmers' Markets")
+            paste(h4("Community Arts"))
+          else if(input$var == "Community Arts")
+            paste(h4(HTML(paste0(strong("Community Arts")))))
         })
         
     }
