@@ -6,8 +6,58 @@ library(sf)
 library(readxl)
 library(stringr)
 
+
+#sports tab
+
+#for the icons
+sports <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+sports_types <- as.factor(sports$sport)
+View(sports_types)
+sports$icon = ""
+sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
+sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
+sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
+sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
+sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
+sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
+sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
+sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
+sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
+sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
+sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
+sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
+
+sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == "Jordan High")
+
+#for the icon legends
+View(subset(sports, !duplicated(icon)))
+
+#for the tables
+sports <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+sports$gender[sports$gender == 'All'] <- ''
+sports <- sports%>%
+  unite(sport_name, gender, sport, sep=" ")
+sports$sport_name <- trimws(sports$sport_name)
+sports %>% select(sport_name)
+View(sports)
+
 parks <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
 rec <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
+
+
 
 
 df2 <- rec[grepl("Hillside High", rec$school_zones), ]
@@ -151,7 +201,6 @@ m
 all_race <- read_excel("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
 View(all_race)
 
-cbPalette <- c("#FFC0CB", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) + 
   geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
@@ -159,5 +208,23 @@ ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) +
   theme_minimal() +
   scale_fill_manual(values=cbPalette) +
   theme(plot.title = element_text(hjust = 0.5))
+
+#attempt 2
+durham <- geojsonio::geojson_read("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
+durham@data <- merge(durham_choro@data, counts_grouped, by = 'name')
+
+cbPalette <- c("#FFC0CB", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+
+leaflet(
+  displayZone()) %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+  addResetMapButton() %>%
+  addPolygons(data = durham,
+              fillColor = cbPalette(),
+              stroke = TRUE,
+              fillOpacity = 0.39,
+              smoothFactor = 1)
 
 

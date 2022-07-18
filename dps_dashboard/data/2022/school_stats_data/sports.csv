@@ -1,0 +1,129 @@
+schoolname,season,gender,sport
+Brogden Middle,fall,Boy's,Cross Country
+Brogden Middle,fall,Boy's,Soccer
+Brogden Middle,fall,Men's,Football
+Brogden Middle,fall,Women's,Volleyball
+Brogden Middle,fall,Girl's,Cross Country
+Lowes Grove Middle,fall,Boy's,Cross Country
+Lowes Grove Middle,fall,Girl's,Cross Country
+Lowes Grove Middle,fall,Boy's,Soccer
+Lowes Grove Middle,fall,Men's,Football
+Lowes Grove Middle,fall,Women's,Volleyball
+Lakewood Montesorri Middle,fall,Boy's,Cross Country
+Lakewood Montesorri Middle,fall,Boy's,Soccer
+Lakewood Montesorri Middle,fall,Women's,Volleyball
+Riverside High,fall,All,Cheerleading
+Riverside High,fall,All,Cross Country
+Riverside High,fall,Women's,Field Hockey
+Riverside High,fall,Men's,Football
+Riverside High,fall,Men's,JV Football
+Riverside High,fall,Men’s,JV Soccer
+Riverside High,fall,Men’s,Soccer
+Riverside High,fall,Women’s,Golf
+Riverside High,fall,Women’s,JV Volleyball
+Riverside High,fall,Women’s,Tennis
+Riverside High,fall,Women’s,Volleyball
+Hillside High,fall,All,Cheerleading
+Hillside High,fall,Women's,Field Hockey
+Hillside High,fall,Men's,Football
+Hillside High,fall,Men's,JV Football
+Hillside High,fall,Men’s,JV Soccer
+Hillside High,fall,Men’s,Soccer
+Hillside High,fall,Men’s,Cross Country
+Hillside High,fall,Women’s,Golf
+Hillside High,fall,Women’s,Volleyball
+Hillside High,fall,Women’s,JV Volleyball
+Hillside High,fall,Women’s,Tennis
+Hillside High,fall,Women’s,Track
+Jordan High,fall,All,Cross Country
+Jordan High,fall,Women's,Field Hockey
+Jordan High,fall,Men's,Football
+Jordan High,fall,Men's,JV Football
+Jordan High,fall,Women’s,Golf
+Jordan High,fall,Women’s,JV Volleyball
+Jordan High,fall,Women’s,Volleyball
+Jordan High,fall,Women’s,Tennis
+Jordan High,fall,All,Cheerleading
+Brogden Middle,winter,Boy's,Basketball
+Brogden Middle,winter,Girl's,Basketball
+Brogden Middle,winter,Boy's,Wrestling
+Lowes Grove Middle,winter,Boy's,Basketball
+Lowes Grove Middle,winter,Girl's,Basketball
+Lakewood Montesorri Middle,winter,Boy's,Basketball
+Lakewood Montesorri Middle,winter,Girl's,Basketball
+Riverside High,winter,All,Gymnastics
+Riverside High,winter,All,Indoor Track
+Riverside High,winter,Men’s,Basketball
+Riverside High,winter,Men’s,JV Basketball
+Riverside High,winter,All,Swimming
+Riverside High,winter,Women’s,Basketball
+Riverside High,winter,Women’s,JV Basketball
+Riverside High,winter,Men's,Wrestling
+Hillside High,winter,Men’s,Basketball
+Hillside High,winter,Men’s,JV Basketball
+Hillside High,winter,All,Swimming
+Hillside High,winter,Women’s,Basketball
+Hillside High,winter,Women’s,JV Basketball
+Hillside High,winter,Men's,Wrestling
+Hillside High,winter,All,Indoor Track
+Jordan High,winter,All,Gymnastics
+Jordan High,winter,All,Indoor Track
+Jordan High,winter,Men’s,Basketball
+Jordan High,winter,Men’s,JV Basketball
+Jordan High,winter,All,Swimming
+Jordan High,winter,Women’s,Basketball
+Jordan High,winter,Women’s,JV Basketball
+Jordan High,winter,Men's,Wrestling
+Brogden Middle,spring,Boy's,Baseball
+Brogden Middle,spring,Girl's,Soccer
+Brogden Middle,spring,Girl's,Track
+Brogden Middle,spring,Boy's,Track
+Brogden Middle,spring,Girl's,Softball
+Lowes Grove Middle,spring,Boy's,Baseball
+Lowes Grove Middle,spring,Boy's,Track
+Lowes Grove Middle,spring,Girl's,Soccer
+Lowes Grove Middle,spring,Girl's,Track
+Lowes Grove Middle,spring,Girl's,Softball
+Lakewood Montesorri Middle,spring,Boy's,Track
+Lakewood Montesorri Middle,spring,Girl's,Track
+Lakewood Montesorri Middle,spring,Boy's,Baseball
+Lakewood Montesorri Middle,spring,Girl's,Soccer
+Lakewood Montesorri Middle,spring,Girl's,Softball
+Riverside High,spring,Boy's,Baseball
+Riverside High,spring,Men's,JV Baseball
+Riverside High,spring,Women's,JV Softball
+Riverside High,spring,Men’s,Golf
+Riverside High,spring,Men’s,JV Lacrosse
+Riverside High,spring,Men’s,Lacrosse
+Riverside High,spring,Men’s,Tennis
+Riverside High,spring,Women's,Softball
+Riverside High,spring,All,Track and Field
+Riverside High,spring,Women’s,JV Soccer
+Riverside High,spring,Women’s,Lacrosse
+Riverside High,spring,Women’s,Soccer
+Hillside High,spring,Men's,Baseball
+Hillside High,spring,Men's,JV Baseball
+Hillside High,spring,Women's,JV Softball
+Hillside High,spring,Men’s,Golf
+Hillside High,spring,Men’s,JV Lacrosse
+Hillside High,spring,Men’s,Lacrosse
+Hillside High,spring,Men’s,Tennis
+Hillside High,spring,Women's,Softball
+Hillside High,spring,All,Track and Field
+Hillside High,spring,Women’s,JV Lacrosse
+Hillside High,spring,Women’s,Lacrosse
+Hillside High,spring,Women’s,JV Soccer
+Hillside High,spring,Women’s,Soccer
+Jordan High,spring,Women's,Baseball
+Jordan High,spring,Men's,JV Baseball
+Jordan High,spring,Women's,JV Softball
+Jordan High,spring,Men’s,Golf
+Jordan High,spring,Men’s,JV Lacrosse
+Jordan High,spring,Men’s,Lacrosse
+Jordan High,spring,Men’s,Tennis
+Jordan High,spring,Women's,Softball
+Jordan High,spring,All,Track and Field
+Jordan High,spring,Women’s,JV Lacrosse
+Jordan High,spring,Women’s,JV Soccer
+Jordan High,spring,Women’s,Lacrosse
+Jordan High,spring,Women’s,Soccer
