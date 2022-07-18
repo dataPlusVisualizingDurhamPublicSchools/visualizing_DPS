@@ -1,4 +1,4 @@
-
+   #
 # This is the server logic of a Shiny web application. You can run the
 # application by clicking 'Run App' above.
 #
@@ -1651,8 +1651,8 @@ Students can take these classes for an opportunity to receive college credit upo
             
         }
         else if (input$es_select == "Racial Demographics"){
-            paste("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population 
-                  is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed 
+            paste("This dataset shows the racial breakdown of each of the ten public schools. Durham Public Schools’ student population 
+                  is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 10 schools has changed 
                   over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has 
                   increased. Representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral for student success. Too often students 
                   of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with 
@@ -3685,3 +3685,5 @@ Students can take these classes for an opportunity to receive college credit upo
     }
     
 }
+
+  
