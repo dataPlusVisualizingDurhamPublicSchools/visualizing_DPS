@@ -3502,7 +3502,7 @@ Students can take these classes for an opportunity to receive college credit upo
         sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
         sports <- subset(sports, !duplicated(icon))
         sports %>% select(icon)
-      }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
+      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
       
       output$sports_icon_legend <- renderTable({
         sports <- sports_22
