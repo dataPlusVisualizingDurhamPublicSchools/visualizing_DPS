@@ -378,7 +378,130 @@ body <- {dashboardBody(
                                box(width = 4,
                                    title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
                                    htmlOutput("TradeCTE", align="left")))),
-                    tabPanel("Arts Programs")
+                    tabPanel("Arts Programs",
+                             fluidRow(
+                               box(width = 6, title = strong("Dance"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Dance is a form of physical activity that encourages self-expression, 
+                                     improves health, and increases mobility and strength. Children and 
+                                     adolescents that participate in dance learn different genres, cultural 
+                                     aspects, and regional differences, and have the opportunity to choose 
+                                     between cheerleading, gymnastics, interpretive dance, martial arts, and more!")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                     href="https://duke.edu/", 
+                                     tags$img(src="duke.png", 
+                                              title="Duke Logo",
+                                              class= "img-responsive")
+                                   )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                     href="https://duke.edu/", 
+                                     tags$img(src="duke.png",
+                                              title="Duke Logo",
+                                              class= "img-responsive")
+                                   )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")))
+                                   ),
+                               box(width = 6, title = strong("Theatre"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Theatre is a type of performance art that incorporates and fuses acting, 
+                                        singing, and dancing. On the stage, individuals have the opportunity to 
+                                        strengthen concentration and memory, improve articulation and fluency, 
+                                        and build trust as they interact and collaborate with others. ")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png", 
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")))
+                             )),
+                             fluidRow(
+                               box(width = 6,
+                                   title = strong("Music"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Music incorporates vocal and instrumental performance, 
+                                   studio production, songwriting, and even  listening enjoyment. 
+                                   Music students have the opportunity to learn concepts such as 
+                                   theory, history, acoustics, and instrumental and vocal skill 
+                                   and technique. Music performance has been proven to teach 
+                                   discipline, relieve stress, reduce stage fright, and improve 
+                                   academic levels. 
+")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png", 
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")))),
+                               box(width = 6,
+                                   title = strong("Visual"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Visual arts consist of painting, drawing, printmaking, 
+                                        sculpture, ceramics, photography, video, filmmaking, 
+                                        design, crafts and architecture. Engaging in visual 
+                                        arts exposes children and adolescents to positive 
+                                        benefits that include; but are not limited to, having a 
+                                        space to create innovatively, improving motor skills, and 
+                                        expressing emotions.")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png", 
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive"))))
+                             ))
                   )
                 )
         )},
