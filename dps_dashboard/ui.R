@@ -42,8 +42,8 @@ sidebar <- {dashboardSidebar(
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
-        menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("fas fa-paint")),
-        menuItem("School Sports", tabName = "sportstab", icon = icon("fas fa-paint")),
+        menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("book")),
+        menuItem("School Sports", tabName = "sportstab", icon = icon("basketball-ball")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
@@ -397,19 +397,34 @@ body <- {dashboardBody(
                               fluidRow(
                                 box(width = 4,
                                     title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
-                                    htmlOutput("fallsports", align="left")),
+                                    column(12, align="center", tableOutput("fallsports"))), 
                                 box(width = 4,
                                     title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
-                                    htmlOutput("wintersports", align="left")),
+                                    column(12, align="center", tableOutput("wintersports"))),
                                 box(width = 4,
-                                    title = strong("Sping Sports"), background = "light-blue", solidHeader = TRUE,
-                                    htmlOutput("springsports", align="left")))
+                                    title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
+                                    column(12, align="center", tableOutput("springsports"))),
+                                ),
+                              fluidRow(
+                                box(width = 4,
+                                    title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
+                                    column(12, align="center", tableOutput("male_sports_icons"))),
+                                box(width = 4,
+                                    title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
+                                    column(12, align="center", tableOutput("female_sports_icons"))),
+                                box(width = 4,
+                                    solidHeader = TRUE,
+                                    title = strong("Icon Legend"),
+                                    column(12, align="center", tableOutput("sports_icon_legend"))),
+                                )
+                        
                      ),
                      tabPanel("Community Sports", class = "text-center"
                               
                               )
                    )
-                 )
+                 ),
+                
         )},
         #Data Insights tab
         {tabItem(tabName = "insightstab",
