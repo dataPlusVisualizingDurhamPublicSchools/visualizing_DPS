@@ -2484,18 +2484,18 @@ Students can take these classes for an opportunity to receive college credit upo
     #Data Insight tab plots
     
 
-    output$choropleth <- renderLeaflet({
-      leaflet(
-        displayZone()) %>%
-        addProviderTiles("CartoDB.Positron") %>%
-        addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
-        addResetMapButton() %>%
-        addPolygons(data = durham,
-                    fillColor = displayColor(),
-                    stroke = TRUE,
-                    fillOpacity = 0.39,
-                    smoothFactor = 1)
-    })
+    # output$choropleth <- renderLeaflet({
+    #   leaflet(
+    #     displayZone()) %>%
+    #     addProviderTiles("CartoDB.Positron") %>%
+    #     addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+    #     addResetMapButton() %>%
+    #     addPolygons(data = durham,
+    #                 fillColor = displayColor(),
+    #                 stroke = TRUE,
+    #                 fillOpacity = 0.39,
+    #                 smoothFactor = 1)
+    # })
     
     output$insights_individualplots <- renderPlotly({
       counts_grouped<-counts_grouped_2021
@@ -2505,7 +2505,7 @@ Students can take these classes for an opportunity to receive college credit upo
       counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
       counts_grouped <- subset(counts_grouped, name == input$insights_zone)
       ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
-        xlab("Number of Resource") + ylab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
+        ylab("Number of Resource") + xlab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
     })
     
     output$context <- renderText({
