@@ -622,11 +622,10 @@ body <- {dashboardBody(
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
-                                  General Psychology. Patience joined the Data+ project team because she was 
-                                  interested in learning more about data science and its integration into education
-                                  policy. She hopes this dashboard makes an impact on not only these ten community
-                                  schools in the dataset, but students in all Durham Public Schools and beyond, 
-                                  in hopes to make education more accessible to all students.")),
+                                  General Psychology. Patience continued the Data+ project team because she was 
+                                  wanted to continue the work she did the previous summer in hopes to improve the dashboard
+                                  to make it more accessible. With her background in education policy, she hopes to integrate
+                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyonds.")),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
@@ -680,7 +679,7 @@ body <- {dashboardBody(
                          br(),
                          fluidRow(
                              column(width = 3,
-                                    img(src = "patience3.jpeg")),
+                                    img(src = "patience3.jpg")),
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
