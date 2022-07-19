@@ -2758,34 +2758,97 @@ Students can take these classes for an opportunity to receive college credit upo
             
         }
         else if(input$var == "Community Arts"){
-        paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
-        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
-        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
-        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
-        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
-        markets can be a more affordable option for local residents. ",
+        paste("Durham, North Carolina offers an array of arts programs that foster 
+        a plethora of individual and community benefits. Fine arts (painting, design, 
+        and photography), and performance arts (dance, theatre, and music) have been 
+        proven to boost self-confidence, improve cognition, and deepen cultural and 
+        self-understanding by helping students overcome insecurities, combining 
+        subject matters such as math, english, science, and history, as well as 
+        exposing students to different art styles and music genres.",
               "<br>",
               "<br>",
-              "Below is more information about Farmers' Markets:",
+              HTML(paste0(strong("Dance:"))),
+              "Dance is a form of physical activity that encourages self-expression, 
+              improves health, and increases mobility and strength. Children and 
+              adolescents that participate in dance learn different genres, cultural 
+              aspects and regional differences, and have the opportunity to choose 
+              between cheerleading, gymnastics, interpretive dance, martial arts, and more!",
               "<br>",
-              a("Farmers' Market Coalition", 
-                href = "https://farmersmarketcoalition.org/education/qanda/"))
-        
+              a("Health Benefits of Dance", 
+                href = "https://www.prudential.co.th/corp/prudential-th/en/we-do-pulse/health-wellness/10-health-benefits-of-dancing/"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Theatre:"))),
+              "Theatre is a type of performance art that incorporates and fuses acting, 
+              singing, and dancing. On the stage, individuals have the opportunity to 
+              strengthen concentration and memory, improve articulation and fluency, and 
+              build trust as they interact and collaborate with others.",
+              "<br>",
+              a("Benefits of Theatre Education", 
+                href = "https://www.acttooplayers.com/benefits-of-theatre-education"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Music:"))),
+              "Music incorporates vocal and instrumental performance, studio production, 
+              songwriting, and even  listening enjoyment. Music students have the 
+              opportunity to learn concepts such as theory, history, acoustics, and 
+              instrumental and vocal skills and techniques. Music performance has been 
+              proven to teach discipline, relieve stress, reduce stage fright, and improve 
+              academic levels.",
+              "<br>",
+              a("Benefits of Musical Incorporation", 
+                href = "https://www.stamfordschools.org.uk/wp-content/uploads/2021/08/18-benefits-of-playing-a-musical-instrument.pdf"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Visual:"))),
+              "Visual arts consists of painting, drawing, printmaking, sculpture, ceramics,
+              photography, video, filmmaking, design, crafts and architecture. Engaging in 
+              visual arts exposes children and adolescents to positive benefits that include; 
+              but are not limited to, having a space to create innovatively, improving motor 
+              skills, and expressing emotions.", 
+              a("Benefits of Visual Arts", 
+                href = "https://www.linkedin.com/pulse/20-benefits-visual-arts-children-aniruddah-andalib"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Museums:"))),
+              "Museums care for and display artistic, cultural, historical, and scientific 
+              artifacts. Museums help people of all walks of life understand the world around 
+              them, and embolden viewers to examine exhibits and develop perspective in 
+              informal learning environments.",
+              "<br>",
+              a("The Impact of Museums", 
+                href = "https://www.museumsassociation.org/campaigns/museums-change-lives/the-impact-of-museums/#"), 
+              "<br>",
+                a("Why Visit Museums", 
+                  href = "https://www.colleendilen.com/2009/07/31/10-reasons-to-visit-a-museum/"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Martial Arts:"))),
+              "Martial arts consists of various forms of self-defense or combat that promote 
+              safety,  hand-eye coordination, discipline, health and weight loss, and several 
+              mental health benefits including boosted self-esteem, increased focus, and mental 
+              calmness.",
+              "<br>",
+              a("Benefits of Martial Arts", 
+                href = "https://wayofmartialarts.com/benefits-of-martial-arts/"))
         }
       else if(input$var == "Community Sports"){
-        paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
-        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
-        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
-        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
-        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
-        markets can be a more affordable option for local residents. ",
-              "<br>",
-              "<br>",
-              "Below is more information about Farmers' Markets:",
-              "<br>",
-              a("Farmers' Market Coalition", 
-                href = "https://farmersmarketcoalition.org/education/qanda/"))
-        
+        paste("DPS provides a wide range of sports across middle and high schools 
+              to promote teambuilding, responsibility, discipline, and leadership. 
+              Participation in school sports provides students with the daily 
+              exercise requirements suggested in the", 
+              a("CDC guidelines",
+                href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+              ". The Office of Disease Prevention and Health Promotion concluded that 
+              “higher amounts of physical activity are associated with more favorable 
+              status for multiple health indicators, including cardiorespiratory and 
+              muscular fitness, bone health, and weight status or adiposity,” in their",
+              a("Activity Guidelines for Americans Report",
+                href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+              ". Visit",
+              a("DPS’s Athletics webpage ",
+                href = "https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+              " for more information.")
       }
     })
     
