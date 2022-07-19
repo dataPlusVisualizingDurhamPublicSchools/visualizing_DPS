@@ -380,6 +380,11 @@ body <- {dashboardBody(
                                    htmlOutput("TradeCTE", align="left")))),
                     tabPanel("Arts Programs",
                              fluidRow(
+                               box(width = 12,
+                                   title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                                   column(12, align="center", tableOutput("available_arts")))
+                             ),
+                             fluidRow(
                                box(width = 6, title = strong("Dance"), status = "primary", solidHeader = TRUE,
                                    p(h4("Dance is a form of physical activity that encourages self-expression, 
                                      improves health, and increases mobility and strength. Children and 
