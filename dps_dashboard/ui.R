@@ -472,7 +472,7 @@ body <- {dashboardBody(
                                                      class= "img-responsive")))),
                                box(width = 6,
                                    title = strong("Visual"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Visual arts consist of painting, drawing, printmaking, 
+                                   p(h4("Visual arts consists of painting, drawing, printmaking, 
                                         sculpture, ceramics, photography, video, filmmaking, 
                                         design, crafts and architecture. Engaging in visual 
                                         arts exposes children and adolescents to positive 
