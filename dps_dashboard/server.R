@@ -3620,4 +3620,17 @@ Students can take these classes for an opportunity to receive college credit upo
       }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
     }
     
+    #arts Programs
+    {
+      output$available_arts <- renderTable ({
+        schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
+        schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+        schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+        schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+        schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+        schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArts, Theatre, Dance)
+      }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
+      
+    }
+    
 }

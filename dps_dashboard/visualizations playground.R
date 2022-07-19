@@ -5,7 +5,7 @@ library(leaflet)
 library(sf)
 library(readxl)
 library(stringr)
-
+library(tidyr)
 
 #sports tab
 
@@ -228,3 +228,15 @@ leaflet(
               smoothFactor = 1)
 
 
+#checklist table for the arts programs tab
+schoolstats22 <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
+schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
+schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArts, Theatre, Dance)
+
+#View(reshape2::dcast(schoolstats, SCHOOL_NAME ~ ARTS_PROGRAMS))
+
+View(schoolstats)
