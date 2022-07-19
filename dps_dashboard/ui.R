@@ -741,7 +741,7 @@ body <- {dashboardBody(
                          selectInput("var",
                                      label = em("Choose a variable to display"),
                                      choices = c("After-School Care Programs", "Bus Stops", 
-                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts","Farmers' Markets", "Food Pantries", "Gardens",
+                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                  "Recreation Centers", "Religious Centers"),
                                      multiple = FALSE)),
@@ -839,7 +839,7 @@ body <- {dashboardBody(
                           br(),
                           fluidRow(
                               column( width = 1,
-                                      img(src = "rec_icon.png", width = 40, height = 40, align = "left")),
+                                      img(src = "recicon.png", width = 40, height = 40, align = "left")),
                               column(width = 1),
                               column(width = 8, htmlOutput("recicon")
                               )),
@@ -856,6 +856,13 @@ body <- {dashboardBody(
                                     img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
                             column(width = 8, htmlOutput("artsicon")
+                            )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "commsportsicon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("sportsicon")
                             ))
                      )},
                  )
