@@ -109,6 +109,7 @@ library(gotop)
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
     farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
     commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
+    sports <- read.csv("data/2021/spatial_data/Community Sports.csv")
 }
 
 # Load/Rename Schools' Names
@@ -124,7 +125,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
 {
     iconSet <- iconList(
         parks = makeIcon("https://img.icons8.com/windows/32/000000/tree.png", iconWidth=20, iconHeight=20),
-        rec = makeIcon("https://img.icons8.com/glyph-neue/64/000000/basketball.png", iconWidth=20, iconHeight=20),
+        rec = makeIcon("https://img.icons8.com/external-glyph-mangsaabguru-/64/000000/external-recreational-kid-hobby-glyph-glyph-mangsaabguru-.png", iconWidth=20, iconHeight=20),
         gardens = makeIcon("https://img.icons8.com/dotty/80/000000/flower.png", iconWidth=20, iconHeight=20),
         bus = makeIcon("https://img.icons8.com/material-outlined/24/000000/bus.png", iconWidth=20, iconHeight=20),
         childcare = makeIcon("https://img.icons8.com/material-outlined/24/000000/rocking-horse.png", iconWidth=20, iconHeight=20),
@@ -138,13 +139,15 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
         pantries = makeIcon("https://img.icons8.com/ios/50/000000/can-soup.png", iconWidth = 20, iconHeight = 20),
         afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20),
         farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20),
-        commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20)
+        commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20),
+        sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20)
     )
 }
 
 function(input, output, session)
     
     # SchoolStats - GGPlots
+  {
     output$es_barplots <- renderPlotly({
         if(input$es_year == "Summer 2021"){
             if(input$es_select == "Average Class Size") {
@@ -1460,9 +1463,11 @@ function(input, output, session)
             }
         }
     })
+  }
     
     # SchoolStats - Context and Resources
-    output$es_resources <- renderText({
+  {  
+  output$es_resources <- renderText({
         if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
               paste("Advanced Placement (AP) courses are challenging, 
             collegiate-level courses that are offered to high school students. 
@@ -3070,45 +3075,26 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
               "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
                   them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
-      }
-      else if (input$hs_select == "Bachelor Degree Rate"){
-        paste("This graph shows the percentage of adults with bachelor’s 
-            degrees in each school zone. The number of individuals with 
-            bachelor’s degrees 
-                  greatly differs across racial, income, and gender groups. 
-                  Additionally, individuals with more degrees tend to have 
-                  greater household incomes.", "<br>", "<br>",
-              "Below is more information about bachelor degree rates:", "<br>",
-              a("Bachelor’s Degrees and Race",
-                href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
-              a("Bachelor’s Degrees and Income",
-                href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
-      }
-      
-      else if (input$hs_select == "Sidewalk Coverage"){
-        paste("Areas without sidewalk coverage can become inaccessible for
-                  people without cars or other modes of transportation, 
-                  both private and public. Sidewalks are needed for individuals 
-                  to safely walk to places such as school, grocery stores, 
-                  parks, etc. Especially for younger students, sidewalks are 
-                  essential for their safety. According to a UNC Highway Safety 
-                  Research Center study, the probability of a crash occurring 
-                  near or at a paved sidewalk is 88.2% lower than an unpaved 
-                  site.","<br>", "<br>", 
-              "Sidewalks also promote more physical activity and healthier 
-                  lifestyles. In the US specifically, obesity rates have been 
-                  steadily increasing across all populations and ages. 
-                  Sidewalk coverage provides people with a safe and accessible
-                  way to increase their daily physical activity." ,"<br>", "<br>",
-              "High income areas tend to have more sidewalk coverage than 
-                  lower income areas. 89% of high-income communities have 
-                  sidewalks, whereas only 49% of low income communities have 
-                  sidewalk coverage.", "<br>", "<br>",
-              "Below is more information about sidewalk coverage:", "<br>",
-              a("Importance of Sidewalks",
-                href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-              a("Income Disparities and Sidewalk Coverage",
-                href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
+        }
+        
+        else if (input$hs_select == "Graduation Rate"){
+            paste("The graph depicts the percentage of students estimated to graduate from high school in four years or less. 
+                  The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030.
+                  This is a significant increase from when the first reported graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
+                  rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a 
+                  gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, 
+                  especially school counselors and social workers, to reach out to students with extended absences. External factors 
+                  could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.
+                  ", "<br>", "<br>",
+                  "Below are more resources on graduation rates:", "<br>",
+                  a("Dashboard with Articles and Quick Facts about Graduation Rates",
+                    href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
+            
+        }
+
+    }) 
+    }
+    
 
     # Maps - Connecting variable drop down menu to variable info
     displayVar <- reactive({
@@ -3126,7 +3112,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Religious Centers" = religious,
                "Hospitals and Clinics" = hospitals,
                "After-School Care Programs" = afterschool,
-               "Community Arts" = commarts)
+               "Community Arts" = commarts,
+               "Community Sports" = sports)
     })
     
     # Maps - Connecting map variables to their icons
@@ -3145,7 +3132,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Religious Centers" = iconSet$religious,
                "Hospitals and Clinics" = iconSet$hospitals,
                "After-School Care Programs" = iconSet$afterschool,
-               "Community Arts" = iconSet$commarts)
+               "Community Arts" = iconSet$commarts,
+               "Community Sports" = iconSet$sports)
     })
     
     # Maps - Connecting name of school to input
@@ -3216,8 +3204,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
             addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools,
                        label = displaySchool()["name"])
     })
-    
-    # Maps - Context and Resources
     
     #helper function to make links look better and be clickable
     createLink <- function(val) {
@@ -3584,19 +3570,97 @@ for students to be placed into higher-level courses at their college.", "<br>","
             
         }
         else if(input$var == "Community Arts"){
-        paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
-        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
-        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
-        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
-        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
-        markets can be a more affordable option for local residents. ",
+        paste("Durham, North Carolina offers an array of arts programs that foster 
+        a plethora of individual and community benefits. Fine arts (painting, design, 
+        and photography), and performance arts (dance, theatre, and music) have been 
+        proven to boost self-confidence, improve cognition, and deepen cultural and 
+        self-understanding by helping students overcome insecurities, combining 
+        subject matters such as math, english, science, and history, as well as 
+        exposing students to different art styles and music genres.",
               "<br>",
               "<br>",
-              "Below is more information about Farmers' Markets:",
+              HTML(paste0(strong("Dance:"))),
+              "Dance is a form of physical activity that encourages self-expression, 
+              improves health, and increases mobility and strength. Children and 
+              adolescents that participate in dance learn different genres, cultural 
+              aspects and regional differences, and have the opportunity to choose 
+              between cheerleading, gymnastics, interpretive dance, martial arts, and more!",
               "<br>",
-              a("Farmers' Market Coalition", 
-                href = "https://farmersmarketcoalition.org/education/qanda/"))
-        
+              a("Health Benefits of Dance", 
+                href = "https://www.prudential.co.th/corp/prudential-th/en/we-do-pulse/health-wellness/10-health-benefits-of-dancing/"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Theatre:"))),
+              "Theatre is a type of performance art that incorporates and fuses acting, 
+              singing, and dancing. On the stage, individuals have the opportunity to 
+              strengthen concentration and memory, improve articulation and fluency, and 
+              build trust as they interact and collaborate with others.",
+              "<br>",
+              a("Benefits of Theatre Education", 
+                href = "https://www.acttooplayers.com/benefits-of-theatre-education"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Music:"))),
+              "Music incorporates vocal and instrumental performance, studio production, 
+              songwriting, and even  listening enjoyment. Music students have the 
+              opportunity to learn concepts such as theory, history, acoustics, and 
+              instrumental and vocal skills and techniques. Music performance has been 
+              proven to teach discipline, relieve stress, reduce stage fright, and improve 
+              academic levels.",
+              "<br>",
+              a("Benefits of Musical Incorporation", 
+                href = "https://www.stamfordschools.org.uk/wp-content/uploads/2021/08/18-benefits-of-playing-a-musical-instrument.pdf"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Visual:"))),
+              "Visual arts consists of painting, drawing, printmaking, sculpture, ceramics,
+              photography, video, filmmaking, design, crafts and architecture. Engaging in 
+              visual arts exposes children and adolescents to positive benefits that include; 
+              but are not limited to, having a space to create innovatively, improving motor 
+              skills, and expressing emotions.", 
+              a("Benefits of Visual Arts", 
+                href = "https://www.linkedin.com/pulse/20-benefits-visual-arts-children-aniruddah-andalib"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Museums:"))),
+              "Museums care for and display artistic, cultural, historical, and scientific 
+              artifacts. Museums help people of all walks of life understand the world around 
+              them, and embolden viewers to examine exhibits and develop perspective in 
+              informal learning environments.",
+              "<br>",
+              a("The Impact of Museums", 
+                href = "https://www.museumsassociation.org/campaigns/museums-change-lives/the-impact-of-museums/#"), 
+              "<br>",
+                a("Why Visit Museums", 
+                  href = "https://www.colleendilen.com/2009/07/31/10-reasons-to-visit-a-museum/"),
+              "<br>",
+              "<br>",
+              HTML(paste0(strong("Martial Arts:"))),
+              "Martial arts consists of various forms of self-defense or combat that promote 
+              safety,  hand-eye coordination, discipline, health and weight loss, and several 
+              mental health benefits including boosted self-esteem, increased focus, and mental 
+              calmness.",
+              "<br>",
+              a("Benefits of Martial Arts", 
+                href = "https://wayofmartialarts.com/benefits-of-martial-arts/"))
+        }
+      else if(input$var == "Community Sports"){
+        paste("DPS provides a wide range of sports across middle and high schools 
+              to promote teambuilding, responsibility, discipline, and leadership. 
+              Participation in school sports provides students with the daily 
+              exercise requirements suggested in the", 
+              a("CDC guidelines",
+                href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+              ". The Office of Disease Prevention and Health Promotion concluded that 
+              “higher amounts of physical activity are associated with more favorable 
+              status for multiple health indicators, including cardiorespiratory and 
+              muscular fitness, bone health, and weight status or adiposity,” in their",
+              a("Activity Guidelines for Americans Report",
+                href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+              ". Visit",
+              a("DPS’s Athletics webpage ",
+                href = "https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+              " for more information.")
       }
     })
     
@@ -3631,6 +3695,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("After-School Care Programs"))
           else if(input$var == "Community Arts")
             paste(h4("After-School Care Programs"))
+          else if(input$var == "Community Sports")
+            paste(h4("After-School Care Programs"))
         })
         
         output$busicon <- renderText({
@@ -3661,6 +3727,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Farmers' Markets")
                 paste(h4("Bus Stops"))
           else if(input$var == "Community Arts")
+            paste(h4("Bus Stops"))
+          else if(input$var == "Community Sports")
             paste(h4("Bus Stops"))
         })
         
@@ -3693,6 +3761,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Childcare Centers"))
           else if(input$var == "Community Arts")
             paste(h4("Childcare Centers"))
+          else if(input$var == "Community Sports")
+            paste(h4("Childcare Centers"))
         })
         
         output$parkicon <- renderText({
@@ -3723,6 +3793,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Farmers' Markets")
                 paste(h4("Parks"))
           else if(input$var == "Community Arts")
+            paste(h4("Parks"))
+          else if(input$var == "Community Sports")
             paste(h4("Parks"))
         })
         
@@ -3755,6 +3827,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Recreation Centers"))
           else if(input$var == "Community Arts")
             paste(h4("Recreation Centers"))
+          else if(input$var == "Community Sports")
+            paste(h4("Recreation Centers"))
         })
         
         output$gardenicon <- renderText({
@@ -3785,6 +3859,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Farmers' Markets")
                 paste(h4("Gardens"))
           else if(input$var == "Community Arts")
+            paste(h4("Gardens"))
+          else if(input$var == "Community Sports")
             paste(h4("Gardens"))
         })
         
@@ -3817,6 +3893,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Community & Cultural Centers"))
           else if(input$var == "Community Arts")
             paste(h4("Community & Cultural Centers"))
+          else if(input$var == "Community Sports")
+            paste(h4("Community & Cultural Centers"))
         })
         
         output$groceryicon <- renderText({
@@ -3847,6 +3925,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Farmers' Markets")
                 paste(h4("Grocery Stores"))
           else if(input$var == "Community Arts")
+            paste(h4("Grocery Stores"))
+          else if(input$var == "Community Sports")
             paste(h4("Grocery Stores"))
         })
         
@@ -3879,6 +3959,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Libraries"))
           else if(input$var == "Community Arts")
             paste(h4("Libraries"))
+          else if(input$var == "Community Sports")
+            paste(h4("Libraries"))
         })
         
         output$religiousicon <- renderText({
@@ -3909,6 +3991,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Farmers' Markets")
                 paste(h4("Religious Centers"))
           else if(input$var == "Community Arts")
+            paste(h4("Religious Centers"))
+          else if(input$var == "Community Sports")
             paste(h4("Religious Centers"))
         })
         
@@ -3941,6 +4025,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Hospitals & Clinics"))
           else if(input$var == "Community Arts")
             paste(h4("Hospitals & Clinics"))
+          else if(input$var == "Community Sports")
+            paste(h4("Hospitals & Clinics"))
         })
         
         output$pantryicon <- renderText({
@@ -3971,6 +4057,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Farmers' Markets")
                 paste(h4("Food Pantries"))
           else if(input$var == "Community Arts")
+            paste(h4("Food Pantries"))
+          else if(input$var == "Community Sports")
             paste(h4("Food Pantries"))
         })
         
@@ -4003,6 +4091,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4(HTML(paste0(strong("Farmers' Markets")))))
             else if(input$var == "Community Arts")
                 paste(h4("Farmer's Markets"))
+          else if(input$var == "Community Sports")
+            paste(h4("Farmer's Markets"))
         })
         
         output$artsicon <- renderText({
@@ -4034,6 +4124,41 @@ for students to be placed into higher-level courses at their college.", "<br>","
             paste(h4("Community Arts"))
           else if(input$var == "Community Arts")
             paste(h4(HTML(paste0(strong("Community Arts")))))
+          else if(input$var == "Community Sports")
+            paste(h4("Community Arts"))
+        })
+        
+        output$sportsicon <- renderText({
+          if(input$var == "After-School Care Programs")
+            paste(h4("Community Sports"))
+          else if (input$var == "Parks")
+            paste(h4("Community Sports"))
+          else if(input$var == "Recreation Centers")
+            paste(h4("Community Sports"))
+          else if(input$var == "Gardens")
+            paste(h4("Community Sports"))
+          else if(input$var == "Bus Stops")
+            paste(h4("Community Sports"))
+          else if(input$var == "Childcare Centers")
+            paste(h4("Community Sports"))
+          else if(input$var == "Community & Cultural Centers")
+            paste(h4("Community Sports"))
+          else if(input$var == "Grocery Stores")
+            paste(h4("Community Sports"))
+          else if(input$var == "Libraries")
+            paste(h4("Community Sports"))
+          else if(input$var == "Religious Centers")
+            paste(h4("Community Sports"))
+          else if(input$var == "Hospitals and Clinics")
+            paste(h4("Community Sports"))
+          else if(input$var == "Food Pantries")
+            paste(h4("Community Sports"))
+          else if(input$var == "Farmers' Markets")
+            paste(h4("Community Sports"))
+          else if(input$var == "Community Arts")
+            paste(h4("Community Sports"))
+          else if(input$var == "Community Sports")
+            paste(h4(HTML(paste0(strong("Community Sports")))))
         })
         
     }
