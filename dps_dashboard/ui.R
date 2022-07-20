@@ -19,6 +19,10 @@ library(tidyr)
 library(readxl)
 library(gotop)
 
+library(DT)
+
+
+
 sidebar <- {dashboardSidebar(
     
     tags$head(tags$script(HTML('
@@ -38,8 +42,8 @@ sidebar <- {dashboardSidebar(
         menuItem("Home", tabName = "home", icon = icon("fas fa-home")),
         menuItem("Maps", tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
-        menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("fas fa-paint")),
-        menuItem("School Sports", tabName = "sportstab", icon = icon("fas fa-paint")),
+        menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("book")),
+        menuItem("School Sports", tabName = "sportstab", icon = icon("basketball-ball")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
@@ -309,7 +313,8 @@ body <- {dashboardBody(
                                 )
                               ))
         )))},
-      #Electives Tab
+        
+        #Electives Tab
         {tabItem(tabName = "electivestab",
                 fluidRow(
                   tabBox(
@@ -373,7 +378,130 @@ body <- {dashboardBody(
                                box(width = 4,
                                    title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
                                    htmlOutput("TradeCTE", align="left")))),
-                    tabPanel("Arts Programs")
+                    tabPanel("Arts Programs",
+                             fluidRow(
+                               box(width = 6, title = strong("Dance"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Dance is a form of physical activity that encourages self-expression, 
+                                     improves health, and increases mobility and strength. Children and 
+                                     adolescents that participate in dance learn different genres, cultural 
+                                     aspects, and regional differences, and have the opportunity to choose 
+                                     between cheerleading, gymnastics, interpretive dance, martial arts, and more!")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                     href="https://duke.edu/", 
+                                     tags$img(src="duke.png", 
+                                              title="Duke Logo",
+                                              class= "img-responsive")
+                                   )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                     href="https://duke.edu/", 
+                                     tags$img(src="duke.png",
+                                              title="Duke Logo",
+                                              class= "img-responsive")
+                                   )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")))
+                                   ),
+                               box(width = 6, title = strong("Theatre"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Theatre is a type of performance art that incorporates and fuses acting, 
+                                        singing, and dancing. On the stage, individuals have the opportunity to 
+                                        strengthen concentration and memory, improve articulation and fluency, 
+                                        and build trust as they interact and collaborate with others. ")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png", 
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")))
+                             )),
+                             fluidRow(
+                               box(width = 6,
+                                   title = strong("Music"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Music incorporates vocal and instrumental performance, 
+                                   studio production, songwriting, and even  listening enjoyment. 
+                                   Music students have the opportunity to learn concepts such as 
+                                   theory, history, acoustics, and instrumental and vocal skill 
+                                   and technique. Music performance has been proven to teach 
+                                   discipline, relieve stress, reduce stage fright, and improve 
+                                   academic levels. 
+")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png", 
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")))),
+                               box(width = 6,
+                                   title = strong("Visual"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Visual arts consist of painting, drawing, printmaking, 
+                                        sculpture, ceramics, photography, video, filmmaking, 
+                                        design, crafts and architecture. Engaging in visual 
+                                        arts exposes children and adolescents to positive 
+                                        benefits that include; but are not limited to, having a 
+                                        space to create innovatively, improving motor skills, and 
+                                        expressing emotions.")),
+                                   br(),
+                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png", 
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive")
+                                          )),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://duke.edu/", 
+                                            tags$img(src="duke.png",
+                                                     title="Duke Logo",
+                                                     class= "img-responsive"))))
+                             ))
                   )
                 )
         )},
@@ -393,32 +521,66 @@ body <- {dashboardBody(
                               fluidRow(
                                 box(width = 4,
                                     title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
-                                    htmlOutput("fallsports", align="left")),
+                                    column(12, align="center", tableOutput("fallsports"))), 
                                 box(width = 4,
                                     title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
-                                    htmlOutput("wintersports", align="left")),
+                                    column(12, align="center", tableOutput("wintersports"))),
                                 box(width = 4,
-                                    title = strong("Sping Sports"), background = "light-blue", solidHeader = TRUE,
-                                    htmlOutput("springsports", align="left")))
+                                    title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
+                                    column(12, align="center", tableOutput("springsports"))),
+                                ),
+                              fluidRow(
+                                box(width = 4,
+                                    title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
+                                    column(12, align="center", tableOutput("male_sports_icons"))),
+                                box(width = 4,
+                                    title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
+                                    column(12, align="center", tableOutput("female_sports_icons"))),
+                                box(width = 4,
+                                    solidHeader = TRUE,
+                                    title = strong("Icon Legend"),
+                                    column(12, align="center", tableOutput("sports_icon_legend"))),
+                                )
+                        
                      ),
                      tabPanel("Community Sports", class = "text-center"
                               
                               )
                    )
-                 )
+                 ),
+                
         )},
+      
         #Data Insights tab
         {tabItem(tabName = "insightstab",
                  
                  fluidRow(
-                     box(width  = 12,
-                         solidHeader = TRUE,
-                         title = strong("Map Comparison Of School Districts"),
-                         h4("Different school districts are differently colored according to the variable selected."),
-                         leafletOutput("choropleth")),
+                   box(width  = 12,
+                       solidHeader = TRUE,
+                       title = strong("Map Comparison Of School Districts"),
+                       h4("Different school districts are differently colored according to the variable selected."),
+                       leafletOutput("choropleth")),
+                 ), 
+                 fluidRow(
+                   box(width = 2,
+                       solidHeader = TRUE,
+                       title = strong("School Zone"),
+                       selectInput("insights_zone",
+                                   label = em("Choose a school zone to display"),
+                                   choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                               "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                               "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                               "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                               "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                   ),
+                                   multiple = FALSE)),
+                   box(width = 10,
+                       title = strong("Resources In Each School Zone"),
+                       plotlyOutput("insights_individualplots",
+                                    width="auto",
+                                    height = "auto"))
                  )
         )},
-        
         
         #Meet the team tab
         {tabItem(tabName = "teamstab",
@@ -574,7 +736,7 @@ body <- {dashboardBody(
                          selectInput("var",
                                      label = em("Choose a variable to display"),
                                      choices = c("After-School Care Programs", "Bus Stops", 
-                                                 "Childcare Centers", "Community & Cultural Centers", "Farmers' Markets", "Food Pantries", "Gardens",
+                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                  "Recreation Centers", "Religious Centers"),
                                      multiple = FALSE)),
@@ -683,6 +845,13 @@ body <- {dashboardBody(
                               column(width = 1),
                               column(width = 8, htmlOutput("religiousicon")
                               )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("artsicon")
+                            ))
                      )},
                  )
         )}
@@ -697,5 +866,4 @@ dashboardPage(
     sidebar,
     body
 )
-
 

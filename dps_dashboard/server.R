@@ -1,4 +1,4 @@
-
+   #
 # This is the server logic of a Shiny web application. You can run the
 # application by clicking 'Run App' above.
 #
@@ -14,10 +14,10 @@ library(leaflet)
 library(leaflet.extras)
 library(tidyverse)
 library(plotly)
-library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
+
 
 
 # Load/Rename School Stats Data
@@ -58,7 +58,17 @@ library(gotop)
     HS_stats_22 <- read.csv("data/2022/school_stats_data/HS_stats_22.csv")
     
     APCourses <- read_excel("data/2022/AP Courses.xlsx")
+
+    
+    #data for the data insights tab
+    counts_2021 <- read.csv("data/2021/spatial_data/counts.csv", skip = 1)
+    counts_grouped_2021 <- read.csv("data/2021/spatial_data/counts grouped.csv")
+    pop<- read.csv("data/2021/school_stats_data/population.csv")
+
     CTECourses <- read_excel("data/2022/CTE Courses.xlsx")
+    sports_22 <- read.csv("data/2022/school_stats_data/sports.csv")
+    
+
 }
 
 # Load/Rename Map Data
@@ -97,7 +107,8 @@ library(gotop)
     hospitals <- read.csv("data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
     pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
-    farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv")
+    farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
+    commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
 }
 
 # Load/Rename Schools' Names
@@ -126,7 +137,8 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
         hospitals = makeIcon("https://img.icons8.com/pastel-glyph/64/000000/hospital-wagon-without-a-siren.png", iconWidth = 20, iconHeight = 20),
         pantries = makeIcon("https://img.icons8.com/ios/50/000000/can-soup.png", iconWidth = 20, iconHeight = 20),
         afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20),
-        farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20)
+        farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20),
+        commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20)
     )
 }
 
@@ -1732,11 +1744,11 @@ function(input, output, session)
             
         }
         else if (input$es_select == "Racial Demographics"){
+
             paste("This dataset shows the racial breakdown of each of the 16 
             public schools. Durham Public Schools’ student population 
                   is 80.7% students of color, but only 57% of Durham County is 
-                  people of color. The racial demographics of all 16 schools has
-                  changed over time, specifically in the past 30 years. The number of 
+                  people of color. The racial demographics of all 16 schools has                  changed over time, specifically in the past 30 years. The number of 
                   white students has decreased, while the number of students of 
                   color has 
                   increased.",
@@ -1748,7 +1760,7 @@ function(input, output, session)
                   because of cultural differences. Students who are able to 
                   connect with 
                   their tutors, teachers, administrators, and the content tend 
-                  to engage with the content more.", "<br>","<br>",
+                  to engage with the content more.", "<br>","<br>"
                   "Below is more information about racial demographics in schools:", "<br>",
                   a("Changing School Racial Demographics in Recent Decades",
                     href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
@@ -3113,7 +3125,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Libraries" = libraries, 
                "Religious Centers" = religious,
                "Hospitals and Clinics" = hospitals,
-               "After-School Care Programs" = afterschool)
+               "After-School Care Programs" = afterschool,
+               "Community Arts" = commarts)
     })
     
     # Maps - Connecting map variables to their icons
@@ -3131,7 +3144,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Libraries" = iconSet$libraries, 
                "Religious Centers" = iconSet$religious,
                "Hospitals and Clinics" = iconSet$hospitals,
-               "After-School Care Programs" = iconSet$afterschool)
+               "After-School Care Programs" = iconSet$afterschool,
+               "Community Arts" = iconSet$commarts)
     })
     
     # Maps - Connecting name of school to input
@@ -3288,20 +3302,42 @@ for students to be placed into higher-level courses at their college.", "<br>","
             temp_df$URL <- createLink(temp_df$URL)
             temp_df[c("name","ADDRESS", "URL")]
         }
+      else if(input$var == "Community Arts")
+      {
+        temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+        temp_df$URL <- createLink(temp_df$URL)
+        temp_df[c("name","Type","ADDRESS", "URL")]
+      }
     }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
     )
     
+
+    
+    #Data Insight tab plots
+    
+
     output$choropleth <- renderLeaflet({
-        leaflet(
-            displayZone()) %>%
-            addProviderTiles("CartoDB.Positron") %>%
-            addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
-            addResetMapButton() %>%
-            addPolygons(data = durham,
-                        fillColor = displayColor(),
-                        stroke = TRUE,
-                        fillOpacity = 0.39,
-                        smoothFactor = 1)
+      leaflet(
+        displayZone()) %>%
+        addProviderTiles("CartoDB.Positron") %>%
+        addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+        addResetMapButton() %>%
+        addPolygons(data = durham,
+                    fillColor = displayColor(),
+                    stroke = TRUE,
+                    fillOpacity = 0.39,
+                    smoothFactor = 1)
+    })
+    
+    output$insights_individualplots <- renderPlotly({
+      counts_grouped<-counts_grouped_2021
+      counts_grouped<-counts_grouped_2021[!(counts_grouped_2021$name=="All School"),]
+      counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Elementary School', 'Lakewood Elementary')
+      counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Middle School', 'Lakewood Middle')
+      counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
+      counts_grouped <- subset(counts_grouped, name == input$insights_zone)
+      ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
+        xlab("Number of Resource") + ylab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
     })
     
     output$context <- renderText({
@@ -3547,6 +3583,21 @@ for students to be placed into higher-level courses at their college.", "<br>","
                     href = "https://farmersmarketcoalition.org/education/qanda/"))
             
         }
+        else if(input$var == "Community Arts"){
+        paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
+        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
+        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
+        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
+        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
+        markets can be a more affordable option for local residents. ",
+              "<br>",
+              "<br>",
+              "Below is more information about Farmers' Markets:",
+              "<br>",
+              a("Farmers' Market Coalition", 
+                href = "https://farmersmarketcoalition.org/education/qanda/"))
+        
+      }
     })
     
     # Maps - Icon legend outputs
@@ -3578,6 +3629,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("After-School Care Programs"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("After-School Care Programs"))
+          else if(input$var == "Community Arts")
+            paste(h4("After-School Care Programs"))
         })
         
         output$busicon <- renderText({
@@ -3607,6 +3660,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Bus Stops"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Bus Stops"))
+          else if(input$var == "Community Arts")
+            paste(h4("Bus Stops"))
         })
         
         output$childcareicon <- renderText({
@@ -3636,6 +3691,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Childcare Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Childcare Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Childcare Centers"))
         })
         
         output$parkicon <- renderText({
@@ -3665,6 +3722,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Parks"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Parks"))
+          else if(input$var == "Community Arts")
+            paste(h4("Parks"))
         })
         
         output$recicon <- renderText({
@@ -3694,6 +3753,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Recreation Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Recreation Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Recreation Centers"))
         })
         
         output$gardenicon <- renderText({
@@ -3723,6 +3784,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Gardens"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Gardens"))
+          else if(input$var == "Community Arts")
+            paste(h4("Gardens"))
         })
         
         output$cultureicon <- renderText({
@@ -3752,6 +3815,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Community & Cultural Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Community & Cultural Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Community & Cultural Centers"))
         })
         
         output$groceryicon <- renderText({
@@ -3781,6 +3846,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Grocery Stores"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Grocery Stores"))
+          else if(input$var == "Community Arts")
+            paste(h4("Grocery Stores"))
         })
         
         output$libraryicon <- renderText({
@@ -3810,6 +3877,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Libraries"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Libraries"))
+          else if(input$var == "Community Arts")
+            paste(h4("Libraries"))
         })
         
         output$religiousicon <- renderText({
@@ -3839,6 +3908,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Religious Centers"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Religious Centers"))
+          else if(input$var == "Community Arts")
+            paste(h4("Religious Centers"))
         })
         
         output$hospitalicon <- renderText({
@@ -3868,6 +3939,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Hospitals & Clinics"))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Hospitals & Clinics"))
+          else if(input$var == "Community Arts")
+            paste(h4("Hospitals & Clinics"))
         })
         
         output$pantryicon <- renderText({
@@ -3897,6 +3970,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4(HTML(paste0(strong("Food Pantries")))))
             else if(input$var == "Farmers' Markets")
                 paste(h4("Food Pantries"))
+          else if(input$var == "Community Arts")
+            paste(h4("Food Pantries"))
         })
         
         output$marketicon <- renderText({
@@ -3926,6 +4001,39 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Farmer's Markets"))
             else if(input$var == "Farmers' Markets")
                 paste(h4(HTML(paste0(strong("Farmers' Markets")))))
+            else if(input$var == "Community Arts")
+                paste(h4("Farmer's Markets"))
+        })
+        
+        output$artsicon <- renderText({
+          if(input$var == "After-School Care Programs")
+            paste(h4("Community Arts"))
+          else if (input$var == "Parks")
+            paste(h4("Community Arts"))
+          else if(input$var == "Recreation Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Gardens")
+            paste(h4("Community Arts"))
+          else if(input$var == "Bus Stops")
+            paste(h4("Community Arts"))
+          else if(input$var == "Childcare Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Community & Cultural Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Grocery Stores")
+            paste(h4("Community Arts"))
+          else if(input$var == "Libraries")
+            paste(h4("Community Arts"))
+          else if(input$var == "Religious Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Hospitals and Clinics")
+            paste(h4("Community Arts"))
+          else if(input$var == "Food Pantries")
+            paste(h4("Community Arts"))
+          else if(input$var == "Farmers' Markets")
+            paste(h4("Community Arts"))
+          else if(input$var == "Community Arts")
+            paste(h4(HTML(paste0(strong("Community Arts")))))
         })
         
     }
@@ -4216,196 +4324,134 @@ for students to be placed into higher-level courses at their college.", "<br>","
     
     #Sports
     {
-      output$fallsports <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Boy’s Cross Country")),
-                h4(strong("Boy’s Soccer")),
-                h4(strong("Football")),
-                h4(strong("Volleyball")),
-                h4(strong("Girl’s Cross Country"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Boy’s Cross Country")),
-                h4(strong("Girl’s Cross Country")),
-                h4(strong("Boy’s Soccer")),
-                h4(strong("Football")),
-                h4(strong("Volleyball"))
-          )
-        }
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Boy’s Cross Country")),
-                h4(strong("Boy’s Soccer")),
-                h4(strong("Volleyball"))
-          )
-        }
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Cheerleading")),
-                h4(strong("Cross Country")),
-                h4(strong("Field Hockey")),
-                h4(strong("Football")),
-                h4(strong("JV Football")),
-                h4(strong("Men’s JV Soccer")),
-                h4(strong("Men’s Soccer")),
-                h4(strong("Women’s Golf")),
-                h4(strong("Women’s JV Volleyball")),
-                h4(strong("Women’s Tennis")),
-                h4(strong("Women’s Volleyball"))
-          )
-        }
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Cheerleading")),
-                h4(strong("Field Hockey")),
-                h4(strong("Football")),
-                h4(strong("JV Football")),
-                h4(strong("Men’s JV Soccer")),
-                h4(strong("Men’s Soccer")),
-                h4(strong("Men’s Cross Country")),
-                h4(strong("Women’s Golf")),
-                h4(strong("Women’s Volleyball")),
-                h4(strong("Women’s JV Volleyball")),
-                h4(strong("Women’s Tennis")),
-                h4(strong("Women’s Track"))
-          )
-        }
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Field Hockey")),
-                h4(strong("Football")),
-                h4(strong("JV Football")),
-                h4(strong("Men’s JV Soccer")),
-                h4(strong("Men’s Soccer")),
-                h4(strong("Women’s Golf")),
-                h4(strong("Women’s JV Volleyball")),
-                h4(strong("Women’s Volleyball")),
-                h4(strong("Women’s Tennis"))
-          )
-        }
-      })
-      output$wintersports <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Boy’s Basketball")),
-                h4(strong("Girl’s Basketball")),
-                h4(strong("Wrestling"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Boy’s Basketball")),
-                h4(strong("Girl’s Basketball"))
-          )
-        }
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Boy’s Basketball")),
-                h4(strong("Girl’s Basketball"))
-          )
-        }
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Gymnastics")),
-                h4(strong("Indoor Track")),
-                h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketball")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling"))
-          )
-        }
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketballl")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling")),
-                h4(strong("Indoor Track"))
-          )
-        }
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Gymnastics")),
-                h4(strong("Indoor Track")),
-                h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketball")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling"))
-          )
-        }
-      })
-      output$springsports <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Baseball")),
-                h4(strong("Girl’s Soccer")),
-                h4(strong("Girl’s Track")),
-                h4(strong("Boy’s Track")),
-                h4(strong("Softball"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Baseball")),
-                h4(strong("Boy’s Track")),
-                h4(strong("Girl’s Soccer")),
-                h4(strong("Girl’s Track")),
-                h4(strong("Softball"))
-          )
-        }
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Boy’s Track")),
-                h4(strong("Girl’s Track")),
-                h4(strong("Baseball")),
-                h4(strong("Girl’s Soccer")),
-                h4(strong("Softball"))
-          )
-        }
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Baseball")),
-                h4(strong("JV Baseball")),
-                h4(strong("JV Softball")),
-                h4(strong("Men’s Golf")),
-                h4(strong("Men’s JV Lacrosse")),
-                h4(strong("Men’s Lacrosse")),
-                h4(strong("Men’s Tennis")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field")),
-                h4(strong("JV Women’s Soccer")),
-                h4(strong("Women’s Lacrosse")),
-                h4(strong("Women’s Soccer"))
-          )
-        }
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Baseball")),
-                h4(strong("JV Baseball")),
-                h4(strong("JV Softball")),
-                h4(strong("Men’s Golf")),
-                h4(strong("Men’s JV Lacrosse")),
-                h4(strong("Men’s Lacrosse")),
-                h4(strong("Men’s Tennis")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field")),
-                h4(strong("Women’s JV Lacrosse")),
-                h4(strong("Women’s Lacrosse")),
-                h4(strong("Women’s JV Soccer")),
-                h4(strong("Women’s Soccer"))
-          )
-        }
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Baseball")),
-                h4(strong("JV Baseball")),
-                h4(strong("JV Softball")),
-                h4(strong("Men’s Golf")),
-                h4(strong("Men’s JV Lacrosse")),
-                h4(strong("Men’s Lacrosse")),
-                h4(strong("Men’s Tennis")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field")),
-                h4(strong("Women’s JV Lacrosse")),
-                h4(strong("Women’s JV Soccer")),
-                h4(strong("Women’s Lacrosse")),
-                h4(strong("Women’s Soccer"))
-          )
-        }
-      })
-
+      output$fallsports <- renderTable({
+        sports <- subset(sports_22, season == 'fall' & schoolname == input$school_sports)
+        sports$gender[sports$gender == 'All'] <- ''
+        sports <- sports%>%
+          unite(sport_name, gender, sport, sep=" ")
+        sports$sport_name <- trimws(sports$sport_name)
+        sports %>% select(sport_name)
+      },colnames = FALSE, align = 'c', spacing = 'l')
+      
+      output$wintersports <- renderTable({
+        sports <- subset(sports_22, season == 'winter' & schoolname == input$school_sports)
+        sports$gender[sports$gender == 'All'] <- ''
+        sports <- sports%>%
+          unite(sport_name, gender, sport, sep=" ")
+        sports$sport_name <- trimws(sports$sport_name)
+        sports %>% select(sport_name)
+      }, colnames = FALSE, align = 'c', spacing = 'l')
+      
+      output$springsports <- renderTable({
+        sports <- subset(sports_22, season == 'spring' & schoolname == input$school_sports)
+        sports$gender[sports$gender == 'All'] <- ''
+        sports <- sports%>%
+          unite(sport_name, gender, sport, sep=" ")
+        sports$sport_name <- trimws(sports$sport_name)
+        sports %>% select(sport_name)
+      }, colnames = FALSE, align = 'c', spacing = 'l')
+      
+      output$male_sports_icons <- renderTable ({
+        sports <- sports_22
+        sports$icon = ""
+        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
+        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
+        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
+        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
+        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
+        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
+        
+        sports <- subset(sports, (gender == 'All' | gender == "Men's" | gender == "Boy's") & schoolname == input$school_sports)
+        sports <- subset(sports, !duplicated(icon))
+        sports %>% select(icon)
+      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
+      
+      output$female_sports_icons <- renderTable ({
+        sports <- sports_22
+        sports$icon = ""
+        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
+        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
+        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
+        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
+        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
+        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
+        
+        sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
+        sports <- subset(sports, !duplicated(icon))
+        sports %>% select(icon)
+      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
+      
+      output$sports_icon_legend <- renderTable({
+        sports <- sports_22
+        sports$icon = ""
+        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
+        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
+        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
+        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
+        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
+        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
+        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
+        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
+        sports <- subset(sports, !duplicated(icon))
+        sports %>% select(sport, icon)
+      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
     }
     
 }
+
+  
