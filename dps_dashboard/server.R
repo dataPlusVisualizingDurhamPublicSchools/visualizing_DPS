@@ -3358,8 +3358,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         }
         else if(input$var == "Gardens"){
             paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
-        A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as 
-        likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to 
+        A study of 63 gardens in upstate New York found that gardens in low-income neighborhoods (46%) bring awareness to other issues and 
+lead to them being addressed addressed; reportedly due to 
         organizing facilitated through the community gardens” (Armstrong). Another study published in Public Health Nutrition 
         noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community 
         gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually 
