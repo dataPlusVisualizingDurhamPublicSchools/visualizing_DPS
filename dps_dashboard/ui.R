@@ -380,6 +380,11 @@ body <- {dashboardBody(
                                    htmlOutput("TradeCTE", align="left")))),
                     tabPanel("Arts Programs",
                              fluidRow(
+                               box(width = 12,
+                                   title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                                   column(12, align="center", tableOutput("available_arts")))
+                             ),
+                             fluidRow(
                                box(width = 6, title = strong("Dance"), status = "primary", solidHeader = TRUE,
                                    p(h4("Dance is a form of physical activity that encourages self-expression, 
                                      improves health, and increases mobility and strength. Children and 
@@ -472,7 +477,7 @@ body <- {dashboardBody(
                                                      class= "img-responsive")))),
                                box(width = 6,
                                    title = strong("Visual"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Visual arts consist of painting, drawing, printmaking, 
+                                   p(h4("Visual arts consists of painting, drawing, printmaking, 
                                         sculpture, ceramics, photography, video, filmmaking, 
                                         design, crafts and architecture. Engaging in visual 
                                         arts exposes children and adolescents to positive 
@@ -617,11 +622,10 @@ body <- {dashboardBody(
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
-                                  General Psychology. Patience joined the Data+ project team because she was 
-                                  interested in learning more about data science and its integration into education
-                                  policy. She hopes this dashboard makes an impact on not only these ten community
-                                  schools in the dataset, but students in all Durham Public Schools and beyond, 
-                                  in hopes to make education more accessible to all students.")),
+                                  General Psychology. Patience continued the Data+ project team because she was 
+                                  wanted to continue the work she did the previous summer in hopes to improve the dashboard
+                                  to make it more accessible. With her background in education policy, she hopes to integrate
+                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyonds.")),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
@@ -675,7 +679,7 @@ body <- {dashboardBody(
                          br(),
                          fluidRow(
                              column(width = 3,
-                                    img(src = "patience3.jpeg")),
+                                    img(src = "patience3.jpg")),
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
@@ -736,7 +740,7 @@ body <- {dashboardBody(
                          selectInput("var",
                                      label = em("Choose a variable to display"),
                                      choices = c("After-School Care Programs", "Bus Stops", 
-                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts","Farmers' Markets", "Food Pantries", "Gardens",
+                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                  "Recreation Centers", "Religious Centers"),
                                      multiple = FALSE)),
@@ -834,7 +838,7 @@ body <- {dashboardBody(
                           br(),
                           fluidRow(
                               column( width = 1,
-                                      img(src = "rec_icon.png", width = 40, height = 40, align = "left")),
+                                      img(src = "recicon.png", width = 40, height = 40, align = "left")),
                               column(width = 1),
                               column(width = 8, htmlOutput("recicon")
                               )),
@@ -851,6 +855,13 @@ body <- {dashboardBody(
                                     img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
                             column(width = 1),
                             column(width = 8, htmlOutput("artsicon")
+                            )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "commsportsicon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("sportsicon")
                             ))
                      )},
                  )
