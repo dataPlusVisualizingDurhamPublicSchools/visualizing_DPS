@@ -144,7 +144,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-function(input, output, session) { 
+function(input, output, session)
     
     # SchoolStats - GGPlots
   {
@@ -1469,9 +1469,14 @@ function(input, output, session) {
   {  
   output$es_resources <- renderText({
         if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
-            paste("Advanced Placement (AP) courses are challenging, collegiate-level courses that are offered to high school students. AP courses weigh more than honors courses on the high school level.
-Students can take these classes for an opportunity to receive college credit upon scoring a three or higher (out of five) on the standardized assessment, which saves the student money on college tuition. AP classes also serve as a way for students to be placed into higher-level courses at their college.
-", "<br>","<br>",
+              paste("Advanced Placement (AP) courses are challenging, 
+            collegiate-level courses that are offered to high school students. 
+            AP courses weigh more than honors courses on the high school level. 
+            Students can take these classes for an opportunity to receive 
+            college credit upon scoring a three or higher (out of five) on the 
+            standardized assessment, which saves the student money on college 
+            tuition. AP classes also serve as a way for students to be placed 
+            into higher-level courses at their college.", "<br>","<br>",
                   "Below is more information about AP courses:", "<br>", 
                   a("NCDPI AP Courses", 
                     href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
@@ -1480,7 +1485,11 @@ Students can take these classes for an opportunity to receive college credit upo
                   a("College Board",
                     href="https://apstudents.collegeboard.org/course-index-page"))
         }else if (input$es_select == "Average Class Size"){
-            paste("Research proves smaller class size is beneficial to student achievement. Smaller classes allow for the teacher to focus less on classroom management, and more on centralized learning. Students have stated they feel more comfortable in smaller classes as well.","<br>","<br>",
+            paste("Research proves smaller class size is beneficial to student 
+                  achievement. Smaller classes allow for the teacher to focus 
+                  less on classroom management, and more on centralized 
+                  learning. Students have stated they feel more comfortable in 
+                  smaller classes as well.","<br>","<br>",
                   "Resources Discussing the Importance of Class Size:","<br>",
                   a("The Benefits of Investing in Smaller Class Sizes",
                     href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
@@ -1488,7 +1497,16 @@ Students can take these classes for an opportunity to receive college credit upo
                     href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
         }
         else if (input$es_select == "CTE Course Enrollment Rate, High School"){
-            paste("Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where all high school students are required to take three CTE courses, participate in two career exposure activities, and get an internship or a job before they graduate. This initiative, as well as all of CTE courses, are created to develop students’ soft skills, gain real-world experience, and help students decide on their post-graduate plans.", "<br>","<br>",
+            paste("Career and Technical Education (CTE) courses are designed for
+                  high school students to receive real-world experience in the 
+                  career field they are most interested in. Durham Public 
+                  Schools started the “3-2-1” initiative in 2019 where all high 
+                  school students are required to take three CTE courses, 
+                  participate in two career exposure activities, and get an 
+                  internship or a job before they graduate. This initiative, as 
+                  well as all CTE courses, are created to develop students’ soft
+                  skills, gain real-world experience, and help students decide 
+                  on their post-graduate plans.", "<br>","<br>",
                   "Below is more information about CTE courses in Durham Public Schools and North Carolina:", "<br>",
                   a("DPS CTE Course Initiative",
                     href = "https://www.dpsnc.net/domain/293"), "<br>",
@@ -1497,12 +1515,21 @@ Students can take these classes for an opportunity to receive college credit upo
             )
             
         }else if (input$es_select == "Experienced Teacher Ratio") {
-            paste("Experienced teachers are those who have approximately five or more years of experience with teaching. Although more experienced teachers tend 
-              to perform better on their evaluations, research shows teacher experience does not directly correlate to effective teaching. Some schools tend 
-              to be more attracted to veteran teachers whereas other schools may prefer employing recently certified teachers that can provide current and unique 
-              teaching styles.", "<br>", "<br>", "With the evolution of research-based practices, it is important to continue to educate new and returning teachers 
-              on the best teaching practices that are scientifically-proven to promote student success. Good professional development workshops are paramount to provide 
-              effective, culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
+            paste("Experienced teachers are those who have approximately five or
+            more years of experience with teaching. Although more experienced 
+            teachers tend to perform better on their evaluations, research shows
+            teacher experience does not directly correlate to effective 
+            teaching. Some schools tend to be more attracted to veteran teachers
+            whereas other schools may prefer employing recently certified 
+            teachers that can provide current and unique teaching styles.",
+                  "<br>","<br>",
+                  "With 
+            the evolution of research-based practices, it is important to 
+            continue to educate new and returning teachers on the best teaching 
+            practices that are scientifically-proven to promote student success.
+            Good professional development workshops are paramount to provide 
+            effective, culturally-responsive teaching practices.", "<br>","<br>",
+            "Below are articles on Teacher 
               Experience and Professional Development:", "<br>",
                   a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
                     href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
@@ -1512,9 +1539,18 @@ Students can take these classes for an opportunity to receive college credit upo
                     href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
                   a("Importance and Resources for Professional Development", 
                     href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
-        } else if (input$es_select == "Free and Reduced Lunch") {
-            paste("The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
-                  "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and prejudiced. Socioeconomic status is not a limit, it is a barrier.", "<br>","<br>",
+       
+           } else if (input$es_select == "Free and Reduced Lunch") {
+            paste("The percentage of students receiving free and reduced lunch 
+                  is a strong indicator of socioeconomic status. The percentage 
+                  of students that fall below the poverty line determines if a 
+                  school is considered ", 
+                  HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
+                  "Title I schools are eligible to receive grants through the 
+                  Every Student Succeeds Act (ESEA). It is important to be 
+                  cognizant of students’ socioeconomic status without being 
+                  condescending and discriminatory. Socioeconomic status is not a 
+                  limit, it is a barrier.", "<br>","<br>",
                   "Below are articles on Free/Reduced Lunch and its connection to Title I schools:", "<br>",
                   a("Rural Schools and Free/Reduced Lunch", 
                     href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
@@ -1524,22 +1560,32 @@ Students can take these classes for an opportunity to receive college credit upo
                   strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
             )
         } else if (input$es_select == "Student-Teacher Ratio, Elementary School"){
-            paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, 
-              smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates. ","<br>","<br>",
+            paste("Research proves smaller student-teacher ratios have a 
+            positive effect on student achievement. By allowing more centralized
+            and one-on-one instruction, smaller student-teacher ratios can 
+            increase test scores, lower dropout rates, and increase graduation 
+            rates.", "<br>","<br>", "For younger, elementary school-age students, having a 
+            positive, one-on-one relationship with his or her teacher will teach
+            the student at a young age that they have an adult they can trust 
+            and rely on. In smaller sized classrooms, students can feel more 
+            comfortable and willing to share their thoughts without being afraid
+            of failing or feeling embarrassed. This dynamic fosters a more 
+            productive learning environment for all.","<br>","<br>",
                   "Resources on Student-Teacher Ratios:","<br>",
                   a("Infographics and Information on Student-Teacher Ratios",
                     href = "https://www.hunschool.org/resources/student-teacher-ratios"))
-        } else if (input$es_select == "Student-Teacher Ratio, High School"){
-            paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, 
-              smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.","<br>","<br>",
-                  "Resources on Student-Teacher Ratios:","<br>",
-                  a("Infographics and Information on Student-Teacher Ratios",
-                    href = "https://www.hunschool.org/resources/student-teacher-ratios"))
+        
         } else if (input$es_select == "Students Per Device"){
-            paste("Living in a digital age, technology usage in the classroom has increased tremendously, especially during the COVID-19 pandemic. Although technology 
-              is a great resource, students may not have equitable access to these devices. It is important for students and teachers to not only have access to these 
-              technological devices, but also understand how to use them, which is why professional development is so important. Professional development is necessary 
-              to keep educators up to date on new technology to create the most effective learning environment.","<br>","<br>",
+            paste("Living in a digital age, technology usage in the classroom 
+                  has increased tremendously, especially during the COVID-19 
+                  pandemic. Although technology is a great resource, students 
+                  may not have equitable access to these devices. It is 
+                  important for students and teachers to not only have access to
+                  these technological devices, but also understand how to use 
+                  them, which is why professional development is so important. 
+                  Professional development is necessary to keep educators up to 
+                  date on new technology to create the most effective learning 
+                  environment.","<br>","<br>",
                   "Resources on Access and Technology in the Classroom:", "<br>",
                   a("Durham Public Schools’ Technological Services",
                     href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
@@ -1547,11 +1593,18 @@ Students can take these classes for an opportunity to receive college credit upo
                     href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
         } 
         else if (input$es_select == "Funding Per Pupil"){
-            paste("This indicator represents the amount that local, state, and federal governments spend on elementary and secondary education adjusted for the 
-              size of the student body. It is calculated by dividing the current expenditures over the entire academic year for pre-kindergarten through grade 
-              12 by the number of students in those grades in public schools. Current expenditures include instruction and instruction-related costs, student 
-              support services, administration, and operations. Excluded from those expenditures are funds for school construction and other capital outlays, 
-              debt service, and programs outside of public elementary and secondary education. North Carolina ranks 39th in per pupil spending out of 50.", "<br>", "<br>",
+            paste("This indicator represents the amount that local, state, and 
+                  federal governments spend on elementary and secondary 
+                  education adjusted for the size of the student body. It is 
+                  calculated by dividing the current expenditures over the 
+                  entire academic year for Pre-Kindergarten through Grade 12 by 
+                  the number of students in those grades in public schools. 
+                  Current expenditures include instruction and 
+                  instruction-related costs, student support services, 
+                  administration, and operations. Excluded from those 
+                  expenditures are funds for school construction and other 
+                  capital outlays, debt service, and programs outside of public 
+                  elementary and secondary education.", "<br>", "<br>",
                   "Resources on public school funding:", "<br>",
                   a("Interactive Summary of Local - Federal Public School Funding:",
                     href="https://www.dpsnc.net/Page/3771"),"<br>",
@@ -1559,10 +1612,18 @@ Students can take these classes for an opportunity to receive college credit upo
                     href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
         } 
         else if (input$es_select == "Students With Disabilities"){
-            paste("It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. 
-              Resources like", HTML(paste0(strong("assistive technology"),tags$sup("1"))), ", transportation,", 
-                  HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", etc. are mandatory for every school to provide regardless of the 
-                      number of students with disabilities or even the type based on the civil rights law Section 504.", "<br>", "<br>",
+            paste("According to the Americans with Disabilities Act, an 
+            individual is considered to have a disability if they have a 
+            condition that impairs them to do certain activities and interact 
+            with those around them. It is integral to make sure students with 
+            disabilities are provided with accessibility services to achieve 
+            their full potential in the classroom. Resources like", 
+                  HTML(paste0(strong("assistive technology"),tags$sup("1"))), 
+                  ", transportation,", 
+                  HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), 
+                  ", etc. are mandatory for every school to provide regardless 
+                  of the number of students with disabilities or even the type 
+                  based on the civil rights law Section 504.", "<br>", "<br>",
                   "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
                   a("DPS EC Services",
                     href="https://www.dpsnc.net/Page/169"),
@@ -1579,13 +1640,20 @@ Students can take these classes for an opportunity to receive college credit upo
             )
         } 
         else if (input$es_select == "English as a Second Language (ESL) Student Enrollment"){
-            paste("This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. 
-        ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are c
-        reated to help children learn English along with other subjects necessary to complete each grade.", "<br>","<br>", "Unfortunately, 
-                ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may bar them from participating in school 
-                activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not 
-                stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing 
-                the identity of their native language entirely.", "<br>","<br>",
+            paste("This graph shows the number of students enrolled in the 
+            English as a Second Language (ESL) or English Language Learners 
+            (ELL) Program. ESL students consist of any student regardless of 
+            ethnicity, origin, race, age, etc. who is a non-native English 
+            speaker. These programs are created to help children learn English 
+            along with other subjects necessary to complete each grade.", 
+                  "<br>","<br>", "Unfortunately, ESL students can face racial bias, 
+            discrimination, and bullying in the classroom. Teachers may prevent
+            them from participating in school activities, extracurriculars, and 
+            enrichment programs. It is important that school affiliates 
+            recognize that language barriers do not stunt intellectual 
+            development. Additionally, ELL teachers must accommodate their 
+            students instead of assimilating them by removing the identity of 
+            their native language entirely.", "<br>","<br>",
                   "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
                   a("How to Advocate for ESL/ELL Students",
                     href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
@@ -1597,10 +1665,15 @@ Students can take these classes for an opportunity to receive college credit upo
                     href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
         } 
         else if (input$es_select == "In-School Suspensions (ISS)"){
-            paste("In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least 
-        half a day but remains under the direct supervision of school personnel.", "<br>", "Students of color are more susceptible to harsher punishments in schools.
-                  Black and Brown students are subject to higher disciplinary 
-                  actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
+            paste("In-school suspensions are described as: Instances in which a 
+            child is temporarily removed from his or her regular classrooms for at least 
+        half a day but remains under the direct supervision of school personnel 
+                  (https://supportiveschooldiscipline.org/suspension).", 
+                  "<br>", "<br>","Students of color are more susceptible to harsher punishments in schools.
+        Black and Brown students are subject to higher disciplinary actions 
+        compared to their white peers. A reason for this is racial bias leading 
+        to the over policing of Black and Brown students, fueling the", 
+                  HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))),".", "<br>","<br>",
                   "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
                   a("Racial Bias in School Discipline", 
                     href = "https://www.pnas.org/content/116/17/8255"), "<br>",
@@ -1611,21 +1684,38 @@ Students can take these classes for an opportunity to receive college credit upo
             )
         }
         else if(input$es_select == "Enrollment") {
-            paste("This dataset shows the enrollment numbers at each school. Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
-                  enrollment or average daily membership (ADM) is used to determine funding for each school. The higher the ADM, the more money a school receives. Recently, 
-                  lawmakers passed a bill stating that they would omit schools from reduction in funding as part of COVID-19 relief. Durham Public Schools continues to strive 
-                  for increased enrollment so that all programs can continue to receive adequate funding.", "<br>","<br>", 
+            paste("This dataset shows the enrollment numbers at each school. 
+            Due to the COVID-19 pandemic, there has been a 5% decrease in 
+            enrollment. Normally, 
+                  enrollment or average daily membership (ADM) is used to 
+                  determine funding for each school. The higher the ADM, the 
+                  more money a school receives. Recently, 
+                  lawmakers passed a bill stating that they would omit schools 
+                  from reduction in funding as part of COVID-19 relief. Durham 
+                  Public Schools continues to strive 
+                  for increased enrollment so that all programs can continue to 
+                  receive adequate funding.", "<br>","<br>", 
                   "Below is information about enrollment numbers:", "<br>",
                   a("The Decrease in Enrollment in North Carolina", 
                     href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
             )
         }
         else if (input$es_select == "School and Zone BIPOC Comparison") {
-            paste("This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. 
-                  This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of 
-                  the school zones they inhabit. A contributing factor of this is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", "Gentrification has been 
-                  an increasing problem, and COVID-19 has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of 
-                  their homes, which ultimately changes the demographics of those neighborhoods.
+            paste("This plot shows the percentage of students of color in the 
+            school compared to the percentage of people of color in the school 
+            zone. 
+                  This measurement shows the huge disparities in community 
+                  representation for students of color as most of these schools 
+                  are not racially reflective of 
+                  the school zones they inhabit. A contributing factor of this 
+                  is " , 
+                  HTML(paste0(strong("gentrification"),tags$sup("1"))),".", 
+                  "Gentrification has been 
+                  an increasing problem, and the COVID-19 pandemic has only exacerbated it. 
+                  Black and Brown neighborhoods are becoming increasingly 
+                  expensive forcing families out of 
+                  their homes, which ultimately changes the demographics of 
+                  those neighborhoods.
                   ", "<br>", "<br>",
                   "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
                   a("COVID-19 and Gentrification in Durham", 
@@ -1639,11 +1729,15 @@ Students can take these classes for an opportunity to receive college credit upo
         }
         
         else if (input$es_select == "BIPOC Students per School"){
-            paste("This dataset shows the percentage of students of color in each of the ten schools. Each of the ten schools are “majority students of color” 
-                  which means representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral 
-                  for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. 
-                  Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more.", "<br>","<br>",
-                  "Below is more information about students of color::", "<br>",
+            paste("This dataset shows the percentage of students of color in 
+            each of the 16 schools. Each of the schools are “majority students of color” 
+                  which means representation of these students and ", 
+                  HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral 
+                  for student success. Too often, students of color are 
+                  underrepresented and cannot relate to content/curriculum because of cultural differences. 
+                  Students who are able to connect with their tutors, teachers, 
+                  administrators, etc. tend to engage with the content more.", "<br>","<br>",
+                  "Below is more information about students of color:", "<br>",
                   a("Racial/Ethnic Enrollment in NC Public Schools",
                     href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
                   a("Why Representation Matters",
@@ -1651,17 +1745,27 @@ Students can take these classes for an opportunity to receive college credit upo
                   a("Benefits of POC Representation",
                     href="https://educationpost.org/students-of-color-need-to-see-more-people-of-color-that-shouldnt-be-controversial/"),
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
-                  cultures and ethnicities of the classroom"
-            )
+                  cultures and ethnicities of the classroom")
             
         }
         else if (input$es_select == "Racial Demographics"){
-            paste("This dataset shows the racial breakdown of each of the ten public schools. Durham Public Schools’ student population 
-                  is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 10 schools has changed 
-                  over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has 
-                  increased. Representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral for student success. Too often students 
-                  of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with 
-                  their tutors, teachers, administrators, and the content tend to engage with the content more.", "<br>","<br>",
+
+            paste("This dataset shows the racial breakdown of each of the 16 
+            public schools. Durham Public Schools’ student population 
+                  is 80.7% students of color, but only 57% of Durham County is 
+                  people of color. The racial demographics of all 16 schools has                  changed over time, specifically in the past 30 years. The number of 
+                  white students has decreased, while the number of students of 
+                  color has 
+                  increased.",
+                  "<br>", "<br>",
+                  "Representation of these students and ", 
+                  HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+                  "is integral for student success. Too often students 
+                  of color are underrepresented and cannot relate to the content
+                  because of cultural differences. Students who are able to 
+                  connect with 
+                  their tutors, teachers, administrators, and the content tend 
+                  to engage with the content more.", "<br>","<br>"
                   "Below is more information about racial demographics in schools:", "<br>",
                   a("Changing School Racial Demographics in Recent Decades",
                     href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
@@ -1671,12 +1775,22 @@ Students can take these classes for an opportunity to receive college credit upo
                   cultures and ethnicities of the classroom")
         }
         else if (input$es_select == "Median Household Income"){
-            paste("This graph shows the median household income for each school zone. According to the 2020 US census, 
-                  the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the 
-                  first statistically significant decline we have witnessed since 2011.", "<br>","<br>", "The average household income 
-                  in North Carolina is $54,602, while the median is $65,534, according to the US census as of 2019. Most of these 
-                  schools fall below the NC and US median, a cause for concern. Poverty directly affects how students learn. 
-                  Students’ basic human needs must be met in order to excel in the classroom. ", "<br>", "<br>", "Below are links to 
+            paste("This graph shows the median household income for each school 
+            zone. According to the 2020 US census, 
+                  the median household income in the United States is $67,521. 
+                  This is a 2.9% decrease from 2019, which is the 
+                  first statistically significant decline since 2011.", 
+                  "<br>","<br>", "According to the 2020 US census, the average 
+                  household income 
+                  in North Carolina is $56,642, while the per capita income in 
+                  the past twelve months is $31,993. All of these 
+                  schools fall below the NC and US median, which is a cause for 
+                  concern. Poverty directly affects how students learn and those 
+                  suffering from food insecurity, for example, are hindered from
+                  reaching their full potential. Students’ basic human needs 
+                  must be met in order to excel in the classroom. Students’ 
+                  basic human needs must be met in order to excel in the 
+                  classroom.", "<br>", "<br>", "Below are links to 
                   the US Census Information::", "<br>",
                   a("Nationwide Census", 
                     href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
@@ -1684,22 +1798,35 @@ Students can take these classes for an opportunity to receive college credit upo
                     href="https://www.census.gov/quickfacts/NC"))
         }
         else if (input$es_select == "Median Homesale Price"){
-            paste("This graph shows the average home sale price for each school zone. The median home sale price for the United States is $374,900, 
-                  according to the US Census Bureau. According to Zillow, the median home sale price in North Carolina is $248,950. Due to the Covid-19 Pandemic, 
-                  home prices increased, making the cost of living increase as well (all contributing to  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
-                  "). Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, 
-                  many of the students in the ten schools required free and reduced lunch.", "<br>", "<br>",
+          paste("This graph shows the average home sale price for each school 
+            zone. In 2021, the median home sale price for the United States is 
+            $397,100 and the average home sale price is $464,200, according to 
+            the US Census Bureau. Specifically for the South, the median home 
+            sale price is $355,900 and the average home sale price is 411,100.",
+                "<br>", "<br>",
+                "Due to the COVID-19 Pandemic, home prices increased, making the cost
+                  of living increase as well (all contributing to  
+                  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
+                "). Most of these school zones fall above the North Carolina 
+                  median. Because Durham has become an increasingly expensive 
+                  city to live in, 
+                  many of the students in the ten schools required free and 
+                  reduced lunch.", "<br>", "<br>",
                   "Below is more information about home sale price:", "<br>",
-                  a("Zillow Resource",
-                    href="https://www.zillow.com/research/zillow-may-2021-market-report-29635/"), "<br>",
+                  a("Home Sale Price Data",
+                    href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index-Datasets.aspx"), "<br>",
                   a("Covid-19 Increase",
                     href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
                   them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
         else if (input$es_select == "Bachelor Degree Rate"){
-            paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees 
-                  greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.", "<br>", "<br>",
+            paste("This graph shows the percentage of adults with bachelor’s 
+            degrees in each school zone. The number of individuals with 
+            bachelor’s degrees 
+                  greatly differs across racial, income, and gender groups. 
+                  Additionally, individuals with more degrees tend to have 
+                  greater household incomes.", "<br>", "<br>",
                   "Below is more information about bachelor degree rates:", "<br>",
                   a("Bachelor’s Degrees and Race",
                     href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
@@ -1708,9 +1835,24 @@ Students can take these classes for an opportunity to receive college credit upo
         }
         
         else if (input$es_select == "Sidewalk Coverage"){
-            paste("Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, 
-                  both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, parks, etc. 
-                  High income areas tend to have more sidewalk coverage than lower income areas.", "<br>", "<br>",
+            paste("Areas without sidewalk coverage can become inaccessible for
+            people without cars or other modes of transportation, 
+                  both private and public. Sidewalks are needed for individuals 
+                  to safely walk to places such as school, grocery stores, 
+                  parks, etc. Especially for younger students, sidewalks are 
+                  essential for their safety. According to a UNC Highway Safety 
+                  Research Center study, the probability of a crash occurring 
+                  near or at a paved sidewalk is 88.2% lower than an unpaved 
+                  site.","<br>", "<br>", 
+                  "Sidewalks also promote more physical activity and healthier 
+                  lifestyles. In the US specifically, obesity rates have been 
+                  steadily increasing across all populations and ages. 
+                  Sidewalk coverage provides people with a safe and accessible
+                  way to increase their daily physical activity." ,"<br>", "<br>",
+                  "High income areas tend to have more sidewalk coverage than 
+                  lower income areas. 89% of high-income communities have 
+                  sidewalks, whereas only 49% of low income communities have 
+                  sidewalk coverage.", "<br>", "<br>",
                   "Below is more information about sidewalk coverage:", "<br>",
                   a("Importance of Sidewalks",
                     href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
@@ -1719,457 +1861,1113 @@ Students can take these classes for an opportunity to receive college credit upo
         }
         
         else if (input$es_select == "Graduation Rate"){
-            paste("The graph depicts the percentage of students estimated to graduate from high school in four years or less. 
-                  The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030.
-                  This is a significant increase from when the first reported graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
-                  rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a 
-                  gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, 
-                  especially school counselors and social workers, to reach out to students with extended absences. External factors 
-                  could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.
-                  ", "<br>", "<br>",
+            paste("The graph depicts the percentage of students estimated to 
+            graduate from high school in four years or less. 
+                  The graduation rate for North Carolina from 2020 is 87.6%, 
+                  with plans to raise that percentage to 95% by 2030.
+                  This is a significant increase from when the first reported 
+                  graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
+                  rates are important. Delayed graduations can lead to risk for 
+                  student dropout rates to increase. Dropping out is a 
+                  gateway that could possibly lead to students living 
+                  disadvantaged lifestyles. It is important for stakeholders, 
+                  especially school counselors and social workers, to reach out 
+                  to students with extended absences. External factors 
+                  could be contributing to student dropout rates and as a 
+                  community, we may be able to diminish those barriers.", "<br>", "<br>",
                   "Below are more resources on graduation rates:", "<br>",
                   a("Dashboard with Articles and Quick Facts about Graduation Rates",
                     href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
             
         }
         else if (input$es_select == "Median Age"){
-            paste("This dataset shows the median age of residents in each school zone. The median age of residents 
-                  in a specific school zone can determine the various assets available, identify beneficial resources in 
-                  the community, and give some insight about school enrollment numbers in the future.")
+            paste("This dataset shows the median age of residents in each school
+            zone. The median age of residents 
+                  in a specific school zone can determine the various assets 
+                  available, identify beneficial resources in 
+                  the community, and give some insight about school enrollment 
+                  numbers in the future.")
         }
+      else if (input$es_select == "Titles Per Student"){
+        paste("A school library’s number of book titles per student indicates 
+              the availability of different book titles for students to select. 
+              A higher number of book titles per student indicates a wider 
+              variety of books to choose from. Having more book titles per 
+              student enables more opportunities for whole-class novel reading, 
+              which is essential for learning book analysis, encouraging engaging
+              discussions, and prompting creative writing.", 
+              "<br>", "<br>",
+              "Having a wide selection of books in a library also promotes more 
+              reading and intellectual stimulation for students. With a higher 
+              number of titles per student, it is more likely that most, if not 
+              all, students can find literature that engages them.",
+              "<br>","<br>",
+              "Below are more resources on the importance of book titles:", 
+              "<br>",
+              a("Top 10 Benefits of Reading for All Ages",
+                href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
+              a("North Carolina School Report Cards",
+                href = "https://ncreports.ondemand.sas.com/src/?county=Durham"))
+      }
+      else if (input$es_select == "WiFi Access"){
+        HTML(paste0(strong("Note: "), "Due to the COVID-19 pandemic, this data only 
+        extends until December of 2020. Therefore, only the 2019-2020 school 
+        year is reflected above.",
+                    "<br>", "<br>",
+                    "The visualization depicts the number of wireless access points for each
+        classroom. A school with a higher number of access points overall will 
+        have better internet coverage and quality than a school with less access
+        points.",
+                    "<br>", "<br>",
+                    "As things begin to modernize with time, the internet has become a vital
+        resource for all. Specifically in schools, teachers can display 
+        information and teach through slideshows, animations, videos, games, 
+        and more. Incorporating various forms of online tools can make the 
+        students become more engaged, while enabling the educator to explore new
+        teaching methods. As a result, students will become more comfortable 
+        with using technology.",
+                    "<br>", "<br>",
+                    "However, not all students have the same access to technology in their 
+        homes. Most schools have accounted for this disparity by providing 
+        students with free tablets or laptops. During the COVID-19 pandemic, 
+        when students of all ages had to adjust to online instruction, several 
+        counties provided WiFI hubs so that students’ learning was not hindered."))
+      }
+      
+      
     })       
     
     output$ms_resources <- renderText({
-        if(input$ms_select == "Advanced Placement (AP) Course Enrollment") {
-            paste("Advanced Placement (AP) courses are challenging, collegiate-level courses that are offered to high school students. AP courses weigh more than honors courses on the high school level.
-Students can take these classes for an opportunity to receive college credit upon scoring a three or higher (out of five) on the standardized assessment, which saves the student money on college tuition. AP classes also serve as a way for students to be placed into higher-level courses at their college.
-", "<br>","<br>",
-                  "Below is more information about AP courses:", "<br>", 
-                  a("NCDPI AP Courses", 
-                    href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
-                  a("DPS AP Courses", 
-                    href = "https://www.dpsnc.net/Page/430"),
-                  a("College Board",
-                    href="https://apstudents.collegeboard.org/course-index-page"))
-        }else if (input$ms_select == "Average Class Size"){
-            paste("Research proves smaller class size is beneficial to student achievement. Smaller classes allow for the teacher to focus less on classroom management, and more on centralized learning. Students have stated they feel more comfortable in smaller classes as well.","<br>","<br>",
-                  "Resources Discussing the Importance of Class Size:","<br>",
-                  a("The Benefits of Investing in Smaller Class Sizes",
-                    href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
-                  a("State Policy View on Class Size",
-                    href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
-        }
-        else if (input$ms_select == "CTE Course Enrollment Rate, High School"){
-            paste("Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where all high school students are required to take three CTE courses, participate in two career exposure activities, and get an internship or a job before they graduate. This initiative, as well as all of CTE courses, are created to develop students’ soft skills, gain real-world experience, and help students decide on their post-graduate plans.", "<br>","<br>",
-                  "Below is more information about CTE courses in Durham Public Schools and North Carolina:", "<br>",
-                  a("DPS CTE Course Initiative",
-                    href = "https://www.dpsnc.net/domain/293"), "<br>",
-                  a("NCDPI CTE Course Overview",
-                    href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education")
-            )
+      if(input$ms_select == "Advanced Placement (AP) Course Enrollment") {
+        paste("Advanced Placement (AP) courses are challenging, 
+            collegiate-level courses that are offered to high school students. 
+            AP courses weigh more than honors courses on the high school level.
+Students can take these classes for an opportunity to receive college credit 
+upon scoring a three or higher (out of five) on the standardized assessment, 
+which saves the student money on college tuition. AP classes also serve as a way
+for students to be placed into higher-level courses at their college.", "<br>","<br>",
+              "Below is more information about AP courses:", "<br>", 
+              a("NCDPI AP Courses", 
+                href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
+              a("DPS AP Courses", 
+                href = "https://www.dpsnc.net/Page/430"),
+              a("College Board",
+                href="https://apstudents.collegeboard.org/course-index-page"))
+         
+      }else if (input$ms_select == "Average Class Size"){
+        paste("Research proves smaller class size is beneficial to student 
+                  achievement. Smaller classes allow for the teacher to focus 
+                  less on classroom management, and more on centralized 
+                  learning. Students have stated they feel more comfortable in 
+                  smaller classes as well.","<br>","<br>",
+              "Resources Discussing the Importance of Class Size:","<br>",
+              a("The Benefits of Investing in Smaller Class Sizes",
+                href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
+              a("State Policy View on Class Size",
+                href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))     
             
-        }else if (input$ms_select == "Experienced Teacher Ratio") {
-            paste("Experienced teachers are those who have approximately five or more years of experience with teaching. Although more experienced teachers tend 
-              to perform better on their evaluations, research shows teacher experience does not directly correlate to effective teaching. Some schools tend 
-              to be more attracted to veteran teachers whereas other schools may prefer employing recently certified teachers that can provide current and unique 
-              teaching styles.", "<br>", "<br>", "With the evolution of research-based practices, it is important to continue to educate new and returning teachers 
-              on the best teaching practices that are scientifically-proven to promote student success. Good professional development workshops are paramount to provide 
-              effective, culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
+      } else if (input$ms_select == "CTE Course Enrollment Rate, Middle School"){
+        paste("Career and Technical Education (CTE) courses are designed for
+                  high school students to receive real-world experience in the 
+                  career field they are most interested in. Durham Public 
+                  Schools started the “3-2-1” initiative in 2019 where all high 
+                  school students are required to take three CTE courses, 
+                  participate in two career exposure activities, and get an 
+                  internship or a job before they graduate. This initiative, as 
+                  well as all CTE courses, are created to develop students’ soft
+                  skills, gain real-world experience, and help students decide 
+                  on their post-graduate plans.", "<br>","<br>",
+              "Below is more information about CTE courses in Durham Public Schools and North Carolina:", "<br>",
+              a("DPS CTE Course Initiative",
+                href = "https://www.dpsnc.net/domain/293"), "<br>",
+              a("NCDPI CTE Course Overview",
+                href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education"))
+        
+      
+      }else if (input$ms_select == "Experienced Teacher Ratio") {
+        paste("Experienced teachers are those who have approximately five or
+            more years of experience with teaching. Although more experienced 
+            teachers tend to perform better on their evaluations, research shows
+            teacher experience does not directly correlate to effective 
+            teaching. Some schools tend to be more attracted to veteran teachers
+            whereas other schools may prefer employing recently certified 
+            teachers that can provide current and unique teaching styles. With 
+            the evolution of research-based practices, it is important to 
+            continue to educate new and returning teachers on the best teaching 
+            practices that are scientifically-proven to promote student success.
+            Good professional development workshops are paramount to provide 
+            effective, culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
               Experience and Professional Development:", "<br>",
-                  a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
-                    href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
-                  a("Teacher Experience in Relation to Teacher Effectiveness", 
-                    href ="https://www.nea.org/advocating-for-change/new-from-nea/does-teaching-experience-matter-lets-count-ways"),"<br>",
-                  a("NCDPI Educator Professional Development", 
-                    href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
-                  a("Importance and Resources for Professional Development", 
-                    href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
-        } else if (input$ms_select == "Free and Reduced Lunch") {
-            paste("The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
-                  "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and prejudiced. Socioeconomic status is not a limit, it is a barrier.", "<br>","<br>",
-                  "Below are articles on Free/Reduced Lunch and its connection to Title I schools:", "<br>",
-                  a("Rural Schools and Free/Reduced Lunch", 
-                    href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
-                  a("NC Community Free/Reduced Lunch Eligibility",
-                    href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"),
-                  "<br>","<br>", HTML(paste0(tags$sup("1"))),
-                  strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
-            )
-        } else if (input$ms_select == "Student-Teacher Ratio, Elementary School"){
-            paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, 
-              smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates. ","<br>","<br>",
-                  "Resources on Student-Teacher Ratios:","<br>",
-                  a("Infographics and Information on Student-Teacher Ratios",
-                    href = "https://www.hunschool.org/resources/student-teacher-ratios"))
-        } else if (input$ms_select == "Student-Teacher Ratio, High School"){
-            paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, 
-              smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.","<br>","<br>",
-                  "Resources on Student-Teacher Ratios:","<br>",
-                  a("Infographics and Information on Student-Teacher Ratios",
-                    href = "https://www.hunschool.org/resources/student-teacher-ratios"))
-        } else if (input$ms_select == "Students Per Device"){
-            paste("Living in a digital age, technology usage in the classroom has increased tremendously, especially during the COVID-19 pandemic. Although technology 
-              is a great resource, students may not have equitable access to these devices. It is important for students and teachers to not only have access to these 
-              technological devices, but also understand how to use them, which is why professional development is so important. Professional development is necessary 
-              to keep educators up to date on new technology to create the most effective learning environment.","<br>","<br>",
-                  "Resources on Access and Technology in the Classroom:", "<br>",
-                  a("Durham Public Schools’ Technological Services",
-                    href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
-                  a("Equitable Access to Technology",
-                    href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
-        } 
-        else if (input$ms_select == "Funding Per Pupil"){
-            paste("This indicator represents the amount that local, state, and federal governments spend on elementary and secondary education adjusted for the 
-              size of the student body. It is calculated by dividing the current expenditures over the entire academic year for pre-kindergarten through grade 
-              12 by the number of students in those grades in public schools. Current expenditures include instruction and instruction-related costs, student 
-              support services, administration, and operations. Excluded from those expenditures are funds for school construction and other capital outlays, 
-              debt service, and programs outside of public elementary and secondary education. North Carolina ranks 39th in per pupil spending out of 50.", "<br>", "<br>",
-                  "Resources on public school funding:", "<br>",
-                  a("Interactive Summary of Local - Federal Public School Funding:",
-                    href="https://www.dpsnc.net/Page/3771"),"<br>",
-                  a("New Per Pupil Expenditure Requirements",
-                    href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
-        } 
-        else if (input$ms_select == "Students With Disabilities"){
-            paste("It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. 
-              Resources like", HTML(paste0(strong("assistive technology"),tags$sup("1"))), ", transportation,", 
-                  HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", etc. are mandatory for every school to provide regardless of the 
-                      number of students with disabilities or even the type based on the civil rights law Section 504.", "<br>", "<br>",
-                  "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
-                  a("DPS EC Services",
-                    href="https://www.dpsnc.net/Page/169"),
-                  a("Section 504",
-                    href="https://www.dpsnc.net/Page/336"),
-                  a("NCDPI’s EC Division",
-                    href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
-                  a("Assistive Technology",
-                    href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
+              a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
+                href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
+              a("Teacher Experience in Relation to Teacher Effectiveness", 
+                href ="https://www.nea.org/advocating-for-change/new-from-nea/does-teaching-experience-matter-lets-count-ways"),"<br>",
+              a("NCDPI Educator Professional Development", 
+                href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
+              a("Importance and Resources for Professional Development", 
+                href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
+        
+    
+      } else if (input$ms_select == "Free and Reduced Lunch") {
+        paste("The percentage of students receiving free and reduced lunch 
+                  is a strong indicator of socioeconomic status. The percentage 
+                  of students that fall below the poverty line determines if a 
+                  school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
+              "Title I schools are eligible to receive grants through the 
+                  Every Student Succeeds Act (ESEA). It is important to be 
+                  cognizant of students’ socioeconomic status without being 
+                  condescending and discriminatory. Socioeconomic status is not a 
+                  limit, it is a barrier.", "<br>","<br>",
+              "Below are articles on Free/Reduced Lunch and its connection 
+                  to Title I schools:", "<br>",
+              a("Rural Schools and Free/Reduced Lunch", 
+                href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
+              a("NC Community Free/Reduced Lunch Eligibility",
+                href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"),
+              "<br>","<br>", HTML(paste0(tags$sup("1"))),
+              strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.")
+        
+      
+      } else if (input$ms_select == "Student-Teacher Ratio, Middle School"){
+        paste("Research proves smaller student-teacher ratios have a 
+            positive effect on student achievement. 
+            By allowing more centralized and one-on-one instruction, 
+              smaller student-teacher ratios can increase test scores, 
+                  lower dropout rates, and increase graduation rates."
+              , "<br>","<br>",
+              "Resources on Student-Teacher Ratios:","<br>",
+              a("Infographics and Information on Student-Teacher Ratios",
+                href = "https://www.hunschool.org/resources/student-teacher-ratios"))
+        
+      } else if (input$ms_select == "Students Per Device"){
+        paste("Living in a digital age, technology usage in the classroom 
+            has increased tremendously, especially during the COVID-19 pandemic.
+            Although technology 
+              is a great resource, students may not have equitable access to 
+              these devices. It is important for students and teachers to not 
+              only have access to these 
+              technological devices, but also understand how to use them, which 
+              is why professional development is so important. Professional 
+              development is necessary 
+              to keep educators up to date on new technology to create the most 
+                  effective learning environment.","<br>","<br>",
+              "Resources on Access and Technology in the Classroom:", "<br>",
+              a("Durham Public Schools’ Technological Services",
+                href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
+              a("Equitable Access to Technology",
+                href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
+        
+      } 
+      
+      else if (input$ms_select == "Funding Per Pupil"){
+        paste("This indicator represents the amount that local, state, and 
+            federal governments spend on elementary and secondary education 
+            adjusted for the 
+              size of the student body. It is calculated by dividing the current
+              expenditures over the entire academic year for pre-kindergarten through grade 
+              12 by the number of students in those grades in public schools. 
+              Current expenditures include instruction and instruction-related 
+              costs, student 
+              support services, administration, and operations. Excluded from 
+              those expenditures are funds for school construction and other 
+              capital outlays, 
+              debt service, and programs outside of public elementary and 
+                  secondary education.", "<br>,", "<br>",
+              
+              "North Carolina ranks 39th in per pupil 
+                  spending out of 50.", "<br>", "<br>",
+              "Resources on public school funding:", "<br>",
+              a("Interactive Summary of Local - Federal Public School Funding:",
+                href="https://www.dpsnc.net/Page/3771"),"<br>",
+              a("New Per Pupil Expenditure Requirements",
+                href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
+      
+      } else if (input$ms_select == "Students With Disabilities"){
+        paste("According to the Americans with Disabilities Act, an 
+            individual is considered to have a disability if they have a 
+            condition that impairs them to do certain activities and interact 
+            with those around them.
+            It is integral to make sure students with disabilities are 
+            provided with accessibility services to achieve their full potential
+            in the classroom. 
+              Resources like", 
+              HTML(paste0(strong("assistive technology"),tags$sup("1"))), ",
+                  transportation,", 
+              HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", 
+                  etc. are mandatory for every school to provide regardless of the 
+                      number of students with disabilities or even the type 
+                  based on the civil rights law Section 504.", "<br>", "<br>",
+              "Below are articles and resources about government protection 
+                  and resources for students with disabilities:", "<br>",
+              a("DPS EC Services",
+                href="https://www.dpsnc.net/Page/169"),
+              a("Section 504",
+                href="https://www.dpsnc.net/Page/336"),
+              a("NCDPI’s EC Division",
+                href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
+              a("Assistive Technology",
+                href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
                       and functionality of people with varying disabilities",
-                  "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
+              "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
                       individualized instruction in addition to their standard course of study"
-            )
-        } 
-        else if (input$ms_select == "English as a Second Language (ESL) Student Enrollment"){
-            paste("This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. 
-        ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are c
-        reated to help children learn English along with other subjects necessary to complete each grade.", "<br>","<br>", "Unfortunately, 
-                ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may bar them from participating in school 
-                activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not 
-                stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing 
+        )
+        
+      } else if (input$ms_select == "English as a Second Language (ESL) Student Enrollment"){
+        paste("This graph shows the number of students enrolled in the 
+            English as a Second Language (ESL) or English Language Learners (ELL) Program. 
+        ESL students consist of any student regardless of ethnicity, origin, 
+        race, age, etc. who is a non-native English speaker. These programs are 
+        created to help children learn English along with other subjects 
+        necessary to complete each grade.", "<br>","<br>", 
+              "Unfortunately, 
+                ESL students can face racial bias, discrimination, and bullying 
+                in the classroom. Teachers may bar them from participating in 
+                school 
+                activities, extracurriculars, and enrichment programs. 
+                It is important that school affiliates recognize that language 
+                barriers do not 
+                stunt intellectual development. Additionally, ELL teachers must 
+                accommodate their students instead of assimilating them by 
+                removing 
                 the identity of their native language entirely.", "<br>","<br>",
-                  "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
-                  a("How to Advocate for ESL/ELL Students",
-                    href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
-                  a("Real-World Experiences and Anecdotes",
-                    href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
-                  a("DPS ESL Office",
-                    href = "https://central.dpsnc.net/esl"),
-                  a("ESL/ELL Teachers",
-                    href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
-        } 
-        else if (input$ms_select == "In-School Suspensions (ISS)"){
-            paste("In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least 
-        half a day but remains under the direct supervision of school personnel.", "<br>", "Students of color are more susceptible to harsher punishments in schools.
+              "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
+              a("How to Advocate for ESL/ELL Students",
+                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+              a("Real-World Experiences and Anecdotes",
+                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+              a("DPS ESL Office",
+                href = "https://central.dpsnc.net/esl"),
+              a("ESL/ELL Teachers",
+                href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
+  
+      } 
+      else if (input$ms_select == "In-School Suspensions (ISS)"){
+        paste("In-school suspensions are described as: Instances in which a 
+            child is temporarily removed from his or her regular classrooms for 
+            at least 
+        half a day but remains under the direct supervision of school personnel.", "<br>", 
+              "Students of color are more susceptible to harsher punishments in schools.
                   Black and Brown students are subject to higher disciplinary 
-                  actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
-                  "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
-                  a("Racial Bias in School Discipline", 
-                    href = "https://www.pnas.org/content/116/17/8255"), "<br>",
-                  a("School-to-Prison Pipeline", 
-                    href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
+                  actions compared to their white peers. A reason for this is 
+        racial bias leading to the over policing of Black and Brown students, 
+        fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
+              "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
+              a("Racial Bias in School Discipline", 
+                href = "https://www.pnas.org/content/116/17/8255"), "<br>",
+              a("School-to-Prison Pipeline", 
+                href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
                   that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
-            )
-        }
-        else if(input$ms_select == "Enrollment") {
-            paste("This dataset shows the enrollment numbers at each school. Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
-                  enrollment or average daily membership (ADM) is used to determine funding for each school. The higher the ADM, the more money a school receives. Recently, 
-                  lawmakers passed a bill stating that they would omit schools from reduction in funding as part of COVID-19 relief. Durham Public Schools continues to strive 
-                  for increased enrollment so that all programs can continue to receive adequate funding.", "<br>","<br>", 
-                  "Below is information about enrollment numbers:", "<br>",
-                  a("The Decrease in Enrollment in North Carolina", 
-                    href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
-            )
-        }
-        else if (input$ms_select == "School and Zone BIPOC Comparison") {
-            paste("This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. 
-                  This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of 
-                  the school zones they inhabit. A contributing factor of this is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", "Gentrification has been 
-                  an increasing problem, and COVID-19 has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of 
-                  their homes, which ultimately changes the demographics of those neighborhoods.
+        )
+        
+    
+      }else if(input$ms_select == "Enrollment") {
+        paste("This dataset shows the enrollment numbers at each school. 
+            Due to the COVID-19 pandemic, there has been a 5% decrease in 
+            enrollment. Normally, 
+                  enrollment or average daily membership (ADM) is used to 
+                  determine funding for each school. The higher the ADM, the 
+                  more money a school receives. Recently, 
+                  lawmakers passed a bill stating that they would omit schools 
+                  from reduction in funding as part of COVID-19 relief. Durham 
+                  Public Schools continues to strive 
+                  for increased enrollment so that all programs can continue to 
+                  receive adequate funding.", "<br>","<br>", 
+              "Below is information about enrollment numbers:", "<br>",
+              a("The Decrease in Enrollment in North Carolina", 
+                href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
+        )
+        
+      }else if (input$ms_select == "School and Zone BIPOC Comparison") {
+        paste("This plot shows the percentage of students of color in the 
+            school compared to the percentage of people of color in the school 
+            zone. 
+                  This measurement shows the huge disparities in community 
+                  representation for students of color as most of these schools
+                  are not racially reflective of 
+                  the school zones they inhabit. A contributing factor of this 
+                  is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", 
+              "Gentrification has been 
+                  an increasing problem, and COVID-19 has only exacerbated it. 
+                  Black and Brown neighborhoods are becoming increasingly 
+                  expensive forcing families out of 
+                  their homes, which ultimately changes the demographics of 
+                  those neighborhoods.
                   ", "<br>", "<br>",
-                  "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
-                  a("COVID-19 and Gentrification in Durham", 
-                    href = "https://www.dukechronicle.com/article/2020/08/duke-university-covid-rages-housing-hits-home-gentrification-durham"), "<br>",
-                  a("Redlining in Durham", 
-                    href = "https://abc11.com/redlining-gentrification-black-neighborhoods-triangle/10373290/"),
-                  a("Durham’s Racial Inequality, Poverty, and Gentrification", 
-                    href = "https://fpg.unc.edu/publications/racial-inequality-poverty-and-gentrification-durham-north-carolina"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
+              "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
+              a("COVID-19 and Gentrification in Durham", 
+                href = "https://www.dukechronicle.com/article/2020/08/duke-university-covid-rages-housing-hits-home-gentrification-durham"), "<br>",
+              a("Redlining in Durham", 
+                href = "https://abc11.com/redlining-gentrification-black-neighborhoods-triangle/10373290/"),
+              a("Durham’s Racial Inequality, Poverty, and Gentrification", 
+                href = "https://fpg.unc.edu/publications/racial-inequality-poverty-and-gentrification-durham-north-carolina"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
+        
         }
         
-        else if (input$ms_select == "BIPOC Students per School"){
-            paste("This dataset shows the percentage of students of color in each of the ten schools. Each of the ten schools are “majority students of color” 
-                  which means representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral 
-                  for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. 
-                  Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more.", "<br>","<br>",
-                  "Below is more information about students of color::", "<br>",
-                  a("Racial/Ethnic Enrollment in NC Public Schools",
-                    href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
-                  a("Why Representation Matters",
-                    href="https://givingcompass.org/article/why-teacher-representation-matters-to-students-of-color/"),
-                  a("Benefits of POC Representation",
-                    href="https://educationpost.org/students-of-color-need-to-see-more-people-of-color-that-shouldnt-be-controversial/"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+      else if (input$ms_select == "BIPOC Students per School"){
+        paste("This dataset shows the percentage of students of color in 
+            each of the 16 schools. Each of the schools are 
+            “majority students of color” 
+                  which means representation of these students and ", 
+              HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+              "is integral 
+                  for student success. Too often, students of color are 
+                  underrepresented and cannot relate to content/curriculum 
+                  because of cultural differences. 
+                  Students who are able to connect with their tutors, teachers, 
+                  administrators, etc. tend to engage with the content more.", "<br>","<br>",
+              "Below is more information about students of color::", "<br>",
+              a("Racial/Ethnic Enrollment in NC Public Schools",
+                href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
+              a("Why Representation Matters",
+                href="https://givingcompass.org/article/why-teacher-representation-matters-to-students-of-color/"),
+              a("Benefits of POC Representation",
+                href="https://educationpost.org/students-of-color-need-to-see-more-people-of-color-that-shouldnt-be-controversial/"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
                   cultures and ethnicities of the classroom"
-            )
+        )
             
-        }
-        else if (input$ms_select == "Racial Demographics"){
-            paste("This dataset shows the racial breakdown of each of the ten public schools. Durham Public Schools’ student population 
-                  is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 10 schools has changed 
-                  over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has 
-                  increased. Representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral for student success. Too often students 
-                  of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with 
-                  their tutors, teachers, administrators, and the content tend to engage with the content more.", "<br>","<br>",
-                  "Below is more information about racial demographics in schools:", "<br>",
-                  a("Changing School Racial Demographics in Recent Decades",
-                    href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-                  a("More Students of Color in Public schools",
-                    href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+      }
+      
+      
+      else if (input$ms_select == "Racial Demographics"){
+        paste("This dataset shows the racial breakdown of each of the 16 
+            public schools. Durham Public Schools’ student population 
+                  is 80.7% students of color, but only 57% of Durham County is 
+                  people of color. The racial demographics of all 16 schools 
+                  has changed 
+                  over time, specifically in the past 30 years. The number of 
+                  white students has decreased, while the number of students of 
+                  color has 
+                  increased.",
+              "<br>", "<br>", "Representation of these students and ", 
+              HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+              "is integral for student success. Too often students 
+                  of color are underrepresented and cannot relate to the content
+                  because of cultural differences. Students who are able to 
+                  connect with 
+                  their tutors, teachers, administrators, and the content tend 
+                  to engage with the content more.", "<br>","<br>",
+              "Below is more information about racial demographics in schools:", "<br>",
+              a("Changing School Racial Demographics in Recent Decades",
+                href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
+              a("More Students of Color in Public schools",
+                href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
                   cultures and ethnicities of the classroom")
-        }
-        else if (input$ms_select == "Median Household Income"){
-            paste("This graph shows the median household income for each school zone. According to the 2020 US census, 
-                  the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the 
-                  first statistically significant decline we have witnessed since 2011.", "<br>","<br>", "The average household income 
-                  in North Carolina is $54,602, while the median is $65,534, according to the US census as of 2019. Most of these 
-                  schools fall below the NC and US median, a cause for concern. Poverty directly affects how students learn. 
-                  Students’ basic human needs must be met in order to excel in the classroom. ", "<br>", "<br>", "Below are links to 
+     
+      }
+      
+      else if (input$ms_select == "Median Household Income"){
+        paste("This graph shows the median household income for each school 
+            zone. According to the 2020 US census, 
+                  the median household income in the United States is $67,521. 
+                  This is a 2.9% decrease from 2019, which is the 
+                  first statistically significant decline since 2011.", 
+              "<br>","<br>", "According to the 2020 US census, the average 
+                  household income 
+                  in North Carolina is $56,642, while the per capita income in 
+                  the past twelve months is $31,993. All of these 
+                  schools fall below the NC and US median, which is a cause for 
+                  concern. Poverty directly affects how students learn and those 
+                  suffering from food insecurity, for example, are hindered from
+                  reaching their full potential. Students’ basic human needs 
+                  must be met in order to excel in the classroom. Students’ 
+                  basic human needs must be met in order to excel in the 
+                  classroom. ", "<br>", "<br>", "Below are links to 
                   the US Census Information::", "<br>",
-                  a("Nationwide Census", 
-                    href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
-                  a("North Carolina Census",
-                    href="https://www.census.gov/quickfacts/NC"))
-        }
-        else if (input$ms_select == "Median Homesale Price"){
-            paste("This graph shows the average home sale price for each school zone. The median home sale price for the United States is $374,900, 
-                  according to the US Census Bureau. According to Zillow, the median home sale price in North Carolina is $248,950. Due to the Covid-19 Pandemic, 
-                  home prices increased, making the cost of living increase as well (all contributing to  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
-                  "). Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, 
+              a("Nationwide Census", 
+                href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
+              a("North Carolina Census",
+                href="https://www.census.gov/quickfacts/NC"))
+  
+      }
+      else if (input$ms_select == "Median Homesale Price"){
+        paste("This graph shows the average home sale price for each school 
+            zone. In 2021, the median home sale price for the United States is 
+            $397,100 and the average home sale price is $464,200, according to 
+            the US Census Bureau. Specifically for the South, the median home 
+            sale price is $355,900 and the average home sale price is 411,100.",
+              "<br>", "<br>", 
+              "Due to the COVID-19 Pandemic, home prices increased, making the cost
+                  of living increase as well (all contributing to  
+                  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
+              "). Most of these school zones fall above the North Carolina 
+                  median. Because Durham has become an increasingly expensive 
+                  city to live in, 
                   many of the students in the ten schools required free and reduced lunch.", "<br>", "<br>",
-                  "Below is more information about home sale price:", "<br>",
-                  a("Zillow Resource",
-                    href="https://www.zillow.com/research/zillow-may-2021-market-report-29635/"), "<br>",
-                  a("Covid-19 Increase",
-                    href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
+              "Below is more information about home sale price:", "<br>",
+              a("Home Sale Price Data",
+                href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index-Datasets.aspx"), "<br>",
+              a("Covid-19 Increase",
+                href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
                   them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
-        else if (input$ms_select == "Bachelor Degree Rate"){
-            paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees 
-                  greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.", "<br>", "<br>",
-                  "Below is more information about bachelor degree rates:", "<br>",
-                  a("Bachelor’s Degrees and Race",
-                    href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
-                  a("Bachelor’s Degrees and Income",
-                    href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
+      else if (input$ms_select == "Bachelor Degree Rate"){
+        paste("This graph shows the percentage of adults with bachelor’s 
+            degrees in each school zone. The number of individuals with bachelor’s degrees 
+                  greatly differs across racial, income, and gender groups. 
+                  Additionally, individuals with more degrees tend to have 
+                  greater household incomes.", "<br>", "<br>",
+              "Below is more information about bachelor degree rates:", "<br>",
+              a("Bachelor’s Degrees and Race",
+                href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
+              a("Bachelor’s Degrees and Income",
+                href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
+
         }
-        
-        else if (input$ms_select == "Sidewalk Coverage"){
-            paste("Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, 
-                  both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, parks, etc. 
-                  High income areas tend to have more sidewalk coverage than lower income areas.", "<br>", "<br>",
-                  "Below is more information about sidewalk coverage:", "<br>",
-                  a("Importance of Sidewalks",
-                    href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-                  a("Income Disparities and Sidewalk Coverage",
-                    href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
+      else if (input$ms_select == "Sidewalk Coverage"){
+        paste("Areas without sidewalk coverage can become inaccessible for 
+            people without cars or other modes of transportation, 
+                  both private and public. Sidewalks are needed for individuals 
+                  to safely walk to places such as school, grocery stores, parks, etc. 
+                  Especially for younger students, sidewalks are 
+                  essential for their safety. According to a UNC Highway Safety 
+                  Research Center study, the probability of a crash occurring 
+                  near or at a paved sidewalk is 88.2% lower than an unpaved 
+                  site.","<br>", "<br>", 
+              "Sidewalks also promote more physical activity and healthier 
+                  lifestyles. In the US specifically, obesity rates have been 
+                  steadily increasing across all populations and ages. 
+                  Sidewalk coverage provides people with a safe and accessible
+                  way to increase their daily physical activity." ,"<br>", "<br>",
+              "High income areas tend to have more sidewalk coverage than 
+                  lower income areas. 89% of high-income communities have 
+                  sidewalks, whereas only 49% of low income communities have 
+                  sidewalk coverage.", "<br>", "<br>",
+              "Below is more information about sidewalk coverage:", "<br>",
+              a("Importance of Sidewalks",
+                href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
+              a("Income Disparities and Sidewalk Coverage",
+                href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
+      
         }
-        
-        else if (input$ms_select == "Graduation Rate"){
-            paste("The graph depicts the percentage of students estimated to graduate from high school in four years or less. 
-                  The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030.
-                  This is a significant increase from when the first reported graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
-                  rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a 
-                  gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, 
-                  especially school counselors and social workers, to reach out to students with extended absences. External factors 
-                  could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.
+      
+      else if (input$ms_select == "Graduation Rate"){
+        paste("The graph depicts the percentage of students estimated to 
+            graduate from high school in four years or less. 
+                  The graduation rate for North Carolina from 2020 is 87.6%, 
+                  with plans to raise that percentage to 95% by 2030.
+                  This is a significant increase from when the first reported 
+                  graduation rate was 68.3% in 2006.", "<br>", "<br>", 
+              "Graduation 
+                  rates are important. Delayed graduations can lead to risk for 
+                  student dropout rates to increase. Dropping out is a 
+                  gateway that could possibly lead to students living 
+                  disadvantaged lifestyles. It is important for stakeholders, 
+                  especially school counselors and social workers, to reach out 
+                  to students with extended absences. External factors 
+                  could be contributing to student dropout rates and as a 
+                  community, we may be able to diminish those barriers.
                   ", "<br>", "<br>",
-                  "Below are more resources on graduation rates:", "<br>",
-                  a("Dashboard with Articles and Quick Facts about Graduation Rates",
-                    href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
+              "Below are more resources on graduation rates:", "<br>",
+              a("Dashboard with Articles and Quick Facts about Graduation Rates",
+                href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
+        
             
         }
-        else if (input$ms_select == "Median Age"){
+      else if (input$ms_select == "Median Age"){
+        paste("This dataset shows the median age of residents in each school
+            zone. The median age of residents 
+                  in a specific school zone can determine the various assets 
+                  available, identify beneficial resources in 
+                  the community, and give some insight about school enrollment 
+                  numbers in the future.")
+        
+      }
+      
+      else if (input$ms_select == "Titles Per Student"){
+        paste("A school library’s number of book titles per student indicates 
+              the availability of different book titles for students to select. 
+              A higher number of book titles per student indicates a wider 
+              variety of books to choose from. Having more book titles per 
+              student enables more opportunities for whole-class novel reading, 
+              which is essential for learning book analysis, encouraging engaging
+              discussions, and prompting creative writing.", 
+              "<br>", "<br>",
+              "Having a wide selection of books in a library also promotes more 
+              reading and intellectual stimulation for students. With a higher 
+              number of titles per student, it is more likely that most, if not 
+              all, students can find literature that engages them.",
+              "<br>","<br>",
+              "Below are more resources on the importance of book titles:", 
+              "<br>",
+              a("Top 10 Benefits of Reading for All Ages",
+                href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
+              a("North Carolina School Report Cards",
+                href = "https://ncreports.ondemand.sas.com/src/?county=Durham"))
+        
+      }
+      else if (input$ms_select == "WiFi Access"){
+        HTML(paste0(strong("Note: "), "Due to the COVID-19 pandemic, this data only 
+        extends until December of 2020. Therefore, only the 2019-2020 school 
+        year is reflected above.",
+                    "<br>", "<br>",
+                    "The visualization depicts the number of wireless access points for each
+        classroom. A school with a higher number of access points overall will 
+        have better internet coverage and quality than a school with less access
+        points.",
+                    "<br>", "<br>",
+                    "As things begin to modernize with time, the internet has become a vital
+        resource for all. Specifically in schools, teachers can display 
+        information and teach through slideshows, animations, videos, games, 
+        and more. Incorporating various forms of online tools can make the 
+        students become more engaged, while enabling the educator to explore new
+        teaching methods. As a result, students will become more comfortable 
+        with using technology.",
+                    "<br>", "<br>",
+                    "However, not all students have the same access to technology in their 
+        homes. Most schools have accounted for this disparity by providing 
+        students with free tablets or laptops. During the COVID-19 pandemic, 
+        when students of all ages had to adjust to online instruction, several 
+        counties provided WiFI hubs so that students’ learning was not hindered.")
+             
+        )
+      }
+    })       
+    
+    
+    output$hs_resources <- renderText
+    ({
+      if(input$hs_select == "Advanced Placement (AP) Course Enrollment") {
+        paste("Advanced Placement (AP) courses are challenging, 
+            collegiate-level courses that are offered to high school students. 
+            AP courses weigh more than honors courses on the high school level.
+Students can take these classes for an opportunity to receive college credit 
+upon scoring a three or higher (out of five) on the standardized assessment, 
+which saves the student money on college tuition. AP classes also serve as a way
+for students to be placed into higher-level courses at their college.", "<br>","<br>",
+              "Below is more information about AP courses:", "<br>", 
+              a("NCDPI AP Courses", 
+                href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
+              a("DPS AP Courses", 
+                href = "https://www.dpsnc.net/Page/430"),
+              a("College Board",
+                href="https://apstudents.collegeboard.org/course-index-page"))
+    
+   
+      }
+      
+      else if (input$hs_select == "Average Class Size"){
+        paste("Research proves smaller class size is beneficial to student 
+                  achievement. Smaller classes allow for the teacher to focus 
+                  less on classroom management, and more on centralized 
+                  learning. Students have stated they feel more comfortable in 
+                  smaller classes as well.","<br>","<br>",
+              "Resources Discussing the Importance of Class Size:","<br>",
+              a("The Benefits of Investing in Smaller Class Sizes",
+                href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
+              a("State Policy View on Class Size",
+                href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
+      
+      }
+      
+      else if (input$hs_select == "CTE Course Enrollment Rate, High School"){
+        paste("Career and Technical Education (CTE) courses are designed for
+                  high school students to receive real-world experience in the 
+                  career field they are most interested in. Durham Public Schools
+                  started the “3-2-1” initiative in 2019 where all high school 
+                  students are required to take three CTE courses, participate 
+                  in two career exposure activities, and get an internship or a 
+                  job before they graduate. This initiative, as well as all of 
+                  CTE courses, are created to develop students’ soft skills, 
+                  gain real-world experience, and help students decide on their
+                  post-graduate plans.", "<br>","<br>",
+              "Below is more information about CTE courses in Durham Public 
+                  Schools and North Carolina:", "<br>",
+              a("DPS CTE Course Initiative",
+                href = "https://www.dpsnc.net/domain/293"), "<br>",
+              a("NCDPI CTE Course Overview",
+                href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education"))
+
+            
+      }
+      else if (input$hs_select == "Experienced Teacher Ratio") {
+        paste("Experienced teachers are those who have approximately 
+            five or more years of experience with teaching. Although more 
+            experienced teachers tend 
+              to perform better on their evaluations, research shows teacher 
+              experience does not directly correlate to effective teaching. 
+              Some schools tend 
+              to be more attracted to veteran teachers whereas other schools 
+              may prefer employing recently certified teachers that can provide 
+              current and unique 
+              teaching styles.", "<br>", "<br>", "With the evolution of 
+              research-based practices, it is important to continue to educate 
+              new and returning teachers 
+              on the best teaching practices that are scientifically-proven to 
+              promote student success. Good professional development workshops 
+              are paramount to provide 
+              effective, culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
+              Experience and Professional Development:", "<br>",
+              a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
+                href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
+              a("Teacher Experience in Relation to Teacher Effectiveness", 
+                href ="https://www.nea.org/advocating-for-change/new-from-nea/does-teaching-experience-matter-lets-count-ways"),"<br>",
+              a("NCDPI Educator Professional Development", 
+                href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
+              a("Importance and Resources for Professional Development", 
+                href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
+        
+      } 
+      else if (input$hs_select == "Free and Reduced Lunch") {
+        paste("The percentage of students receiving free and reduced lunch 
+                  is a strong indicator of socioeconomic status. The percentage 
+                  of students that fall below the poverty line determines if a 
+                  school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
+              "Title I schools are eligible to receive grants through the 
+                  Every Student Succeeds Act (ESEA). It is important to be 
+                  cognizant of students’ socioeconomic status without being 
+                  condescending and discriminatory. Socioeconomic status is not a 
+                  limit, it is a barrier.", "<br>","<br>",
+              "Below are articles on Free/Reduced Lunch and its connection 
+                  to Title I schools:", "<br>",
+              a("Rural Schools and Free/Reduced Lunch", 
+                href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
+              a("NC Community Free/Reduced Lunch Eligibility",
+                href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"),
+              "<br>","<br>", HTML(paste0(tags$sup("1"))),
+              strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
+        )
+        
+      } 
+      else if (input$hs_select == "Student-Teacher Ratio, High School"){
+        paste("Research proves smaller student-teacher ratios have a 
+                  positive effect on student achievement. By allowing more 
+                  centralized and one-on-one instruction, smaller 
+                  student-teacher ratios can increase test scores, lower 
+                  dropout rates, and increase graduation rates.","<br>","<br>",
+              "For high school students especially, classes become more 
+                  challenging as they become older and begin to take more 
+                  advanced courses, such as AP or IB classes. In these 
+                  higher-stress environments, smaller sized classrooms enable 
+                  teachers to better gauge if the students are making progress 
+                  and fully understanding the material. Additionally, educators 
+                  have the opportunity to make the curriculum and assignments 
+                  more personalized to cater to the student body.", "<br>","<br>",
+              "Resources on Student-Teacher Ratios:","<br>",
+              a("Infographics and Information on Student-Teacher Ratios",
+                href = "https://www.hunschool.org/resources/student-teacher-ratios"))
+      
+    
+      } 
+      else if (input$hs_select == "Students Per Device"){
+        paste("Living in a digital age, technology usage in the classroom 
+            has increased tremendously, especially during the COVID-19 pandemic.
+            Although technology 
+              is a great resource, students may not have equitable access to 
+              these devices. It is important for students and teachers to not 
+              only have access to these 
+              technological devices, but also understand how to use them, which 
+              is why professional development is so important. Professional 
+              development is necessary 
+              to keep educators up to date on new technology to create the most 
+                  effective learning environment.","<br>","<br>",
+              "Resources on Access and Technology in the Classroom:", "<br>",
+              a("Durham Public Schools’ Technological Services",
+                href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
+              a("Equitable Access to Technology",
+                href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
+        
+        } 
+      else if (input$hs_select == "Funding Per Pupil"){
+        paste("This indicator represents the amount that local, state, and 
+            federal governments spend on elementary and secondary education 
+            adjusted for the 
+              size of the student body. It is calculated by dividing the current
+              expenditures over the entire academic year for pre-kindergarten 
+              through grade 
+              12 by the number of students in those grades in public schools. 
+              Current expenditures include instruction and instruction-related 
+              costs, student 
+              support services, administration, and operations. Excluded from 
+              those expenditures are funds for school construction and other 
+              capital outlays, 
+              debt service, and programs outside of public elementary and 
+                  secondary education.", "<br>", "<br>",
+              "North Carolina ranks 39th in per pupil 
+                  spending out of 50.", "<br>", "<br>",
+              "Resources on public school funding:", "<br>",
+              a("Interactive Summary of Local - Federal Public School Funding:",
+                href="https://www.dpsnc.net/Page/3771"),"<br>",
+              a("New Per Pupil Expenditure Requirements",
+                href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
+        } 
+      else if (input$hs_select == "Students With Disabilities"){
+        paste("According to the Americans with Disabilities Act, an 
+            individual is considered to have a disability if they have a 
+            condition that impairs them to do certain activities and interact 
+            with those around them. It is integral to make sure students with disabilities are 
+            provided with accessibility services to achieve their full potential
+            in the classroom. 
+              Resources like", HTML(paste0(strong("assistive technology"),tags$sup("1"))), ", transportation,", 
+              HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", etc. 
+                  are mandatory for every school to provide regardless of the 
+                      number of students with disabilities or even the type 
+                  based on the civil rights law Section 504.", "<br>", "<br>",
+              "Below are articles and resources about government protection 
+                  and resources for students with disabilities:", "<br>",
+              a("DPS EC Services",
+                href="https://www.dpsnc.net/Page/169"),
+              a("Section 504",
+                href="https://www.dpsnc.net/Page/336"),
+              a("NCDPI’s EC Division",
+                href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
+              a("Assistive Technology",
+                href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
+                      and functionality of people with varying disabilities",
+              "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
+                      individualized instruction in addition to their standard course of study"
+        )
+      
+        } 
+      else if (input$hs_select == "English as a Second Language (ESL) Student Enrollment"){
+        paste("This graph shows the number of students enrolled in the 
+            English as a Second Language (ESL) or English Language Learners (ELL) Program. 
+        ESL students consist of any student regardless of ethnicity, origin, 
+        race, age, etc. who is a non-native English speaker. These programs are 
+        created to help children learn English along with other subjects 
+        necessary to complete each grade.", "<br>","<br>", "Unfortunately, 
+                ESL students can face racial bias, discrimination, and bullying 
+                in the classroom. Teachers may bar them from participating in 
+                school 
+                activities, extracurriculars, and enrichment programs. It is 
+                important that school affiliates recognize that language 
+                barriers do not 
+                stunt intellectual development. Additionally, ELL teachers must 
+                accommodate their students instead of assimilating them by 
+                removing 
+                the identity of their native language entirely.", "<br>","<br>",
+              "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
+              a("How to Advocate for ESL/ELL Students",
+                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+              a("Real-World Experiences and Anecdotes",
+                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+              a("DPS ESL Office",
+                href = "https://central.dpsnc.net/esl"),
+              a("ESL/ELL Teachers",
+                href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
+        
+        } 
+      else if (input$hs_select == "In-School Suspensions (ISS)"){
+        paste("In-school suspensions are described as: 
+            Instances in which a child is temporarily removed from his or her 
+            regular classrooms for at least 
+        half a day but remains under the direct supervision of school personnel.
+        (https://supportiveschooldiscipline.org/suspension)", "<br>", 
+              "Students of color are more susceptible to harsher punishments in schools.
+                  Black and Brown students are subject to higher disciplinary 
+                  actions compared to their white peers. A reason for this is 
+        racial bias leading to the over policing of Black and Brown students, 
+        fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
+              "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
+              a("Racial Bias in School Discipline", 
+                href = "https://www.pnas.org/content/116/17/8255"), "<br>",
+              a("School-to-Prison Pipeline", 
+                href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
+                  that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
+        )
+        }
+      else if(input$hs_select == "Enrollment") {
+        paste("This dataset shows the enrollment numbers at each school. 
+            Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
+                  enrollment or average daily membership (ADM) is used to 
+                  determine funding for each school. The higher the ADM, the 
+                  more money a school receives. Recently, 
+                  lawmakers passed a bill stating that they would omit schools 
+                  from reduction in funding as part of COVID-19 relief. Durham 
+                  Public Schools continues to strive 
+                  for increased enrollment so that all programs can continue to 
+                  receive adequate funding.", "<br>","<br>", 
+              "Below is information about enrollment numbers:", "<br>",
+              a("The Decrease in Enrollment in North Carolina", 
+                href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
+        )
+      }
+      else if (input$hs_select == "School and Zone BIPOC Comparison") {
+        paste("This plot shows the percentage of students of color in the 
+            school compared to the percentage of people of color in the school zone. 
+                  This measurement shows the huge disparities in community 
+                  representation for students of color as most of these schools 
+                  are not racially reflective of 
+                  the school zones they inhabit. A contributing factor of this 
+                  is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", 
+              "Gentrification has been 
+                  an increasing problem, and COVID-19 has only exacerbated it. 
+                  Black and Brown neighborhoods are becoming increasingly 
+                  expensive forcing families out of 
+                  their homes, which ultimately changes the demographics of 
+                  those neighborhoods.
+                  ", "<br>", "<br>",
+              "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
+              a("COVID-19 and Gentrification in Durham", 
+                href = "https://www.dukechronicle.com/article/2020/08/duke-university-covid-rages-housing-hits-home-gentrification-durham"), "<br>",
+              a("Redlining in Durham", 
+                href = "https://abc11.com/redlining-gentrification-black-neighborhoods-triangle/10373290/"),
+              a("Durham’s Racial Inequality, Poverty, and Gentrification", 
+                href = "https://fpg.unc.edu/publications/racial-inequality-poverty-and-gentrification-durham-north-carolina"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
+                  people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
+        }
+      else if (input$hs_select == "BIPOC Students per School"){
+        paste("This dataset shows the percentage of students of color in 
+            each of the 16 schools. Each of the schools are “majority 
+            students of color” 
+                  which means representation of these students and ", 
+              HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+              "is integral 
+                  for student success. Too often, students of color are 
+                  underrepresented and cannot relate to content/curriculum 
+                  because of cultural differences. 
+                  Students who are able to connect with their tutors, teachers, 
+                  administrators, etc. tend to engage with the content more.", "<br>","<br>",
+              "Below is more information about students of color:", "<br>",
+              a("Racial/Ethnic Enrollment in NC Public Schools",
+                href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
+              a("Why Representation Matters",
+                href="https://givingcompass.org/article/why-teacher-representation-matters-to-students-of-color/"),
+              a("Benefits of POC Representation",
+                href="https://educationpost.org/students-of-color-need-to-see-more-people-of-color-that-shouldnt-be-controversial/"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+                  cultures and ethnicities of the classroom"
+        )
+            
+      }
+      else if (input$hs_select == "Racial Demographics"){
+        paste("This dataset shows the racial breakdown of each of the 16 
+            public schools. Durham Public Schools’ student population 
+                  is 80.7% students of color, but only 57% of Durham County is 
+                  people of color. The racial demographics of all 16 schools has
+                  changed 
+                  over time, specifically in the past 30 years. The number of 
+                  white students has decreased, while the number of students of 
+                  color has 
+                  increased.",
+              "<br>", "<br>",
+              "Representation of these students and ", 
+              HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+              "is integral for student success. Too often students 
+                  of color are underrepresented and cannot relate to the content
+                  because of cultural differences. Students who are able to 
+                  connect with 
+                  their tutors, teachers, administrators, and the content tend 
+                  to engage with the content more.", "<br>","<br>",
+              "Below is more information about racial demographics in schools:", "<br>",
+              a("Changing School Racial Demographics in Recent Decades",
+                href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
+              a("More Students of Color in Public schools",
+                href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+                  cultures and ethnicities of the classroom")
+       
+        }
+      else if (input$hs_select == "Median Household Income"){
+        paste("This graph shows the median household income for each school 
+            zone. According to the 2020 US census, 
+                  the median household income in the United States is $67,521. 
+                  This is a 2.9% decrease from 2019, which is the 
+                  first statistically significant decline
+                  since 2011.", "<br>","<br>", "The average household income 
+                  in North Carolina is $56,642, while the per capita income in 
+                  the past twelve months is $31,993. Most of these 
+                  schools fall below the NC and US median, which is a cause for 
+                  concern." , "<br>", "<br>",
+              "Poverty directly affects how students learn. students 
+                  suffering from food insecurity, for example, are hindered from
+                  reaching their full potential. Students’ basic human needs 
+                  must be met in order to excel in 
+                  the classroom.", "<br>", "<br>", "Below are links to 
+                  the US Census Information::", "<br>",
+              a("Nationwide Census", 
+                href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
+              a("North Carolina Census",
+                href="https://www.census.gov/quickfacts/NC"))
+        
+        }
+      else if (input$hs_select == "Median Homesale Price"){
+        paste("This graph shows the average home sale price for each school 
+            zone. In 2021, the median home sale price for the United States is 
+            $397,100 and the average home sale price is $464,200, according to 
+            the US Census Bureau. Specifically for the South, the median home 
+            sale price is $355,900 and the average home sale price is $411,100." 
+              , "<br>", "<br>", 
+              "Due to the Covid-19 pandemic, 
+                  home prices increased, making the cost of living increase as 
+                  well (all contributing to  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
+              "). Most of these school zones fall above the North Carolina 
+                  median. Because Durham has become an increasingly expensive 
+                  city to live in, 
+                  many of the students in the ten schools required free and 
+                  reduced lunch.", "<br>", "<br>",
+              "Below is more information about home sale price:", "<br>",
+              a("Home Sale Price Data",
+                href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index-Datasets.aspx"), "<br>",
+              a("Covid-19 Increase",
+                href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
+                  them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
+        
+        }
+      else if (input$hs_select == "Bachelor Degree Rate"){
+        paste("This graph shows the percentage of adults with bachelor’s 
+            degrees in each school zone. The number of individuals with 
+            bachelor’s degrees 
+                  greatly differs across racial, income, and gender groups. 
+                  Additionally, individuals with more degrees tend to have 
+                  greater household incomes.", "<br>", "<br>",
+              "Below is more information about bachelor degree rates:", "<br>",
+              a("Bachelor’s Degrees and Race",
+                href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
+              a("Bachelor’s Degrees and Income",
+                href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
+        
+        }
+      else if (input$hs_select == "Sidewalk Coverage"){
+        paste("Areas without sidewalk coverage can become inaccessible for
+                  people without cars or other modes of transportation, 
+                  both private and public. Sidewalks are needed for individuals 
+                  to safely walk to places such as school, grocery stores, 
+                  parks, etc. Especially for younger students, sidewalks are 
+                  essential for their safety. According to a UNC Highway Safety 
+                  Research Center study, the probability of a crash occurring 
+                  near or at a paved sidewalk is 88.2% lower than an unpaved 
+                  site.","<br>", "<br>", 
+              "Sidewalks also promote more physical activity and healthier 
+                  lifestyles. In the US specifically, obesity rates have been 
+                  steadily increasing across all populations and ages. 
+                  Sidewalk coverage provides people with a safe and accessible
+                  way to increase their daily physical activity." ,"<br>", "<br>",
+              "High income areas tend to have more sidewalk coverage than 
+                  lower income areas. 89% of high-income communities have 
+                  sidewalks, whereas only 49% of low income communities have 
+                  sidewalk coverage.", "<br>", "<br>",
+              "Below is more information about sidewalk coverage:", "<br>",
+              a("Importance of Sidewalks",
+                href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
+              a("Income Disparities and Sidewalk Coverage",
+                href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
+        
+        }
+      else if (input$hs_select == "Students With Disabilities"){
+        paste("According to the Americans with Disabilities Act, an 
+            individual is considered to have a disability if they have a 
+            condition that impairs them to do certain activities and interact 
+            with those around them. It is integral to make sure students with disabilities are 
+            provided with accessibility services to achieve their full potential
+            in the classroom. 
+              Resources like", HTML(paste0(strong("assistive technology"),tags$sup("1"))), ", transportation,", 
+              HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", etc. 
+                  are mandatory for every school to provide regardless of the 
+                      number of students with disabilities or even the type 
+                  based on the civil rights law Section 504.", "<br>", "<br>",
+              "Below are articles and resources about government protection 
+                  and resources for students with disabilities:", "<br>",
+              a("DPS EC Services",
+                href="https://www.dpsnc.net/Page/169"),
+              a("Section 504",
+                href="https://www.dpsnc.net/Page/336"),
+              a("NCDPI’s EC Division",
+                href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
+              a("Assistive Technology",
+                href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
+                      and functionality of people with varying disabilities",
+              "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
+                      individualized instruction in addition to their standard course of study"
+        )
+      
+      }
+      else if (input$hs_select == "English as a Second Language (ESL) Student Enrollment"){
+        paste("This graph shows the number of students enrolled in the 
+            English as a Second Language (ESL) or English Language Learners (ELL) Program. 
+        ESL students consist of any student regardless of ethnicity, origin, 
+        race, age, etc. who is a non-native English speaker. These programs are 
+        created to help children learn English along with other subjects 
+        necessary to complete each grade.", "<br>","<br>", "Unfortunately, 
+                ESL students can face racial bias, discrimination, and bullying 
+                in the classroom. Teachers may bar them from participating in 
+                school 
+                activities, extracurriculars, and enrichment programs. It is 
+                important that school affiliates recognize that language 
+                barriers do not 
+                stunt intellectual development. Additionally, ELL teachers must 
+                accommodate their students instead of assimilating them by 
+                removing 
+                the identity of their native language entirely.", "<br>","<br>",
+              "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
+              a("How to Advocate for ESL/ELL Students",
+                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+              a("Real-World Experiences and Anecdotes",
+                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+              a("DPS ESL Office",
+                href = "https://central.dpsnc.net/esl"),
+              a("ESL/ELL Teachers",
+                href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
+        
+      }
+      else if (input$hs_select == "Median Age"){
             paste("This dataset shows the median age of residents in each school zone. The median age of residents 
                   in a specific school zone can determine the various assets available, identify beneficial resources in 
                   the community, and give some insight about school enrollment numbers in the future.")
         }
-    }) 
-    
-    output$hs_resources <- renderText({
-        if(input$hs_select == "Advanced Placement (AP) Course Enrollment") {
-            paste("Advanced Placement (AP) courses are challenging, collegiate-level courses that are offered to high school students. AP courses weigh more than honors courses on the high school level.
-Students can take these classes for an opportunity to receive college credit upon scoring a three or higher (out of five) on the standardized assessment, which saves the student money on college tuition. AP classes also serve as a way for students to be placed into higher-level courses at their college.
-", "<br>","<br>",
-                  "Below is more information about AP courses:", "<br>", 
-                  a("NCDPI AP Courses", 
-                    href = "https://www.dpi.nc.gov/students-families/enhanced-opportunities/advanced-learning-and-gifted-education/advanced-coursework/advanced-placement"), "<br>",
-                  a("DPS AP Courses", 
-                    href = "https://www.dpsnc.net/Page/430"),
-                  a("College Board",
-                    href="https://apstudents.collegeboard.org/course-index-page"))
-        }else if (input$hs_select == "Average Class Size"){
-            paste("Research proves smaller class size is beneficial to student achievement. Smaller classes allow for the teacher to focus less on classroom management, and more on centralized learning. Students have stated they feel more comfortable in smaller classes as well.","<br>","<br>",
-                  "Resources Discussing the Importance of Class Size:","<br>",
-                  a("The Benefits of Investing in Smaller Class Sizes",
-                    href = "https://www.nea.org/advocating-for-change/new-from-nea/educators-and-parents-reset-class-size-debate"), "<br>",
-                  a("State Policy View on Class Size",
-                    href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
-        }
-        else if (input$hs_select == "CTE Course Enrollment Rate, High School"){
-            paste("Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where all high school students are required to take three CTE courses, participate in two career exposure activities, and get an internship or a job before they graduate. This initiative, as well as all of CTE courses, are created to develop students’ soft skills, gain real-world experience, and help students decide on their post-graduate plans.", "<br>","<br>",
-                  "Below is more information about CTE courses in Durham Public Schools and North Carolina:", "<br>",
-                  a("DPS CTE Course Initiative",
-                    href = "https://www.dpsnc.net/domain/293"), "<br>",
-                  a("NCDPI CTE Course Overview",
-                    href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education")
-            )
-            
-        }else if (input$hs_select == "Experienced Teacher Ratio") {
-            paste("Experienced teachers are those who have approximately five or more years of experience with teaching. Although more experienced teachers tend 
-              to perform better on their evaluations, research shows teacher experience does not directly correlate to effective teaching. Some schools tend 
-              to be more attracted to veteran teachers whereas other schools may prefer employing recently certified teachers that can provide current and unique 
-              teaching styles.", "<br>", "<br>", "With the evolution of research-based practices, it is important to continue to educate new and returning teachers 
-              on the best teaching practices that are scientifically-proven to promote student success. Good professional development workshops are paramount to provide 
-              effective, culturally-responsive teaching practices.", "<br>","<br>","Below are articles on Teacher 
-              Experience and Professional Development:", "<br>",
-                  a("Effects of Hiring and Recommendations for Supporting Experienced Teachers", 
-                    href = "https://learningpolicyinstitute.org/product/does-teaching-experience-increase-teacher-effectiveness-review-research"),"<br>",
-                  a("Teacher Experience in Relation to Teacher Effectiveness", 
-                    href ="https://www.nea.org/advocating-for-change/new-from-nea/does-teaching-experience-matter-lets-count-ways"),"<br>",
-                  a("NCDPI Educator Professional Development", 
-                    href ="https://www.dpi.nc.gov/educators/professional-development"),"<br>",
-                  a("Importance and Resources for Professional Development", 
-                    href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
-        } else if (input$hs_select == "Free and Reduced Lunch") {
-            paste("The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ", HTML(paste0(strong("Title I"),tags$sup("1"))), ".", 
-                  "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and prejudiced. Socioeconomic status is not a limit, it is a barrier.", "<br>","<br>",
-                  "Below are articles on Free/Reduced Lunch and its connection to Title I schools:", "<br>",
-                  a("Rural Schools and Free/Reduced Lunch", 
-                    href = "https://www.nea.org/advocating-for-change/new-from-nea/whos-looking-out-rural-schools"), "<br>",
-                  a("NC Community Free/Reduced Lunch Eligibility",
-                    href = "https://www.dpi.nc.gov/districts-schools/federal-program-monitoring/title-i-part/community-eligibility-free-and-reduced-price-meals"),
-                  "<br>","<br>", HTML(paste0(tags$sup("1"))),
-                  strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
-            )
-        } else if (input$hs_select == "Student-Teacher Ratio, Elementary School"){
-            paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, 
-              smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates. ","<br>","<br>",
-                  "Resources on Student-Teacher Ratios:","<br>",
-                  a("Infographics and Information on Student-Teacher Ratios",
-                    href = "https://www.hunschool.org/resources/student-teacher-ratios"))
-        } else if (input$hs_select == "Student-Teacher Ratio, High School"){
-            paste("Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, 
-              smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.","<br>","<br>",
-                  "Resources on Student-Teacher Ratios:","<br>",
-                  a("Infographics and Information on Student-Teacher Ratios",
-                    href = "https://www.hunschool.org/resources/student-teacher-ratios"))
-        } else if (input$hs_select == "Students Per Device"){
-            paste("Living in a digital age, technology usage in the classroom has increased tremendously, especially during the COVID-19 pandemic. Although technology 
-              is a great resource, students may not have equitable access to these devices. It is important for students and teachers to not only have access to these 
-              technological devices, but also understand how to use them, which is why professional development is so important. Professional development is necessary 
-              to keep educators up to date on new technology to create the most effective learning environment.","<br>","<br>",
-                  "Resources on Access and Technology in the Classroom:", "<br>",
-                  a("Durham Public Schools’ Technological Services",
-                    href = "https://www.dpsnc.net/site/default.aspx?PageType=3&DomainID=207&ModuleInstanceID=8115&ViewID=6446EE88-D30C-497E-9316-3F8874B3E108&RenderLoc=0&FlexDataID=42210&PageID=4738"), "<br>",
-                  a("Equitable Access to Technology",
-                    href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
-        } 
-        else if (input$hs_select == "Funding Per Pupil"){
-            paste("This indicator represents the amount that local, state, and federal governments spend on elementary and secondary education adjusted for the 
-              size of the student body. It is calculated by dividing the current expenditures over the entire academic year for pre-kindergarten through grade 
-              12 by the number of students in those grades in public schools. Current expenditures include instruction and instruction-related costs, student 
-              support services, administration, and operations. Excluded from those expenditures are funds for school construction and other capital outlays, 
-              debt service, and programs outside of public elementary and secondary education. North Carolina ranks 39th in per pupil spending out of 50.", "<br>", "<br>",
-                  "Resources on public school funding:", "<br>",
-                  a("Interactive Summary of Local - Federal Public School Funding:",
-                    href="https://www.dpsnc.net/Page/3771"),"<br>",
-                  a("New Per Pupil Expenditure Requirements",
-                    href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
-        } 
-        else if (input$hs_select == "Students With Disabilities"){
-            paste("It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. 
-              Resources like", HTML(paste0(strong("assistive technology"),tags$sup("1"))), ", transportation,", 
-                  HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), ", etc. are mandatory for every school to provide regardless of the 
-                      number of students with disabilities or even the type based on the civil rights law Section 504.", "<br>", "<br>",
-                  "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
-                  a("DPS EC Services",
-                    href="https://www.dpsnc.net/Page/169"),
-                  a("Section 504",
-                    href="https://www.dpsnc.net/Page/336"),
-                  a("NCDPI’s EC Division",
-                    href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
-                  a("Assistive Technology",
-                    href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
-                      and functionality of people with varying disabilities",
-                  "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
-                      individualized instruction in addition to their standard course of study"
-            )
-        } 
-        else if (input$hs_select == "English as a Second Language (ESL) Student Enrollment"){
-            paste("This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. 
-        ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are c
-        reated to help children learn English along with other subjects necessary to complete each grade.", "<br>","<br>", "Unfortunately, 
-                ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may bar them from participating in school 
-                activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not 
-                stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing 
-                the identity of their native language entirely.", "<br>","<br>",
-                  "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
-                  a("How to Advocate for ESL/ELL Students",
-                    href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
-                  a("Real-World Experiences and Anecdotes",
-                    href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
-                  a("DPS ESL Office",
-                    href = "https://central.dpsnc.net/esl"),
-                  a("ESL/ELL Teachers",
-                    href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
-        } 
-        else if (input$hs_select == "In-School Suspensions (ISS)"){
-            paste("In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least 
-        half a day but remains under the direct supervision of school personnel.", "<br>", "Students of color are more susceptible to harsher punishments in schools.
+      
+      else if (input$hs_select == "In-School Suspensions (ISS)"){
+          paste("In-school suspensions are described as: 
+            Instances in which a child is temporarily removed from his or her 
+            regular classrooms for at least 
+        half a day but remains under the direct supervision of school personnel.
+        (https://supportiveschooldiscipline.org/suspension)", "<br>", 
+                "Students of color are more susceptible to harsher punishments in schools.
                   Black and Brown students are subject to higher disciplinary 
-                  actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
-                  "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
-                  a("Racial Bias in School Discipline", 
-                    href = "https://www.pnas.org/content/116/17/8255"), "<br>",
-                  a("School-to-Prison Pipeline", 
-                    href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
+                  actions compared to their white peers. A reason for this is 
+        racial bias leading to the over policing of Black and Brown students, 
+        fueling the", HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))), ".", "<br>","<br>",
+                "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
+                a("Racial Bias in School Discipline", 
+                  href = "https://www.pnas.org/content/116/17/8255"), "<br>",
+                a("School-to-Prison Pipeline", 
+                  href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
+                "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
                   that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
-            )
-        }
-        else if(input$hs_select == "Enrollment") {
-            paste("This dataset shows the enrollment numbers at each school. Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
-                  enrollment or average daily membership (ADM) is used to determine funding for each school. The higher the ADM, the more money a school receives. Recently, 
-                  lawmakers passed a bill stating that they would omit schools from reduction in funding as part of COVID-19 relief. Durham Public Schools continues to strive 
-                  for increased enrollment so that all programs can continue to receive adequate funding.", "<br>","<br>", 
+          )
+      }
+          
+          else if(input$hs_select == "Enrollment") {
+            paste("This dataset shows the enrollment numbers at each school. 
+            Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
+                  enrollment or average daily membership (ADM) is used to 
+                  determine funding for each school. The higher the ADM, the 
+                  more money a school receives. Recently, 
+                  lawmakers passed a bill stating that they would omit schools 
+                  from reduction in funding as part of COVID-19 relief. Durham 
+                  Public Schools continues to strive 
+                  for increased enrollment so that all programs can continue to 
+                  receive adequate funding.", "<br>","<br>", 
                   "Below is information about enrollment numbers:", "<br>",
                   a("The Decrease in Enrollment in North Carolina", 
                     href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
             )
-        }
-        else if (input$hs_select == "School and Zone BIPOC Comparison") {
-            paste("This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. 
-                  This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of 
-                  the school zones they inhabit. A contributing factor of this is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", "Gentrification has been 
-                  an increasing problem, and COVID-19 has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of 
-                  their homes, which ultimately changes the demographics of those neighborhoods.
+          }
+          else if (input$hs_select == "School and Zone BIPOC Comparison") {
+            paste("This plot shows the percentage of students of color in the 
+            school compared to the percentage of people of color in the school zone. 
+                  This measurement shows the huge disparities in community 
+                  representation for students of color as most of these schools 
+                  are not racially reflective of 
+                  the school zones they inhabit. A contributing factor of this 
+                  is " , HTML(paste0(strong("gentrification"),tags$sup("1"))),".", 
+                  "Gentrification has been 
+                  an increasing problem, and COVID-19 has only exacerbated it. 
+                  Black and Brown neighborhoods are becoming increasingly 
+                  expensive forcing families out of 
+                  their homes, which ultimately changes the demographics of 
+                  those neighborhoods.
                   ", "<br>", "<br>",
                   "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
                   a("COVID-19 and Gentrification in Durham", 
@@ -2180,14 +2978,21 @@ Students can take these classes for an opportunity to receive college credit upo
                     href = "https://fpg.unc.edu/publications/racial-inequality-poverty-and-gentrification-durham-north-carolina"),
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
-        }
-        
-        else if (input$hs_select == "BIPOC Students per School"){
-            paste("This dataset shows the percentage of students of color in each of the ten schools. Each of the ten schools are “majority students of color” 
-                  which means representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral 
-                  for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. 
-                  Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more.", "<br>","<br>",
-                  "Below is more information about students of color::", "<br>",
+          }
+          
+          else if (input$hs_select == "BIPOC Students per School"){
+            paste("This dataset shows the percentage of students of color in 
+            each of the 16 schools. Each of the schools are “majority 
+            students of color” 
+                  which means representation of these students and ", 
+                  HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+                  "is integral 
+                  for student success. Too often, students of color are 
+                  underrepresented and cannot relate to content/curriculum 
+                  because of cultural differences. 
+                  Students who are able to connect with their tutors, teachers, 
+                  administrators, etc. tend to engage with the content more.", "<br>","<br>",
+                  "Below is more information about students of color:", "<br>",
                   a("Racial/Ethnic Enrollment in NC Public Schools",
                     href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
                   a("Why Representation Matters",
@@ -2197,69 +3002,79 @@ Students can take these classes for an opportunity to receive college credit upo
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
                   cultures and ethnicities of the classroom"
             )
-            
-        }
-        else if (input$hs_select == "Racial Demographics"){
-            paste("This dataset shows the racial breakdown of each of the ten public schools. Durham Public Schools’ student population 
-                  is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 10 schools has changed 
-                  over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has 
-                  increased. Representation of these students and ", HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral for student success. Too often students 
-                  of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with 
-                  their tutors, teachers, administrators, and the content tend to engage with the content more.", "<br>","<br>",
-                  "Below is more information about racial demographics in schools:", "<br>",
-                  a("Changing School Racial Demographics in Recent Decades",
-                    href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-                  a("More Students of Color in Public schools",
-                    href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
-                  cultures and ethnicities of the classroom")
-        }
-        else if (input$hs_select == "Median Household Income"){
-            paste("This graph shows the median household income for each school zone. According to the 2020 US census, 
-                  the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the 
-                  first statistically significant decline we have witnessed since 2011.", "<br>","<br>", "The average household income 
-                  in North Carolina is $54,602, while the median is $65,534, according to the US census as of 2019. Most of these 
-                  schools fall below the NC and US median, a cause for concern. Poverty directly affects how students learn. 
-                  Students’ basic human needs must be met in order to excel in the classroom. ", "<br>", "<br>", "Below are links to 
-                  the US Census Information::", "<br>",
-                  a("Nationwide Census", 
-                    href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
-                  a("North Carolina Census",
-                    href="https://www.census.gov/quickfacts/NC"))
-        }
-        else if (input$hs_select == "Median Homesale Price"){
-            paste("This graph shows the average home sale price for each school zone. The median home sale price for the United States is $374,900, 
-                  according to the US Census Bureau. According to Zillow, the median home sale price in North Carolina is $248,950. Due to the Covid-19 Pandemic, 
-                  home prices increased, making the cost of living increase as well (all contributing to  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
-                  "). Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, 
-                  many of the students in the ten schools required free and reduced lunch.", "<br>", "<br>",
-                  "Below is more information about home sale price:", "<br>",
-                  a("Zillow Resource",
-                    href="https://www.zillow.com/research/zillow-may-2021-market-report-29635/"), "<br>",
-                  a("Covid-19 Increase",
-                    href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
-                  them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
-        }
-        else if (input$hs_select == "Bachelor Degree Rate"){
-            paste("This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees 
-                  greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.", "<br>", "<br>",
-                  "Below is more information about bachelor degree rates:", "<br>",
-                  a("Bachelor’s Degrees and Race",
-                    href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
-                  a("Bachelor’s Degrees and Income",
-                    href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
-        }
         
-        else if (input$hs_select == "Sidewalk Coverage"){
-            paste("Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, 
-                  both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, parks, etc. 
-                  High income areas tend to have more sidewalk coverage than lower income areas.", "<br>", "<br>",
-                  "Below is more information about sidewalk coverage:", "<br>",
-                  a("Importance of Sidewalks",
-                    href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-                  a("Income Disparities and Sidewalk Coverage",
-                    href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
+      }
+      else if (input$hs_select == "Racial Demographics"){
+        paste("This dataset shows the racial breakdown of each of the 16 
+            public schools. Durham Public Schools’ student population 
+                  is 80.7% students of color, but only 57% of Durham County is 
+                  people of color. The racial demographics of all 16 schools has
+                  changed 
+                  over time, specifically in the past 30 years. The number of 
+                  white students has decreased, while the number of students of 
+                  color has 
+                  increased.",
+              "<br>", "<br>",
+              "Representation of these students and ", 
+              HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+              "is integral for student success. Too often students 
+                  of color are underrepresented and cannot relate to the content
+                  because of cultural differences. Students who are able to 
+                  connect with 
+                  their tutors, teachers, administrators, and the content tend 
+                  to engage with the content more.", "<br>","<br>",
+              "Below is more information about racial demographics in schools:", "<br>",
+              a("Changing School Racial Demographics in Recent Decades",
+                href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
+              a("More Students of Color in Public schools",
+                href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+                  cultures and ethnicities of the classroom")
+      }
+      else if (input$hs_select == "Median Household Income"){
+        paste("This graph shows the median household income for each school 
+            zone. According to the 2020 US census, 
+                  the median household income in the United States is $67,521. 
+                  This is a 2.9% decrease from 2019, which is the 
+                  first statistically significant decline
+                  since 2011.", "<br>","<br>", "The average household income 
+                  in North Carolina is $56,642, while the per capita income in 
+                  the past twelve months is $31,993. Most of these 
+                  schools fall below the NC and US median, which is a cause for 
+                  concern." , "<br>", "<br>",
+              "Poverty directly affects how students learn. students 
+                  suffering from food insecurity, for example, are hindered from
+                  reaching their full potential. Students’ basic human needs 
+                  must be met in order to excel in 
+                  the classroom.", "<br>", "<br>", "Below are links to 
+                  the US Census Information::", "<br>",
+              a("Nationwide Census", 
+                href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
+              a("North Carolina Census",
+                href="https://www.census.gov/quickfacts/NC"))
+      }
+      else if (input$hs_select == "Median Homesale Price"){
+        paste("This graph shows the average home sale price for each school 
+            zone. In 2021, the median home sale price for the United States is 
+            $397,100 and the average home sale price is $464,200, according to 
+            the US Census Bureau. Specifically for the South, the median home 
+            sale price is $355,900 and the average home sale price is $411,100." 
+              , "<br>", "<br>", 
+              "Due to the Covid-19 pandemic, 
+                  home prices increased, making the cost of living increase as 
+                  well (all contributing to  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
+              "). Most of these school zones fall above the North Carolina 
+                  median. Because Durham has become an increasingly expensive 
+                  city to live in, 
+                  many of the students in the ten schools required free and 
+                  reduced lunch.", "<br>", "<br>",
+              "Below is more information about home sale price:", "<br>",
+              a("Home Sale Price Data",
+                href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index-Datasets.aspx"), "<br>",
+              a("Covid-19 Increase",
+                href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
+              "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
+                  them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
         
         else if (input$hs_select == "Graduation Rate"){
@@ -2276,14 +3091,11 @@ Students can take these classes for an opportunity to receive college credit upo
                     href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
             
         }
-        else if (input$hs_select == "Median Age"){
-            paste("This dataset shows the median age of residents in each school zone. The median age of residents 
-                  in a specific school zone can determine the various assets available, identify beneficial resources in 
-                  the community, and give some insight about school enrollment numbers in the future.")
-        }
+
     }) 
     }
     
+
     # Maps - Connecting variable drop down menu to variable info
     displayVar <- reactive({
         switch(input$var,
@@ -3779,3 +4591,5 @@ Students can take these classes for an opportunity to receive college credit upo
     }
     
 }
+
+  
