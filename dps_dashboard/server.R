@@ -108,7 +108,7 @@ library(gotop)
     pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
     farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
-    commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
+    commarts <- read.csv("data/2021/spatial_data/Community Arts.csv")
     sports <- read.csv("data/2021/spatial_data/Community Sports.csv")
 }
 
@@ -144,7 +144,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-function(input, output, session)
+function(input, output, session) {
     
     # SchoolStats - GGPlots
   {
@@ -1467,8 +1467,8 @@ function(input, output, session)
     
     # SchoolStats - Context and Resources
   {  
-  output$es_resources <- renderText({
-        if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
+    output$es_resources <- renderText({
+      if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
               paste("Advanced Placement (AP) courses are challenging, 
             collegiate-level courses that are offered to high school students. 
             AP courses weigh more than honors courses on the high school level. 
@@ -1484,7 +1484,8 @@ function(input, output, session)
                     href = "https://www.dpsnc.net/Page/430"),
                   a("College Board",
                     href="https://apstudents.collegeboard.org/course-index-page"))
-        }else if (input$es_select == "Average Class Size"){
+        }
+      else if (input$es_select == "Average Class Size"){
             paste("Research proves smaller class size is beneficial to student 
                   achievement. Smaller classes allow for the teacher to focus 
                   less on classroom management, and more on centralized 
@@ -1496,7 +1497,7 @@ function(input, output, session)
                   a("State Policy View on Class Size",
                     href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
         }
-        else if (input$es_select == "CTE Course Enrollment Rate, High School"){
+      else if (input$es_select == "CTE Course Enrollment Rate, High School"){
             paste("Career and Technical Education (CTE) courses are designed for
                   high school students to receive real-world experience in the 
                   career field they are most interested in. Durham Public 
@@ -1514,7 +1515,8 @@ function(input, output, session)
                     href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education")
             )
             
-        }else if (input$es_select == "Experienced Teacher Ratio") {
+        }
+      else if (input$es_select == "Experienced Teacher Ratio") {
             paste("Experienced teachers are those who have approximately five or
             more years of experience with teaching. Although more experienced 
             teachers tend to perform better on their evaluations, research shows
@@ -1540,7 +1542,8 @@ function(input, output, session)
                   a("Importance and Resources for Professional Development", 
                     href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
        
-           } else if (input$es_select == "Free and Reduced Lunch") {
+           } 
+      else if (input$es_select == "Free and Reduced Lunch") {
             paste("The percentage of students receiving free and reduced lunch 
                   is a strong indicator of socioeconomic status. The percentage 
                   of students that fall below the poverty line determines if a 
@@ -1559,7 +1562,8 @@ function(input, output, session)
                   "<br>","<br>", HTML(paste0(tags$sup("1"))),
                   strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
             )
-        } else if (input$es_select == "Student-Teacher Ratio, Elementary School"){
+        } 
+      else if (input$es_select == "Student-Teacher Ratio, Elementary School"){
             paste("Research proves smaller student-teacher ratios have a 
             positive effect on student achievement. By allowing more centralized
             and one-on-one instruction, smaller student-teacher ratios can 
@@ -1575,7 +1579,8 @@ function(input, output, session)
                   a("Infographics and Information on Student-Teacher Ratios",
                     href = "https://www.hunschool.org/resources/student-teacher-ratios"))
         
-        } else if (input$es_select == "Students Per Device"){
+        } 
+      else if (input$es_select == "Students Per Device"){
             paste("Living in a digital age, technology usage in the classroom 
                   has increased tremendously, especially during the COVID-19 
                   pandemic. Although technology is a great resource, students 
@@ -1592,7 +1597,7 @@ function(input, output, session)
                   a("Equitable Access to Technology",
                     href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
         } 
-        else if (input$es_select == "Funding Per Pupil"){
+      else if (input$es_select == "Funding Per Pupil"){
             paste("This indicator represents the amount that local, state, and 
                   federal governments spend on elementary and secondary 
                   education adjusted for the size of the student body. It is 
@@ -1611,7 +1616,7 @@ function(input, output, session)
                   a("New Per Pupil Expenditure Requirements",
                     href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
         } 
-        else if (input$es_select == "Students With Disabilities"){
+      else if (input$es_select == "Students With Disabilities"){
             paste("According to the Americans with Disabilities Act, an 
             individual is considered to have a disability if they have a 
             condition that impairs them to do certain activities and interact 
@@ -1639,7 +1644,7 @@ function(input, output, session)
                       individualized instruction in addition to their standard course of study"
             )
         } 
-        else if (input$es_select == "English as a Second Language (ESL) Student Enrollment"){
+      else if (input$es_select == "English as a Second Language (ESL) Student Enrollment"){
             paste("This graph shows the number of students enrolled in the 
             English as a Second Language (ESL) or English Language Learners 
             (ELL) Program. ESL students consist of any student regardless of 
@@ -1664,7 +1669,7 @@ function(input, output, session)
                   a("ESL/ELL Teachers",
                     href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
         } 
-        else if (input$es_select == "In-School Suspensions (ISS)"){
+      else if (input$es_select == "In-School Suspensions (ISS)"){
             paste("In-school suspensions are described as: Instances in which a 
             child is temporarily removed from his or her regular classrooms for at least 
         half a day but remains under the direct supervision of school personnel 
@@ -1683,7 +1688,7 @@ function(input, output, session)
                   that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
             )
         }
-        else if(input$es_select == "Enrollment") {
+      else if(input$es_select == "Enrollment") {
             paste("This dataset shows the enrollment numbers at each school. 
             Due to the COVID-19 pandemic, there has been a 5% decrease in 
             enrollment. Normally, 
@@ -1700,7 +1705,7 @@ function(input, output, session)
                     href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
             )
         }
-        else if (input$es_select == "School and Zone BIPOC Comparison") {
+      else if (input$es_select == "School and Zone BIPOC Comparison") {
             paste("This plot shows the percentage of students of color in the 
             school compared to the percentage of people of color in the school 
             zone. 
@@ -1727,8 +1732,7 @@ function(input, output, session)
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
-        
-        else if (input$es_select == "BIPOC Students per School"){
+      else if (input$es_select == "BIPOC Students per School"){
             paste("This dataset shows the percentage of students of color in 
             each of the 16 schools. Each of the schools are “majority students of color” 
                   which means representation of these students and ", 
@@ -1748,7 +1752,7 @@ function(input, output, session)
                   cultures and ethnicities of the classroom")
             
         }
-        else if (input$es_select == "Racial Demographics"){
+      else if (input$es_select == "Racial Demographics"){
 
             paste("This dataset shows the racial breakdown of each of the 16 
             public schools. Durham Public Schools’ student population 
@@ -1765,7 +1769,7 @@ function(input, output, session)
                   because of cultural differences. Students who are able to 
                   connect with 
                   their tutors, teachers, administrators, and the content tend 
-                  to engage with the content more.", "<br>","<br>"
+                  to engage with the content more.", "<br>","<br>",
                   "Below is more information about racial demographics in schools:", "<br>",
                   a("Changing School Racial Demographics in Recent Decades",
                     href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
@@ -1774,7 +1778,7 @@ function(input, output, session)
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
                   cultures and ethnicities of the classroom")
         }
-        else if (input$es_select == "Median Household Income"){
+      else if (input$es_select == "Median Household Income"){
             paste("This graph shows the median household income for each school 
             zone. According to the 2020 US census, 
                   the median household income in the United States is $67,521. 
@@ -1797,7 +1801,7 @@ function(input, output, session)
                   a("North Carolina Census",
                     href="https://www.census.gov/quickfacts/NC"))
         }
-        else if (input$es_select == "Median Homesale Price"){
+      else if (input$es_select == "Median Homesale Price"){
           paste("This graph shows the average home sale price for each school 
             zone. In 2021, the median home sale price for the United States is 
             $397,100 and the average home sale price is $464,200, according to 
@@ -1820,7 +1824,7 @@ function(input, output, session)
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
                   them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
-        else if (input$es_select == "Bachelor Degree Rate"){
+      else if (input$es_select == "Bachelor Degree Rate"){
             paste("This graph shows the percentage of adults with bachelor’s 
             degrees in each school zone. The number of individuals with 
             bachelor’s degrees 
@@ -1833,8 +1837,7 @@ function(input, output, session)
                   a("Bachelor’s Degrees and Income",
                     href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
         }
-        
-        else if (input$es_select == "Sidewalk Coverage"){
+      else if (input$es_select == "Sidewalk Coverage"){
             paste("Areas without sidewalk coverage can become inaccessible for
             people without cars or other modes of transportation, 
                   both private and public. Sidewalks are needed for individuals 
@@ -1859,8 +1862,7 @@ function(input, output, session)
                   a("Income Disparities and Sidewalk Coverage",
                     href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
         }
-        
-        else if (input$es_select == "Graduation Rate"){
+      else if (input$es_select == "Graduation Rate"){
             paste("The graph depicts the percentage of students estimated to 
             graduate from high school in four years or less. 
                   The graduation rate for North Carolina from 2020 is 87.6%, 
@@ -1880,7 +1882,7 @@ function(input, output, session)
                     href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
             
         }
-        else if (input$es_select == "Median Age"){
+      else if (input$es_select == "Median Age"){
             paste("This dataset shows the median age of residents in each school
             zone. The median age of residents 
                   in a specific school zone can determine the various assets 
@@ -1904,39 +1906,42 @@ function(input, output, session)
               "<br>","<br>",
               "Below are more resources on the importance of book titles:", 
               "<br>",
-              a("Top 10 Benefits of Reading for All Ages",
-                href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
-              a("North Carolina School Report Cards",
-                href = "https://ncreports.ondemand.sas.com/src/?county=Durham"))
+              a("Importance of Culturally-Diverse Literature",
+                href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
+              a("Creating an Effective and Diverse Classroom Library",
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
       }
       else if (input$es_select == "WiFi Access"){
-        HTML(paste0(strong("Note: "), "Due to the COVID-19 pandemic, this data only 
+        HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
         year is reflected above.",
-                    "<br>", "<br>",
-                    "The visualization depicts the number of wireless access points for each
+                          "<br>", "<br>",
+                          "The visualization depicts the number of wireless access points for each
         classroom. A school with a higher number of access points overall will 
         have better internet coverage and quality than a school with less access
         points.",
-                    "<br>", "<br>",
-                    "As things begin to modernize with time, the internet has become a vital
+                          "<br>", "<br>",
+                          "As things begin to modernize with time, the internet has become a vital
         resource for all. Specifically in schools, teachers can display 
         information and teach through slideshows, animations, videos, games, 
         and more. Incorporating various forms of online tools can make the 
         students become more engaged, while enabling the educator to explore new
         teaching methods. As a result, students will become more comfortable 
         with using technology.",
-                    "<br>", "<br>",
-                    "However, not all students have the same access to technology in their 
+                          "<br>", "<br>",
+                          "However, not all students have the same access to technology in their 
         homes. Most schools have accounted for this disparity by providing 
         students with free tablets or laptops. During the COVID-19 pandemic, 
         when students of all ages had to adjust to online instruction, several 
-        counties provided WiFI hubs so that students’ learning was not hindered."))
+        counties provided WiFI hubs so that students’ learning was not hindered."),
+                   "<br>", "<br>",
+                   "Below are more resources on Wi-Fi Access:", "<br>",
+                   a("Impact of High-Speed Internet",
+                     href = "https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1050&context=studentwork")))
       }
       
       
     })       
-    
     output$ms_resources <- renderText({
       if(input$ms_select == "Advanced Placement (AP) Course Enrollment") {
         paste("Advanced Placement (AP) courses are challenging, 
@@ -1954,7 +1959,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("College Board",
                 href="https://apstudents.collegeboard.org/course-index-page"))
          
-      }else if (input$ms_select == "Average Class Size"){
+      }
+      else if (input$ms_select == "Average Class Size"){
         paste("Research proves smaller class size is beneficial to student 
                   achievement. Smaller classes allow for the teacher to focus 
                   less on classroom management, and more on centralized 
@@ -1966,7 +1972,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("State Policy View on Class Size",
                 href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))     
             
-      } else if (input$ms_select == "CTE Course Enrollment Rate, Middle School"){
+      } 
+      else if (input$ms_select == "CTE Course Enrollment Rate, Middle School"){
         paste("Career and Technical Education (CTE) courses are designed for
                   high school students to receive real-world experience in the 
                   career field they are most interested in. Durham Public 
@@ -1984,7 +1991,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education"))
         
       
-      }else if (input$ms_select == "Experienced Teacher Ratio") {
+      }
+      else if (input$ms_select == "Experienced Teacher Ratio") {
         paste("Experienced teachers are those who have approximately five or
             more years of experience with teaching. Although more experienced 
             teachers tend to perform better on their evaluations, research shows
@@ -2008,7 +2016,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
         
     
-      } else if (input$ms_select == "Free and Reduced Lunch") {
+      } 
+      else if (input$ms_select == "Free and Reduced Lunch") {
         paste("The percentage of students receiving free and reduced lunch 
                   is a strong indicator of socioeconomic status. The percentage 
                   of students that fall below the poverty line determines if a 
@@ -2028,7 +2037,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.")
         
       
-      } else if (input$ms_select == "Student-Teacher Ratio, Middle School"){
+      } 
+      else if (input$ms_select == "Student-Teacher Ratio, Middle School"){
         paste("Research proves smaller student-teacher ratios have a 
             positive effect on student achievement. 
             By allowing more centralized and one-on-one instruction, 
@@ -2039,7 +2049,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("Infographics and Information on Student-Teacher Ratios",
                 href = "https://www.hunschool.org/resources/student-teacher-ratios"))
         
-      } else if (input$ms_select == "Students Per Device"){
+      } 
+      else if (input$ms_select == "Students Per Device"){
         paste("Living in a digital age, technology usage in the classroom 
             has increased tremendously, especially during the COVID-19 pandemic.
             Although technology 
@@ -2058,7 +2069,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
         
       } 
-      
       else if (input$ms_select == "Funding Per Pupil"){
         paste("This indicator represents the amount that local, state, and 
             federal governments spend on elementary and secondary education 
@@ -2082,7 +2092,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("New Per Pupil Expenditure Requirements",
                 href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
       
-      } else if (input$ms_select == "Students With Disabilities"){
+      } 
+      else if (input$ms_select == "Students With Disabilities"){
         paste("According to the Americans with Disabilities Act, an 
             individual is considered to have a disability if they have a 
             condition that impairs them to do certain activities and interact 
@@ -2113,7 +2124,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                       individualized instruction in addition to their standard course of study"
         )
         
-      } else if (input$ms_select == "English as a Second Language (ESL) Student Enrollment"){
+      } 
+      else if (input$ms_select == "English as a Second Language (ESL) Student Enrollment"){
         paste("This graph shows the number of students enrolled in the 
             English as a Second Language (ESL) or English Language Learners (ELL) Program. 
         ESL students consist of any student regardless of ethnicity, origin, 
@@ -2162,7 +2174,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         )
         
     
-      }else if(input$ms_select == "Enrollment") {
+      }
+      else if(input$ms_select == "Enrollment") {
         paste("This dataset shows the enrollment numbers at each school. 
             Due to the COVID-19 pandemic, there has been a 5% decrease in 
             enrollment. Normally, 
@@ -2179,7 +2192,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
         )
         
-      }else if (input$ms_select == "School and Zone BIPOC Comparison") {
+      }
+      else if (input$ms_select == "School and Zone BIPOC Comparison") {
         paste("This plot shows the percentage of students of color in the 
             school compared to the percentage of people of color in the school 
             zone. 
@@ -2206,7 +2220,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         
         }
-        
       else if (input$ms_select == "BIPOC Students per School"){
         paste("This dataset shows the percentage of students of color in 
             each of the 16 schools. Each of the schools are 
@@ -2231,8 +2244,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
         )
             
       }
-      
-      
       else if (input$ms_select == "Racial Demographics"){
         paste("This dataset shows the racial breakdown of each of the 16 
             public schools. Durham Public Schools’ student population 
@@ -2260,7 +2271,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   cultures and ethnicities of the classroom")
      
       }
-      
       else if (input$ms_select == "Median Household Income"){
         paste("This graph shows the median household income for each school 
             zone. According to the 2020 US census, 
@@ -2346,7 +2356,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
       
         }
-      
       else if (input$ms_select == "Graduation Rate"){
         paste("The graph depicts the percentage of students estimated to 
             graduate from high school in four years or less. 
@@ -2379,7 +2388,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   numbers in the future.")
         
       }
-      
       else if (input$ms_select == "Titles Per Student"){
         paste("A school library’s number of book titles per student indicates 
               the availability of different book titles for students to select. 
@@ -2396,43 +2404,42 @@ for students to be placed into higher-level courses at their college.", "<br>","
               "<br>","<br>",
               "Below are more resources on the importance of book titles:", 
               "<br>",
-              a("Top 10 Benefits of Reading for All Ages",
-                href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
-              a("North Carolina School Report Cards",
-                href = "https://ncreports.ondemand.sas.com/src/?county=Durham"))
+              a("Importance of Culturally-Diverse Literature",
+                href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
+              a("Creating an Effective and Diverse Classroom Library",
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
         
       }
       else if (input$ms_select == "WiFi Access"){
-        HTML(paste0(strong("Note: "), "Due to the COVID-19 pandemic, this data only 
+        HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
         year is reflected above.",
-                    "<br>", "<br>",
-                    "The visualization depicts the number of wireless access points for each
+                          "<br>", "<br>",
+                          "The visualization depicts the number of wireless access points for each
         classroom. A school with a higher number of access points overall will 
         have better internet coverage and quality than a school with less access
         points.",
-                    "<br>", "<br>",
-                    "As things begin to modernize with time, the internet has become a vital
+                          "<br>", "<br>",
+                          "As things begin to modernize with time, the internet has become a vital
         resource for all. Specifically in schools, teachers can display 
         information and teach through slideshows, animations, videos, games, 
         and more. Incorporating various forms of online tools can make the 
         students become more engaged, while enabling the educator to explore new
         teaching methods. As a result, students will become more comfortable 
         with using technology.",
-                    "<br>", "<br>",
-                    "However, not all students have the same access to technology in their 
+                          "<br>", "<br>",
+                          "However, not all students have the same access to technology in their 
         homes. Most schools have accounted for this disparity by providing 
         students with free tablets or laptops. During the COVID-19 pandemic, 
         when students of all ages had to adjust to online instruction, several 
-        counties provided WiFI hubs so that students’ learning was not hindered.")
-             
-        )
+        counties provided WiFI hubs so that students’ learning was not hindered."),
+                   "<br>", "<br>",
+                   "Below are more resources on Wi-Fi Access:", "<br>",
+                   a("Impact of High-Speed Internet",
+                     href = "https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1050&context=studentwork")))
       }
     })       
-    
-    
-    output$hs_resources <- renderText
-    ({
+    output$hs_resources <- renderText({
       if(input$hs_select == "Advanced Placement (AP) Course Enrollment") {
         paste("Advanced Placement (AP) courses are challenging, 
             collegiate-level courses that are offered to high school students. 
@@ -2451,7 +2458,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
     
    
       }
-      
       else if (input$hs_select == "Average Class Size"){
         paste("Research proves smaller class size is beneficial to student 
                   achievement. Smaller classes allow for the teacher to focus 
@@ -2465,7 +2471,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
       
       }
-      
       else if (input$hs_select == "CTE Course Enrollment Rate, High School"){
         paste("Career and Technical Education (CTE) courses are designed for
                   high school students to receive real-world experience in the 
@@ -2916,7 +2921,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   in a specific school zone can determine the various assets available, identify beneficial resources in 
                   the community, and give some insight about school enrollment numbers in the future.")
         }
-      
       else if (input$hs_select == "In-School Suspensions (ISS)"){
           paste("In-school suspensions are described as: 
             Instances in which a child is temporarily removed from his or her 
@@ -2937,8 +2941,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
           )
       }
-          
-          else if(input$hs_select == "Enrollment") {
+      else if(input$hs_select == "Enrollment") {
             paste("This dataset shows the enrollment numbers at each school. 
             Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
                   enrollment or average daily membership (ADM) is used to 
@@ -2954,7 +2957,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                     href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
             )
           }
-          else if (input$hs_select == "School and Zone BIPOC Comparison") {
+      else if (input$hs_select == "School and Zone BIPOC Comparison") {
             paste("This plot shows the percentage of students of color in the 
             school compared to the percentage of people of color in the school zone. 
                   This measurement shows the huge disparities in community 
@@ -2979,8 +2982,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
           }
-          
-          else if (input$hs_select == "BIPOC Students per School"){
+      else if (input$hs_select == "BIPOC Students per School"){
             paste("This dataset shows the percentage of students of color in 
             each of the 16 schools. Each of the schools are “majority 
             students of color” 
@@ -3076,8 +3078,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
               "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
                   them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
-        
-        else if (input$hs_select == "Graduation Rate"){
+      else if (input$hs_select == "Graduation Rate"){
             paste("The graph depicts the percentage of students estimated to graduate from high school in four years or less. 
                   The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030.
                   This is a significant increase from when the first reported graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
@@ -3090,7 +3091,57 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Dashboard with Articles and Quick Facts about Graduation Rates",
                     href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
             
-        }
+      }
+      else if (input$hs_select == "Titles Per Student"){
+        paste("A school library’s number of book titles per student indicates 
+              the availability of different book titles for students to select. 
+              A higher number of book titles per student indicates a wider 
+              variety of books to choose from. Having more book titles per 
+              student enables more opportunities for whole-class novel reading, 
+              which is essential for learning book analysis, encouraging engaging
+              discussions, and prompting creative writing.", 
+              "<br>", "<br>",
+              "Having a wide selection of books in a library also promotes more 
+              reading and intellectual stimulation for students. With a higher 
+              number of titles per student, it is more likely that most, if not 
+              all, students can find literature that engages them.",
+              "<br>","<br>",
+              "Below are more resources on the importance of book titles:", 
+              "<br>",
+              a("Importance of Culturally-Diverse Literature",
+                href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
+              a("Creating an Effective and Diverse Classroom Library",
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
+        
+      }
+      else if (input$hs_select == "WiFi Access"){
+        HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
+        extends until December of 2020. Therefore, only the 2019-2020 school 
+        year is reflected above.",
+                    "<br>", "<br>",
+                    "The visualization depicts the number of wireless access points for each
+        classroom. A school with a higher number of access points overall will 
+        have better internet coverage and quality than a school with less access
+        points.",
+                    "<br>", "<br>",
+                    "As things begin to modernize with time, the internet has become a vital
+        resource for all. Specifically in schools, teachers can display 
+        information and teach through slideshows, animations, videos, games, 
+        and more. Incorporating various forms of online tools can make the 
+        students become more engaged, while enabling the educator to explore new
+        teaching methods. As a result, students will become more comfortable 
+        with using technology.",
+                    "<br>", "<br>",
+                    "However, not all students have the same access to technology in their 
+        homes. Most schools have accounted for this disparity by providing 
+        students with free tablets or laptops. During the COVID-19 pandemic, 
+        when students of all ages had to adjust to online instruction, several 
+        counties provided WiFI hubs so that students’ learning was not hindered."),
+             "<br>", "<br>",
+             "Below are more resources on Wi-Fi Access:", "<br>",
+             a("Impact of High-Speed Internet",
+               href = "https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1050&context=studentwork")))
+      }
 
     }) 
     }
@@ -3106,7 +3157,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Childcare Centers" = childcare, 
                "Food Pantries" = pantries,
                "Farmers' Markets" = farmersmark,
-               "Community & Cultural Centers" = cultural, 
+               "Community and Cultural Centers" = cultural, 
                "Grocery Stores" = grocery, 
                "Libraries" = libraries, 
                "Religious Centers" = religious,
@@ -3124,7 +3175,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Gardens" = iconSet$gardens, 
                "Bus Stops" = iconSet$bus, 
                "Childcare Centers" = iconSet$childcare, 
-               "Community & Cultural Centers" = iconSet$cultural, 
+               "Community and Cultural Centers" = iconSet$cultural, 
                "Food Pantries" = iconSet$pantries,
                "Farmers' Markets" = iconSet$farmersmark,
                "Grocery Stores" = iconSet$grocery, 
@@ -3241,7 +3292,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
             temp_df$URL <- createLink(temp_df$URL)
             temp_df[c("name","URL")]
         }
-        else if(input$var == "Community & Cultural Centers")
+        else if(input$var == "Community and Cultural Centers")
         {
             temp_df <- cultural[grepl(input$zone, cultural$school_zones), ]
             temp_df$URL <- createLink(temp_df$URL)
@@ -3327,7 +3378,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
     })
     
     output$context <- renderText({
-        if(input$var == "Parks"){
+      if(input$var == "Parks"){
             paste("The presence of parks in a community is vital to increase community engagement, 
         assist in the economic development of cities, bolster public health, and help children learn. 
         Parks allow people to interact with each other in an outdoor community space. Children are 
@@ -3342,7 +3393,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Why Parks and Recreation are Essential Public Services",
                     href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
         }
-        else if(input$var == "Recreation Centers"){
+      else if(input$var == "Recreation Centers"){
             paste("Recreation centers have varying amenities, frequently including fitness centers, basketball courts, 
         and multipurpose rooms. These facilities can be utilized for afterschool programs, indoor and outdoor 
         recreation, and meeting spaces. Similar to parks, recreation centers promote active lifestyles.", "<br>", "<br>", "Benefits include:", "<br>", "<br>", "-Functioning as a community hub", "<br>", "-Ability to host before- and after-school care programs", "<br>", "May offer inexpensive or free tutoring",
@@ -3356,7 +3407,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Recreation Centers Play an Important Role in Communities",
                     href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
         }
-        else if(input$var == "Gardens"){
+      else if(input$var == "Gardens"){
             paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
         A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as 
         likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to 
@@ -3379,7 +3430,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Research and Benefits of Community Gardens",
                     href = "https://nccommunitygardens.ces.ncsu.edu/resources-3/nccommunitygardens-research/"))
         }
-        else if(input$var == "Bus Stops"){
+      else if(input$var == "Bus Stops"){
             paste("In order to live a healthy life, people must have access to affordable, nutritious food. 
         Without access to this resource, many, especially those who are low-income, are prone to developing 
         diet-related conditions such as obesity, diabetes, and cardiovascular disease. The areas lacking 
@@ -3394,7 +3445,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Transit Equity Dashboard",
                     href = "https://transitcenter.org/introducing-the-transit-equity-dashboard/"))
         }
-        else if(input$var == "Childcare Centers"){
+      else if(input$var == "Childcare Centers"){
             paste("Childcare centers assure parents and guardians that their child(ren) is safe and cared 
         for while simultaneously allowing them to work and earn money for their family. Childcare is 
         particularly useful for single parents who often cannot afford to stay at home instead of working. 
@@ -3407,7 +3458,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("The Importance of Preschool and Child Care For Working Mothers",
                     href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
         }
-        else if(input$var == "Community & Cultural Centers"){
+      else if(input$var == "Community and Cultural Centers"){
             paste("The benefits of building community outside the school building contribute to more powerful 
         relationships and organizing within the school building. Community centers have been found to 
         promote community cohesion and sense of belonging while providing programming that supports 
@@ -3424,7 +3475,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Culture and Arts Centers",
                     href = "https://trianglecf.org/impact/impact-cultural-arts/"))
         }
-        else if(input$var == "Grocery Stores"){
+      else if(input$var == "Grocery Stores"){
             paste("  In order to live a healthy life, people must have access to affordable, 
         nutritious food. Without access to this resource, many, especially those who are 
         low-income, are prone to developing diet-related conditions such as obesity, 
@@ -3447,7 +3498,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("What Are Food Deserts, and How Do They Impact Health?",
                     href = "https://www.medicalnewstoday.com/articles/what-are-food-deserts"))
         }
-        else if(input$var == "Libraries"){
+      else if(input$var == "Libraries"){
             paste("Found in urban, suburban, and rural areas, libraries often serve
                       as community hubs. Their purpose is not only to provide academic 
                       resources for the community, but also be used to welcome new 
@@ -3475,7 +3526,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   HTML(paste0(strong(tags$sub("1")))),a("Pew Research",
                                                         href = "https://www.pewresearch.org/internet/2013/12/11/libraries-in-communities/"))
         }
-        else if(input$var == "Religious Centers"){
+      else if(input$var == "Religious Centers"){
             paste("Religious centers are huge assets to the community because of various services they provide. 
         These services include donations, food drives, fundraisers, providing safe spaces for various cultures, 
         counseling services, daycare, summer programs, and much more. Additionally, the Durham community has 
@@ -3489,7 +3540,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("The Benefits of Religiosity and Spirituality on Mental Health",
                     href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
         }
-        else if(input$var == "Hospitals and Clinics"){
+      else if(input$var == "Hospitals and Clinics"){
             paste("When faced with an emergency, time is of the essence. Being able to get to a hospital within minutes can be beneficial, 
         and can literally save lives. Along with emergency services, hospitals also offer different types of therapy, services for 
         individuals living with long-term illnesses, classes and events, and outpatient labs. Along with medical care and having a 
@@ -3509,7 +3560,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Durham County’s “Project Access” Initiative",
                     href = "https://projectaccessdurham.org/about/"))
         }
-        else if(input$var == "Food Pantries"){
+      else if(input$var == "Food Pantries"){
             paste("Food pantries are partner agencies and churches that obtain donated food from food banks to feed food insecure communities. 
         Food insecurity refers to the lack of access to enough nutritious food to fully meet basic needs because of a lack of financial 
         resources. Although some families are able to rely on the Supplemental Nutrition Assistance Program (SNAP), also known as “food 
@@ -3530,7 +3581,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("NC Hunger and Poverty Quick Facts",
                     href = "https://www.foodshuttle.org/hunger-in-nc-1#:~:text=In%202021%2C%20over%201.5%20million,risk%20of%20facing%20food%20insecurity"))
         }
-        else if(input$var == "After-School Care Programs"){
+      else if(input$var == "After-School Care Programs"){
             paste("Afterschool programs can promote positive youth development, and  support social, 
         emotional, cognitive, and academic development, reduce risky behaviors, promote physical 
         health, and provide a safe and supportive environment for children and youth",HTML(paste0(strong(tags$sub("1")))), ". Several afterschool programs also offer before school programs allowing 
@@ -3554,7 +3605,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   "<br>",HTML(paste0(strong(tags$sub("1")))),
                   a("Youth.gov", href = "youth.gov"))
         }
-        else if(input$var == "Farmers' Markets"){
+      else if(input$var == "Farmers' Markets"){
             paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
         According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
         produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
@@ -3569,7 +3620,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                     href = "https://farmersmarketcoalition.org/education/qanda/"))
             
         }
-        else if(input$var == "Community Arts"){
+      else if(input$var == "Community Arts"){
         paste("Durham, North Carolina offers an array of arts programs that foster 
         a plethora of individual and community benefits. Fine arts (painting, design, 
         and photography), and performance arts (dance, theatre, and music) have been 
@@ -3679,7 +3730,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("After-School Care Programs"))
             else if(input$var == "Childcare Centers")
                 paste(h4("After-School Care Programs"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("After-School Care Programs"))
             else if(input$var == "Grocery Stores")
                 paste(h4("After-School Care Programs"))
@@ -3712,7 +3763,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4(HTML(paste0(strong("Bus Stops")))))
             else if(input$var == "Childcare Centers")
                 paste(h4("Bus Stops"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Bus Stops"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Bus Stops"))
@@ -3745,7 +3796,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Childcare Centers"))
             else if(input$var == "Childcare Centers")
                 paste(h4(HTML(paste0(strong("Childcare Centers")))))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Childcare Centers"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Childcare Centers"))
@@ -3778,7 +3829,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Parks"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Parks"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Parks"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Parks"))
@@ -3811,7 +3862,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Recreation Centers"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Recreation Centers"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Recreation Centers"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Recreation Centers"))
@@ -3844,7 +3895,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Gardens"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Gardens"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Gardens"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Gardens"))
@@ -3866,35 +3917,68 @@ for students to be placed into higher-level courses at their college.", "<br>","
         
         output$cultureicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if (input$var == "Parks")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Recreation Centers")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Gardens")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Bus Stops")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Childcare Centers")
-                paste(h4("Community & Cultural Centers"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4(HTML(paste0(strong("Community & Cultural Centers")))))
+                paste(h4("Community and Cultural Centers"))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(HTML(paste0(strong("Community and Cultural Centers")))))
             else if(input$var == "Grocery Stores")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Libraries")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Religious Centers")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Food Pantries")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4("Community and Cultural Centers"))
           else if(input$var == "Community Arts")
-            paste(h4("Community & Cultural Centers"))
+            paste(h4("Community and Cultural Centers"))
           else if(input$var == "Community Sports")
-            paste(h4("Community & Cultural Centers"))
+            paste(h4("Community and Cultural Centers"))
+        })
+        
+        output$artsicon <- renderText({
+          if(input$var == "After-School Care Programs")
+            paste(h4("Community Arts"))
+          else if (input$var == "Parks")
+            paste(h4("Community Arts"))
+          else if(input$var == "Recreation Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Gardens")
+            paste(h4("Community Arts"))
+          else if(input$var == "Bus Stops")
+            paste(h4("Community Arts"))
+          else if(input$var == "Childcare Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Community and Cultural Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Grocery Stores")
+            paste(h4("Community Arts"))
+          else if(input$var == "Libraries")
+            paste(h4("Community Arts"))
+          else if(input$var == "Religious Centers")
+            paste(h4("Community Arts"))
+          else if(input$var == "Hospitals and Clinics")
+            paste(h4("Community Arts"))
+          else if(input$var == "Food Pantries")
+            paste(h4("Community Arts"))
+          else if(input$var == "Farmers' Markets")
+            paste(h4("Community Arts"))
+          else if(input$var == "Community Arts")
+            paste(h4(HTML(paste0(strong("Community Arts")))))
+          else if(input$var == "Community Sports")
+            paste(h4("Community Arts"))
         })
         
         output$groceryicon <- renderText({
@@ -3910,7 +3994,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Grocery Stores"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Grocery Stores"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Grocery Stores"))
             else if(input$var == "Grocery Stores")
                 paste(h4(HTML(paste0(strong("Grocery Stores")))))
@@ -3943,7 +4027,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Libraries"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Libraries"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Libraries"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Libraries"))
@@ -3976,7 +4060,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Religious Centers"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Religious Centers"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Religious Centers"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Religious Centers"))
@@ -4009,7 +4093,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Hospitals & Clinics"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Hospitals & Clinics"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Hospitals & Clinics"))
@@ -4042,7 +4126,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Food Pantries"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Food Pantries"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Food Pantries"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Food Pantries"))
@@ -4075,7 +4159,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 paste(h4("Farmers' Markets"))
             else if(input$var == "Childcare Centers")
                 paste(h4("Farmers' Markets"))
-            else if(input$var == "Community & Cultural Centers")
+            else if(input$var == "Community and Cultural Centers")
                 paste(h4("Farmers' Markets"))
             else if(input$var == "Grocery Stores")
                 paste(h4("Farmers' Markets"))
@@ -4086,46 +4170,13 @@ for students to be placed into higher-level courses at their college.", "<br>","
             else if(input$var == "Hospitals and Clinics")
                 paste(h4("Farmers' Markets"))
             else if(input$var == "Food Pantries")
-                paste(h4("Farmer's Markets"))
+                paste(h4("Farmers' Markets"))
             else if(input$var == "Farmers' Markets")
                 paste(h4(HTML(paste0(strong("Farmers' Markets")))))
             else if(input$var == "Community Arts")
-                paste(h4("Farmer's Markets"))
+                paste(h4("Farmers' Markets"))
           else if(input$var == "Community Sports")
-            paste(h4("Farmer's Markets"))
-        })
-        
-        output$artsicon <- renderText({
-          if(input$var == "After-School Care Programs")
-            paste(h4("Community Arts"))
-          else if (input$var == "Parks")
-            paste(h4("Community Arts"))
-          else if(input$var == "Recreation Centers")
-            paste(h4("Community Arts"))
-          else if(input$var == "Gardens")
-            paste(h4("Community Arts"))
-          else if(input$var == "Bus Stops")
-            paste(h4("Community Arts"))
-          else if(input$var == "Childcare Centers")
-            paste(h4("Community Arts"))
-          else if(input$var == "Community & Cultural Centers")
-            paste(h4("Community Arts"))
-          else if(input$var == "Grocery Stores")
-            paste(h4("Community Arts"))
-          else if(input$var == "Libraries")
-            paste(h4("Community Arts"))
-          else if(input$var == "Religious Centers")
-            paste(h4("Community Arts"))
-          else if(input$var == "Hospitals and Clinics")
-            paste(h4("Community Arts"))
-          else if(input$var == "Food Pantries")
-            paste(h4("Community Arts"))
-          else if(input$var == "Farmers' Markets")
-            paste(h4("Community Arts"))
-          else if(input$var == "Community Arts")
-            paste(h4(HTML(paste0(strong("Community Arts")))))
-          else if(input$var == "Community Sports")
-            paste(h4("Community Arts"))
+            paste(h4("Farmers' Markets"))
         })
         
         output$sportsicon <- renderText({
@@ -4141,7 +4192,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
             paste(h4("Community Sports"))
           else if(input$var == "Childcare Centers")
             paste(h4("Community Sports"))
-          else if(input$var == "Community & Cultural Centers")
+          else if(input$var == "Community and Cultural Centers")
             paste(h4("Community Sports"))
           else if(input$var == "Grocery Stores")
             paste(h4("Community Sports"))
@@ -4577,7 +4628,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
       }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
     }
     
-    #arts Programs
+    #Arts Programs
     {
       output$available_arts <- renderTable ({
         schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
