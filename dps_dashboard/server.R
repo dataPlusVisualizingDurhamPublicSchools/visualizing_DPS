@@ -365,7 +365,35 @@ function(input, output, session) {
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
-            } 
+
+            }
+          
+          else if(input$es_select == "Titles Per Student") {
+            schoolstats21_summary <- ES_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          }
+          
+          else if(input$es_select == "WiFi Access") {
+            schoolstats21_summary <- ES_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          } 
+
         }
         
         else if(input$es_year == "Summer 2022"){
@@ -609,6 +637,7 @@ function(input, output, session) {
             } 
         }
     })
+    
     
     output$ms_barplots <- renderPlotly({
         if(input$ms_year == "Summer 2022"){
@@ -1126,7 +1155,34 @@ function(input, output, session) {
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
-            } 
+            }
+          
+          else if(input$hs_select == "Titles Per Student") {
+            schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          }
+          
+          else if(input$hs_select == "WiFi Access") {
+            schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+            p <- ggplot(schoolstats22_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          } 
+          
         }
         
         else if(input$hs_year == "Summer 2022"){
@@ -3294,18 +3350,18 @@ for students to be placed into higher-level courses at their college.", "<br>","
     #Data Insight tab plots
     
 
-    output$choropleth <- renderLeaflet({
-      leaflet(
-        displayZone()) %>%
-        addProviderTiles("CartoDB.Positron") %>%
-        addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
-        addResetMapButton() %>%
-        addPolygons(data = durham,
-                    fillColor = displayColor(),
-                    stroke = TRUE,
-                    fillOpacity = 0.39,
-                    smoothFactor = 1)
-    })
+    # output$choropleth <- renderLeaflet({
+    #   leaflet(
+    #     displayZone()) %>%
+    #     addProviderTiles("CartoDB.Positron") %>%
+    #     addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+    #     addResetMapButton() %>%
+    #     addPolygons(data = durham,
+    #                 fillColor = displayColor(),
+    #                 stroke = TRUE,
+    #                 fillOpacity = 0.39,
+    #                 smoothFactor = 1)
+    # })
     
     output$insights_individualplots <- renderPlotly({
       counts_grouped<-counts_grouped_2021
@@ -3315,7 +3371,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
       counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
       counts_grouped <- subset(counts_grouped, name == input$insights_zone)
       ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
-        xlab("Number of Resource") + ylab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
+        ylab("Number of Resource") + xlab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
     })
     
     output$context <- renderText({
@@ -4485,8 +4541,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
         sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
         sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
+        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
         sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
         sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
         sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
@@ -4519,8 +4575,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
         sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
         sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
+        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
         sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
         sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
         sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
@@ -4553,8 +4609,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
         sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
         sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
+        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
         sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
         sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
         sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
