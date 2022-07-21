@@ -385,128 +385,93 @@ body <- {dashboardBody(
                                    column(12, align="center", tableOutput("available_arts")))
                              ),
                              fluidRow(
-                               box(width = 6, title = strong("Dance"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Dance is a form of physical activity that encourages self-expression, 
-                                     improves health, and increases mobility and strength. Children and 
-                                     adolescents that participate in dance learn different genres, cultural 
-                                     aspects, and regional differences, and have the opportunity to choose 
-                                     between cheerleading, gymnastics, interpretive dance, martial arts, and more!")),
+                               box(width = 6, title = strong("Durham Public Schools and the Arts"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Durham Public Schools’ appreciation for the arts 
+                                        is apparent throughout their public institutions. 
+                                        They provide curricula for the arts, upcoming events 
+                                        in the school system, resources for K-12 students 
+                                        interested in the arts, and news about arts programs 
+                                        in DPS. Vist", a("Arts at DPS", href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
+                                        "to learn more.")),
                                    br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
+                                   p(h4(em(strong("Learn more about some of the schools' arts programs by clicking on their logos below:")))),
                                    column(class = 'text-center', width = 4,
                                           tags$a(
-                                     href="https://duke.edu/", 
-                                     tags$img(src="duke.png", 
-                                              title="Duke Logo",
+                                            href="https://vimeo.com/718773555", 
+                                            tags$img(src="cc spaulding.png", 
+                                                     title="cc spaulding Logo",
+                                                     class= "img-responsive")),
+                                          tags$a(
+                                     href="https://jhscoursecatalog.weebly.com/fine-arts.html", 
+                                     tags$img(src="jordan high.png", 
+                                              title="Jordan Logo",
+                                              class= "img-responsive"))
+                                     
+                                     
+                                     ),
+                                   column(class = 'text-center', width = 4,
+                                          tags$a(
+                                            href="https://durhamvoice.org/?p=4549", 
+                                            tags$img(src="eastway.png", 
+                                                     title="Eastway Logo",
+                                                     class= "img-responsive")),
+                                          tags$a(
+                                     href="https://docs.google.com/document/d/1UfdYKPoG8UohnTRVbgnHrMZD6PZwRZVrQ1KgmEn5PBM/edit", 
+                                     tags$img(src="hillside high.png",
+                                              title="Hillside Logo",
                                               class= "img-responsive")
                                    )),
                                    column(class = 'text-center', width = 4,
                                           tags$a(
-                                     href="https://duke.edu/", 
-                                     tags$img(src="duke.png",
-                                              title="Duke Logo",
-                                              class= "img-responsive")
-                                   )),
-                                   column(class = 'text-center', width = 4,
+                                            href="https://www.youtube.com/watch?v=2LcqFlBR9iw", 
+                                            tags$img(src="brogden.png",
+                                                     title="Brogden Logo",
+                                                     class= "img-responsive")),
                                           tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
+                                            href="https://www.riversidefab.org/boosters", 
+                                            tags$img(src="riverside.png",
+                                                     title="Riverside Logo",
                                                      class= "img-responsive")))
                                    ),
-                               box(width = 6, title = strong("Theatre"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Theatre is a type of performance art that incorporates and fuses acting, 
-                                        singing, and dancing. On the stage, individuals have the opportunity to 
-                                        strengthen concentration and memory, improve articulation and fluency, 
-                                        and build trust as they interact and collaborate with others. ")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")))
-                             )),
-                             fluidRow(
-                               box(width = 6,
-                                   title = strong("Music"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Music incorporates vocal and instrumental performance, 
-                                   studio production, songwriting, and even  listening enjoyment. 
-                                   Music students have the opportunity to learn concepts such as 
-                                   theory, history, acoustics, and instrumental and vocal skill 
-                                   and technique. Music performance has been proven to teach 
-                                   discipline, relieve stress, reduce stage fright, and improve 
-                                   academic levels. 
-")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")))),
-                               box(width = 6,
-                                   title = strong("Visual"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Visual arts consists of painting, drawing, printmaking, 
-                                        sculpture, ceramics, photography, video, filmmaking, 
-                                        design, crafts and architecture. Engaging in visual 
-                                        arts exposes children and adolescents to positive 
-                                        benefits that include; but are not limited to, having a 
-                                        space to create innovatively, improving motor skills, and 
-                                        expressing emotions.")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive"))))
-                             ))
+                               box(width = 6, title = strong("Durham County and the Arts"), status = "primary", solidHeader = TRUE,
+                                   p(h4("Durham has a rich history of highlighting the arts. 
+                                        In the mid-20th century the non-profit organization ",
+                                     a("Durham Arts Council", href="https://durhamarts.org/"),
+                                     "was founded to promote and provide access to various opportunities 
+                                        and resources for those in the arts. The Durham Arts Council also 
+                                        provides a directory of artists to network with one another through the",
+                                     a("Durham Arts Network", href="https://www.durhamartsnetwork.org/"),
+                                     ". The city of Durham funded the", a("Cultural & Public Art Program ", 
+                                                                          href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
+                                     "to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. 
+                                        Durham provides many opportunities for the public to indulge in cultural 
+                                        arts and for artists to showcase their work.", a("Discover Durham", 
+                                                                                      href="https://www.discoverdurham.com/things-to-do/arts/"),
+                                     "provides an extensive list of events for visitors and residents to do 
+                                        surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc.",
+                                     br(),
+                                     br(),
+                                     strong("Duke University"),
+                                     br(),
+                                     a("- Duke Mural", href="https://arts.duke.edu/mural-durham/"),
+                                     ": Duke University has partnered with the city of Durham and local 
+                                     artists to create new murals to beautify the city.",
+                                     br(),
+                                     a("- Durham Medical Orchestra", href="https://arts.duke.edu/durham-medical-orchestra/"),
+                                     ": Connects health professionals with local musicians to put on 
+                                     musical performances for Durham residents.",
+                                     br(),
+                                     br(),
+                                     strong("North Carolilna Central University"),
+                                     br(),
+                                     "- NCCU provides volunteer opportunities for their students
+                                     in the KidzNotes program via Fayetteville Street Elementary’s 
+                                     AT&T Beleive Program.",
+                                     br(),
+                                     "- NCCU students host musical ensembles for the Durham community."))
+                                   )
+                               
+                             ) )   
                   )
                 )
         )},
@@ -740,7 +705,7 @@ body <- {dashboardBody(
                          selectInput("var",
                                      label = em("Choose a variable to display"),
                                      choices = c("After-School Care Programs", "Bus Stops", 
-                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
+                                                 "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                  "Recreation Centers", "Religious Centers"),
                                      multiple = FALSE)),
@@ -786,6 +751,20 @@ body <- {dashboardBody(
                               column(width = 1),
                               column(width = 8, htmlOutput("cultureicon")
                               )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("artsicon")
+                            )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "commsportsicon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("sportsicon")
+                                   )),
                           br(),
                           fluidRow(
                               column(width = 1,
@@ -848,21 +827,7 @@ body <- {dashboardBody(
                                      img(src = "religious_icon.png", width = 40, height = 40)),
                               column(width = 1),
                               column(width = 8, htmlOutput("religiousicon")
-                              )),
-                          br(),
-                          fluidRow(
-                            column( width = 1,
-                                    img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
-                            column(width = 1),
-                            column(width = 8, htmlOutput("artsicon")
-                            )),
-                          br(),
-                          fluidRow(
-                            column( width = 1,
-                                    img(src = "commsportsicon.png", width = 40, height = 40, align = "left")),
-                            column(width = 1),
-                            column(width = 8, htmlOutput("sportsicon")
-                            ))
+                              ))
                      )},
                  )
         )}
