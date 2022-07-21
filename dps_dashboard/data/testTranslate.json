@@ -3,6 +3,9 @@
   "languages": ["English", "Spanish"],
   "translation": [
     
+    {"English": "Change Language",
+     "Spanish": "Cambia idioma"
+    
     {"English": "Visualizing Durham Public Schools",
  "Spanish": "Visualizando las Escuelas Públicas de Durham"},
     
