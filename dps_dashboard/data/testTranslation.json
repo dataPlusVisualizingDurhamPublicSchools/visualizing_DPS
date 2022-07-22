@@ -3,6 +3,12 @@
   "languages": ["English", "Spanish"],
   "translation": [
     
+    {"English": "English",
+     "Spanish": "Inglés"},
+    
+    {"English": "Spanish",
+     "Spanish": "Español"},
+    
     {"English": "Change Language",
      "Spanish": "Cambia idioma"},
     
