@@ -446,7 +446,7 @@ body <- {dashboardBody(
                                      musical performances for Durham residents.",
                                      br(),
                                      br(),
-                                     strong("North Carolilna Central University"),
+                                     strong("North Carolina Central University"),
                                      br(),
                                      "- NCCU provides volunteer opportunities for their students
                                      in the KidzNotes program via Fayetteville Street Elementary’s 
@@ -484,22 +484,21 @@ body <- {dashboardBody(
                                     column(12, align="center", tableOutput("springsports"))),
                                 ),
                               fluidRow(
-                                box(width = 4,
+                                box(width = 6,
                                     title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("male_sports_icons"))),
-                                box(width = 4,
+                                    column(12, align="center", tableOutput("male_sports_list"))),
+                                box(width = 6,
                                     title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("female_sports_icons"))),
-                                box(width = 4,
-                                    solidHeader = TRUE,
-                                    title = strong("Icon Legend"),
-                                    column(12, align="center", tableOutput("sports_icon_legend"))),
+                                    column(12, align="center", tableOutput("female_sports_list"))),
+                                
+                                # box(width = 4,
+                                #     solidHeader = TRUE,
+                                #     title = strong("Icon Legend"),
+                                #     column(12, align="center", tableOutput("sports_icon_legend")))
+                                
                                 )
                         
                      ),
-                     tabPanel("Community Sports", class = "text-center"
-                              
-                              )
                    )
                  ),
                 
@@ -574,7 +573,7 @@ body <- {dashboardBody(
                                   General Psychology. Patience continued the Data+ project team because she was 
                                   wanted to continue the work she did the previous summer in hopes to improve the dashboard
                                   to make it more accessible. With her background in education policy, she hopes to integrate
-                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyonds.")),
+                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyond.")),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
@@ -590,12 +589,10 @@ body <- {dashboardBody(
                              column(width = 3,
                                     img(src = "surabhi.jpg")),
                              column(width = 3,
-                                    p("Surabhi Trivedi is a PhD candidate at Duke's sociology department. He's
-                                  interested in how habits and beliefs change, both at the individual and collective
-                                  level, and uses longitudinal data, networks, and simulations to try to get at 
-                                  this question. He had the privilege to be the project manager for this team, and
-                                  believes the team was efficient and industrious so his job was easy. The team 
-                                  claims he was helpful, and he likes to believe that is true."))))),
+                                    p("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University.
+                                      Her interest lies at the intersection of data science and public policy, and specifically social policy.
+                                      For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering
+                                      to help with the project."))))),
                  
                  fluidRow(
                      box(width = 12,
