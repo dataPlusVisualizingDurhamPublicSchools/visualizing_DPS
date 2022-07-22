@@ -513,9 +513,6 @@ body <- {dashboardBody(
                                 )
                         
                      ),
-                     tabPanel("Community Sports", class = "text-center"
-                              
-                              )
                    )
                  ),
                 
@@ -606,12 +603,10 @@ body <- {dashboardBody(
                              column(width = 3,
                                     img(src = "surabhi.jpg")),
                              column(width = 3,
-                                    p("Surabhi Trivedi is a PhD candidate at Duke's sociology department. He's
-                                  interested in how habits and beliefs change, both at the individual and collective
-                                  level, and uses longitudinal data, networks, and simulations to try to get at 
-                                  this question. He had the privilege to be the project manager for this team, and
-                                  believes the team was efficient and industrious so his job was easy. The team 
-                                  claims he was helpful, and he likes to believe that is true."))))),
+                                    p("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University.
+                                      Her interest lies at the intersection of data science and public policy, and specifically social policy.
+                                      For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering
+                                      to help with the project."))))),
                  
                  fluidRow(
                      box(width = 12,
