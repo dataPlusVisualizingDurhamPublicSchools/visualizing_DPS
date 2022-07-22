@@ -1172,7 +1172,7 @@ function(input, output, session) {
           
           else if(input$hs_select == "WiFi Access") {
             schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
-            p <- ggplot(schoolstats22_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
               geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
               geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
               coord_flip() +

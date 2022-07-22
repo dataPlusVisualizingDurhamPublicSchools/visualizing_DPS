@@ -462,7 +462,7 @@ body <- {dashboardBody(
                                      musical performances for Durham residents.",
                                      br(),
                                      br(),
-                                     strong("North Carolilna Central University"),
+                                     strong("North Carolina Central University"),
                                      br(),
                                      "- NCCU provides volunteer opportunities for their students
                                      in the KidzNotes program via Fayetteville Street Elementary’s 
@@ -587,7 +587,7 @@ body <- {dashboardBody(
                                   General Psychology. Patience continued the Data+ project team because she was 
                                   wanted to continue the work she did the previous summer in hopes to improve the dashboard
                                   to make it more accessible. With her background in education policy, she hopes to integrate
-                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyonds.")),
+                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyond.")),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
