@@ -18,10 +18,12 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
+library(shiny.i18n)
 
 library(DT)
 
-
+i18n <- Translator$new(translation_json_path = "data/testTranslation.json")
+i18n$set_translation_language("English")
 
 sidebar <- {dashboardSidebar(
     
@@ -51,6 +53,13 @@ sidebar <- {dashboardSidebar(
 }
 
 body <- {dashboardBody(
+  shiny.i18n::usei18n(i18n),
+  div(style = "float: right;",
+      selectInput('selected_language',
+                  i18n$t("Change Language"),
+                  choices = i18n$get_languages(),
+                  selected = i18n$get_key_translation())
+  ),
     tabItems(
         #Home Page
         {tabItem(tabName = "home",
@@ -64,75 +73,50 @@ body <- {dashboardBody(
                  
                  fluidRow(
                      class = "text-center",
-                     box(h3(strong("Visualizing Durham Public Schools")),
+                     box(h3(strong(i18n$t("Visualizing Durham Public Schools"))),
                          width = 12,
                          background = "navy",
                          br(),
-                         p("This project is inspired by an inter-institutional Bass Connections team from Duke University
-                            and North Carolina Central University that is committed to developing more responsible
-                           and imaginative ways of partnering with Durham Public Schools.
-                            The objective of this project is to provide a centralized web application that will 
-                           serve as a tool for those entering Durham Public Schools. Our application aims to 
-                           inform future pre-service trainings for university students, support local neighborhood 
-                           schools in visualizing their communities, and help varied university offices articulate 
-                           what “community” actually looks like."),
+                         p(i18n$t("This project is inspired by an inter-institutional Bass Connections team from Duke University and North Carolina Central University that is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, support local neighborhood schools in visualizing their communities, and help varied university offices articulate what “community” actually looks like.")),
                          br(),
-                         p("By using spatial data and school-specific data, along with 
-                            contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while
-                            highlighting their resources and assets." ),
-                         p("Visit the", a("Visualizing DPS and Bass Connections website",
+                         p(i18n$t("By using spatial data and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets.")),
+                         p(i18n$t("Visit the"), a("Visualizing DPS and Bass Connections website",
                                           href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
-                           "for more information!"))),
+                           i18n$t("for more information!")))),
                  fluidRow(
                      class = "text-center",
                      box(
                          solidHeader = TRUE,
                          br(),
                          width = 12,
-                         valueBox(13, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
-                         valueBox(23, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
-                         valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
+                         valueBox(13, i18n$t("Geospatial Variables"), icon = icon("map"), color = "light-blue", width = 4),
+                         valueBox(23, i18n$t("School-Specific Variables"), icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(1, i18n$t("Centralized Web Application"), icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                      class = "text-center",
-                     box(title = strong("2 Universities, 16 Public Schools"),
+                     box(title = strong(i18n$t("2 Universities, 16 Public Schools")),
                          solidHeader = TRUE,
                          width = 7,
-                         p("The Durham Public Schools District contains 54 public schools: 
-                            30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. 
-                            Our project focuses on the 16 schools that most frequently partner with Duke University 
-                            and North Carolina Central University. These include 10 elementary schools: 
-                            C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood,
-                            Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, 
-                           Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside."),
+                         p(i18n$t("The Durham Public Schools District contains 54 public schools: 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. Our project focuses on the 16 schools that most frequently partner with Duke University and North Carolina Central University. These include 10 elementary schools: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside.")),
                          br(),
-                         p("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham
-                              Public Schools. Prior Bass Connections research focused on understanding how to achieve
-                              this goal and found that an issue preventing meaningful engagement between Duke, NCCU, 
-                              and Durham public schools is that ‘many university students lack an understanding of 
-                              city and community dynamics.’ Additionally, they found that there is a 
-                              ‘lack of student volunteer training with Durham’s context, particularly in the areas 
-                              of history, school-specific demographics, and implicit bias and power dynamics that
-                              may manifest in schools.’"),
+                         p(i18n$t("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that an issue preventing meaningful engagement between Duke, NCCU, and Durham public schools is that ‘many university students lack an understanding of city and community dynamics.’ Additionally, they found that there is a ‘lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.’")),
                          br(),
-                         p(strong("Motivated by this research, our project explores a way of visualizing schools 
-                                     as the center of the community that brings together academics, health and 
-                                     social services, youth and community development, and community engagement 
-                                     under one roof."))),
+                         p(strong(i18n$t("Motivated by this research, our project explores a way of visualizing schools as the center of the community that brings together academics, health and social services, youth and community development, and community engagement under one roof.")))),
                      box(width = 5,
                          background = "light-blue",
                          solidHeader = TRUE,
                          leafletOutput("home"))),
                  fluidRow(class = "text-center",
-                          box(title = strong("View Our 16 Schools"),
+                          box(title = strong(i18n$t("View Our 16 Schools")),
                               width = 12,
                               background = "light-blue",
-                              actionButton("viewMap", "View Geospatial Data"),
-                              actionButton("viewStat", "View School Statistics"))),
+                              actionButton("viewMap", i18n$t("View Geospatial Data")),
+                              actionButton("viewStat", i18n$t("View School Statistics")))),
                  
                  fluidRow(class = "text-center",
                           box(width = 12,
                               solidHeader = TRUE,
-                              title = strong("Our Partners"),
+                              title = strong(i18n$t("Our Partners")),
                               column(class = 'text-center', width = 2,
                                      tags$a(
                                          href="https://www.dpsnc.net/", 
@@ -680,21 +664,21 @@ body <- {dashboardBody(
                  fluidRow(
                      box(width  = 7,
                          solidHeader = TRUE,
-                         title = strong("Interactive Map"),
-                         h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
+                         title = strong(i18n$t("Interactive Map")),
+                         h4(i18n$t("Hover over the icon to see the name. Click on the icon to reveal its link.")),
                          leafletOutput("map")),
                      box(width = 5,
                          solidHeader = TRUE,
-                         title = strong("Context"),
+                         title = strong(i18n$t("Context")),
                          htmlOutput("context")),
                      
                  ),
                  fluidRow(
                      box(width = 4,
                          solidHeader = TRUE,
-                         title = strong("Measurement"),
+                         title = strong(i18n$t("Measurement")),
                          selectInput("zone",
-                                     label = em("Choose a school zone to display"),
+                                     label = em(i18n$t("Choose a school zone to display")),
                                      choices = c("All", "Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
                                                  "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                                  "Forest View Elementary", "Hillandale Elementary","Hillside High",
@@ -703,7 +687,7 @@ body <- {dashboardBody(
                                      ),
                                      multiple = FALSE),
                          selectInput("var",
-                                     label = em("Choose a variable to display"),
+                                     label = em(i18n$t("Choose a variable to display")),
                                      choices = c("After-School Care Programs", "Bus Stops", 
                                                  "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
@@ -711,7 +695,7 @@ body <- {dashboardBody(
                                      multiple = FALSE)),
                      box(width = 4,
                          solidHeader = TRUE,
-                         title = strong("Selected Variable Resources"),
+                         title = strong(i18n$t("Selected Variable Resources")),
                          em("Select a variable to see a list of all the resources with the selected school zone."),
                          br(),
                          br(),
@@ -721,7 +705,7 @@ body <- {dashboardBody(
                      #Icon Legend
                      {box(width = 4,
                           solidHeader = TRUE,
-                          title = strong("Icon Legend"),
+                          title = strong(i18n$t("Icon Legend")),
                           htmlOutput("legend"),
                           br(),
                           fluidRow(
