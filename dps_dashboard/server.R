@@ -110,8 +110,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
     pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
     farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
-    commarts <- read.csv("data/2021/spatial_data/Community Arts.csv")
-    sports <- read.csv("data/2021/spatial_data/Community Sports.csv")
+    commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
+    sports <- read.csv("data/2021/spatial_data/renamed_Community Sports.csv")
 }
 
 # Load/Rename Schools' Names
@@ -4570,7 +4570,19 @@ for students to be placed into higher-level courses at their college.", "<br>","
       #   sports %>% select(sport, icon)
       # }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
       
-      
+      output$sports_context <- renderText({
+          paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
+           responsibility, discipline, and leadership. Participation in school sports provides students with the 
+           daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+                "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
+                 cal activity are associated with more favorable status for multiple health indicators, including 
+                cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
+                in their",
+                a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+                "Visit ",
+                a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+                "for more information.")
+        })
     }
 
     #Arts Programs
