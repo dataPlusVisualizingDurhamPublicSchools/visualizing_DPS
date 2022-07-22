@@ -462,7 +462,7 @@ body <- {dashboardBody(
                                      musical performances for Durham residents.",
                                      br(),
                                      br(),
-                                     strong("North Carolilna Central University"),
+                                     strong("North Carolina Central University"),
                                      br(),
                                      "- NCCU provides volunteer opportunities for their students
                                      in the KidzNotes program via Fayetteville Street Elementary’s 
