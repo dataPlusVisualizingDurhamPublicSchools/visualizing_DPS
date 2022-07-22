@@ -95,7 +95,13 @@
      
      {"English": "Recreation Centers",
      "Spanish": "Centros de recreación"},
-     
+  
+    {"English": "Community Arts",
+     "Spanish": "Arte en la comunidad"},
+
+{"English": "Community Sports",
+     "Spanish": "Deportes en la comunidad"},
+    
      {"English": "Religious Centers",
      "Spanish": "Centros religiosos"},
      
