@@ -500,16 +500,18 @@ body <- {dashboardBody(
                                     column(12, align="center", tableOutput("springsports"))),
                                 ),
                               fluidRow(
-                                box(width = 4,
+                                box(width = 6,
                                     title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("male_sports_icons"))),
-                                box(width = 4,
+                                    column(12, align="center", tableOutput("male_sports_list"))),
+                                box(width = 6,
                                     title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("female_sports_icons"))),
-                                box(width = 4,
-                                    solidHeader = TRUE,
-                                    title = strong("Icon Legend"),
-                                    column(12, align="center", tableOutput("sports_icon_legend"))),
+                                    column(12, align="center", tableOutput("female_sports_list"))),
+                                
+                                # box(width = 4,
+                                #     solidHeader = TRUE,
+                                #     title = strong("Icon Legend"),
+                                #     column(12, align="center", tableOutput("sports_icon_legend")))
+                                
                                 )
                         
                      ),
