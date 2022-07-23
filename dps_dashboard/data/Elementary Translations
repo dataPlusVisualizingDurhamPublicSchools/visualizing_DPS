@@ -73,5 +73,152 @@
      {"English": "Free and Reduced Lunch",
      "Spanish": "Almuerzo gratis o reducido"},
      
+     {"English": "The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ",
+     "Spanish": "El porcentaje de estudiantes recibiendo almuerzo gratis/reducido es un gran indicador del estatus socioeconómico de la escuela. El porcentaje de estudiantes que están debajo de la línea de pobreza determina si una escuela es "},
+     
+     {"English": "Title 1",
+     "Spanish": "Título 1"},
+     
+     {"English": "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and discriminatory. Socioeconomic status is not a limit, it is a barrier.",
+     "Spanish": "Las escuelas de Título 1 califican para becas a través de la ley “Cada Estudiante Triunfa” (Every Student Succeeds Act: ESEA). Es importante reconocer el estatus socioeconómico de los estudiantes sin prejuiciar o ser condescendiente. El estatus socioeconómico no es un límite, es un obstáculo."},
+     
+     {"English": "Below are articles on Free/Reduced Lunch and its connection to Title I schools:",
+     "Spanish": "Artículos sobre almuerzo gratis o reducido y la conección a las escuelas de Título 1:"},
+     
+     {"English": "Rural Schools and Free/Reduced Lunch",
+     "Spanish": "Almuerzos gratis/reducidos en las escuelas rurales"},
+     
+     {"English": "NC Community Free/Reduced Lunch Eligibility",
+     "Spanish": "La elegibilidad de recibir almuerzos gratis o reducidos en Carolina del Norte"},
+     
+     {"English": "HTML(paste0(tags$sup("1"))),
+                  strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
+     "Spanish": "HTML(paste0(tags$sup("1"))),
+                  strong("Título I"), ": Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
+     
+     {"English": "Student-Teacher Ratio, Elementary School",
+     "Spanish": "Proporción de alumnos a maestros (De las escuelas primarias)"},
+     
+     {"English": "Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.",
+     "Spanish": "Se ha comprobado que las clases pequeñas son más beneficiosas para los estudiantes. Clases pequeñas habilitan a que los maestros se enfoquen más en el currículo y progreso de cada estudiante. Estas enseñanzas de uno a uno pueden aumentar las calificaciones de los estudiantes."},
+     
+     {"English": "For younger, elementary school-age students, having a positive, one-on-one relationship with his or her teacher will teach the student at a young age that they have an adult they can trust and rely on. In smaller sized classrooms, students can feel more comfortable and willing to share their thoughts without being afraidof failing or feeling embarrassed. This dynamic fosters a more productive learning environment for all.",
+     "Spanish": "Para estudiantes de primaria, teniendo una relación positiva con su maestro enseñará al estudiante (desde una edad joven) que pueden confiar en este adulto. En clases pequeñas, los estudiantes se sentirán más cómodos y dispuestos a compartir sus ideas durante la clase sin tener miedo de fracasar o sentir vergüenza. Esta dinámica crea un ambiente más inclusivo y productivo para todos."},
+     
+     {"English": "Resources on Student-Teacher Ratios:",
+     "Spanish": "Infográficas e información sobre proporciones de alumnos a maestros:"},
+     
+     {"English": "Students Per Device",
+     "Spanish": "Número de estudiantes por aparatos"},
+     
+     {"English": "Living in a digital age, technology usage in the classroom has increased tremendously, especially during the COVID-19 pandemic. Although technology is a great resource, students may not have equitable access to these devices. It is important for students and teachers to not only have access to these technological devices, but also understand how to use them, which is why professional development is so important. Professional development is necessary to keep educators up to date on new technology to create the most effective learning environment.",
+     "Spanish": "En esta generación digital, el uso de la tecnología ha incrementado tremendamente, especialmente durante la pandemia de COVID-19. Aunque la tecnología es un recurso esencial, es posible que los estudiantes no tengan el mismo acceso a estos aparatos. Es importante que los estudiantes y maestros no solo tengan acceso a la tecnología, si no también recibir entrenamiento y desarrollo profesional para entender cómo usar estos aparatos. El desarrollo profesional es necesario para mantener a los educadores al día y crear un ambiente productivo y efectivo."},
+     
+     {"English": "Resources on Access and Technology in the Classroom:",
+     "Spanish": "Recursos sobre el acceso de tecnología en las clases:"},
+     
+     {"English": "Durham Public Schools’ Technological Services",
+     "Spanish": "Servicios tecnológicos del condado de Durham"},
+     
+     {"English": "Equitable Access to Technology",
+     "Spanish": "Acceso equitativo a la tecnología"},
+     
+     {"English": "Funding Per Pupil",
+     "Spanish": ""El financiamiento de cada estudiante},
+     
+     {"English": "This indicator represents the amount that local, state, and federal governments spend on elementary and secondary education adjusted for the size of the student body. It is calculated by dividing the current expenditures over the entire academic year for Pre-Kindergarten through Grade 12 by the number of students in those grades in public schools. Current expenditures include instruction and instruction-related costs, student support services, administration, and operations. Excluded from those expenditures are funds for school construction and other capital outlays, debt service, and programs outside of public elementary and secondary education.",
+     "Spanish": "Este indicador representa el número que el gobierno local, estatal, y federal ha gastado en la educación primaria y secundaria. Estos datos están ajustados por el tamaño de estudiantes de cada escuela; se calcula por todos los gastos del año académico (desde pre-Kinder hasta el doceavo) dividido por el número de alumnos en cada grado. Ejemplos de estos gastos incluyen: la administración y operaciones de la escuela, servicios/recursos para los estudiantes, y gastos relacionados con la instrucción y el currículo. Estos gastos no incluyen la construcción de las escuelas, el capital de inversión, la amortización de deudas, y programas fuera de las escuelas primarias y secundarias. Carolina del Norte ocupa el lugar 39 (de 50, todos los estados continentales) en el financiamiento de cada estudiante."},
+     
+     {"English": "Resources on public school funding:",
+     "Spanish": "Recursos sobre el financiamiento de las escuelas"},
+     
+     {"English": "Interactive Summary of Local - Federal Public School Funding:",
+     "Spanish": "Un resumen interactivo del financiamiento de cada estudiante (del gobierno local, estatal, y federal):"},
+     
+     {"English": "Students With Disabilities",
+     "Spanish": "Estudiantes con discapacidades"},
+     
+     {"English": "According to the Americans with Disabilities Act, an individual is considered to have a disability if they have a condition that impairs them to do certain activities and interact with those around them. It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. Resources like",
+     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como la"},
+     
+     {"English": "assistive technology,",
+     "Spanish": "tecnología asistiva,"},
+     
+     {"English": "transportation,",
+     "Spanish": "la transportación,"},
+     
+     {"English": "Exceptional Children (EC) programs,",
+     "Spanish": "y programas para estudiantes con necesidades especiales (Exceptional Children o EC),"},
+     
+     {"English": "etc. are mandatory for every school to provide regardless of the number of students with disabilities or even the type based on the civil rights law Section 504.",
+     "Spanish": "etc. son obligatorios para cada escuela, a pesar del número de estudiantes con discapacidades o el tipo de las discapacidades. Este principio está reflejado en la Sección 504 en la ley de los derechos civiles."},
+     
+     {"English": "Below are articles and resources about government protection and resources for students with disabilities:",
+     "Spanish": "Artículos sobre la protección del gobierno y recursos para estudiantes con discapacidades:"},
+     
+     {"English": "DPS EC Services",
+     "Spanish": "Servicios para estudiantes con necesidades especiales en el condado de Durham"},
+     
+     {"English": "Section 504",
+     "Spanish": "Sección 504"},
+     
+     {"English": "NCDPI’s EC Division",
+     "Spanish": "La división de este programa en Carolina del Norte"},
+     
+     {"English": "Assistive Technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "assistive technology:",
+     "Spanish": "La tecnología asistiva:"},
+     
+     {"English": "supplementary devices that promote independence and functionality of people with varying disabilities",
+     "Spanish": "aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
+     
+     {"English": "EC programs",
+     "Spanish": "Programas para estudiantes con necesidades especiales:"},
+     
+     {"English": "school programs that include students that need intense or individualized instruction in addition to their standard course of study",
+     "Spanish": "programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
+     
+     {"English": "English as a Second Language (ESL) Student Enrollment",
+     "Spanish": "Inglés como segunda lengua"},
+     
+     {"English": "This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are created to help children learn English along with other subjects necessary to complete each grade.",
+     "Spanish": "Esta gráfica demuestra el número de estudiantes que están inscritos en el programa “Inglés como segunda lengua” (English as a Second Language: ESL, o English Language Learners: ELL). Este programa es disponible para cualquier estudiante que es un hablante de inglés no nativo, a pesar de su etnicidad, orígen, raza, edad, etc. Programas como ESL y ELL ayudan a que estos estudiantes aprendan inglés y otras materias requeridas para pasar al próximo grado."},
+     
+     {"English": "Unfortunately, ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may prevent them from participating in school activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their native language entirely.",
+     "Spanish": "Desafortunadamente, estos estudiantes pueden enfrentar discriminación, prejuicio, y acoso en la escuela. Adicionalmente, unos maestros pueden excluir a estos estudiantes de varias actividades, extracurriculares, y programas de enriquecimiento. Es importante que las escuelas reconozcan que esta barrera lingüística no impide la enseñanza de estos estudiantes. Los maestros de ESL o ELL deben atemperar a los estudiantes, en vez de aculturar a estos estudiantes y eliminar sus identidades diversas."},
+     
+     {"English": "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:",
+     "Spanish": "Recursos e información sobre prácticas culturalmente sensibles en Durham y programas de ESL/ELL:"},
+     
+     {"English": "How to Advocate for ESL/ELL Students",
+     "Spanish": "Cómo defender hablantes de inglés no nativo"},
+     
+     {"English": "Real-World Experiences and Anecdotes",
+     "Spanish": "Experiencias y anécdotas sobre la aculturación"},
+     
+     {"English": "DPS ESL Office",
+     "Spanish": "La oficina del programa ESL en Durham"},
+     
+     {"English": "ESL/ELL Teachers",
+     "Spanish": "Maestros de ESL/ELL"},
+     
      {"English": "",
      "Spanish": ""},
+     
+     {"English": "",
+     "Spanish": ""},
+
+     {"English": "",
+     "Spanish": ""},
+     
+     {"English": "",
+     "Spanish": ""},
+     
+     {"English": "",
+     "Spanish": ""},
+     
+     {"English": "",
+     "Spanish": ""},
+
