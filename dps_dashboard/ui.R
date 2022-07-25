@@ -18,9 +18,13 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(gotop)
+library(shiny.i18n)
+
 
 library(DT)
 
+i18n <- Translator$new(translation_json_path = "data/testTranslation.json")
+i18n$set_translation_language("English")
 
 
 sidebar <- {dashboardSidebar(
@@ -44,6 +48,7 @@ sidebar <- {dashboardSidebar(
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
         menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("book")),
         menuItem("School Sports", tabName = "sportstab", icon = icon("basketball-ball")),
+        menuItem("Arts Programs", tabName = "artstab", icon = icon("paint-brush")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
@@ -51,6 +56,13 @@ sidebar <- {dashboardSidebar(
 }
 
 body <- {dashboardBody(
+  shiny.i18n::usei18n(i18n),
+  div(style = "float: right;",
+      selectInput('selected_language',
+                  i18n$t("Change Language"),
+                  choices = i18n$get_languages(),
+                  selected = i18n$get_key_translation())
+  ),
     tabItems(
         #Home Page
         {tabItem(tabName = "home",
@@ -64,75 +76,50 @@ body <- {dashboardBody(
                  
                  fluidRow(
                      class = "text-center",
-                     box(h3(strong("Visualizing Durham Public Schools")),
+                     box(h3(strong(i18n$t("Visualizing Durham Public Schools"))),
                          width = 12,
                          background = "navy",
                          br(),
-                         p("This project is inspired by an inter-institutional Bass Connections team from Duke University
-                            and North Carolina Central University that is committed to developing more responsible
-                           and imaginative ways of partnering with Durham Public Schools.
-                            The objective of this project is to provide a centralized web application that will 
-                           serve as a tool for those entering Durham Public Schools. Our application aims to 
-                           inform future pre-service trainings for university students, support local neighborhood 
-                           schools in visualizing their communities, and help varied university offices articulate 
-                           what “community” actually looks like."),
+                         p(i18n$t("This project is inspired by an inter-institutional Bass Connections team from Duke University and North Carolina Central University that is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, support local neighborhood schools in visualizing their communities, and help varied university offices articulate what “community” actually looks like.")),
                          br(),
-                         p("By using spatial data and school-specific data, along with 
-                            contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while
-                            highlighting their resources and assets." ),
-                         p("Visit the", a("Visualizing DPS and Bass Connections website",
+                         p(i18n$t("By using spatial data and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets.")),
+                         p(i18n$t("Visit the"), a("Visualizing DPS and Bass Connections website",
                                           href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
-                           "for more information!"))),
+                           i18n$t("for more information!")))),
                  fluidRow(
                      class = "text-center",
                      box(
                          solidHeader = TRUE,
                          br(),
                          width = 12,
-                         valueBox(13, "Geospatial Variables", icon = icon("map"), color = "light-blue", width = 4),
-                         valueBox(23, "School-Specific Variables", icon = icon("pencil"), color = "light-blue", width = 4),
-                         valueBox(1, "Centralized Web Application", icon = icon("window-restore"), color = "light-blue", width = 4))),
+                         valueBox(13, i18n$t("Geospatial Variables"), icon = icon("map"), color = "light-blue", width = 4),
+                         valueBox(23, i18n$t("School-Specific Variables"), icon = icon("pencil"), color = "light-blue", width = 4),
+                         valueBox(1, i18n$t("Centralized Web Application"), icon = icon("window-restore"), color = "light-blue", width = 4))),
                  fluidRow(
                      class = "text-center",
-                     box(title = strong("2 Universities, 16 Public Schools"),
+                     box(title = strong(i18n$t("2 Universities, 16 Public Schools")),
                          solidHeader = TRUE,
                          width = 7,
-                         p("The Durham Public Schools District contains 54 public schools: 
-                            30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. 
-                            Our project focuses on the 16 schools that most frequently partner with Duke University 
-                            and North Carolina Central University. These include 10 elementary schools: 
-                            C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood,
-                            Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, 
-                           Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside."),
+                         p(i18n$t("The Durham Public Schools District contains 54 public schools: 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. Our project focuses on the 16 schools that most frequently partner with Duke University and North Carolina Central University. These include 10 elementary schools: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside.")),
                          br(),
-                         p("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham
-                              Public Schools. Prior Bass Connections research focused on understanding how to achieve
-                              this goal and found that an issue preventing meaningful engagement between Duke, NCCU, 
-                              and Durham public schools is that ‘many university students lack an understanding of 
-                              city and community dynamics.’ Additionally, they found that there is a 
-                              ‘lack of student volunteer training with Durham’s context, particularly in the areas 
-                              of history, school-specific demographics, and implicit bias and power dynamics that
-                              may manifest in schools.’"),
+                         p(i18n$t("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that an issue preventing meaningful engagement between Duke, NCCU, and Durham public schools is that ‘many university students lack an understanding of city and community dynamics.’ Additionally, they found that there is a ‘lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.’")),
                          br(),
-                         p(strong("Motivated by this research, our project explores a way of visualizing schools 
-                                     as the center of the community that brings together academics, health and 
-                                     social services, youth and community development, and community engagement 
-                                     under one roof."))),
+                         p(strong(i18n$t("Motivated by this research, our project explores a way of visualizing schools as the center of the community that brings together academics, health and social services, youth and community development, and community engagement under one roof.")))),
                      box(width = 5,
                          background = "light-blue",
                          solidHeader = TRUE,
                          leafletOutput("home"))),
                  fluidRow(class = "text-center",
-                          box(title = strong("View Our 16 Schools"),
+                          box(title = strong(i18n$t("View Our 16 Schools")),
                               width = 12,
                               background = "light-blue",
-                              actionButton("viewMap", "View Geospatial Data"),
-                              actionButton("viewStat", "View School Statistics"))),
+                              actionButton("viewMap", i18n$t("View Geospatial Data")),
+                              actionButton("viewStat", i18n$t("View School Statistics")))),
                  
                  fluidRow(class = "text-center",
                           box(width = 12,
                               solidHeader = TRUE,
-                              title = strong("Our Partners"),
+                              title = strong(i18n$t("Our Partners")),
                               column(class = 'text-center', width = 2,
                                      tags$a(
                                          href="https://www.dpsnc.net/", 
@@ -221,7 +208,7 @@ body <- {dashboardBody(
                                                       "Median Age","Median Homesale Price","Median Household Income",
                                                       "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                       "Students Per Device","Student-Teacher Ratio, Elementary School", 
-                                                      "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                                      "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                        ),
                                     selectInput("es_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                        choices = list("Summer 2021", "Summer 2022")
@@ -261,7 +248,7 @@ body <- {dashboardBody(
                                                                "Median Age","Median Homesale Price","Median Household Income",
                                                                "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                                "Students Per Device","Student-Teacher Ratio, Middle School", 
-                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                     ),
                                     selectInput("ms_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                                 choices = list("Summer 2022")
@@ -300,7 +287,7 @@ body <- {dashboardBody(
                                                                "Median Age","Median Homesale Price","Median Household Income",
                                                                "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                                "Students Per Device","Student-Teacher Ratio, High School", 
-                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                     ),
                                     selectInput("hs_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                                 choices = list("Summer 2021", "Summer 2022")
@@ -378,130 +365,6 @@ body <- {dashboardBody(
                                box(width = 4,
                                    title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
                                    htmlOutput("TradeCTE", align="left")))),
-                    tabPanel("Arts Programs",
-                             fluidRow(
-                               box(width = 6, title = strong("Dance"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Dance is a form of physical activity that encourages self-expression, 
-                                     improves health, and increases mobility and strength. Children and 
-                                     adolescents that participate in dance learn different genres, cultural 
-                                     aspects, and regional differences, and have the opportunity to choose 
-                                     between cheerleading, gymnastics, interpretive dance, martial arts, and more!")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                     href="https://duke.edu/", 
-                                     tags$img(src="duke.png", 
-                                              title="Duke Logo",
-                                              class= "img-responsive")
-                                   )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                     href="https://duke.edu/", 
-                                     tags$img(src="duke.png",
-                                              title="Duke Logo",
-                                              class= "img-responsive")
-                                   )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")))
-                                   ),
-                               box(width = 6, title = strong("Theatre"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Theatre is a type of performance art that incorporates and fuses acting, 
-                                        singing, and dancing. On the stage, individuals have the opportunity to 
-                                        strengthen concentration and memory, improve articulation and fluency, 
-                                        and build trust as they interact and collaborate with others. ")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")))
-                             )),
-                             fluidRow(
-                               box(width = 6,
-                                   title = strong("Music"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Music incorporates vocal and instrumental performance, 
-                                   studio production, songwriting, and even  listening enjoyment. 
-                                   Music students have the opportunity to learn concepts such as 
-                                   theory, history, acoustics, and instrumental and vocal skill 
-                                   and technique. Music performance has been proven to teach 
-                                   discipline, relieve stress, reduce stage fright, and improve 
-                                   academic levels. 
-")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")))),
-                               box(width = 6,
-                                   title = strong("Visual"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Visual arts consists of painting, drawing, printmaking, 
-                                        sculpture, ceramics, photography, video, filmmaking, 
-                                        design, crafts and architecture. Engaging in visual 
-                                        arts exposes children and adolescents to positive 
-                                        benefits that include; but are not limited to, having a 
-                                        space to create innovatively, improving motor skills, and 
-                                        expressing emotions.")),
-                                   br(),
-                                   p("Click on each of the schools below to learn more about their dance programs."),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png",
-                                                     title="Duke Logo",
-                                                     class= "img-responsive"))))
-                             ))
                   )
                 )
         )},
@@ -530,37 +393,137 @@ body <- {dashboardBody(
                                     column(12, align="center", tableOutput("springsports"))),
                                 ),
                               fluidRow(
-                                box(width = 4,
+                                box(width = 6,
                                     title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("male_sports_icons"))),
-                                box(width = 4,
+                                    column(12, align="center", tableOutput("male_sports_list"))),
+                                box(width = 6,
                                     title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("female_sports_icons"))),
-                                box(width = 4,
+                                    column(12, align="center", tableOutput("female_sports_list"))),
+                                
+                                # box(width = 4,
+                                #     solidHeader = TRUE,
+                                #     title = strong("Icon Legend"),
+                                #     column(12, align="center", tableOutput("sports_icon_legend")))
+                                
+                                ),
+                              
+                              fluidRow(
+                                box(width = 12,
                                     solidHeader = TRUE,
-                                    title = strong("Icon Legend"),
-                                    column(12, align="center", tableOutput("sports_icon_legend"))),
-                                )
+                                    title = strong("Context"),
+                                    htmlOutput("sports_context"))
+                              )
                         
                      ),
-                     tabPanel("Community Sports", class = "text-center"
-                              
-                              )
                    )
                  ),
                 
+        )},
+        {tabItem(tabName = "artstab",
+                 fluidRow(
+                   box(width = 12,
+                       title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                       column(12, align="center", tableOutput("available_arts")))
+                 ),
+                 fluidRow(
+                   box(width = 6, title = strong("Durham Public Schools and the Arts"), status = "primary", solidHeader = TRUE,
+                       p(h4("Durham Public Schools’ appreciation for the arts 
+                                        is apparent throughout their public institutions. 
+                                        They provide curricula for the arts, upcoming events 
+                                        in the school system, resources for K-12 students 
+                                        interested in the arts, and news about arts programs 
+                                        in DPS. Vist", a("Arts at DPS", href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
+                            "to learn more.")),
+                       br(),
+                       p(h4(em(strong("Learn more about some of the schools' arts programs by clicking on their logos below:")))),
+                       column(class = 'text-center', width = 4,
+                              tags$a(
+                                href="https://vimeo.com/718773555", 
+                                tags$img(src="cc spaulding.png", 
+                                         title="cc spaulding Logo",
+                                         class= "img-responsive")),
+                              tags$a(
+                                href="https://jhscoursecatalog.weebly.com/fine-arts.html", 
+                                tags$img(src="jordan high.png", 
+                                         title="Jordan Logo",
+                                         class= "img-responsive"))
+                              
+                              
+                       ),
+                       column(class = 'text-center', width = 4,
+                              tags$a(
+                                href="https://durhamvoice.org/?p=4549", 
+                                tags$img(src="eastway.png", 
+                                         title="Eastway Logo",
+                                         class= "img-responsive")),
+                              tags$a(
+                                href="https://docs.google.com/document/d/1UfdYKPoG8UohnTRVbgnHrMZD6PZwRZVrQ1KgmEn5PBM/edit", 
+                                tags$img(src="hillside high.png",
+                                         title="Hillside Logo",
+                                         class= "img-responsive")
+                              )),
+                       column(class = 'text-center', width = 4,
+                              tags$a(
+                                href="https://www.youtube.com/watch?v=2LcqFlBR9iw", 
+                                tags$img(src="brogden.png",
+                                         title="Brogden Logo",
+                                         class= "img-responsive")),
+                              tags$a(
+                                href="https://www.riversidefab.org/boosters", 
+                                tags$img(src="riverside.png",
+                                         title="Riverside Logo",
+                                         class= "img-responsive")))
+                   ),
+                   box(width = 6, title = strong("Durham County and the Arts"), status = "primary", solidHeader = TRUE,
+                       p(h4("Durham has a rich history of highlighting the arts. 
+                                        In the mid-20th century the non-profit organization ",
+                            a("Durham Arts Council", href="https://durhamarts.org/"),
+                            "was founded to promote and provide access to various opportunities 
+                                        and resources for those in the arts. The Durham Arts Council also 
+                                        provides a directory of artists to network with one another through the",
+                            a("Durham Arts Network", href="https://www.durhamartsnetwork.org/"),
+                            ". The city of Durham funded the", a("Cultural & Public Art Program ", 
+                                                                 href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
+                            "to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. 
+                                        Durham provides many opportunities for the public to indulge in cultural 
+                                        arts and for artists to showcase their work.", a("Discover Durham", 
+                                                                                         href="https://www.discoverdurham.com/things-to-do/arts/"),
+                            "provides an extensive list of events for visitors and residents to do 
+                                        surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc.",
+                            br(),
+                            br(),
+                            strong("Duke University"),
+                            br(),
+                            a("- Duke Mural", href="https://arts.duke.edu/mural-durham/"),
+                            ": Duke University has partnered with the city of Durham and local 
+                                     artists to create new murals to beautify the city.",
+                            br(),
+                            a("- Durham Medical Orchestra", href="https://arts.duke.edu/durham-medical-orchestra/"),
+                            ": Connects health professionals with local musicians to put on 
+                                     musical performances for Durham residents.",
+                            br(),
+                            br(),
+                            strong("North Carolina Central University"),
+                            br(),
+                            "- NCCU provides volunteer opportunities for their students
+                                     in the KidzNotes program via Fayetteville Street Elementary’s 
+                                     AT&T Beleive Program.",
+                            br(),
+                            "- NCCU students host musical ensembles for the Durham community."))
+                   )
+                 ) 
         )},
       
         #Data Insights tab
         {tabItem(tabName = "insightstab",
                  
-                 fluidRow(
-                   box(width  = 12,
-                       solidHeader = TRUE,
-                       title = strong("Map Comparison Of School Districts"),
-                       h4("Different school districts are differently colored according to the variable selected."),
-                       leafletOutput("choropleth")),
-                 ), 
+                 # fluidRow(
+                 #   box(width  = 12,
+                 #       solidHeader = TRUE,
+                 #       title = strong("Map Comparison Of School Districts"),
+                 #       h4("Different school districts are differently colored according to the variable selected."),
+                 #       leafletOutput("choropleth")),
+                 # ), 
                  fluidRow(
                    box(width = 2,
                        solidHeader = TRUE,
@@ -579,6 +542,12 @@ body <- {dashboardBody(
                        plotlyOutput("insights_individualplots",
                                     width="auto",
                                     height = "auto"))
+                 ),
+                 fluidRow(class= 'text-center',
+                   box(width = 12,
+                       solidHeader = TRUE,
+                       title = strong("Context"),
+                       htmlOutput("data_insights_context"))
                  )
         )},
         
@@ -617,11 +586,10 @@ body <- {dashboardBody(
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
-                                  General Psychology. Patience joined the Data+ project team because she was 
-                                  interested in learning more about data science and its integration into education
-                                  policy. She hopes this dashboard makes an impact on not only these ten community
-                                  schools in the dataset, but students in all Durham Public Schools and beyond, 
-                                  in hopes to make education more accessible to all students.")),
+                                  General Psychology. Patience continued the Data+ project team because she was 
+                                  wanted to continue the work she did the previous summer in hopes to improve the dashboard
+                                  to make it more accessible. With her background in education policy, she hopes to integrate
+                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyond.")),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
@@ -637,12 +605,10 @@ body <- {dashboardBody(
                              column(width = 3,
                                     img(src = "surabhi.jpg")),
                              column(width = 3,
-                                    p("Surabhi Trivedi is a PhD candidate at Duke's sociology department. He's
-                                  interested in how habits and beliefs change, both at the individual and collective
-                                  level, and uses longitudinal data, networks, and simulations to try to get at 
-                                  this question. He had the privilege to be the project manager for this team, and
-                                  believes the team was efficient and industrious so his job was easy. The team 
-                                  claims he was helpful, and he likes to believe that is true."))))),
+                                    p("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University.
+                                      Her interest lies at the intersection of data science and public policy, and specifically social policy.
+                                      For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering
+                                      to help with the project."))))),
                  
                  fluidRow(
                      box(width = 12,
@@ -675,7 +641,7 @@ body <- {dashboardBody(
                          br(),
                          fluidRow(
                              column(width = 3,
-                                    img(src = "patience3.jpeg")),
+                                    img(src = "patience3.jpg")),
                              column(width = 3,
                                     p("Patience Jones is a senior at North Carolina Central University from Durham, 
                                   North Carolina. Currently, she is studying English, Secondary Education, and 
@@ -713,19 +679,20 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          title = strong("Interactive Map"),
                          h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
+                         h4("Click the ", icon('search'), "icon to search for your own address!"),
                          leafletOutput("map")),
                      box(width = 5,
                          solidHeader = TRUE,
-                         title = strong("Context"),
+                         title = strong(i18n$t("Context")),
                          htmlOutput("context")),
                      
                  ),
                  fluidRow(
                      box(width = 4,
                          solidHeader = TRUE,
-                         title = strong("Measurement"),
+                         title = strong(i18n$t("Measurement")),
                          selectInput("zone",
-                                     label = em("Choose a school zone to display"),
+                                     label = em(i18n$t("Choose a school zone to display")),
                                      choices = c("All", "Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
                                                  "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                                  "Forest View Elementary", "Hillandale Elementary","Hillside High",
@@ -734,15 +701,15 @@ body <- {dashboardBody(
                                      ),
                                      multiple = FALSE),
                          selectInput("var",
-                                     label = em("Choose a variable to display"),
+                                     label = em(i18n$t("Choose a variable to display")),
                                      choices = c("After-School Care Programs", "Bus Stops", 
-                                                 "Childcare Centers", "Community & Cultural Centers", "Community Arts","Farmers' Markets", "Food Pantries", "Gardens",
+                                                 "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
                                                  "Recreation Centers", "Religious Centers"),
                                      multiple = FALSE)),
                      box(width = 4,
                          solidHeader = TRUE,
-                         title = strong("Selected Variable Resources"),
+                         title = strong(i18n$t("Selected Variable Resources")),
                          em("Select a variable to see a list of all the resources with the selected school zone."),
                          br(),
                          br(),
@@ -752,7 +719,7 @@ body <- {dashboardBody(
                      #Icon Legend
                      {box(width = 4,
                           solidHeader = TRUE,
-                          title = strong("Icon Legend"),
+                          title = strong(i18n$t("Icon Legend")),
                           htmlOutput("legend"),
                           br(),
                           fluidRow(
@@ -782,6 +749,20 @@ body <- {dashboardBody(
                               column(width = 1),
                               column(width = 8, htmlOutput("cultureicon")
                               )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("artsicon")
+                            )),
+                          br(),
+                          fluidRow(
+                            column( width = 1,
+                                    img(src = "commsportsicon.png", width = 40, height = 40, align = "left")),
+                            column(width = 1),
+                            column(width = 8, htmlOutput("sportsicon")
+                                   )),
                           br(),
                           fluidRow(
                               column(width = 1,
@@ -834,7 +815,7 @@ body <- {dashboardBody(
                           br(),
                           fluidRow(
                               column( width = 1,
-                                      img(src = "rec_icon.png", width = 40, height = 40, align = "left")),
+                                      img(src = "recicon.png", width = 40, height = 40, align = "left")),
                               column(width = 1),
                               column(width = 8, htmlOutput("recicon")
                               )),
@@ -844,14 +825,7 @@ body <- {dashboardBody(
                                      img(src = "religious_icon.png", width = 40, height = 40)),
                               column(width = 1),
                               column(width = 8, htmlOutput("religiousicon")
-                              )),
-                          br(),
-                          fluidRow(
-                            column( width = 1,
-                                    img(src = "arts_icon.png", width = 40, height = 40, align = "left")),
-                            column(width = 1),
-                            column(width = 8, htmlOutput("artsicon")
-                            ))
+                              ))
                      )},
                  )
         )}
@@ -866,5 +840,4 @@ dashboardPage(
     sidebar,
     body
 )
-
 

@@ -5,7 +5,7 @@ library(leaflet)
 library(sf)
 library(readxl)
 library(stringr)
-
+library(tidyr)
 
 #sports tab
 
@@ -28,8 +28,8 @@ sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-bal
 sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
 sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
 sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
+sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal"></i>'
+sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
 sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
 sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
 sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
@@ -228,3 +228,15 @@ leaflet(
               smoothFactor = 1)
 
 
+#checklist table for the arts programs tab
+schoolstats22 <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
+schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
+schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArts, Theatre, Dance)
+
+#View(reshape2::dcast(schoolstats, SCHOOL_NAME ~ ARTS_PROGRAMS))
+
+View(schoolstats)
