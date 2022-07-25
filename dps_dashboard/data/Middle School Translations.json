@@ -1,3 +1,9 @@
+
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+
      {"English": "Advanced Placement (AP) Course Enrollment",
      "Spanish": "Cursos avanzados (Advanced Placement)"},
      
@@ -339,3 +345,7 @@
      
      {"English": "",
      "Spanish": ""},
+     
+]
+}
+
