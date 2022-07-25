@@ -691,8 +691,10 @@ body <- {dashboardBody(
                                      choices = c("After-School Care Programs", "Bus Stops", 
                                                  "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                                  "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
-                                                 "Recreation Centers", "Religious Centers"),
-                                     multiple = FALSE)),
+                                                 "Recreation Centers", "Religious Centers"
+                                                 ),
+                                     multiple = FALSE)
+                         ),
                      box(width = 4,
                          solidHeader = TRUE,
                          title = strong(i18n$t("Selected Variable Resources")),

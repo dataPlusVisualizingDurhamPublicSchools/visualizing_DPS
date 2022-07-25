@@ -166,7 +166,6 @@ function(input, output, session) {
     translator
   })
   
-  
     # SchoolStats - GGPlots
   {
     output$es_barplots <- renderPlotly({
@@ -3164,7 +3163,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
     
 
     # Maps - Connecting variable drop down menu to variable info
-    displayVar <- reactive({
+  displayVar <- reactive({
         switch(input$var,
                "Parks" = parks, 
                "Recreation Centers" = rec, 
@@ -3400,248 +3399,75 @@ for students to be placed into higher-level courses at their college.", "<br>","
     })
     
     output$context <- renderText({
-      if(input$var == "Parks"){
-            paste("The presence of parks in a community is vital to increase community engagement, 
-        assist in the economic development of cities, bolster public health, and help children learn. 
-        Parks allow people to interact with each other in an outdoor community space. Children are 
-        able to play and explore nature in an increasingly digital world, providing benefits such 
-        as decreased stress and potentially, obesity rates.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about parks:",
-                  "<br>",
-                  a("Why Parks Are Important", href = "https://www.brec.org/index.cfm/page/WhyParksareImportant"),
-                  "<br>",
-                  a("Why Parks and Recreation are Essential Public Services",
-                    href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
-        }
-      else if(input$var == "Recreation Centers"){
-            paste("Recreation centers have varying amenities, frequently including fitness centers, basketball courts, 
-        and multipurpose rooms. These facilities can be utilized for afterschool programs, indoor and outdoor 
-        recreation, and meeting spaces. Similar to parks, recreation centers promote active lifestyles.", "<br>", "<br>", "Benefits include:", "<br>", "<br>", "-Functioning as a community hub", "<br>", "-Ability to host before- and after-school care programs", "<br>", "May offer inexpensive or free tutoring",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about recreation centers:",
-                  "<br>",
-                  a("The Positive Impact of Community Recreation Center",
-                    href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
-                  "<br>",
-                  a("Recreation Centers Play an Important Role in Communities",
-                    href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
-        }
-      else if(input$var == "Gardens"){
-            paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
-        A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as 
-        likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to 
-        organizing facilitated through the community gardens” (Armstrong). Another study published in Public Health Nutrition 
-        noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community 
-        gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually 
-        increasing acceptance and improving taste perceptions of fruits and vegetables” (Dibsdall et. al). With the ability to 
-        benefit public health and serve as community hubs, gardens are impactful to a community. ",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about parks:",
-                  "<br>",
-                  a("A Survey of Community Gardens in Upstate New York", 
-                    href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchArmstrongSurveyNYHealthCommunityDevelopment.pdf?fwd=no"),
-                  "<br>",
-                  a("Low-income Consumers’ Attitudes and Behaviour Towards
-                            Access, Availability and Motivation to Eat Fruit and Vegetables",
-                    href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchDibsdallLambertBobbinFrewerAccesstoProduce.pdf?fwd=no"),
-                  "<br>",
-                  a("Research and Benefits of Community Gardens",
-                    href = "https://nccommunitygardens.ces.ncsu.edu/resources-3/nccommunitygardens-research/"))
-        }
+      if(input$var == "After-School Care Programs"){
+        paste("Afterschool programs can promote positive youth development, and  support social, 
+        emotional, cognitive, and academic development, reduce risky behaviors, promote physical 
+        health, and provide a safe and supportive environment for children and youth",HTML(paste0(strong(tags$sub("1")))), ". Several afterschool programs also offer before school programs allowing 
+        parents to drop-off and pick-up their child(ren) in a safe environment without interfering 
+        with their work schedule. ",
+              "<br>",
+              "<br>",
+              "Below is more information about after:",
+              "<br>",
+              a("Benefits for Youth, Families, and Communities",
+                href = "https://youth.gov/youth-topics/afterschool-programs/benefits-youth-families-and-communities#:~:text=Afterschool%20programs%20can%20support%20social,environment%20for%20children%20and%20youth"),
+              "<br>",
+              a("Infographics on Afterschool Care Programs in NC",
+                href = "http://www.afterschoolalliance.org/policyStateFacts.cfm?state=NC"),
+              "<br>",
+              a("North Carolina Center for Afterschool Programs",
+                href = "https://ncafterschool.org/"),
+              "<br>",
+              "<br>",
+              "Sources:",
+              "<br>",HTML(paste0(strong(tags$sub("1")))),
+              a("Youth.gov", href = "youth.gov"))
+      }
       else if(input$var == "Bus Stops"){
-            paste("In order to live a healthy life, people must have access to affordable, nutritious food. 
+        paste("In order to live a healthy life, people must have access to affordable, nutritious food. 
         Without access to this resource, many, especially those who are low-income, are prone to developing 
         diet-related conditions such as obesity, diabetes, and cardiovascular disease. The areas lacking 
         sufficient healthy food are often called “food deserts.” Food insecurity should not be considered a 
         natural, geographical issue; but, rather an intentional denial of resources for historically marginalized 
         racial groups. Thus, the term “food apartheid” has gained traction in recent years, and is now often 
         preferred. We hope to show areas affected by food apartheid in an attempt to raise awareness about food insecurity.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about bus stops:",
-                  "<br>",
-                  a("Transit Equity Dashboard",
-                    href = "https://transitcenter.org/introducing-the-transit-equity-dashboard/"))
-        }
+              "<br>",
+              "<br>",
+              "Below is more information about bus stops:",
+              "<br>",
+              a("Transit Equity Dashboard",
+                href = "https://transitcenter.org/introducing-the-transit-equity-dashboard/"))
+      }
       else if(input$var == "Childcare Centers"){
-            paste("Childcare centers assure parents and guardians that their child(ren) is safe and cared 
+        paste("Childcare centers assure parents and guardians that their child(ren) is safe and cared 
         for while simultaneously allowing them to work and earn money for their family. Childcare is 
         particularly useful for single parents who often cannot afford to stay at home instead of working. 
         Having several childcare options near a person’s home can be beneficial in allowing parents to 
         weigh the cost and quality of various centers.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about childcare centers:",
-                  "<br>",
-                  a("The Importance of Preschool and Child Care For Working Mothers",
-                    href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
-        }
+              "<br>",
+              "<br>",
+              "Below is more information about childcare centers:",
+              "<br>",
+              a("The Importance of Preschool and Child Care For Working Mothers",
+                href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
+      }
       else if(input$var == "Community and Cultural Centers"){
-            paste("The benefits of building community outside the school building contribute to more powerful 
+        paste("The benefits of building community outside the school building contribute to more powerful 
         relationships and organizing within the school building. Community centers have been found to 
         promote community cohesion and sense of belonging while providing programming that supports 
         self-esteem, health, and academic success. Cultural centers also positively contribute to youth 
         development by providing positive self-images as well as opportunities to learn about cultural 
-        practices and traditions of diverse groups.  ",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about community and cultural centers:",
-                  "<br>",
-                  a("The Positive Impact of Community Centers",
-                    href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
-                  "<br>",
-                  a("Culture and Arts Centers",
-                    href = "https://trianglecf.org/impact/impact-cultural-arts/"))
-        }
-      else if(input$var == "Grocery Stores"){
-            paste("  In order to live a healthy life, people must have access to affordable, 
-        nutritious food. Without access to this resource, many, especially those who are 
-        low-income, are prone to developing diet-related conditions such as obesity, 
-        diabetes, and cardiovascular disease. The areas lacking sufficient healthy food 
-        are often called “food deserts.” Food insecurity should not be considered a natural, 
-        geographical issue; but, rather an intentional denial of resources for historically 
-        marginalized racial groups. Thus, the term “food apartheid” has gained traction in 
-        recent years, and is now often preferred. We hope to show areas affected by food 
-        apartheid in an attempt to raise awareness about food insecurity.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about grocery stores:",
-                  "<br>",
-                  a("Food Apartheid: Racialized Access to Healthy Affordable Food", 
-                    href = "https://www.nrdc.org/experts/nina-sevilla/food-apartheid-racialized-access-healthy-affordable-food"),
-                  "<br>",
-                  a("Food Desert VS. Food Apartheid",
-                    href = "https://forsythfarmersmarket.com/blog/foodapartheid"),
-                  "<br>",
-                  a("What Are Food Deserts, and How Do They Impact Health?",
-                    href = "https://www.medicalnewstoday.com/articles/what-are-food-deserts"))
-        }
-      else if(input$var == "Libraries"){
-            paste("Found in urban, suburban, and rural areas, libraries often serve
-                      as community hubs. Their purpose is not only to provide academic 
-                      resources for the community, but also be used to welcome new 
-                      residents to the neighborhood, assist the homeless, and offer 
-                      informational sessions on a variety of topics. As highlighted 
-                      in an article by the Brookings Institute, a Pew Research study 
-                      showed “[s]ome 90% of Americans ages 16 and older said that the
-                      closing of their local public library would have an impact on 
-                      their community, with 63% saying it would have a ‘major’ impact”", HTML(paste0(strong(tags$sub("1")))),
-                  ". In Durham, there are seven public libraries, including the recently 
-                      renovated Main Library downtown. Each library hosts several events 
-                      daily for people of all ages.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about libraries:",
-                  "<br>",
-                  a("How Public Libraries Help Build Healthy Communities",
-                    href = "https://www.brookings.edu/blog/up-front/2017/03/30/how-public-libraries-help-build-healthy-communities/"),
-                  "<br>",
-                  a("Durham County Library",
-                    href = "https://durhamcountylibrary.org"),
-                  "<br>",
-                  "<br>",
-                  "Sources:","<br>",
-                  HTML(paste0(strong(tags$sub("1")))),a("Pew Research",
-                                                        href = "https://www.pewresearch.org/internet/2013/12/11/libraries-in-communities/"))
-        }
-      else if(input$var == "Religious Centers"){
-            paste("Religious centers are huge assets to the community because of various services they provide. 
-        These services include donations, food drives, fundraisers, providing safe spaces for various cultures, 
-        counseling services, daycare, summer programs, and much more. Additionally, the Durham community has 
-        established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. 
-        Despite the diversity of religious orientations, Durham residents have shown their willingness to 
-        provide resources for all those in need, regardless of religious orientation.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about religious centers:",
-                  "<br>",
-                  a("The Benefits of Religiosity and Spirituality on Mental Health",
-                    href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
-        }
-      else if(input$var == "Hospitals and Clinics"){
-            paste("When faced with an emergency, time is of the essence. Being able to get to a hospital within minutes can be beneficial, 
-        and can literally save lives. Along with emergency services, hospitals also offer different types of therapy, services for 
-        individuals living with long-term illnesses, classes and events, and outpatient labs. Along with medical care and having a 
-        centralized location for medical records, hospitals can also provide employment opportunities to local residents.", "<br>", "<br>", 
-                  "Additionally, private practices tend to be located near hospitals. These offices give patients a better opportunity to 
-        foster meaningful relationships with their nurses and primary care physicians.",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about hospitals and clinics:",
-                  "<br>",
-                  a("The Benefits of Living Near a Hospital",
-                    href = "https://sanatogaridge.com/news-activities/the-benefits-of-living-near-a-hospital/#:~:text=Living%20near%20a%20hospital%20can,a%20Paramedic%20at%20your%20door"),
-                  "<br>",
-                  a("10 Ways to Improve Healthcare Access",
-                    href = "https://stakeholderhealth.org/healthcare-access/"),
-                  "<br>",
-                  a("Durham County’s “Project Access” Initiative",
-                    href = "https://projectaccessdurham.org/about/"))
-        }
-      else if(input$var == "Food Pantries"){
-            paste("Food pantries are partner agencies and churches that obtain donated food from food banks to feed food insecure communities. 
-        Food insecurity refers to the lack of access to enough nutritious food to fully meet basic needs because of a lack of financial 
-        resources. Although some families are able to rely on the Supplemental Nutrition Assistance Program (SNAP), also known as “food 
-        stamps,” there are some families that earn too much to receive SNAP; but, don’t make enough money to afford adequate meals. 
-        Older adults and people with disabilities that are on fixed incomes sometimes have to choose between paying for medicine or 
-        purchasing nutritious food. Food pantries can provide individuals and families with supplemental food allowing them to 
-        reallocate money they would have used on food for rent or other utilities. ",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about pantries:",
-                  "<br>",
-                  a("Frequently Asked Questions on Food Banks",
-                    href = "https://feedingthecarolinas.org/learn-more/food-bank-questions/?gclid=CjwKCAjwyryUBhBSEiwAGN5OCAyOWx3b_Z4r16WfOn18zdsydqDPs8QEpIM_PluJ6dEpsRYmIwemHxoC6koQAvD_BwE"),
-                  "<br>",
-                  a("Fighting Hunger and Reducing Poverty",
-                    href = "https://www.ncjustice.org/publications/btc-brief-nc-ranks-10th-in-hunger-in-the-nation/"),
-                  "<br>",
-                  a("NC Hunger and Poverty Quick Facts",
-                    href = "https://www.foodshuttle.org/hunger-in-nc-1#:~:text=In%202021%2C%20over%201.5%20million,risk%20of%20facing%20food%20insecurity"))
-        }
-      else if(input$var == "After-School Care Programs"){
-            paste("Afterschool programs can promote positive youth development, and  support social, 
-        emotional, cognitive, and academic development, reduce risky behaviors, promote physical 
-        health, and provide a safe and supportive environment for children and youth",HTML(paste0(strong(tags$sub("1")))), ". Several afterschool programs also offer before school programs allowing 
-        parents to drop-off and pick-up their child(ren) in a safe environment without interfering 
-        with their work schedule. ",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about after:",
-                  "<br>",
-                  a("Benefits for Youth, Families, and Communities",
-                    href = "https://youth.gov/youth-topics/afterschool-programs/benefits-youth-families-and-communities#:~:text=Afterschool%20programs%20can%20support%20social,environment%20for%20children%20and%20youth"),
-                  "<br>",
-                  a("Infographics on Afterschool Care Programs in NC",
-                    href = "http://www.afterschoolalliance.org/policyStateFacts.cfm?state=NC"),
-                  "<br>",
-                  a("North Carolina Center for Afterschool Programs",
-                    href = "https://ncafterschool.org/"),
-                  "<br>",
-                  "<br>",
-                  "Sources:",
-                  "<br>",HTML(paste0(strong(tags$sub("1")))),
-                  a("Youth.gov", href = "youth.gov"))
-        }
-      else if(input$var == "Farmers' Markets"){
-            paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
-        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
-        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
-        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
-        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
-        markets can be a more affordable option for local residents. ",
-                  "<br>",
-                  "<br>",
-                  "Below is more information about Farmers' Markets:",
-                  "<br>",
-                  a("Farmers' Market Coalition", 
-                    href = "https://farmersmarketcoalition.org/education/qanda/"))
-            
-        }
+        practices and traditions of diverse groups.",
+              "<br>",
+              "<br>",
+              "Below is more information about community and cultural centers:",
+              "<br>",
+              a("The Positive Impact of Community Centers",
+                href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
+              "<br>",
+              a("Culture and Arts Centers",
+                href = "https://trianglecf.org/impact/impact-cultural-arts/"))
+      }
       else if(input$var == "Community Arts"){
         paste("Durham, North Carolina offers an array of arts programs that foster 
         a plethora of individual and community benefits. Fine arts (painting, design, 
@@ -3704,8 +3530,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("The Impact of Museums", 
                 href = "https://www.museumsassociation.org/campaigns/museums-change-lives/the-impact-of-museums/#"), 
               "<br>",
-                a("Why Visit Museums", 
-                  href = "https://www.colleendilen.com/2009/07/31/10-reasons-to-visit-a-museum/"),
+              a("Why Visit Museums", 
+                href = "https://www.colleendilen.com/2009/07/31/10-reasons-to-visit-a-museum/"),
               "<br>",
               "<br>",
               HTML(paste0(strong("Martial Arts:"))),
@@ -3716,7 +3542,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
               "<br>",
               a("Benefits of Martial Arts", 
                 href = "https://wayofmartialarts.com/benefits-of-martial-arts/"))
-        }
+      }
       else if(input$var == "Community Sports"){
         paste("DPS provides a wide range of sports across middle and high schools 
               to promote teambuilding, responsibility, discipline, and leadership. 
@@ -3731,15 +3557,192 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("Activity Guidelines for Americans Report",
                 href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
               ". Visit",
-              a("DPS’s Athletics webpage ",
+              a("DPS’s Athletics webpage",
                 href = "https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
-              " for more information.")
+              "for more information.")
       }
+      else if(input$var == "Farmers' Markets"){
+        paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
+        According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
+        produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
+        is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, 
+        antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ 
+        markets can be a more affordable option for local residents.",
+              "<br>",
+              "<br>",
+              "Below is more information about Farmers' Markets:",
+              "<br>",
+              a("Farmers' Market Coalition", 
+                href = "https://farmersmarketcoalition.org/education/qanda/"))
+        
+      }
+      else if(input$var == "Food Pantries"){
+        paste("Food pantries are partner agencies and churches that obtain donated food from food banks to feed food insecure communities. 
+        Food insecurity refers to the lack of access to enough nutritious food to fully meet basic needs because of a lack of financial 
+        resources. Although some families are able to rely on the Supplemental Nutrition Assistance Program (SNAP), also known as “food 
+        stamps,” there are some families that earn too much to receive SNAP; but, don’t make enough money to afford adequate meals. 
+        Older adults and people with disabilities that are on fixed incomes sometimes have to choose between paying for medicine or 
+        purchasing nutritious food. Food pantries can provide individuals and families with supplemental food allowing them to 
+        reallocate money they would have used on food for rent or other utilities.",
+              "<br>",
+              "<br>",
+              "Below is more information about pantries:",
+              "<br>",
+              a("Frequently Asked Questions on Food Banks",
+                href = "https://feedingthecarolinas.org/learn-more/food-bank-questions/?gclid=CjwKCAjwyryUBhBSEiwAGN5OCAyOWx3b_Z4r16WfOn18zdsydqDPs8QEpIM_PluJ6dEpsRYmIwemHxoC6koQAvD_BwE"),
+              "<br>",
+              a("Fighting Hunger and Reducing Poverty",
+                href = "https://www.ncjustice.org/publications/btc-brief-nc-ranks-10th-in-hunger-in-the-nation/"),
+              "<br>",
+              a("NC Hunger and Poverty Quick Facts",
+                href = "https://www.foodshuttle.org/hunger-in-nc-1#:~:text=In%202021%2C%20over%201.5%20million,risk%20of%20facing%20food%20insecurity"))
+      }
+      else if(input$var == "Gardens"){
+        paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
+        A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as 
+        likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to 
+        organizing facilitated through the community gardens” (Armstrong). Another study published in Public Health Nutrition 
+        noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community 
+        gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually 
+        increasing acceptance and improving taste perceptions of fruits and vegetables” (Dibsdall et. al). With the ability to 
+        benefit public health and serve as community hubs, gardens are impactful to a community.",
+              "<br>",
+              "<br>",
+              "Below is more information about parks:",
+              "<br>",
+              a("A Survey of Community Gardens in Upstate New York", 
+                href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchArmstrongSurveyNYHealthCommunityDevelopment.pdf?fwd=no"),
+              "<br>",
+              a("Low-income Consumers’ Attitudes and Behaviour Towards
+                            Access, Availability and Motivation to Eat Fruit and Vegetables",
+                href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchDibsdallLambertBobbinFrewerAccesstoProduce.pdf?fwd=no"),
+              "<br>",
+              a("Research and Benefits of Community Gardens",
+                href = "https://nccommunitygardens.ces.ncsu.edu/resources-3/nccommunitygardens-research/"))
+      }
+      else if(input$var == "Grocery Stores"){
+        paste("In order to live a healthy life, people must have access to affordable, 
+        nutritious food. Without access to this resource, many, especially those who are 
+        low-income, are prone to developing diet-related conditions such as obesity, 
+        diabetes, and cardiovascular disease. The areas lacking sufficient healthy food 
+        are often called “food deserts.” Food insecurity should not be considered a natural, 
+        geographical issue; but, rather an intentional denial of resources for historically 
+        marginalized racial groups. Thus, the term “food apartheid” has gained traction in 
+        recent years, and is now often preferred. We hope to show areas affected by food 
+        apartheid in an attempt to raise awareness about food insecurity.",
+              "<br>",
+              "<br>",
+              "Below is more information about grocery stores:",
+              "<br>",
+              a("Food Apartheid: Racialized Access to Healthy Affordable Food", 
+                href = "https://www.nrdc.org/experts/nina-sevilla/food-apartheid-racialized-access-healthy-affordable-food"),
+              "<br>",
+              a("Food Desert VS. Food Apartheid",
+                href = "https://forsythfarmersmarket.com/blog/foodapartheid"),
+              "<br>",
+              a("What Are Food Deserts, and How Do They Impact Health?",
+                href = "https://www.medicalnewstoday.com/articles/what-are-food-deserts"))
+      }
+      else if(input$var == "Hospitals and Clinics"){
+        paste("When faced with an emergency, time is of the essence. Being able to get to a hospital within minutes can be beneficial, 
+        and can literally save lives. Along with emergency services, hospitals also offer different types of therapy, services for 
+        individuals living with long-term illnesses, classes and events, and outpatient labs. Along with medical care and having a 
+        centralized location for medical records, hospitals can also provide employment opportunities to local residents.", "<br>", "<br>", 
+              "Additionally, private practices tend to be located near hospitals. These offices give patients a better opportunity to 
+        foster meaningful relationships with their nurses and primary care physicians.",
+              "<br>",
+              "<br>",
+              "Below is more information about hospitals and clinics:",
+              "<br>",
+              a("The Benefits of Living Near a Hospital",
+                href = "https://sanatogaridge.com/news-activities/the-benefits-of-living-near-a-hospital/#:~:text=Living%20near%20a%20hospital%20can,a%20Paramedic%20at%20your%20door"),
+              "<br>",
+              a("10 Ways to Improve Healthcare Access",
+                href = "https://stakeholderhealth.org/healthcare-access/"),
+              "<br>",
+              a("Durham County’s “Project Access” Initiative",
+                href = "https://projectaccessdurham.org/about/"))
+      }
+      else if(input$var == "Libraries"){
+        paste("Found in urban, suburban, and rural areas, libraries often serve
+                      as community hubs. Their purpose is not only to provide academic 
+                      resources for the community, but also be used to welcome new 
+                      residents to the neighborhood, assist the homeless, and offer 
+                      informational sessions on a variety of topics. As highlighted 
+                      in an article by the Brookings Institute, a Pew Research study 
+                      showed “[s]ome 90% of Americans ages 16 and older said that the
+                      closing of their local public library would have an impact on 
+                      their community, with 63% saying it would have a ‘major’ impact”", HTML(paste0(strong(tags$sub("1")))),
+              ". In Durham, there are seven public libraries, including the recently 
+                      renovated Main Library downtown. Each library hosts several events 
+                      daily for people of all ages.",
+              "<br>",
+              "<br>",
+              "Below is more information about libraries:",
+              "<br>",
+              a("How Public Libraries Help Build Healthy Communities",
+                href = "https://www.brookings.edu/blog/up-front/2017/03/30/how-public-libraries-help-build-healthy-communities/"),
+              "<br>",
+              a("Durham County Library",
+                href = "https://durhamcountylibrary.org"),
+              "<br>",
+              "<br>",
+              "Sources:","<br>",
+              HTML(paste0(strong(tags$sub("1")))),a("Pew Research",
+                                                    href = "https://www.pewresearch.org/internet/2013/12/11/libraries-in-communities/"))
+      }
+      else if(input$var == "Parks"){
+            paste("The presence of parks in a community is vital to increase community engagement, 
+        assist in the economic development of cities, bolster public health, and help children learn. 
+        Parks allow people to interact with each other in an outdoor community space. Children are 
+        able to play and explore nature in an increasingly digital world, providing benefits such 
+        as decreased stress and potentially, obesity rates.",
+                  "<br>",
+                  "<br>",
+                  "Below is more information about parks:",
+                  "<br>",
+                  a("Why Parks Are Important", href = "https://www.brec.org/index.cfm/page/WhyParksareImportant"),
+                  "<br>",
+                  a("Why Parks and Recreation are Essential Public Services",
+                    href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
+        }
+      else if(input$var == "Recreation Centers"){
+            paste("Recreation centers have varying amenities, frequently including fitness centers, basketball courts, 
+        and multipurpose rooms. These facilities can be utilized for afterschool programs, indoor and outdoor 
+        recreation, and meeting spaces. Similar to parks, recreation centers promote active lifestyles.", "<br>", "<br>", 
+                  "Benefits include:", "<br>", "<br>", 
+                  "-Functioning as a community hub", "<br>", 
+                  "-Ability to host before- and after-school care programs", "<br>", 
+                  "-May offer inexpensive or free tutoring",
+                  "<br>",
+                  "<br>",
+                  "Below is more information about recreation centers:",
+                  "<br>",
+                  a("The Positive Impact of Community Recreation Center",
+                    href = "https://sportadvisory.com/the-positive-impact-of-community-recreation-centers/"),
+                  "<br>",
+                  a("Recreation Centers Play an Important Role in Communities",
+                    href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
+        }
+      else if(input$var == "Religious Centers"){
+            paste("Religious centers are huge assets to the community because of various services they provide. 
+        These services include donations, food drives, fundraisers, providing safe spaces for various cultures, 
+        counseling services, daycare, summer programs, and much more. Additionally, the Durham community has 
+        established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. 
+        Despite the diversity of religious orientations, Durham residents have shown their willingness to 
+        provide resources for all those in need, regardless of religious orientation.",
+                  "<br>",
+                  "<br>",
+                  "Below is more information about religious centers:",
+                  "<br>",
+                  a("The Benefits of Religiosity and Spirituality on Mental Health",
+                    href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
+        }
     })
     
     
     # Maps - Icon legend outputs
-    observeEvent(i18n(), {
+    observeEvent(i18n(), 
     {
         output$afterschoolicon <- renderText({
           
@@ -4238,7 +4241,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
             paste(h4(HTML(paste0(strong(i18n()$t("Community Sports"))))))
         })
         
-    }
     })
       
     #Home Page - Leaflet Map showing Duke, NCCU, and the Ten Schools
