@@ -17,6 +17,11 @@ library(plotly)
 library(tidyr)
 library(readxl)
 library(gotop)
+library(shiny.i18n)
+
+
+
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 
 
@@ -109,7 +114,7 @@ library(gotop)
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
     farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
     commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
-    sports <- read.csv("data/2021/spatial_data/Community Sports.csv")
+    sports <- read.csv("data/2021/spatial_data/renamed_Community Sports.csv")
 }
 
 # Load/Rename Schools' Names
@@ -144,8 +149,24 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-function(input, output, session)
-    
+translator <- Translator$new(translation_json_path = "data/testTranslation.json")
+
+function(input, output, session) {
+  
+  observeEvent(input$selected_language, {
+    # Here is where we update language in session
+    shiny.i18n::update_lang(session, input$selected_language)
+  })
+  
+  i18n <- reactive({
+    selected <- input$selected_language
+    if (length(selected) > 0 && selected %in% translator$get_languages()) {
+      translator$set_translation_language(selected)
+    }
+    translator
+  })
+  
+  
     # SchoolStats - GGPlots
   {
     output$es_barplots <- renderPlotly({
@@ -297,13 +318,13 @@ function(input, output, session)
             }
             else if(input$es_select == "Racial Demographics") {
               
-              p3 <- ggplot(ES_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
+              p <- ggplot(ES_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
                 geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
                 theme(plot.title = element_text(hjust = 0.5))
-                ggplotly(p3)
+                ggplotly(p, tooltip = c("race", "number"))
             
                 }
             else if(input$es_select == "School and Zone BIPOC Comparison"){
@@ -363,20 +384,35 @@ function(input, output, session)
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
-            } 
-            #not on WebApp
-            else if(input$es_select == "Diversity per School Zone") {
-                schoolstats_summary <- ES_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
-                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DIVERSITY_ZONE),], aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 51%", yintercept = 51), color ='#01016D') +
-                    geom_text(aes(label = DIVERSITY_ZONE), vjust = 0)+
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
-                ggplotly(p, tooltip = c("text"))
+
             }
+          
+          else if(input$es_select == "Titles Per Student") {
+            schoolstats21_summary <- ES_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          }
+          
+          else if(input$es_select == "WiFi Access Points Per Classroom") {
+            schoolstats21_summary <- ES_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          } 
+
         }
         
         else if(input$es_year == "Summer 2022"){
@@ -526,13 +562,15 @@ function(input, output, session)
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Racial Demographics") {
-              p3 <- ggplot(ES_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
+              
+              p <- ggplot(ES_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
                 geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
                 theme(plot.title = element_text(hjust = 0.5))
-              ggplotly(p3)
+              ggplotly(p, tooltip = c("race", "number"))
+              
             }
             else if(input$es_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(ES_racecomp_22, aes(factor(place), number, fill = sorz)) + 
@@ -604,7 +642,7 @@ function(input, output, session)
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$es_select == "WiFi Access") {
+            else if(input$es_select == "WiFi Access Points Per Classroom") {
                 schoolstats22_summary <- ES_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -613,28 +651,16 @@ function(input, output, session)
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            #not on WebApp
-            else if(input$es_select == "Diversity per School Zone") {
-                schoolstats22_summary <- ES_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
-                p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 67%", yintercept = 67), color ='#01016D') +
-                    geom_text(aes(label = DIVERSITY_ZONE), vjust = 0)+
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
-                ggplotly(p, tooltip = c("text"))
-            }
         }
     })
     
+    
     output$ms_barplots <- renderPlotly({
         if(input$ms_year == "Summer 2022"){
-            if(input$ms_select == "Average Class Size") {
+          if(input$ms_select == "Average Class Size") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -646,7 +672,7 @@ function(input, output, session)
                     labs(title = "Average Class Size", x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "Bachelor Degree Rate") {
+          else if(input$ms_select == "Bachelor Degree Rate") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -658,7 +684,7 @@ function(input, output, session)
                     labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "BIPOC Students per School") {
+          else if(input$ms_select == "BIPOC Students per School") {
                 p <- ggplot(MS_poc_per_school_22, aes(reorder(place, -number), number)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
                     coord_flip() +
@@ -668,7 +694,7 @@ function(input, output, session)
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
-            } 
+            }
           else if(input$ms_select == "CTE Course Enrollment Rate, Middle School") {
             schoolstats_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
             p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
@@ -681,7 +707,7 @@ function(input, output, session)
               labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text"))
           } 
-            else if(input$ms_select == "Enrollment") {
+          else if(input$ms_select == "Enrollment") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
                 p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -692,7 +718,7 @@ function(input, output, session)
                     labs(title = "School Enrollment" , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "English as a Second Language (ESL) Student Enrollment") {
+          else if(input$ms_select == "English as a Second Language (ESL) Student Enrollment") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -704,7 +730,7 @@ function(input, output, session)
                     labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$ms_select == "Experienced Teacher Ratio"){
+          else if(input$ms_select == "Experienced Teacher Ratio"){
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -716,7 +742,7 @@ function(input, output, session)
                     labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "Free and Reduced Lunch"){
+          else if(input$ms_select == "Free and Reduced Lunch"){
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -728,7 +754,7 @@ function(input, output, session)
                     labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$ms_select == "Funding Per Pupil") {
+          else if(input$ms_select == "Funding Per Pupil") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -741,7 +767,7 @@ function(input, output, session)
                     labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$ms_select == "In-School Suspensions (ISS)") {
+          else if(input$ms_select == "In-School Suspensions (ISS)") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -753,7 +779,7 @@ function(input, output, session)
                     labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "Median Age") {
+          else if(input$ms_select == "Median Age") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
                 p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -765,7 +791,7 @@ function(input, output, session)
                     labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$ms_select == "Median Homesale Price") {
+          else if(input$ms_select == "Median Homesale Price") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -778,7 +804,7 @@ function(input, output, session)
                     labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "Median Household Income") {
+          else if(input$ms_select == "Median Household Income") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -791,16 +817,18 @@ function(input, output, session)
                     labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "Racial Demographics") {
-              p3 <- ggplot(MS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
+          else if(input$ms_select == "Racial Demographics") {
+              
+              p <- ggplot(MS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
                 geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
                 theme(plot.title = element_text(hjust = 0.5))
-              ggplotly(p3)
+              ggplotly(p, tooltip = c("race", "number"))
+              
             }
-            else if(input$ms_select == "School and Zone BIPOC Comparison"){
+          else if(input$ms_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(MS_racecomp_22, aes(factor(place), number, fill = sorz)) + 
                     geom_bar(stat="identity", position = "dodge") + 
                     coord_flip() +
@@ -810,7 +838,7 @@ function(input, output, session)
                     labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
-            else if(input$ms_select == "Sidewalk Coverage") {
+          else if(input$ms_select == "Sidewalk Coverage") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
                 p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
                     geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
@@ -822,7 +850,7 @@ function(input, output, session)
                     labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
-            else if(input$ms_select == "Students Per Device") {
+          else if(input$ms_select == "Students Per Device") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -834,7 +862,7 @@ function(input, output, session)
                     labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$ms_select == "Student-Teacher Ratio, Middle School") {
+          else if(input$ms_select == "Student-Teacher Ratio, Middle School") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_MS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_MS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_MS), y=STUDENT_TEACHER_MS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -846,7 +874,7 @@ function(input, output, session)
                     labs(title = "Middle School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
-            else if(input$ms_select == "Students With Disabilities") {
+          else if(input$ms_select == "Students With Disabilities") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -858,7 +886,7 @@ function(input, output, session)
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$ms_select == "Titles Per Student") {
+          else if(input$ms_select == "Titles Per Student") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -870,7 +898,7 @@ function(input, output, session)
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$ms_select == "WiFi Access") {
+            else if(input$ms_select == "WiFi Access Points Per Classroom") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -879,22 +907,9 @@ function(input, output, session)
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            #not on WebApp
-            else if(input$ms_select == "Diversity per School Zone") {
-                schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
-                p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 67%", yintercept = 67), color ='#01016D') +
-                    geom_text(aes(label = DIVERSITY_ZONE), vjust = 0)+
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
-                ggplotly(p, tooltip = c("text"))
-            }
         }
     })
     
@@ -1082,13 +1097,13 @@ function(input, output, session)
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Racial Demographics") {
-              p3 <- ggplot(HS_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
+              p <- ggplot(HS_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
                 geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
                 theme(plot.title = element_text(hjust = 0.5))
-              ggplotly(p3)
+              ggplotly(p, tooltip = c("race", "number"))
             }
             else if(input$hs_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(HS_racecomp_21, aes(factor(place), number, fill = sorz)) + 
@@ -1159,20 +1174,34 @@ function(input, output, session)
                     theme(plot.title = element_text(hjust = 1.5)) +
                     labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
-            } 
-            #not on WebApp
-            else if(input$hs_select == "Diversity per School Zone") {
-                schoolstats_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
-                p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DIVERSITY_ZONE),], aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 51%", yintercept = 51), color ='#01016D') +
-                    geom_text(aes(label = DIVERSITY_ZONE), vjust = 0)+
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
-                ggplotly(p, tooltip = c("text"))
             }
+          
+          else if(input$hs_select == "Titles Per Student") {
+            schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          }
+          
+          else if(input$hs_select == "WiFi Access Points Per Classroom") {
+            schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+              geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+              geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+              coord_flip() +
+              geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+              theme_minimal() +
+              theme(plot.title = element_text(hjust = 1.5)) +
+              labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+            ggplotly(p, tooltip = c("text")) 
+          } 
+          
         }
         
         else if(input$hs_year == "Summer 2022"){
@@ -1346,13 +1375,13 @@ function(input, output, session)
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Racial Demographics") {
-              p3 <- ggplot(HS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
+              p <- ggplot(HS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
                 geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
                 theme(plot.title = element_text(hjust = 0.5))
-              ggplotly(p3)
+              ggplotly(p, tooltip = c("race", "number"))
             }
             else if(input$hs_select == "School and Zone BIPOC Comparison"){
                 p <- ggplot(HS_racecomp_22, aes(factor(place), number, fill = sorz)) + 
@@ -1436,7 +1465,7 @@ function(input, output, session)
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$hs_select == "WiFi Access") {
+            else if(input$hs_select == "WiFi Access Points Per Classroom") {
                 schoolstats22_summary <- HS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1445,30 +1474,17 @@ function(input, output, session)
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            #not on WebApp
-            else if(input$hs_select == "Diversity per School Zone") {
-                schoolstats22_summary <- HS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(DIVERSITY_ZONE)
-                p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -DIVERSITY_ZONE), DIVERSITY_ZONE)) + 
-                    geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
-                    coord_flip() +
-                    theme_minimal() +
-                    geom_hline(aes(text="Durham County Average = 67%", yintercept = 67), color ='#01016D') +
-                    geom_text(aes(label = DIVERSITY_ZONE), vjust = 0)+
-                    theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Diversity per School Zone", y = "Diversity (%)", x = "School Zone")
-                ggplotly(p, tooltip = c("text"))
-            }
         }
     })
   }
     
     # SchoolStats - Context and Resources
   {  
-  output$es_resources <- renderText({
-        if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
+    output$es_resources <- renderText({
+      if(input$es_select == "Advanced Placement (AP) Course Enrollment") {
               paste("Advanced Placement (AP) courses are challenging, 
             collegiate-level courses that are offered to high school students. 
             AP courses weigh more than honors courses on the high school level. 
@@ -1484,7 +1500,8 @@ function(input, output, session)
                     href = "https://www.dpsnc.net/Page/430"),
                   a("College Board",
                     href="https://apstudents.collegeboard.org/course-index-page"))
-        }else if (input$es_select == "Average Class Size"){
+        }
+      else if (input$es_select == "Average Class Size"){
             paste("Research proves smaller class size is beneficial to student 
                   achievement. Smaller classes allow for the teacher to focus 
                   less on classroom management, and more on centralized 
@@ -1496,7 +1513,7 @@ function(input, output, session)
                   a("State Policy View on Class Size",
                     href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
         }
-        else if (input$es_select == "CTE Course Enrollment Rate, High School"){
+      else if (input$es_select == "CTE Course Enrollment Rate, High School"){
             paste("Career and Technical Education (CTE) courses are designed for
                   high school students to receive real-world experience in the 
                   career field they are most interested in. Durham Public 
@@ -1514,7 +1531,8 @@ function(input, output, session)
                     href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education")
             )
             
-        }else if (input$es_select == "Experienced Teacher Ratio") {
+        }
+      else if (input$es_select == "Experienced Teacher Ratio") {
             paste("Experienced teachers are those who have approximately five or
             more years of experience with teaching. Although more experienced 
             teachers tend to perform better on their evaluations, research shows
@@ -1540,7 +1558,8 @@ function(input, output, session)
                   a("Importance and Resources for Professional Development", 
                     href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
        
-           } else if (input$es_select == "Free and Reduced Lunch") {
+           } 
+      else if (input$es_select == "Free and Reduced Lunch") {
             paste("The percentage of students receiving free and reduced lunch 
                   is a strong indicator of socioeconomic status. The percentage 
                   of students that fall below the poverty line determines if a 
@@ -1559,7 +1578,8 @@ function(input, output, session)
                   "<br>","<br>", HTML(paste0(tags$sup("1"))),
                   strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics."
             )
-        } else if (input$es_select == "Student-Teacher Ratio, Elementary School"){
+        } 
+      else if (input$es_select == "Student-Teacher Ratio, Elementary School"){
             paste("Research proves smaller student-teacher ratios have a 
             positive effect on student achievement. By allowing more centralized
             and one-on-one instruction, smaller student-teacher ratios can 
@@ -1575,7 +1595,8 @@ function(input, output, session)
                   a("Infographics and Information on Student-Teacher Ratios",
                     href = "https://www.hunschool.org/resources/student-teacher-ratios"))
         
-        } else if (input$es_select == "Students Per Device"){
+        } 
+      else if (input$es_select == "Students Per Device"){
             paste("Living in a digital age, technology usage in the classroom 
                   has increased tremendously, especially during the COVID-19 
                   pandemic. Although technology is a great resource, students 
@@ -1592,7 +1613,7 @@ function(input, output, session)
                   a("Equitable Access to Technology",
                     href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
         } 
-        else if (input$es_select == "Funding Per Pupil"){
+      else if (input$es_select == "Funding Per Pupil"){
             paste("This indicator represents the amount that local, state, and 
                   federal governments spend on elementary and secondary 
                   education adjusted for the size of the student body. It is 
@@ -1728,9 +1749,8 @@ function(input, output, session)
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents"))
         }
-        
         else if (input$es_select == "BIPOC Students per School"){
-            paste(i18n()$t("This dataset shows the percentage of students of color in 
+            paste(i18n()$t("This dataset shows the percentage of students of color in
             each of the 16 schools. Each of the schools are “majority students of color” 
                   which means representation of these students and ", 
                   HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), "is integral 
@@ -1750,7 +1770,7 @@ function(input, output, session)
                   cultures and ethnicities of the classroom")
             
         }
-        else if (input$es_select == "Racial Demographics"){
+      else if (input$es_select == "Racial Demographics"){
 
             paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 
             public schools. Durham Public Schools’ student population 
@@ -1837,7 +1857,6 @@ function(input, output, session)
                   a(i18n()$t("Bachelor’s Degrees and Income"),
                     href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
         }
-        
         else if (input$es_select == "Sidewalk Coverage"){
             paste(i18n()$t("Areas without sidewalk coverage can become inaccessible for
             people without cars or other modes of transportation, 
@@ -1863,7 +1882,6 @@ function(input, output, session)
                   a(i18n()$t("Income Disparities and Sidewalk Coverage"),
                     href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
         }
-        
         else if (input$es_select == "Graduation Rate"){
             paste(i18n()$t("The graph depicts the percentage of students estimated to 
             graduate from high school in four years or less. 
@@ -1908,6 +1926,10 @@ function(input, output, session)
               "<br>","<br>",
               i18n()$t("Below are more resources on the importance of book titles:"), 
               "<br>",
+              a("Importance of Culturally-Diverse Literature",
+                href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
+              a("Creating an Effective and Diverse Classroom Library",
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"), "<br>",
               a(i18n()$t("Top 10 Benefits of Reading for All Ages"),
                 href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
               a(i18n()$t("North Carolina School Report Cards"),
@@ -1928,7 +1950,7 @@ function(input, output, session)
         information and teach through slideshows, animations, videos, games, 
         and more. Incorporating various forms of online tools can make the 
         students become more engaged, while enabling the educator to explore new
-        teaching methods. As a result, students will become more comfortable 
+        teaching methods. As a result, students will become more comfortable
         with using technology."),
                     "<br>", "<br>",
                     i18n()$t("However, not all students have the same access to technology in their 
@@ -1940,7 +1962,6 @@ function(input, output, session)
       
       
     })       
-    
     output$ms_resources <- renderText({
       if(input$ms_select == "Advanced Placement (AP) Course Enrollment") {
         paste("Advanced Placement (AP) courses are challenging, 
@@ -1958,7 +1979,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("College Board",
                 href="https://apstudents.collegeboard.org/course-index-page"))
          
-      }else if (input$ms_select == "Average Class Size"){
+      }
+      else if (input$ms_select == "Average Class Size"){
         paste("Research proves smaller class size is beneficial to student 
                   achievement. Smaller classes allow for the teacher to focus 
                   less on classroom management, and more on centralized 
@@ -1970,7 +1992,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("State Policy View on Class Size",
                 href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))     
             
-      } else if (input$ms_select == "CTE Course Enrollment Rate, Middle School"){
+      } 
+      else if (input$ms_select == "CTE Course Enrollment Rate, Middle School"){
         paste("Career and Technical Education (CTE) courses are designed for
                   high school students to receive real-world experience in the 
                   career field they are most interested in. Durham Public 
@@ -1988,7 +2011,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://www.dpi.nc.gov/districts-schools/classroom-resources/career-and-technical-education"))
         
       
-      }else if (input$ms_select == "Experienced Teacher Ratio") {
+      }
+      else if (input$ms_select == "Experienced Teacher Ratio") {
         paste("Experienced teachers are those who have approximately five or
             more years of experience with teaching. Although more experienced 
             teachers tend to perform better on their evaluations, research shows
@@ -2012,7 +2036,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href ="https://www.nea.org/professional-excellence/professional-learning/teachers"))
         
     
-      } else if (input$ms_select == "Free and Reduced Lunch") {
+      } 
+      else if (input$ms_select == "Free and Reduced Lunch") {
         paste("The percentage of students receiving free and reduced lunch 
                   is a strong indicator of socioeconomic status. The percentage 
                   of students that fall below the poverty line determines if a 
@@ -2032,7 +2057,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.")
         
       
-      } else if (input$ms_select == "Student-Teacher Ratio, Middle School"){
+      } 
+      else if (input$ms_select == "Student-Teacher Ratio, Middle School"){
         paste("Research proves smaller student-teacher ratios have a 
             positive effect on student achievement. 
             By allowing more centralized and one-on-one instruction, 
@@ -2043,7 +2069,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("Infographics and Information on Student-Teacher Ratios",
                 href = "https://www.hunschool.org/resources/student-teacher-ratios"))
         
-      } else if (input$ms_select == "Students Per Device"){
+      } 
+      else if (input$ms_select == "Students Per Device"){
         paste("Living in a digital age, technology usage in the classroom 
             has increased tremendously, especially during the COVID-19 pandemic.
             Although technology 
@@ -2062,7 +2089,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://digitalpromise.org/2019/04/29/equity-in-schools-access-technology/"))
         
       } 
-      
       else if (input$ms_select == "Funding Per Pupil"){
         paste("This indicator represents the amount that local, state, and 
             federal governments spend on elementary and secondary education 
@@ -2086,7 +2112,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
               a("New Per Pupil Expenditure Requirements",
                 href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
       
-      } else if (input$ms_select == "Students With Disabilities"){
+      } 
+      else if (input$ms_select == "Students With Disabilities"){
         paste("According to the Americans with Disabilities Act, an 
             individual is considered to have a disability if they have a 
             condition that impairs them to do certain activities and interact 
@@ -2117,7 +2144,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                       individualized instruction in addition to their standard course of study"
         )
         
-      } else if (input$ms_select == "English as a Second Language (ESL) Student Enrollment"){
+      } 
+      else if (input$ms_select == "English as a Second Language (ESL) Student Enrollment"){
         paste("This graph shows the number of students enrolled in the 
             English as a Second Language (ESL) or English Language Learners (ELL) Program. 
         ESL students consist of any student regardless of ethnicity, origin, 
@@ -2166,7 +2194,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         )
         
     
-      }else if(input$ms_select == "Enrollment") {
+      }
+      else if(input$ms_select == "Enrollment") {
         paste("This dataset shows the enrollment numbers at each school. 
             Due to the COVID-19 pandemic, there has been a 5% decrease in 
             enrollment. Normally, 
@@ -2183,7 +2212,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
         )
         
-      }else if (input$ms_select == "School and Zone BIPOC Comparison") {
+      }
+      else if (input$ms_select == "School and Zone BIPOC Comparison") {
         paste("This plot shows the percentage of students of color in the 
             school compared to the percentage of people of color in the school 
             zone. 
@@ -2210,7 +2240,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         
         }
-        
       else if (input$ms_select == "BIPOC Students per School"){
         paste("This dataset shows the percentage of students of color in 
             each of the 16 schools. Each of the schools are 
@@ -2235,8 +2264,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
         )
             
       }
-      
-      
       else if (input$ms_select == "Racial Demographics"){
         paste("This dataset shows the racial breakdown of each of the 16 
             public schools. Durham Public Schools’ student population 
@@ -2264,7 +2291,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   cultures and ethnicities of the classroom")
      
       }
-      
       else if (input$ms_select == "Median Household Income"){
         paste("This graph shows the median household income for each school 
             zone. According to the 2020 US census, 
@@ -2350,7 +2376,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
       
         }
-      
       else if (input$ms_select == "Graduation Rate"){
         paste("The graph depicts the percentage of students estimated to 
             graduate from high school in four years or less. 
@@ -2383,7 +2408,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   numbers in the future.")
         
       }
-      
       else if (input$ms_select == "Titles Per Student"){
         paste("A school library’s number of book titles per student indicates 
               the availability of different book titles for students to select. 
@@ -2400,43 +2424,42 @@ for students to be placed into higher-level courses at their college.", "<br>","
               "<br>","<br>",
               "Below are more resources on the importance of book titles:", 
               "<br>",
-              a("Top 10 Benefits of Reading for All Ages",
-                href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
-              a("North Carolina School Report Cards",
-                href = "https://ncreports.ondemand.sas.com/src/?county=Durham"))
+              a("Importance of Culturally-Diverse Literature",
+                href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
+              a("Creating an Effective and Diverse Classroom Library",
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
         
       }
-      else if (input$ms_select == "WiFi Access"){
-        HTML(paste0(strong("Note: "), "Due to the COVID-19 pandemic, this data only 
+      else if (input$ms_select == "WiFi Access Points Per Classroom"){
+        HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
         year is reflected above.",
-                    "<br>", "<br>",
-                    "The visualization depicts the number of wireless access points for each
+                          "<br>", "<br>",
+                          "The visualization depicts the number of wireless access points for each
         classroom. A school with a higher number of access points overall will 
         have better internet coverage and quality than a school with less access
         points.",
-                    "<br>", "<br>",
-                    "As things begin to modernize with time, the internet has become a vital
+                          "<br>", "<br>",
+                          "As things begin to modernize with time, the internet has become a vital
         resource for all. Specifically in schools, teachers can display 
         information and teach through slideshows, animations, videos, games, 
         and more. Incorporating various forms of online tools can make the 
         students become more engaged, while enabling the educator to explore new
         teaching methods. As a result, students will become more comfortable 
         with using technology.",
-                    "<br>", "<br>",
-                    "However, not all students have the same access to technology in their 
+                          "<br>", "<br>",
+                          "However, not all students have the same access to technology in their 
         homes. Most schools have accounted for this disparity by providing 
         students with free tablets or laptops. During the COVID-19 pandemic, 
         when students of all ages had to adjust to online instruction, several 
-        counties provided WiFI hubs so that students’ learning was not hindered.")
-             
-        )
+        counties provided WiFI hubs so that students’ learning was not hindered."),
+                   "<br>", "<br>",
+                   "Below are more resources on Wi-Fi Access:", "<br>",
+                   a("Impact of High-Speed Internet",
+                     href = "https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1050&context=studentwork")))
       }
     })       
-    
-    
-    output$hs_resources <- renderText
-    ({
+    output$hs_resources <- renderText({
       if(input$hs_select == "Advanced Placement (AP) Course Enrollment") {
         paste("Advanced Placement (AP) courses are challenging, 
             collegiate-level courses that are offered to high school students. 
@@ -2455,7 +2478,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
     
    
       }
-      
       else if (input$hs_select == "Average Class Size"){
         paste("Research proves smaller class size is beneficial to student 
                   achievement. Smaller classes allow for the teacher to focus 
@@ -2469,7 +2491,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://www.brookings.edu/research/class-size-what-research-says-and-what-it-means-for-state-policy/"))
       
       }
-      
       else if (input$hs_select == "CTE Course Enrollment Rate, High School"){
         paste("Career and Technical Education (CTE) courses are designed for
                   high school students to receive real-world experience in the 
@@ -2920,7 +2941,6 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   in a specific school zone can determine the various assets available, identify beneficial resources in 
                   the community, and give some insight about school enrollment numbers in the future.")
         }
-      
       else if (input$hs_select == "In-School Suspensions (ISS)"){
           paste("In-school suspensions are described as: 
             Instances in which a child is temporarily removed from his or her 
@@ -2941,8 +2961,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
           )
       }
-          
-          else if(input$hs_select == "Enrollment") {
+      else if(input$hs_select == "Enrollment") {
             paste("This dataset shows the enrollment numbers at each school. 
             Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, 
                   enrollment or average daily membership (ADM) is used to 
@@ -2958,7 +2977,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                     href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
             )
           }
-          else if (input$hs_select == "School and Zone BIPOC Comparison") {
+      else if (input$hs_select == "School and Zone BIPOC Comparison") {
             paste("This plot shows the percentage of students of color in the 
             school compared to the percentage of people of color in the school zone. 
                   This measurement shows the huge disparities in community 
@@ -2983,8 +3002,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
                   people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
           }
-          
-          else if (input$hs_select == "BIPOC Students per School"){
+      else if (input$hs_select == "BIPOC Students per School"){
             paste("This dataset shows the percentage of students of color in 
             each of the 16 schools. Each of the schools are “majority 
             students of color” 
@@ -3080,8 +3098,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
               "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
                   them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
         }
-        
-        else if (input$hs_select == "Graduation Rate"){
+      else if (input$hs_select == "Graduation Rate"){
             paste("The graph depicts the percentage of students estimated to graduate from high school in four years or less. 
                   The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030.
                   This is a significant increase from when the first reported graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
@@ -3094,7 +3111,57 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Dashboard with Articles and Quick Facts about Graduation Rates",
                     href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
             
-        }
+      }
+      else if (input$hs_select == "Titles Per Student"){
+        paste("A school library’s number of book titles per student indicates 
+              the availability of different book titles for students to select. 
+              A higher number of book titles per student indicates a wider 
+              variety of books to choose from. Having more book titles per 
+              student enables more opportunities for whole-class novel reading, 
+              which is essential for learning book analysis, encouraging engaging
+              discussions, and prompting creative writing.", 
+              "<br>", "<br>",
+              "Having a wide selection of books in a library also promotes more 
+              reading and intellectual stimulation for students. With a higher 
+              number of titles per student, it is more likely that most, if not 
+              all, students can find literature that engages them.",
+              "<br>","<br>",
+              "Below are more resources on the importance of book titles:", 
+              "<br>",
+              a("Importance of Culturally-Diverse Literature",
+                href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
+              a("Creating an Effective and Diverse Classroom Library",
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
+        
+      }
+      else if (input$hs_select == "WiFi Access Points Per Classroom"){
+        HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
+        extends until December of 2020. Therefore, only the 2019-2020 school 
+        year is reflected above.",
+                    "<br>", "<br>",
+                    "The visualization depicts the number of wireless access points for each
+        classroom. A school with a higher number of access points overall will 
+        have better internet coverage and quality than a school with less access
+        points.",
+                    "<br>", "<br>",
+                    "As things begin to modernize with time, the internet has become a vital
+        resource for all. Specifically in schools, teachers can display 
+        information and teach through slideshows, animations, videos, games, 
+        and more. Incorporating various forms of online tools can make the 
+        students become more engaged, while enabling the educator to explore new
+        teaching methods. As a result, students will become more comfortable 
+        with using technology.",
+                    "<br>", "<br>",
+                    "However, not all students have the same access to technology in their 
+        homes. Most schools have accounted for this disparity by providing 
+        students with free tablets or laptops. During the COVID-19 pandemic, 
+        when students of all ages had to adjust to online instruction, several 
+        counties provided WiFI hubs so that students’ learning was not hindered."),
+             "<br>", "<br>",
+             "Below are more resources on Wi-Fi Access:", "<br>",
+             a("Impact of High-Speed Internet",
+               href = "https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1050&context=studentwork")))
+      }
 
     }) 
     }
@@ -3110,7 +3177,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Childcare Centers" = childcare, 
                "Food Pantries" = pantries,
                "Farmers' Markets" = farmersmark,
-               "Community & Cultural Centers" = cultural, 
+               "Community and Cultural Centers" = cultural, 
                "Grocery Stores" = grocery, 
                "Libraries" = libraries, 
                "Religious Centers" = religious,
@@ -3128,7 +3195,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                "Gardens" = iconSet$gardens, 
                "Bus Stops" = iconSet$bus, 
                "Childcare Centers" = iconSet$childcare, 
-               "Community & Cultural Centers" = iconSet$cultural, 
+               "Community and Cultural Centers" = iconSet$cultural, 
                "Food Pantries" = iconSet$pantries,
                "Farmers' Markets" = iconSet$farmersmark,
                "Grocery Stores" = iconSet$grocery, 
@@ -3245,7 +3312,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
             temp_df$URL <- createLink(temp_df$URL)
             temp_df[c("name","URL")]
         }
-        else if(input$var == "Community & Cultural Centers")
+        else if(input$var == "Community and Cultural Centers")
         {
             temp_df <- cultural[grepl(input$zone, cultural$school_zones), ]
             temp_df$URL <- createLink(temp_df$URL)
@@ -3298,6 +3365,12 @@ for students to be placed into higher-level courses at their college.", "<br>","
         temp_df$URL <- createLink(temp_df$URL)
         temp_df[c("name","Type","ADDRESS", "URL")]
       }
+      else if(input$var == "Community Sports")
+      {
+        temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+        temp_df$URL <- createLink(temp_df$URL)
+        temp_df[c("name","Type","ADDRESS", "URL")]
+      }
     }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
     )
     
@@ -3306,18 +3379,18 @@ for students to be placed into higher-level courses at their college.", "<br>","
     #Data Insight tab plots
     
 
-    output$choropleth <- renderLeaflet({
-      leaflet(
-        displayZone()) %>%
-        addProviderTiles("CartoDB.Positron") %>%
-        addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
-        addResetMapButton() %>%
-        addPolygons(data = durham,
-                    fillColor = displayColor(),
-                    stroke = TRUE,
-                    fillOpacity = 0.39,
-                    smoothFactor = 1)
-    })
+    # output$choropleth <- renderLeaflet({
+    #   leaflet(
+    #     displayZone()) %>%
+    #     addProviderTiles("CartoDB.Positron") %>%
+    #     addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+    #     addResetMapButton() %>%
+    #     addPolygons(data = durham,
+    #                 fillColor = displayColor(),
+    #                 stroke = TRUE,
+    #                 fillOpacity = 0.39,
+    #                 smoothFactor = 1)
+    # })
     
     output$insights_individualplots <- renderPlotly({
       counts_grouped<-counts_grouped_2021
@@ -3327,11 +3400,18 @@ for students to be placed into higher-level courses at their college.", "<br>","
       counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
       counts_grouped <- subset(counts_grouped, name == input$insights_zone)
       ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
-        xlab("Number of Resource") + ylab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
+        ylab("Number of Resource") + xlab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
+    })
+    
+    output$data_insights_context <- renderText({
+      paste("These plots reveal the total number of each resource by number in each school district. The comparison
+            is not straightforward, as different school districts have different populations and thus different corresponding
+            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
+            resources available in each school district at a glance.")
     })
     
     output$context <- renderText({
-        if(input$var == "Parks"){
+      if(input$var == "Parks"){
             paste("The presence of parks in a community is vital to increase community engagement, 
         assist in the economic development of cities, bolster public health, and help children learn. 
         Parks allow people to interact with each other in an outdoor community space. Children are 
@@ -3346,7 +3426,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Why Parks and Recreation are Essential Public Services",
                     href = "https://www.nrpa.org/uploadedFiles/nrpa.org/Advocacy/Resources/Parks-Recreation-Essential-Public-Services-January-2010.pdf"))
         }
-        else if(input$var == "Recreation Centers"){
+      else if(input$var == "Recreation Centers"){
             paste("Recreation centers have varying amenities, frequently including fitness centers, basketball courts, 
         and multipurpose rooms. These facilities can be utilized for afterschool programs, indoor and outdoor 
         recreation, and meeting spaces. Similar to parks, recreation centers promote active lifestyles.", "<br>", "<br>", "Benefits include:", "<br>", "<br>", "-Functioning as a community hub", "<br>", "-Ability to host before- and after-school care programs", "<br>", "May offer inexpensive or free tutoring",
@@ -3360,7 +3440,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   a("Recreation Centers Play an Important Role in Communities",
                     href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
         }
-        else if(input$var == "Gardens"){
+      else if(input$var == "Gardens"){
             paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
         A study of 63 gardens in upstate New York found that gardens in low-income neighborhoods (46%) bring awareness to other issues and 
 lead to them being addressed." "Armstrong states that this is "due to organizing facilitated through the community gardens"." "Another study published in Public Health Nutrition 
@@ -3382,7 +3462,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("Research and Benefits of Community Gardens",
                     href = "https://nccommunitygardens.ces.ncsu.edu/resources-3/nccommunitygardens-research/"))
         }
-        else if(input$var == "Bus Stops"){
+      else if(input$var == "Bus Stops"){
             paste("In order to live a healthy life, people must have access to affordable, nutritious food. 
         Without access to this resource, many, especially those who are low-income, are prone to developing 
         diet-related conditions such as obesity, diabetes, and cardiovascular disease. The areas lacking 
@@ -3397,7 +3477,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("Transit Equity Dashboard",
                     href = "https://transitcenter.org/introducing-the-transit-equity-dashboard/"))
         }
-        else if(input$var == "Childcare Centers"){
+      else if(input$var == "Childcare Centers"){
             paste("Childcare centers assure parents and guardians that their child(ren) is safe and cared 
         for while simultaneously allowing them to work and earn money for their family. Childcare is 
         particularly useful for single parents who often cannot afford to stay at home instead of working. 
@@ -3410,7 +3490,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("The Importance of Preschool and Child Care For Working Mothers",
                     href = "https://www.americanprogress.org/issues/education-k-12/reports/2013/05/08/62519/the-importance-of-preschool-and-child-care-for-working-mothers/"))
         }
-        else if(input$var == "Community & Cultural Centers"){
+      else if(input$var == "Community and Cultural Centers"){
             paste("The benefits of building community outside the school building contribute to more powerful 
         relationships and organizing within the school building. Community centers have been found to 
         promote community cohesion and sense of belonging while providing programming that supports 
@@ -3427,7 +3507,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("Culture and Arts Centers",
                     href = "https://trianglecf.org/impact/impact-cultural-arts/"))
         }
-        else if(input$var == "Grocery Stores"){
+      else if(input$var == "Grocery Stores"){
             paste("  In order to live a healthy life, people must have access to affordable, 
         nutritious food. Without access to this resource, many, especially those who are 
         low-income, are prone to developing diet-related conditions such as obesity, 
@@ -3450,7 +3530,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("What Are Food Deserts, and How Do They Impact Health?",
                     href = "https://www.medicalnewstoday.com/articles/what-are-food-deserts"))
         }
-        else if(input$var == "Libraries"){
+      else if(input$var == "Libraries"){
             paste("Found in urban, suburban, and rural areas, libraries often serve
                       as community hubs. Their purpose is not only to provide academic 
                       resources for the community, but also be used to welcome new 
@@ -3478,7 +3558,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   HTML(paste0(strong(tags$sub("1")))),a("Pew Research",
                                                         href = "https://www.pewresearch.org/internet/2013/12/11/libraries-in-communities/"))
         }
-        else if(input$var == "Religious Centers"){
+      else if(input$var == "Religious Centers"){
             paste("Religious centers are huge assets to the community because of various services they provide. 
         These services include donations, food drives, fundraisers, providing safe spaces for various cultures, 
         counseling services, daycare, summer programs, and much more. Additionally, the Durham community has 
@@ -3492,7 +3572,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("The Benefits of Religiosity and Spirituality on Mental Health",
                     href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
         }
-        else if(input$var == "Hospitals and Clinics"){
+      else if(input$var == "Hospitals and Clinics"){
             paste("When faced with an emergency, time is of the essence. Being able to get to a hospital within minutes can be beneficial, 
         and can literally save lives. Along with emergency services, hospitals also offer different types of therapy, services for 
         individuals living with long-term illnesses, classes and events, and outpatient labs. Along with medical care and having a 
@@ -3512,7 +3592,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("Durham County’s “Project Access” Initiative",
                     href = "https://projectaccessdurham.org/about/"))
         }
-        else if(input$var == "Food Pantries"){
+      else if(input$var == "Food Pantries"){
             paste("Food pantries are partner agencies and churches that obtain donated food from food banks to feed food insecure communities. 
         Food insecurity refers to the lack of access to enough nutritious food to fully meet basic needs because of a lack of financial 
         resources. Although some families are able to rely on the Supplemental Nutrition Assistance Program (SNAP), also known as “food 
@@ -3533,7 +3613,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   a("NC Hunger and Poverty Quick Facts",
                     href = "https://www.foodshuttle.org/hunger-in-nc-1#:~:text=In%202021%2C%20over%201.5%20million,risk%20of%20facing%20food%20insecurity"))
         }
-        else if(input$var == "After-School Care Programs"){
+      else if(input$var == "After-School Care Programs"){
             paste("Afterschool programs can promote positive youth development, and  support social, 
         emotional, cognitive, and academic development, reduce risky behaviors, promote physical 
         health, and provide a safe and supportive environment for children and youth",HTML(paste0(strong(tags$sub("1")))), ". Several afterschool programs also offer before school programs allowing 
@@ -3557,7 +3637,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                   "<br>",HTML(paste0(strong(tags$sub("1")))),
                   a("Youth.gov", href = "youth.gov"))
         }
-        else if(input$var == "Farmers' Markets"){
+      else if(input$var == "Farmers' Markets"){
             paste("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. 
         According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase 
         produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there 
@@ -3572,7 +3652,7 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
                     href = "https://farmersmarketcoalition.org/education/qanda/"))
             
         }
-        else if(input$var == "Community Arts"){
+      else if(input$var == "Community Arts"){
         paste("Durham, North Carolina offers an array of arts programs that foster 
         a plethora of individual and community benefits. Fine arts (painting, design, 
         and photography), and performance arts (dance, theatre, and music) have been 
@@ -3667,505 +3747,510 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
       }
     })
     
+    
     # Maps - Icon legend outputs
+    observeEvent(i18n(), {
     {
         output$afterschoolicon <- renderText({
+          
             if(input$var == "After-School Care Programs")
-                paste(h4(HTML(paste0(strong("After-School Care Programs")))))
+                paste(h4(HTML(paste0(strong(i18n()$t("After-School Care Programs"))))))
             else if (input$var == "Parks")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Recreation Centers")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Gardens")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Bus Stops")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Childcare Centers")
-                paste(h4("After-School Care Programs"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Grocery Stores")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Libraries")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Religious Centers")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Food Pantries")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("After-School Care Programs"))
+                paste(h4(i18n()$t("After-School Care Programs")))
           else if(input$var == "Community Arts")
-            paste(h4("After-School Care Programs"))
+            paste(h4(i18n()$t("After-School Care Programs")))
           else if(input$var == "Community Sports")
-            paste(h4("After-School Care Programs"))
+            paste(h4(i18n()$t("After-School Care Programs")))
+          
         })
         
         output$busicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if (input$var == "Parks")
-                paste(h4("Bus Stops"))
+              paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Recreation Centers")
-                paste(h4("Bus Stops"))
+              paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Gardens")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Bus Stops")
-                paste(h4(HTML(paste0(strong("Bus Stops")))))
+                paste(h4(HTML(paste0(strong(i18n()$t("Bus Stops"))))))
             else if(input$var == "Childcare Centers")
-                paste(h4("Bus Stops"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Grocery Stores")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Libraries")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Religious Centers")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Food Pantries")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Bus Stops"))
+                paste(h4(i18n()$t("Bus Stops")))
           else if(input$var == "Community Arts")
-            paste(h4("Bus Stops"))
+            paste(h4(i18n()$t("Bus Stops")))
           else if(input$var == "Community Sports")
-            paste(h4("Bus Stops"))
+            paste(h4(i18n()$t("Bus Stops")))
         })
         
         output$childcareicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if (input$var == "Parks")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Recreation Centers")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Gardens")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Bus Stops")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Childcare Centers")
-                paste(h4(HTML(paste0(strong("Childcare Centers")))))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Childcare Centers"))
+                paste(h4(HTML(paste0(strong(i18n()$t("Childcare Centers"))))))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Grocery Stores")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Libraries")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Religious Centers")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Food Pantries")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Childcare Centers"))
+                paste(h4(i18n()$t("Childcare Centers")))
           else if(input$var == "Community Arts")
-            paste(h4("Childcare Centers"))
+            paste(h4(i18n()$t("Childcare Centers")))
           else if(input$var == "Community Sports")
-            paste(h4("Childcare Centers"))
+            paste(h4(i18n()$t("Childcare Centers")))
         })
         
         output$parkicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if (input$var == "Parks")
-                paste(h4(HTML(paste0(strong("Parks")))))
+                paste(h4(HTML(paste0(strong(i18n()$t("Parks"))))))
             else if(input$var == "Recreation Centers")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Gardens")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Bus Stops")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Childcare Centers")
-                paste(h4("Parks"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Grocery Stores")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Libraries")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Religious Centers")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Food Pantries")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Parks"))
+                paste(h4(i18n()$t("Parks")))
           else if(input$var == "Community Arts")
-            paste(h4("Parks"))
+            paste(h4(i18n()$t("Parks")))
           else if(input$var == "Community Sports")
-            paste(h4("Parks"))
+            paste(h4(i18n()$t("Parks")))
         })
         
         output$recicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Recreation Centers"))
+                paste(h4(i18n()$t("Recreation Centers")))
             else if (input$var == "Parks")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Recreation Centers")
-                paste(h4(HTML(paste0(strong("Recreation Centers")))))
+                paste(h4(HTML(paste0(strong(i18n()$t("Recreation Centers"))))))
             else if(input$var == "Gardens")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Bus Stops")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Childcare Centers")
-                paste(h4("Recreation Centers"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
+            else if(input$var == "Community and Cultural Centers")
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Grocery Stores")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Libraries")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Religious Centers")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Food Pantries")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Recreation Centers"))
+               paste(h4(i18n()$t("Recreation Centers")))
           else if(input$var == "Community Arts")
-            paste(h4("Recreation Centers"))
+           paste(h4(i18n()$t("Recreation Centers")))
           else if(input$var == "Community Sports")
-            paste(h4("Recreation Centers"))
+           paste(h4(i18n()$t("Recreation Centers")))
         })
         
         output$gardenicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if (input$var == "Parks")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Recreation Centers")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Gardens")
-                paste(h4(HTML(paste0(strong("Gardens")))))
+                paste(h4(HTML(paste0(strong(i18n()$t("Gardens"))))))
             else if(input$var == "Bus Stops")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Childcare Centers")
-                paste(h4("Gardens"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Grocery Stores")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Libraries")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Religious Centers")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Food Pantries")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Gardens"))
+                paste(h4(i18n()$t("Gardens")))
           else if(input$var == "Community Arts")
-            paste(h4("Gardens"))
+            paste(h4(i18n()$t("Gardens")))
           else if(input$var == "Community Sports")
-            paste(h4("Gardens"))
+            paste(h4(i18n()$t("Gardens")))
         })
         
         output$cultureicon <- renderText({
             if(input$var == "After-School Care Programs")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if (input$var == "Parks")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Recreation Centers")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Gardens")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Bus Stops")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Childcare Centers")
-                paste(h4("Community & Cultural Centers"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4(HTML(paste0(strong("Community & Cultural Centers")))))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(HTML(paste0(strong(i18n()$t("Community and Cultural Centers"))))))
             else if(input$var == "Grocery Stores")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Libraries")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Religious Centers")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Hospitals and Clinics")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Food Pantries")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
             else if(input$var == "Farmers' Markets")
-                paste(h4("Community & Cultural Centers"))
+                paste(h4(i18n()$t("Community and Cultural Centers")))
           else if(input$var == "Community Arts")
-            paste(h4("Community & Cultural Centers"))
+            paste(h4(i18n()$t("Community and Cultural Centers")))
           else if(input$var == "Community Sports")
-            paste(h4("Community & Cultural Centers"))
-        })
-        
-        output$groceryicon <- renderText({
-            if(input$var == "After-School Care Programs")
-                paste(h4("Grocery Stores"))
-            else if (input$var == "Parks")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Recreation Centers")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Gardens")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Bus Stops")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Childcare Centers")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Grocery Stores")
-                paste(h4(HTML(paste0(strong("Grocery Stores")))))
-            else if(input$var == "Libraries")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Religious Centers")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Hospitals and Clinics")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Food Pantries")
-                paste(h4("Grocery Stores"))
-            else if(input$var == "Farmers' Markets")
-                paste(h4("Grocery Stores"))
-          else if(input$var == "Community Arts")
-            paste(h4("Grocery Stores"))
-          else if(input$var == "Community Sports")
-            paste(h4("Grocery Stores"))
-        })
-        
-        output$libraryicon <- renderText({
-            if(input$var == "After-School Care Programs")
-                paste(h4("Libraries"))
-            else if (input$var == "Parks")
-                paste(h4("Libraries"))
-            else if(input$var == "Recreation Centers")
-                paste(h4("Libraries"))
-            else if(input$var == "Gardens")
-                paste(h4("Libraries"))
-            else if(input$var == "Bus Stops")
-                paste(h4("Libraries"))
-            else if(input$var == "Childcare Centers")
-                paste(h4("Libraries"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Libraries"))
-            else if(input$var == "Grocery Stores")
-                paste(h4("Libraries"))
-            else if(input$var == "Libraries")
-                paste(h4(HTML(paste0(strong("Libraries")))))
-            else if(input$var == "Religious Centers")
-                paste(h4("Libraries"))
-            else if(input$var == "Hospitals and Clinics")
-                paste(h4("Libraries"))
-            else if(input$var == "Food Pantries")
-                paste(h4("Libraries"))
-            else if(input$var == "Farmers' Markets")
-                paste(h4("Libraries"))
-          else if(input$var == "Community Arts")
-            paste(h4("Libraries"))
-          else if(input$var == "Community Sports")
-            paste(h4("Libraries"))
-        })
-        
-        output$religiousicon <- renderText({
-            if(input$var == "After-School Care Programs")
-                paste(h4("Religious Centers"))
-            else if (input$var == "Parks")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Recreation Centers")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Gardens")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Bus Stops")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Childcare Centers")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Grocery Stores")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Libraries")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Religious Centers")
-                paste(h4(HTML(paste0(strong("Religious Centers")))))
-            else if(input$var == "Hospitals and Clinics")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Food Pantries")
-                paste(h4("Religious Centers"))
-            else if(input$var == "Farmers' Markets")
-                paste(h4("Religious Centers"))
-          else if(input$var == "Community Arts")
-            paste(h4("Religious Centers"))
-          else if(input$var == "Community Sports")
-            paste(h4("Religious Centers"))
-        })
-        
-        output$hospitalicon <- renderText({
-            if(input$var == "After-School Care Programs")
-                paste(h4("Hospitals & Clinics"))
-            else if (input$var == "Parks")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Recreation Centers")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Gardens")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Bus Stops")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Childcare Centers")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Grocery Stores")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Libraries")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Religious Centers")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Hospitals and Clinics")
-                paste(h4(HTML(paste0(strong("Hospitals & Clinics")))))
-            else if(input$var == "Food Pantries")
-                paste(h4("Hospitals & Clinics"))
-            else if(input$var == "Farmers' Markets")
-                paste(h4("Hospitals & Clinics"))
-          else if(input$var == "Community Arts")
-            paste(h4("Hospitals & Clinics"))
-          else if(input$var == "Community Sports")
-            paste(h4("Hospitals & Clinics"))
-        })
-        
-        output$pantryicon <- renderText({
-            if(input$var == "After-School Care Programs")
-                paste(h4("Food Pantries"))
-            else if (input$var == "Parks")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Recreation Centers")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Gardens")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Bus Stops")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Childcare Centers")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Grocery Stores")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Libraries")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Religious Centers")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Hospitals and Clinics")
-                paste(h4("Food Pantries"))
-            else if(input$var == "Food Pantries")
-                paste(h4(HTML(paste0(strong("Food Pantries")))))
-            else if(input$var == "Farmers' Markets")
-                paste(h4("Food Pantries"))
-          else if(input$var == "Community Arts")
-            paste(h4("Food Pantries"))
-          else if(input$var == "Community Sports")
-            paste(h4("Food Pantries"))
-        })
-        
-        output$marketicon <- renderText({
-            if(input$var == "After-School Care Programs")
-                paste(h4("Farmers' Markets"))
-            else if (input$var == "Parks")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Recreation Centers")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Gardens")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Bus Stops")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Childcare Centers")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Community & Cultural Centers")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Grocery Stores")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Libraries")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Religious Centers")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Hospitals and Clinics")
-                paste(h4("Farmers' Markets"))
-            else if(input$var == "Food Pantries")
-                paste(h4("Farmer's Markets"))
-            else if(input$var == "Farmers' Markets")
-                paste(h4(HTML(paste0(strong("Farmers' Markets")))))
-            else if(input$var == "Community Arts")
-                paste(h4("Farmer's Markets"))
-          else if(input$var == "Community Sports")
-            paste(h4("Farmer's Markets"))
+            paste(h4(i18n()$t("Community and Cultural Centers")))
         })
         
         output$artsicon <- renderText({
           if(input$var == "After-School Care Programs")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if (input$var == "Parks")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Recreation Centers")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Gardens")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Bus Stops")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Childcare Centers")
-            paste(h4("Community Arts"))
-          else if(input$var == "Community & Cultural Centers")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
+          else if(input$var == "Community and Cultural Centers")
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Grocery Stores")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Libraries")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Religious Centers")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Hospitals and Clinics")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Food Pantries")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Farmers' Markets")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
           else if(input$var == "Community Arts")
-            paste(h4(HTML(paste0(strong("Community Arts")))))
+            paste(h4(HTML(paste0(strong(i18n()$t("Community Arts"))))))
           else if(input$var == "Community Sports")
-            paste(h4("Community Arts"))
+            paste(h4(i18n()$t("Community Arts")))
+        })
+        
+        output$groceryicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if (input$var == "Parks")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Recreation Centers")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Gardens")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Bus Stops")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Childcare Centers")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Grocery Stores")
+                paste(h4(HTML(paste0(strong(i18n()$t("Grocery Stores"))))))
+            else if(input$var == "Libraries")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Religious Centers")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Food Pantries")
+                paste(h4(i18n()$t("Grocery Stores")))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(i18n()$t("Grocery Stores")))
+          else if(input$var == "Community Arts")
+            paste(h4(i18n()$t("Grocery Stores")))
+          else if(input$var == "Community Sports")
+            paste(h4(i18n()$t("Grocery Stores")))
+        })
+        
+        output$libraryicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(i18n()$t("Libraries")))
+            else if (input$var == "Parks")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Recreation Centers")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Gardens")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Bus Stops")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Childcare Centers")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Grocery Stores")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Libraries")
+                paste(h4(HTML(paste0(strong(i18n()$t("Libraries"))))))
+            else if(input$var == "Religious Centers")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Food Pantries")
+                paste(h4(i18n()$t("Libraries")))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(i18n()$t("Libraries")))
+          else if(input$var == "Community Arts")
+            paste(h4(i18n()$t("Libraries")))
+          else if(input$var == "Community Sports")
+            paste(h4(i18n()$t("Libraries")))
+        })
+        
+        output$religiousicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if (input$var == "Parks")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Recreation Centers")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Gardens")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Bus Stops")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Childcare Centers")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Grocery Stores")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Libraries")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Religious Centers")
+                paste(h4(HTML(paste0(strong(i18n()$t("Religious Centers"))))))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Food Pantries")
+                paste(h4(i18n()$t("Religious Centers")))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(i18n()$t("Religious Centers")))
+          else if(input$var == "Community Arts")
+            paste(h4(i18n()$t("Religious Centers")))
+          else if(input$var == "Community Sports")
+            paste(h4(i18n()$t("Religious Centers")))
+        })
+        
+        output$hospitalicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if (input$var == "Parks")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Recreation Centers")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Gardens")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Bus Stops")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Childcare Centers")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Grocery Stores")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Libraries")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Religious Centers")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(HTML(paste0(strong(i18n()$t("Hospitals & Clinics"))))))
+            else if(input$var == "Food Pantries")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(i18n()$t("Hospitals & Clinics")))
+          else if(input$var == "Community Arts")
+            paste(h4(i18n()$t("Hospitals & Clinics")))
+          else if(input$var == "Community Sports")
+            paste(h4(i18n()$t("Hospitals & Clinics")))
+        })
+        
+        output$pantryicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if (input$var == "Parks")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Recreation Centers")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Gardens")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Bus Stops")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Childcare Centers")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Grocery Stores")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Libraries")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Religious Centers")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(i18n()$t("Food Pantries")))
+            else if(input$var == "Food Pantries")
+                paste(h4(HTML(paste0(strong(i18n()$t("Food Pantries"))))))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(i18n()$t("Food Pantries")))
+          else if(input$var == "Community Arts")
+            paste(h4(i18n()$t("Food Pantries")))
+          else if(input$var == "Community Sports")
+            paste(h4(i18n()$t("Food Pantries")))
+        })
+        
+        output$marketicon <- renderText({
+            if(input$var == "After-School Care Programs")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if (input$var == "Parks")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Recreation Centers")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Gardens")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Bus Stops")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Childcare Centers")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Community and Cultural Centers")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Grocery Stores")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Libraries")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Religious Centers")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Hospitals and Clinics")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Food Pantries")
+                paste(h4(i18n()$t("Farmers' Markets")))
+            else if(input$var == "Farmers' Markets")
+                paste(h4(HTML(paste0(strong(i18n()$t("Farmers' Markets"))))))
+            else if(input$var == "Community Arts")
+                paste(h4(i18n()$t("Farmers' Markets")))
+          else if(input$var == "Community Sports")
+            paste(h4(i18n()$t("Farmers' Markets")))
         })
         
         output$sportsicon <- renderText({
           if(input$var == "After-School Care Programs")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if (input$var == "Parks")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Recreation Centers")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Gardens")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Bus Stops")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Childcare Centers")
-            paste(h4("Community Sports"))
-          else if(input$var == "Community & Cultural Centers")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
+          else if(input$var == "Community and Cultural Centers")
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Grocery Stores")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Libraries")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Religious Centers")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Hospitals and Clinics")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Food Pantries")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Farmers' Markets")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Community Arts")
-            paste(h4("Community Sports"))
+            paste(h4(i18n()$t("Community Sports")))
           else if(input$var == "Community Sports")
-            paste(h4(HTML(paste0(strong("Community Sports")))))
+            paste(h4(HTML(paste0(strong(i18n()$t("Community Sports"))))))
         })
         
     }
-    
+    })
+      
     #Home Page - Leaflet Map showing Duke, NCCU, and the Ten Schools
     output$home <- renderLeaflet({
         leaflet() %>%
@@ -4479,108 +4564,68 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
         sports %>% select(sport_name)
       }, colnames = FALSE, align = 'c', spacing = 'l')
       
-      output$male_sports_icons <- renderTable ({
+      output$male_sports_list <- renderTable ({
         sports <- sports_22
-        sports$icon = ""
-        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
-        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-        
         sports <- subset(sports, (gender == 'All' | gender == "Men's" | gender == "Boy's") & schoolname == input$school_sports)
-        sports <- subset(sports, !duplicated(icon))
-        sports %>% select(icon)
-      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
-      
-      output$female_sports_icons <- renderTable ({
-        sports <- sports_22
-        sports$icon = ""
-        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
-        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-        
-        sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
-        sports <- subset(sports, !duplicated(icon))
-        sports %>% select(icon)
-      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
-      
-      output$sports_icon_legend <- renderTable({
-        sports <- sports_22
-        sports$icon = ""
-        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-fist-raised fa-2x"></i>'
-        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-        sports <- subset(sports, !duplicated(icon))
-        sports %>% select(sport, icon)
+        sports <- subset(sports, !duplicated(sport))
+        sports %>% select(sport)
       }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      
+      output$female_sports_list <- renderTable ({
+        sports <- sports_22
+        sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
+        sports <- subset(sports, !duplicated(sport))
+        sports %>% select(sport)
+      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      
+      # output$sports_icon_legend <- renderTable({
+      #   sports <- sports_22
+      #   sports$icon = ""
+      #   sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+      #   sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
+      #   sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+      #   sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
+      #   sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
+      #   sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
+      #   sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
+      #   sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
+      #   sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
+      #   sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
+      #   sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+      #   sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
+      #   sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
+      #   sports <- subset(sports, !duplicated(icon))
+      #   sports %>% select(sport, icon)
+      # }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      
+      output$sports_context <- renderText({
+          paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
+           responsibility, discipline, and leadership. Participation in school sports provides students with the 
+           daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+                "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
+                 cal activity are associated with more favorable status for multiple health indicators, including 
+                cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
+                in their",
+                a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+                "Visit ",
+                a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+                "for more information.")
+        })
     }
-    
-    #arts Programs
+
+    #Arts Programs
     {
       output$available_arts <- renderTable ({
         schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
