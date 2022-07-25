@@ -23,7 +23,8 @@ library(shiny.i18n)
 
 library(DT)
 
-i18n <- Translator$new(translation_json_path = "data/testTranslation.json")
+
+i18n <- Translator$new(translation_json_path = "data/ElementaryTranslations.json")
 i18n$set_translation_language("English")
 
 
@@ -364,7 +365,7 @@ body <- {dashboardBody(
                                    htmlOutput("HealthCTE", align="left")),
                                box(width = 4,
                                    title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
-                                   htmlOutput("TradeCTE", align="left")))),
+                                   htmlOutput("TradeCTE", align="left"))))
                   )
                 )
         )},
@@ -390,7 +391,7 @@ body <- {dashboardBody(
                                     column(12, align="center", tableOutput("wintersports"))),
                                 box(width = 4,
                                     title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("springsports"))),
+                                    column(12, align="center", tableOutput("springsports")))
                                 ),
                               fluidRow(
                                 box(width = 6,
@@ -398,7 +399,7 @@ body <- {dashboardBody(
                                     column(12, align="center", tableOutput("male_sports_list"))),
                                 box(width = 6,
                                     title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("female_sports_list"))),
+                                    column(12, align="center", tableOutput("female_sports_list")))
                                 
                                 # box(width = 4,
                                 #     solidHeader = TRUE,
@@ -414,11 +415,13 @@ body <- {dashboardBody(
                                     htmlOutput("sports_context"))
                               )
                         
-                     ),
+                     )
                    )
-                 ),
+                 )
                 
         )},
+        
+        #Arts Tab
         {tabItem(tabName = "artstab",
                  fluidRow(
                    box(width = 12,

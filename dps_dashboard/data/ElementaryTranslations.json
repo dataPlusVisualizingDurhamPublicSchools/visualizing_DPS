@@ -1,3 +1,8 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+
      {"English": "Advanced Placement (AP) Course Enrollment",
      "Spanish": "Cursos avanzados (Advanced Placement)"},
      
@@ -140,10 +145,7 @@
      "Spanish": "Estudiantes con discapacidades"},
      
      {"English": "According to the Americans with Disabilities Act, an individual is considered to have a disability if they have a condition that impairs them to do certain activities and interact with those around them. It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. Resources like",
-     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como la"},
-     
-     {"English": "assistive technology,",
-     "Spanish": "tecnología asistiva,"},
+     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como "},
      
      {"English": "transportation,",
      "Spanish": "la transportación,"},
@@ -166,20 +168,20 @@
      {"English": "NCDPI’s EC Division",
      "Spanish": "La división de este programa en Carolina del Norte"},
      
-     {"English": "Assistive Technology:",
+     {"English": "Assistive Technology",
      "Spanish": "La tecnología asistiva"},
      
-     {"English": "assistive technology:",
-     "Spanish": "La tecnología asistiva:"},
+     {"English": "assistive technology",
+     "Spanish": "la tecnología asistiva"},
      
-     {"English": "supplementary devices that promote independence and functionality of people with varying disabilities",
-     "Spanish": "aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
+     {"English": ": supplementary devices that promote independence and functionality of people with varying disabilities",
+     "Spanish": ": aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
      
      {"English": "EC programs",
-     "Spanish": "Programas para estudiantes con necesidades especiales:"},
+     "Spanish": "Programas para estudiantes con necesidades especiales"},
      
-     {"English": "school programs that include students that need intense or individualized instruction in addition to their standard course of study",
-     "Spanish": "programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
+     {"English": ": school programs that include students that need intense or individualized instruction in addition to their standard course of study",
+     "Spanish": ": programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
      
      {"English": "English as a Second Language (ESL) Student Enrollment",
      "Spanish": "Inglés como segunda lengua"},
@@ -217,9 +219,6 @@
      {"English": "school-to-prison pipeline",
      "Spanish": "canal de la escuela a la prisión"},
      
-     {"English": "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:",
-     "Spanish": "Artículos sobre suspensiones dentro de la escuela (ISS) y el canal de la escuela a la prisión:"},
-     
      {"English": "Racial Bias in School Discipline",
      "Spanish": "Discriminación en castigos de las escuelas"},
      
@@ -246,9 +245,6 @@
      
      {"English": "This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ",
      "Spanish": "Esta gráfica demuestra el porcentaje de estudiantes de color en la escuela comparada con la zona escolar. Esta medida muestra la disparidad en la representación de los estudiantes de color. La mayoría de estas escuelas no reflejan las demográficas de sus zonas escolares correspondientes."},
-     
-     {"English": "gentrification",
-     "Spanish": "La gentrificación"},
      
      {"English": "Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods.",
      "Spanish": "La gentrificación es una causa de este problema, y solamente ha empeorado desde la pandemia de COVID-19. Muchos vecindarios en Durham se han vuelto un lugar muy caro, lo cual resulta en nuevas demográficas en los vecindarios."},
@@ -295,11 +291,8 @@
      {"English": "Benefits of POC Representation",
      "Spanish": "Ventajas de la representación"},
      
-     {"English": "culturally-responsive pedagogy",
+     {"English": "culturally-responsive pedagogy:",
      "Spanish": "pedagogía culturalmente sensible:"},
-     
-     {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
-     "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
      
      {"English": "Racial Demographics",
      "Spanish": "Demográficas Raciales"},
@@ -309,9 +302,6 @@
      
      {"English": "Representation of these students and ",
      "Spanish": "Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. La representación de estos estudiantes y "},
-     
-     {"English": "culturally-responsive pedagogy",
-     "Spanish": "pedagogía culturalmente sensible"},
      
      {"English": "is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more.",
      "Spanish": "son esenciales para el éxito de los estudiantes. Los alumnos que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
@@ -324,9 +314,6 @@
      
      {"English": "More Students of Color in Public schools",
      "Spanish": "Más estudiantes de color en las escuelas públicas"},
-     
-     {"English": "culturally-responsive pedagogy",
-     "Spanish": "pedagogía culturalmente sensible"},
      
      {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
      "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases"},
@@ -352,9 +339,6 @@
      {"English": "Due to the COVID-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to ",
      "Spanish": "Debido a la pandemia de COVID-19, los precios de las casas subieron. Por lo tanto, el costo de vida también subió: todo contribuyendo a la "},
      
-     {"English": "gentrification",
-     "Spanish": "la gentrificación"},
-     
      {"English": "Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
      "Spanish": "La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
      
@@ -366,12 +350,6 @@
      
      {"English": "Covid-19 Increase",
      "Spanish": "Efectos de la pandemia"},
-     
-     {"English": "gentrification",
-     "Spanish": "la gentrificación"},
-     
-     {"English": "the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
-     "Spanish": "el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
      
      {"English": "Bachelor Degree Rate",
      "Spanish": "Los índices de licenciaturas universitarias"},
@@ -467,4 +445,7 @@
      "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."},
      
      {"English": "Below are more resources on Wi-Fi Access:",
-     "Spanish": "Recursos sobre el acceso de internet:"},
+     "Spanish": "Recursos sobre el acceso de internet:"}
+
+]
+}
