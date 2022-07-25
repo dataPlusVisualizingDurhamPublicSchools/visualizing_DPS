@@ -1811,7 +1811,7 @@ function(input, output, session) {
                   must be met in order to excel in the classroom. Students’ 
                   basic human needs must be met in order to excel in the 
                   classroom.", "<br>", "<br>", "Below are links to 
-                  the US Census Information::", "<br>",
+                  the US Census Information:", "<br>",
                   a("Nationwide Census", 
                     href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
                   a("North Carolina Census",
@@ -1822,7 +1822,7 @@ function(input, output, session) {
             zone. In 2021, the median home sale price for the United States is 
             $397,100 and the average home sale price is $464,200, according to 
             the US Census Bureau. Specifically for the South, the median home 
-            sale price is $355,900 and the average home sale price is 411,100.",
+            sale price is $355,900 and the average home sale price is $411,100.",
                 "<br>", "<br>",
                 "Due to the COVID-19 Pandemic, home prices increased, making the cost
                   of living increase as well (all contributing to  
@@ -2304,7 +2304,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   must be met in order to excel in the classroom. Students’ 
                   basic human needs must be met in order to excel in the 
                   classroom. ", "<br>", "<br>", "Below are links to 
-                  the US Census Information::", "<br>",
+                  the US Census Information:", "<br>",
               a("Nationwide Census", 
                 href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
               a("North Carolina Census",
@@ -2316,7 +2316,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
             zone. In 2021, the median home sale price for the United States is 
             $397,100 and the average home sale price is $464,200, according to 
             the US Census Bureau. Specifically for the South, the median home 
-            sale price is $355,900 and the average home sale price is 411,100.",
+            sale price is $355,900 and the average home sale price is $411,100.",
               "<br>", "<br>", 
               "Due to the COVID-19 Pandemic, home prices increased, making the cost
                   of living increase as well (all contributing to  
@@ -2804,7 +2804,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                   reaching their full potential. Students’ basic human needs 
                   must be met in order to excel in 
                   the classroom.", "<br>", "<br>", "Below are links to 
-                  the US Census Information::", "<br>",
+                  the US Census Information:", "<br>",
               a("Nationwide Census", 
                 href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
               a("North Carolina Census",
@@ -3431,9 +3431,8 @@ for students to be placed into higher-level courses at their college.", "<br>","
         }
       else if(input$var == "Gardens"){
             paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
-        A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as 
-        likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to 
-        organizing facilitated through the community gardens” (Armstrong). Another study published in Public Health Nutrition 
+        A study of 63 gardens in upstate New York found that gardens in low-income neighborhoods (46%) bring awareness to other issues and 
+lead to them being addressed." "Armstrong states that this is "due to organizing facilitated through the community gardens"." "Another study published in Public Health Nutrition 
         noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community 
         gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually 
         increasing acceptance and improving taste perceptions of fruits and vegetables” (Dibsdall et. al). With the ability to 
