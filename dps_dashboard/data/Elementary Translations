@@ -91,10 +91,11 @@
      {"English": "NC Community Free/Reduced Lunch Eligibility",
      "Spanish": "La elegibilidad de recibir almuerzos gratis o reducidos en Carolina del Norte"},
      
-     {"English": "HTML(paste0(tags$sup("1"))),
-                  strong("Title I"), ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
-     "Spanish": "HTML(paste0(tags$sup("1"))),
-                  strong("Título I"), ": Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
+     {"English": "Title I", 
+     "Spanish": "Título I"},
+     
+     {"English": "Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
+     "Spanish": "Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
      
      {"English": "Student-Teacher Ratio, Elementary School",
      "Spanish": "Proporción de alumnos a maestros (De las escuelas primarias)"},
@@ -300,156 +301,174 @@
      {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
      "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Racial Demographics",
+     "Spanish": "Demográficas Raciales"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased.",
+     "Spanish": "Estos datos demuestran el análisis de las diferentes razas en cada escuela. En las escuelas públicas de Durham, 80.7% de los estudiantes son de color, mientras 57% de la ciudad de Durham son personas de color. Las demográficas raciales de las 16 escuelas han cambiado con el tiempo, específicamente durante los últimos 30 años. El número de estudiantes blancos ha disminuido, y el número de estudiantes de color ha incrementado."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Representation of these students and ",
+     "Spanish": "Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. La representación de estos estudiantes y "},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "culturally-responsive pedagogy",
+     "Spanish": "pedagogía culturalmente sensible"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more.",
+     "Spanish": "son esenciales para el éxito de los estudiantes. Los alumnos que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below is more information about racial demographics in schools:",
+     "Spanish": "Más información sobre demográficas raciales:"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Changing School Racial Demographics in Recent Decades",
+     "Spanish": "Cómo las demográficas raciales han cambiado"},
      
-     {"English": "",
-     "Spanish": ""},
-     {"English": "",
-     "Spanish": ""},
+     {"English": "More Students of Color in Public schools",
+     "Spanish": "Más estudiantes de color en las escuelas públicas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "culturally-responsive pedagogy",
+     "Spanish": "pedagogía culturalmente sensible"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
+     "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases"},
      
-     {"English": "",
-     "Spanish": ""},
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Median Household Income",
+     "Spanish": "Ingreso promedio familiar"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "This graph shows the median household income for each school zone. According to the 2020 US census, the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the first statistically significant decline since 2011.",
+     "Spanish": "Esta gráfica demuestra el ingreso promedio familiar para cada zona escolar. De acuerdo al censo de 2020, el ingreso promedio familiar en los Estados Unidos es $67,521. Esto es una reducción de 2.9% desde 2019, lo cual es la primera reducción significativa desde 2011."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom. Students’ basic human needs must be met in order to excel in the classroom.",
+     "Spanish": "De acuerdo al censo de 2020, el ingreso promedio familiar de Carolina del Norte es $56,642, mientras el ingreso por persona es $31,993. Es preocupante que las 16 escuelas quedan debajo de los promedios del estado y país. La pobreza directamente afecta la enseñanza de los estudiantes. La inseguridad alimentaria previene a que los estudiantes estén a todo su potencial. Las necesidades básicas de los estudiantes deben ser atendidas."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below are links to the US Census Information:",
+     "Spanish": "Datos del Censo de los Estados Unidos"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Median Homesale Price",
+     "Spanish": "Precio de venta de casas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "This graph shows the average home sale price for each school zone. In 2021, the median home sale price for the United States is $397,100 and the average home sale price is $464,200, according to the US Census Bureau. Specifically for the South, the median home sale price is $355,900 and the average home sale price is $411,100.",
+     "Spanish": "Esta gráfica demuestra los promedios de los precios de venta de casas para cada zona escolar. En 2021, la mediana para los Estados Unidos fue $397,100, y el promedio fue $464,200 (de acuerdo al censo). Específicamente para el Sur del país, el precio mediano es $355,900 mientras el promedio es $411,100."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Due to the COVID-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to ",
+     "Spanish": "Debido a la pandemia de COVID-19, los precios de las casas subieron. Por lo tanto, el costo de vida también subió: todo contribuyendo a la "},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "gentrification",
+     "Spanish": "la gentrificación"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
+     "Spanish": "La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below is more information about home sale price:",
+     "Spanish": "Información sobre los precios de venta de casas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Home Sale Price Data",
+     "Spanish": "Datos sobre el precio de casas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Covid-19 Increase",
+     "Spanish": "Efectos de la pandemia"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "gentrification",
+     "Spanish": "la gentrificación"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
+     "Spanish": "el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Bachelor Degree Rate",
+     "Spanish": "Los índices de licenciaturas universitarias"},
      
-     {"English": "",
-     "Spanish": ""},
-     {"English": "",
-     "Spanish": ""},
+     {"English": "This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.",
+     "Spanish": "Esta gráfica muestra el porcentaje de adultos con bachillerato de cada zona escolar. Estos números de licenciaturas varían significativamente por grupos de diferentes razas, ingresos, y sexos. Adicionalmente, las personas con más licenciaturas tienden a tener ingresos más altos."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below is more information about bachelor degree rates:",
+     "Spanish": "Información sobre los índices de licenciaturas universitarias:"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Bachelor’s Degrees and Race",
+     "Spanish": "Licenciaturas universitarias y la raza"},
      
-     {"English": "",
-     "Spanish": ""},
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Bachelor’s Degrees and Income",
+     "Spanish": "Licenciaturas universitarias y el ingreso"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Sidewalk Coverage",
+     "Spanish": "Las banquetas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, parks, etc. Especially for younger students, sidewalks are essential for their safety. According to a UNC Highway Safety Research Center study, the probability of a crash occurring near or at a paved sidewalk is 88.2% lower than an unpaved site.",
+     "Spanish": "Áreas sin banquetas son inaccesibles para personas sin coches u otros modos de transportación (pública o privada). Las banquetas son necesarias para caminar a lugares sin peligro, por ejemplo la escuela, tiendas de comestibles, parques, etc. Especialmente para los estudiantes más jóvenes, las banquetas son esenciales para la seguridad. De acuerdo a un estudio de la Universidad de Carolina del Norte (UNC), la probabilidad de un choque tomando lugar cerca de una banqueta es 88.2% más bajo que un lugar sin una banqueta."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Sidewalks also promote more physical activity and healthier lifestyles. In the US specifically, obesity rates have been steadily increasing across all populations and ages. Sidewalk coverage provides people with a safe and accessible way to increase their daily physical activity.",
+     "Spanish": "Las banquetas promueven más actividad física y estilos de vida más sanos. En los Estados Unidos, el índice de obesidad ha subido en todas las poblaciones y diferentes edades. Las banquetas proveen a las personas una manera segura y accesible para ser más activos."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "High income areas tend to have more sidewalk coverage than lower income areas. 89% of high-income communities have sidewalks, whereas only 49% of low income communities have sidewalk coverage.",
+     "Spanish": "Áreas de ingresos altos tienden a tener más banquetas que áreas de ingresos bajos. 89% de las comunidades de ingresos altos tienen banquetas, mientras solamente 49% de las comunidades de ingresos y recursos bajos tienen banquetas."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below is more information about sidewalk coverage:",
+     "Spanish": "Información sobre las banquetas:"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Importance of Sidewalks",
+     "Spanish": "La importancia de las banquetas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Income Disparities and Sidewalk Coverage",
+     "Spanish": "Disparidades de ingresos en áreas sin banquetas"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Graduation Rate",
+     "Spanish": "Índice de graduación"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030. This is a significant increase from when the first reported graduation rate was 68.3% in 2006.",
+     "Spanish": "Esta gráfica muestra el porcentaje de estudiantes estimados a graduarse de la preparatoria en cuatro años (o menos). El índice de graduación de Carolina del Norte de 2020 es 87.6%, con planes de aumentar este porcentaje a 95% para el año 2030. Esto es un aumento significante desde 2006; cuando el índice de graduación fue 68.3%."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Graduation rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, especially school counselors and social workers, to reach out to students with extended absences. External factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.",
+     "Spanish": "Estos índices son importantes. Graduaciones retrasadas terminan en menos estudiantes terminado la preparatoria. Es posible que los estudiantes que no se gradúan (o alumnos desertores) tengan obstáculos y estilos de vida desaventajados. Es importante que consejeros y trabajadores sociales se comuniquen con estudiantes con muchas ausencias. Factores externos pueden ser la razón detrás de los alumnos desertores. Como comunidad, debemos trabajar para eliminar estas barreras."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below are more resources on graduation rates:",
+     "Spanish": "Recursos sobre el índice de graduación:"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Dashboard with Articles and Quick Facts about Graduation Rates",
+     "Spanish": "Artículos e información sobre el índice de graduación"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Median Age",
+     "Spanish": "Edad promedio"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "This dataset shows the median age of residents in each school zone. The median age of residents in a specific school zone can determine the various assets available, identify beneficial resources in the community, and give some insight about school enrollment numbers in the future.",
+     "Spanish": "Estos datos muestran la edad promedio de los residentes en cada zona escolar. La edad promedio puede determinar los recursos disponibles, identificar las ventajas en la comunidad, y darnos una idea sobre el número de inscritos en el futuro."},
      
-     {"English": "",
-     "Spanish": ""},
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Titles Per Student",
+     "Spanish": "Títulos por estudiante"},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "A school library’s number of book titles per student indicates the availability of different book titles for students to select. A higher number of book titles per student indicates a wider variety of books to choose from. Having more book titles per student enables more opportunities for whole-class novel reading, which is essential for learning book analysis, encouraging engaging discussions, and prompting creative writing.",
+     "Spanish": "Este dato refleja el número de libros en la biblioteca (de la escuela) por estudiante. Este número indica la disponibilidad de diferentes libros para los estudiantes. Un número alto representa una variedad de libros más grande. Una biblioteca que tiene más títulos por estudiante crea más oportunidades para lectura en grupos, lo cual es esencial para aprender análisis de lectura, crear discusiones en el salón de clases, y motivar la escritura creativa."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Having a wide selection of books in a library also promotes more reading and intellectual stimulation for students. With a higher number of titles per student, it is more likely that most, if not all, students can find literature that engages them.",
+     "Spanish": "Una selección extensa de libros promueve más lectura e intelectualmente estimulante materiales para los alumnos. Una escuela con muchos libros tiene más chances que la mayoría, sino todos los estudiantes, puedan encontrar unos libros o un género que les interesa."},
      
-     {"English": "",
-     "Spanish": ""},
+     {"English": "Below are more resources on the importance of book titles:",
+     "Spanish": "Recursos sobre la importancia de los libros"},
+     
+     {"English": "Importance of Culturally-Diverse Literature",
+     "Spanish": "La importancia de libros culturalmente diversos"},
+     
+     {"English": "Creating an Effective and Diverse Classroom Library",
+     "Spanish": "Creando una biblioteca efectiva e inclusiva"},
+     
+     {"English": "WiFi Access",
+     "Spanish": "La internet (WiFi)"},
+     
+     {"English": "Note:",
+     "Spanish": "Nota:"},
+     
+     {"English": "Due to the COVID-19 pandemic, this data only extends until December of 2020. Therefore, only the 2019-2020 school year is reflected above.",
+     "Spanish": "A causa de la pandemia COVID-19, estos datos solamente se extienden hasta diciembre de 2020. Por lo tanto, esta información es del año escolar 2019-2020."},
+     
+     {"English": "The visualization depicts the number of wireless access points for each classroom. A school with a higher number of access points overall will have better internet coverage and quality than a school with less access points.",
+     "Spanish": "Esta visualización representa el número de puntos de acceso inalámbricos en cada salón de clases. Una escuela con más puntos de acceso tiene mejor internet y conexión que una escuela con menos puntos de acceso."},
+     
+     {"English": "As things begin to modernize with time, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+     
+     {"English": "However, not all students have the same access to technology in their homes. Most schools have accounted for this disparity by providing students with free tablets or laptops. During the COVID-19 pandemic, when students of all ages had to adjust to online instruction, several counties provided WiFI hubs so that students’ learning was not hindered.",
+     "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."},
+     
+     {"English": "Below are more resources on Wi-Fi Access:",
+     "Spanish": "Recursos sobre el acceso de internet:"},
+     
      {"English": "",
      "Spanish": ""},
      
