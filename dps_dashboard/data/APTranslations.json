@@ -79,14 +79,71 @@
      {"English": "- AP Seminar",
      "Spanish": "AP Seminario"},
      
-     {"English": "English",
-     "Spanish": "..."},
+     {"English": "- AP Latin",
+     "Spanish": "- AP Latín"},
      
-     {"English": "English",
-     "Spanish": "..."},
+     {"English": "- AP Spanish Language",
+     "Spanish": "- AP Español (Lenguaje)"},
      
-     {"English": "English",
-     "Spanish": "..."},
+     {"English": "- AP Spanish Literature",
+     "Spanish": "- AP Español (Literatura)"},
      
-     {"English": "English",
+     {"English": "- AP French Language",
+     "Spanish": "- AP Francés (Lenguaje)"},
+
+{"English": "- AP Spanish Language & Culture",
      "Spanish": "..."},
+
+{"English": "- AP Italian",
+     "Spanish": "..."},
+
+{"English": "- AP Chinese",
+     "Spanish": "..."},
+
+{"English": "- AP Vergil Latin",
+     "Spanish": "..."},
+
+{"English": "- AP Studio Art Drawing",
+     "Spanish": "..."},
+
+{"English": "- AP Studio Art: 2D Design",
+     "Spanish": "..."},
+
+{"English": "- AP Studio Art: 3D Design",
+     "Spanish": "..."},
+
+{"English": "- AP Art History",
+     "Spanish": "..."},
+
+{"English": "- AP Music Theory",
+     "Spanish": "..."},
+
+{"English": "- AP Studio Art",
+     "Spanish": "- AP Estudio de arte"},
+
+{"English": "- AP Computer Science",
+     "Spanish": "- AP Ciencias de la computación"},
+
+{"English": "- AP Intro to Engineering Design",
+     "Spanish": "- AP Introducción a ingeniería y diseño"},
+
+{"English": "- AP Principles of Engineering",
+     "Spanish": "- AP Principios de ingeniería"},
+
+{"English": "- AP Digital Electronics",
+     "Spanish": "- AP Electrónicos digitales"},
+
+{"English": "- AP Civil Engineering & Architecture",
+     "Spanish": "- AP Ingeniería civil y arquitectura"},
+
+{"English": "- AP Aerospace Engineering",
+     "Spanish": "- AP Ingeniería aeroespacial"},
+
+{"English": "- AP Computer Integrated Manufacturing",
+     "Spanish": "- AP Manufacturación de computadoras integradas"},
+
+{"English": "- AP Computer Science Principles",
+     "Spanish": "- AP Principios de Ciencias de la computación"},
+
+{"English": "- AP Computer Science A",
+     "Spanish": "- AP Ciencias de la computación"}
