@@ -1632,80 +1632,81 @@ function(input, output, session) {
                   a("New Per Pupil Expenditure Requirements",
                     href ="https://www.naesp.org/blog/new-per-pupil-expenditure-requirements/"))
         } 
-      else if (input$es_select == "Students With Disabilities"){
-            paste("According to the Americans with Disabilities Act, an 
+        else if (input$es_select == "Students With Disabilities"){
+            paste(i18n()$t("According to the Americans with Disabilities Act, an 
             individual is considered to have a disability if they have a 
             condition that impairs them to do certain activities and interact 
             with those around them. It is integral to make sure students with 
             disabilities are provided with accessibility services to achieve 
-            their full potential in the classroom. Resources like", 
-                  HTML(paste0(strong("assistive technology"),tags$sup("1"))), 
+            their full potential in the classroom. Resources like"), 
+                  HTML(paste0(strong(i18n()$t("assistive technology"),tags$sup("1"))), 
                   ", transportation,", 
-                  HTML(paste0(strong("Exceptional Children (EC) programs"),tags$sup("2"))), 
+                  HTML(paste0(strong(i18n()$t("Exceptional Children (EC) programs"),tags$sup("2"))), 
                   ", etc. are mandatory for every school to provide regardless 
                   of the number of students with disabilities or even the type 
                   based on the civil rights law Section 504.", "<br>", "<br>",
-                  "Below are articles and resources about government protection and resources for students with disabilities:", "<br>",
-                  a("DPS EC Services",
+                       i18n()$t("Below are articles and resources about government protection and resources for students with disabilities:"), "<br>",
+                  a(i18n()$t("DPS EC Services"),
                     href="https://www.dpsnc.net/Page/169"),
-                  a("Section 504",
+                  a(i18n()$t("Section 504"),
                     href="https://www.dpsnc.net/Page/336"),
-                  a("NCDPI’s EC Division",
+                  a(i18n()$t("NCDPI’s EC Division"),
                     href="https://www.dpi.nc.gov/districts-schools/classroom-resources/exceptional-children-division"),
-                  a("Assistive Technology",
+                  a(i18n()$t("Assistive Technology"),
                     href="https://www.disabilityrightswa.org/publications/assistive-technology-special-education-students/"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("assistive technology"), ": supplementary devices that promote independence 
+                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("assistive technology"), ": supplementary devices that promote independence 
                       and functionality of people with varying disabilities",
-                  "<br>", HTML(paste0(tags$sup("2"))), strong("EC programs"), ": school programs that include students that need intense or 
+                  "<br>", HTML(paste0(tags$sup("2"))), strong(i18n()$t("EC programs"), ": school programs that include students that need intense or 
                       individualized instruction in addition to their standard course of study"
             )
         } 
-      else if (input$es_select == "English as a Second Language (ESL) Student Enrollment"){
-            paste("This graph shows the number of students enrolled in the 
+        else if (input$es_select == "English as a Second Language (ESL) Student Enrollment"){
+            paste(i18n()$t("This graph shows the number of students enrolled in the 
             English as a Second Language (ESL) or English Language Learners 
             (ELL) Program. ESL students consist of any student regardless of 
             ethnicity, origin, race, age, etc. who is a non-native English 
             speaker. These programs are created to help children learn English 
-            along with other subjects necessary to complete each grade.", 
-                  "<br>","<br>", "Unfortunately, ESL students can face racial bias, 
+            along with other subjects necessary to complete each grade."), 
+                  "<br>","<br>", 
+                  i18n()$t("Unfortunately, ESL students can face racial bias, 
             discrimination, and bullying in the classroom. Teachers may prevent
             them from participating in school activities, extracurriculars, and 
             enrichment programs. It is important that school affiliates 
             recognize that language barriers do not stunt intellectual 
             development. Additionally, ELL teachers must accommodate their 
             students instead of assimilating them by removing the identity of 
-            their native language entirely.", "<br>","<br>",
-                  "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:", "<br>",
-                  a("How to Advocate for ESL/ELL Students",
+            their native language entirely."), "<br>","<br>",
+                  i18n()$t("Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:"), "<br>",
+                  a(i18n()$t("How to Advocate for ESL/ELL Students"),
                     href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
-                  a("Real-World Experiences and Anecdotes",
+                  a(i18n()$t("Real-World Experiences and Anecdotes"),
                     href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
-                  a("DPS ESL Office",
+                  a(i18n()$t("DPS ESL Office"),
                     href = "https://central.dpsnc.net/esl"),
-                  a("ESL/ELL Teachers",
+                  a(i18n()$t("ESL/ELL Teachers"),
                     href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
         } 
-      else if (input$es_select == "In-School Suspensions (ISS)"){
-            paste("In-school suspensions are described as: Instances in which a 
+        else if (input$es_select == "In-School Suspensions (ISS)"){
+            paste(i18n()$t("In-school suspensions are described as: Instances in which a 
             child is temporarily removed from his or her regular classrooms for at least 
         half a day but remains under the direct supervision of school personnel 
-                  (https://supportiveschooldiscipline.org/suspension).", 
+                  (https://supportiveschooldiscipline.org/suspension)."), 
                   "<br>", "<br>","Students of color are more susceptible to harsher punishments in schools.
-        Black and Brown students are subject to higher disciplinary actions 
+        i18n()$t("Black and Brown students are subject to higher disciplinary actions 
         compared to their white peers. A reason for this is racial bias leading 
-        to the over policing of Black and Brown students, fueling the", 
-                  HTML(paste0(strong("school-to-prison pipeline"),tags$sup("1"))),".", "<br>","<br>",
-                  "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
-                  a("Racial Bias in School Discipline", 
+        to the over policing of Black and Brown students, fueling the"), 
+                  HTML(paste0(strong(i18n()$t("school-to-prison pipeline"),tags$sup("1"))),".", "<br>","<br>",
+                  i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
+                  a(i18n()$t("Racial Bias in School Discipline"), 
                     href = "https://www.pnas.org/content/116/17/8255"), "<br>",
-                  a("School-to-Prison Pipeline", 
+                  a(i18n()$t("School-to-Prison Pipeline"), 
                     href = "https://www.nea.org/advocating-for-change/new-from-nea/school-prison-pipeline-time-shut-it-down"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
-                  that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc."
+                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("school-to-prison pipeline"), ": the overly disproportionate policing of minority students, often from low-income households, 
+                  that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.")
             )
         }
-      else if(input$es_select == "Enrollment") {
-            paste("This dataset shows the enrollment numbers at each school. 
+        else if(input$es_select == "Enrollment") {
+            paste(i18n()$t("This dataset shows the enrollment numbers at each school. 
             Due to the COVID-19 pandemic, there has been a 5% decrease in 
             enrollment. Normally, 
                   enrollment or average daily membership (ADM) is used to 
@@ -1715,22 +1716,22 @@ function(input, output, session) {
                   from reduction in funding as part of COVID-19 relief. Durham 
                   Public Schools continues to strive 
                   for increased enrollment so that all programs can continue to 
-                  receive adequate funding.", "<br>","<br>", 
+                  receive adequate funding."), "<br>","<br>", 
                   "Below is information about enrollment numbers:", "<br>",
-                  a("The Decrease in Enrollment in North Carolina", 
+                  a(i18n()$t("The Decrease in Enrollment in North Carolina"), 
                     href = "https://abc11.com/nc-schools-school-attendance-enrollment-durham-county/8204335/")
             )
         }
-      else if (input$es_select == "School and Zone BIPOC Comparison") {
-            paste("This plot shows the percentage of students of color in the 
+        else if (input$es_select == "School and Zone BIPOC Comparison") {
+            paste(i18n()$t("This plot shows the percentage of students of color in the 
             school compared to the percentage of people of color in the school 
             zone. 
                   This measurement shows the huge disparities in community 
                   representation for students of color as most of these schools 
                   are not racially reflective of 
                   the school zones they inhabit. A contributing factor of this 
-                  is " , 
-                  HTML(paste0(strong("gentrification"),tags$sup("1"))),".", 
+                  is ") , 
+                  HTML(paste0(strong(i18n()$t("gentrification"),tags$sup("1"))),".", 
                   "Gentrification has been 
                   an increasing problem, and the COVID-19 pandemic has only exacerbated it. 
                   Black and Brown neighborhoods are becoming increasingly 
@@ -1738,69 +1739,71 @@ function(input, output, session) {
                   their homes, which ultimately changes the demographics of 
                   those neighborhoods.
                   ", "<br>", "<br>",
-                  "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:", "<br>", 
-                  a("COVID-19 and Gentrification in Durham", 
+                  i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
+                  a(i18n()$t("COVID-19 and Gentrification in Durham"), 
                     href = "https://www.dukechronicle.com/article/2020/08/duke-university-covid-rages-housing-hits-home-gentrification-durham"), "<br>",
-                  a("Redlining in Durham", 
+                  a(i18n()$t("Redlining in Durham"), 
                     href = "https://abc11.com/redlining-gentrification-black-neighborhoods-triangle/10373290/"),
-                  a("Durham’s Racial Inequality, Poverty, and Gentrification", 
+                  a(i18n()$t"Durham’s Racial Inequality, Poverty, and Gentrification"), 
                     href = "https://fpg.unc.edu/publications/racial-inequality-poverty-and-gentrification-durham-north-carolina"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
-                  people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
+                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier 
+                  people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents"))
         }
-      else if (input$es_select == "BIPOC Students per School"){
-            paste("This dataset shows the percentage of students of color in 
+        else if (input$es_select == "BIPOC Students per School"){
+            paste(i18n()$t("This dataset shows the percentage of students of color in
             each of the 16 schools. Each of the schools are “majority students of color” 
                   which means representation of these students and ", 
-                  HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), "is integral 
+                  HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), "is integral 
                   for student success. Too often, students of color are 
                   underrepresented and cannot relate to content/curriculum because of cultural differences. 
                   Students who are able to connect with their tutors, teachers, 
-                  administrators, etc. tend to engage with the content more.", "<br>","<br>",
-                  "Below is more information about students of color:", "<br>",
-                  a("Racial/Ethnic Enrollment in NC Public Schools",
+                  administrators, etc. tend to engage with the content more.", 
+                       "<br>","<br>",
+                  i18n()$t("Below is more information about students of color:"), "<br>",
+                  a(i18n()$t("Racial/Ethnic Enrollment in NC Public Schools"),
                     href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
-                  a("Why Representation Matters",
+                  a(i18n()$t("Why Representation Matters"),
                     href="https://givingcompass.org/article/why-teacher-representation-matters-to-students-of-color/"),
-                  a("Benefits of POC Representation",
+                  a(i18n()$t("Benefits of POC Representation"),
                     href="https://educationpost.org/students-of-color-need-to-see-more-people-of-color-that-shouldnt-be-controversial/"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t(("culturally-responsive pedagogy")), ": style of individualized teaching that is cognizant of the varying 
                   cultures and ethnicities of the classroom")
             
         }
       else if (input$es_select == "Racial Demographics"){
 
-            paste("This dataset shows the racial breakdown of each of the 16 
+            paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 
             public schools. Durham Public Schools’ student population 
                   is 80.7% students of color, but only 57% of Durham County is 
-                  people of color. The racial demographics of all 16 schools has                  changed over time, specifically in the past 30 years. The number of 
+                  people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of 
                   white students has decreased, while the number of students of 
                   color has 
-                  increased.",
+                  increased."),
                   "<br>", "<br>",
-                  "Representation of these students and ", 
-                  HTML(paste0(strong("culturally-responsive pedagogy"),tags$sup("1"))), 
+                  i18n()$t("Representation of these students and ", 
+                  HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), 
                   "is integral for student success. Too often students 
                   of color are underrepresented and cannot relate to the content
                   because of cultural differences. Students who are able to 
                   connect with 
                   their tutors, teachers, administrators, and the content tend 
-                  to engage with the content more.", "<br>","<br>",
-                  "Below is more information about racial demographics in schools:", "<br>",
-                  a("Changing School Racial Demographics in Recent Decades",
+                  to engage with the content more."), "<br>","<br>"
+                  i18n()$t("Below is more information about racial demographics in schools:)", "<br>",
+                  a(i18n()$t("Changing School Racial Demographics in Recent Decades"),
                     href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-                  a("More Students of Color in Public schools",
+                  a(i18n()$t("More Students of Color in Public schools"),
                     href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("culturally-responsive pedagogy"), ": style of individualized teaching that is cognizant of the varying 
+                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("culturally-responsive pedagogy")), ": style of individualized teaching that is cognizant of the varying 
                   cultures and ethnicities of the classroom")
         }
-      else if (input$es_select == "Median Household Income"){
-            paste("This graph shows the median household income for each school 
+        else if (input$es_select == "Median Household Income"){
+            paste(i18n()$t("This graph shows the median household income for each school 
             zone. According to the 2020 US census, 
                   the median household income in the United States is $67,521. 
                   This is a 2.9% decrease from 2019, which is the 
-                  first statistically significant decline since 2011.", 
-                  "<br>","<br>", "According to the 2020 US census, the average 
+                  first statistically significant decline since 2011."), 
+                  "<br>","<br>", 
+                  i18n()$t("According to the 2020 US census, the average 
                   household income 
                   in North Carolina is $56,642, while the per capita income in 
                   the past twelve months is $31,993. All of these 
@@ -1810,51 +1813,52 @@ function(input, output, session) {
                   reaching their full potential. Students’ basic human needs 
                   must be met in order to excel in the classroom. Students’ 
                   basic human needs must be met in order to excel in the 
-                  classroom.", "<br>", "<br>", "Below are links to 
-                  the US Census Information:", "<br>",
-                  a("Nationwide Census", 
+                  classroom."), "<br>", "<br>", 
+                  i18n()$t("Below are links to 
+                  the US Census Information:)", "<br>",
+                  a(i18n()$t("Nationwide Census"), 
                     href="https://www.census.gov/quickfacts/fact/table/US/PST045219"), "<br>", 
-                  a("North Carolina Census",
+                  a(i18n()$t("North Carolina Census"),
                     href="https://www.census.gov/quickfacts/NC"))
         }
-      else if (input$es_select == "Median Homesale Price"){
-          paste("This graph shows the average home sale price for each school 
+        else if (input$es_select == "Median Homesale Price"){
+          paste(i18n()$t("This graph shows the average home sale price for each school 
             zone. In 2021, the median home sale price for the United States is 
             $397,100 and the average home sale price is $464,200, according to 
             the US Census Bureau. Specifically for the South, the median home 
-            sale price is $355,900 and the average home sale price is $411,100.",
+            sale price is $355,900 and the average home sale price is $411,100.)",
                 "<br>", "<br>",
-                "Due to the COVID-19 Pandemic, home prices increased, making the cost
-                  of living increase as well (all contributing to  
-                  ", HTML(paste0(strong("gentrification"),tags$sup("1"))),
-                "). Most of these school zones fall above the North Carolina 
+                i18n()$t("Due to the COVID-19 Pandemic, home prices increased, making the cost
+                  of living increase as well (all contributing to" 
+                  , HTML(paste0(strong(i18n()$t("gentrification"),tags$sup("1"))),"). 
+                i18n()$t("Most of these school zones fall above the North Carolina 
                   median. Because Durham has become an increasingly expensive 
                   city to live in, 
                   many of the students in the ten schools required free and 
-                  reduced lunch.", "<br>", "<br>",
-                  "Below is more information about home sale price:", "<br>",
-                  a("Home Sale Price Data",
+                  reduced lunch."), "<br>", "<br>",
+                  i18n()$t("Below is more information about home sale price:"), "<br>",
+                  a(i18n()$t("Home Sale Price Data"),
                     href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index-Datasets.aspx"), "<br>",
-                  a("Covid-19 Increase",
+                  a(i18n()$t("Covid-19 Increase"),
                     href="https://www.cnbc.com/2021/06/16/typical-us-home-price-up-record-13point2percent-compared-to-last-year.html"),
-                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
-                  them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")
+                  "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("gentrification"), ": the process of changing low-income neighborhoods, usually with a minority-majority, to market 
+                  them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents")))
         }
-      else if (input$es_select == "Bachelor Degree Rate"){
-            paste("This graph shows the percentage of adults with bachelor’s 
+        else if (input$es_select == "Bachelor Degree Rate"){
+            paste(i18n()$t("This graph shows the percentage of adults with bachelor’s 
             degrees in each school zone. The number of individuals with 
             bachelor’s degrees 
                   greatly differs across racial, income, and gender groups. 
                   Additionally, individuals with more degrees tend to have 
-                  greater household incomes.", "<br>", "<br>",
+                  greater household incomes."), "<br>", "<br>",
                   "Below is more information about bachelor degree rates:", "<br>",
-                  a("Bachelor’s Degrees and Race",
+                  a(i18n()$t("Bachelor’s Degrees and Race"),
                     href="https://nces.ed.gov/fastfacts/display.asp?id=72"), "<br>",
-                  a("Bachelor’s Degrees and Income",
+                  a(i18n()$t("Bachelor’s Degrees and Income"),
                     href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
         }
-      else if (input$es_select == "Sidewalk Coverage"){
-            paste("Areas without sidewalk coverage can become inaccessible for
+        else if (input$es_select == "Sidewalk Coverage"){
+            paste(i18n()$t("Areas without sidewalk coverage can become inaccessible for
             people without cars or other modes of transportation, 
                   both private and public. Sidewalks are needed for individuals 
                   to safely walk to places such as school, grocery stores, 
@@ -1862,29 +1866,29 @@ function(input, output, session) {
                   essential for their safety. According to a UNC Highway Safety 
                   Research Center study, the probability of a crash occurring 
                   near or at a paved sidewalk is 88.2% lower than an unpaved 
-                  site.","<br>", "<br>", 
-                  "Sidewalks also promote more physical activity and healthier 
+                  site."),"<br>", "<br>", 
+                  i18n()$t("Sidewalks also promote more physical activity and healthier 
                   lifestyles. In the US specifically, obesity rates have been 
                   steadily increasing across all populations and ages. 
                   Sidewalk coverage provides people with a safe and accessible
-                  way to increase their daily physical activity." ,"<br>", "<br>",
-                  "High income areas tend to have more sidewalk coverage than 
+                  way to increase their daily physical activity."),"<br>", "<br>",
+                  i18n()$t("High income areas tend to have more sidewalk coverage than 
                   lower income areas. 89% of high-income communities have 
                   sidewalks, whereas only 49% of low income communities have 
-                  sidewalk coverage.", "<br>", "<br>",
-                  "Below is more information about sidewalk coverage:", "<br>",
-                  a("Importance of Sidewalks",
+                  sidewalk coverage."), "<br>", "<br>",
+                  i18n()$t("Below is more information about sidewalk coverage:"), "<br>",
+                  a(i18n()$t("Importance of Sidewalks"),
                     href="http://guide.saferoutesinfo.org/engineering/sidewalks.cfm"), "<br>",
-                  a("Income Disparities and Sidewalk Coverage",
+                  a(i18n()$t("Income Disparities and Sidewalk Coverage"),
                     href="https://www.cityofeastlansing.com/DocumentCenter/View/1583/Income-Disparities-in-Street-Features-That-Encourage-Walking-PDF"))
         }
-      else if (input$es_select == "Graduation Rate"){
-            paste("The graph depicts the percentage of students estimated to 
+        else if (input$es_select == "Graduation Rate"){
+            paste(i18n()$t("The graph depicts the percentage of students estimated to 
             graduate from high school in four years or less. 
                   The graduation rate for North Carolina from 2020 is 87.6%, 
                   with plans to raise that percentage to 95% by 2030.
                   This is a significant increase from when the first reported 
-                  graduation rate was 68.3% in 2006.", "<br>", "<br>", "Graduation 
+                  graduation rate was 68.3% in 2006."), "<br>", "<br>", i18n()$t("Graduation 
                   rates are important. Delayed graduations can lead to risk for 
                   student dropout rates to increase. Dropping out is a 
                   gateway that could possibly lead to students living 
@@ -1892,68 +1896,68 @@ function(input, output, session) {
                   especially school counselors and social workers, to reach out 
                   to students with extended absences. External factors 
                   could be contributing to student dropout rates and as a 
-                  community, we may be able to diminish those barriers.", "<br>", "<br>",
-                  "Below are more resources on graduation rates:", "<br>",
-                  a("Dashboard with Articles and Quick Facts about Graduation Rates",
+                  community, we may be able to diminish those barriers."), "<br>", "<br>",
+                  i18n()$t("Below are more resources on graduation rates:"), "<br>",
+                  a(i18n()$t("Dashboard with Articles and Quick Facts about Graduation Rates"),
                     href = "https://dashboard.myfuturenc.org/college-and-career-access/high-school-graduation-rate/"))
             
         }
-      else if (input$es_select == "Median Age"){
-            paste("This dataset shows the median age of residents in each school
+        else if (input$es_select == "Median Age"){
+            paste(i18n()$t("This dataset shows the median age of residents in each school
             zone. The median age of residents 
                   in a specific school zone can determine the various assets 
                   available, identify beneficial resources in 
                   the community, and give some insight about school enrollment 
-                  numbers in the future.")
+                  numbers in the future."))
         }
       else if (input$es_select == "Titles Per Student"){
-        paste("A school library’s number of book titles per student indicates 
+        paste(i18n()$t("A school library’s number of book titles per student indicates 
               the availability of different book titles for students to select. 
               A higher number of book titles per student indicates a wider 
               variety of books to choose from. Having more book titles per 
               student enables more opportunities for whole-class novel reading, 
               which is essential for learning book analysis, encouraging engaging
-              discussions, and prompting creative writing.", 
+              discussions, and prompting creative writing."), 
               "<br>", "<br>",
-              "Having a wide selection of books in a library also promotes more 
+              i18n()$t("Having a wide selection of books in a library also promotes more 
               reading and intellectual stimulation for students. With a higher 
               number of titles per student, it is more likely that most, if not 
-              all, students can find literature that engages them.",
+              all, students can find literature that engages them."),
               "<br>","<br>",
-              "Below are more resources on the importance of book titles:", 
+              i18n()$t("Below are more resources on the importance of book titles:"), 
               "<br>",
               a("Importance of Culturally-Diverse Literature",
                 href = "https://ila.onlinelibrary.wiley.com/doi/full/10.1002/trtr.1326"), "<br>",
               a("Creating an Effective and Diverse Classroom Library",
-                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
+                href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"), "<br>",
+              a(i18n()$t("Top 10 Benefits of Reading for All Ages"),
+                href = "https://markhampubliclibrary.ca/blogs/post/top-10-benefits-of-reading-for-all-ages/"), "<br>",
+              a(i18n()$t("North Carolina School Report Cards"),
+                href = "https://ncreports.ondemand.sas.com/src/?county=Durham"))
       }
-      else if (input$es_select == "WiFi Access Points Per Classroom"){
-        HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
+      else if (input$es_select == "WiFi Access"){
+        HTML(paste0(strong(i18n()$t("Note: ")), i18n()$t("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
-        year is reflected above.",
-                          "<br>", "<br>",
-                          "The visualization depicts the number of wireless access points for each
+        year is reflected above."),
+                    "<br>", "<br>",
+                    i18n()$t("The visualization depicts the number of wireless access points for each
         classroom. A school with a higher number of access points overall will 
         have better internet coverage and quality than a school with less access
-        points.",
-                          "<br>", "<br>",
-                          "As things begin to modernize with time, the internet has become a vital
+        points."),
+                    "<br>", "<br>",
+                    i18n()$t("As things begin to modernize with time, the internet has become a vital
         resource for all. Specifically in schools, teachers can display 
         information and teach through slideshows, animations, videos, games, 
         and more. Incorporating various forms of online tools can make the 
         students become more engaged, while enabling the educator to explore new
-        teaching methods. As a result, students will become more comfortable 
-        with using technology.",
-                          "<br>", "<br>",
-                          "However, not all students have the same access to technology in their 
+        teaching methods. As a result, students will become more comfortable
+        with using technology."),
+                    "<br>", "<br>",
+                    i18n()$t("However, not all students have the same access to technology in their 
         homes. Most schools have accounted for this disparity by providing 
         students with free tablets or laptops. During the COVID-19 pandemic, 
         when students of all ages had to adjust to online instruction, several 
-        counties provided WiFI hubs so that students’ learning was not hindered."),
-                   "<br>", "<br>",
-                   "Below are more resources on Wi-Fi Access:", "<br>",
-                   a("Impact of High-Speed Internet",
-                     href = "https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1050&context=studentwork")))
+        counties provided WiFI hubs so that students’ learning was not hindered.")))
       }
       
       
