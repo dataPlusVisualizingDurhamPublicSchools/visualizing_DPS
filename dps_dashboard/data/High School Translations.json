@@ -420,3 +420,56 @@
      {"English": "This dataset shows the median age of residents in each school zone. The median age of residents in a specific school zone can determine the various assets available, identify beneficial resources in the community, and give some insight about school enrollment numbers in the future.",
      "Spanish": "Estos datos muestran la edad promedio de los residentes en cada zona escolar. La edad promedio puede determinar los recursos disponibles, identificar las ventajas en la comunidad, y darnos una idea sobre el número de inscritos en el futuro."},
      
+     {"English": "Graduation Rate",
+     "Spanish": "Índice de graduación"},
+     
+     {"English": "The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030. This is a significant increase from when the first reported graduation rate was 68.3% in 2006.",
+     "Spanish": "Esta gráfica muestra el porcentaje de estudiantes estimados a graduarse de la preparatoria en cuatro años (o menos). El índice de graduación de Carolina del Norte de 2020 es 87.6%, con planes de aumentar este porcentaje a 95% para el año 2030. Esto es un aumento significante desde 2006; cuando el índice de graduación fue 68.3%."},
+     
+     {"English": "Graduation rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, especially school counselors and social workers, to reach out to students with extended absences. External factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.",
+     "Spanish": "Estos índices son importantes. Graduaciones retrasadas terminan en menos estudiantes terminado la preparatoria. Es posible que los estudiantes que no se gradúan (o alumnos desertores) tengan obstáculos y estilos de vida desaventajados. Es importante que consejeros y trabajadores sociales se comuniquen con estudiantes con muchas ausencias. Factores externos pueden ser la razón detrás de los alumnos desertores. Como comunidad, debemos trabajar para eliminar estas barreras."},
+     
+     {"English": "Below are more resources on graduation rates:",
+     "Spanish": "Recursos sobre el índice de graduación:"},
+     
+     {"English": "Dashboard with Articles and Quick Facts about Graduation Rates",
+     "Spanish": "Artículos e información sobre el índice de graduación"},
+     
+     {"English": "Titles Per Student",
+     "Spanish": "Títulos por estudiante"},
+     
+     {"English": "A school library’s number of book titles per student indicates the availability of different book titles for students to select. A higher number of book titles per student indicates a wider variety of books to choose from. Having more book titles per student enables more opportunities for whole-class novel reading, which is essential for learning book analysis, encouraging engaging discussions, and prompting creative writing.",
+     "Spanish": "Este dato refleja el número de libros en la biblioteca (de la escuela) por estudiante. Este número indica la disponibilidad de diferentes libros para los estudiantes. Un número alto representa una variedad de libros más grande. Una biblioteca que tiene más títulos por estudiante crea más oportunidades para lectura en grupos, lo cual es esencial para aprender análisis de lectura, crear discusiones en el salón de clases, y motivar la escritura creativa."},
+     
+     {"English": "Having a wide selection of books in a library also promotes more reading and intellectual stimulation for students. With a higher number of titles per student, it is more likely that most, if not all, students can find literature that engages them.",
+     "Spanish": "Una selección extensa de libros promueve más lectura e intelectualmente estimulante materiales para los alumnos. Una escuela con muchos libros tiene más chances que la mayoría, sino todos los estudiantes, puedan encontrar unos libros o un género que les interesa."},
+     
+     {"English": "Below are more resources on the importance of book titles:",
+     "Spanish": "Recursos sobre la importancia de los libros"},
+     
+     {"English": "Importance of Culturally-Diverse Literature",
+     "Spanish": "La importancia de libros culturalmente diversos"},
+     
+     {"English": "Creating an Effective and Diverse Classroom Library",
+     "Spanish": "Creando una biblioteca efectiva e inclusiva"},
+     
+     {"English": "WiFi Access",
+     "Spanish": "La internet (WiFi)"},
+     
+     {"English": "Note:",
+     "Spanish": "Nota:"},
+     
+     {"English": "Due to the COVID-19 pandemic, this data only extends until December of 2020. Therefore, only the 2019-2020 school year is reflected above.",
+     "Spanish": "A causa de la pandemia COVID-19, estos datos solamente se extienden hasta diciembre de 2020. Por lo tanto, esta información es del año escolar 2019-2020."},
+     
+     {"English": "The visualization depicts the number of wireless access points for each classroom. A school with a higher number of access points overall will have better internet coverage and quality than a school with less access points.",
+     "Spanish": "Esta visualización representa el número de puntos de acceso inalámbricos en cada salón de clases. Una escuela con más puntos de acceso tiene mejor internet y conexión que una escuela con menos puntos de acceso."},
+     
+     {"English": "As things begin to modernize with time, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+     
+     {"English": "However, not all students have the same access to technology in their homes. Most schools have accounted for this disparity by providing students with free tablets or laptops. During the COVID-19 pandemic, when students of all ages had to adjust to online instruction, several counties provided WiFI hubs so that students’ learning was not hindered.",
+     "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."},
+     
+     {"English": "Below are more resources on Wi-Fi Access:",
+     "Spanish": "Recursos sobre el acceso de internet:"},
