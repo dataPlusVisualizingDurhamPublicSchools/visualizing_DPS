@@ -20,10 +20,12 @@ library(readxl)
 library(gotop)
 library(shiny.i18n)
 
+
 library(DT)
 
 i18n <- Translator$new(translation_json_path = "data/testTranslation.json")
 i18n$set_translation_language("English")
+
 
 sidebar <- {dashboardSidebar(
     
@@ -46,6 +48,7 @@ sidebar <- {dashboardSidebar(
         menuItem("School Statistics", tabName = "statstab", icon = icon("fas fa-chart-bar")),
         menuItem("AP, CTE, & Electives", tabName = "electivestab", icon = icon("book")),
         menuItem("School Sports", tabName = "sportstab", icon = icon("basketball-ball")),
+        menuItem("Arts Programs", tabName = "artstab", icon = icon("paint-brush")),
         menuItem("Data Insights", tabName = "insightstab", icon = icon("fas fa-chart-line")),
         menuItem("Meet The Team", tabName = "teamstab", icon = icon("fas fa-users"))
     )
@@ -362,100 +365,6 @@ body <- {dashboardBody(
                                box(width = 4,
                                    title = strong("Trade, Technology, Engineering, and Industrial Education"), status = "primary", solidHeader = TRUE,
                                    htmlOutput("TradeCTE", align="left")))),
-                    tabPanel("Arts Programs",
-                             fluidRow(
-                               box(width = 12,
-                                   title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
-                                   column(12, align="center", tableOutput("available_arts")))
-                             ),
-                             fluidRow(
-                               box(width = 6, title = strong("Durham Public Schools and the Arts"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Durham Public Schools’ appreciation for the arts 
-                                        is apparent throughout their public institutions. 
-                                        They provide curricula for the arts, upcoming events 
-                                        in the school system, resources for K-12 students 
-                                        interested in the arts, and news about arts programs 
-                                        in DPS. Vist", a("Arts at DPS", href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
-                                        "to learn more.")),
-                                   br(),
-                                   p(h4(em(strong("Learn more about some of the schools' arts programs by clicking on their logos below:")))),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://vimeo.com/718773555", 
-                                            tags$img(src="cc spaulding.png", 
-                                                     title="cc spaulding Logo",
-                                                     class= "img-responsive")),
-                                          tags$a(
-                                     href="https://jhscoursecatalog.weebly.com/fine-arts.html", 
-                                     tags$img(src="jordan high.png", 
-                                              title="Jordan Logo",
-                                              class= "img-responsive"))
-                                     
-                                     
-                                     ),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://durhamvoice.org/?p=4549", 
-                                            tags$img(src="eastway.png", 
-                                                     title="Eastway Logo",
-                                                     class= "img-responsive")),
-                                          tags$a(
-                                     href="https://docs.google.com/document/d/1UfdYKPoG8UohnTRVbgnHrMZD6PZwRZVrQ1KgmEn5PBM/edit", 
-                                     tags$img(src="hillside high.png",
-                                              title="Hillside Logo",
-                                              class= "img-responsive")
-                                   )),
-                                   column(class = 'text-center', width = 4,
-                                          tags$a(
-                                            href="https://www.youtube.com/watch?v=2LcqFlBR9iw", 
-                                            tags$img(src="brogden.png",
-                                                     title="Brogden Logo",
-                                                     class= "img-responsive")),
-                                          tags$a(
-                                            href="https://www.riversidefab.org/boosters", 
-                                            tags$img(src="riverside.png",
-                                                     title="Riverside Logo",
-                                                     class= "img-responsive")))
-                                   ),
-                               box(width = 6, title = strong("Durham County and the Arts"), status = "primary", solidHeader = TRUE,
-                                   p(h4("Durham has a rich history of highlighting the arts. 
-                                        In the mid-20th century the non-profit organization ",
-                                     a("Durham Arts Council", href="https://durhamarts.org/"),
-                                     "was founded to promote and provide access to various opportunities 
-                                        and resources for those in the arts. The Durham Arts Council also 
-                                        provides a directory of artists to network with one another through the",
-                                     a("Durham Arts Network", href="https://www.durhamartsnetwork.org/"),
-                                     ". The city of Durham funded the", a("Cultural & Public Art Program ", 
-                                                                          href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
-                                     "to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. 
-                                        Durham provides many opportunities for the public to indulge in cultural 
-                                        arts and for artists to showcase their work.", a("Discover Durham", 
-                                                                                      href="https://www.discoverdurham.com/things-to-do/arts/"),
-                                     "provides an extensive list of events for visitors and residents to do 
-                                        surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc.",
-                                     br(),
-                                     br(),
-                                     strong("Duke University"),
-                                     br(),
-                                     a("- Duke Mural", href="https://arts.duke.edu/mural-durham/"),
-                                     ": Duke University has partnered with the city of Durham and local 
-                                     artists to create new murals to beautify the city.",
-                                     br(),
-                                     a("- Durham Medical Orchestra", href="https://arts.duke.edu/durham-medical-orchestra/"),
-                                     ": Connects health professionals with local musicians to put on 
-                                     musical performances for Durham residents.",
-                                     br(),
-                                     br(),
-                                     strong("North Carolina Central University"),
-                                     br(),
-                                     "- NCCU provides volunteer opportunities for their students
-                                     in the KidzNotes program via Fayetteville Street Elementary’s 
-                                     AT&T Beleive Program.",
-                                     br(),
-                                     "- NCCU students host musical ensembles for the Durham community."))
-                                   )
-                               
-                             ) )   
                   )
                 )
         )},
@@ -496,12 +405,113 @@ body <- {dashboardBody(
                                 #     title = strong("Icon Legend"),
                                 #     column(12, align="center", tableOutput("sports_icon_legend")))
                                 
-                                )
+                                ),
+                              
+                              fluidRow(
+                                box(width = 12,
+                                    solidHeader = TRUE,
+                                    title = strong("Context"),
+                                    htmlOutput("sports_context"))
+                              )
                         
                      ),
                    )
                  ),
                 
+        )},
+        {tabItem(tabName = "artstab",
+                 fluidRow(
+                   box(width = 12,
+                       title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                       column(12, align="center", tableOutput("available_arts")))
+                 ),
+                 fluidRow(
+                   box(width = 6, title = strong("Durham Public Schools and the Arts"), status = "primary", solidHeader = TRUE,
+                       p(h4("Durham Public Schools’ appreciation for the arts 
+                                        is apparent throughout their public institutions. 
+                                        They provide curricula for the arts, upcoming events 
+                                        in the school system, resources for K-12 students 
+                                        interested in the arts, and news about arts programs 
+                                        in DPS. Vist", a("Arts at DPS", href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
+                            "to learn more.")),
+                       br(),
+                       p(h4(em(strong("Learn more about some of the schools' arts programs by clicking on their logos below:")))),
+                       column(class = 'text-center', width = 4,
+                              tags$a(
+                                href="https://vimeo.com/718773555", 
+                                tags$img(src="cc spaulding.png", 
+                                         title="cc spaulding Logo",
+                                         class= "img-responsive")),
+                              tags$a(
+                                href="https://jhscoursecatalog.weebly.com/fine-arts.html", 
+                                tags$img(src="jordan high.png", 
+                                         title="Jordan Logo",
+                                         class= "img-responsive"))
+                              
+                              
+                       ),
+                       column(class = 'text-center', width = 4,
+                              tags$a(
+                                href="https://durhamvoice.org/?p=4549", 
+                                tags$img(src="eastway.png", 
+                                         title="Eastway Logo",
+                                         class= "img-responsive")),
+                              tags$a(
+                                href="https://docs.google.com/document/d/1UfdYKPoG8UohnTRVbgnHrMZD6PZwRZVrQ1KgmEn5PBM/edit", 
+                                tags$img(src="hillside high.png",
+                                         title="Hillside Logo",
+                                         class= "img-responsive")
+                              )),
+                       column(class = 'text-center', width = 4,
+                              tags$a(
+                                href="https://www.youtube.com/watch?v=2LcqFlBR9iw", 
+                                tags$img(src="brogden.png",
+                                         title="Brogden Logo",
+                                         class= "img-responsive")),
+                              tags$a(
+                                href="https://www.riversidefab.org/boosters", 
+                                tags$img(src="riverside.png",
+                                         title="Riverside Logo",
+                                         class= "img-responsive")))
+                   ),
+                   box(width = 6, title = strong("Durham County and the Arts"), status = "primary", solidHeader = TRUE,
+                       p(h4("Durham has a rich history of highlighting the arts. 
+                                        In the mid-20th century the non-profit organization ",
+                            a("Durham Arts Council", href="https://durhamarts.org/"),
+                            "was founded to promote and provide access to various opportunities 
+                                        and resources for those in the arts. The Durham Arts Council also 
+                                        provides a directory of artists to network with one another through the",
+                            a("Durham Arts Network", href="https://www.durhamartsnetwork.org/"),
+                            ". The city of Durham funded the", a("Cultural & Public Art Program ", 
+                                                                 href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
+                            "to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. 
+                                        Durham provides many opportunities for the public to indulge in cultural 
+                                        arts and for artists to showcase their work.", a("Discover Durham", 
+                                                                                         href="https://www.discoverdurham.com/things-to-do/arts/"),
+                            "provides an extensive list of events for visitors and residents to do 
+                                        surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc.",
+                            br(),
+                            br(),
+                            strong("Duke University"),
+                            br(),
+                            a("- Duke Mural", href="https://arts.duke.edu/mural-durham/"),
+                            ": Duke University has partnered with the city of Durham and local 
+                                     artists to create new murals to beautify the city.",
+                            br(),
+                            a("- Durham Medical Orchestra", href="https://arts.duke.edu/durham-medical-orchestra/"),
+                            ": Connects health professionals with local musicians to put on 
+                                     musical performances for Durham residents.",
+                            br(),
+                            br(),
+                            strong("North Carolina Central University"),
+                            br(),
+                            "- NCCU provides volunteer opportunities for their students
+                                     in the KidzNotes program via Fayetteville Street Elementary’s 
+                                     AT&T Beleive Program.",
+                            br(),
+                            "- NCCU students host musical ensembles for the Durham community."))
+                   )
+                 ) 
         )},
       
         #Data Insights tab
