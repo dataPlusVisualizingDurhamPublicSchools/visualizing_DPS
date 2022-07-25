@@ -113,7 +113,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
     pantries <- read.csv("data/2021/spatial_data/renamed_Food Pantries.csv")
     afterschool <- read.csv("data/2021/spatial_data/renamed_After-School Care Programs.csv")
     farmersmark <- read.csv("data/2021/spatial_data/renamed_Farmer's Markets.csv") 
-    commarts <- read.csv("data/2021/spatial_data/Community Arts.csv")
+    commarts <- read.csv("data/2021/spatial_data/renamed_Community Arts.csv")
     sports <- read.csv("data/2021/spatial_data/renamed_Community Sports.csv")
 }
 
@@ -1190,7 +1190,7 @@ function(input, output, session) {
           
           else if(input$hs_select == "WiFi Access") {
             schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
-            p <- ggplot(schoolstats22_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
               geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
               geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
               coord_flip() +
@@ -4556,107 +4556,67 @@ for students to be placed into higher-level courses at their college.", "<br>","
         sports %>% select(sport_name)
       }, colnames = FALSE, align = 'c', spacing = 'l')
       
-      output$male_sports_icons <- renderTable ({
+      output$male_sports_list <- renderTable ({
         sports <- sports_22
-        sports$icon = ""
-        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-        
         sports <- subset(sports, (gender == 'All' | gender == "Men's" | gender == "Boy's") & schoolname == input$school_sports)
-        sports <- subset(sports, !duplicated(icon))
-        sports %>% select(icon)
-      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
-      
-      output$female_sports_icons <- renderTable ({
-        sports <- sports_22
-        sports$icon = ""
-        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-        
-        sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
-        sports <- subset(sports, !duplicated(icon))
-        sports %>% select(icon)
-      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE, bordered = TRUE)
-      
-      output$sports_icon_legend <- renderTable({
-        sports <- sports_22
-        sports$icon = ""
-        sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-        sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-        sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-        sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-        sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-        sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
-        sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-        sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-        sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-        sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-        sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-        sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-        sports <- subset(sports, !duplicated(icon))
-        sports %>% select(sport, icon)
+        sports <- subset(sports, !duplicated(sport))
+        sports %>% select(sport)
       }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      
+      output$female_sports_list <- renderTable ({
+        sports <- sports_22
+        sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
+        sports <- subset(sports, !duplicated(sport))
+        sports %>% select(sport)
+      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      
+      # output$sports_icon_legend <- renderTable({
+      #   sports <- sports_22
+      #   sports$icon = ""
+      #   sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+      #   sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
+      #   sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+      #   sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
+      #   sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
+      #   sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
+      #   sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
+      #   sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
+      #   sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
+      #   sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
+      #   sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
+      #   sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
+      #   sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
+      #   sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
+      #   sports <- subset(sports, !duplicated(icon))
+      #   sports %>% select(sport, icon)
+      # }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      
+      output$sports_context <- renderText({
+          paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
+           responsibility, discipline, and leadership. Participation in school sports provides students with the 
+           daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+                "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
+                 cal activity are associated with more favorable status for multiple health indicators, including 
+                cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
+                in their",
+                a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+                "Visit ",
+                a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+                "for more information.")
+        })
     }
-    
+
     #Arts Programs
     {
       output$available_arts <- renderTable ({
