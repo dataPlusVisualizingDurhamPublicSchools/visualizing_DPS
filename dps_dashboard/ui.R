@@ -219,7 +219,7 @@ body <- {dashboardBody(
                                                       "Median Age","Median Homesale Price","Median Household Income",
                                                       "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                       "Students Per Device","Student-Teacher Ratio, Elementary School", 
-                                                      "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                                      "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                        ),
                                     selectInput("es_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                        choices = list("Summer 2021", "Summer 2022")
@@ -259,7 +259,7 @@ body <- {dashboardBody(
                                                                "Median Age","Median Homesale Price","Median Household Income",
                                                                "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                                "Students Per Device","Student-Teacher Ratio, Middle School", 
-                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                     ),
                                     selectInput("ms_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                                 choices = list("Summer 2022")
@@ -298,7 +298,7 @@ body <- {dashboardBody(
                                                                "Median Age","Median Homesale Price","Median Household Income",
                                                                "Racial Demographics", "School and Zone BIPOC Comparison","Sidewalk Coverage",
                                                                "Students Per Device","Student-Teacher Ratio, High School", 
-                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access")
+                                                               "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                     ),
                                     selectInput("hs_year", em("Click the drop down menu to select which year of data collection you would like to view."), 
                                                 choices = list("Summer 2021", "Summer 2022")
@@ -553,6 +553,12 @@ body <- {dashboardBody(
                        plotlyOutput("insights_individualplots",
                                     width="auto",
                                     height = "auto"))
+                 ),
+                 fluidRow(class= 'text-center',
+                   box(width = 12,
+                       solidHeader = TRUE,
+                       title = strong("Context"),
+                       htmlOutput("data_insights_context"))
                  )
         )},
         
@@ -684,6 +690,7 @@ body <- {dashboardBody(
                          solidHeader = TRUE,
                          title = strong("Interactive Map"),
                          h4("Hover over the icon to see the name. Click on the icon to reveal its link."),
+                         h4("Click the ", icon('search'), "icon to search for your own address!"),
                          leafletOutput("map")),
                      box(width = 5,
                          solidHeader = TRUE,

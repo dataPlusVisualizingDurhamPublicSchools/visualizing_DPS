@@ -378,7 +378,7 @@ function(input, output, session) {
             ggplotly(p, tooltip = c("text")) 
           }
           
-          else if(input$es_select == "WiFi Access") {
+          else if(input$es_select == "WiFi Access Points Per Classroom") {
             schoolstats21_summary <- ES_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
             p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
               geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -387,7 +387,7 @@ function(input, output, session) {
               geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
               theme_minimal() +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+              labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text")) 
           } 
           
@@ -631,7 +631,7 @@ function(input, output, session) {
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$es_select == "WiFi Access") {
+            else if(input$es_select == "WiFi Access Points Per Classroom") {
                 schoolstats22_summary <- ES_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -640,7 +640,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
@@ -898,7 +898,7 @@ function(input, output, session) {
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$ms_select == "WiFi Access") {
+            else if(input$ms_select == "WiFi Access Points Per Classroom") {
                 schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -907,7 +907,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
@@ -1202,7 +1202,7 @@ function(input, output, session) {
             ggplotly(p, tooltip = c("text")) 
           }
           
-          else if(input$hs_select == "WiFi Access") {
+          else if(input$hs_select == "WiFi Access Points Per Classroom") {
             schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
             p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
               geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1211,7 +1211,7 @@ function(input, output, session) {
               geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
               theme_minimal() +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+              labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text")) 
           } 
           
@@ -1491,7 +1491,7 @@ function(input, output, session) {
                     labs(title = "Titles Per Student", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
-            else if(input$hs_select == "WiFi Access") {
+            else if(input$hs_select == "WiFi Access Points Per Classroom") {
                 schoolstats22_summary <- HS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
                 p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
                     geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
@@ -1500,7 +1500,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Per School", x = "School", y = "Students (%)")
+                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             #not on WebApp
@@ -1966,7 +1966,7 @@ function(input, output, session) {
               a("Creating an Effective and Diverse Classroom Library",
                 href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
       }
-      else if (input$es_select == "WiFi Access"){
+      else if (input$es_select == "WiFi Access Points Per Classroom"){
         HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
         year is reflected above.",
@@ -2465,7 +2465,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
         
       }
-      else if (input$ms_select == "WiFi Access"){
+      else if (input$ms_select == "WiFi Access Points Per Classroom"){
         HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
         year is reflected above.",
@@ -3169,7 +3169,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
                 href = "https://digitalcommons.wou.edu/cgi/viewcontent.cgi?article=1187&context=theses"))
         
       }
-      else if (input$hs_select == "WiFi Access"){
+      else if (input$hs_select == "WiFi Access Points Per Classroom"){
         HTML(paste0(strong("Note: "), paste("Due to the COVID-19 pandemic, this data only 
         extends until December of 2020. Therefore, only the 2019-2020 school 
         year is reflected above.",
@@ -3430,6 +3430,13 @@ for students to be placed into higher-level courses at their college.", "<br>","
       counts_grouped <- subset(counts_grouped, name == input$insights_zone)
       ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
         ylab("Number of Resource") + xlab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
+    })
+    
+    output$data_insights_context <- renderText({
+      paste("These plots reveal the total number of each resource by number in each school district. The comparison
+            is not straightforward, as different school districts have different populations and thus different corresponding
+            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
+            resources available in each school district at a glance.")
     })
     
     output$context <- renderText({
