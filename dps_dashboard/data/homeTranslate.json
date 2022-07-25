@@ -1,0 +1,58 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+    
+    {"English": "Change Language",
+     "Spanish": "Cambia idioma"},
+    
+    {"English": "Visualizing Durham Public Schools",
+ "Spanish": "Visualizando las Escuelas Públicas de Durham"},
+    
+    {"English": "This project is inspired by an inter-institutional Bass Connections team from Duke University and North Carolina Central University that is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, support local neighborhood schools in visualizing their communities, and help varied university offices articulate what “community” actually looks like.", 
+       "Spanish": "Este proyecto se inspiró por un equipo inter-institucional llamado “Bass Connections” de las universidades Duke y North Carolina Central. Este equipo está dedicado a desarrollar maneras responsables e imaginativas para colaborar con las escuelas públicas de Durham. El objetivo de este proyecto es crear una aplicación centralizada que servirá como un recurso informativo para las personas que se harán parte del condado de Durham. Nuestra aplicación tiene varias metas, como mejorar pre-servicio entrenamientos para estudiantes universitarios, apoyar a las escuelas y comunidades locales, y ayudar a varias oficinas universitarias articular lo que significa una “comunidad.”!"},
+    
+{"English": "By using spatial data and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets.",
+ "Spanish": "Al usar información geográfica, junto con recursos contextuales, esperamos mostrar las escuelas públicas de Durham y los recursos en las comunidades desde un punto de vista holístico."},
+
+{"English": "Visit the",
+ "Spanish": "¡Visita la pagina"},
+
+{"English": "for more information!",
+ "Spanish": "para más información!"},
+
+{"English": "Geospatial Variables",
+ "Spanish": "Variables Geográficos"},
+
+{"English": "School-Specific Variables",
+ "Spanish": "Variables de las Escuelas"},
+
+{"English": "Centralized Web Application",
+ "Spanish": "Aplicación Centralizada"},
+
+{"English": "2 Universities, 16 Public Schools",
+ "Spanish": "2 Universidades, 16 Escuelas Públicas"},
+
+{"English": "The Durham Public Schools District contains 54 public schools: 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. Our project focuses on the 16 schools that most frequently partner with Duke University and North Carolina Central University. These include 10 elementary schools: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside.",
+ "Spanish": "El distrito de Durham contiene 54 escuelas públicas: 30 escuelas primarias, 11 escuelas secundarias, 11 escuelas preparatorias, 1 escuela alternativa, y 1 escuela del hospital. Nuestro proyecto se enfoca en 16 escuelas que frecuentemente trabajan con Duke y North Carolina Central. Esto incluye 10 escuelas primarias: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, y Club Boulevard; 3 escuelas secundarias: Lakewood Montessori, Lowes Grove, y Brogden; y finalmente 3 escuelas preparatorias: Hillside, Jordan, y Riverside."},
+
+{"English": "The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that an issue preventing meaningful engagement between Duke, NCCU, and Durham public schools is that ‘many university students lack an understanding of city and community dynamics.’ Additionally, they found that there is a ‘lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.’",
+ "Spanish": "La meta de Duke y NCCU es crear relaciones equitativas con las escuelas públicas de Durham. Investigaciones anteriores del equipo Bass Connections se enfocaron en cómo lograr esta meta y encontraron que un problema es que “a muchos estudiantes universitarios les falta el conocimiento de las dinámicas de las escuelas públicas y la ciudad de Durham,” y esto impide las relaciones colaborativas entre estos dos sistemas. Adicionalmente, el equipo encontró que hay una “falta de entrenamientos para estudiantes que desean ser voluntarios en Durham, especialmente en áreas de historia, demográficas de las escuelas, y prejuicios y las dinámicas de poder que se pueden manifestar en las escuelas.”"},
+
+{"English": "Motivated by this research, our project explores a way of visualizing schools as the center of the community that brings together academics, health and social services, youth and community development, and community engagement under one roof.",
+ "Spanish": "Motivados por estas conclusiones, nuestro proyecto explora una manera de visualizar las escuelas como el centro de la comunidad que junta los estudios, servicios sociales y de la salud, el desarrollo de la juventud y la comunidad, y la participación de la comunidad… todo bajo una aplicación."},
+
+{"English": "View Our 16 Schools",
+ "Spanish": "Aprende sobre nuestras 16 escuelas"},
+
+{"English": "View Geospatial Data",
+ "Spanish": "Visita la Información Geográfica"},
+
+{"English": "View School Statistics",
+ "Spanish": "Visita las Estadísticas de las Escuelas"},
+
+{"English": "Our Partners",
+ "Spanish": "Nuestros Compañeros"}
+
+]
+}
