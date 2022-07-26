@@ -1,4 +1,18 @@
-{"English": "Interactive Map",
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+    
+    {"English": "English",
+     "Spanish": "Inglés"},
+    
+    {"English": "Spanish",
+     "Spanish": "Español"},
+    
+    {"English": "Change Language",
+     "Spanish": "Cambia idioma"},
+    
+    {"English": "Interactive Map",
      "Spanish": "Mapa Interactivo"},
      
      {"English": "Measurement",
@@ -70,7 +84,7 @@
 {"English": "North Carolina Center for Afterschool Programs",
      "Spanish": "Programas después del horario escolar"},
 
-{"English": "In order to live a healthy life, people must have access to affordable, nutritious food. Without access to this resource, many, especially those who are low-income, are prone to developing diet-related conditions such as obesity, diabetes, and cardiovascular disease. The areas lacking sufficient healthy food are often called “food deserts.” Food insecurity should not be considered a natural, geographical issue; but, rather an intentional denial of resources for historically marginalized racial groups. Thus, the term “food apartheid” has gained traction in recent years, and is now often preferred. We hope to show areas affected by food apartheid in an attempt to raise awareness about food insecurity.",
+{"English": "For those without their own vehicle, GoDurham and GoTriangle buses serve as the primary form of public transit in Durham County. According to the Federal Transportation Administration, GoDurham averaged nearly 16,000 unlinked passenger trips (each time a passenger boards) per day in 2020. Widespread bus stops play a crucial role in improving equity throughout a region. A strong public transit system can lead to decreased food insecurity (particularly in areas lacking healthy, affordable food), and can lead to increased job opportunities (ride vs. walk to work) and public health (doctor’s office visits).",
      "Spanish": "Para personas sin vehículos, los autobuses de GoDurham y GoTriangle sirven como la forma primaria de tránsito público en el condado de Durham. De acuerdo a la Administración de transportación federal (Federal Transportation Administration), GoDurham obtuvo un promedio de 16,000 viajes por pasajero al día, en el año 2020. Las paradas de autobús deben estar distribuidas equitativamente por una región para garantizar equidad para todos. Un buen sistema de tránsito público puede reducir la inseguridad alimentaria (especialmente en áreas sin comida saludable y a buen precio). Adicionalmente, puede hacer que el trabajo sea más accesible para trabajadores que requieren transportación. Finalmente, el tránsito público habilita a cualquier persona completar sus pendientes, como ir a una cita médica."},
 
 {"English": "Childcare centers assure parents and guardians that their child(ren) is safe and cared for while simultaneously allowing them to work and earn money for their family. Childcare is particularly useful for single parents who often cannot afford to stay at home instead of working. Having several childcare options near a person’s home can be beneficial in allowing parents to weigh the cost and quality of various centers.",
@@ -94,8 +108,8 @@
 {"English": "Below is more information about Farmers' Markets:",
      "Spanish": "Esperamos enseñarles las áreas que están afectadas por la segregación de comida e incrementar conocimiento por ello:"},
 
-{"English": "Found in urban, suburban, and rural areas, libraries often serveas community hubs. Their purpose is not only to provide academic resources for the community, but also be used to welcome new residents to the neighborhood, assist the homeless, and offer informational sessions on a variety of topics. As highlighted in an article by the Brookings Institute, a Pew Research study showed “[s]ome 90% of Americans ages 16 and older said that theclosing of their local public library would have an impact on their community, with 63% saying it would have a ‘major’ impact",
-     "Spanish": "Ubicadas en áreas urbanas, suburbanas, y rurales, las bibliotecas sirven como centros comunitarios. En Durham, hay siete bibliotecas públicas, incluyendo la recientemente renovada “Main Library,” ubicada en el centro de Durham. Cada biblioteca tiene eventos todos los días para la comunidad."},
+{"English": "Found in urban, suburban, and rural areas, libraries often serveas community hubs. Their purpose is not only to provide academic resources for the community, but also be used to welcome new residents to the neighborhood, assist the homeless, and offer informational sessions on a variety of topics. As highlighted in an article by the Brookings Institute, a Pew Research study showed “[s]ome 90% of Americans ages 16 and older said that theclosing of their local public library would have an impact on their community, with 63% saying it would have a ‘major’ impact”",
+     "Spanish": "Ubicadas en áreas urbanas, suburbanas, y rurales, las bibliotecas sirven como centros comunitarios. En Durham, hay siete bibliotecas públicas, incluyendo la recientemente renovada “Main Library,” ubicada en el centro de Durham. Cada biblioteca tiene eventos todos los días para la comunidad.”"},
 
 {"English": ". In Durham, there are seven public libraries, including the recently renovated Main Library downtown. Each library hosts several events daily for people of all ages.",
      "Spanish": "El propósito no es solamente proveer recursos académicos, sino también darle la bienvenida a nuevos residentes, asistir a las personas sin hogar, y ofrecer sesiones informativas sobre varios temas. Un estudio por Pew Research demostró que “90% de Americanos mayores de 16 años dicen que cerrar la biblioteca pública local los impactará, mientras 63% dicen que tendrá un impacto grave.”"},
@@ -207,9 +221,12 @@
 
 {"English": "CDC guidelines",
      "Spanish": "la CDC"},
+     
+     {"English": ". The Office of Disease Prevention and Health Promotion",
+     "Spanish": "La Oficina de Prevención de Enfermedades"},
 
-{"English": ". The Office of Disease Prevention and Health Promotion concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their",
-     "Spanish": "La oficina de prevención de enfermedades concluyó que “la actividad física se asocia con un estado más favorable para varios indicadores de la salud, incluyendo: salud cardiovascular y muscular, salud ósea, y el peso/prevención de obesidad,” en el reporte"},
+{"English": " concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their",
+     "Spanish": " concluyó que “la actividad física se asocia con un estado más favorable para varios indicadores de la salud, incluyendo: salud cardiovascular y muscular, salud ósea, y el peso/prevención de obesidad,” en el reporte"},
 
 {"English": ". Visit",
      "Spanish": "Visita"},
@@ -220,7 +237,8 @@
 {"English": "for more information.",
      "Spanish": "para más información"}
      
-     
+   ]
+}  
      
      
      
