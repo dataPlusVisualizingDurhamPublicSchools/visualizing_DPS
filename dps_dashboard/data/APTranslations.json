@@ -5,10 +5,10 @@
      "Spanish": "- AP Inglés (Literatura)"},
      
      {"English": "- AP Language and Composition",
-     "Spanish": "..."},
+     "Spanish": "- AP Lenguaje y Composición"},
      
      {"English": "- AP Literature and Composition",
-     "Spanish": "..."},
+     "Spanish": "- AP Literatura y Composición"},
      
      {"English": "- AP Statistics",
      "Spanish": "- AP Estadísticas"},
@@ -38,7 +38,7 @@
      "Spanish": "- AP Física C II"},
      
      {"English": "- AP Physics C: Electricity and Magnetism",
-     "Spanish": "..."},
+     "Spanish": "- AP Física C: Electricidad y Magnetismo"},
      
      {"English": "- AP Physics 1: Algebra Based",
      "Spanish": "- AP Física 1: Álgebra"},
@@ -68,13 +68,13 @@
      "Spanish": "- AP Historia de Europa"},
      
      {"English": "- AP US Government and Politics",
-     "Spanish": "- AP Gobierno y política de los Estados Unidos "},
+     "Spanish": "- AP Gobierno y Política de los Estados Unidos "},
      
      {"English": "- AP World History: Modern",
-     "Spanish": "..."},
+     "Spanish": "- AP Historia Mundial: Moderna"},
      
      {"English": "- AP Microeconomics",
-     "Spanish": "..."},
+     "Spanish": "- AP Microeconomía"},
      
      {"English": "- AP Seminar",
      "Spanish": "AP Seminario"},
@@ -95,7 +95,7 @@
      "Spanish": "..."},
 
 {"English": "- AP Italian",
-     "Spanish": "..."},
+     "Spanish": "- AP Italiano"},
 
 {"English": "- AP Chinese",
      "Spanish": "..."},
