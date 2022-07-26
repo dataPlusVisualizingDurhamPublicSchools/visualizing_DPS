@@ -81,7 +81,7 @@
      {"English": "The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ",
      "Spanish": "El porcentaje de estudiantes recibiendo almuerzo gratis/reducido es un gran indicador del estatus socioeconómico de la escuela. El porcentaje de estudiantes que están debajo de la línea de pobreza determina si una escuela es "},
      
-     {"English": "Title 1",
+     {"English": "Title I",
      "Spanish": "Título 1"},
      
      {"English": "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and discriminatory. Socioeconomic status is not a limit, it is a barrier.",
@@ -95,10 +95,7 @@
      
      {"English": "NC Community Free/Reduced Lunch Eligibility",
      "Spanish": "La elegibilidad de recibir almuerzos gratis o reducidos en Carolina del Norte"},
-     
-     {"English": "Title I", 
-     "Spanish": "Título I"},
-     
+
      {"English": ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
      "Spanish": "Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
      
@@ -264,8 +261,8 @@
      {"English": "gentrification",
      "Spanish": "la gentrificación"},
      
-     {"English": "the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
-     "Spanish": "el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
+     {"English": ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
+     "Spanish": ": el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
      
      {"English": "BIPOC Students per School",
      "Spanish": "Porcentaje de estudiantes de color (POC)"},
@@ -315,8 +312,8 @@
      {"English": "More Students of Color in Public schools",
      "Spanish": "Más estudiantes de color en las escuelas públicas"},
      
-     {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
-     "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases"},
+     {"English": ": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
+     "Spanish": ": un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases"},
      
      {"English": "Median Household Income",
      "Spanish": "Ingreso promedio familiar"},
