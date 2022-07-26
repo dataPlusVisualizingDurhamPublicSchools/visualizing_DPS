@@ -149,7 +149,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-translator <- Translator$new(translation_json_path = "data/High School Translations.json")
+translator <- Translator$new(translation_json_path = "data/Arts tab.json")
 
 function(input, output, session) {
   
@@ -3409,11 +3409,11 @@ function(input, output, session) {
     })
     
     observeEvent(input$viewAP, {
-      updateTabItems(session, "TabItems", selected = "electivestab")
+      updateTabItems(session, "TabItems", selected = "coursestab")
     })
     
     observeEvent(input$viewCTE, {
-      updateTabsetPanel(session, "TabItems", selected = "electivestab")
+      updateTabsetPanel(session, "TabItems", selected = "coursestab")
     })
     
     #CTE Table
