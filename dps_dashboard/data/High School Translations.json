@@ -1,9 +1,8 @@
-
 {
   "cultural_date_format": "%d-%m-%Y",
   "languages": ["English", "Spanish"],
   "translation": [
-
+    
      {"English": "Advanced Placement (AP) Course Enrollment",
      "Spanish": "Cursos avanzados (Advanced Placement)"},
      
@@ -76,7 +75,7 @@
      {"English": "Importance and Resources for Professional Development",
      "Spanish": "La importancia y recursos sobre el desarrollo profesional"},
      
-      {"English": "Free and Reduced Lunch",
+     {"English": "Free and Reduced Lunch",
      "Spanish": "Almuerzo gratis o reducido"},
      
      {"English": "The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ",
@@ -104,14 +103,17 @@
      "Spanish": "Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
      
      {"English": "Student-Teacher Ratio",
-     "Spanish": "Proporción de alumnos a maestros (De las escuelas secundarias)"},
+     "Spanish": "Proporción de alumnos a maestros (De las escuelas preparatorias)"}
      
-     {"English": "Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.",
+     {"English": "Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.", 
      "Spanish": "Se ha comprobado que las clases pequeñas son más beneficiosas para los estudiantes. Clases pequeñas habilitan a que los maestros se enfoquen más en el currículo y progreso de cada estudiante. Estas enseñanzas de uno a uno pueden aumentar las calificaciones de los estudiantes, disminuir el índice de alumnos desertores, e incrementar el índice de alumnos graduados."},
-     
+
+     {"English": "For high school students especially, classes become more challenging as they become older and begin to take more advanced courses, such as AP or IB classes. In these higher-stress environments, smaller sized classrooms enable teachers to better gauge if the students are making progress and fully understanding the material. Additionally, educators have the opportunity to make the curriculum and assignments more personalized to cater to the student body.", 
+     "Spanish": "Especialmente para los estudiantes de escuelas preparatorias, las clases se vuelven más desafiantes. Mientras los estudiantes crezcan, también empiezan a tomar cursos más avanzados, como las clases de AP o IB (Bachillerato Internacional). En estos ambientes más estresantes, clases pequeñas ayudan a que los maestros se den cuenta si los estudiantes están entendiendo el currículo. Adicionalmente, los educadores tienen la oportunidad de crear su propio currículo y hacer que las tareas sean más personalizadas para los estudiantes."},
+
      {"English": "Resources on Student-Teacher Ratios:",
      "Spanish": "Infográficas e información sobre proporciones de alumnos a maestros:"},
-    
+
      {"English": "Students Per Device",
      "Spanish": "Número de estudiantes por aparatos"},
      
@@ -138,7 +140,7 @@
      
      {"English": "Interactive Summary of Local - Federal Public School Funding:",
      "Spanish": "Un resumen interactivo del financiamiento de cada estudiante (del gobierno local, estatal, y federal):"},
-    
+     
      {"English": "Students With Disabilities",
      "Spanish": "Estudiantes con discapacidades"},
      
@@ -150,7 +152,7 @@
      
      {"English": "transportation,",
      "Spanish": "la transportación,"},
-    
+     
      {"English": "Exceptional Children (EC) programs,",
      "Spanish": "y programas para estudiantes con necesidades especiales (Exceptional Children o EC),"},
      
@@ -231,7 +233,7 @@
      
      {"English": "school-to-prison pipeline: the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
      "Spanish": "el canal de la escuela a la prisión: Existe una vigilancia excesivamente desproporcionada de estudiantes de minorías, a menudo de hogares de bajos ingresos. Esto causa castigos más severos, incluyendo suspensiones dentro de la escuela (ISS) y fuera de la escuela (OSS)."},
-     
+
      {"English": "Enrollment",
      "Spanish": "Número de alumnos"},
      
@@ -303,7 +305,7 @@
      
      {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
      "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
-
+     
      {"English": "Racial Demographics",
      "Spanish": "Demográficas Raciales"},
      
@@ -375,7 +377,7 @@
      
      {"English": "the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
      "Spanish": "el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
-    
+     
      {"English": "Bachelor Degree Rate",
      "Spanish": "Los índices de licenciaturas universitarias"},
      
@@ -412,6 +414,12 @@
      {"English": "Income Disparities and Sidewalk Coverage",
      "Spanish": "Disparidades de ingresos en áreas sin banquetas"},
      
+     {"English": "Median Age",
+     "Spanish": "Edad promedio"},
+     
+     {"English": "This dataset shows the median age of residents in each school zone. The median age of residents in a specific school zone can determine the various assets available, identify beneficial resources in the community, and give some insight about school enrollment numbers in the future.",
+     "Spanish": "Estos datos muestran la edad promedio de los residentes en cada zona escolar. La edad promedio puede determinar los recursos disponibles, identificar las ventajas en la comunidad, y darnos una idea sobre el número de inscritos en el futuro."},
+     
      {"English": "Graduation Rate",
      "Spanish": "Índice de graduación"},
      
@@ -426,12 +434,6 @@
      
      {"English": "Dashboard with Articles and Quick Facts about Graduation Rates",
      "Spanish": "Artículos e información sobre el índice de graduación"},
-     
-     {"English": "Median Age",
-     "Spanish": "Edad promedio"},
-     
-     {"English": "This dataset shows the median age of residents in each school zone. The median age of residents in a specific school zone can determine the various assets available, identify beneficial resources in the community, and give some insight about school enrollment numbers in the future.",
-     "Spanish": "Estos datos muestran la edad promedio de los residentes en cada zona escolar. La edad promedio puede determinar los recursos disponibles, identificar las ventajas en la comunidad, y darnos una idea sobre el número de inscritos en el futuro."},
      
      {"English": "Titles Per Student",
      "Spanish": "Títulos por estudiante"},
@@ -471,6 +473,3 @@
      
      {"English": "Below are more resources on Wi-Fi Access:",
      "Spanish": "Recursos sobre el acceso de internet:"},
-       
-
-
