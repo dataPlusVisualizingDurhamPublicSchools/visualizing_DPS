@@ -99,7 +99,7 @@
      {"English": "Title I", 
      "Spanish": "Título I"},
      
-     {"English": "Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
+     {"English": ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
      "Spanish": "Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
      
      {"English": "Student-Teacher Ratio",
@@ -210,7 +210,7 @@
      {"English": "In-School Suspensions (ISS)",
      "Spanish": "Suspensiones dentro de la escuela (ISS)"},
      
-     {"English": "In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel.",
+     {"English": "In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel (https://supportiveschooldiscipline.org/suspension).",
      "Spanish": "Suspensiones dentro de la escuela se definen como: 'un estudiante que es sacado del salón de clases por al menos un medio día, pero sigue siendo supervisado por el personal de la escuela.'"},
 
      {"English": "Students of color are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the",
@@ -225,7 +225,7 @@
      {"English": "School-to-Prison Pipeline",
      "Spanish": "El canal de la escuela a la prisión"},
      
-     {"English": "school-to-prison pipeline: the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
+     {"English": ": the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
      "Spanish": "el canal de la escuela a la prisión: Existe una vigilancia excesivamente desproporcionada de estudiantes de minorías, a menudo de hogares de bajos ingresos. Esto causa castigos más severos, incluyendo suspensiones dentro de la escuela (ISS) y fuera de la escuela (OSS)."},
 
      {"English": "Enrollment",
