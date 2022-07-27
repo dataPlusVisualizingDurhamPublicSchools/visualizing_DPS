@@ -18,6 +18,7 @@ library(tidyr)
 library(readxl)
 library(gotop)
 library(shiny.i18n)
+library(DT)
 
 
 
@@ -3439,7 +3440,7 @@ for students to be placed into higher-level courses at their college.", "<br>","
       else if(input$var == "Gardens"){
             paste("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. 
         A study of 63 gardens in upstate New York found that gardens in low-income neighborhoods (46%) bring awareness to other issues and 
-lead to them being addressed." "Armstrong states that this is "due to organizing facilitated through the community gardens"." "Another study published in Public Health Nutrition 
+        lead to them being addressed.Armstrong states that this is 'due to organizing facilitated through the community gardens'. Another study published in Public Health Nutrition 
         noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community 
         gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually 
         increasing acceptance and improving taste perceptions of fruits and vegetables” (Dibsdall et. al). With the ability to 
@@ -4531,105 +4532,421 @@ lead to them being addressed." "Armstrong states that this is "due to organizing
       })
     }
     
-    #Sports
+    
+    #Sports - Static
     {
-      output$fallsports <- renderTable({
-        sports <- subset(sports_22, season == 'fall' & schoolname == input$school_sports)
-        sports$gender[sports$gender == 'All'] <- ''
-        sports <- sports%>%
-          unite(sport_name, gender, sport, sep=" ")
-        sports$sport_name <- trimws(sports$sport_name)
-        sports %>% select(sport_name)
-      },colnames = FALSE, align = 'c', spacing = 'l')
+      output$fallsports <- renderText({
+        if(input$school_sports == "Brogden Middle"){
+          paste(h4(strong("Boy’s Cross Country")),
+                h4(strong("Boy’s Soccer")),
+                h4(strong("Football")),
+                h4(strong("Volleyball")),
+                h4(strong("Girl’s Cross Country"))
+          )
+        }
+        else if(input$school_sports == "Lowes Grove Middle"){
+          paste(h4(strong("Boy’s Cross Country")),
+                h4(strong("Girl’s Cross Country")),
+                h4(strong("Boy’s Soccer")),
+                h4(strong("Football")),
+                h4(strong("Volleyball"))
+          )
+        }
+        else if(input$school_sports == "Lakewood Montesorri Middle"){
+          paste(h4(strong("Boy’s Cross Country")),
+                h4(strong("Boy’s Soccer")),
+                h4(strong("Volleyball"))
+          )
+        }
+        else if(input$school_sports == "Riverside High"){
+          paste(h4(strong("Cheerleading")),
+                h4(strong("Cross Country")),
+                h4(strong("Field Hockey")),
+                h4(strong("Football")),
+                h4(strong("JV Football")),
+                h4(strong("Men’s JV Soccer")),
+                h4(strong("Men’s Soccer")),
+                h4(strong("Women’s Golf")),
+                h4(strong("Women’s JV Volleyball")),
+                h4(strong("Women’s Tennis")),
+                h4(strong("Women’s Volleyball"))
+          )
+        }
+        else if(input$school_sports == "Hillside High"){
+          paste(h4(strong("Cheerleading")),
+                h4(strong("Field Hockey")),
+                h4(strong("Football")),
+                h4(strong("JV Football")),
+                h4(strong("Men’s JV Soccer")),
+                h4(strong("Men’s Soccer")),
+                h4(strong("Men’s Cross Country")),
+                h4(strong("Women’s Golf")),
+                h4(strong("Women’s Volleyball")),
+                h4(strong("Women’s JV Volleyball")),
+                h4(strong("Women’s Tennis")),
+                h4(strong("Women’s Track"))
+          )
+        }
+        else if(input$school_sports == "Jordan High"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Field Hockey")),
+                h4(strong("Football")),
+                h4(strong("JV Football")),
+                h4(strong("Men’s JV Soccer")),
+                h4(strong("Men’s Soccer")),
+                h4(strong("Women’s Golf")),
+                h4(strong("Women’s JV Volleyball")),
+                h4(strong("Women’s Volleyball")),
+                h4(strong("Women’s Tennis"))
+          )
+        }
+      })
+      output$wintersports <- renderText({
+        if(input$school_sports == "Brogden Middle"){
+          paste(h4(strong("Boy’s Basketball")),
+                h4(strong("Girl’s Basketball")),
+                h4(strong("Wrestling"))
+          )
+        }
+        else if(input$school_sports == "Lowes Grove Middle"){
+          paste(h4(strong("Boy’s Basketball")),
+                h4(strong("Girl’s Basketball"))
+          )
+        }
+        else if(input$school_sports == "Lakewood Montesorri Middle"){
+          paste(h4(strong("Boy’s Basketball")),
+                h4(strong("Girl’s Basketball"))
+          )
+        }
+        else if(input$school_sports == "Riverside High"){
+          paste(h4(strong("Gymnastics")),
+                h4(strong("Indoor Track")),
+                h4(strong("Men’s Basketball")),
+                h4(strong("Men’s JV Basketball")),
+                h4(strong("Swimming")),
+                h4(strong("Women’s Basketball")),
+                h4(strong("Women’s JV Basketball")),
+                h4(strong("Wrestling"))
+          )
+        }
+        else if(input$school_sports == "Hillside High"){
+          paste(h4(strong("Men’s Basketball")),
+                h4(strong("Men’s JV Basketball")),
+                h4(strong("Swimming")),
+                h4(strong("Women’s Basketballl")),
+                h4(strong("Women’s JV Basketball")),
+                h4(strong("Wrestling")),
+                h4(strong("Indoor Track"))
+          )
+        }
+        else if(input$school_sports == "Jordan High"){
+          paste(h4(strong("Gymnastics")),
+                h4(strong("Indoor Track")),
+                h4(strong("Men’s Basketball")),
+                h4(strong("Men’s JV Basketball")),
+                h4(strong("Swimming")),
+                h4(strong("Women’s Basketball")),
+                h4(strong("Women’s JV Basketball")),
+                h4(strong("Wrestling"))
+          )
+        }
+      })
+      output$springsports <- renderText({
+        if(input$school_sports == "Brogden Middle"){
+          paste(h4(strong("Baseball")),
+                h4(strong("Girl’s Soccer")),
+                h4(strong("Girl’s Track")),
+                h4(strong("Boy’s Track")),
+                h4(strong("Softball"))
+          )
+        }
+        else if(input$school_sports == "Lowes Grove Middle"){
+          paste(h4(strong("Baseball")),
+                h4(strong("Boy’s Track")),
+                h4(strong("Girl’s Soccer")),
+                h4(strong("Girl’s Track")),
+                h4(strong("Softball"))
+          )
+        }
+        else if(input$school_sports == "Lakewood Montesorri Middle"){
+          paste(h4(strong("Boy’s Track")),
+                h4(strong("Girl’s Track")),
+                h4(strong("Baseball")),
+                h4(strong("Girl’s Soccer")),
+                h4(strong("Softball"))
+          )
+        }
+        else if(input$school_sports == "Riverside High"){
+          paste(h4(strong("Baseball")),
+                h4(strong("JV Baseball")),
+                h4(strong("JV Softball")),
+                h4(strong("Men’s Golf")),
+                h4(strong("Men’s JV Lacrosse")),
+                h4(strong("Men’s Lacrosse")),
+                h4(strong("Men’s Tennis")),
+                h4(strong("Softball")),
+                h4(strong("Track and Field")),
+                h4(strong("JV Women’s Soccer")),
+                h4(strong("Women’s Lacrosse")),
+                h4(strong("Women’s Soccer"))
+          )
+        }
+        else if(input$school_sports == "Hillside High"){
+          paste(h4(strong("Baseball")),
+                h4(strong("JV Baseball")),
+                h4(strong("JV Softball")),
+                h4(strong("Men’s Golf")),
+                h4(strong("Men’s JV Lacrosse")),
+                h4(strong("Men’s Lacrosse")),
+                h4(strong("Men’s Tennis")),
+                h4(strong("Softball")),
+                h4(strong("Track and Field")),
+                h4(strong("Women’s JV Lacrosse")),
+                h4(strong("Women’s Lacrosse")),
+                h4(strong("Women’s JV Soccer")),
+                h4(strong("Women’s Soccer"))
+          )
+        }
+        else if(input$school_sports == "Jordan High"){
+          paste(h4(strong("Baseball")),
+                h4(strong("JV Baseball")),
+                h4(strong("JV Softball")),
+                h4(strong("Men’s Golf")),
+                h4(strong("Men’s JV Lacrosse")),
+                h4(strong("Men’s Lacrosse")),
+                h4(strong("Men’s Tennis")),
+                h4(strong("Softball")),
+                h4(strong("Track and Field")),
+                h4(strong("Women’s JV Lacrosse")),
+                h4(strong("Women’s JV Soccer")),
+                h4(strong("Women’s Lacrosse")),
+                h4(strong("Women’s Soccer"))
+          )
+        }
+      })
+
+      output$male_sports_list <- renderText({
+        if(input$school_sports == "Brogden Middle"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Soccer")),
+                h4(strong("Football")),
+                h4(strong("Basketball")),
+                h4(strong("Wrestling")),
+                h4(strong("Baseball")),
+                h4(strong("Track"))
+          )
+        }
+        else if(input$school_sports == "Lowes Grove Middle"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Soccer")),
+                h4(strong("Football")),
+                h4(strong("Basketball")),
+                h4(strong("Baseball")),
+                h4(strong("Track"))
+          )
+        }
+        
+        else if(input$school_sports == "Lakewood Montesorri Middle"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Soccer")),
+                h4(strong("Basketball")),
+                h4(strong("Baseball")),
+                h4(strong("Track"))
+          )
+        }
+        
+        else if(input$school_sports == "Hillside High"){
+          paste(h4(strong("Cheerleading")),
+                h4(strong("Football")),
+                h4(strong("Swimming")),
+                h4(strong("Wrestling")),
+                h4(strong("Indoor Track")),
+                h4(strong("Baseball")),
+                h4(strong("Track and Field"))
+          )
+        }
+        
+        else if(input$school_sports == "Jordan High"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Football")),
+                h4(strong("Swimming")),
+                h4(strong("Wrestling")),
+                h4(strong("Indoor Track")),
+                h4(strong("Baseball")),
+                h4(strong("Track and Field")),
+                h4(strong("Cheerleading")),
+                h4(strong("Gymnastics"))
+          )
+        }
+        
+        else if(input$school_sports == "Riverside High"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Football")),
+                h4(strong("Swimming")),
+                h4(strong("Wrestling")),
+                h4(strong("Indoor Track")),
+                h4(strong("Baseball")),
+                h4(strong("Track and Field")),
+                h4(strong("Cheerleading")),
+                h4(strong("Gymnastics")),
+                h4(strong("Baseball"))
+          )
+        }
+
+      })
       
-      output$wintersports <- renderTable({
-        sports <- subset(sports_22, season == 'winter' & schoolname == input$school_sports)
-        sports$gender[sports$gender == 'All'] <- ''
-        sports <- sports%>%
-          unite(sport_name, gender, sport, sep=" ")
-        sports$sport_name <- trimws(sports$sport_name)
-        sports %>% select(sport_name)
-      }, colnames = FALSE, align = 'c', spacing = 'l')
-      
-      output$springsports <- renderTable({
-        sports <- subset(sports_22, season == 'spring' & schoolname == input$school_sports)
-        sports$gender[sports$gender == 'All'] <- ''
-        sports <- sports%>%
-          unite(sport_name, gender, sport, sep=" ")
-        sports$sport_name <- trimws(sports$sport_name)
-        sports %>% select(sport_name)
-      }, colnames = FALSE, align = 'c', spacing = 'l')
-      
-      output$male_sports_list <- renderTable ({
-        sports <- sports_22
-        sports <- subset(sports, (gender == 'All' | gender == "Men's" | gender == "Boy's") & schoolname == input$school_sports)
-        sports <- subset(sports, !duplicated(sport))
-        sports %>% select(sport)
-      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
-      
-      output$female_sports_list <- renderTable ({
-        sports <- sports_22
-        sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
-        sports <- subset(sports, !duplicated(sport))
-        sports %>% select(sport)
-      }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
-      
-      # output$sports_icon_legend <- renderTable({
-      #   sports <- sports_22
-      #   sports$icon = ""
-      #   sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
-      #   sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-      #   sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
-      #   sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Volleyball"] <- '<i class="fas fa-volleyball-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Basketball"] <- '<i class="fas fa-basketball-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "Cheerleading"] <- '<i class="fas fa-bullhorn fa-2x"></i>'
-      #   sports$icon[sports$sport == "Field Hockey"] <- '<i class="fas fa-hockey-puck fa-2x"></i>'
-      #   sports$icon[sports$sport == "Golf"] <- '<i class="fas fa-golf-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "Gymnastics"] <- '<i class="fas fa-medal fa-2x"></i>'
-      #   sports$icon[sports$sport == "Wrestling"] <- '<i class="fas fa-dumbbell fa-2x"></i>'
-      #   sports$icon[sports$sport == "Indoor Track"] <-'<i class="fas fa-running fa-2x"></i>'
-      #   sports$icon[sports$sport == "Track"] <-'<i class="fas fa-running fa-2x"></i>'
-      #   sports$icon[sports$sport == "Track and Field"] <-'<i class="fas fa-running fa-2x"></i>'
-      #   sports$icon[sports$sport == "Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Lacrosse"] <- '<i class="fas fa-screwdriver fa-2x"></i>'
-      #   sports$icon[sports$sport == "Swimming"] <- '<i class="fas fa-swimmer fa-2x"></i>'
-      #   sports$icon[sports$sport == "Softball"] <- '<i class="fas fa-baseball-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "JV Softball"] <-'<i class="fas fa-baseball-ball fa-2x"></i>'
-      #   sports$icon[sports$sport == "Tennis"] <- '<i class="fas fa-table-tennis fa-2x"></i>'
-      #   sports <- subset(sports, !duplicated(icon))
-      #   sports %>% select(sport, icon)
-      # }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+      output$female_sports_list <- renderText({
+        if(input$school_sports == "Brogden Middle"){
+          paste(h4(strong("Volleyball")),
+                h4(strong("Cross Country")),
+                h4(strong("Basketball")),
+                h4(strong("Soccer")),
+                h4(strong("Track")),
+                h4(strong("Softball"))
+          )
+        }
+        
+        else if(input$school_sports == "Lowes Grove Middle"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Volleyball")),
+                h4(strong("Softball")),
+                h4(strong("Basketball")),
+                h4(strong("Soccer")),
+                h4(strong("Track"))
+          )
+        }
+        
+        else if(input$school_sports == "Lakewood Montesorri Middle"){
+          paste(h4(strong("Volleyball")),
+                h4(strong("Soccer")),
+                h4(strong("Basketball")),
+                h4(strong("Softball")),
+                h4(strong("Track"))
+          )
+        }
+        
+        else if(input$school_sports == "Hillside High"){
+          paste(h4(strong("Cheerleading")),
+                h4(strong("Field Hockey")),
+                h4(strong("Swimming")),
+                h4(strong("Indoor Track")),
+                h4(strong("Softball")),
+                h4(strong("Track and Field"))
+          )
+        }
+        
+        else if(input$school_sports == "Jordan High"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Field Hockey")),
+                h4(strong("Baseball")),
+                h4(strong("Softball")),
+                h4(strong("Swimming")),
+                h4(strong("Wrestling")),
+                h4(strong("Indoor Track")),
+                h4(strong("Baseball")),
+                h4(strong("Track and Field")),
+                h4(strong("Cheerleading")),
+                h4(strong("Gymnastics"))
+          )
+        }
+        
+        else if(input$school_sports == "Riverside High"){
+          paste(h4(strong("Cross Country")),
+                h4(strong("Field Hockey")),
+                h4(strong("Softball")),
+                h4(strong("Swimming")),
+                h4(strong("Indoor Track")),
+                h4(strong("Track and Field")),
+                h4(strong("Cheerleading")),
+                h4(strong("Gymnastics"))
+          )
+        }
+        
+      })
       
       output$sports_context <- renderText({
-          paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
-           responsibility, discipline, and leadership. Participation in school sports provides students with the 
+        paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
+           responsibility, discipline, and leadership. Participation in school sports provides students with the
            daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
-                "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
-                 cal activity are associated with more favorable status for multiple health indicators, including 
+              "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
+                 cal activity are associated with more favorable status for multiple health indicators, including
                 cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
                 in their",
-                a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
-                "Visit ",
-                a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
-                "for more information.")
-        })
+              a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+              "Visit ",
+              a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+              "for more information.")
+      })
+
     }
+    
+    #Sports - dynamic
+    # {
+    #   output$fallsports <- renderTable({
+    #     sports <- subset(sports_22, season == 'fall' & schoolname == input$school_sports)
+    #     sports$gender[sports$gender == 'All'] <- ''
+    #     sports <- sports%>%
+    #       unite(sport_name, gender, sport, sep=" ")
+    #     sports$sport_name <- trimws(sports$sport_name)
+    #     sports %>% select(sport_name)
+    #   },colnames = FALSE, align = 'c', spacing = 'l')
+    # 
+    #   output$wintersports <- renderTable({
+    #     sports <- subset(sports_22, season == 'winter' & schoolname == input$school_sports)
+    #     sports$gender[sports$gender == 'All'] <- ''
+    #     sports <- sports%>%
+    #       unite(sport_name, gender, sport, sep=" ")
+    #     sports$sport_name <- trimws(sports$sport_name)
+    #     sports %>% select(sport_name)
+    #   }, colnames = FALSE, align = 'c', spacing = 'l')
+    # 
+    #   output$springsports <- renderTable({
+    #     sports <- subset(sports_22, season == 'spring' & schoolname == input$school_sports)
+    #     sports$gender[sports$gender == 'All'] <- ''
+    #     sports <- sports%>%
+    #       unite(sport_name, gender, sport, sep=" ")
+    #     sports$sport_name <- trimws(sports$sport_name)
+    #     sports %>% select(sport_name)
+    #   }, colnames = FALSE, align = 'c', spacing = 'l')
+    # 
+    #   output$male_sports_list <- renderTable ({
+    #     sports <- sports_22
+    #     sports <- subset(sports, (gender == 'All' | gender == "Men's" | gender == "Boy's") & schoolname == input$school_sports)
+    #     sports <- subset(sports, !duplicated(sport))
+    #     sports %>% select(sport)
+    #   }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+    # 
+    #   output$female_sports_list <- renderTable ({
+    #     sports <- sports_22
+    #     sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
+    #     sports <- subset(sports, !duplicated(sport))
+    #     sports %>% select(sport)
+    #   }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
+    # 
+    #   output$sports_context <- renderText({
+    #       paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
+    #        responsibility, discipline, and leadership. Participation in school sports provides students with the
+    #        daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+    #             "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
+    #              cal activity are associated with more favorable status for multiple health indicators, including
+    #             cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
+    #             in their",
+    #             a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+    #             "Visit ",
+    #             a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+    #             "for more information.")
+    #     })
+    # }
 
     #Arts Programs
     {
       output$available_arts <- renderTable ({
         schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
         schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-        schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+        schoolstats$Visual_Arts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
         schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
         schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-        schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArts, Theatre, Dance)
+        schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, Visual_Arts, Theatre, Dance)
       }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
       
     }
