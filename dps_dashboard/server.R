@@ -149,7 +149,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-translator <- Translator$new(translation_json_path = "data/schoolTranslations.json")
+translator <- Translator$new(translation_json_path = "data/TeamTranslations.json")
 
 function(input, output, session) {
   
