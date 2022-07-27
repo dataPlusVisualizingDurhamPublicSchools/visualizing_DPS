@@ -567,7 +567,7 @@ body <- {dashboardBody(
                                     htmlOutput("sports_context"))
                               )
                    )
-                 )
+                 ))
         )},
         
         #Sports Tab - dynamic
