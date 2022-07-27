@@ -24,7 +24,7 @@ library(shiny.i18n)
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/TeamTranslations.json")
+i18n <- Translator$new(translation_json_path = "data/Sports Translation.json")
 i18n$set_translation_language("English")
 
 
@@ -568,7 +568,7 @@ body <- {dashboardBody(
                               )
                    )
                  )
-        )},
+        ))},
         
         #Sports Tab - dynamic
         # {tabItem(tabName = "sportstab",
@@ -751,7 +751,7 @@ body <- {dashboardBody(
                      box(width = 12,
                          background = "light-blue",
                          class = "text-center",
-                         h3(strong("Meet Our Team - Data+ 2022")),
+                         h3(strong(i18n$t("Meet Our Team - Data+ 2022"))),
                          br(),
                          fluidRow(
                              column(width = 3,
@@ -783,7 +783,7 @@ body <- {dashboardBody(
                      box(width = 12,
                          background = "navy",
                          class = "text-center",
-                         h3(strong("Meet Our Team - Data+ 2021")),
+                         h3(strong(i18n$t("Meet Our Team - Data+ 2021"))),
                          br(),
                          fluidRow(
                              column(width = 3,
