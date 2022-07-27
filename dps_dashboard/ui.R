@@ -23,7 +23,7 @@ library(shiny.i18n)
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/APTranslations.json")
+i18n <- Translator$new(translation_json_path = "data/testTranslation.json")
 i18n$set_translation_language("English")
 
 
@@ -535,7 +535,7 @@ body <- {dashboardBody(
                    tabBox(
                      id = "tabset3", width = "auto", 
                      tabPanel(i18n$t("School Sports"), class = "text-center",
-                              selectInput("school_sports", em(i18n$t("Choose a school to view the Sports available.")), 
+                              selectInput("school_sports", em(i18n$t("Choose a school to view the sports available.")), 
                                           choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
                                                          "Hillside High",
                                                          "Jordan High",
@@ -625,7 +625,7 @@ body <- {dashboardBody(
         {tabItem(tabName = "artstab",
                  fluidRow(
                    box(width = 12,
-                       title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                       title = strong(i18n$t("Available Arts Programs In Each School")), background = "navy", solidHeader = TRUE,
                        column(12, align="center", tableOutput("available_arts")))
                  ),
                  fluidRow(
@@ -719,11 +719,8 @@ body <- {dashboardBody(
                  fluidRow(class= 'text-center',
                           box(width = 12,
                               solidHeader = TRUE,
-                              title = strong("Resources in Selected Schoolzone"),
-                              p(h4(align="left","These plots reveal the total number of each resource by number in each school district. The comparison
-            is not straightforward, as different school districts have different populations and thus different corresponding
-            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
-            resources available in each school district at a glance."), br()),
+                              title = strong("Resources in Selected School Zone"),
+                              p(h4(align="left",i18n$t("These plots reveal the total number of each resource in each school district. Different school districts have different populations; therefore, there are different corresponding numbers of resources. These plots are useful for getting a sense of the of different types of resources available in each district at a glance.")), br()),
                               fluidRow(
                                 box(width = 2,
                                     solidHeader = TRUE,
