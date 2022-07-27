@@ -150,7 +150,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-translator <- Translator$new(translation_json_path = "data/testTranslation.json")
+translator <- Translator$new(translation_json_path = "data/APTranslations.json")
 
 function(input, output, session) {
   
@@ -2477,13 +2477,6 @@ function(input, output, session) {
       counts_grouped <- subset(counts_grouped, name == input$insights_zone)
       ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
         ylab("Number of Resource") + xlab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
-    })
-    
-    output$data_insights_context <- renderText({
-      paste("These plots reveal the total number of each resource by number in each school district. The comparison
-            is not straightforward, as different school districts have different populations and thus different corresponding
-            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
-            resources available in each school district at a glance.")
     })
     
     observeEvent(i18n(),
