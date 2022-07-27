@@ -1099,6 +1099,9 @@
     
     {"English": "Boy's Cross Country",
    "Spanish": "A Campo Traviesa Para Chicos"},
+   
+       {"English": "Girl's Cross Country",
+   "Spanish": "A Campo Traviesa Para Chicas"},
     
     {"English": "Boy’s Soccer",
    "Spanish": "El Fútbol para Niños"},
@@ -1344,7 +1347,91 @@
      "Spanish": "Nuestro Equipo - Data+ 2022"},
      
      {"English": "Meet Our Team - Data+ 2021",
-     "Spanish": "Nuestro Equipo - Data+ 2021"}
+     "Spanish": "Nuestro Equipo - Data+ 2021"},
+     
+     {"English": "Hover over the icon to see the name. Click on the icon to reveal its link.",
+"Spanish": "Pase el cursor sobre el ícono para ver el nombre. Haz clic en el ícono para ver su enlace"},
+
+{"English": "Click the",
+"Spanish": "¡Ponle clic en el"},
+
+{"English": "icon to search any address!",
+"Spanish": "ícono para buscar cualquier dirección!"},
+
+{"English": "Selected Variable Resources",
+"Spanish": "Los Recursos Disponibles"},
+
+{"English": "Select a variable to see a list of all the resources with the selected school zone.",
+"Spanish": "Seleccione un variable para ver la lista de todos los recursos en la zona escolar."},
+
+{"English": "Elementary School",
+"Spanish": "Escuela Primaria"},
+
+{"English": "Middle School",
+"Spanish": "Escuela Secundaria"},
+
+{"English": "High School",
+"Spanish": "Escuela Preparatoria"},
+
+{"English": "Elementary School Charts",
+"Spanish": "Gráficas de Escuelas Primarias"},
+
+{"English": "Middle School Charts",
+"Spanish": "Gráficas de Escuelas Secundarias"},
+
+{"English": "High School Charts",
+"Spanish": "Gráficas de Escuelas Preparatorias"},
+
+{"English": "Select a Measurement",
+"Spanish": "Seleccione un Variable"},
+
+{"English": "Click the drop down menu to select which measurement you would like to view.",
+"Spanish": "Ponle clic en el menú desplegable para seleccionar el variable preferido."},
+
+{"English": "Click the drop down menu to select which year of data collection you would like to view.",
+"Spanish": "Ponle clic en el menú desplegable para seleccionar el año de colección de datos preferido."},
+
+{"English": "Context & Resources",
+"Spanish": "El Contexto Y Recursos"},
+
+{"English": "Choose a school to view the AP Courses available.",
+"Spanish": "Escoge una escuela para ver los Cursos Avanzados (AP) ofrecidos."},
+
+{"English": "Choose a school to view the sports available.",
+"Spanish": "Escoge una escuela para ver los deportes ofrecidos."},
+
+{"English": "Resources in Selected School Zone",
+"Spanish": "Recursos en la Zona Escolar Seleccionada"},
+
+{"English": "School Zone",
+"Spanish": "Zona Escolar"},
+
+{"English": "Home",
+"Spanish": "Página de Inicio"},
+
+{"English": "Maps",
+"Spanish": "Mapas"},
+
+{"English": "School Statistics",
+"Spanish": "Estadísticas sobre las Escuelas"},
+
+{"English": "AP & CTE Courses",
+"Spanish": "Cursos Avanzados (AP) y de Carreras Técnicas (CTE)"},
+
+{"English": "School Sports",
+"Spanish": "Deportes en las Escuelas"},
+
+{"English": "Arts Programs",
+"Spanish": "Programas de Arte"},
+
+{"English": "Data Insights",
+"Spanish": "Más Datos"},
+
+{"English": "Meet the Team",
+"Spanish": "Nuestro Equipo"},
+
+{"English": "Visualizing DPS",
+"Spanish": "Visualizando las Escuelas Públicas de Durham"}
      
 ]
 }
