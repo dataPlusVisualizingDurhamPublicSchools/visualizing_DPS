@@ -24,7 +24,7 @@ library(shiny.i18n)
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/Sports Translation.json")
+i18n <- Translator$new(translation_json_path = "data/APTranslations.json")
 i18n$set_translation_language("English")
 
 
@@ -544,26 +544,26 @@ body <- {dashboardBody(
                               ),
                               fluidRow(
                                 box(width = 4,
-                                    title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
+                                    title = strong(i18n$t("Fall Sports")), background = "olive", solidHeader = TRUE,
                                     htmlOutput("fallsports", align="center")),
                                 box(width = 4,
-                                    title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
+                                    title = strong(i18n$t("Winter Sports")), background = "aqua", solidHeader = TRUE,
                                     htmlOutput("wintersports", align="center")),
                                 box(width = 4,
-                                    title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
+                                    title = strong(i18n$t("Spring Sports")), background = "light-blue", solidHeader = TRUE,
                                     htmlOutput("springsports", align="center"))),
                               fluidRow(
                                 box(width = 6,
-                                    title = strong("Available Boy's/Men's Sports"), background = "navy", solidHeader = TRUE,
+                                    title = strong(i18n$t("Available Boy's/Men's Sports")), background = "navy", solidHeader = TRUE,
                                     htmlOutput("male_sports_list", align="center")),
                                 box(width = 6,
-                                    title = strong("Available Girl's/Women's Sports"), background = "navy", solidHeader = TRUE,
+                                    title = strong(i18n$t("Available Girl's/Women's Sports")), background = "navy", solidHeader = TRUE,
                                     htmlOutput("female_sports_list", align="center")),
                               ),
                               fluidRow(
                                 box(width = 12,
                                     solidHeader = TRUE,
-                                    title = strong("Context"),
+                                    title = strong(i18n$t("Context")),
                                     htmlOutput("sports_context"))
                               )
                    )

@@ -150,7 +150,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-translator <- Translator$new(translation_json_path = "data/Sports Translation.json")
+translator <- Translator$new(translation_json_path = "data/APTranslations.json")
 
 function(input, output, session) {
   
@@ -3293,7 +3293,7 @@ function(input, output, session) {
                 h4(i18n()$t("- AP Statistics")))
         }
         else if(input$ap_school == "Jordan High"){
-          paste(h4(i18n()$t("- AP Calculus AB ")),
+          paste(h4(i18n()$t("- AP Calculus AB")),
                 h4(i18n()$t("- AP Calculus BC")),
                 h4(i18n()$t("- AP Statistics")))
         }
@@ -3625,14 +3625,14 @@ function(input, output, session) {
           )
         }
         else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Gymnastics")),
-                h4(strong("Indoor Track")),
-                h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketball")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling"))
+          paste(h4(strong(i18n()$t("Gymnastics"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Men’s Basketball"))),
+                h4(strong(i18n()$t("Men’s JV Basketball"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Women’s Basketball"))),
+                h4(strong(i18n()$t("Women’s JV Basketball"))),
+                h4(strong(i18n()$t("Wrestling")))
           )
         }
       })
@@ -3677,7 +3677,7 @@ function(input, output, session) {
           )
         }
         else if(input$school_sports == "Hillside High"){
-          paste(h4(strong(i18n()$t("Baseball")))),
+          paste(h4(strong(i18n()$t("Baseball"))),
                 h4(strong(i18n()$t("JV Baseball"))),
                 h4(strong(i18n()$t("JV Softball"))),
                 h4(strong(i18n()$t("Men’s Golf"))),
@@ -3700,7 +3700,7 @@ function(input, output, session) {
                 h4(strong(i18n()$t("Men’s JV Lacrosse"))),
                 h4(strong(i18n()$t("Men’s Lacrosse"))),
                 h4(strong(i18n()$t("Men’s Tennis"))),
-                h4(strongi18n()$t(("Softball"))),
+                h4(strong(i18n()$t("Softball"))),
                 h4(strong(i18n()$t("Track and Field"))),
                 h4(strong(i18n()$t("Women’s JV Lacrosse"))),
                 h4(strong(i18n()$t("Women’s JV Soccer"))),
@@ -3774,7 +3774,7 @@ function(input, output, session) {
                 h4(strong(i18n()$t("Track and Field"))),
                 h4(strong(i18n()$t("Cheerleading"))),
                 h4(strong(i18n()$t("Gymnastics"))),
-                h4(strongi18n()$t(("Baseball")))
+                h4(strong(i18n()$t("Baseball")))
           )
         }
 
@@ -3850,17 +3850,17 @@ function(input, output, session) {
       })
       
       output$sports_context <- renderText({
-        paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
+        paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
            responsibility, discipline, and leadership. Participation in school sports provides students with the
-           daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+           daily exercise requirements suggested in the "),a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
               "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
                  cal activity are associated with more favorable status for multiple health indicators, including
                 cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
                 in their",
-              a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
-              "Visit ",
-              a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
-              "for more information.")
+              a(i18n()$t("2018 Physical Activity Guidelines for Americans Report"), href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+              i18n()$t("Visit "),
+              a(i18n()$t("DPS’s Athletics webpage"), href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+              i18n()$t("for more information."))
       })
 
     })

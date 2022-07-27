@@ -1,3 +1,8 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+
 {"English": "- AP English Language",
      "Spanish": "- AP Inglés (Lenguaje)"},
      
@@ -12,6 +17,9 @@
      
      {"English": "- AP Statistics",
      "Spanish": "- AP Estadísticas"},
+     
+    {"English": "- AP Calculus",
+     "Spanish": "- AP Cálculo"},
      
      {"English": "- AP Calculus AB",
      "Spanish": "- AP Cálculo AB"},
@@ -147,3 +155,7 @@
 
 {"English": "- AP Computer Science A",
      "Spanish": "- AP Ciencias de la computación"}
+     
+     
+]
+}
