@@ -5,72 +5,79 @@
     
    
    {"English": "Baseball",
-   "Spanish": "Béisbol"},
+   "Spanish": "El Béisbol"},
     
     {"English": "JV Baseball",
-   "Spanish": "Béisbol (Equipo Juvenil Júnior)"},
+   "Spanish": "El Béisbol (Equipo Juvenil Júnior)"},
     
     {"English": "Cross Country",
-   "Spanish": ""},
+   "Spanish": "A Campo Traviesa"},
     
     {"English": "Soccer",
-   "Spanish": ""},
+   "Spanish": "El Fútbol"},
     
     {"English": "JV Soccer",
-   "Spanish": ""},
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior)"},
     
     {"English": "Football",
-   "Spanish": ""},
+   "Spanish": "El Fútbol Americano"},
     
     {"English": "JV Football",
-   "Spanish": ""},
+   "Spanish": "El Fútbol Americano (Equipo Juvenil Júnior)"},
     
     {"English": "Volleyball",
-   "Spanish": ""},
+   "Spanish": "El Voleibol"},
     
     {"English": "JV Volleyball",
-   "Spanish": ""},
+   "Spanish": "El Voleibol (Equipo Juvenil Júnior)"},
     
     {"English": "Basketball",
-   "Spanish": ""},
+   "Spanish": "El Baloncesto"},
     
     {"English": "JV Basketball",
-   "Spanish": ""},
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior)"},
     
     {"English": "Cheerleading",
-   "Spanish": ""},
+   "Spanish": "La Animación Deportiva/Ser Porrista"},
     
     {"English": "Field Hockey",
-   "Spanish": ""},
+   "Spanish": "El Hockey Sobre Césped"},
     
     {"English": "Golf",
-   "Spanish": ""},
+   "Spanish": "El Golf"},
     
     {"English": "Gymnastics",
-   "Spanish": ""},
+   "Spanish": "La Gimnasia"},
     
     {"English": "Wrestling",
-   "Spanish": ""},
+   "Spanish": "La Lucha Libre"},
     
     {"English": "Indoor Track",
-   "Spanish": ""},
+   "Spanish": "El Atletismo Adentro"},
     
-    {"English": "",
-   "Spanish": ""},
+    {"English": "Track",
+   "Spanish": "El Atletismo"},
     
-    {"English": "",
-   "Spanish": ""},
+    {"English": "Track and Field",
+   "Spanish": "El Atletismo"},
     
-    {"English": "",
-   "Spanish": ""},
+    {"English": "Lacrosse",
+   "Spanish": "El Lacrosse"},
     
-    {"English": "",
-   "Spanish": ""},
+    {"English": "JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior)"},
     
-    {"English": "",
-   "Spanish": ""},
+    {"English": "Swimming",
+   "Spanish": "La Natación"},
     
-  
+    {"English": "Softball",
+   "Spanish": "El Sóftbol"},
+    
+    {"English": "JV Softball",
+   "Spanish": "El Sóftbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Tennis",
+   "Spanish": "El Tenis"},
     
 ]
 }
