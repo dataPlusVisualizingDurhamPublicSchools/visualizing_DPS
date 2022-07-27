@@ -154,7 +154,7 @@
      "Spanish": "- AP Principios de Ciencias de la computación"},
 
 {"English": "- AP Computer Science A",
-     "Spanish": "- AP Ciencias de la computación"}
+     "Spanish": "- AP Ciencias de la computación"},
 
 {"English": "Financial Planning",
      "Spanish": "Organización de Finanzas"},
@@ -238,31 +238,52 @@
      "Spanish": "Ingeniería en PLTW"},
 
 {"English": "Technology Engineering and Design",
-     "Spanish": "Ingeniería de Tecnología y Diseño"}
+     "Spanish": "Ingeniería de Tecnología y Diseño"},
 
 {"English": "Advanced Placement Courses",
-     "Spanish": "Cursos Avanzados (AP)"}
+     "Spanish": "Cursos Avanzados (AP)"},
 
 {"English": "CTE Courses",
-     "Spanish": "Educación para carreras técnicas (CTE)"}
+     "Spanish": "Educación para carreras técnicas (CTE)"},
 
 {"English": "Agricultural Education",
-     "Spanish": "Educación Agricultural"}
+     "Spanish": "Educación Agricultural"},
 
 {"English": "Business, Marketing, and Finance",
-     "Spanish": "Negocios, Mercadotecnia, y Finanzas"}
+     "Spanish": "Negocios, Mercadotecnia, y Finanzas"},
 
 {"English": "Computer Science and Information Technology Education",
-     "Spanish": "Ciencias de la Computación y Tecnología Informativa"}
+     "Spanish": "Ciencias de la Computación y Tecnología Informativa"},
 
 {"English": "Family and Consumer Sciences Education",
-     "Spanish": "Ciencias Familiares y de Consumidores"}
+     "Spanish": "Ciencias Familiares y de Consumidores"},
 
 {"English": "Health Science Education",
-     "Spanish": "Ciencia de la Salud"}
+     "Spanish": "Ciencia de la Salud"},
 
 {"English": "Trade, Technology, Engineering and Industrial Education",
-     "Spanish": "Comercio, Tecnología, Ingeniería, y Eduación Industrial"}
+     "Spanish": "Comercio, Tecnología, Ingeniería, y Eduación Industrial"},
+     
+     {"English": "English AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Math AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Science AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Social Sciences AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "World Languages AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Music and Arts AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Engineneering AP Courses",
+     "Spanish": "Ciencia de la Salud"}
      
 ]
 }

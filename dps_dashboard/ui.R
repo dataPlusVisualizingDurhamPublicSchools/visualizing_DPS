@@ -20,7 +20,6 @@ library(readxl)
 library(gotop)
 library(shiny.i18n)
 
-
 library(DT)
 
 
@@ -684,26 +683,25 @@ body <- {dashboardBody(
                             i18n$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work"),
                             a(i18n$t("Discover Durham"), href="https://www.discoverdurham.com/things-to-do/arts/"),
                             i18n$t("provides an extensive list of events for visitors and residents to do surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc."),
-                            br(),
-                            br(),
-                            strong("Duke University"),
-                            br(),
-                            a("- Duke Mural", href="https://arts.duke.edu/mural-durham/"),
-                            ": Duke University has partnered with the city of Durham and local 
-                                     artists to create new murals to beautify the city.",
-                            br(),
-                            a("- Durham Medical Orchestra", href="https://arts.duke.edu/durham-medical-orchestra/"),
-                            ": Connects health professionals with local musicians to put on 
-                                     musical performances for Durham residents.",
-                            br(),
-                            br(),
-                            strong("North Carolina Central University"),
-                            br(),
-                            "- NCCU provides volunteer opportunities for their students
-                                     in the KidzNotes program via Fayetteville Street Elementary’s 
-                                     AT&T Beleive Program.",
-                            br(),
-                            "- NCCU students host musical ensembles for the Durham community."))
+                            br(),br(),
+                            a(i18n$t("The Nasher Museum of Art at Duke University"),
+                              href="https://nasher.duke.edu/"),
+                            i18n$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream arts institutions, and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art and ancient American art."),
+                            i18n$t("North Carolina Central University students host various musical ensembles, such as the"),
+                            a(i18n$t("NCCU Jazz Vocal Ensemble"),
+                              href="https://www.nccu.edu/cash/music/ensembles/vocal-jazz"),
+                            i18n$t("and the"),
+                            a(i18n$t("NCCU Sound Machine Marching Band"),
+                              href="https://www.nccusoundmachine.com/"),
+                            i18n$t(", that perform throughout the city of Durham, North Carolina and the United States."),
+                            a(i18n$t("WNCU 90.7 FM is Central’s Jazz radio station"),
+                              href="https://www.wncu.org/"),
+                            i18n$t("which provides “diverse music entertainment and serve as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"),
+                            a(i18n$t("KidzNotes program"),
+                              href="https://kidznotes.org/"),
+                            i18n$t("via Fayetteville Street Elementary’s AT&T Believe Program.")
+                            
+                            ))
                    )
                  ) 
         )},
@@ -718,30 +716,37 @@ body <- {dashboardBody(
                  #       h4("Different school districts are differently colored according to the variable selected."),
                  #       leafletOutput("choropleth")),
                  # ), 
-                 fluidRow(
-                   box(width = 2,
-                       solidHeader = TRUE,
-                       title = strong("School Zone"),
-                       selectInput("insights_zone",
-                                   label = em(i18n$t("Choose a school zone to display")),
-                                   choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
-                                               "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                               "Forest View Elementary", "Hillandale Elementary","Hillside High",
-                                               "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                               "Parkwood Elementary", "Riverside High", "Southwest Elementary"
-                                   ),
-                                   multiple = FALSE)),
-                   box(width = 10,
-                       plotlyOutput("insights_individualplots",
-                                    width="auto",
-                                    height = "auto"))
-                 ),
                  fluidRow(class= 'text-center',
-                   box(width = 12,
-                       solidHeader = TRUE,
-                       title = strong("Context"),
-                       htmlOutput("data_insights_context"))
+                          box(width = 12,
+                              solidHeader = TRUE,
+                              title = strong("Resources in Selected Schoolzone"),
+                              p(h4(align="left","These plots reveal the total number of each resource by number in each school district. The comparison
+            is not straightforward, as different school districts have different populations and thus different corresponding
+            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
+            resources available in each school district at a glance."), br()),
+                              fluidRow(
+                                box(width = 2,
+                                    solidHeader = TRUE,
+                                    title = strong("School Zone"),
+                                    selectInput("insights_zone",
+                                                label = em(i18n$t("Choose a school zone to display")),
+                                                choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                                            "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                                            "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                                            "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                                            "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                                ),
+                                                multiple = FALSE)),
+                                box(width = 10,
+                                    solidHeader = TRUE,
+                                    plotlyOutput("insights_individualplots",
+                                                 width="auto",
+                                                 height = "auto"))
+                              ))
                  )
+                 
+
+                 
         )},
         
         #Meet the team tab
