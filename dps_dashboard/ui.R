@@ -530,7 +530,7 @@ body <- {dashboardBody(
                 )
         )},
         
-        #Sports Tab
+        #Sports Tab - static
         {tabItem(tabName = "sportstab",
                  fluidRow(
                    tabBox(
@@ -545,43 +545,84 @@ body <- {dashboardBody(
                               fluidRow(
                                 box(width = 4,
                                     title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("fallsports"))), 
+                                    htmlOutput("fallsports", align="center")),
                                 box(width = 4,
                                     title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("wintersports"))),
+                                    htmlOutput("wintersports", align="center")),
                                 box(width = 4,
                                     title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("springsports")))
-                                ),
+                                    htmlOutput("springsports", align="center"))),
                               fluidRow(
                                 box(width = 6,
-                                    title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("male_sports_list"))),
+                                    title = strong("Available Boy's/Men's Sports"), background = "navy", solidHeader = TRUE,
+                                    htmlOutput("male_sports_list", align="center")),
                                 box(width = 6,
-                                    title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
-                                    column(12, align="center", tableOutput("female_sports_list")))
-                                
-                                # box(width = 4,
-                                #     solidHeader = TRUE,
-                                #     title = strong("Icon Legend"),
-                                #     column(12, align="center", tableOutput("sports_icon_legend")))
-                                
-                                ),
-                              
+                                    title = strong("Available Girl's/Women's Sports"), background = "navy", solidHeader = TRUE,
+                                    htmlOutput("female_sports_list", align="center")),
+                              ),
                               fluidRow(
                                 box(width = 12,
                                     solidHeader = TRUE,
                                     title = strong("Context"),
                                     htmlOutput("sports_context"))
                               )
-                        
-                     )
                    )
                  )
-                
         )},
         
+        #Sports Tab - dynamic
+        # {tabItem(tabName = "sportstab",
+        #          fluidRow(
+        #            tabBox(
+        #              id = "tabset3", width = "auto",
+        #              tabPanel("School Sports", class = "text-center",
+        #                       selectInput("school_sports", em("Choose a school to view the Sports available."),
+        #                                   choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
+        #                                                  "Hillside High",
+        #                                                  "Jordan High",
+        #                                                  "Riverside High")
+        #                       ),
+        #                       fluidRow(
+        #                         box(width = 4,
+        #                             title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
+        #                             column(12, align="center", tableOutput("fallsports"))),
+        #                         box(width = 4,
+        #                             title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
+        #                             column(12, align="center", tableOutput("wintersports"))),
+        #                         box(width = 4,
+        #                             title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
+        #                             column(12, align="center", tableOutput("springsports"))),
+        #                         ),
+        #                       fluidRow(
+        #                         box(width = 6,
+        #                             title = strong("Available Men's/Boy's Sports"), background = "navy", solidHeader = TRUE,
+        #                             column(12, align="center", tableOutput("male_sports_list"))),
+        #                         box(width = 6,
+        #                             title = strong("Available Women's/Girl's Sports"), background = "teal", solidHeader = TRUE,
+        #                             column(12, align="center", tableOutput("female_sports_list"))),
+        # 
+        #                         # box(width = 4,
+        #                         #     solidHeader = TRUE,
+        #                         #     title = strong("Icon Legend"),
+        #                         #     column(12, align="center", tableOutput("sports_icon_legend")))
+        # 
+        #                         ),
+        # 
+        #                       fluidRow(
+        #                         box(width = 12,
+        #                             solidHeader = TRUE,
+        #                             title = strong("Context"),
+        #                             htmlOutput("sports_context"))
+        #                       )
+        # 
+        #              ),
+        #            )
+        #          ),
+        # 
+        # )},
+        
         #Arts Tab
+
         {tabItem(tabName = "artstab",
                  fluidRow(
                    box(width = 12,
@@ -691,7 +732,6 @@ body <- {dashboardBody(
                                    ),
                                    multiple = FALSE)),
                    box(width = 10,
-                       title = strong("Resources In Each School Zone"),
                        plotlyOutput("insights_individualplots",
                                     width="auto",
                                     height = "auto"))
