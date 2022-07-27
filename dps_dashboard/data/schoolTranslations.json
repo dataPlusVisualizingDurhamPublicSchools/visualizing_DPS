@@ -1,7 +1,7 @@
 {
   "cultural_date_format": "%d-%m-%Y",
   "languages": ["English", "Spanish"],
-  "translation": [     
+  "translation": [
 
      {"English": "Advanced Placement (AP) Course Enrollment",
      "Spanish": "Cursos avanzados (Advanced Placement)"},
@@ -81,7 +81,7 @@
      {"English": "The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ",
      "Spanish": "El porcentaje de estudiantes recibiendo almuerzo gratis/reducido es un gran indicador del estatus socioeconómico de la escuela. El porcentaje de estudiantes que están debajo de la línea de pobreza determina si una escuela es "},
      
-     {"English": "Title 1",
+     {"English": "Title I",
      "Spanish": "Título 1"},
      
      {"English": "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and discriminatory. Socioeconomic status is not a limit, it is a barrier.",
@@ -95,12 +95,9 @@
      
      {"English": "NC Community Free/Reduced Lunch Eligibility",
      "Spanish": "La elegibilidad de recibir almuerzos gratis o reducidos en Carolina del Norte"},
-     
-     {"English": "Title I", 
-     "Spanish": "Título I"},
-     
-     {"English": "Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
-     "Spanish": "Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
+
+     {"English": ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
+     "Spanish": ": Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
      
      {"English": "Student-Teacher Ratio",
      "Spanish": "Proporción de alumnos a maestros (De las escuelas primarias)"},
@@ -145,10 +142,7 @@
      "Spanish": "Estudiantes con discapacidades"},
      
      {"English": "According to the Americans with Disabilities Act, an individual is considered to have a disability if they have a condition that impairs them to do certain activities and interact with those around them. It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. Resources like",
-     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como la"},
-     
-     {"English": "assistive technology,",
-     "Spanish": "tecnología asistiva,"},
+     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como "},
      
      {"English": "transportation,",
      "Spanish": "la transportación,"},
@@ -171,20 +165,20 @@
      {"English": "NCDPI’s EC Division",
      "Spanish": "La división de este programa en Carolina del Norte"},
      
-     {"English": "Assistive Technology:",
+     {"English": "Assistive Technology",
      "Spanish": "La tecnología asistiva"},
      
-     {"English": "assistive technology:",
-     "Spanish": "La tecnología asistiva:"},
+     {"English": "assistive technology",
+     "Spanish": "la tecnología asistiva"},
      
-     {"English": "supplementary devices that promote independence and functionality of people with varying disabilities",
-     "Spanish": "aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
+     {"English": ": supplementary devices that promote independence and functionality of people with varying disabilities",
+     "Spanish": ": aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
      
      {"English": "EC programs",
-     "Spanish": "Programas para estudiantes con necesidades especiales:"},
+     "Spanish": "Programas para estudiantes con necesidades especiales"},
      
-     {"English": "school programs that include students that need intense or individualized instruction in addition to their standard course of study",
-     "Spanish": "programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
+     {"English": ": school programs that include students that need intense or individualized instruction in addition to their standard course of study",
+     "Spanish": ": programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
      
      {"English": "English as a Second Language (ESL) Student Enrollment",
      "Spanish": "Inglés como segunda lengua"},
@@ -213,7 +207,7 @@
      {"English": "In-School Suspensions (ISS)",
      "Spanish": "Suspensiones dentro de la escuela (ISS)"},
      
-     {"English": "In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel.",
+     {"English": "In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel (https://supportiveschooldiscipline.org/suspension).",
      "Spanish": "Suspensiones dentro de la escuela se definen como: 'un estudiante que es sacado del salón de clases por al menos un medio día, pero sigue siendo supervisado por el personal de la escuela.'"},
 
      {"English": "Students of color are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the",
@@ -222,17 +216,14 @@
      {"English": "school-to-prison pipeline",
      "Spanish": "canal de la escuela a la prisión"},
      
-     {"English": "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:",
-     "Spanish": "Artículos sobre suspensiones dentro de la escuela (ISS) y el canal de la escuela a la prisión:"},
-     
      {"English": "Racial Bias in School Discipline",
      "Spanish": "Discriminación en castigos de las escuelas"},
      
      {"English": "School-to-Prison Pipeline",
      "Spanish": "El canal de la escuela a la prisión"},
      
-     {"English": "school-to-prison pipeline: the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
-     "Spanish": "el canal de la escuela a la prisión: Existe una vigilancia excesivamente desproporcionada de estudiantes de minorías, a menudo de hogares de bajos ingresos. Esto causa castigos más severos, incluyendo suspensiones dentro de la escuela (ISS) y fuera de la escuela (OSS)."},
+     {"English": ": the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
+     "Spanish": ": Existe una vigilancia excesivamente desproporcionada de estudiantes de minorías, a menudo de hogares de bajos ingresos. Esto causa castigos más severos, incluyendo suspensiones dentro de la escuela (ISS) y fuera de la escuela (OSS)."},
 
      {"English": "Enrollment",
      "Spanish": "Número de alumnos"},
@@ -252,9 +243,6 @@
      {"English": "This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ",
      "Spanish": "Esta gráfica demuestra el porcentaje de estudiantes de color en la escuela comparada con la zona escolar. Esta medida muestra la disparidad en la representación de los estudiantes de color. La mayoría de estas escuelas no reflejan las demográficas de sus zonas escolares correspondientes."},
      
-     {"English": "gentrification",
-     "Spanish": "La gentrificación"},
-     
      {"English": "Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods.",
      "Spanish": "La gentrificación es una causa de este problema, y solamente ha empeorado desde la pandemia de COVID-19. Muchos vecindarios en Durham se han vuelto un lugar muy caro, lo cual resulta en nuevas demográficas en los vecindarios."},
      
@@ -273,8 +261,8 @@
      {"English": "gentrification",
      "Spanish": "la gentrificación"},
      
-     {"English": "the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
-     "Spanish": "el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
+     {"English": ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
+     "Spanish": ": el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
      
      {"English": "BIPOC Students per School",
      "Spanish": "Porcentaje de estudiantes de color (POC)"},
@@ -294,17 +282,8 @@
      {"English": "Racial/Ethnic Enrollment in NC Public Schools",
      "Spanish": "Inscripción racial y étnica en las escuelas públicas de Carolina del norte"},
      
-     {"English": "Why Representation Matters",
-     "Spanish": "La importancia de la representación"},
-     
      {"English": "Benefits of POC Representation",
      "Spanish": "Ventajas de la representación"},
-     
-     {"English": "culturally-responsive pedagogy",
-     "Spanish": "pedagogía culturalmente sensible:"},
-     
-     {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
-     "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
      
      {"English": "Racial Demographics",
      "Spanish": "Demográficas Raciales"},
@@ -315,12 +294,6 @@
      {"English": "Representation of these students and ",
      "Spanish": "Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. La representación de estos estudiantes y "},
      
-     {"English": "culturally-responsive pedagogy",
-     "Spanish": "pedagogía culturalmente sensible"},
-     
-     {"English": "is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more.",
-     "Spanish": "son esenciales para el éxito de los estudiantes. Los alumnos que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
-     
      {"English": "Below is more information about racial demographics in schools:",
      "Spanish": "Más información sobre demográficas raciales:"},
      
@@ -329,12 +302,6 @@
      
      {"English": "More Students of Color in Public schools",
      "Spanish": "Más estudiantes de color en las escuelas públicas"},
-     
-     {"English": "culturally-responsive pedagogy",
-     "Spanish": "pedagogía culturalmente sensible"},
-     
-     {"English": "style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
-     "Spanish": "un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases"},
      
      {"English": "Median Household Income",
      "Spanish": "Ingreso promedio familiar"},
@@ -357,9 +324,6 @@
      {"English": "Due to the COVID-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to ",
      "Spanish": "Debido a la pandemia de COVID-19, los precios de las casas subieron. Por lo tanto, el costo de vida también subió: todo contribuyendo a la "},
      
-     {"English": "gentrification",
-     "Spanish": "la gentrificación"},
-     
      {"English": "Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
      "Spanish": "La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
      
@@ -371,12 +335,6 @@
      
      {"English": "Covid-19 Increase",
      "Spanish": "Efectos de la pandemia"},
-     
-     {"English": "gentrification",
-     "Spanish": "la gentrificación"},
-     
-     {"English": "the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
-     "Spanish": "el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
      
      {"English": "Bachelor Degree Rate",
      "Spanish": "Los índices de licenciaturas universitarias"},
@@ -413,18 +371,6 @@
      
      {"English": "Income Disparities and Sidewalk Coverage",
      "Spanish": "Disparidades de ingresos en áreas sin banquetas"},
-     
-     {"English": "Graduation Rate",
-     "Spanish": "Índice de graduación"},
-     
-     {"English": "The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030. This is a significant increase from when the first reported graduation rate was 68.3% in 2006.",
-     "Spanish": "Esta gráfica muestra el porcentaje de estudiantes estimados a graduarse de la preparatoria en cuatro años (o menos). El índice de graduación de Carolina del Norte de 2020 es 87.6%, con planes de aumentar este porcentaje a 95% para el año 2030. Esto es un aumento significante desde 2006; cuando el índice de graduación fue 68.3%."},
-     
-     {"English": "Graduation rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, especially school counselors and social workers, to reach out to students with extended absences. External factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.",
-     "Spanish": "Estos índices son importantes. Graduaciones retrasadas terminan en menos estudiantes terminado la preparatoria. Es posible que los estudiantes que no se gradúan (o alumnos desertores) tengan obstáculos y estilos de vida desaventajados. Es importante que consejeros y trabajadores sociales se comuniquen con estudiantes con muchas ausencias. Factores externos pueden ser la razón detrás de los alumnos desertores. Como comunidad, debemos trabajar para eliminar estas barreras."},
-     
-     {"English": "Below are more resources on graduation rates:",
-     "Spanish": "Recursos sobre el índice de graduación:"},
      
      {"English": "Dashboard with Articles and Quick Facts about Graduation Rates",
      "Spanish": "Artículos e información sobre el índice de graduación"},
@@ -468,11 +414,47 @@
      {"English": "As things begin to modernize with time, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
      "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
      
-     {"English": "However, not all students have the same access to technology in their homes. Most schools have accounted for this disparity by providing students with free tablets or laptops. During the COVID-19 pandemic, when students of all ages had to adjust to online instruction, several counties provided WiFI hubs so that students’ learning was not hindered.",
-     "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."},
-     
      {"English": "Below are more resources on Wi-Fi Access:",
      "Spanish": "Recursos sobre el acceso de internet:"},
-       
+     
+     {"English": "Why Representation Matters",
+     "Spanish": "La importancia de la representación"},
+    
+     {"English": ": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
+     "Spanish": ": un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
+     
+     {"English": "is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more.",
+     "Spanish": "son esenciales para el éxito de los estudiantes. Los alumnos que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
+     
+     {"English": ". Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
+     "Spanish": ". La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
+     
+     {"English": "As society modernizes, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+
+     {"English": "For high school students especially, classes become more challenging as they become older and begin to take more advanced courses, such as AP or IB classes. In these higher-stress environments, smaller sized classrooms enable teachers to better gauge if the students are making progress and fully understanding the material. Additionally, educators have the opportunity to make the curriculum and assignments more personalized to cater to the student body.", 
+     "Spanish": "Especialmente para los estudiantes de escuelas preparatorias, las clases se vuelven más desafiantes. Mientras los estudiantes crezcan, también empiezan a tomar cursos más avanzados, como las clases de AP o IB (Bachillerato Internacional). En estos ambientes más estresantes, clases pequeñas ayudan a que los maestros se den cuenta si los estudiantes están entendiendo el currículo. Adicionalmente, los educadores tienen la oportunidad de crear su propio currículo y hacer que las tareas sean más personalizadas para los estudiantes."},
+     
+     {"English": "Assistive Technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "assistive technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "Graduation Rate",
+     "Spanish": "Índice de graduación"},
+     
+     {"English": "The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030. This is a significant increase from when the first reported graduation rate was 68.3% in 2006.",
+     "Spanish": "Esta gráfica muestra el porcentaje de estudiantes estimados a graduarse de la preparatoria en cuatro años (o menos). El índice de graduación de Carolina del Norte de 2020 es 87.6%, con planes de aumentar este porcentaje a 95% para el año 2030. Esto es un aumento significante desde 2006; cuando el índice de graduación fue 68.3%."},
+     
+     {"English": "Graduation rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, especially school counselors and social workers, to reach out to students with extended absences. External factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.",
+     "Spanish": "Estos índices son importantes. Graduaciones retrasadas terminan en menos estudiantes terminado la preparatoria. Es posible que los estudiantes que no se gradúan (o alumnos desertores) tengan obstáculos y estilos de vida desaventajados. Es importante que consejeros y trabajadores sociales se comuniquen con estudiantes con muchas ausencias. Factores externos pueden ser la razón detrás de los alumnos desertores. Como comunidad, debemos trabajar para eliminar estas barreras."},
+     
+     {"English": "Below are more resources on graduation rates:",
+     "Spanish": "Recursos sobre el índice de graduación:"},
+     
+     {"English": "However, not all students have the same access to technology in their homes. Most schools have accounted for this disparity by providing students with free tablets or laptops. During the COVID-19 pandemic, when students of all ages had to adjust to online instruction, several counties provided WiFI hubs so that students’ learning was not hindered.",
+     "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."}
+
 ]
 }

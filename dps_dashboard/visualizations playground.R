@@ -6,6 +6,7 @@ library(sf)
 library(readxl)
 library(stringr)
 library(tidyr)
+library(DT)
 
 #sports tab
 
