@@ -439,7 +439,7 @@ body <- {dashboardBody(
                                 box(width = 6,
                                     solidHeader = TRUE,
                                     title = strong(i18n$t("Select a Measurement")),
-                                    selectInput("hs_select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                    selectInput("hs_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
                                                                "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
                                                                "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -724,7 +724,7 @@ body <- {dashboardBody(
                               fluidRow(
                                 box(width = 2,
                                     solidHeader = TRUE,
-                                    title = strong("School Zone"),
+                                    title = strong(i18n$t("School Zone")),
                                     selectInput("insights_zone",
                                                 label = em(i18n$t("Choose a school zone to display")),
                                                 choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
