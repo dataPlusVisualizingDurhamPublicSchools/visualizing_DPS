@@ -535,7 +535,6 @@ body <- {dashboardBody(
                  fluidRow(
                    tabBox(
                      id = "tabset3", width = "auto", 
-                     tabPanel(i18n$t("School Sports"), class = "text-center",
                               selectInput("school_sports", em(i18n$t("Choose a school to view the Sports available.")), 
                                           choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
                                                          "Hillside High",
@@ -567,7 +566,7 @@ body <- {dashboardBody(
                                     htmlOutput("sports_context"))
                               )
                    )
-                 ))
+                 )
         )},
         
         #Sports Tab - dynamic
