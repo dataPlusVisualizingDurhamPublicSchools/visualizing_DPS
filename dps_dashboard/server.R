@@ -149,7 +149,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-translator <- Translator$new(translation_json_path = "data/Arts tab.json")
+translator <- Translator$new(translation_json_path = "data/schoolTranslations.json")
 
 function(input, output, session) {
   
@@ -1521,11 +1521,11 @@ function(input, output, session) {
               i18n()$t("Unfortunately, ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may prevent them from participating in school activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their native language entirely."), "<br>","<br>",
               i18n()$t("Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:"), "<br>",
               a(i18n()$t("How to Advocate for ESL/ELL Students"),
-                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),"<br>",
               a(i18n()$t("Real-World Experiences and Anecdotes"),
-                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),"<br>",
               a(i18n()$t("DPS ESL Office"),
-                href = "https://central.dpsnc.net/esl"),
+                href = "https://central.dpsnc.net/esl"),"<br>",
               a(i18n()$t("ESL/ELL Teachers"),
                 href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
       } 
@@ -1813,11 +1813,11 @@ function(input, output, session) {
               i18n()$t("Unfortunately, ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may prevent them from participating in school activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their native language entirely."), "<br>","<br>",
               i18n()$t("Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:"), "<br>",
               a(i18n()$t("How to Advocate for ESL/ELL Students"),
-                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),"<br>",
               a(i18n()$t("Real-World Experiences and Anecdotes"),
-                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),"<br>",
               a(i18n()$t("DPS ESL Office"),
-                href = "https://central.dpsnc.net/esl"),
+                href = "https://central.dpsnc.net/esl"),"<br>",
               a(i18n()$t("ESL/ELL Teachers"),
                 href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
   
@@ -2079,11 +2079,11 @@ function(input, output, session) {
               i18n()$t("Unfortunately, ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may prevent them from participating in school activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their native language entirely."), "<br>","<br>",
               i18n()$t("Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:"), "<br>",
               a(i18n()$t("How to Advocate for ESL/ELL Students"),
-                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"),
+                href = "https://www.nea.org/professional-excellence/student-engagement/tools-tips/english-language-learners-what-you-need-know"), "<br>",
               a(i18n()$t("Real-World Experiences and Anecdotes"),
-                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"),
+                href = "https://www.learningforjustice.org/magazine/summer-2017/a-case-for-acculturation"), "<br>",
               a(i18n()$t("DPS ESL Office"),
-                href = "https://central.dpsnc.net/esl"),
+                href = "https://central.dpsnc.net/esl"), "<br>",
               a(i18n()$t("ESL/ELL Teachers"),
                 href = "https://www.eslteacheredu.org/what-is-an-esl-teacher/"))
         
@@ -3646,6 +3646,7 @@ function(input, output, session) {
     }
     
     #Arts Programs
+    observeEvent(i18n(),
     {
       output$available_arts <- renderTable ({
         schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
@@ -3653,10 +3654,10 @@ function(input, output, session) {
         schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
         schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
         schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-        schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArts, Theatre, Dance)
+        schoolstats %>% rename(School = SCHOOL_NAME, Visual = VisualArts) %>% select(School, Music, Visual, Theatre, Dance)
       }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
       
-    }
+    }) 
     
 }
 

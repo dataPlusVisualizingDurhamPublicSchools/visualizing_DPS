@@ -1,0 +1,460 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+
+     {"English": "Advanced Placement (AP) Course Enrollment",
+     "Spanish": "Cursos avanzados (Advanced Placement)"},
+     
+     {"English": "Advanced Placement (AP) courses are challenging, collegiate-level courses that are offered to high school students. AP courses weigh more than honors courses on the high school level. Students can take these classes for an opportunity to receive college credit upon scoring a three or higher (out of five) on the standardized assessment, which saves the student money on college tuition. AP classes also serve as a way for students to be placed into higher-level courses at their college.",
+     "Spanish": "Estas clases avanzadas (AP) son desafiantes y del nivel universitario que se ofrecen a estudiantes de la preparatoria. Comparado con clases estandarizadas y otros niveles más bajos, estos cursos de AP cuentan por más puntos en el promedio general o GPA de los estudiantes. Los estudiantes pueden tomar estas clases para tener la oportunidad de recibir crédito universitario si reciben una calificación de al menos tres en el exámen final. (El exámen está calificado entre uno a cinco, con cinco siendo la calificación más alta posible). Si el estudiante recibe este crédito universitario, pueden ahorrar dinero porque ya no tendrán que tomar y pagar por ese curso en el colegio. Estos cursos avanzados también le ayudan a los estudiantes tomar clases más avanzadas en el colegio, y posiblemente graduarse de la universidad en menos tiempo con la ayuda de estos créditos."},
+     
+     {"English": "Below is more information about AP courses:",
+     "Spanish": "Más información sobre cursos avanzados o de AP:"},
+     
+     {"English": "NCDPI AP Courses",
+     "Spanish": "El departamento de la instrucción pública de Carolina del Norte (NCDPI)"},
+     
+     {"English": "DPS AP Courses",
+     "Spanish": "El condado de Durham (DPS)"},
+     
+     {"English": "College Board",
+     "Spanish": "Cursos avanzados (College Board)"},
+     
+     {"English": "Average Class Size",
+     "Spanish": "Promedio de estudiantes por clase"},
+     
+     {"English": "Research proves smaller class size is beneficial to student achievement. Smaller classes allow for the teacher to focus less on classroom management, and more on centralized learning. Students have stated they feel more comfortable in smaller classes as well.",
+     "Spanish": "Se ha comprobado que las clases pequeñas son más beneficiosas para los estudiantes. Clases pequeñas habilitan a que los maestros se enfoquen más en el currículo y progreso de cada estudiante. La mayoría de los estudiantes han expresado que se sienten más cómodos en estas clases."},
+     
+     {"English": "Resources Discussing the Importance of Class Size:",
+     "Spanish": "Recursos sobre la importancia del tamaño de clase:"},
+     
+     {"English": "The Benefits of Investing in Smaller Class Sizes",
+     "Spanish": "Las ventajas de reducir los tamaños de clase"},
+     
+     {"English": "State Policy View on Class Size",
+     "Spanish": "Políticas del estado sobre los tamaños de clase"},
+     
+     {"English": "CTE Course Enrollment Rate",
+     "Spanish": "Educación para carreras técnicas “CTE”"},
+     
+     {"English": "Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where all high school students are required to take three CTE courses, participate in two career exposure activities, and get an internship or a job before they graduate. This initiative, as well as all CTE courses, are created to develop students’ soft skills, gain real-world experience, and help students decide on their post-graduate plans.",
+     "Spanish": "Cursos de CTE, o para carreras técnicas, son para que estudiantes en la preparatoria reciban experiencia de la vida real en el campo que les interesa más. En 2019, el condado de Durham empezó la iniciativa de “3-2-1,” donde todos los estudiantes en la preparatoria tienen que tomar 3 cursos de CTE, participar en dos actividades que son relevantes a la carrera, y obtener un internado o trabajo antes de graduarse. Esta iniciativa, junto con los cursos de CTE, son buenos para desarrollar la inteligencia emocional de los estudiantes, aumentar sus experiencias, y ayudar a los estudiantes a decidir sus planes para el futuro."},
+     
+     {"English": "Below is more information about CTE courses in Durham Public Schools and North Carolina:",
+     "Spanish": "Recursos para más información sobre cursos de CTE en el condado de Durham y Carolina del Norte:"},
+     
+     {"English": "DPS CTE Course Initiative",
+     "Spanish": "Iniciativa para cursos de CTE del condado de Durham"},
+     
+     {"English": "NCDPI CTE Course Overview",
+     "Spanish": "Información sobre cursos de CTE"},
+     
+     {"English": "Experienced Teacher Ratio",
+     "Spanish": "Proporción de maestros expertos"},
+     
+     {"English": "Experienced teachers are those who have approximately five or more years of experience with teaching. Although more experienced teachers tend to perform better on their evaluations, research shows teacher experience does not directly correlate to effective teaching. Some schools tend to be more attracted to veteran teachers whereas other schools may prefer employing recently certified teachers that can provide current and unique teaching styles.",
+     "Spanish": "Maestros expertos tienen aproximadamente cinco o más años de experiencia de ser maestros. Aunque maestros expertos tienden a tener mejores evaluaciones, la experiencia de un maestro no siempre se correlaciona directamente con una enseñanza efectiva. Es posible que unas escuelas prefieran maestros con más experiencia mientras otras escuelas busquen maestros que son recientemente titulados y tienen estilos de enseñanza alternativos y únicos."},
+     
+     {"English": "With the evolution of research-based practices, it is important to continue to educate new and returning teachers on the best teaching practices that are scientifically-proven to promote student success. Good professional development workshops are paramount to provide effective, culturally-responsive teaching practices.",
+     "Spanish": "Es importante continuar educando a los maestros nuevos en los mejores métodos de enseñanza que promueven el éxito de los estudiantes, comprobado por varias investigaciones científicas. Los buenos programas de desarrollo profesional fomentan una enseñanza efectiva e inclusiva."},
+     
+     {"English": "Below are articles on Teacher Experience and Professional Development:",
+     "Spanish": "Artículos sobre la experiencia de los maestros y el desarrollo profesional:"},
+     
+     {"English": "Effects of Hiring and Recommendations for Supporting Experienced Teachers",
+     "Spanish": "Los efectos de la contratación y recomendaciones para apoyar a los maestros expertos"},
+     
+     {"English": "Teacher Experience in Relation to Teacher Effectiveness",
+     "Spanish": "La experiencia de maestros en relación a su eficacia"},
+     
+     {"English": "NCDPI Educator Professional Development",
+     "Spanish": "El desarrollo profesional de los educadores"},
+     
+     {"English": "Importance and Resources for Professional Development",
+     "Spanish": "La importancia y recursos sobre el desarrollo profesional"},
+     
+     {"English": "Free and Reduced Lunch",
+     "Spanish": "Almuerzo gratis o reducido"},
+     
+     {"English": "The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ",
+     "Spanish": "El porcentaje de estudiantes recibiendo almuerzo gratis/reducido es un gran indicador del estatus socioeconómico de la escuela. El porcentaje de estudiantes que están debajo de la línea de pobreza determina si una escuela es "},
+     
+     {"English": "Title I",
+     "Spanish": "Título 1"},
+     
+     {"English": "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and discriminatory. Socioeconomic status is not a limit, it is a barrier.",
+     "Spanish": "Las escuelas de Título 1 califican para becas a través de la ley “Cada Estudiante Triunfa” (Every Student Succeeds Act: ESEA). Es importante reconocer el estatus socioeconómico de los estudiantes sin prejuiciar o ser condescendiente. El estatus socioeconómico no es un límite, es un obstáculo."},
+     
+     {"English": "Below are articles on Free/Reduced Lunch and its connection to Title I schools:",
+     "Spanish": "Artículos sobre almuerzo gratis o reducido y la conección a las escuelas de Título 1:"},
+     
+     {"English": "Rural Schools and Free/Reduced Lunch",
+     "Spanish": "Almuerzos gratis/reducidos en las escuelas rurales"},
+     
+     {"English": "NC Community Free/Reduced Lunch Eligibility",
+     "Spanish": "La elegibilidad de recibir almuerzos gratis o reducidos en Carolina del Norte"},
+
+     {"English": ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
+     "Spanish": ": Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
+     
+     {"English": "Student-Teacher Ratio",
+     "Spanish": "Proporción de alumnos a maestros (De las escuelas primarias)"},
+     
+     {"English": "Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.",
+     "Spanish": "Se ha comprobado que las clases pequeñas son más beneficiosas para los estudiantes. Clases pequeñas habilitan a que los maestros se enfoquen más en el currículo y progreso de cada estudiante. Estas enseñanzas de uno a uno pueden aumentar las calificaciones de los estudiantes."},
+     
+     {"English": "For younger, elementary school-age students, having a positive, one-on-one relationship with his or her teacher will teach the student at a young age that they have an adult they can trust and rely on. In smaller sized classrooms, students can feel more comfortable and willing to share their thoughts without being afraidof failing or feeling embarrassed. This dynamic fosters a more productive learning environment for all.",
+     "Spanish": "Para estudiantes de primaria, teniendo una relación positiva con su maestro enseñará al estudiante (desde una edad joven) que pueden confiar en este adulto. En clases pequeñas, los estudiantes se sentirán más cómodos y dispuestos a compartir sus ideas durante la clase sin tener miedo de fracasar o sentir vergüenza. Esta dinámica crea un ambiente más inclusivo y productivo para todos."},
+     
+     {"English": "Resources on Student-Teacher Ratios:",
+     "Spanish": "Infográficas e información sobre proporciones de alumnos a maestros:"},
+     
+     {"English": "Students Per Device",
+     "Spanish": "Número de estudiantes por aparatos"},
+     
+     {"English": "Living in a digital age, technology usage in the classroom has increased tremendously, especially during the COVID-19 pandemic. Although technology is a great resource, students may not have equitable access to these devices. It is important for students and teachers to not only have access to these technological devices, but also understand how to use them, which is why professional development is so important. Professional development is necessary to keep educators up to date on new technology to create the most effective learning environment.",
+     "Spanish": "En esta generación digital, el uso de la tecnología ha incrementado tremendamente, especialmente durante la pandemia de COVID-19. Aunque la tecnología es un recurso esencial, es posible que los estudiantes no tengan el mismo acceso a estos aparatos. Es importante que los estudiantes y maestros no solo tengan acceso a la tecnología, si no también recibir entrenamiento y desarrollo profesional para entender cómo usar estos aparatos. El desarrollo profesional es necesario para mantener a los educadores al día y crear un ambiente productivo y efectivo."},
+     
+     {"English": "Resources on Access and Technology in the Classroom:",
+     "Spanish": "Recursos sobre el acceso de tecnología en las clases:"},
+     
+     {"English": "Durham Public Schools’ Technological Services",
+     "Spanish": "Servicios tecnológicos del condado de Durham"},
+     
+     {"English": "Equitable Access to Technology",
+     "Spanish": "Acceso equitativo a la tecnología"},
+     
+     {"English": "Funding Per Pupil",
+     "Spanish": "El financiamiento de cada estudiante"},
+     
+     {"English": "This indicator represents the amount that local, state, and federal governments spend on elementary and secondary education adjusted for the size of the student body. It is calculated by dividing the current expenditures over the entire academic year for Pre-Kindergarten through Grade 12 by the number of students in those grades in public schools. Current expenditures include instruction and instruction-related costs, student support services, administration, and operations. Excluded from those expenditures are funds for school construction and other capital outlays, debt service, and programs outside of public elementary and secondary education.",
+     "Spanish": "Este indicador representa el número que el gobierno local, estatal, y federal ha gastado en la educación primaria y secundaria. Estos datos están ajustados por el tamaño de estudiantes de cada escuela; se calcula por todos los gastos del año académico (desde pre-Kinder hasta el doceavo) dividido por el número de alumnos en cada grado. Ejemplos de estos gastos incluyen: la administración y operaciones de la escuela, servicios/recursos para los estudiantes, y gastos relacionados con la instrucción y el currículo. Estos gastos no incluyen la construcción de las escuelas, el capital de inversión, la amortización de deudas, y programas fuera de las escuelas primarias y secundarias. Carolina del Norte ocupa el lugar 39 (de 50, todos los estados continentales) en el financiamiento de cada estudiante."},
+     
+     {"English": "Resources on public school funding:",
+     "Spanish": "Recursos sobre el financiamiento de las escuelas"},
+     
+     {"English": "Interactive Summary of Local - Federal Public School Funding:",
+     "Spanish": "Un resumen interactivo del financiamiento de cada estudiante (del gobierno local, estatal, y federal):"},
+     
+     {"English": "Students With Disabilities",
+     "Spanish": "Estudiantes con discapacidades"},
+     
+     {"English": "According to the Americans with Disabilities Act, an individual is considered to have a disability if they have a condition that impairs them to do certain activities and interact with those around them. It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. Resources like",
+     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como "},
+     
+     {"English": "transportation,",
+     "Spanish": "la transportación,"},
+     
+     {"English": "Exceptional Children (EC) programs,",
+     "Spanish": "y programas para estudiantes con necesidades especiales (Exceptional Children o EC),"},
+     
+     {"English": "etc. are mandatory for every school to provide regardless of the number of students with disabilities or even the type based on the civil rights law Section 504.",
+     "Spanish": "etc. son obligatorios para cada escuela, a pesar del número de estudiantes con discapacidades o el tipo de las discapacidades. Este principio está reflejado en la Sección 504 en la ley de los derechos civiles."},
+     
+     {"English": "Below are articles and resources about government protection and resources for students with disabilities:",
+     "Spanish": "Artículos sobre la protección del gobierno y recursos para estudiantes con discapacidades:"},
+     
+     {"English": "DPS EC Services",
+     "Spanish": "Servicios para estudiantes con necesidades especiales en el condado de Durham"},
+     
+     {"English": "Section 504",
+     "Spanish": "Sección 504"},
+     
+     {"English": "NCDPI’s EC Division",
+     "Spanish": "La división de este programa en Carolina del Norte"},
+     
+     {"English": "Assistive Technology",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "assistive technology",
+     "Spanish": "la tecnología asistiva"},
+     
+     {"English": ": supplementary devices that promote independence and functionality of people with varying disabilities",
+     "Spanish": ": aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
+     
+     {"English": "EC programs",
+     "Spanish": "Programas para estudiantes con necesidades especiales"},
+     
+     {"English": ": school programs that include students that need intense or individualized instruction in addition to their standard course of study",
+     "Spanish": ": programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
+     
+     {"English": "English as a Second Language (ESL) Student Enrollment",
+     "Spanish": "Inglés como segunda lengua"},
+     
+     {"English": "This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are created to help children learn English along with other subjects necessary to complete each grade.",
+     "Spanish": "Esta gráfica demuestra el número de estudiantes que están inscritos en el programa “Inglés como segunda lengua” (English as a Second Language: ESL, o English Language Learners: ELL). Este programa es disponible para cualquier estudiante que es un hablante de inglés no nativo, a pesar de su etnicidad, orígen, raza, edad, etc. Programas como ESL y ELL ayudan a que estos estudiantes aprendan inglés y otras materias requeridas para pasar al próximo grado."},
+     
+     {"English": "Unfortunately, ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may prevent them from participating in school activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their native language entirely.",
+     "Spanish": "Desafortunadamente, estos estudiantes pueden enfrentar discriminación, prejuicio, y acoso en la escuela. Adicionalmente, unos maestros pueden excluir a estos estudiantes de varias actividades, extracurriculares, y programas de enriquecimiento. Es importante que las escuelas reconozcan que esta barrera lingüística no impide la enseñanza de estos estudiantes. Los maestros de ESL o ELL deben atemperar a los estudiantes, en vez de aculturar a estos estudiantes y eliminar sus identidades diversas."},
+     
+     {"English": "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:",
+     "Spanish": "Recursos e información sobre prácticas culturalmente sensibles en Durham y programas de ESL/ELL:"},
+     
+     {"English": "How to Advocate for ESL/ELL Students",
+     "Spanish": "Cómo defender hablantes de inglés no nativo"},
+     
+     {"English": "Real-World Experiences and Anecdotes",
+     "Spanish": "Experiencias y anécdotas sobre la aculturación"},
+     
+     {"English": "DPS ESL Office",
+     "Spanish": "La oficina del programa ESL en Durham"},
+     
+     {"English": "ESL/ELL Teachers",
+     "Spanish": "Maestros de ESL/ELL"},
+     
+     {"English": "In-School Suspensions (ISS)",
+     "Spanish": "Suspensiones dentro de la escuela (ISS)"},
+     
+     {"English": "In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel (https://supportiveschooldiscipline.org/suspension).",
+     "Spanish": "Suspensiones dentro de la escuela se definen como: 'un estudiante que es sacado del salón de clases por al menos un medio día, pero sigue siendo supervisado por el personal de la escuela.'"},
+
+     {"English": "Students of color are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the",
+     "Spanish": "Estudiantes de color son susceptibles a castigos más severos en las escuelas, comparados con sus compañeros blancos. Una razón por esto es el prejuicio contra estos estudiantes, lo cual es evidente en un exceso de control de ellos. Esta dinámica crea un"},
+     
+     {"English": "school-to-prison pipeline",
+     "Spanish": "canal de la escuela a la prisión"},
+     
+     {"English": "Racial Bias in School Discipline",
+     "Spanish": "Discriminación en castigos de las escuelas"},
+     
+     {"English": "School-to-Prison Pipeline",
+     "Spanish": "El canal de la escuela a la prisión"},
+     
+     {"English": ": the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
+     "Spanish": ": Existe una vigilancia excesivamente desproporcionada de estudiantes de minorías, a menudo de hogares de bajos ingresos. Esto causa castigos más severos, incluyendo suspensiones dentro de la escuela (ISS) y fuera de la escuela (OSS)."},
+
+     {"English": "Enrollment",
+     "Spanish": "Número de alumnos"},
+     
+     {"English": "This dataset shows the enrollment numbers at each school. Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, enrollment or average daily membership (ADM) is used to determine funding for each school. The higher the ADM, the more money a school receives. Recently, lawmakers passed a bill stating that they would omit schools from reduction in funding as part of COVID-19 relief. Durham Public Schools continues to strive for increased enrollment so that all programs can continue to receive adequate funding.",
+     "Spanish": "Estos datos demuestran el número de alumnos en cada escuela. Debido a la pandemia de COVID-19, estos números de estudiantes han disminuido un 5%. Normalmente, el promedio diario de membresía (average daily membership: ADM), determina el financiamiento de cada escuela. Entre mayor sea el número, más dinero recibe la escuela. Recientemente, los legisladores aprobaron una propuesta para que las escuelas no reciban menos financiamiento por la pandemia de COVID-19. El condado de Durham sigue tratando de incrementar el número de alumnos para asegurar que todos los programas sigan recibiendo financiamiento adecuado."},
+     
+     {"English": "Below is information about enrollment numbers:",
+     "Spanish": "Información sobre el número de estudiantes"},
+     
+     {"English": "The Decrease in Enrollment in North Carolina",
+     "Spanish": "La disminución de estudiantes en Carolina del Norte"},
+     
+     {"English": "School and Zone BIPOC Comparison",
+     "Spanish": "Estudiantes de color en la escuela y zona escolar"},
+     
+     {"English": "This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ",
+     "Spanish": "Esta gráfica demuestra el porcentaje de estudiantes de color en la escuela comparada con la zona escolar. Esta medida muestra la disparidad en la representación de los estudiantes de color. La mayoría de estas escuelas no reflejan las demográficas de sus zonas escolares correspondientes."},
+     
+     {"English": "Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods.",
+     "Spanish": "La gentrificación es una causa de este problema, y solamente ha empeorado desde la pandemia de COVID-19. Muchos vecindarios en Durham se han vuelto un lugar muy caro, lo cual resulta en nuevas demográficas en los vecindarios."},
+     
+     {"English": "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:",
+     "Spanish": "Artículos sobre suspensiones dentro de la escuela y el canal de la escuela a la prisión"},
+     
+     {"English": "COVID-19 and Gentrification in Durham",
+     "Spanish": "COVID-19 y la gentrificación en Durham"},
+     
+     {"English": "Redlining in Durham",
+     "Spanish": "Prácticas discriminatorias en Durham"},
+     
+     {"English": "Durham’s Racial Inequality, Poverty, and Gentrification",
+     "Spanish": "Las disparidades, la pobreza, y la gentrificación en Durham"},
+     
+     {"English": "gentrification",
+     "Spanish": "la gentrificación"},
+     
+     {"English": ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
+     "Spanish": ": el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
+     
+     {"English": "BIPOC Students per School",
+     "Spanish": "Porcentaje de estudiantes de color (POC)"},
+     
+     {"English": "This dataset shows the percentage of students of color in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and ",
+     "Spanish": "Estos datos demuestran el porcentaje de estudiantes de color en las 16 escuelas. En cada escuela, la mayoría de los alumnos son “alumnos the color,” lo cual significa que la representación y"},
+     
+     {"English": "culturally-responsive pedagogy",
+     "Spanish": "pedagogía culturalmente sensible"},
+     
+     {"English": "is integral for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more.",
+     "Spanish": "son esenciales para el éxito de los estudiantes. Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. Los estudiantes que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
+     
+     {"English": "Below is more information about students of color:",
+     "Spanish": "Información sobre estudiantes de color:"},
+     
+     {"English": "Racial/Ethnic Enrollment in NC Public Schools",
+     "Spanish": "Inscripción racial y étnica en las escuelas públicas de Carolina del norte"},
+     
+     {"English": "Benefits of POC Representation",
+     "Spanish": "Ventajas de la representación"},
+     
+     {"English": "Racial Demographics",
+     "Spanish": "Demográficas Raciales"},
+     
+     {"English": "This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased.",
+     "Spanish": "Estos datos demuestran el análisis de las diferentes razas en cada escuela. En las escuelas públicas de Durham, 80.7% de los estudiantes son de color, mientras 57% de la ciudad de Durham son personas de color. Las demográficas raciales de las 16 escuelas han cambiado con el tiempo, específicamente durante los últimos 30 años. El número de estudiantes blancos ha disminuido, y el número de estudiantes de color ha incrementado."},
+     
+     {"English": "Representation of these students and ",
+     "Spanish": "Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. La representación de estos estudiantes y "},
+     
+     {"English": "Below is more information about racial demographics in schools:",
+     "Spanish": "Más información sobre demográficas raciales:"},
+     
+     {"English": "Changing School Racial Demographics in Recent Decades",
+     "Spanish": "Cómo las demográficas raciales han cambiado"},
+     
+     {"English": "More Students of Color in Public schools",
+     "Spanish": "Más estudiantes de color en las escuelas públicas"},
+     
+     {"English": "Median Household Income",
+     "Spanish": "Ingreso promedio familiar"},
+     
+     {"English": "This graph shows the median household income for each school zone. According to the 2020 US census, the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the first statistically significant decline since 2011.",
+     "Spanish": "Esta gráfica demuestra el ingreso promedio familiar para cada zona escolar. De acuerdo al censo de 2020, el ingreso promedio familiar en los Estados Unidos es $67,521. Esto es una reducción de 2.9% desde 2019, lo cual es la primera reducción significativa desde 2011."},
+     
+     {"English": "According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom. Students’ basic human needs must be met in order to excel in the classroom.",
+     "Spanish": "De acuerdo al censo de 2020, el ingreso promedio familiar de Carolina del Norte es $56,642, mientras el ingreso por persona es $31,993. Es preocupante que las 16 escuelas quedan debajo de los promedios del estado y país. La pobreza directamente afecta la enseñanza de los estudiantes. La inseguridad alimentaria previene a que los estudiantes estén a todo su potencial. Las necesidades básicas de los estudiantes deben ser atendidas."},
+     
+     {"English": "Below are links to the US Census Information:",
+     "Spanish": "Datos del Censo de los Estados Unidos"},
+     
+     {"English": "Median Homesale Price",
+     "Spanish": "Precio de venta de casas"},
+     
+     {"English": "This graph shows the average home sale price for each school zone. In 2021, the median home sale price for the United States is $397,100 and the average home sale price is $464,200, according to the US Census Bureau. Specifically for the South, the median home sale price is $355,900 and the average home sale price is $411,100.",
+     "Spanish": "Esta gráfica demuestra los promedios de los precios de venta de casas para cada zona escolar. En 2021, la mediana para los Estados Unidos fue $397,100, y el promedio fue $464,200 (de acuerdo al censo). Específicamente para el Sur del país, el precio mediano es $355,900 mientras el promedio es $411,100."},
+     
+     {"English": "Due to the COVID-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to ",
+     "Spanish": "Debido a la pandemia de COVID-19, los precios de las casas subieron. Por lo tanto, el costo de vida también subió: todo contribuyendo a la "},
+     
+     {"English": "Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
+     "Spanish": "La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
+     
+     {"English": "Below is more information about home sale price:",
+     "Spanish": "Información sobre los precios de venta de casas"},
+     
+     {"English": "Home Sale Price Data",
+     "Spanish": "Datos sobre el precio de casas"},
+     
+     {"English": "Covid-19 Increase",
+     "Spanish": "Efectos de la pandemia"},
+     
+     {"English": "Bachelor Degree Rate",
+     "Spanish": "Los índices de licenciaturas universitarias"},
+     
+     {"English": "This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.",
+     "Spanish": "Esta gráfica muestra el porcentaje de adultos con bachillerato de cada zona escolar. Estos números de licenciaturas varían significativamente por grupos de diferentes razas, ingresos, y sexos. Adicionalmente, las personas con más licenciaturas tienden a tener ingresos más altos."},
+     
+     {"English": "Below is more information about bachelor degree rates:",
+     "Spanish": "Información sobre los índices de licenciaturas universitarias:"},
+     
+     {"English": "Bachelor’s Degrees and Race",
+     "Spanish": "Licenciaturas universitarias y la raza"},
+     
+     {"English": "Bachelor’s Degrees and Income",
+     "Spanish": "Licenciaturas universitarias y el ingreso"},
+     
+     {"English": "Sidewalk Coverage",
+     "Spanish": "Las banquetas"},
+     
+     {"English": "Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, parks, etc. Especially for younger students, sidewalks are essential for their safety. According to a UNC Highway Safety Research Center study, the probability of a crash occurring near or at a paved sidewalk is 88.2% lower than an unpaved site.",
+     "Spanish": "Áreas sin banquetas son inaccesibles para personas sin coches u otros modos de transportación (pública o privada). Las banquetas son necesarias para caminar a lugares sin peligro, por ejemplo la escuela, tiendas de comestibles, parques, etc. Especialmente para los estudiantes más jóvenes, las banquetas son esenciales para la seguridad. De acuerdo a un estudio de la Universidad de Carolina del Norte (UNC), la probabilidad de un choque tomando lugar cerca de una banqueta es 88.2% más bajo que un lugar sin una banqueta."},
+     
+     {"English": "Sidewalks also promote more physical activity and healthier lifestyles. In the US specifically, obesity rates have been steadily increasing across all populations and ages. Sidewalk coverage provides people with a safe and accessible way to increase their daily physical activity.",
+     "Spanish": "Las banquetas promueven más actividad física y estilos de vida más sanos. En los Estados Unidos, el índice de obesidad ha subido en todas las poblaciones y diferentes edades. Las banquetas proveen a las personas una manera segura y accesible para ser más activos."},
+     
+     {"English": "High income areas tend to have more sidewalk coverage than lower income areas. 89% of high-income communities have sidewalks, whereas only 49% of low income communities have sidewalk coverage.",
+     "Spanish": "Áreas de ingresos altos tienden a tener más banquetas que áreas de ingresos bajos. 89% de las comunidades de ingresos altos tienen banquetas, mientras solamente 49% de las comunidades de ingresos y recursos bajos tienen banquetas."},
+     
+     {"English": "Below is more information about sidewalk coverage:",
+     "Spanish": "Información sobre las banquetas:"},
+     
+     {"English": "Importance of Sidewalks",
+     "Spanish": "La importancia de las banquetas"},
+     
+     {"English": "Income Disparities and Sidewalk Coverage",
+     "Spanish": "Disparidades de ingresos en áreas sin banquetas"},
+     
+     {"English": "Dashboard with Articles and Quick Facts about Graduation Rates",
+     "Spanish": "Artículos e información sobre el índice de graduación"},
+     
+     {"English": "Median Age",
+     "Spanish": "Edad promedio"},
+     
+     {"English": "This dataset shows the median age of residents in each school zone. The median age of residents in a specific school zone can determine the various assets available, identify beneficial resources in the community, and give some insight about school enrollment numbers in the future.",
+     "Spanish": "Estos datos muestran la edad promedio de los residentes en cada zona escolar. La edad promedio puede determinar los recursos disponibles, identificar las ventajas en la comunidad, y darnos una idea sobre el número de inscritos en el futuro."},
+     
+     {"English": "Titles Per Student",
+     "Spanish": "Títulos por estudiante"},
+     
+     {"English": "A school library’s number of book titles per student indicates the availability of different book titles for students to select. A higher number of book titles per student indicates a wider variety of books to choose from. Having more book titles per student enables more opportunities for whole-class novel reading, which is essential for learning book analysis, encouraging engaging discussions, and prompting creative writing.",
+     "Spanish": "Este dato refleja el número de libros en la biblioteca (de la escuela) por estudiante. Este número indica la disponibilidad de diferentes libros para los estudiantes. Un número alto representa una variedad de libros más grande. Una biblioteca que tiene más títulos por estudiante crea más oportunidades para lectura en grupos, lo cual es esencial para aprender análisis de lectura, crear discusiones en el salón de clases, y motivar la escritura creativa."},
+     
+     {"English": "Having a wide selection of books in a library also promotes more reading and intellectual stimulation for students. With a higher number of titles per student, it is more likely that most, if not all, students can find literature that engages them.",
+     "Spanish": "Una selección extensa de libros promueve más lectura e intelectualmente estimulante materiales para los alumnos. Una escuela con muchos libros tiene más chances que la mayoría, sino todos los estudiantes, puedan encontrar unos libros o un género que les interesa."},
+     
+     {"English": "Below are more resources on the importance of book titles:",
+     "Spanish": "Recursos sobre la importancia de los libros"},
+     
+     {"English": "Importance of Culturally-Diverse Literature",
+     "Spanish": "La importancia de libros culturalmente diversos"},
+     
+     {"English": "Creating an Effective and Diverse Classroom Library",
+     "Spanish": "Creando una biblioteca efectiva e inclusiva"},
+     
+     {"English": "WiFi Access",
+     "Spanish": "La internet (WiFi)"},
+     
+     {"English": "Note:",
+     "Spanish": "Nota:"},
+     
+     {"English": "Due to the COVID-19 pandemic, this data only extends until December of 2020. Therefore, only the 2019-2020 school year is reflected above.",
+     "Spanish": "A causa de la pandemia COVID-19, estos datos solamente se extienden hasta diciembre de 2020. Por lo tanto, esta información es del año escolar 2019-2020."},
+     
+     {"English": "The visualization depicts the number of wireless access points for each classroom. A school with a higher number of access points overall will have better internet coverage and quality than a school with less access points.",
+     "Spanish": "Esta visualización representa el número de puntos de acceso inalámbricos en cada salón de clases. Una escuela con más puntos de acceso tiene mejor internet y conexión que una escuela con menos puntos de acceso."},
+     
+     {"English": "As things begin to modernize with time, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+     
+     {"English": "Below are more resources on Wi-Fi Access:",
+     "Spanish": "Recursos sobre el acceso de internet:"},
+     
+     {"English": "Why Representation Matters",
+     "Spanish": "La importancia de la representación"},
+    
+     {"English": ": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
+     "Spanish": ": un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
+     
+     {"English": "is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more.",
+     "Spanish": "son esenciales para el éxito de los estudiantes. Los alumnos que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
+     
+     {"English": ". Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
+     "Spanish": ". La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
+     
+     {"English": "As society modernizes, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+
+     {"English": "For high school students especially, classes become more challenging as they become older and begin to take more advanced courses, such as AP or IB classes. In these higher-stress environments, smaller sized classrooms enable teachers to better gauge if the students are making progress and fully understanding the material. Additionally, educators have the opportunity to make the curriculum and assignments more personalized to cater to the student body.", 
+     "Spanish": "Especialmente para los estudiantes de escuelas preparatorias, las clases se vuelven más desafiantes. Mientras los estudiantes crezcan, también empiezan a tomar cursos más avanzados, como las clases de AP o IB (Bachillerato Internacional). En estos ambientes más estresantes, clases pequeñas ayudan a que los maestros se den cuenta si los estudiantes están entendiendo el currículo. Adicionalmente, los educadores tienen la oportunidad de crear su propio currículo y hacer que las tareas sean más personalizadas para los estudiantes."},
+     
+     {"English": "Assistive Technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "assistive technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "Graduation Rate",
+     "Spanish": "Índice de graduación"},
+     
+     {"English": "The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030. This is a significant increase from when the first reported graduation rate was 68.3% in 2006.",
+     "Spanish": "Esta gráfica muestra el porcentaje de estudiantes estimados a graduarse de la preparatoria en cuatro años (o menos). El índice de graduación de Carolina del Norte de 2020 es 87.6%, con planes de aumentar este porcentaje a 95% para el año 2030. Esto es un aumento significante desde 2006; cuando el índice de graduación fue 68.3%."},
+     
+     {"English": "Graduation rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, especially school counselors and social workers, to reach out to students with extended absences. External factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.",
+     "Spanish": "Estos índices son importantes. Graduaciones retrasadas terminan en menos estudiantes terminado la preparatoria. Es posible que los estudiantes que no se gradúan (o alumnos desertores) tengan obstáculos y estilos de vida desaventajados. Es importante que consejeros y trabajadores sociales se comuniquen con estudiantes con muchas ausencias. Factores externos pueden ser la razón detrás de los alumnos desertores. Como comunidad, debemos trabajar para eliminar estas barreras."},
+     
+     {"English": "Below are more resources on graduation rates:",
+     "Spanish": "Recursos sobre el índice de graduación:"},
+     
+     {"English": "However, not all students have the same access to technology in their homes. Most schools have accounted for this disparity by providing students with free tablets or laptops. During the COVID-19 pandemic, when students of all ages had to adjust to online instruction, several counties provided WiFI hubs so that students’ learning was not hindered.",
+     "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."}
+
+]
+}
