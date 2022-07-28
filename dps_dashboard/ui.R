@@ -158,7 +158,7 @@ body <- {dashboardBody(
                                      )),
                               column(class = 'text-center', width = 2,
                                      tags$a(
-                                         href="https://bassconnections.duke.edu/", 
+                                         href="https://sites.duke.edu/uacs/", 
                                          tags$img(src="bass connections.png", 
                                                   title="Bass Connections Logo",
                                                   class= "img-responsive")
@@ -249,7 +249,7 @@ body <- {dashboardBody(
                         br(),
                         fluidRow(
                           column(width = 1,
-                                 img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
+                                 (imgsrc = "cultural_icon.png", width = 40, height = 40, align = "left")),
                           column(width = 1),
                           column(width = 8, htmlOutput("cultureicon")
                           )),
