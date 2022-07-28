@@ -252,7 +252,7 @@ body <- {dashboardBody(
                         br(),
                         fluidRow(
                           column(width = 1,
-                                 (imgsrc = "cultural_icon.png", width = 40, height = 40, align = "left")),
+                                 img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
                           column(width = 1),
                           column(width = 8, htmlOutput("cultureicon")
                           )),
@@ -332,7 +332,7 @@ body <- {dashboardBody(
                                  img(src = "religious_icon.png", width = 40, height = 40)),
                           column(width = 1),
                           column(width = 8, htmlOutput("religiousicon")
-                          ))
+                          )) 
                    )},
                  )
         )},
@@ -570,7 +570,7 @@ body <- {dashboardBody(
                               )
                    )
                  )
-        ))},
+        )},
         
         #Sports Tab - dynamic
         # {tabItem(tabName = "sportstab",
