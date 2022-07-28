@@ -1,8 +1,8 @@
 ,varname,name,count
 0,After-School Care Programs,All School,24.0
 1,Bus Stops,All School,1037.0
-2,Childcare Centers_2022,All School,258.0
-3,Community & Cultural Centers,All School,9.0
+2,Childcare Centers,All School,258.0
+3,Community & Cultural Centers,All School,10.0
 4,Community Arts,All School,59.0
 5,Community Gardens,All School,6.0
 6,Community Sports,All School,23.0
@@ -17,8 +17,8 @@
 15,Religious Centers,All School,217.0
 16,After-School Care Programs,Brogden Middle School,13.0
 17,Bus Stops,Brogden Middle School,402.0
-18,Childcare Centers_2022,Brogden Middle School,41.0
-19,Community & Cultural Centers,Brogden Middle School,5.0
+18,Childcare Centers,Brogden Middle School,41.0
+19,Community & Cultural Centers,Brogden Middle School,6.0
 20,Community Arts,Brogden Middle School,38.0
 21,Community Gardens,Brogden Middle School,5.0
 22,Community Sports,Brogden Middle School,7.0
@@ -33,7 +33,7 @@
 31,Religious Centers,Brogden Middle School,76.0
 32,After-School Care Programs,C.C. Spaulding Elementary School,3.0
 33,Bus Stops,C.C. Spaulding Elementary School,87.0
-34,Childcare Centers_2022,C.C. Spaulding Elementary School,8.0
+34,Childcare Centers,C.C. Spaulding Elementary School,8.0
 35,Community & Cultural Centers,C.C. Spaulding Elementary School,0.0
 36,Community Arts,C.C. Spaulding Elementary School,3.0
 37,Community Gardens,C.C. Spaulding Elementary School,0.0
@@ -49,7 +49,7 @@
 47,Religious Centers,C.C. Spaulding Elementary School,16.0
 48,After-School Care Programs,Club Boulevard Elementary School,1.0
 49,Bus Stops,Club Boulevard Elementary School,0.0
-50,Childcare Centers_2022,Club Boulevard Elementary School,1.0
+50,Childcare Centers,Club Boulevard Elementary School,1.0
 51,Community & Cultural Centers,Club Boulevard Elementary School,0.0
 52,Community Arts,Club Boulevard Elementary School,0.0
 53,Community Gardens,Club Boulevard Elementary School,0.0
@@ -65,7 +65,7 @@
 63,Religious Centers,Club Boulevard Elementary School,0.0
 64,After-School Care Programs,E.K. Powe Elementary School,4.0
 65,Bus Stops,E.K. Powe Elementary School,117.0
-66,Childcare Centers_2022,E.K. Powe Elementary School,13.0
+66,Childcare Centers,E.K. Powe Elementary School,13.0
 67,Community & Cultural Centers,E.K. Powe Elementary School,0.0
 68,Community Arts,E.K. Powe Elementary School,16.0
 69,Community Gardens,E.K. Powe Elementary School,0.0
@@ -81,7 +81,7 @@
 79,Religious Centers,E.K. Powe Elementary School,23.0
 80,After-School Care Programs,Eastway Elementary School,1.0
 81,Bus Stops,Eastway Elementary School,51.0
-82,Childcare Centers_2022,Eastway Elementary School,7.0
+82,Childcare Centers,Eastway Elementary School,7.0
 83,Community & Cultural Centers,Eastway Elementary School,1.0
 84,Community Arts,Eastway Elementary School,1.0
 85,Community Gardens,Eastway Elementary School,1.0
@@ -97,7 +97,7 @@
 95,Religious Centers,Eastway Elementary School,10.0
 96,After-School Care Programs,Fayetteville Street Elementary School,1.0
 97,Bus Stops,Fayetteville Street Elementary School,34.0
-98,Childcare Centers_2022,Fayetteville Street Elementary School,16.0
+98,Childcare Centers,Fayetteville Street Elementary School,16.0
 99,Community & Cultural Centers,Fayetteville Street Elementary School,0.0
 100,Community Arts,Fayetteville Street Elementary School,0.0
 101,Community Gardens,Fayetteville Street Elementary School,0.0
@@ -113,7 +113,7 @@
 111,Religious Centers,Fayetteville Street Elementary School,10.0
 112,After-School Care Programs,Forest View Elementary School,0.0
 113,Bus Stops,Forest View Elementary School,55.0
-114,Childcare Centers_2022,Forest View Elementary School,7.0
+114,Childcare Centers,Forest View Elementary School,7.0
 115,Community & Cultural Centers,Forest View Elementary School,0.0
 116,Community Arts,Forest View Elementary School,4.0
 117,Community Gardens,Forest View Elementary School,0.0
@@ -129,7 +129,7 @@
 127,Religious Centers,Forest View Elementary School,7.0
 128,After-School Care Programs,Hillandale Elementary School,0.0
 129,Bus Stops,Hillandale Elementary School,48.0
-130,Childcare Centers_2022,Hillandale Elementary School,6.0
+130,Childcare Centers,Hillandale Elementary School,6.0
 131,Community & Cultural Centers,Hillandale Elementary School,0.0
 132,Community Arts,Hillandale Elementary School,3.0
 133,Community Gardens,Hillandale Elementary School,0.0
@@ -145,7 +145,7 @@
 143,Religious Centers,Hillandale Elementary School,11.0
 144,After-School Care Programs,Hillside High School,4.0
 145,Bus Stops,Hillside High School,251.0
-146,Childcare Centers_2022,Hillside High School,87.0
+146,Childcare Centers,Hillside High School,87.0
 147,Community & Cultural Centers,Hillside High School,0.0
 148,Community Arts,Hillside High School,2.0
 149,Community Gardens,Hillside High School,1.0
@@ -161,8 +161,8 @@
 159,Religious Centers,Hillside High School,45.0
 160,After-School Care Programs,Jordan High School,9.0
 161,Bus Stops,Jordan High School,222.0
-162,Childcare Centers_2022,Jordan High School,52.0
-163,Community & Cultural Centers,Jordan High School,5.0
+162,Childcare Centers,Jordan High School,52.0
+163,Community & Cultural Centers,Jordan High School,6.0
 164,Community Arts,Jordan High School,20.0
 165,Community Gardens,Jordan High School,2.0
 166,Community Sports,Jordan High School,6.0
@@ -177,8 +177,8 @@
 175,Religious Centers,Jordan High School,56.0
 176,After-School Care Programs,Lakewood Elementary School,2.0
 177,Bus Stops,Lakewood Elementary School,41.0
-178,Childcare Centers_2022,Lakewood Elementary School,7.0
-179,Community & Cultural Centers,Lakewood Elementary School,2.0
+178,Childcare Centers,Lakewood Elementary School,7.0
+179,Community & Cultural Centers,Lakewood Elementary School,3.0
 180,Community Arts,Lakewood Elementary School,3.0
 181,Community Gardens,Lakewood Elementary School,2.0
 182,Community Sports,Lakewood Elementary School,1.0
@@ -193,8 +193,8 @@
 191,Religious Centers,Lakewood Elementary School,7.0
 192,After-School Care Programs,Lakewood Middle School,24.0
 193,Bus Stops,Lakewood Middle School,1037.0
-194,Childcare Centers_2022,Lakewood Middle School,258.0
-195,Community & Cultural Centers,Lakewood Middle School,9.0
+194,Childcare Centers,Lakewood Middle School,258.0
+195,Community & Cultural Centers,Lakewood Middle School,10.0
 196,Community Arts,Lakewood Middle School,59.0
 197,Community Gardens,Lakewood Middle School,6.0
 198,Community Sports,Lakewood Middle School,23.0
@@ -209,7 +209,7 @@
 207,Religious Centers,Lakewood Middle School,217.0
 208,After-School Care Programs,Lowes Grove Middle School,3.0
 209,Bus Stops,Lowes Grove Middle School,197.0
-210,Childcare Centers_2022,Lowes Grove Middle School,78.0
+210,Childcare Centers,Lowes Grove Middle School,78.0
 211,Community & Cultural Centers,Lowes Grove Middle School,0.0
 212,Community Arts,Lowes Grove Middle School,1.0
 213,Community Gardens,Lowes Grove Middle School,1.0
@@ -225,7 +225,7 @@
 223,Religious Centers,Lowes Grove Middle School,32.0
 224,After-School Care Programs,Parkwood Elementary School,0.0
 225,Bus Stops,Parkwood Elementary School,52.0
-226,Childcare Centers_2022,Parkwood Elementary School,24.0
+226,Childcare Centers,Parkwood Elementary School,24.0
 227,Community & Cultural Centers,Parkwood Elementary School,0.0
 228,Community Arts,Parkwood Elementary School,0.0
 229,Community Gardens,Parkwood Elementary School,0.0
@@ -241,7 +241,7 @@
 239,Religious Centers,Parkwood Elementary School,7.0
 240,After-School Care Programs,Riverside High School,8.0
 241,Bus Stops,Riverside High School,340.0
-242,Childcare Centers_2022,Riverside High School,39.0
+242,Childcare Centers,Riverside High School,39.0
 243,Community & Cultural Centers,Riverside High School,2.0
 244,Community Arts,Riverside High School,32.0
 245,Community Gardens,Riverside High School,2.0
@@ -257,7 +257,7 @@
 255,Religious Centers,Riverside High School,53.0
 256,After-School Care Programs,Southwest Elementary School,1.0
 257,Bus Stops,Southwest Elementary School,32.0
-258,Childcare Centers_2022,Southwest Elementary School,17.0
+258,Childcare Centers,Southwest Elementary School,17.0
 259,Community & Cultural Centers,Southwest Elementary School,1.0
 260,Community Arts,Southwest Elementary School,1.0
 261,Community Gardens,Southwest Elementary School,0.0
