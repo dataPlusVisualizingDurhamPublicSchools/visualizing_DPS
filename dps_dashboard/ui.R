@@ -252,7 +252,7 @@ body <- {dashboardBody(
                         br(),
                         fluidRow(
                           column(width = 1,
-                                 (imgsrc = "cultural_icon.png", width = 40, height = 40, align = "left")),
+                                 img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
                           column(width = 1),
                           column(width = 8, htmlOutput("cultureicon")
                           )),
@@ -333,8 +333,8 @@ body <- {dashboardBody(
                           column(width = 1),
                           column(width = 8, htmlOutput("religiousicon")
                           ))
-                   )},
-                 )
+                   )}
+        )  
         )},
         
         #School Stats Tab
@@ -570,7 +570,7 @@ body <- {dashboardBody(
                               )
                    )
                  )
-        ))},
+        )},
         
         #Sports Tab - dynamic
         # {tabItem(tabName = "sportstab",
@@ -762,27 +762,27 @@ body <- {dashboardBody(
                              column(width = 3,
                                     img(align = "center", src = "emily250.jpg")),
                              column(width =3,
-                                    p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro,North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our educational and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
+                                    p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro, North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our educational and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
                              column(width = 3,
                                     img(src = "aryan250.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently,he is studying Data Science, with a minor in Political Science. He is especially interestedin using big data analyses to reveal politically and socially relevant insights to key issuesin policy and social justice. He joined the Data+ team to provide a clearer picture of the stateof Durham public schools, and find better paths to their improvement.")))),
+                                    p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently, he is studying Data Science, with a minor in Political Science. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and find better paths to their improvement.")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "patience3.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team because she was wanted to continue the work she did the previous summer in hopes to improve the dashboardto make it more accessible. With her background in education policy, she hopes to integrateher own knowledge with this dashboard to make an impact on Durham Public Schools and beyond."))),
+                                    p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team because she was wanted to continue the work she did the previous summer in hopes to improve the dashboard to make it more accessible. With her background in education policy, she hopes to integrate her own knowledge with this dashboard to make an impact on Durham Public Schools and beyond."))),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the previous research and efforts that have equipped the corresponding Bass Connections team with organized information and statistics to pinpoint the resources that would be most beneficial for specific schools. Melanie hopes this dashboard will help increase equity within schools, and promote a greater sense of community throughout Durham, North Carolina.")))),
+                                    p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina. She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the previous research and efforts that have equipped the corresponding Bass Connections team with organized information and statistics to pinpoint the resources that would be most beneficial for specific schools. Melanie hopes this dashboard will help increase equity within schools, and promote a greater sense of community throughout Durham, North Carolina.")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "surabhi.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Surabhi Trivedi is a PhD candidate at Duke's sociology department. He'sinterested in how habits and beliefs change, both at the individual and collectivelevel, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, andbelieves the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true.")))))),
+                                    p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
                  
                  fluidRow(
                      box(width = 12,
@@ -794,17 +794,17 @@ body <- {dashboardBody(
                              column(width = 3,
                                     img(src = "ally3.jpg")),
                              column(width =3,
-                                    p(i18n$t("Allyson Ashekun is a junior at Duke University from Clearwater, Florida.Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ projectteam because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering DurhamPublic Schools, and will help improve the quality of partnerships."))),
+                                    p(i18n$t("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ project team because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering Durham Public Schools, and will help improve the quality of partnerships."))),
                              column(width = 3,
                                     img(src = "drewheadshot3 copy.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help adequatelyprepare college students to enter schools as well as allow Durham residents tolocate the myriad resources accessible to help form an even stronger community built around the schools.")))),
+                                    p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help adequately prepare college students to enter schools as well as allow Durham residents tolocate the myriad resources accessible to help form an even stronger community built around the schools.")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "patience3.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into educationpolicy. She hopes this dashboard makes an impact on not only these ten communityschools in the dataset, but students in all Durham Public Schools and beyond, in hopes to make education more accessible to all students."))),
+                                    p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into education policy. She hopes this dashboard makes an impact on not only these ten community schools in the dataset, but students in all Durham Public Schools and beyond, in hopes to make education more accessible to all students."))),
                              column(width = 3,
                                     img(src = "rhea3.jpg")),
                              column(width = 3,
@@ -814,7 +814,7 @@ body <- {dashboardBody(
                              column(width = 3,
                                     img(src = "nico3.jpg")),
                              column(width = 3,
-                                    p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He'sinterested in how habits and beliefs change, both at the individual and collectivelevel, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, andbelieves the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
+                                    p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
         )} 
         
         
