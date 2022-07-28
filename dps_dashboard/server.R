@@ -150,7 +150,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     )
 }
 
-translator <- Translator$new(translation_json_path = "data/schoolTranslations.json")
+translator <- Translator$new(translation_json_path = "data/Translations/testTranslation.json")
 
 function(input, output, session) {
   
@@ -180,7 +180,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Average Class Size", x = "School", y = "Average # of Students")
+                    labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Bachelor Degree Rate") {
@@ -192,7 +192,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
+                    labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "BIPOC Students per School") {
@@ -203,7 +203,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
+                    labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Enrollment") {
@@ -214,7 +214,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "School Enrollment" , x = "School", y = "Students")
+                    labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Experienced Teacher Ratio"){
@@ -226,7 +226,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme(plot.title = element_text(hjust = 0.5)) +
                     theme_minimal() +
-                    labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
+                    labs(title = i18n()$t("Experienced Teacher Ratio"), x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Free and Reduced Lunch"){
@@ -238,7 +238,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
+                    labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Funding Per Pupil") {
@@ -251,7 +251,7 @@ function(input, output, session) {
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
+                    labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "English as a Second Language (ESL) Student Enrollment") {
@@ -263,7 +263,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "In-School Suspensions (ISS)") {
@@ -275,7 +275,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
+                    labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Median Age") {
@@ -287,7 +287,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Med Age of School Zones", x = "School Zone", y = "Median Age")
+                    labs(title = i18n()$t("Med Age of School Zones"), x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Median Homesale Price") {
@@ -300,7 +300,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $278,000", yintercept = 278000), color ='#01016D') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Median Household Income") {
@@ -313,13 +313,13 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $58,190", yintercept = 58190), color ='#01016D') +
                     geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Racial Demographics") {
               
               p <- ggplot(ES_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
-                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
@@ -334,7 +334,7 @@ function(input, output, session) {
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+                    labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
             else if(input$es_select == "Sidewalk Coverage") {
@@ -346,7 +346,7 @@ function(input, output, session) {
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
                     geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
+                    labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Students Per Device") {
@@ -358,7 +358,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
+                    labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Student-Teacher Ratio, Elementary School") {
@@ -370,7 +370,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("Elementary School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Students With Disabilities") {
@@ -382,7 +382,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 13.3%", yintercept = 13.3), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
 
             }
@@ -396,7 +396,7 @@ function(input, output, session) {
               geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
               theme_minimal() +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+              labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text")) 
           }
           
@@ -409,7 +409,7 @@ function(input, output, session) {
               geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
               theme_minimal() +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+              labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text")) 
           } 
 
@@ -425,7 +425,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Average Class Size", x = "School", y = "Average # of Students")
+                    labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Bachelor Degree Rate") {
@@ -437,7 +437,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
+                    labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "BIPOC Students per School") {
@@ -448,7 +448,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 81), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
+                    labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Enrollment") {
@@ -459,7 +459,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "School Enrollment" , x = "School", y = "Students")
+                    labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "English as a Second Language (ESL) Student Enrollment") {
@@ -471,7 +471,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Experienced Teacher Ratio"){
@@ -483,7 +483,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme(plot.title = element_text(hjust = 1.5)) +
                     theme_minimal() +
-                    labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
+                    labs(title = i18n()$t("Experienced Teacher Ratio"), x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Free and Reduced Lunch"){
@@ -495,7 +495,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
+                    labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Funding Per Pupil") {
@@ -508,7 +508,7 @@ function(input, output, session) {
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
+                    labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "In-School Suspensions (ISS)") {
@@ -520,7 +520,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
+                    labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Median Age") {
@@ -532,7 +532,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
+                    labs(title = i18n()$t("Median Age of School Zones"), x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Median Homesale Price") {
@@ -545,7 +545,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $290,500", yintercept = 290500), color ='#01016D') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Median Household Income") {
@@ -558,13 +558,13 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $60,958", yintercept = 60958), color ='#01016D') +
                     geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Racial Demographics") {
               
               p <- ggplot(ES_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
-                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
@@ -579,7 +579,7 @@ function(input, output, session) {
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+                    labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
             else if(input$es_select == "Sidewalk Coverage") {
@@ -591,7 +591,7 @@ function(input, output, session) {
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
                     geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
+                    labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$es_select == "Students Per Device") {
@@ -603,7 +603,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
+                    labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Student-Teacher Ratio, Elementary School") {
@@ -615,7 +615,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("Elementary School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$es_select == "Students With Disabilities") {
@@ -627,7 +627,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             else if(input$es_select == "Titles Per Student") {
@@ -639,7 +639,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             else if(input$es_select == "WiFi Access Points Per Classroom") {
@@ -651,7 +651,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
         }
@@ -669,7 +669,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Average Class Size", x = "School", y = "Average # of Students")
+                    labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "Bachelor Degree Rate") {
@@ -681,7 +681,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
+                    labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "BIPOC Students per School") {
@@ -692,7 +692,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
+                    labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "CTE Course Enrollment Rate, Middle School") {
@@ -704,7 +704,7 @@ function(input, output, session) {
               theme_minimal() +
               geom_hline(aes(text="Durham County Average = 56%", yintercept = 56), color ='#01016D') +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
+              labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text"))
           } 
           else if(input$ms_select == "Enrollment") {
@@ -715,7 +715,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "School Enrollment" , x = "School", y = "Students")
+                    labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "English as a Second Language (ESL) Student Enrollment") {
@@ -727,7 +727,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
           else if(input$ms_select == "Experienced Teacher Ratio"){
@@ -751,7 +751,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
+                    labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
           else if(input$ms_select == "Funding Per Pupil") {
@@ -764,7 +764,7 @@ function(input, output, session) {
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
+                    labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
           else if(input$ms_select == "In-School Suspensions (ISS)") {
@@ -776,7 +776,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
+                    labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "Median Age") {
@@ -788,7 +788,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
+                    labs(title = i18n()$t("Median Age of School Zones"), x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
           else if(input$ms_select == "Median Homesale Price") {
@@ -801,7 +801,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $290,500", yintercept = 290500), color ='#01016D') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "Median Household Income") {
@@ -814,13 +814,13 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $60,958", yintercept = 60958), color ='#01016D') +
                     geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "Racial Demographics") {
               
               p <- ggplot(MS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
-                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
@@ -835,7 +835,7 @@ function(input, output, session) {
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+                    labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
           else if(input$ms_select == "Sidewalk Coverage") {
@@ -847,7 +847,7 @@ function(input, output, session) {
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
                     geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
+                    labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
           else if(input$ms_select == "Students Per Device") {
@@ -859,7 +859,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
+                    labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
           else if(input$ms_select == "Student-Teacher Ratio, Middle School") {
@@ -871,7 +871,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Middle School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("Middle School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
           else if(input$ms_select == "Students With Disabilities") {
@@ -883,7 +883,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
           else if(input$ms_select == "Titles Per Student") {
@@ -895,7 +895,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             else if(input$ms_select == "WiFi Access Points Per Classroom") {
@@ -907,7 +907,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
         }
@@ -924,7 +924,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Advanced Placement Course Enrollment", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Advanced Placement Course Enrollment"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Average Class Size") {
@@ -936,7 +936,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Average Class Size", x = "School", y = "Average # of Students")
+                    labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Bachelor Degree Rate") {
@@ -948,7 +948,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
+                    labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "BIPOC Students per School") {
@@ -959,7 +959,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
+                    labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "CTE Course Enrollment Rate, High School") {
@@ -971,7 +971,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 53%", yintercept = 53), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Enrollment") {
@@ -982,7 +982,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "School Enrollment" , x = "School", y = "Students")
+                    labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Experienced Teacher Ratio"){
@@ -994,7 +994,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme(plot.title = element_text(hjust = 0.5)) +
                     theme_minimal() +
-                    labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
+                    labs(title = i18n()$t("Experienced Teacher Ratio"), x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Free and Reduced Lunch"){
@@ -1006,7 +1006,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
+                    labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Funding Per Pupil") {
@@ -1019,7 +1019,7 @@ function(input, output, session) {
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
+                    labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "English as a Second Language (ESL) Student Enrollment") {
@@ -1031,7 +1031,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Graduation Rate") {
@@ -1043,7 +1043,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Graduation Rate", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Graduation Rate"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "In-School Suspensions (ISS)") {
@@ -1055,7 +1055,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
+                    labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Median Age") {
@@ -1067,7 +1067,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Med Age of School Zones", x = "School Zone", y = "Median Age")
+                    labs(title = i18n()$t("Med Age of School Zones"), x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Median Homesale Price") {
@@ -1080,7 +1080,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $278,000", yintercept = 278000), color ='#01016D') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Median Household Income") {
@@ -1093,12 +1093,12 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $58,190", yintercept = 58190), color ='#01016D') +
                     geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Racial Demographics") {
               p <- ggplot(HS_all_race, aes(fill=race, y=number, x=as.factor(school))) + 
-                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
@@ -1112,7 +1112,7 @@ function(input, output, session) {
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+                    labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
             else if(input$hs_select == "Sidewalk Coverage") {
@@ -1124,7 +1124,7 @@ function(input, output, session) {
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
                     geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
+                    labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Students Per Device") {
@@ -1136,7 +1136,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
+                    labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Student-Teacher Ratio, Elementary School") {
@@ -1148,7 +1148,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("Elementary School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Student-Teacher Ratio, High School") {
@@ -1160,7 +1160,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("High School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Students With Disabilities") {
@@ -1172,7 +1172,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 13.3%", yintercept = 13.3), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             }
           
@@ -1185,7 +1185,7 @@ function(input, output, session) {
               geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
               theme_minimal() +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+              labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text")) 
           }
           
@@ -1198,7 +1198,7 @@ function(input, output, session) {
               geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
               theme_minimal() +
               theme(plot.title = element_text(hjust = 1.5)) +
-              labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+              labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
             ggplotly(p, tooltip = c("text")) 
           } 
           
@@ -1214,7 +1214,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Average Class Size", x = "School", y = "Average # of Students")
+                    labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Bachelor Degree Rate") {
@@ -1226,7 +1226,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
                     geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Bachelor Degree Rate", y = "Bachelor Degree Rate", x = "School Zone")
+                    labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "BIPOC Students per School") {
@@ -1237,7 +1237,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
                     geom_text(aes(label = number), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percentage of BIPOC Students" , x = "School", y = "BIPOC Students (%)")
+                    labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "CTE Course Enrollment Rate, High School") {
@@ -1249,7 +1249,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 56%", yintercept = 56), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "CTE Course Enrollment Rate", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Enrollment") {
@@ -1260,7 +1260,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "School Enrollment" , x = "School", y = "Students")
+                    labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "English as a Second Language (ESL) Student Enrollment") {
@@ -1272,7 +1272,7 @@ function(input, output, session) {
                     theme_minimal() +
                     geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "ESL Student Enrollment", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Experienced Teacher Ratio"){
@@ -1284,7 +1284,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme(plot.title = element_text(hjust = 1.5)) +
                     theme_minimal() +
-                    labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
+                    labs(title = i18n()$t("Experienced Teacher Ratio"), x = "School", y = "Experienced Teachers (%)")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Free and Reduced Lunch"){
@@ -1296,7 +1296,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Receiving Free and Reduced Lunch", x = "School", y = "Students")
+                    labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Funding Per Pupil") {
@@ -1309,7 +1309,7 @@ function(input, output, session) {
                     theme_minimal() +
                     scale_y_continuous(labels=scales::dollar_format()) +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Funding Per Pupil", x = "School", y = "Amount of Funding (USD)")
+                    labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Graduation Rate") {
@@ -1321,7 +1321,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Graduation Rate", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Graduation Rate"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "In-School Suspensions (ISS)") {
@@ -1333,7 +1333,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "In-School Suspensions", x = "School", y = "Students Per 1000")
+                    labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Median Age") {
@@ -1345,7 +1345,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Age of School Zones", x = "School Zone", y = "Median Age")
+                    labs(title = i18n()$t("Median Age of School Zones"), x = "School Zone", y = "Median Age")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Median Homesale Price") {
@@ -1358,7 +1358,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $290,500", yintercept = 290500), color ='#01016D') +
                     geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Homesale Price", y = "Median Homesale Price ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Median Household Income") {
@@ -1371,12 +1371,12 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = $60,958", yintercept = 60958), color ='#01016D') +
                     geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Median Household Income", y = "Median Household Income ($)", x = "School Zone")
+                    labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Racial Demographics") {
               p <- ggplot(HS_all_race22, aes(fill=race, y=number, x=as.factor(school))) + 
-                geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
+                geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
                 coord_flip() +
                 theme_minimal() +
                 scale_fill_manual(values=cbPalette) +
@@ -1390,7 +1390,7 @@ function(input, output, session) {
                     scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "BIPOC Comparison of Schools vs. School Zones" , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+                    labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
                 ggplotly(p, tooltip = c("text", "text1", "number", "place"))
             }
             else if(input$hs_select == "Sidewalk Coverage") {
@@ -1402,7 +1402,7 @@ function(input, output, session) {
                     geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
                     geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Sidewalk Coverage per School Zone", y = "Sidewalk Coverage (%)", x = "School Zone")
+                    labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
                 ggplotly(p, tooltip = c("text"))
             }
             else if(input$hs_select == "Students Per Device") {
@@ -1414,7 +1414,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Students Per Device", x = "School", y = "Student to Device Ratio")
+                    labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Student-Teacher Ratio, Elementary School") {
@@ -1426,7 +1426,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Elementary School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("Elementary School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Student-Teacher Ratio, High School") {
@@ -1438,7 +1438,7 @@ function(input, output, session) {
                     coord_flip() +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "High School Student-Teacher Ratio", x = "School", y = "Students per Teacher")
+                    labs(title = i18n()$t("High School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
                 ggplotly(p, tooltip = c("text"))
             } 
             else if(input$hs_select == "Students With Disabilities") {
@@ -1450,7 +1450,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Percent of Students with Disabilities", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             else if(input$hs_select == "Titles Per Student") {
@@ -1462,7 +1462,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "Titles Per Student", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
             else if(input$hs_select == "WiFi Access Points Per Classroom") {
@@ -1474,7 +1474,7 @@ function(input, output, session) {
                     geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
                     theme_minimal() +
                     theme(plot.title = element_text(hjust = 1.5)) +
-                    labs(title = "WiFi Access Points Per Classroom", x = "School", y = "Students (%)")
+                    labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
                 ggplotly(p, tooltip = c("text")) 
             } 
         }
@@ -2241,7 +2241,6 @@ function(input, output, session) {
     })) 
     
     }
-    
 
     # Maps - Connecting variable drop down menu to variable info
   displayVar <- reactive({
@@ -2476,14 +2475,7 @@ function(input, output, session) {
       counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
       counts_grouped <- subset(counts_grouped, name == input$insights_zone)
       ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
-        ylab("Number of Resource") + xlab("Resource Type") + ggtitle("Resources in Selected Schoolzone")
-    })
-    
-    output$data_insights_context <- renderText({
-      paste("These plots reveal the total number of each resource by number in each school district. The comparison
-            is not straightforward, as different school districts have different populations and thus different corresponding
-            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
-            resources available in each school district at a glance.")
+        ylab("Number of Resource") + xlab("Resource Type")
     })
     
     observeEvent(i18n(),
@@ -2505,7 +2497,7 @@ function(input, output, session) {
                 href = "https://ncafterschool.org/"),
               "<br>",
               "<br>",
-              "Sources:",
+              i18n()$t("Sources:"),
               "<br>",HTML(paste0(strong(tags$sub("1")))),
               a(i18n()$t("Youth.gov"), href = "youth.gov"))
       }
@@ -2553,37 +2545,38 @@ function(input, output, session) {
               strong(i18n()$t("Theatre:")),
               i18n()$t("Theatre is a type of performance art that incorporates and fuses acting, singing, and dancing. On the stage, individuals have the opportunity to strengthen concentration and memory, improve articulation and fluency, and build trust as they interact and collaborate with others."),
               "<br>",
-              a("Benefits of Theatre Education", 
+              a(i18n()$t("Benefits of Theatre Education"), 
                 href = "https://www.acttooplayers.com/benefits-of-theatre-education"),
               "<br>",
               "<br>",
               strong(i18n()$t("Music:")),
               i18n()$t("Music incorporates vocal and instrumental performance, studio production, songwriting, and even  listening enjoyment. Music students have the opportunity to learn concepts such as theory, history, acoustics, and instrumental and vocal skills and techniques. Music performance has been proven to teach discipline, relieve stress, reduce stage fright, and improve academic levels."),
               "<br>",
-              a("Benefits of Musical Incorporation", 
+              a(i18n()$t("Benefits of Musical Incorporation"), 
                 href = "https://www.stamfordschools.org.uk/wp-content/uploads/2021/08/18-benefits-of-playing-a-musical-instrument.pdf"),
               "<br>",
               "<br>",
               strong(i18n()$t("Visual:")),
               i18n()$t("Visual arts consists of painting, drawing, printmaking, sculpture, ceramics,photography, video, filmmaking, design, crafts and architecture. Engaging in visual arts exposes children and adolescents to positive benefits that include; but are not limited to, having a space to create innovatively, improving motor skills, and expressing emotions."), 
-              a("Benefits of Visual Arts", 
+              "<br>",
+              a(i18n()$t("Benefits of Visual Arts"), 
                 href = "https://www.linkedin.com/pulse/20-benefits-visual-arts-children-aniruddah-andalib"),
               "<br>",
               "<br>",
               strong(i18n()$t("Museums:")),
               i18n()$t("Museums care for and display artistic, cultural, historical, and scientific artifacts. Museums help people of all walks of life understand the world around them, and embolden viewers to examine exhibits and develop perspective in informal learning environments."),
               "<br>",
-              a("The Impact of Museums", 
+              a(i18n()$t("The Impact of Museums"), 
                 href = "https://www.museumsassociation.org/campaigns/museums-change-lives/the-impact-of-museums/#"), 
               "<br>",
-              a("Why Visit Museums", 
+              a(i18n()$t("Why Visit Museums"), 
                 href = "https://www.colleendilen.com/2009/07/31/10-reasons-to-visit-a-museum/"),
               "<br>",
               "<br>",
               strong(i18n()$t("Martial Arts:")),
               i18n()$t("Martial arts consists of various forms of self-defense or combat that promote safety,  hand-eye coordination, discipline, health and weight loss, and several mental health benefits including boosted self-esteem, increased focus, and mental calmness."),
               "<br>",
-              a("Benefits of Martial Arts", 
+              a(i18n()$t("Benefits of Martial Arts"), 
                 href = "https://wayofmartialarts.com/benefits-of-martial-arts/"))
       }
       else if(input$var == "Community Sports"){
@@ -2627,13 +2620,12 @@ function(input, output, session) {
         paste(i18n()$t("Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to organizing facilitated through the community gardens” (Armstrong). Another study published in Public Health Nutrition noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually increasing acceptance and improving taste perceptions of fruits and vegetables” (Dibsdall et. al). With the ability to benefit public health and serve as community hubs, gardens are impactful to a community."),
               "<br>",
               "<br>",
-              "Below is more information about parks:",
+              "Below is more information about gardens:",
               "<br>",
               a(i18n()$t("A Survey of Community Gardens in Upstate New York"), 
                 href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchArmstrongSurveyNYHealthCommunityDevelopment.pdf?fwd=no"),
               "<br>",
-              a(i18n()$t("Low-income Consumers’ Attitudes and Behaviour Towards
-                            Access, Availability and Motivation to Eat Fruit and Vegetables"),
+              a(i18n()$t("Low-income Consumers’ Attitudes and Behaviour Towards Access, Availability and Motivation to Eat Fruit and Vegetables"),
                 href = "https://nccommunitygardens.ces.ncsu.edu/wp-content/uploads/2014/02/researchDibsdallLambertBobbinFrewerAccesstoProduce.pdf?fwd=no"),
               "<br>",
               a(i18n()$t("Research and Benefits of Community Gardens"),
@@ -2685,7 +2677,7 @@ function(input, output, session) {
                 href = "https://durhamcountylibrary.org"),
               "<br>",
               "<br>",
-              "Sources:","<br>",
+              i18n()$t("Sources:"),"<br>",
               HTML(paste0(strong(tags$sub("1")))),a("Pew Research",
                                                     href = "https://www.pewresearch.org/internet/2013/12/11/libraries-in-communities/"))
       }
@@ -3293,7 +3285,7 @@ function(input, output, session) {
                 h4(i18n()$t("- AP Statistics")))
         }
         else if(input$ap_school == "Jordan High"){
-          paste(h4(i18n()$t("- AP Calculus AB ")),
+          paste(h4(i18n()$t("- AP Calculus AB")),
                 h4(i18n()$t("- AP Calculus BC")),
                 h4(i18n()$t("- AP Statistics")))
         }
@@ -3518,262 +3510,263 @@ function(input, output, session) {
     
     
     #Sports - Static
-    {
+    observeEvent(i18n(), 
+                 {
       output$fallsports <- renderText({
         if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Boy’s Cross Country")),
-                h4(strong("Boy’s Soccer")),
-                h4(strong("Football")),
-                h4(strong("Volleyball")),
-                h4(strong("Girl’s Cross Country"))
+          paste(h4(strong(i18n()$t("Boy's Cross Country"))),
+                h4(strong(i18n()$t("Boy’s Soccer"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Volleyball"))),
+                h4(strong(i18n()$t("Girl's Cross Country")))
           )
         }
         else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Boy’s Cross Country")),
-                h4(strong("Girl’s Cross Country")),
-                h4(strong("Boy’s Soccer")),
-                h4(strong("Football")),
-                h4(strong("Volleyball"))
+          paste(h4(strong(i18n()$t("Boy's Cross Country"))),
+                h4(strong(i18n()$t("Girl's Cross Country"))),
+                h4(strong(i18n()$t("Boy’s Soccer"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Volleyball")))
           )
         }
         else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Boy’s Cross Country")),
-                h4(strong("Boy’s Soccer")),
-                h4(strong("Volleyball"))
+          paste(h4(strong(i18n()$t("Boy's Cross Country"))),
+                h4(strong(i18n()$t("Boy’s Soccer"))),
+                h4(strong(i18n()$t("Volleyball")))
           )
         }
         else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Cheerleading")),
-                h4(strong("Cross Country")),
-                h4(strong("Field Hockey")),
-                h4(strong("Football")),
-                h4(strong("JV Football")),
-                h4(strong("Men’s JV Soccer")),
-                h4(strong("Men’s Soccer")),
-                h4(strong("Women’s Golf")),
-                h4(strong("Women’s JV Volleyball")),
-                h4(strong("Women’s Tennis")),
-                h4(strong("Women’s Volleyball"))
+          paste(h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Field Hockey"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("JV Football"))),
+                h4(strong(i18n()$t("Men’s JV Soccer"))),
+                h4(strong(i18n()$t("Men’s Soccer"))),
+                h4(strong(i18n()$t("Women's Golf"))),
+                h4(strong(i18n()$t("Women's JV Volleyball"))),
+                h4(strong(i18n()$t("Women's Tennis"))),
+                h4(strong(i18n()$t("Women's Volleyball")))
           )
         }
         else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Cheerleading")),
-                h4(strong("Field Hockey")),
-                h4(strong("Football")),
-                h4(strong("JV Football")),
-                h4(strong("Men’s JV Soccer")),
-                h4(strong("Men’s Soccer")),
-                h4(strong("Men’s Cross Country")),
-                h4(strong("Women’s Golf")),
-                h4(strong("Women’s Volleyball")),
-                h4(strong("Women’s JV Volleyball")),
-                h4(strong("Women’s Tennis")),
-                h4(strong("Women’s Track"))
+          paste(h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Field Hockey"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("JV Football"))),
+                h4(strong(i18n()$t("Men’s JV Soccer"))),
+                h4(strong(i18n()$t("Men’s Soccer"))),
+                h4(strong(i18n()$t("Men's Cross Country"))),
+                h4(strong(i18n()$t("Women's Golf"))),
+                h4(strong(i18n()$t("Women's Volleyball"))),
+                h4(strong(i18n()$t("Women's JV Volleyball"))),
+                h4(strong(i18n()$t("Women's Tennis"))),
+                h4(strong(i18n()$t("Women's Track")))
           )
         }
         else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Field Hockey")),
-                h4(strong("Football")),
-                h4(strong("JV Football")),
-                h4(strong("Men’s JV Soccer")),
-                h4(strong("Men’s Soccer")),
-                h4(strong("Women’s Golf")),
-                h4(strong("Women’s JV Volleyball")),
-                h4(strong("Women’s Volleyball")),
-                h4(strong("Women’s Tennis"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Field Hockey"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("JV Football"))),
+                h4(strong(i18n()$t("Men’s JV Soccer"))),
+                h4(strong(i18n()$t("Men’s Soccer"))),
+                h4(strong(i18n()$t("Women's Golf"))),
+                h4(strong(i18n()$t("Women's JV Volleyball"))),
+                h4(strong(i18n()$t("Women's Volleyball"))),
+                h4(strong(i18n()$t("Women's Tennis")))
           )
         }
       })
       output$wintersports <- renderText({
         if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Boy’s Basketball")),
-                h4(strong("Girl’s Basketball")),
-                h4(strong("Wrestling"))
+          paste(h4(strong(i18n()$t("Boy’s Basketball"))),
+                h4(strong(i18n()$t("Girl’s Basketball"))),
+                h4(strong(i18n()$t("Wrestling")))
           )
         }
         else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Boy’s Basketball")),
-                h4(strong("Girl’s Basketball"))
+          paste(h4(strong(i18n()$t("Boy’s Basketball"))),
+                h4(strong(i18n()$t("Girl’s Basketball")))
           )
         }
         else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Boy’s Basketball")),
-                h4(strong("Girl’s Basketball"))
+          paste(h4(strong(i18n()$t("Boy’s Basketball"))),
+                h4(strong(i18n()$t("Girl’s Basketball")))
           )
         }
         else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Gymnastics")),
-                h4(strong("Indoor Track")),
-                h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketball")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling"))
+          paste(h4(strong(i18n()$t("Gymnastics"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Men's Basketball"))),
+                h4(strong(i18n()$t("Men's JV Basketball"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Women's Basketball"))),
+                h4(strong(i18n()$t("Women's JV Basketball"))),
+                h4(strong(i18n()$t("Wrestling")))
           )
         }
         else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketballl")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling")),
-                h4(strong("Indoor Track"))
+          paste(h4(strong(i18n()$t("Men's Basketball"))),
+                h4(strong(i18n()$t("Men's JV Basketball"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Women's Basketball"))),
+                h4(strong(i18n()$t("Women's JV Basketball"))),
+                h4(strong(i18n()$t("Wrestling"))),
+                h4(strong(i18n()$t("Indoor Track")))
           )
         }
         else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Gymnastics")),
-                h4(strong("Indoor Track")),
-                h4(strong("Men’s Basketball")),
-                h4(strong("Men’s JV Basketball")),
-                h4(strong("Swimming")),
-                h4(strong("Women’s Basketball")),
-                h4(strong("Women’s JV Basketball")),
-                h4(strong("Wrestling"))
+          paste(h4(strong(i18n()$t("Gymnastics"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Men's Basketball"))),
+                h4(strong(i18n()$t("Men's JV Basketball"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Women's Basketball"))),
+                h4(strong(i18n()$t("Women's JV Basketball"))),
+                h4(strong(i18n()$t("Wrestling")))
           )
         }
       })
       output$springsports <- renderText({
         if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Baseball")),
-                h4(strong("Girl’s Soccer")),
-                h4(strong("Girl’s Track")),
-                h4(strong("Boy’s Track")),
-                h4(strong("Softball"))
+          paste(h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Girl’s Soccer"))),
+                h4(strong(i18n()$t("Girl’s Track"))),
+                h4(strong(i18n()$t("Boy’s Track"))),
+                h4(strong(i18n()$t("Softball")))
           )
         }
         else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Baseball")),
-                h4(strong("Boy’s Track")),
-                h4(strong("Girl’s Soccer")),
-                h4(strong("Girl’s Track")),
-                h4(strong("Softball"))
+          paste(h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Boy’s Track"))),
+                h4(strong(i18n()$t("Girl’s Soccer"))),
+                h4(strong(i18n()$t("Girl’s Track"))),
+                h4(strong(i18n()$t("Softball")))
           )
         }
         else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Boy’s Track")),
-                h4(strong("Girl’s Track")),
-                h4(strong("Baseball")),
-                h4(strong("Girl’s Soccer")),
-                h4(strong("Softball"))
+          paste(h4(strong(i18n()$t("Boy’s Track"))),
+                h4(strong(i18n()$t("Girl’s Track"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Girl’s Soccer"))),
+                h4(strong(i18n()$t("Softball")))
           )
         }
         else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Baseball")),
-                h4(strong("JV Baseball")),
-                h4(strong("JV Softball")),
-                h4(strong("Men’s Golf")),
-                h4(strong("Men’s JV Lacrosse")),
-                h4(strong("Men’s Lacrosse")),
-                h4(strong("Men’s Tennis")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field")),
-                h4(strong("JV Women’s Soccer")),
-                h4(strong("Women’s Lacrosse")),
-                h4(strong("Women’s Soccer"))
+          paste(h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("JV Baseball"))),
+                h4(strong(i18n()$t("JV Softball"))),
+                h4(strong(i18n()$t("Men's Golf"))),
+                h4(strong(i18n()$t("Men's JV Lacrosse"))),
+                h4(strong(i18n()$t("Men's Lacrosse"))),
+                h4(strong(i18n()$t("Men's Tennis"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("JV Women's Soccer"))),
+                h4(strong(i18n()$t("Women's Lacrosse"))),
+                h4(strong(i18n()$t("Women's Soccer")))
           )
         }
         else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Baseball")),
-                h4(strong("JV Baseball")),
-                h4(strong("JV Softball")),
-                h4(strong("Men’s Golf")),
-                h4(strong("Men’s JV Lacrosse")),
-                h4(strong("Men’s Lacrosse")),
-                h4(strong("Men’s Tennis")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field")),
-                h4(strong("Women’s JV Lacrosse")),
-                h4(strong("Women’s Lacrosse")),
-                h4(strong("Women’s JV Soccer")),
-                h4(strong("Women’s Soccer"))
+          paste(h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("JV Baseball"))),
+                h4(strong(i18n()$t("JV Softball"))),
+                h4(strong(i18n()$t("Men's Golf"))),
+                h4(strong(i18n()$t("Men's JV Lacrosse"))),
+                h4(strong(i18n()$t("Men's Lacrosse"))),
+                h4(strong(i18n()$t("Men's Tennis"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("Women's JV Lacrosse"))),
+                h4(strong(i18n()$t("Women's Lacrosse"))),
+                h4(strong(i18n()$t("Women's JV Soccer"))),
+                h4(strong(i18n()$t("Women's Soccer")))
           )
         }
         else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Baseball")),
-                h4(strong("JV Baseball")),
-                h4(strong("JV Softball")),
-                h4(strong("Men’s Golf")),
-                h4(strong("Men’s JV Lacrosse")),
-                h4(strong("Men’s Lacrosse")),
-                h4(strong("Men’s Tennis")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field")),
-                h4(strong("Women’s JV Lacrosse")),
-                h4(strong("Women’s JV Soccer")),
-                h4(strong("Women’s Lacrosse")),
-                h4(strong("Women’s Soccer"))
+          paste(h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("JV Baseball"))),
+                h4(strong(i18n()$t("JV Softball"))),
+                h4(strong(i18n()$t("Men's Golf"))),
+                h4(strong(i18n()$t("Men's JV Lacrosse"))),
+                h4(strong(i18n()$t("Men's Lacrosse"))),
+                h4(strong(i18n()$t("Men's Tennis"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("Women's JV Lacrosse"))),
+                h4(strong(i18n()$t("Women's JV Soccer"))),
+                h4(strong(i18n()$t("Women's Lacrosse"))),
+                h4(strong(i18n()$t("Women's Soccer")))
           )
         }
       })
 
       output$male_sports_list <- renderText({
         if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Soccer")),
-                h4(strong("Football")),
-                h4(strong("Basketball")),
-                h4(strong("Wrestling")),
-                h4(strong("Baseball")),
-                h4(strong("Track"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Soccer"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Basketball"))),
+                h4(strong(i18n()$t("Wrestling"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track")))
           )
         }
         else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Soccer")),
-                h4(strong("Football")),
-                h4(strong("Basketball")),
-                h4(strong("Baseball")),
-                h4(strong("Track"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Soccer"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Basketball"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track")))
           )
         }
         
         else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Soccer")),
-                h4(strong("Basketball")),
-                h4(strong("Baseball")),
-                h4(strong("Track"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Soccer"))),
+                h4(strong(i18n()$t("Basketball"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track")))
           )
         }
         
         else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Cheerleading")),
-                h4(strong("Football")),
-                h4(strong("Swimming")),
-                h4(strong("Wrestling")),
-                h4(strong("Indoor Track")),
-                h4(strong("Baseball")),
-                h4(strong("Track and Field"))
+          paste(h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Wrestling"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track and Field")))
           )
         }
         
         else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Football")),
-                h4(strong("Swimming")),
-                h4(strong("Wrestling")),
-                h4(strong("Indoor Track")),
-                h4(strong("Baseball")),
-                h4(strong("Track and Field")),
-                h4(strong("Cheerleading")),
-                h4(strong("Gymnastics"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Wrestling"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Gymnastics")))
           )
         }
         
         else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Football")),
-                h4(strong("Swimming")),
-                h4(strong("Wrestling")),
-                h4(strong("Indoor Track")),
-                h4(strong("Baseball")),
-                h4(strong("Track and Field")),
-                h4(strong("Cheerleading")),
-                h4(strong("Gymnastics")),
-                h4(strong("Baseball"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Football"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Wrestling"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Gymnastics"))),
+                h4(strong(i18n()$t("Baseball")))
           )
         }
 
@@ -3781,88 +3774,85 @@ function(input, output, session) {
       
       output$female_sports_list <- renderText({
         if(input$school_sports == "Brogden Middle"){
-          paste(h4(strong("Volleyball")),
-                h4(strong("Cross Country")),
-                h4(strong("Basketball")),
-                h4(strong("Soccer")),
-                h4(strong("Track")),
-                h4(strong("Softball"))
+          paste(h4(strong(i18n()$t("Volleyball"))),
+                h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Basketball"))),
+                h4(strong(i18n()$t("Soccer"))),
+                h4(strong(i18n()$t("Track"))),
+                h4(strong(i18n()$t("Softball")))
           )
         }
         
         else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Volleyball")),
-                h4(strong("Softball")),
-                h4(strong("Basketball")),
-                h4(strong("Soccer")),
-                h4(strong("Track"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Volleyball"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Basketball"))),
+                h4(strong(i18n()$t("Soccer"))),
+                h4(strong(i18n()$t("Track")))
           )
         }
         
         else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(strong("Volleyball")),
-                h4(strong("Soccer")),
-                h4(strong("Basketball")),
-                h4(strong("Softball")),
-                h4(strong("Track"))
+          paste(h4(strong(i18n()$t("Volleyball"))),
+                h4(strong(i18n()$t("Soccer"))),
+                h4(strong(i18n()$t("Basketball"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Track")))
           )
         }
         
         else if(input$school_sports == "Hillside High"){
-          paste(h4(strong("Cheerleading")),
-                h4(strong("Field Hockey")),
-                h4(strong("Swimming")),
-                h4(strong("Indoor Track")),
-                h4(strong("Softball")),
-                h4(strong("Track and Field"))
+          paste(h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Field Hockey"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Track and Field")))
           )
         }
         
         else if(input$school_sports == "Jordan High"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Field Hockey")),
-                h4(strong("Baseball")),
-                h4(strong("Softball")),
-                h4(strong("Swimming")),
-                h4(strong("Wrestling")),
-                h4(strong("Indoor Track")),
-                h4(strong("Baseball")),
-                h4(strong("Track and Field")),
-                h4(strong("Cheerleading")),
-                h4(strong("Gymnastics"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Field Hockey"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Wrestling"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Baseball"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Gymnastics")))
           )
         }
         
         else if(input$school_sports == "Riverside High"){
-          paste(h4(strong("Cross Country")),
-                h4(strong("Field Hockey")),
-                h4(strong("Softball")),
-                h4(strong("Swimming")),
-                h4(strong("Indoor Track")),
-                h4(strong("Track and Field")),
-                h4(strong("Cheerleading")),
-                h4(strong("Gymnastics"))
+          paste(h4(strong(i18n()$t("Cross Country"))),
+                h4(strong(i18n()$t("Field Hockey"))),
+                h4(strong(i18n()$t("Softball"))),
+                h4(strong(i18n()$t("Swimming"))),
+                h4(strong(i18n()$t("Indoor Track"))),
+                h4(strong(i18n()$t("Track and Field"))),
+                h4(strong(i18n()$t("Cheerleading"))),
+                h4(strong(i18n()$t("Gymnastics")))
           )
         }
         
       })
       
       output$sports_context <- renderText({
-        paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
-           responsibility, discipline, and leadership. Participation in school sports provides students with the
-           daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
-              "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
-                 cal activity are associated with more favorable status for multiple health indicators, including
-                cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
-                in their",
-              a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
-              "Visit ",
-              a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
-              "for more information.")
+        paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
+              a(i18n()$t("CDC guidelines"), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+              i18n()$t(". The Office of Disease Prevention and Health Promotion"), 
+              i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
+              a(i18n()$t("2018 Physical Activity Guidelines for Americans Report"), href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
+              i18n()$t(". Visit"),
+              a(i18n()$t("DPS’s Athletics webpage"), href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
+              i18n()$t("for more information."))
       })
 
-    }
+    })
     
     #Sports - dynamic
     # {

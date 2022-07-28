@@ -1,0 +1,1542 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+    
+    {"English": "Change Language",
+     "Spanish": "Cambia idioma"},
+    
+    {"English": "Visualizing Durham Public Schools",
+ "Spanish": "Visualizando las Escuelas Públicas de Durham"},
+    
+    {"English": "This project is inspired by an inter-institutional Bass Connections team from Duke University and North Carolina Central University that is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, support local neighborhood schools in visualizing their communities, and help varied university offices articulate what “community” actually looks like.", 
+       "Spanish": "Este proyecto se inspiró por un equipo inter-institucional llamado “Bass Connections” de las universidades Duke y North Carolina Central. Este equipo está dedicado a desarrollar maneras responsables e imaginativas para colaborar con las escuelas públicas de Durham. El objetivo de este proyecto es crear una aplicación centralizada que servirá como un recurso informativo para las personas que se harán parte del condado de Durham. Nuestra aplicación tiene varias metas, como mejorar pre-servicio entrenamientos para estudiantes universitarios, apoyar a las escuelas y comunidades locales, y ayudar a varias oficinas universitarias articular lo que significa una “comunidad.”!"},
+    
+{"English": "By using spatial data and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets.",
+ "Spanish": "Al usar información geográfica, junto con recursos contextuales, esperamos mostrar las escuelas públicas de Durham y los recursos en las comunidades desde un punto de vista holístico."},
+
+{"English": "Visit the",
+ "Spanish": "¡Visita la pagina"},
+
+{"English": "for more information!",
+ "Spanish": "para más información!"},
+
+{"English": "Geospatial Variables",
+ "Spanish": "Variables Geográficos"},
+
+{"English": "School-Specific Variables",
+ "Spanish": "Variables de las Escuelas"},
+
+{"English": "Centralized Web Application",
+ "Spanish": "Aplicación Centralizada"},
+
+{"English": "2 Universities, 16 Public Schools",
+ "Spanish": "2 Universidades, 16 Escuelas Públicas"},
+
+{"English": "The Durham Public Schools District contains 54 public schools: 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. Our project focuses on the 16 schools that most frequently partner with Duke University and North Carolina Central University. These include 10 elementary schools: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside.",
+ "Spanish": "El distrito de Durham contiene 54 escuelas públicas: 30 escuelas primarias, 11 escuelas secundarias, 11 escuelas preparatorias, 1 escuela alternativa, y 1 escuela del hospital. Nuestro proyecto se enfoca en 16 escuelas que frecuentemente trabajan con Duke y North Carolina Central. Esto incluye 10 escuelas primarias: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, y Club Boulevard; 3 escuelas secundarias: Lakewood Montessori, Lowes Grove, y Brogden; y finalmente 3 escuelas preparatorias: Hillside, Jordan, y Riverside."},
+
+{"English": "The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that an issue preventing meaningful engagement between Duke, NCCU, and Durham public schools is that ‘many university students lack an understanding of city and community dynamics.’ Additionally, they found that there is a ‘lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.’",
+ "Spanish": "La meta de Duke y NCCU es crear relaciones equitativas con las escuelas públicas de Durham. Investigaciones anteriores del equipo Bass Connections se enfocaron en cómo lograr esta meta y encontraron que un problema es que “a muchos estudiantes universitarios les falta el conocimiento de las dinámicas de las escuelas públicas y la ciudad de Durham,” y esto impide las relaciones colaborativas entre estos dos sistemas. Adicionalmente, el equipo encontró que hay una “falta de entrenamientos para estudiantes que desean ser voluntarios en Durham, especialmente en áreas de historia, demográficas de las escuelas, y prejuicios y las dinámicas de poder que se pueden manifestar en las escuelas.”"},
+
+{"English": "Motivated by this research, our project explores a way of visualizing schools as the center of the community that brings together academics, health and social services, youth and community development, and community engagement under one roof.",
+ "Spanish": "Motivados por estas conclusiones, nuestro proyecto explora una manera de visualizar las escuelas como el centro de la comunidad que junta los estudios, servicios sociales y de la salud, el desarrollo de la juventud y la comunidad, y la participación de la comunidad… todo bajo una aplicación."},
+
+{"English": "View Our 16 Schools",
+ "Spanish": "Aprende sobre nuestras 16 escuelas"},
+
+{"English": "View Geospatial Data",
+ "Spanish": "Visita la Información Geográfica"},
+
+{"English": "View School Statistics",
+ "Spanish": "Visita las Estadísticas de las Escuelas"},
+
+{"English": "Our Partners",
+ "Spanish": "Nuestros Compañeros"},
+    
+    {"English": "English",
+     "Spanish": "Inglés"},
+    
+    {"English": "Spanish",
+     "Spanish": "Español"},
+    
+    
+    {"English": "Interactive Map",
+     "Spanish": "Mapa Interactivo"},
+     
+     {"English": "Measurement",
+     "Spanish": "Medida"},
+     
+     {"English": "Context",
+     "Spanish": "Contexto"},
+     
+     {"English": "Choose a school zone to display",
+     "Spanish": "Escoge una zona escolar"},
+     
+     {"English": "Choose a variable to display",
+     "Spanish": "Escoge un variable"},
+     
+     {"English": "Icon Legend",
+     "Spanish": "Leyenda"},
+     
+     {"English": "Bus Stops",
+     "Spanish": "Paradas del autobús"},
+     
+     {"English": "Childcare Centers",
+     "Spanish": "Programas de cuidado infantil"},
+     
+     {"English": "Community and Cultural Centers",
+     "Spanish": "Centros comunitarios y culturales"},
+     
+     {"English": "Gardens",
+     "Spanish": "Jardínes"},
+     
+     {"English": "Grocery Stores",
+     "Spanish": "Tienda de comestibles"},
+     
+     {"English": "Libraries",
+     "Spanish": "Bibliotecas"},
+     
+     {"English": "Parks",
+     "Spanish": "Parques"},
+     
+     {"English": "Recreation Centers",
+     "Spanish": "Centros de recreación"},
+     
+     {"English": "Religious Centers",
+     "Spanish": "Centros religiosos"},
+     
+     {"English": "Farmers' Markets",
+     "Spanish": "Mercados de productos agrícolas"},
+     
+     {"English": "Food Pantries",
+     "Spanish": "Almacenes de comida"},
+     
+     {"English": "Hospitals & Clinics",
+     "Spanish": "Hospitales y clínicas"},
+     
+     {"English": "After-School Care Programs",
+     "Spanish": "Programas después del horario escolar"},
+     
+     {"English": "Afterschool programs can promote positive youth development, and  support social, emotional, cognitive, and academic development, reduce risky behaviors, promote physical health, and provide a safe and supportive environment for children and youth",
+     "Spanish": "De acuerdo a Interagency Working Group on Youth Programs, programas después del horario escolar pueden “fomentar desarrollo positivo para la juventud a través de desarrollo social, emocional, cognitivo, y académico. Durante estos programas, los estudiantes tienen la oportunidad de ser parte de una comunidad donde la enseñanza es priorizada. Las actividades incluyen: juegos, deportes, leyendo, y participando en extracurriculares, como los artes."},
+     
+     {"English": ". Several afterschool programs also offer before school programs allowing parents to drop-off and pick-up their child(ren) in a safe environment without interfering with their work schedule. ",
+     "Spanish": "Estos programas disminuyen el mal comportamiento, promueven salud física, y fomentan ambientes positivos para los niños. Muchos de estos programas también ofrecen programas antes de la escuela. Esto habilita a los padres a poder dejar y recoger sus hijos de la escuela, sin la preocupación de interferir en su horario de trabajo."},
+     
+     {"English": "Benefits for Youth, Families, and Communities",
+     "Spanish": "Los beneficios para la juventud, las familias, y la comunidad"},
+     
+     {"English": "Infographics on Afterschool Care Programs in NC",
+     "Spanish": "Infográficas sobre programas después del horario escolar"},
+
+{"English": "North Carolina Center for Afterschool Programs",
+     "Spanish": "Programas después del horario escolar"},
+
+{"English": "For those without their own vehicle, GoDurham and GoTriangle buses serve as the primary form of public transit in Durham County. According to the Federal Transportation Administration, GoDurham averaged nearly 16,000 unlinked passenger trips (each time a passenger boards) per day in 2020. Widespread bus stops play a crucial role in improving equity throughout a region. A strong public transit system can lead to decreased food insecurity (particularly in areas lacking healthy, affordable food), and can lead to increased job opportunities (ride vs. walk to work) and public health (doctor’s office visits).",
+     "Spanish": "Para personas sin vehículos, los autobuses de GoDurham y GoTriangle sirven como la forma primaria de tránsito público en el condado de Durham. De acuerdo a la Administración de transportación federal (Federal Transportation Administration), GoDurham obtuvo un promedio de 16,000 viajes por pasajero al día, en el año 2020. Las paradas de autobús deben estar distribuidas equitativamente por una región para garantizar equidad para todos. Un buen sistema de tránsito público puede reducir la inseguridad alimentaria (especialmente en áreas sin comida saludable y a buen precio). Adicionalmente, puede hacer que el trabajo sea más accesible para trabajadores que requieren transportación. Finalmente, el tránsito público habilita a cualquier persona completar sus pendientes, como ir a una cita médica."},
+
+{"English": "Childcare centers assure parents and guardians that their child(ren) is safe and cared for while simultaneously allowing them to work and earn money for their family. Childcare is particularly useful for single parents who often cannot afford to stay at home instead of working. Having several childcare options near a person’s home can be beneficial in allowing parents to weigh the cost and quality of various centers.",
+     "Spanish": "Mientras los padres/guardianes están trabajando para apoyar a sus familias, los programas de cuidado infantil aseguran que sus hijo(s) estén en un ambiente seguro y querido. Estos programas son especialmente útiles para familias monoparentales que necesitan el ingreso del padre o madre. Una persona que vive en un área con varios programas de cuidado infantil tiene más libertad para escoger el programa adecuado para su familia. Programas de cuidado infantil proveen un ambiente inclusivo y creativo para los niños. Los niños tienen la oportunidad de conocer a adultos confiables, participar en actividades divertidas, y convivir con otros niños. En estos programas, los niños también exploran sus diferentes intereses a través de las actividades, arte y manualidades, deportes, música, etc."},
+
+{"English": "The benefits of building community outside the school building contribute to more powerful relationships and organizing within the school building. Community centers have been found to promote community cohesion and sense of belonging while providing programming that supports self-esteem, health, and academic success. Cultural centers also positively contribute to youth development by providing positive self-images as well as opportunities to learn about cultural practices and traditions of diverse groups.",
+     "Spanish": "Una comunidad fuera de la escuela contribuye a relaciones más fuertes dentro de la escuela. Centros comunitarios promueven sentidos de pertenencia mientras apoyan la autoestima, la salud y el éxito académico. Centros culturales también contribuyen positivamente al desarrollo juvenil. Estos centros fomentan ideas positivas y enseñan a los estudiantes sobre las diferentes culturas con sus costumbres."},
+
+{"English": "The Positive Impact of Community Centers",
+     "Spanish": "Los efectos positivos de centros comunitarios"},
+
+{"English": "Culture and Arts Centers",
+     "Spanish": "Centros culturales"},
+
+{"English": "Gardens offer numerous benefits to the community including nature therapy, fresh produce, and cleaner air. A study of 63 gardens in upstate New York found that “gardens in low-income neighborhoods (46%) were four times as likely as non low-income gardens to lead to other issues in the neighborhood being addressed; reportedly due to organizing facilitated through the community gardens” (Armstrong). Another study published in Public Health Nutrition noted, “Commonly cited barriers to fruit and vegetable intake include cost, availability and acceptance. Community gardens have the potential to decrease these barriers by lowering the cost of produce, increasing access, and eventually increasing acceptance and improving taste perceptions of fruits and vegetables” (Dibsdall et. al). With the ability to benefit public health and serve as community hubs, gardens are impactful to a community.",
+     "Spanish": "Los jardínes ofrecen varios beneficios a la comunidad, incluyendo: terapia de la naturaleza, productos agrícolas, y aire limpio. Muchas investigaciones han demostrado que la naturaleza puede mejorar el estado de ánimo y bienestar de una persona. Hay diferentes formas de terapia de la naturaleza, por ejemplo: ejercicio afuera y el cultivo de agricultura. Estas dos actividades pueden mejorar la salud mental mientras reducir síntomas de depresión y ansiedad. Los productos naturales/agrícolas y la calidad del aire son indicadores de un ambiente limpio y sano. Si tomamos la iniciativa de proteger a nuestro planeta (promover la plantación de árboles y comprar comida de mercados locales, por ejemplo), podemos hacer un cambio positivo y vivir en un ambiente más limpio para todos. Un estudio de 63 jardínes en Nueva York descubrió que los jardínes en vecindarios de ingresos bajos (46%) incrementan el conocimiento de otros problemas que están presentes en el vecindario. Armstrong dice que esto se debe a “los jardines que facilitan la organización de la comunidad.” De acuerdo a otro estudio publicado en Public Health Nutrition, “El precio, la disponibilidad, y la aceptación son barreras para el consumo de frutas y vegetales. Los jardines comunales pueden disminuir estas barreras con precios bajos de productos agrícolas, más accesibilidad, y eventualmente más aceptación con mejores percepciones gustativas de frutas y vegetales” (Dibsdall et. al). Los jardínes son esenciales para una comunidad, con la habilidad de mejorar la salud pública."},
+
+{"English": "In order to live a healthy life, people must have access to affordable, nutritious food. Without access to this resource, many, especially those who are low-income, are prone to developing diet-related conditions such as obesity, diabetes, and cardiovascular disease. The areas lacking sufficient healthy food are often called “food deserts.” Food insecurity should not be considered a natural, geographical issue; but, rather an intentional denial of resources for historically marginalized racial groups. Thus, the term “food apartheid” has gained traction in recent years, and is now often preferred. We hope to show areas affected by food apartheid in an attempt to raise awareness about food insecurity.",
+     "Spanish": "Para tener un estilo de vida saludable, debemos tener acceso a comida asequible y nutritiva. Sin este tipo de comida, la gente (especialmente de ingresos bajos) son susceptibles a condiciones como la obesidad, diabetes, y enfermedades cardiovasculares. Un “desierto de comida” es un área sin suficiente comida sana. La inseguridad alimentaria no se debe ver como un asunto natural o debido a la geografía. En cambio, debemos ver este problema como una negación de recursos contra grupos históricamente marginalizados. El término, “food apartheid,” o segregación de comida ha obtenido atención en los últimos años, y es la frase preferida para describir este asunto."},
+
+{"English": "Below is more information about Farmers' Markets:",
+     "Spanish": "Esperamos enseñarles las áreas que están afectadas por la segregación de comida e incrementar conocimiento por ello:"},
+
+{"English": "Found in urban, suburban, and rural areas, libraries often serveas community hubs. Their purpose is not only to provide academic resources for the community, but also be used to welcome new residents to the neighborhood, assist the homeless, and offer informational sessions on a variety of topics. As highlighted in an article by the Brookings Institute, a Pew Research study showed “[s]ome 90% of Americans ages 16 and older said that theclosing of their local public library would have an impact on their community, with 63% saying it would have a ‘major’ impact”",
+     "Spanish": "Ubicadas en áreas urbanas, suburbanas, y rurales, las bibliotecas sirven como centros comunitarios. En Durham, hay siete bibliotecas públicas, incluyendo la recientemente renovada “Main Library,” ubicada en el centro de Durham. Cada biblioteca tiene eventos todos los días para la comunidad.”"},
+
+{"English": ". In Durham, there are seven public libraries, including the recently renovated Main Library downtown. Each library hosts several events daily for people of all ages.",
+     "Spanish": "El propósito no es solamente proveer recursos académicos, sino también darle la bienvenida a nuevos residentes, asistir a las personas sin hogar, y ofrecer sesiones informativas sobre varios temas. Un estudio por Pew Research demostró que “90% de Americanos mayores de 16 años dicen que cerrar la biblioteca pública local los impactará, mientras 63% dicen que tendrá un impacto grave.”"},
+
+{"English": "How Public Libraries Help Build Healthy Communities",
+     "Spanish": "Beneficios de las bibliotecas públicas"},
+
+{"English": "Durham County Library",
+     "Spanish": "Más información sobre las bibliotecas en Durham"},
+     
+     {"English": "The presence of parks in a community is vital to increase community engagement, assist in the economic development of cities, bolster public health, and help children learn. Parks allow people to interact with each other in an outdoor community space. Children are able to play and explore nature in an increasingly digital world, providing benefits such as decreased stress and potentially, obesity rates.",
+     "Spanish": "Los parques en una comunidad son esenciales para incrementar la participación de la comunidad, asistir en el desarrollo económico de la ciudad, mejorar la salud de las personas, y ayudar a los niños a aprender. Los parques proveen un ambiente positivo para que las personas interactúen con su comunidad. Los niños tienen la oportunidad de jugar y explorar la naturaleza, lo cual tiene varios beneficios como niveles más bajos de estrés y obesidad."},
+
+{"English": "Recreation centers have varying amenities, frequently including fitness centers, basketball courts, and multipurpose rooms. These facilities can be utilized for afterschool programs, indoor and outdoor recreation, and meeting spaces. Similar to parks, recreation centers promote active lifestyles.",
+     "Spanish": "Centros de recreación tienen varias comodidades, incluyendo gimnasios, canchas de baloncesto, y cuartos de multiusos. Estas facilidades se usan para programas después del horario escolar, deportes adentro y afuera, y juntas."},
+
+{"English": "Benefits include:",
+     "Spanish": "Contexto"},
+
+{"English": "-Functioning as a community hub",
+     "Spanish": "-Un centro comunitario para todos"},
+
+{"English": "-Ability to host before- and after-school care programs",
+     "Spanish": "-Programas después del horario escolar"},
+
+{"English": "-May offer inexpensive or free tutoring",
+     "Spanish": "-Tutoría gratis o de precio razonable"},
+
+{"English": "Religious centers are huge assets to the community because of various services they provide. These services include donations, food drives, fundraisers, providing safe spaces for various cultures, counseling services, daycare, summer programs, and much more. Additionally, the Durham community has established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. Despite the diversity of religious orientations, Durham residents have shown their willingness to provide resources for all those in need, regardless of religious orientation.",
+     "Spanish": "Los centros religiosos son recursos esenciales en una comunidad por todos los servicios que proveen. Estos servicios incluyen donaciones, colectas de alimentos, recaudación de fondos; y ofreciendo un lugar inclusivo de religión, sesiones de terapia, programas de cuidado infantil, programas del verano, etc. Adicionalmente, la comunidad en Durham tiene. A pesar de la diversidad de religiones, los residentes de Durham han demostrado su voluntad para proveer recursos para los que lo necesitan, a pesar de sus creencias."},
+
+{"English": "The Benefits of Religiosity and Spirituality on Mental Health",
+     "Spanish": "Las ventajas de la religión y espiritualidad en la salud mental"},
+
+{"English": "Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ markets can be a more affordable option for local residents.",
+     "Spanish": "Los mercados de productos agrícolas proveen frutas y vegetales frescos cuando están en su mejor temporada. De acuerdo al centro médico de la Universidad de Pittsburgh, las personas que compran productos de estos mercados pueden “saborear los sabores más naturales.” Adicionalmente, estos productos agrícolas crecen localmente, entonces tienen major valor nutricional. Típicamente, los productos no son procesados ni crecidos con pesticidas, antibióticos, o modificación genética. Estos mercados pueden ser una opción más económica para los residentes de Durham, mientras que sirven como una manera de apoyar a nuestros granjeros y pequeñas empresas."},
+
+{"English": "Food Desert VS. Food Apartheid",
+     "Spanish": "Los beneficios de comprar productos de un mercado"},
+
+{"English": "What Are Food Deserts, and How Do They Impact Health?",
+     "Spanish": "Aprende sobre las ventajas de los mercados de productos agrícolas"},
+
+{"English": "Food pantries are partner agencies and churches that obtain donated food from food banks to feed food insecure communities. Food insecurity refers to the lack of access to enough nutritious food to fully meet basic needs because of a lack of financial resources. Although some families are able to rely on the Supplemental Nutrition Assistance Program (SNAP), also known as “food stamps,” there are some families that earn too much to receive SNAP; but, don’t make enough money to afford adequate meals. Older adults and people with disabilities that are on fixed incomes sometimes have to choose between paying for medicine or purchasing nutritious food. Food pantries can provide individuals and families with supplemental food allowing them to reallocate money they would have used on food for rent or other utilities.",
+     "Spanish": "Los almacenes de comida son agencias comunitarias e iglesias que obtienen alimentos donados para compartirlos con la comunidad. La inseguridad alimentaria se refiere a la falta de acceso a suficientes alimentos nutritivos para satisfacer las necesidades básicas. Aunque unas familias pueden depender en el Programa de Asistencia Nutricional Suplementaria (Supplemental Nutrition Assistance Program: SNAP), o los “cupones para comida,” hay algunas familias que ganan suficiente para recibir SNAP, pero no ganan suficiente dinero para comprar comida adecuada y saludable. Las personas de mayor edad o personas con discapacidades que tienen ingresos fijos tienen que elegir entre comprar comida nutritiva o pagar por sus medicamentos. Los almacenes de comida pueden proveer a las personas con comida, por lo tanto, dándoles la oportunidad de usar ese dinero en otras necesidades. Para encontrar comida saludable y gratis cerca de usted, envía un mensaje de texto diciendo, “FOOD” a 304304. Después, responde con su dirección completa para obtener comida gratis para todos los niños."},
+
+{"English": "NC Hunger and Poverty Quick Facts",
+     "Spanish": "Datos sobre la pobreza en Carolina del Norte"},
+
+{"English": "Fighting Hunger and Reducing Poverty",
+     "Spanish": "Eliminando la pobreza e inseguridad alimentaria"},
+
+{"English": "When faced with an emergency, time is of the essence. Being able to get to a hospital within minutes can be beneficial, and can literally save lives. Along with emergency services, hospitals also offer different types of therapy, services for individuals living with long-term illnesses, classes and events, and outpatient labs. Along with medical care and having a centralized location for medical records, hospitals can also provide employment opportunities to local residents.",
+     "Spanish": "Cuando se enfrenta una emergencia, el tiempo es esencial. Poder llegar a un hospital rápidamente es una gran ventaja y puede salvar vidas. Junto con los servicios de emergencia, los hospitales también ofrecen diferentes tipos de terapia, servicios para personas con enfermedades de larga duración, clases y programas, y laboratorios para pacientes ambulatorios. Además de proveer cuidado médica esencial, los hospitales contienen el historial médico de los pacientes. Los hospitales también traen nuevas oportunidades de empleo a los residentes locales."},
+
+{"English": "Additionally, private practices tend to be located near hospitals. These offices give patients a better opportunity to foster meaningful relationships with their nurses and primary care physicians.",
+     "Spanish": "Las prácticas privadas tienden a estar ubicadas cerca de los hospitales. Estos consultorios aseguran que los pacientes pueden confiar en sus enfermeros y médicos de atención primaria."},
+
+{"English": "The Benefits of Living Near a Hospital",
+     "Spanish": "Las ventajas de vivir cerca de un hospital"},
+
+{"English": "10 Ways to Improve Healthcare Access",
+     "Spanish": "10 ideas para mejorar el acceso a cuidado médico"},
+
+{"English": "Durham County’s “Project Access” Initiative",
+     "Spanish": "La iniciativa de “Project Access” en el condado de Durham"},
+
+{"English": "Durham, North Carolina offers an array of arts programs that foster a plethora of individual and community benefits. Fine arts (painting, design, and photography), and performance arts (dance, theatre, and music) have been proven to boost self-confidence, improve cognition, and deepen cultural and self-understanding by helping students overcome insecurities, combining subject matters such as math, english, science, and history, as well as exposing students to different art styles and music genres.",
+     "Spanish": "Durham tiene varios programas de arte que fomentan una multitud de ventajas. Artes visuales (pintura, diseño, y fotografía), y artes escénicas (danza, teatro, y música) anima la confianza, mejora la cognición, y profundiza el conocimiento cultural e individual. El arte ayuda a los estudiantes a superar inseguridades, aprender más sobre diferentes materias, y reconocer diferentes estilos de arte."},
+
+{"English": "Dance:",
+     "Spanish": "El baile:"},
+
+{"English": "Dance is a form of physical activity that encourages self-expression, improves health, and increases mobility and strength. Children and adolescents that participate in dance learn different genres, cultural aspects and regional differences, and have the opportunity to choose between cheerleading, gymnastics, interpretive dance, martial arts, and more!",
+     "Spanish": "Una forma de actividad física que fomenta expresión personal, mejora la salud, e incrementa movilidad y fuerza. Los niños y adolescentes que bailan aprenden sobre los diferentes géneros, influencias de culturas, y diferencias regionales. Tienen la oportunidad de escoger entre porristas, gimnásticas, danza interpretativa, artes marciales, y más."},
+
+{"English": "Theatre:",
+     "Spanish": "El teatro:"},
+
+{"English": "Theatre is a type of performance art that incorporates and fuses acting, singing, and dancing. On the stage, individuals have the opportunity to strengthen concentration and memory, improve articulation and fluency, and build trust as they interact and collaborate with others.",
+     "Spanish": "Un tipo de arte que incorpora la actuación, el canto, y el baile. Durante una obra, los actores tienen la oportunidad de mejorar su concentración, memoria, articulación, y fluidez. A través de estas obras, los participantes tienen la oportunidad de colaborar con personas que tienen los mismos intereses que ellos."},
+
+{"English": "Music:",
+     "Spanish": "La música:"},
+
+{"English": "Music incorporates vocal and instrumental performance, studio production, songwriting, and even  listening enjoyment. Music students have the opportunity to learn concepts such as theory, history, acoustics, and instrumental and vocal skills and techniques. Music performance has been proven to teach discipline, relieve stress, reduce stage fright, and improve academic levels.",
+     "Spanish": "La música incorpora actuación vocal e instrumental, diferentes producciones, composición de canciones, y el placer de escuchar las melodías. Los estudiantes tienen la oportunidad de aprender varios temas, como la teoría, historia, acústicas, y técnicas instrumentales y vocales. Se ha comprobado que la música enseña disciplina, alivia estrés, disminuye pánico escénico, y mejora el éxito académico."},
+
+{"English": "Visual:",
+     "Spanish": "Artes visuales:"},
+
+{"English": "Visual arts consists of painting, drawing, printmaking, sculpture, ceramics,photography, video, filmmaking, design, crafts and architecture. Engaging in visual arts exposes children and adolescents to positive benefits that include; but are not limited to, having a space to create innovatively, improving motor skills, and expressing emotions.",
+     "Spanish": "Consiste de la pintura, el dibujo, el grabado, la escultura, la cerámica, la fotografía, la videografía, la cinegrafía, el diseño, las manualidades, y la arquitectura. Los artes visuales exponen a los niños y adolescentes a beneficios positivos, incluyendo: mejorando habilidades motoras, expresando sus emociones, y teniendo un lugar donde pueden crear nuevas innovaciones."},
+
+{"English": "Museums:",
+     "Spanish": "Los museos:"},
+
+{"English": "Museums care for and display artistic, cultural, historical, and scientific artifacts. Museums help people of all walks of life understand the world around them, and embolden viewers to examine exhibits and develop perspective in informal learning environments.",
+     "Spanish": "Los museos exhiben artefactos artísticos, culturales, históricos, y científicos. Estas exhibiciones enseñan diferentes cosas y profundizan el conocimiento del mundo. El público puede desarrollar una perspectiva nueva en entornos de aprendizaje."},
+
+{"English": "Martial Arts:",
+     "Spanish": "Los artes marciales:"},
+
+{"English": "Martial arts consists of various forms of self-defense or combat that promote safety,  hand-eye coordination, discipline, health and weight loss, and several mental health benefits including boosted self-esteem, increased focus, and mental calmness.",
+     "Spanish": "Consisten en varias formas de defensa propia o combate que promueven la seguridad, la coordinación de mano-ojo, la disciplina, y la salud física. Los artes marciales también tienen beneficios para la salud mental, como mejor autoestima, mayor concentración, y tranquilidad."},
+
+{"English": "DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the",
+     "Spanish": "Las escuelas públicas en Durham ofrecen una gran variedad de deportes en las secundarias y preparatorias. Estos equipos promueven trabajo en equipo, responsabilidad, disciplina, y liderazgo. La participación en deportes también asegura que los niños tengan el requisito de ejercicio diario, recomendado por"},
+
+{"English": "CDC guidelines",
+     "Spanish": "la CDC"},
+     
+     {"English": ". The Office of Disease Prevention and Health Promotion",
+     "Spanish": "La Oficina de Prevención de Enfermedades"},
+
+{"English": " concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their",
+     "Spanish": " concluyó que “la actividad física se asocia con un estado más favorable para varios indicadores de la salud, incluyendo: salud cardiovascular y muscular, salud ósea, y el peso/prevención de obesidad,” en el reporte"},
+
+{"English": ". Visit",
+     "Spanish": "Visita"},
+
+{"English": "DPS’s Athletics webpage",
+     "Spanish": "la página de deportes en Durham"},
+
+{"English": "for more information.",
+     "Spanish": "para más información"},
+     
+     
+     {"English": "Advanced Placement (AP) Course Enrollment",
+     "Spanish": "Cursos avanzados (Advanced Placement)"},
+     
+     {"English": "Advanced Placement (AP) courses are challenging, collegiate-level courses that are offered to high school students. AP courses weigh more than honors courses on the high school level. Students can take these classes for an opportunity to receive college credit upon scoring a three or higher (out of five) on the standardized assessment, which saves the student money on college tuition. AP classes also serve as a way for students to be placed into higher-level courses at their college.",
+     "Spanish": "Estas clases avanzadas (AP) son desafiantes y del nivel universitario que se ofrecen a estudiantes de la preparatoria. Comparado con clases estandarizadas y otros niveles más bajos, estos cursos de AP cuentan por más puntos en el promedio general o GPA de los estudiantes. Los estudiantes pueden tomar estas clases para tener la oportunidad de recibir crédito universitario si reciben una calificación de al menos tres en el exámen final. (El exámen está calificado entre uno a cinco, con cinco siendo la calificación más alta posible). Si el estudiante recibe este crédito universitario, pueden ahorrar dinero porque ya no tendrán que tomar y pagar por ese curso en el colegio. Estos cursos avanzados también le ayudan a los estudiantes tomar clases más avanzadas en el colegio, y posiblemente graduarse de la universidad en menos tiempo con la ayuda de estos créditos."},
+     
+     {"English": "Below is more information about AP courses:",
+     "Spanish": "Más información sobre cursos avanzados o de AP:"},
+     
+     {"English": "NCDPI AP Courses",
+     "Spanish": "El departamento de la instrucción pública de Carolina del Norte (NCDPI)"},
+     
+     {"English": "DPS AP Courses",
+     "Spanish": "El condado de Durham (DPS)"},
+     
+     {"English": "College Board",
+     "Spanish": "Cursos avanzados (College Board)"},
+     
+     {"English": "Average Class Size",
+     "Spanish": "Promedio de estudiantes por clase"},
+     
+     {"English": "Research proves smaller class size is beneficial to student achievement. Smaller classes allow for the teacher to focus less on classroom management, and more on centralized learning. Students have stated they feel more comfortable in smaller classes as well.",
+     "Spanish": "Se ha comprobado que las clases pequeñas son más beneficiosas para los estudiantes. Clases pequeñas habilitan a que los maestros se enfoquen más en el currículo y progreso de cada estudiante. La mayoría de los estudiantes han expresado que se sienten más cómodos en estas clases."},
+     
+     {"English": "Resources Discussing the Importance of Class Size:",
+     "Spanish": "Recursos sobre la importancia del tamaño de clase:"},
+     
+     {"English": "The Benefits of Investing in Smaller Class Sizes",
+     "Spanish": "Las ventajas de reducir los tamaños de clase"},
+     
+     {"English": "State Policy View on Class Size",
+     "Spanish": "Políticas del estado sobre los tamaños de clase"},
+     
+     {"English": "CTE Course Enrollment Rate",
+     "Spanish": "Educación para carreras técnicas “CTE”"},
+     
+     {"English": "Career and Technical Education (CTE) courses are designed for high school students to receive real-world experience in the career field they are most interested in. Durham Public Schools started the “3-2-1” initiative in 2019 where all high school students are required to take three CTE courses, participate in two career exposure activities, and get an internship or a job before they graduate. This initiative, as well as all CTE courses, are created to develop students’ soft skills, gain real-world experience, and help students decide on their post-graduate plans.",
+     "Spanish": "Cursos de CTE, o para carreras técnicas, son para que estudiantes en la preparatoria reciban experiencia de la vida real en el campo que les interesa más. En 2019, el condado de Durham empezó la iniciativa de “3-2-1,” donde todos los estudiantes en la preparatoria tienen que tomar 3 cursos de CTE, participar en dos actividades que son relevantes a la carrera, y obtener un internado o trabajo antes de graduarse. Esta iniciativa, junto con los cursos de CTE, son buenos para desarrollar la inteligencia emocional de los estudiantes, aumentar sus experiencias, y ayudar a los estudiantes a decidir sus planes para el futuro."},
+     
+     {"English": "Below is more information about CTE courses in Durham Public Schools and North Carolina:",
+     "Spanish": "Recursos para más información sobre cursos de CTE en el condado de Durham y Carolina del Norte:"},
+     
+     {"English": "DPS CTE Course Initiative",
+     "Spanish": "Iniciativa para cursos de CTE del condado de Durham"},
+     
+     {"English": "NCDPI CTE Course Overview",
+     "Spanish": "Información sobre cursos de CTE"},
+     
+     {"English": "Experienced Teacher Ratio",
+     "Spanish": "Proporción de maestros expertos"},
+     
+     {"English": "Experienced teachers are those who have approximately five or more years of experience with teaching. Although more experienced teachers tend to perform better on their evaluations, research shows teacher experience does not directly correlate to effective teaching. Some schools tend to be more attracted to veteran teachers whereas other schools may prefer employing recently certified teachers that can provide current and unique teaching styles.",
+     "Spanish": "Maestros expertos tienen aproximadamente cinco o más años de experiencia de ser maestros. Aunque maestros expertos tienden a tener mejores evaluaciones, la experiencia de un maestro no siempre se correlaciona directamente con una enseñanza efectiva. Es posible que unas escuelas prefieran maestros con más experiencia mientras otras escuelas busquen maestros que son recientemente titulados y tienen estilos de enseñanza alternativos y únicos."},
+     
+     {"English": "With the evolution of research-based practices, it is important to continue to educate new and returning teachers on the best teaching practices that are scientifically-proven to promote student success. Good professional development workshops are paramount to provide effective, culturally-responsive teaching practices.",
+     "Spanish": "Es importante continuar educando a los maestros nuevos en los mejores métodos de enseñanza que promueven el éxito de los estudiantes, comprobado por varias investigaciones científicas. Los buenos programas de desarrollo profesional fomentan una enseñanza efectiva e inclusiva."},
+     
+     {"English": "Below are articles on Teacher Experience and Professional Development:",
+     "Spanish": "Artículos sobre la experiencia de los maestros y el desarrollo profesional:"},
+     
+     {"English": "Effects of Hiring and Recommendations for Supporting Experienced Teachers",
+     "Spanish": "Los efectos de la contratación y recomendaciones para apoyar a los maestros expertos"},
+     
+     {"English": "Teacher Experience in Relation to Teacher Effectiveness",
+     "Spanish": "La experiencia de maestros en relación a su eficacia"},
+     
+     {"English": "NCDPI Educator Professional Development",
+     "Spanish": "El desarrollo profesional de los educadores"},
+     
+     {"English": "Importance and Resources for Professional Development",
+     "Spanish": "La importancia y recursos sobre el desarrollo profesional"},
+     
+     {"English": "Free and Reduced Lunch",
+     "Spanish": "Almuerzo gratis o reducido"},
+     
+     {"English": "The percentage of students receiving free and reduced lunch is a strong indicator of socioeconomic status. The percentage of students that fall below the poverty line determines if a school is considered ",
+     "Spanish": "El porcentaje de estudiantes recibiendo almuerzo gratis/reducido es un gran indicador del estatus socioeconómico de la escuela. El porcentaje de estudiantes que están debajo de la línea de pobreza determina si una escuela es "},
+     
+     {"English": "Title I",
+     "Spanish": "Título 1"},
+     
+     {"English": "Title I schools are eligible to receive grants through the Every Student Succeeds Act (ESEA). It is important to be cognizant of students’ socioeconomic status without being condescending and discriminatory. Socioeconomic status is not a limit, it is a barrier.",
+     "Spanish": "Las escuelas de Título 1 califican para becas a través de la ley “Cada Estudiante Triunfa” (Every Student Succeeds Act: ESEA). Es importante reconocer el estatus socioeconómico de los estudiantes sin prejuiciar o ser condescendiente. El estatus socioeconómico no es un límite, es un obstáculo."},
+     
+     {"English": "Below are articles on Free/Reduced Lunch and its connection to Title I schools:",
+     "Spanish": "Artículos sobre almuerzo gratis o reducido y la conección a las escuelas de Título 1:"},
+     
+     {"English": "Rural Schools and Free/Reduced Lunch",
+     "Spanish": "Almuerzos gratis/reducidos en las escuelas rurales"},
+     
+     {"English": "NC Community Free/Reduced Lunch Eligibility",
+     "Spanish": "La elegibilidad de recibir almuerzos gratis o reducidos en Carolina del Norte"},
+
+     {"English": ": Under the ESEA, this federally funded program identifies schools with a majority of low-income students, based on free and reduced lunch statistics.",
+     "Spanish": ": Por la ley que “Cada Estudiante Triunfa,” este programa está financiado federalmente. El programa identifica las escuelas con muchos estudiantes de bajos ingresos y recursos, lo cual es determinado por las estadísticas sobre los almuerzos gratis o reducidos."},
+     
+     {"English": "Student-Teacher Ratio",
+     "Spanish": "Proporción de alumnos a maestros (De las escuelas primarias)"},
+     
+     {"English": "Research proves smaller student-teacher ratios have a positive effect on student achievement. By allowing more centralized and one-on-one instruction, smaller student-teacher ratios can increase test scores, lower dropout rates, and increase graduation rates.",
+     "Spanish": "Se ha comprobado que las clases pequeñas son más beneficiosas para los estudiantes. Clases pequeñas habilitan a que los maestros se enfoquen más en el currículo y progreso de cada estudiante. Estas enseñanzas de uno a uno pueden aumentar las calificaciones de los estudiantes."},
+     
+     {"English": "For younger, elementary school-age students, having a positive, one-on-one relationship with his or her teacher will teach the student at a young age that they have an adult they can trust and rely on. In smaller sized classrooms, students can feel more comfortable and willing to share their thoughts without being afraidof failing or feeling embarrassed. This dynamic fosters a more productive learning environment for all.",
+     "Spanish": "Para estudiantes de primaria, teniendo una relación positiva con su maestro enseñará al estudiante (desde una edad joven) que pueden confiar en este adulto. En clases pequeñas, los estudiantes se sentirán más cómodos y dispuestos a compartir sus ideas durante la clase sin tener miedo de fracasar o sentir vergüenza. Esta dinámica crea un ambiente más inclusivo y productivo para todos."},
+     
+     {"English": "Resources on Student-Teacher Ratios:",
+     "Spanish": "Infográficas e información sobre proporciones de alumnos a maestros:"},
+     
+     {"English": "Students Per Device",
+     "Spanish": "Número de estudiantes por aparatos"},
+     
+     {"English": "Living in a digital age, technology usage in the classroom has increased tremendously, especially during the COVID-19 pandemic. Although technology is a great resource, students may not have equitable access to these devices. It is important for students and teachers to not only have access to these technological devices, but also understand how to use them, which is why professional development is so important. Professional development is necessary to keep educators up to date on new technology to create the most effective learning environment.",
+     "Spanish": "En esta generación digital, el uso de la tecnología ha incrementado tremendamente, especialmente durante la pandemia de COVID-19. Aunque la tecnología es un recurso esencial, es posible que los estudiantes no tengan el mismo acceso a estos aparatos. Es importante que los estudiantes y maestros no solo tengan acceso a la tecnología, si no también recibir entrenamiento y desarrollo profesional para entender cómo usar estos aparatos. El desarrollo profesional es necesario para mantener a los educadores al día y crear un ambiente productivo y efectivo."},
+     
+     {"English": "Resources on Access and Technology in the Classroom:",
+     "Spanish": "Recursos sobre el acceso de tecnología en las clases:"},
+     
+     {"English": "Durham Public Schools’ Technological Services",
+     "Spanish": "Servicios tecnológicos del condado de Durham"},
+     
+     {"English": "Equitable Access to Technology",
+     "Spanish": "Acceso equitativo a la tecnología"},
+     
+     {"English": "Funding Per Pupil",
+     "Spanish": "El financiamiento de cada estudiante"},
+     
+     {"English": "This indicator represents the amount that local, state, and federal governments spend on elementary and secondary education adjusted for the size of the student body. It is calculated by dividing the current expenditures over the entire academic year for Pre-Kindergarten through Grade 12 by the number of students in those grades in public schools. Current expenditures include instruction and instruction-related costs, student support services, administration, and operations. Excluded from those expenditures are funds for school construction and other capital outlays, debt service, and programs outside of public elementary and secondary education.",
+     "Spanish": "Este indicador representa el número que el gobierno local, estatal, y federal ha gastado en la educación primaria y secundaria. Estos datos están ajustados por el tamaño de estudiantes de cada escuela; se calcula por todos los gastos del año académico (desde pre-Kinder hasta el doceavo) dividido por el número de alumnos en cada grado. Ejemplos de estos gastos incluyen: la administración y operaciones de la escuela, servicios/recursos para los estudiantes, y gastos relacionados con la instrucción y el currículo. Estos gastos no incluyen la construcción de las escuelas, el capital de inversión, la amortización de deudas, y programas fuera de las escuelas primarias y secundarias. Carolina del Norte ocupa el lugar 39 (de 50, todos los estados continentales) en el financiamiento de cada estudiante."},
+     
+     {"English": "Resources on public school funding:",
+     "Spanish": "Recursos sobre el financiamiento de las escuelas"},
+     
+     {"English": "Interactive Summary of Local - Federal Public School Funding:",
+     "Spanish": "Un resumen interactivo del financiamiento de cada estudiante (del gobierno local, estatal, y federal):"},
+     
+     {"English": "Students With Disabilities",
+     "Spanish": "Estudiantes con discapacidades"},
+     
+     {"English": "According to the Americans with Disabilities Act, an individual is considered to have a disability if they have a condition that impairs them to do certain activities and interact with those around them. It is integral to make sure students with disabilities are provided with accessibility services to achieve their full potential in the classroom. Resources like",
+     "Spanish": "De acuerdo a la Ley de Estadounidenses con Discapacidades (Americans with Disabilities Act), una persona con una condición que la impide a hacer ciertas actividades e interactuar con los demás se considera tener una discapacidad. Es necesario que los estudiantes con discapacidades sean proveídos con servicios de accesibilidad para que puedan alcanzar el éxito en la escuela. Recursos como "},
+     
+     {"English": "transportation,",
+     "Spanish": "la transportación,"},
+     
+     {"English": "Exceptional Children (EC) programs,",
+     "Spanish": "y programas para estudiantes con necesidades especiales (Exceptional Children o EC),"},
+     
+     {"English": "etc. are mandatory for every school to provide regardless of the number of students with disabilities or even the type based on the civil rights law Section 504.",
+     "Spanish": "etc. son obligatorios para cada escuela, a pesar del número de estudiantes con discapacidades o el tipo de las discapacidades. Este principio está reflejado en la Sección 504 en la ley de los derechos civiles."},
+     
+     {"English": "Below are articles and resources about government protection and resources for students with disabilities:",
+     "Spanish": "Artículos sobre la protección del gobierno y recursos para estudiantes con discapacidades:"},
+     
+     {"English": "DPS EC Services",
+     "Spanish": "Servicios para estudiantes con necesidades especiales en el condado de Durham"},
+     
+     {"English": "Section 504",
+     "Spanish": "Sección 504"},
+     
+     {"English": "NCDPI’s EC Division",
+     "Spanish": "La división de este programa en Carolina del Norte"},
+     
+     {"English": "Assistive Technology",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "assistive technology",
+     "Spanish": "la tecnología asistiva"},
+     
+     {"English": ": supplementary devices that promote independence and functionality of people with varying disabilities",
+     "Spanish": ": aparatos suplementarios que promueven independencia y más funcionalidad para las personas con discapacidades"},
+     
+     {"English": "EC programs",
+     "Spanish": "Programas para estudiantes con necesidades especiales"},
+     
+     {"English": ": school programs that include students that need intense or individualized instruction in addition to their standard course of study",
+     "Spanish": ": programas en las escuelas para estudiantes que requieren instrucción individualizada/ intensa además de la enseñanza estandarizada que reciben"},
+     
+     {"English": "English as a Second Language (ESL) Student Enrollment",
+     "Spanish": "Inglés como segunda lengua"},
+     
+     {"English": "This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are created to help children learn English along with other subjects necessary to complete each grade.",
+     "Spanish": "Esta gráfica demuestra el número de estudiantes que están inscritos en el programa “Inglés como segunda lengua” (English as a Second Language: ESL, o English Language Learners: ELL). Este programa es disponible para cualquier estudiante que es un hablante de inglés no nativo, a pesar de su etnicidad, orígen, raza, edad, etc. Programas como ESL y ELL ayudan a que estos estudiantes aprendan inglés y otras materias requeridas para pasar al próximo grado."},
+     
+     {"English": "Unfortunately, ESL students can face racial bias, discrimination, and bullying in the classroom. Teachers may prevent them from participating in school activities, extracurriculars, and enrichment programs. It is important that school affiliates recognize that language barriers do not stunt intellectual development. Additionally, ELL teachers must accommodate their students instead of assimilating them by removing the identity of their native language entirely.",
+     "Spanish": "Desafortunadamente, estos estudiantes pueden enfrentar discriminación, prejuicio, y acoso en la escuela. Adicionalmente, unos maestros pueden excluir a estos estudiantes de varias actividades, extracurriculares, y programas de enriquecimiento. Es importante que las escuelas reconozcan que esta barrera lingüística no impide la enseñanza de estos estudiantes. Los maestros de ESL o ELL deben atemperar a los estudiantes, en vez de aculturar a estos estudiantes y eliminar sus identidades diversas."},
+     
+     {"English": "Below are resources and information on culturally-responsive teaching and Durham Public Schools’ approaches to ESL/ELL programs:",
+     "Spanish": "Recursos e información sobre prácticas culturalmente sensibles en Durham y programas de ESL/ELL:"},
+     
+     {"English": "How to Advocate for ESL/ELL Students",
+     "Spanish": "Cómo defender hablantes de inglés no nativo"},
+     
+     {"English": "Real-World Experiences and Anecdotes",
+     "Spanish": "Experiencias y anécdotas sobre la aculturación"},
+     
+     {"English": "DPS ESL Office",
+     "Spanish": "La oficina del programa ESL en Durham"},
+     
+     {"English": "ESL/ELL Teachers",
+     "Spanish": "Maestros de ESL/ELL"},
+     
+     {"English": "In-School Suspensions (ISS)",
+     "Spanish": "Suspensiones dentro de la escuela (ISS)"},
+     
+     {"English": "In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel (https://supportiveschooldiscipline.org/suspension).",
+     "Spanish": "Suspensiones dentro de la escuela se definen como: 'un estudiante que es sacado del salón de clases por al menos un medio día, pero sigue siendo supervisado por el personal de la escuela.'"},
+
+     {"English": "Students of color are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the",
+     "Spanish": "Estudiantes de color son susceptibles a castigos más severos en las escuelas, comparados con sus compañeros blancos. Una razón por esto es el prejuicio contra estos estudiantes, lo cual es evidente en un exceso de control de ellos. Esta dinámica crea un"},
+     
+     {"English": "school-to-prison pipeline",
+     "Spanish": "canal de la escuela a la prisión"},
+     
+     {"English": "Racial Bias in School Discipline",
+     "Spanish": "Discriminación en castigos de las escuelas"},
+     
+     {"English": "School-to-Prison Pipeline",
+     "Spanish": "El canal de la escuela a la prisión"},
+     
+     {"English": ": the overly disproportionate policing of minority students, often from low-income households, that leads to higher punishments including ISS, OSS (out-of-school suspension), juvenile detention, etc.",
+     "Spanish": ": Existe una vigilancia excesivamente desproporcionada de estudiantes de minorías, a menudo de hogares de bajos ingresos. Esto causa castigos más severos, incluyendo suspensiones dentro de la escuela (ISS) y fuera de la escuela (OSS)."},
+
+     {"English": "Enrollment",
+     "Spanish": "Número de alumnos"},
+     
+     {"English": "This dataset shows the enrollment numbers at each school. Due to the COVID-19 pandemic, there has been a 5% decrease in enrollment. Normally, enrollment or average daily membership (ADM) is used to determine funding for each school. The higher the ADM, the more money a school receives. Recently, lawmakers passed a bill stating that they would omit schools from reduction in funding as part of COVID-19 relief. Durham Public Schools continues to strive for increased enrollment so that all programs can continue to receive adequate funding.",
+     "Spanish": "Estos datos demuestran el número de alumnos en cada escuela. Debido a la pandemia de COVID-19, estos números de estudiantes han disminuido un 5%. Normalmente, el promedio diario de membresía (average daily membership: ADM), determina el financiamiento de cada escuela. Entre mayor sea el número, más dinero recibe la escuela. Recientemente, los legisladores aprobaron una propuesta para que las escuelas no reciban menos financiamiento por la pandemia de COVID-19. El condado de Durham sigue tratando de incrementar el número de alumnos para asegurar que todos los programas sigan recibiendo financiamiento adecuado."},
+     
+     {"English": "Below is information about enrollment numbers:",
+     "Spanish": "Información sobre el número de estudiantes"},
+     
+     {"English": "The Decrease in Enrollment in North Carolina",
+     "Spanish": "La disminución de estudiantes en Carolina del Norte"},
+     
+     {"English": "School and Zone BIPOC Comparison",
+     "Spanish": "Estudiantes de color en la escuela y zona escolar"},
+     
+     {"English": "This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ",
+     "Spanish": "Esta gráfica demuestra el porcentaje de estudiantes de color en la escuela comparada con la zona escolar. Esta medida muestra la disparidad en la representación de los estudiantes de color. La mayoría de estas escuelas no reflejan las demográficas de sus zonas escolares correspondientes."},
+     
+     {"English": "Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods.",
+     "Spanish": "La gentrificación es una causa de este problema, y solamente ha empeorado desde la pandemia de COVID-19. Muchos vecindarios en Durham se han vuelto un lugar muy caro, lo cual resulta en nuevas demográficas en los vecindarios."},
+     
+     {"English": "Below are articles on In-School Suspensions and the School-to-Prison Pipeline:",
+     "Spanish": "Artículos sobre suspensiones dentro de la escuela y el canal de la escuela a la prisión"},
+     
+     {"English": "COVID-19 and Gentrification in Durham",
+     "Spanish": "COVID-19 y la gentrificación en Durham"},
+     
+     {"English": "Redlining in Durham",
+     "Spanish": "Prácticas discriminatorias en Durham"},
+     
+     {"English": "Durham’s Racial Inequality, Poverty, and Gentrification",
+     "Spanish": "Las disparidades, la pobreza, y la gentrificación en Durham"},
+     
+     {"English": "gentrification",
+     "Spanish": "la gentrificación"},
+     
+     {"English": ": the process of changing low-income neighborhoods, usually with a minority-majority, to market them to wealthier people (i.e. targeted businesses, flipping foreclosed homes, raising rent, etc.), ultimately displacing the current residents",
+     "Spanish": ": el proceso de cambiar vecindarios de bajos ingresos y recursos, típicamente de minorías, para promocionarlos para personas con mayores ingresos (por ejemplo: nuevos negocios, casas renovadas, subiendo la renta, etc.) Este proceso desplaza a los residentes originales de esos vecindarios."},
+     
+     {"English": "BIPOC Students per School",
+     "Spanish": "Porcentaje de estudiantes de color (POC)"},
+     
+     {"English": "This dataset shows the percentage of students of color in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and ",
+     "Spanish": "Estos datos demuestran el porcentaje de estudiantes de color en las 16 escuelas. En cada escuela, la mayoría de los alumnos son “alumnos the color,” lo cual significa que la representación y"},
+     
+     {"English": "culturally-responsive pedagogy",
+     "Spanish": "pedagogía culturalmente sensible"},
+     
+     {"English": "is integral for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more.",
+     "Spanish": "son esenciales para el éxito de los estudiantes. Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. Los estudiantes que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
+     
+     {"English": "Below is more information about students of color:",
+     "Spanish": "Información sobre estudiantes de color:"},
+     
+     {"English": "Racial/Ethnic Enrollment in NC Public Schools",
+     "Spanish": "Inscripción racial y étnica en las escuelas públicas de Carolina del norte"},
+     
+     {"English": "Benefits of POC Representation",
+     "Spanish": "Ventajas de la representación"},
+     
+     {"English": "Racial Demographics",
+     "Spanish": "Demográficas Raciales"},
+     
+     {"English": "This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased.",
+     "Spanish": "Estos datos demuestran el análisis de las diferentes razas en cada escuela. En las escuelas públicas de Durham, 80.7% de los estudiantes son de color, mientras 57% de la ciudad de Durham son personas de color. Las demográficas raciales de las 16 escuelas han cambiado con el tiempo, específicamente durante los últimos 30 años. El número de estudiantes blancos ha disminuido, y el número de estudiantes de color ha incrementado."},
+     
+     {"English": "Representation of these students and ",
+     "Spanish": "Muy frecuentemente, estudiantes de color son infrarrepresentados y no pueden relacionar al currículo por diferencias culturales. La representación de estos estudiantes y "},
+     
+     {"English": "Below is more information about racial demographics in schools:",
+     "Spanish": "Más información sobre demográficas raciales:"},
+     
+     {"English": "Changing School Racial Demographics in Recent Decades",
+     "Spanish": "Cómo las demográficas raciales han cambiado"},
+     
+     {"English": "More Students of Color in Public schools",
+     "Spanish": "Más estudiantes de color en las escuelas públicas"},
+     
+     {"English": "Median Household Income",
+     "Spanish": "Ingreso promedio familiar"},
+     
+     {"English": "This graph shows the median household income for each school zone. According to the 2020 US census, the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the first statistically significant decline since 2011.",
+     "Spanish": "Esta gráfica demuestra el ingreso promedio familiar para cada zona escolar. De acuerdo al censo de 2020, el ingreso promedio familiar en los Estados Unidos es $67,521. Esto es una reducción de 2.9% desde 2019, lo cual es la primera reducción significativa desde 2011."},
+     
+     {"English": "According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom. Students’ basic human needs must be met in order to excel in the classroom.",
+     "Spanish": "De acuerdo al censo de 2020, el ingreso promedio familiar de Carolina del Norte es $56,642, mientras el ingreso por persona es $31,993. Es preocupante que las 16 escuelas quedan debajo de los promedios del estado y país. La pobreza directamente afecta la enseñanza de los estudiantes. La inseguridad alimentaria previene a que los estudiantes estén a todo su potencial. Las necesidades básicas de los estudiantes deben ser atendidas."},
+     
+     {"English": "Below are links to the US Census Information:",
+     "Spanish": "Datos del Censo de los Estados Unidos"},
+     
+     {"English": "Median Homesale Price",
+     "Spanish": "Precio de venta de casas"},
+     
+     {"English": "This graph shows the average home sale price for each school zone. In 2021, the median home sale price for the United States is $397,100 and the average home sale price is $464,200, according to the US Census Bureau. Specifically for the South, the median home sale price is $355,900 and the average home sale price is $411,100.",
+     "Spanish": "Esta gráfica demuestra los promedios de los precios de venta de casas para cada zona escolar. En 2021, la mediana para los Estados Unidos fue $397,100, y el promedio fue $464,200 (de acuerdo al censo). Específicamente para el Sur del país, el precio mediano es $355,900 mientras el promedio es $411,100."},
+     
+     {"English": "Due to the COVID-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to ",
+     "Spanish": "Debido a la pandemia de COVID-19, los precios de las casas subieron. Por lo tanto, el costo de vida también subió: todo contribuyendo a la "},
+     
+     {"English": "Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
+     "Spanish": "La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
+     
+     {"English": "Below is more information about home sale price:",
+     "Spanish": "Información sobre los precios de venta de casas"},
+     
+     {"English": "Home Sale Price Data",
+     "Spanish": "Datos sobre el precio de casas"},
+     
+     {"English": "Covid-19 Increase",
+     "Spanish": "Efectos de la pandemia"},
+     
+     {"English": "Bachelor Degree Rate",
+     "Spanish": "Los índices de licenciaturas universitarias"},
+     
+     {"English": "This graph shows the percentage of adults with bachelor’s degrees in each school zone. The number of individuals with bachelor’s degrees greatly differs across racial, income, and gender groups. Additionally, individuals with more degrees tend to have greater household incomes.",
+     "Spanish": "Esta gráfica muestra el porcentaje de adultos con bachillerato de cada zona escolar. Estos números de licenciaturas varían significativamente por grupos de diferentes razas, ingresos, y sexos. Adicionalmente, las personas con más licenciaturas tienden a tener ingresos más altos."},
+     
+     {"English": "Below is more information about bachelor degree rates:",
+     "Spanish": "Información sobre los índices de licenciaturas universitarias:"},
+     
+     {"English": "Bachelor’s Degrees and Race",
+     "Spanish": "Licenciaturas universitarias y la raza"},
+     
+     {"English": "Bachelor’s Degrees and Income",
+     "Spanish": "Licenciaturas universitarias y el ingreso"},
+     
+     {"English": "Sidewalk Coverage",
+     "Spanish": "Las banquetas"},
+     
+     {"English": "Areas without sidewalk coverage can become inaccessible for people without cars or other modes of transportation, both private and public. Sidewalks are needed for individuals to safely walk to places such as school, grocery stores, parks, etc. Especially for younger students, sidewalks are essential for their safety. According to a UNC Highway Safety Research Center study, the probability of a crash occurring near or at a paved sidewalk is 88.2% lower than an unpaved site.",
+     "Spanish": "Áreas sin banquetas son inaccesibles para personas sin coches u otros modos de transportación (pública o privada). Las banquetas son necesarias para caminar a lugares sin peligro, por ejemplo la escuela, tiendas de comestibles, parques, etc. Especialmente para los estudiantes más jóvenes, las banquetas son esenciales para la seguridad. De acuerdo a un estudio de la Universidad de Carolina del Norte (UNC), la probabilidad de un choque tomando lugar cerca de una banqueta es 88.2% más bajo que un lugar sin una banqueta."},
+     
+     {"English": "Sidewalks also promote more physical activity and healthier lifestyles. In the US specifically, obesity rates have been steadily increasing across all populations and ages. Sidewalk coverage provides people with a safe and accessible way to increase their daily physical activity.",
+     "Spanish": "Las banquetas promueven más actividad física y estilos de vida más sanos. En los Estados Unidos, el índice de obesidad ha subido en todas las poblaciones y diferentes edades. Las banquetas proveen a las personas una manera segura y accesible para ser más activos."},
+     
+     {"English": "High income areas tend to have more sidewalk coverage than lower income areas. 89% of high-income communities have sidewalks, whereas only 49% of low income communities have sidewalk coverage.",
+     "Spanish": "Áreas de ingresos altos tienden a tener más banquetas que áreas de ingresos bajos. 89% de las comunidades de ingresos altos tienen banquetas, mientras solamente 49% de las comunidades de ingresos y recursos bajos tienen banquetas."},
+     
+     {"English": "Below is more information about sidewalk coverage:",
+     "Spanish": "Información sobre las banquetas:"},
+     
+     {"English": "Importance of Sidewalks",
+     "Spanish": "La importancia de las banquetas"},
+     
+     {"English": "Income Disparities and Sidewalk Coverage",
+     "Spanish": "Disparidades de ingresos en áreas sin banquetas"},
+     
+     {"English": "Dashboard with Articles and Quick Facts about Graduation Rates",
+     "Spanish": "Artículos e información sobre el índice de graduación"},
+     
+     {"English": "Median Age",
+     "Spanish": "Edad promedio"},
+     
+     {"English": "This dataset shows the median age of residents in each school zone. The median age of residents in a specific school zone can determine the various assets available, identify beneficial resources in the community, and give some insight about school enrollment numbers in the future.",
+     "Spanish": "Estos datos muestran la edad promedio de los residentes en cada zona escolar. La edad promedio puede determinar los recursos disponibles, identificar las ventajas en la comunidad, y darnos una idea sobre el número de inscritos en el futuro."},
+     
+     {"English": "Titles Per Student",
+     "Spanish": "Títulos por estudiante"},
+     
+     {"English": "A school library’s number of book titles per student indicates the availability of different book titles for students to select. A higher number of book titles per student indicates a wider variety of books to choose from. Having more book titles per student enables more opportunities for whole-class novel reading, which is essential for learning book analysis, encouraging engaging discussions, and prompting creative writing.",
+     "Spanish": "Este dato refleja el número de libros en la biblioteca (de la escuela) por estudiante. Este número indica la disponibilidad de diferentes libros para los estudiantes. Un número alto representa una variedad de libros más grande. Una biblioteca que tiene más títulos por estudiante crea más oportunidades para lectura en grupos, lo cual es esencial para aprender análisis de lectura, crear discusiones en el salón de clases, y motivar la escritura creativa."},
+     
+     {"English": "Having a wide selection of books in a library also promotes more reading and intellectual stimulation for students. With a higher number of titles per student, it is more likely that most, if not all, students can find literature that engages them.",
+     "Spanish": "Una selección extensa de libros promueve más lectura e intelectualmente estimulante materiales para los alumnos. Una escuela con muchos libros tiene más chances que la mayoría, sino todos los estudiantes, puedan encontrar unos libros o un género que les interesa."},
+     
+     {"English": "Below are more resources on the importance of book titles:",
+     "Spanish": "Recursos sobre la importancia de los libros"},
+     
+     {"English": "Importance of Culturally-Diverse Literature",
+     "Spanish": "La importancia de libros culturalmente diversos"},
+     
+     {"English": "Creating an Effective and Diverse Classroom Library",
+     "Spanish": "Creando una biblioteca efectiva e inclusiva"},
+     
+     {"English": "WiFi Access",
+     "Spanish": "La internet (WiFi)"},
+     
+     {"English": "Note:",
+     "Spanish": "Nota:"},
+     
+     {"English": "Due to the COVID-19 pandemic, this data only extends until December of 2020. Therefore, only the 2019-2020 school year is reflected above.",
+     "Spanish": "A causa de la pandemia COVID-19, estos datos solamente se extienden hasta diciembre de 2020. Por lo tanto, esta información es del año escolar 2019-2020."},
+     
+     {"English": "The visualization depicts the number of wireless access points for each classroom. A school with a higher number of access points overall will have better internet coverage and quality than a school with less access points.",
+     "Spanish": "Esta visualización representa el número de puntos de acceso inalámbricos en cada salón de clases. Una escuela con más puntos de acceso tiene mejor internet y conexión que una escuela con menos puntos de acceso."},
+     
+     {"English": "As things begin to modernize with time, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+     
+     {"English": "Below are more resources on Wi-Fi Access:",
+     "Spanish": "Recursos sobre el acceso de internet:"},
+     
+     {"English": "Why Representation Matters",
+     "Spanish": "La importancia de la representación"},
+    
+     {"English": ": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom",
+     "Spanish": ": un estilo personalizado de enseñanza que reconoce las varias culturas e identidades étnicas en el salón de clases."},
+     
+     {"English": "is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more.",
+     "Spanish": "son esenciales para el éxito de los estudiantes. Los alumnos que sí pueden conectar con sus tutores, maestros, la administración, etc. tienden a participar más en las clases y disfrutar el currículo."},
+     
+     {"English": ". Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch.",
+     "Spanish": ". La mayoría de estas zonas escolares cuestan más que el precio mediano de Carolina del Norte. Cada día, Durham se convierte en una ciudad más cara. A consecuencia de este cambio, muchos estudiantes de las 16 escuelas requieren almuerzo gratis o reducido."},
+     
+     {"English": "As society modernizes, the internet has become a vital resource for all. Specifically in schools, teachers can display information and teach through slideshows, animations, videos, games, and more. Incorporating various forms of online tools can make the students become more engaged, while enabling the educator to explore new teaching methods. As a result, students will become more comfortable with using technology.",
+     "Spanish": "Como vivimos en una generación modernizada, la internet se ha convertido en un recurso esencial para todos. Específicamente en las escuelas, los maestros pueden enseñar a través de diapositivas, videos, animaciones, juegos electrónicos, etc. Incorporando varios recursos en línea puede hacer que los estudiantes se animen más a participar y aprender el currículo. Como resultado, los estudiantes se sentirán más cómodos cuando usen la tecnología. Para los maestros, la internet les da la oportunidad de explorar nuevos métodos de enseñanza y organizar sus materiales de una manera más eficiente."},
+
+     {"English": "For high school students especially, classes become more challenging as they become older and begin to take more advanced courses, such as AP or IB classes. In these higher-stress environments, smaller sized classrooms enable teachers to better gauge if the students are making progress and fully understanding the material. Additionally, educators have the opportunity to make the curriculum and assignments more personalized to cater to the student body.", 
+     "Spanish": "Especialmente para los estudiantes de escuelas preparatorias, las clases se vuelven más desafiantes. Mientras los estudiantes crezcan, también empiezan a tomar cursos más avanzados, como las clases de AP o IB (Bachillerato Internacional). En estos ambientes más estresantes, clases pequeñas ayudan a que los maestros se den cuenta si los estudiantes están entendiendo el currículo. Adicionalmente, los educadores tienen la oportunidad de crear su propio currículo y hacer que las tareas sean más personalizadas para los estudiantes."},
+     
+     {"English": "Assistive Technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "assistive technology:",
+     "Spanish": "La tecnología asistiva"},
+     
+     {"English": "Graduation Rate",
+     "Spanish": "Índice de graduación"},
+     
+     {"English": "The graph depicts the percentage of students estimated to graduate from high school in four years or less. The graduation rate for North Carolina from 2020 is 87.6%, with plans to raise that percentage to 95% by 2030. This is a significant increase from when the first reported graduation rate was 68.3% in 2006.",
+     "Spanish": "Esta gráfica muestra el porcentaje de estudiantes estimados a graduarse de la preparatoria en cuatro años (o menos). El índice de graduación de Carolina del Norte de 2020 es 87.6%, con planes de aumentar este porcentaje a 95% para el año 2030. Esto es un aumento significante desde 2006; cuando el índice de graduación fue 68.3%."},
+     
+     {"English": "Graduation rates are important. Delayed graduations can lead to risk for student dropout rates to increase. Dropping out is a gateway that could possibly lead to students living disadvantaged lifestyles. It is important for stakeholders, especially school counselors and social workers, to reach out to students with extended absences. External factors could be contributing to student dropout rates and as a community, we may be able to diminish those barriers.",
+     "Spanish": "Estos índices son importantes. Graduaciones retrasadas terminan en menos estudiantes terminado la preparatoria. Es posible que los estudiantes que no se gradúan (o alumnos desertores) tengan obstáculos y estilos de vida desaventajados. Es importante que consejeros y trabajadores sociales se comuniquen con estudiantes con muchas ausencias. Factores externos pueden ser la razón detrás de los alumnos desertores. Como comunidad, debemos trabajar para eliminar estas barreras."},
+     
+     {"English": "Below are more resources on graduation rates:",
+     "Spanish": "Recursos sobre el índice de graduación:"},
+     
+     {"English": "However, not all students have the same access to technology in their homes. Most schools have accounted for this disparity by providing students with free tablets or laptops. During the COVID-19 pandemic, when students of all ages had to adjust to online instruction, several counties provided WiFI hubs so that students’ learning was not hindered.",
+     "Spanish": "Sin embargo, no todos los estudiantes tienen el mismo acceso a la tecnología en sus casas. La mayoría de las escuelas han reconocido esta disparidad y han regalado tabletas y computadores gratis a estos estudiantes. Durante la pandemia de COVID-19, cuando los estudiantes de todas edades tuvieron que ajustarse a las clases en línea, varios condados ofrecieron centros y autobuses con internet gratis para que los estudiantes se pudieran conectar a sus clases y completar sus tareas."},
+     
+     {"English": "- AP English Language",
+     "Spanish": "- AP Inglés (Lenguaje)"},
+     
+    {"English": "- AP English Literature",
+     "Spanish": "- AP Inglés (Literatura)"},
+     
+     {"English": "- AP Language and Composition",
+     "Spanish": "- AP Lenguaje y Composición"},
+     
+     {"English": "- AP Literature and Composition",
+     "Spanish": "- AP Literatura y Composición"},
+     
+     {"English": "- AP Statistics",
+     "Spanish": "- AP Estadísticas"},
+     
+    {"English": "- AP Calculus",
+     "Spanish": "- AP Cálculo"},
+     
+     {"English": "- AP Calculus AB",
+     "Spanish": "- AP Cálculo AB"},
+     
+     {"English": "- AP Calculus BC",
+     "Spanish": "- AP Cálculo BC"},
+     
+     {"English": "- AP Biology",
+     "Spanish": "- AP Biología"},
+     
+     {"English": "- AP Chemistry",
+     "Spanish": "- AP Química"},
+     
+     {"English": "- AP Environmental Science",
+     "Spanish": "- AP Ciencias del medio ambiente"},
+     
+     {"English": "- AP Physics C: Mechanics",
+     "Spanish": "- AP Física C: Mecánica"},
+     
+     {"English": "- AP Physics I",
+     "Spanish": "- AP Física C I"},
+     
+     {"English": "- AP Physics II",
+     "Spanish": "- AP Física C II"},
+     
+     {"English": "- AP Physics C: Electricity and Magnetism",
+     "Spanish": "- AP Física C: Electricidad y Magnetismo"},
+     
+     {"English": "- AP Physics 1: Algebra Based",
+     "Spanish": "- AP Física 1: Álgebra"},
+     
+     {"English": "- AP Physics 2: Algebra Based",
+     "Spanish": "- AP Física 2: Álgebra"},
+     
+     {"English": "- AP Human Geography",
+     "Spanish": "- AP Geografía humana"},
+     
+     {"English": "- AP World History",
+     "Spanish": "AP Historia Mundial"},
+     
+     {"English": "- AP US History",
+     "Spanish": "- AP Historia de los Estados Unidos"},
+     
+     {"English": "- AP Psychology",
+     "Spanish": "- AP Psicología"},
+     
+     {"English": "- AP Macroeconomics",
+     "Spanish": "- AP Macronomía"},
+     
+     {"English": "- AP Government and Politics",
+     "Spanish": "- AP Gobierno y política"},
+     
+     {"English": "- AP European History",
+     "Spanish": "- AP Historia de Europa"},
+     
+     {"English": "- AP US Government and Politics",
+     "Spanish": "- AP Gobierno y Política de los Estados Unidos "},
+     
+     {"English": "- AP World History: Modern",
+     "Spanish": "- AP Historia Mundial: Moderna"},
+     
+     {"English": "- AP Microeconomics",
+     "Spanish": "- AP Microeconomía"},
+     
+     {"English": "- AP Seminar",
+     "Spanish": "AP Seminario"},
+     
+     {"English": "- AP Latin",
+     "Spanish": "- AP Latín"},
+     
+     {"English": "- AP Spanish Language",
+     "Spanish": "- AP Español (Lenguaje)"},
+     
+     {"English": "- AP Spanish Literature",
+     "Spanish": "- AP Español (Literatura)"},
+     
+     {"English": "- AP French Language",
+     "Spanish": "- AP Francés (Lenguaje)"},
+
+{"English": "- AP Spanish Language & Culture",
+     "Spanish": "- AP Español: Lenguaje y Cultura"},
+
+{"English": "- AP Italian",
+     "Spanish": "- AP Italiano"},
+
+{"English": "- AP Chinese",
+     "Spanish": "- AP Chino"},
+
+{"English": "- AP Vergil Latin",
+     "Spanish": "- AP Latín (Vergil)"},
+
+{"English": "- AP Studio Art Drawing",
+     "Spanish": "- AP Estudio de Arte: El dibujo"},
+
+{"English": "- AP Studio Art: 2D Design",
+     "Spanish": "- AP Estudio de Arte: Diseño de dos dimensiones"},
+
+{"English": "- AP Studio Art: 3D Design",
+     "Spanish": "- AP Estudio de Arte: Diseño de tres dimensiones"},
+
+{"English": "- AP Art History",
+     "Spanish": "- AP Historia de Arte"},
+
+{"English": "- AP Music Theory",
+     "Spanish": "- AP Teoría Músical"},
+
+{"English": "- AP Studio Art",
+     "Spanish": "- AP Estudio de arte"},
+
+{"English": "- AP Computer Science",
+     "Spanish": "- AP Ciencias de la computación"},
+
+{"English": "- AP Intro to Engineering Design",
+     "Spanish": "- AP Introducción a ingeniería y diseño"},
+
+{"English": "- AP Principles of Engineering",
+     "Spanish": "- AP Principios de ingeniería"},
+
+{"English": "- AP Digital Electronics",
+     "Spanish": "- AP Electrónicos digitales"},
+
+{"English": "- AP Civil Engineering & Architecture",
+     "Spanish": "- AP Ingeniería civil y arquitectura"},
+
+{"English": "- AP Aerospace Engineering",
+     "Spanish": "- AP Ingeniería aeroespacial"},
+
+{"English": "- AP Computer Integrated Manufacturing",
+     "Spanish": "- AP Manufacturación de computadoras integradas"},
+
+{"English": "- AP Computer Science Principles",
+     "Spanish": "- AP Principios de Ciencias de la computación"},
+
+{"English": "- AP Computer Science A",
+     "Spanish": "- AP Ciencias de la computación"},
+
+{"English": "Financial Planning",
+     "Spanish": "Organización de Finanzas"},
+
+{"English": "NAF Academy of Finance",
+     "Spanish": "NAF Academy of Finance"},
+
+{"English": "Animal Systems",
+     "Spanish": "Sistemas de Animales"},
+
+{"English": "- Certified Veterinarian Assistant",
+     "Spanish": "- Asistente de Veterinario Certificado"},
+
+{"English": "Biotechnology and Agriscience Research (Local Pathway)",
+     "Spanish": "Investigaciones sobre la Biotecnología y Agrociencia"},
+
+{"English": "Plant Systems",
+     "Spanish": "Sistemas de Plantas"},
+
+{"English": "Accounting",
+     "Spanish": "La Contabilidad"},
+
+{"English": "Entrepreneurship",
+     "Spanish": "El Emprendimiento"},
+
+{"English": "Sports & Entertainment Marketing",
+     "Spanish": "Mercadotecnia de los Deportes y Entretenimiento"},
+
+{"English": "Travel & Tourism",
+     "Spanish": "El Viaje y Turismo"},
+
+{"English": "Adobe Academy",
+     "Spanish": "Academia en Adobe"},
+
+{"English": "Adobe Illustrator",
+     "Spanish": "Ilustrador en Adobe"},
+
+{"English": "Adobe Photoshop",
+     "Spanish": "El Procesamiento de Imágenes en Adobe"},
+
+{"English": "Digital Design and Animation",
+     "Spanish": "La Animación y Diseño Digital"},
+
+{"English": "Autodesk 3DS Max",
+     "Spanish": "Autodesk 3DS Max"},
+
+{"English": "Game Art Design",
+     "Spanish": "Diseño de Arte Digital"},
+
+{"English": "- Autodesk 3DS Max",
+     "Spanish": "- Autodesk 3DS Max"},
+
+{"English": "NAF Academy of Information Technology",
+     "Spanish": "Academia NAF de Tecnología Informativa"},
+
+{"English": "Python Programming",
+     "Spanish": "Programación en Python"},
+
+{"English": "- MTA 98-381 Introduction to Programming Using Python",
+     "Spanish": "- MTA 98-381 Introducción a la Programación en Python"},
+
+{"English": "- PCAP Python Certified Associate",
+     "Spanish": "- PCAP Socio de Python Certificado"},
+
+{"English": "Early Childhood Development & Services",
+     "Spanish": "Servicios sobre el Desarrollo de la Infancia"},
+
+{"English": "Food & Nutrition",
+     "Spanish": "Los Alimentos y la Nutrición"},
+
+{"English": "Interior Design",
+     "Spanish": "Diseño de Interiores"},
+
+{"English": "Culinary Arts Applications",
+     "Spanish": "Artes Culinarios"},
+
+{"English": "- Pre-Professional Assessment and Certification in Culinary Arts",
+     "Spanish": "- Evaluación y Certifiación en los Artes Culinarios"},
+
+{"English": "PLTW Engineering",
+     "Spanish": "Ingeniería en PLTW"},
+
+{"English": "Technology Engineering and Design",
+     "Spanish": "Ingeniería de Tecnología y Diseño"},
+
+{"English": "Advanced Placement Courses",
+     "Spanish": "Cursos Avanzados (AP)"},
+
+{"English": "CTE Courses",
+     "Spanish": "Educación para carreras técnicas (CTE)"},
+
+{"English": "Agricultural Education",
+     "Spanish": "Educación Agricultural"},
+
+{"English": "Business, Marketing, and Finance",
+     "Spanish": "Negocios, Mercadotecnia, y Finanzas"},
+
+{"English": "Computer Science and Information Technology Education",
+     "Spanish": "Ciencias de la Computación y Tecnología Informativa"},
+
+{"English": "Family and Consumer Sciences Education",
+     "Spanish": "Ciencias Familiares y de Consumidores"},
+
+{"English": "Health Science Education",
+     "Spanish": "Ciencia de la Salud"},
+
+{"English": "Trade, Technology, Engineering and Industrial Education",
+     "Spanish": "Comercio, Tecnología, Ingeniería, y Eduación Industrial"},
+     
+     {"English": "English AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Math AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Science AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Social Sciences AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "World Languages AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Music and Arts AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Engineneering AP Courses",
+     "Spanish": "Ciencia de la Salud"},
+     
+     {"English": "Baseball",
+   "Spanish": "El Béisbol"},
+    
+    {"English": "JV Baseball",
+   "Spanish": "El Béisbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Cross Country",
+   "Spanish": "A Campo Traviesa"},
+    
+    {"English": "Soccer",
+   "Spanish": "El Fútbol"},
+    
+    {"English": "JV Soccer",
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Football",
+   "Spanish": "El Fútbol Americano"},
+    
+    {"English": "JV Football",
+   "Spanish": "El Fútbol Americano (Equipo Juvenil Júnior)"},
+    
+    {"English": "Volleyball",
+   "Spanish": "El Voleibol"},
+    
+    {"English": "JV Volleyball",
+   "Spanish": "El Voleibol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Basketball",
+   "Spanish": "El Baloncesto"},
+    
+    {"English": "JV Basketball",
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior)"},
+    
+    {"English": "Cheerleading",
+   "Spanish": "La Animación Deportiva/Ser Porrista"},
+    
+    {"English": "Field Hockey",
+   "Spanish": "El Hockey Sobre Césped"},
+    
+    {"English": "Golf",
+   "Spanish": "El Golf"},
+    
+    {"English": "Gymnastics",
+   "Spanish": "La Gimnasia"},
+    
+    {"English": "Wrestling",
+   "Spanish": "La Lucha"},
+    
+    {"English": "Indoor Track",
+   "Spanish": "El Atletismo Adentro"},
+    
+    {"English": "Track",
+   "Spanish": "El Atletismo"},
+    
+    {"English": "Track and Field",
+   "Spanish": "El Atletismo"},
+    
+    {"English": "Lacrosse",
+   "Spanish": "El Lacrosse"},
+    
+    {"English": "JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior)"},
+    
+    {"English": "Swimming",
+   "Spanish": "La Natación"},
+    
+    {"English": "Softball",
+   "Spanish": "El Sóftbol"},
+    
+    {"English": "JV Softball",
+   "Spanish": "El Sóftbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Tennis",
+   "Spanish": "El Tenis"},
+    
+    {"English": "Boy's Cross Country",
+   "Spanish": "A Campo Traviesa Para Chicos"},
+   
+       {"English": "Girl's Cross Country",
+   "Spanish": "A Campo Traviesa Para Chicas"},
+    
+    {"English": "Boy’s Soccer",
+   "Spanish": "El Fútbol para Niños"},
+    
+    {"English": "Boy’s Basketball",
+   "Spanish": "El Baloncesto para Niños"},
+    
+    {"English": "Girl’s Basketball",
+   "Spanish": "El Baloncesto para Niñas"},
+    
+    {"English": "Girl’s Soccer",
+   "Spanish": "El Fútbol para Niñas"},
+    
+    {"English": "Girl’s Track",
+   "Spanish": "El Atletismo para Niñas"},
+    
+    {"English": "Boy’s Track",
+   "Spanish": "El Atletismo para Niños"},
+    
+    {"English": "Fall Sports",
+   "Spanish": "Deportes Durante el Otoño"},
+    
+    {"English": "Winter Sports",
+   "Spanish": "Deportes Durante el Invierno"},
+    
+    {"English": "Spring Sports",
+   "Spanish": "Deportes Durante la Primavera"},
+    
+    {"English": "Available Boy's/Men's Sports",
+   "Spanish": "Deportes para Niños/Hombres"},
+    
+    {"English": "Available Girl's/Women's Sports",
+   "Spanish": "Deportes para Niñas/Mujeres"},
+    
+    {"English": "Men’s JV Soccer",
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior) para Hombres"},
+    
+    {"English": "Men’s Soccer",
+   "Spanish": "El Fútbol para Hombres"},
+    
+    {"English": "Men's Cross Country",
+   "Spanish": "A Campo Traviesa para Hombres"},
+    
+    {"English": "Women's Golf",
+   "Spanish": "El Golf para Mujeres"},
+    
+    {"English": "Women's Volleyball",
+   "Spanish": "El Voleibol para Mujeres"},
+    
+    {"English": "Women's JV Volleyball",
+   "Spanish": "El Voleibol (Equipo Juvenil Júnior) para Mujeres"},
+    
+    {"English": "Women's Tennis",
+   "Spanish": "El Tenis para Mujeres"},
+    
+    {"English": "Women's Track",
+   "Spanish": "El Atletismo para Mujeres"},
+    
+    {"English": "Men's Basketball",
+   "Spanish": "El Baloncesto para Hombres"},
+    
+    {"English": "Men's JV Basketball",
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior) para Hombres"},
+    
+    {"English": "Women's Basketball",
+   "Spanish": "El Baloncesto para Mujeres"},
+    
+    {"English": "Women's JV Basketball",
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior) para Mujeres"},
+    
+    {"English": "Men's Golf",
+   "Spanish": "El Golf para Hombres"},
+    
+    {"English": "Men's JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior) para Hombres"},
+    
+    {"English": "Men's Lacrosse",
+   "Spanish": "El Lacrosse para Hombres"},
+    
+    {"English": "Men's Tennis",
+   "Spanish": "El Tenis para Hombres"},
+    
+    {"English": "Women's JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior) para Mujeres"},
+    
+    {"English": "Women's Lacrosse",
+   "Spanish": "El Lacrosse para Mujeres"},
+    
+    {"English": "Women's Soccer",
+   "Spanish": "El Fútbol para Mujeres"},
+    
+    {"English": "Women's JV Soccer",
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior) para Mujeres"},
+   
+       {"English": "Arts",
+     "Spanish": "Los artes"},
+    
+    {"English": "School",
+     "Spanish": "Escuela"},
+    
+    {"English": "Music",
+     "Spanish": "Música"},
+    
+    {"English": "Visual Arts",
+     "Spanish": "Artes visuales"},
+    
+    {"English": "Theatre",
+     "Spanish": "Teatro"},
+    
+    {"English": "Dance",
+     "Spanish": "Baile"},
+    
+    {"English": "Available Arts Programs in Each School",
+     "Spanish": "Programas de arte en cada escuela"},
+    
+    {"English": "Durham Public Schools and the Arts",
+     "Spanish": "Los artes en las escuelas públicas de Durham"},
+    
+    {"English": "Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Vist",
+     "Spanish": "La apreciación del arte es aparente en las escuelas públicas en Durham. Estas escuelas tienen currículos sobre los artes, varias actuaciones en las escuela, recursos para cualquier estudiante interesado en los artes (desde el kinder hasta el doceavo), y noticias sobre diferentes programas de arte a través del condado."},
+    
+    {"English": "Arts at DPS",
+     "Spanish": "Los artes en el condado de Durham"},
+    
+    {"English": "to learn more.",
+     "Spanish": "para más información."},
+    
+    {"English": "Learn more about some of the schools' arts programs by clicking on their logos below:",
+     "Spanish": "Aprende más sobre los programas de arte en cada escuela haciendole clic en los íconos:"},
+    
+    {"English": "Durham County and the Arts",
+     "Spanish": "Arte en el condado de Durham"},
+    
+    {"English": "Durham has a rich history of highlighting the arts. In the mid-20th century the non-profit organization ",
+     "Spanish": "Durham tiene una historia de darle importancia al arte. A mediados del siglo veinte, la organización sin fines de lucro: "},
+    
+    {"English": "Durham Arts Council",
+     "Spanish": "Durham Arts Council"},
+    
+    {"English": "was founded to promote and provide access to various opportunities and resources for those in the arts. The Durham Arts Council also provides a directory of artists to network with one another through the",
+     "Spanish": "fue fundada para promover varias oportunidades y recursos para los artistas u otras personas apasionadas por el arte. The Durham Art Council también tiene un directorio de artistas para que se puedan conectar/conocer a través del"},
+    
+    {"English": "Durham Arts Network",
+     "Spanish": "Durham Arts Network"},
+    
+    {"English": ". The city of Durham funded the",
+     "Spanish": ". La ciudad de Durham financió el "},
+    
+    {"English": "Cultural & Public Art Program ",
+     "Spanish": "Cultural & Public Art Program "},
+    
+    {"English": "to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work.",
+     "Spanish": "para “ iluminar la historia de los residentes” y demostrar la “riqueza de la cultura”. Durham provee muchas oportunidades para que el público pueda disfrutar los artes culturales mientras los artistas exhiben sus obras de arte."},
+    
+    {"English": "Discover Durham",
+     "Spanish": "Descubre a Durham"},
+    
+    {"English": "provides an extensive list of events for visitors and residents to do surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc.",
+     "Spanish": "contiene una lista extensa de eventos y actividades para los residentes y turistas. Esto inlcuye festivales, conciertos, obras, museos, exposiciones de arte, etc."},
+    
+    {"English": "Duke University",
+     "Spanish": "Duke University"},
+    
+    {"English": "- Duke Mural",
+     "Spanish": "- Duke Mural"},
+    
+    {"English": ": Duke University has partnered with the city of Durham and local artists to create new murals to beautify the city.",
+     "Spanish": "Duke University ha colaborado con la ciudad de Durham y artistas locales para crear murales y embellecer la comunidad."},
+    
+    {"English": "The Nasher Museum of Art at Duke University",
+     "Spanish": "The Nasher Museum of Art en Duke University"},
+    
+    {"English": "emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream arts institutions, and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art and ancient American art.",
+     "Spanish": "enfatiza obras de artistas diversos que han sido historicamenta suprepresentados o excluidos por la culturas dominante. El museo se enfoca particularmente en artistas de linaje Africano, arte medieval Europeo, pinturas Europeas y Americanas, arte forasterp, antigüedades clásicas, y arte Africano y antiguo."},
+    
+    {"English": "North Carolina Central University students host various musical ensembles, such as the",
+     "Spanish": "Los estudiantes de North Carolina Central University tienen diferentes ensambles musicales, incluyendo"},
+    
+    {"English": "NCCU Jazz Vocal Ensemble",
+     "Spanish": "NCCU Jazz Vocal Ensemble"},
+    
+    {"English": "and the",
+     "Spanish": "y el"},
+    
+    {"English": "NCCU Sound Machine Marching Band",
+     "Spanish": "NCCU Sound Machine Marching Band"},
+    
+    {"English": ", that perform throughout the city of Durham, North Carolina and the United States.",
+     "Spanish": ", que actúan por toda la ciudad de Durham, Carolina del Norte, y los Estados Unidos."},
+    
+    {"English": "WNCU 90.7 FM is Central’s Jazz radio station",
+     "Spanish": "WNCU 90.7 FM es una estación de radio, llamada Central Jazz"},
+    
+    {"English": "which provides “diverse music entertainment and serve as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the",
+     "Spanish": "que provee “entretenimiento de música diversa y sirve como un recurso educativo para nuestra comunidad.” NCCU también provee oportunidades de trabajo voluntario para los estudiantes universitarios en el"},
+    
+    {"English": "KidzNotes program",
+     "Spanish": "KidzNotes programa"},
+    
+    {"English": "via Fayetteville Street Elementary’s AT&T Believe Program.",
+     "Spanish": "a través de la organización llamada AT&T Believe Program con Fayetteville Street Elementary."},
+    
+    {"English": "North Carolina Central University",
+     "Spanish": "North Carolina Central University"},
+    
+    {"English": "These plots reveal the total number of each resource in each school district. Different school districts have different populations; therefore, there are different corresponding numbers of resources. These plots are useful for getting a sense of the of different types of resources available in each district at a glance.",
+     "Spanish": "Estas visualizaciones demuestran el número total de recursos en cada zona escolar. Differentes zonas tienen diferentes poblaciones; por lo tanto, hay diferentes números de recursos. Estas gráficas son útiles para tener una mejor idea de los diferentes tipos de recursos que están disponibles en cada zona."},
+     
+         {"English": "Available Arts Programs In Each School",
+     "Spanish": "Programas de Arte en cada Escuela"},
+     
+     {"English": "Emily McReynolds is a sophomore at Duke University originally from Greensboro,North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our educational and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all.",
+     "Spanish": "Emily McReynolds, originalmente de Greensboro, Carolina del Norte, está en su segundo año de Duke University. Ella tiene planes de estudiar la política pública con la administración de negocios. A Emily le apasiona la reforma de la política, específicamente en nuestros sistemas de educación y salud. Ella espera que este proyecto incremente el conocimiento de los recursos disponibles y centros comunitarios en Durham que puedan apoyar a nuestras escuelas públicas. Emily está emocionada por ver cómo esta aplicación puede crear un sentido de unidad para todos."},
+
+ {"English": "Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently,he is studying Data Science, with a minor in Political Science. He is especially interestedin using big data analyses to reveal politically and socially relevant insights to key issuesin policy and social justice. He joined the Data+ team to provide a clearer picture of the stateof Durham public schools, and find better paths to their improvement.",
+     "Spanish": "Aryan Poonacha, originalmente de Bangalore en la India, está en su último año de Duke Kunshan University. Aryan está estudiando análisis de datos con una especialización en ciencias políticas. Está especialmente interesado en el análisis de datos para revelar conclusiones sociales y políticas que son relevantes a cuestiones claves en la justicia social. Él es parte de este equipo para proveer más información sobre el estado de las escuelas públicas en Durham, y encontrar maneras para mejorarlas."},
+
+ {"English": "Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team because she was wanted to continue the work she did the previous summer in hopes to improve the dashboardto make it more accessible. With her background in education policy, she hopes to integrateher own knowledge with this dashboard to make an impact on Durham Public Schools and beyond.",
+     "Spanish": "Patience Jones, originalmente de Durham, Carolina del Norte, está en su último año de North Carolina Central University. Ella está estudiando inglés, educación secundaría, y psicología general. Patience continuó con el equipo para poder continuar el trabajo del verano pasado y mejorar la página para hacerla más accesible. Con su experiencia en la política educativa, espera integrar su propio conocimiento para tener un impacto positivo más allá del condado de Durham."},
+
+ {"English": "Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the previous research and efforts that have equipped the corresponding Bass Connections team with organized information and statistics to pinpoint the resources that would be most beneficial for specific schools. Melanie hopes this dashboard will help increase equity within schools, and promote a greater sense of community throughout Durham, North Carolina.",
+     "Spanish": "Melanie Kaye Moseley, originalmente de Oxford, Carolina del Norte, está en su último año de North Carolina Central University. Ella está estudiando música con una concentración en interpretación instrumental. Melanie se unió a este equipo para contribuir en las investigaciones y los esfuerzos anteriores del equipo de Bass Connections, que los proveo con información/estadísticas sobre los recursos en cada escuela. Melanie espera que esta aplicación aumente la equidad en las escuelas y crea un sentido de comunidad en todo Durham."},
+
+ {"English": "Surabhi Trivedi is a PhD candidate at Duke's sociology department. He'sinterested in how habits and beliefs change, both at the individual and collectivelevel, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, andbelieves the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true.",
+     "Spanish": "Surabhi Trivedi es una estudiante de maestría en la informática interdisciplinaria de Duke University. Ella está interesada en la interseccionalidad de la ciencia de datos con la política pública, específicamente la política social. Para el verano, está trabajando como una interna en World Bank y Urban Institute, mientras está trabajando como voluntaria en este proyecto de Data+."},
+
+ {"English": "Allyson Ashekun is a junior at Duke University from Clearwater, Florida.Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ projectteam because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering DurhamPublic Schools, and will help improve the quality of partnerships.",
+     "Spanish": "Allyson Ashekun, originalmente de Clearwater, Florida, está en su tercer ańo de Duke University. Ella está estudiando la política pública y ciencias de la computación. Sus intereses académicos incluyen la intersección de estas dos materias en la informática. Allyson es parte de este equipo porque es apasionada sobre la educación equitativa y disfruta la codificación. Allyson tiene esperanzas de que esta página sea útil para las personas asociadas con el condado de Durham, mientras las colaboraciones entre las universidades y escuelas sean más fuertes."},
+
+ {"English": "Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help adequatelyprepare college students to enter schools as well as allow Durham residents tolocate the myriad resources accessible to help form an even stronger community built around the schools.",
+     "Spanish": "Drew Greene, originalmente de Richmond, Virginia, está en su segundo año de Duke University. Él tiene planes de estudiar la política pública con especialidades en la educación y estudios de injusticias. Sus interests académicos incluyen la equidad en la eduación y el canal de la escuela a la prisión. Drew está en este proyecto para la oportunidad de mejorar sus habilidades de codificación. Él espera que este proyecto adecuadamente prepare a los estudiantes que van a ser maestros en Durham. Drew también tiene esperanzas de que los residentes de Durham puedan localizar recursos cerca de ellos, lo cuál resultaría en una comunidad más unida."},
+
+ {"English": "Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into educationpolicy. She hopes this dashboard makes an impact on not only these ten communityschools in the dataset, but students in all Durham Public Schools and beyond, in hopes to make education more accessible to all students.",
+     "Spanish": "Patience Jones, originalmente de Durham, Carolina del Norte, está en su último año de North Carolina Central University. Ella está estudiando inglés, educación secundaría, y psicología general. Ella es parte de esto equipo porque está interesada en aprender más sobre la informática y como se puede aplicar a nuestro sistema educativo. Patience espera que esta página tenga un impacto positivo- no solamente en estas diez escuelas, pero para todos los estudiantes en Durham. Ella espera tener un papel en haciendo la educación más accessible para todos."},
+
+ {"English": "Rhea Tejwani is a junior at Duke University from Demarest, New Jersey. She is studying Computer Science and Economics. Rhea decided to join this project teambecause she has a passion for data science and hopes that this app will help local universities have a productive relationship with the community. She is proud of the work the team accomplished, and is excited to see the long term impacts that this web app has!",
+     "Spanish": "Rhea Tejwani, originalmente de Demarest, New Jersey, está en su tercer año de Duke University. Ella está estudiante ciencias de la computación y la economía. Rhea está en este proyecto porque tiene esperanzas de que esta aplicación habilita a que las universidades colaboren con la comunidad. Ella está orgullosa del trabajo que el equipo ha logrado, y está emocionada para ver los efectos positivos que la página tendrá a largo plazo."},
+
+ {"English": "Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He'sinterested in how habits and beliefs change, both at the individual and collectivelevel, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, andbelieves the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true.",
+     "Spanish": "Nico Restrepo Ochoa es un estudiante de doctorado en la socióloga en Duke University. Él está interesado en cómo los hábitos y creencias cambian, tanto al nivel individual como colectivo. Nico usa datos longitudinales, redes/conexiones, y simulaciones para tratar de contestar esta pregunta. Él tuvo el privilegio de ser el director del proyecto, y cree que su trabaja fue fácil, gracias a la eficacia y esfuerzo de su equipo. Él equipo dice que Nico fue útil para ellos, y a él le gusta creer que este halago es cierto."},
+
+{"English": "Meet Our Team - Data+ 2022",
+     "Spanish": "Nuestro Equipo - Data+ 2022"},
+     
+     {"English": "Meet Our Team - Data+ 2021",
+     "Spanish": "Nuestro Equipo - Data+ 2021"},
+     
+     {"English": "Hover over the icon to see the name. Click on the icon to reveal its link.",
+"Spanish": "Pase el cursor sobre el ícono para ver el nombre. Haz clic en el ícono para ver su enlace"},
+
+{"English": "Click the",
+"Spanish": "¡Ponle clic en el"},
+
+{"English": "icon to search any address!",
+"Spanish": "ícono para buscar cualquier dirección!"},
+
+{"English": "Selected Variable Resources",
+"Spanish": "Los Recursos Disponibles"},
+
+{"English": "Select a variable to see a list of all the resources with the selected school zone.",
+"Spanish": "Seleccione un variable para ver la lista de todos los recursos en la zona escolar."},
+
+{"English": "Elementary School",
+"Spanish": "Escuela Primaria"},
+
+{"English": "Middle School",
+"Spanish": "Escuela Secundaria"},
+
+{"English": "High School",
+"Spanish": "Escuela Preparatoria"},
+
+{"English": "Elementary School Charts",
+"Spanish": "Gráficas de Escuelas Primarias"},
+
+{"English": "Middle School Charts",
+"Spanish": "Gráficas de Escuelas Secundarias"},
+
+{"English": "High School Charts",
+"Spanish": "Gráficas de Escuelas Preparatorias"},
+
+{"English": "Select a Measurement",
+"Spanish": "Seleccione un Variable"},
+
+{"English": "Click the drop down menu to select which measurement you would like to view.",
+"Spanish": "Ponle clic en el menú desplegable para seleccionar el variable preferido."},
+
+{"English": "Click the drop down menu to select which year of data collection you would like to view.",
+"Spanish": "Ponle clic en el menú desplegable para seleccionar el año de colección de datos preferido."},
+
+{"English": "Context & Resources",
+"Spanish": "El Contexto Y Recursos"},
+
+{"English": "Choose a school to view the AP Courses available.",
+"Spanish": "Escoge una escuela para ver los Cursos Avanzados (AP) ofrecidos."},
+
+{"English": "Choose a school to view the sports available.",
+"Spanish": "Escoge una escuela para ver los deportes ofrecidos."},
+
+{"English": "Resources in Selected School Zone",
+"Spanish": "Recursos en la Zona Escolar Seleccionada"},
+
+{"English": "School Zone",
+"Spanish": "Zona Escolar"},
+
+{"English": "Home",
+"Spanish": "Página de Inicio"},
+
+{"English": "Maps",
+"Spanish": "Mapas"},
+
+{"English": "School Statistics",
+"Spanish": "Estadísticas sobre las Escuelas"},
+
+{"English": "AP & CTE Courses",
+"Spanish": "Cursos Avanzados (AP) y de Carreras Técnicas (CTE)"},
+
+{"English": "School Sports",
+"Spanish": "Deportes en las Escuelas"},
+
+{"English": "Arts Programs",
+"Spanish": "Programas de Arte"},
+
+{"English": "Data Insights",
+"Spanish": "Más Datos"},
+
+{"English": "Meet the Team",
+"Spanish": "Nuestro Equipo"},
+
+{"English": "Visualizing DPS",
+"Spanish": "Visualizando las Escuelas Públicas de Durham"},
+
+{"English": "Below is more information about after-school care programs:",
+"Spanish": "Más información sobre programas después del horario escolar:"},
+
+{"English": "Sources:",
+"Spanish": "Referencias bibliográficas:"},
+
+{"English": "Below is more information about bus stops:",
+"Spanish": "Más información sobre las paradas de autobús:"},
+
+{"English": "Below is more information about childcare centers:",
+"Spanish": "Más información sobre programas de cuidado infantil:"},
+
+{"English": "Below is more information about community and cultural centers:",
+"Spanish": "Más información sobre centros comunitarios y culturales:"},
+
+{"English": "Below is more information about pantries:",
+"Spanish": "Más información sobre almacenes de comida:"},
+
+{"English": "Frequently Asked Questions on Food Banks",
+"Spanish": "Preguntas Frecuentas sobre bancos de alimentos"},
+
+{"English": "Below is more information about gardens:",
+"Spanish": "Más información sobre los jardínes:"},
+
+{"English": "A Survey of Community Gardens in Upstate New York",
+"Spanish": "Una encuestra sobre los jardínes en la comunidad ubicada en norte de Nueva York"},
+
+{"English": "Low-income Consumers’ Attitudes and Behaviour Towards Access, Availability and Motivation to Eat Fruit and Vegetables",
+"Spanish": "Actitudes de los consumidores de bajos ingresos hacia el acceso, la disponibilidad y la motivación para comer frutas y verduras"},
+
+{"English": "Research and Benefits of Community Gardens",
+"Spanish": "Investigaciones y beneficios de los jardínes comunitarios"},
+
+{"English": "Below is more information about grocery stores:",
+"Spanish": "Más información sobre las tiendas de comestibles:"},
+
+{"English": "Food Apartheid: Racialized Access to Healthy Affordable Food",
+"Spanish": "La segregación de comida: Acceso racializado a comida saludable y a buen precio"},
+
+{"English": "Below is more information about hospitals and clinics:",
+"Spanish": "Más información sobre los hospitales y las clínicas:"},
+
+{"English": "Below is more information about libraries:",
+"Spanish": "Más información sobre las bibliotecas"},
+
+{"English": "Below is more information about parks:",
+"Spanish": "Más información sobre los parques:"},
+
+{"English": "Below is more information about recreation centers:",
+"Spanish": "Más información sobre los centros de recreación:"},
+
+{"English": "Below is more information about religious centers:",
+"Spanish": "Más información sobre los centros religiosos:"},
+
+{"English": "The Positive Impact of Community Recreation Center",
+"Spanish": "Los efectos positivos de los centros de recreación"},
+
+{"English": "Recreation Centers Play an Important Role in Communities",
+"Spanish": "Los centros de recreación tienen un papel importante en las comunidades"},
+
+{"English": "All data was derived from",
+"Spanish": "Toda la información es derivan de"},
+
+{"English": ", and",
+"Spanish": ", y"},
+
+{"English": "Transit Equity Dashboard",
+"Spanish": "Tablero de Equidad"},
+
+{"English": "The Importance of Preschool and Child Care For Working Mothers",
+"Spanish": "La importancia de preprimaria y programas de cuidado infantil para madres que tienen trabajo"},
+
+{"English": "Health Benefits of Dance",
+"Spanish": "Los beneficios de la danza en la salud"},
+
+{"English": "Benefits of Theatre Education",
+"Spanish": "Los beneficios del teatro"},
+
+{"English": "Benefits of Musical Incorporation",
+"Spanish": "Los beneficios de la incorporación de la música"},
+
+{"English": "Benefits of Visual Arts",
+"Spanish": "Los beneficios de los artes visuales"},
+
+{"English": "The Impact of Museums",
+"Spanish": "El impacto de los museos"},
+
+{"English": "Why Visit Museums",
+"Spanish": "Razones para visitar un museo"},
+
+{"English": "Benefits of Martial Arts",
+"Spanish": "Los beneficios de los artes marciales"},
+
+{"English": "Why Parks Are Important",
+"Spanish": "La importancia de los parques"},
+
+{"English": "Why Parks and Recreation are Essential Public Services",
+"Spanish": "Los parques y la recreación son servicios esenciales para el público"},
+
+{"English": "Community Arts",
+"Spanish": "Artes en la Comunidad"},
+
+{"English": "Community Sports",
+"Spanish": "Deportes en la Comunidad"}
+     
+]
+}

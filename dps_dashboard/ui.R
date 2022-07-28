@@ -20,11 +20,10 @@ library(readxl)
 library(gotop)
 library(shiny.i18n)
 
-
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/schoolTranslations.json")
+i18n <- Translator$new(translation_json_path = "data/Translations/testTranslation.json")
 i18n$set_translation_language("English")
 
 
@@ -181,7 +180,7 @@ body <- {dashboardBody(
                        solidHeader = TRUE,
                        title = strong(i18n$t("Interactive Map")),
                        h4(i18n$t("Hover over the icon to see the name. Click on the icon to reveal its link.")),
-                       h4(i18n$t("Click the "), icon('search'), i18n$t("icon to search any address!")),
+                       h4(i18n$t("Click the"), icon('search'), i18n$t("icon to search any address!")),
                        leafletOutput("map")),
                    box(width = 5,
                        solidHeader = TRUE,
@@ -214,7 +213,7 @@ body <- {dashboardBody(
                    box(width = 4,
                        solidHeader = TRUE,
                        title = strong(i18n$t("Selected Variable Resources")),
-                       em("Select a variable to see a list of all the resources with the selected school zone."),
+                       em(i18n$t("Select a variable to see a list of all the resources with the selected school zone.")),
                        br(),
                        br(),
                        dataTableOutput("list"),
@@ -349,7 +348,7 @@ body <- {dashboardBody(
                                   plotlyOutput("es_barplots",
                                       width="auto",
                                       height = "auto"),
-                                  h4(i18n$t("All data was derived from "),
+                                  h4(i18n$t("All data was derived from"),
                                      a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                       ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                       ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -389,7 +388,7 @@ body <- {dashboardBody(
                                                    plotlyOutput("ms_barplots",
                                                                 width="auto",
                                                                 height = "auto"),
-                                                   h4(i18n$t("All data was derived from "),
+                                                   h4(i18n$t("All data was derived from"),
                                                       a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                                       ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                                       ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -428,7 +427,7 @@ body <- {dashboardBody(
                                                  plotlyOutput("hs_barplots",
                                                               width="auto",
                                                               height = "auto"),
-                                                 h4(i18n$t("All data was derived from "),
+                                                 h4(i18n$t("All data was derived from"),
                                                     a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                                     ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                                     ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -440,7 +439,7 @@ body <- {dashboardBody(
                                 box(width = 6,
                                     solidHeader = TRUE,
                                     title = strong(i18n$t("Select a Measurement")),
-                                    selectInput("hs_select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                    selectInput("hs_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
                                                                "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
                                                                "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -543,31 +542,31 @@ body <- {dashboardBody(
                               ),
                               fluidRow(
                                 box(width = 4,
-                                    title = strong("Fall Sports"), background = "olive", solidHeader = TRUE,
+                                    title = strong(i18n$t("Fall Sports")), background = "olive", solidHeader = TRUE,
                                     htmlOutput("fallsports", align="center")),
                                 box(width = 4,
-                                    title = strong("Winter Sports"), background = "aqua", solidHeader = TRUE,
+                                    title = strong(i18n$t("Winter Sports")), background = "aqua", solidHeader = TRUE,
                                     htmlOutput("wintersports", align="center")),
                                 box(width = 4,
-                                    title = strong("Spring Sports"), background = "light-blue", solidHeader = TRUE,
+                                    title = strong(i18n$t("Spring Sports")), background = "light-blue", solidHeader = TRUE,
                                     htmlOutput("springsports", align="center"))),
                               fluidRow(
                                 box(width = 6,
-                                    title = strong("Available Boy's/Men's Sports"), background = "navy", solidHeader = TRUE,
+                                    title = strong(i18n$t("Available Boy's/Men's Sports")), background = "navy", solidHeader = TRUE,
                                     htmlOutput("male_sports_list", align="center")),
                                 box(width = 6,
-                                    title = strong("Available Girl's/Women's Sports"), background = "navy", solidHeader = TRUE,
+                                    title = strong(i18n$t("Available Girl's/Women's Sports")), background = "navy", solidHeader = TRUE,
                                     htmlOutput("female_sports_list", align="center")),
                               ),
                               fluidRow(
                                 box(width = 12,
                                     solidHeader = TRUE,
-                                    title = strong("Context"),
+                                    title = strong(i18n$t("Context")),
                                     htmlOutput("sports_context"))
                               )
                    )
                  )
-        )},
+        ))},
         
         #Sports Tab - dynamic
         # {tabItem(tabName = "sportstab",
@@ -625,7 +624,7 @@ body <- {dashboardBody(
         {tabItem(tabName = "artstab",
                  fluidRow(
                    box(width = 12,
-                       title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                       title = strong(i18n$t("Available Arts Programs In Each School")), background = "navy", solidHeader = TRUE,
                        column(12, align="center", tableOutput("available_arts")))
                  ),
                  fluidRow(
@@ -683,26 +682,25 @@ body <- {dashboardBody(
                             i18n$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work"),
                             a(i18n$t("Discover Durham"), href="https://www.discoverdurham.com/things-to-do/arts/"),
                             i18n$t("provides an extensive list of events for visitors and residents to do surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc."),
-                            br(),
-                            br(),
-                            strong("Duke University"),
-                            br(),
-                            a("- Duke Mural", href="https://arts.duke.edu/mural-durham/"),
-                            ": Duke University has partnered with the city of Durham and local 
-                                     artists to create new murals to beautify the city.",
-                            br(),
-                            a("- Durham Medical Orchestra", href="https://arts.duke.edu/durham-medical-orchestra/"),
-                            ": Connects health professionals with local musicians to put on 
-                                     musical performances for Durham residents.",
-                            br(),
-                            br(),
-                            strong("North Carolina Central University"),
-                            br(),
-                            "- NCCU provides volunteer opportunities for their students
-                                     in the KidzNotes program via Fayetteville Street Elementary’s 
-                                     AT&T Beleive Program.",
-                            br(),
-                            "- NCCU students host musical ensembles for the Durham community."))
+                            br(),br(),
+                            a(i18n$t("The Nasher Museum of Art at Duke University"),
+                              href="https://nasher.duke.edu/"),
+                            i18n$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream arts institutions, and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art and ancient American art."),
+                            i18n$t("North Carolina Central University students host various musical ensembles, such as the"),
+                            a(i18n$t("NCCU Jazz Vocal Ensemble"),
+                              href="https://www.nccu.edu/cash/music/ensembles/vocal-jazz"),
+                            i18n$t("and the"),
+                            a(i18n$t("NCCU Sound Machine Marching Band"),
+                              href="https://www.nccusoundmachine.com/"),
+                            i18n$t(", that perform throughout the city of Durham, North Carolina and the United States."),
+                            a(i18n$t("WNCU 90.7 FM is Central’s Jazz radio station"),
+                              href="https://www.wncu.org/"),
+                            i18n$t("which provides “diverse music entertainment and serve as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"),
+                            a(i18n$t("KidzNotes program"),
+                              href="https://kidznotes.org/"),
+                            i18n$t("via Fayetteville Street Elementary’s AT&T Believe Program.")
+                            
+                            ))
                    )
                  ) 
         )},
@@ -717,30 +715,34 @@ body <- {dashboardBody(
                  #       h4("Different school districts are differently colored according to the variable selected."),
                  #       leafletOutput("choropleth")),
                  # ), 
-                 fluidRow(
-                   box(width = 2,
-                       solidHeader = TRUE,
-                       title = strong("School Zone"),
-                       selectInput("insights_zone",
-                                   label = em(i18n$t("Choose a school zone to display")),
-                                   choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
-                                               "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                               "Forest View Elementary", "Hillandale Elementary","Hillside High",
-                                               "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                               "Parkwood Elementary", "Riverside High", "Southwest Elementary"
-                                   ),
-                                   multiple = FALSE)),
-                   box(width = 10,
-                       plotlyOutput("insights_individualplots",
-                                    width="auto",
-                                    height = "auto"))
-                 ),
                  fluidRow(class= 'text-center',
-                   box(width = 12,
-                       solidHeader = TRUE,
-                       title = strong("Context"),
-                       htmlOutput("data_insights_context"))
+                          box(width = 12,
+                              solidHeader = TRUE,
+                              title = strong("Resources in Selected School Zone"),
+                              p(h4(align="left",i18n$t("These plots reveal the total number of each resource in each school district. Different school districts have different populations; therefore, there are different corresponding numbers of resources. These plots are useful for getting a sense of the of different types of resources available in each district at a glance.")), br()),
+                              fluidRow(
+                                box(width = 2,
+                                    solidHeader = TRUE,
+                                    title = strong(i18n$t("School Zone")),
+                                    selectInput("insights_zone",
+                                                label = em(i18n$t("Choose a school zone to display")),
+                                                choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                                            "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                                            "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                                            "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                                            "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                                ),
+                                                multiple = FALSE)),
+                                box(width = 10,
+                                    solidHeader = TRUE,
+                                    plotlyOutput("insights_individualplots",
+                                                 width="auto",
+                                                 height = "auto"))
+                              ))
                  )
+                 
+
+                 
         )},
         
         #Meet the team tab
@@ -750,118 +752,65 @@ body <- {dashboardBody(
                      box(width = 12,
                          background = "light-blue",
                          class = "text-center",
-                         h3(strong("Meet Our Team - Data+ 2022")),
+                         h3(strong(i18n$t("Meet Our Team - Data+ 2022"))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(align = "center", src = "emily250.jpg")),
                              column(width =3,
-                                    p("Emily McReynolds is a sophomore at Duke University originally from Greensboro,
-                                  North Carolina. She intends to major in Public Policy and obtain a certificate 
-                                  in Markets and Management Studies. Emily is passionate about policy reform, 
-                                  specifically in our educational and healthcare systems. She hopes this project 
-                                  will bring more awareness to the available resources and community centers in 
-                                  Durham County that can support our public schools. Emily is eager to see how 
-                                  this partnership can build a stronger sense of unity for all.")),
+                                    p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro,North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our educational and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
                              column(width = 3,
                                     img(src = "aryan250.jpg")),
                              column(width = 3,
-                                    p("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently,
-                                  he is studying Data Science, with a minor in Political Science. He is especially interested
-                                  in using big data analyses to reveal politically and socially relevant insights to key issues
-                                  in policy and social justice. He joined the Data+ team to provide a clearer picture of the state
-                                  of Durham public schools, and find better paths to their improvement."))),
+                                    p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently,he is studying Data Science, with a minor in Political Science. He is especially interestedin using big data analyses to reveal politically and socially relevant insights to key issuesin policy and social justice. He joined the Data+ team to provide a clearer picture of the stateof Durham public schools, and find better paths to their improvement.")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "patience3.jpg")),
                              column(width = 3,
-                                    p("Patience Jones is a senior at North Carolina Central University from Durham, 
-                                  North Carolina. Currently, she is studying English, Secondary Education, and 
-                                  General Psychology. Patience continued the Data+ project team because she was 
-                                  wanted to continue the work she did the previous summer in hopes to improve the dashboard
-                                  to make it more accessible. With her background in education policy, she hopes to integrate
-                                  her own knowledge with this dashboard to make an impact on Durham Public Schools and beyond.")),
+                                    p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team because she was wanted to continue the work she did the previous summer in hopes to improve the dashboardto make it more accessible. With her background in education policy, she hopes to integrateher own knowledge with this dashboard to make an impact on Durham Public Schools and beyond."))),
                              column(width = 3,
                                     img(src = "mel250.jpg")),
                              column(width = 3,
-                                    p("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.
-                                  She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ 
-                                  project team to contribute to the previous research and efforts that have equipped the 
-                                  corresponding Bass Connections team with organized information and statistics to pinpoint the 
-                                  resources that would be most beneficial for specific schools. Melanie hopes this dashboard will 
-                                  help increase equity within schools, and promote a greater sense of community throughout Durham, 
-                                  North Carolina."))),
+                                    p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina.She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the previous research and efforts that have equipped the corresponding Bass Connections team with organized information and statistics to pinpoint the resources that would be most beneficial for specific schools. Melanie hopes this dashboard will help increase equity within schools, and promote a greater sense of community throughout Durham, North Carolina.")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "surabhi.jpg")),
                              column(width = 3,
-                                    p("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University.
-                                      Her interest lies at the intersection of data science and public policy, and specifically social policy.
-                                      For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering
-                                      to help with the project."))))),
+                                    p(i18n$t("Surabhi Trivedi is a PhD candidate at Duke's sociology department. He'sinterested in how habits and beliefs change, both at the individual and collectivelevel, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, andbelieves the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true.")))))),
                  
                  fluidRow(
                      box(width = 12,
                          background = "navy",
                          class = "text-center",
-                         h3(strong("Meet Our Team - Data+ 2021")),
+                         h3(strong(i18n$t("Meet Our Team - Data+ 2021"))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "ally3.jpg")),
                              column(width =3,
-                                    p("Allyson Ashekun is a junior at Duke University from Clearwater, Florida.
-                                        Currently, she is studying Public Policy and Computer Science, and her 
-                                        academic interests focus primarily on the intersection of those two 
-                                        disciplines in areas such as Data Science. Allyson joined the Data+ project
-                                        team because she is passionate about equitable education and enjoys coding. 
-                                        She hopes this dashboard will be a helpful tool for those entering Durham
-                                        Public Schools, and will help improve the quality of partnerships.")),
+                                    p(i18n$t("Allyson Ashekun is a junior at Duke University from Clearwater, Florida.Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ projectteam because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering DurhamPublic Schools, and will help improve the quality of partnerships."))),
                              column(width = 3,
                                     img(src = "drewheadshot3 copy.jpg")),
                              column(width = 3,
-                                    p("Drew Greene is a sophomore at Duke University from Richmond, Virginia. 
-                                        He intends to study Public Policy with minors in Education and Inequality 
-                                        Studies. His academic interests include educational equity and the 
-                                        school-to-prison pipeline. Drew joined this project because of the opportunity 
-                                        to develop his data science skills. He hopes this project will help adequately
-                                        prepare college students to enter schools as well as allow Durham residents to
-                                        locate the myriad resources accessible to help form an even stronger community 
-                                        built around the schools."))),
+                                    p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help adequatelyprepare college students to enter schools as well as allow Durham residents tolocate the myriad resources accessible to help form an even stronger community built around the schools.")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "patience3.jpg")),
                              column(width = 3,
-                                    p("Patience Jones is a senior at North Carolina Central University from Durham, 
-                                  North Carolina. Currently, she is studying English, Secondary Education, and 
-                                  General Psychology. Patience joined the Data+ project team because she was 
-                                  interested in learning more about data science and its integration into education
-                                  policy. She hopes this dashboard makes an impact on not only these ten community
-                                  schools in the dataset, but students in all Durham Public Schools and beyond, 
-                                  in hopes to make education more accessible to all students.")),
+                                    p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into educationpolicy. She hopes this dashboard makes an impact on not only these ten communityschools in the dataset, but students in all Durham Public Schools and beyond, in hopes to make education more accessible to all students."))),
                              column(width = 3,
                                     img(src = "rhea3.jpg")),
                              column(width = 3,
-                                    p("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey. She is 
-                                    studying Computer Science and Economics. Rhea decided to join this project team
-                                    because she has a passion for data science and hopes that this app will help 
-                                    local universities have a productive relationship with the community. She is 
-                                    proud of the work the team accomplished, and is excited to see the long term 
-                                    impacts that this web app has!"))),
+                                    p(i18n$t("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey. She is studying Computer Science and Economics. Rhea decided to join this project teambecause she has a passion for data science and hopes that this app will help local universities have a productive relationship with the community. She is proud of the work the team accomplished, and is excited to see the long term impacts that this web app has!")))),
                          br(),
                          fluidRow(
                              column(width = 3,
                                     img(src = "nico3.jpg")),
                              column(width = 3,
-                                    p("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's
-                                  interested in how habits and beliefs change, both at the individual and collective
-                                  level, and uses longitudinal data, networks, and simulations to try to get at 
-                                  this question. He had the privilege to be the project manager for this team, and
-                                  believes the team was efficient and industrious so his job was easy. The team 
-                                  claims he was helpful, and he likes to believe that is true.")))))
+                                    p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He'sinterested in how habits and beliefs change, both at the individual and collectivelevel, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, andbelieves the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
         )} 
         
         
@@ -872,7 +821,7 @@ body <- {dashboardBody(
 dashboardPage(
     skin = "black",
     dashboardHeader(
-        title = "Visualizing DPS"),
+        title = i18n$t("Visualizing DPS")),
     sidebar,
     body
 )
