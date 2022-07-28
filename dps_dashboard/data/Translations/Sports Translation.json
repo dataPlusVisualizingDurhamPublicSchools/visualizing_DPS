@@ -1,0 +1,179 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["English", "Spanish"],
+  "translation": [
+    
+   
+   {"English": "Baseball",
+   "Spanish": "El Béisbol"},
+    
+    {"English": "JV Baseball",
+   "Spanish": "El Béisbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Cross Country",
+   "Spanish": "A Campo Traviesa"},
+    
+    {"English": "Soccer",
+   "Spanish": "El Fútbol"},
+    
+    {"English": "JV Soccer",
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Football",
+   "Spanish": "El Fútbol Americano"},
+    
+    {"English": "JV Football",
+   "Spanish": "El Fútbol Americano (Equipo Juvenil Júnior)"},
+    
+    {"English": "Volleyball",
+   "Spanish": "El Voleibol"},
+    
+    {"English": "JV Volleyball",
+   "Spanish": "El Voleibol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Basketball",
+   "Spanish": "El Baloncesto"},
+    
+    {"English": "JV Basketball",
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior)"},
+    
+    {"English": "Cheerleading",
+   "Spanish": "La Animación Deportiva/Ser Porrista"},
+    
+    {"English": "Field Hockey",
+   "Spanish": "El Hockey Sobre Césped"},
+    
+    {"English": "Golf",
+   "Spanish": "El Golf"},
+    
+    {"English": "Gymnastics",
+   "Spanish": "La Gimnasia"},
+    
+    {"English": "Wrestling",
+   "Spanish": "La Lucha"},
+    
+    {"English": "Indoor Track",
+   "Spanish": "El Atletismo Adentro"},
+    
+    {"English": "Track",
+   "Spanish": "El Atletismo"},
+    
+    {"English": "Track and Field",
+   "Spanish": "El Atletismo"},
+    
+    {"English": "Lacrosse",
+   "Spanish": "El Lacrosse"},
+    
+    {"English": "JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior)"},
+    
+    {"English": "Swimming",
+   "Spanish": "La Natación"},
+    
+    {"English": "Softball",
+   "Spanish": "El Sóftbol"},
+    
+    {"English": "JV Softball",
+   "Spanish": "El Sóftbol (Equipo Juvenil Júnior)"},
+    
+    {"English": "Tennis",
+   "Spanish": "El Tenis"}
+    
+    {"English": "Boy's Cross Country",
+   "Spanish": "A Campo Traviesa Para Chicos"},
+    
+    {"English": "Boy’s Soccer",
+   "Spanish": "El Fútbol para Niños"},
+    
+    {"English": "Boy’s Basketball",
+   "Spanish": "El Baloncesto para Niños"},
+    
+    {"English": "Girl’s Basketball",
+   "Spanish": "El Baloncesto para Niñas"},
+    
+    {"English": "Girl’s Soccer",
+   "Spanish": "El Fútbol para Niñas"},
+    
+    {"English": "Girl’s Track",
+   "Spanish": "El Atletismo para Niñas"},
+    
+    {"English": "Boy’s Track",
+   "Spanish": "El Atletismo para Niños"},
+    
+    {"English": "Fall Sports",
+   "Spanish": "Deportes Durante el Otoño"},
+    
+    {"English": "Winter Sports",
+   "Spanish": "Deportes Durante el Invierno"},
+    
+    {"English": "Spring Sports",
+   "Spanish": "Deportes Durante la Primavera"},
+    
+    {"English": "Available Boy's/Men's Sports",
+   "Spanish": "Deportes para Niños/Hombres"},
+    
+    {"English": "Available Girl's/Women's Sports",
+   "Spanish": "Deportes para Niñas/Mujeres"},
+    
+    {"English": "Men’s JV Soccer",
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior) para Hombres"},
+    
+    {"English": "Men’s Soccer",
+   "Spanish": "El Fútbol para Hombres"},
+    
+    {"English": "Men's Cross Country",
+   "Spanish": "A Campo Traviesa para Hombres"},
+    
+    {"English": "Women's Golf",
+   "Spanish": "El Golf para Mujeres"},
+    
+    {"English": "Women's Volleyball",
+   "Spanish": "El Voleibol para Mujeres"},
+    
+    {"English": "Women's JV Volleyball",
+   "Spanish": "El Voleibol (Equipo Juvenil Júnior) para Mujeres"},
+    
+    {"English": "Women's Tennis",
+   "Spanish": "El Tenis para Mujeres"},
+    
+    {"English": "Women's Track",
+   "Spanish": "El Atletismo para Mujeres"},
+    
+    {"English": "Men's Basketball",
+   "Spanish": "El Baloncesto para Hombres"},
+    
+    {"English": "Men's JV Basketball",
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior) para Hombres"},
+    
+    {"English": "Women's Basketball",
+   "Spanish": "El Baloncesto para Mujeres"},
+    
+    {"English": "Women's JV Basketball",
+   "Spanish": "El Baloncesto (Equipo Juvenil Júnior) para Mujeres"},
+    
+    {"English": "Men's Golf",
+   "Spanish": "El Golf para Hombres"},
+    
+    {"English": "Men's JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior) para Hombres"},
+    
+    {"English": "Men's Lacrosse",
+   "Spanish": "El Lacrosse para Hombres"},
+    
+    {"English": "Men's Tennis",
+   "Spanish": "El Tenis para Hombres"},
+    
+    {"English": "Women's JV Lacrosse",
+   "Spanish": "El Lacrosse (Equipo Juvenil Júnior) para Mujeres"},
+    
+    {"English": "Women's Lacrosse",
+   "Spanish": "El Lacrosse para Mujeres"},
+    
+    {"English": "Women's Soccer",
+   "Spanish": "El Fútbol para Mujeres"},
+    
+    {"English": "Women's JV Soccer",
+   "Spanish": "El Fútbol (Equipo Juvenil Júnior) para Mujeres"}
+    
+]
+}
