@@ -23,7 +23,7 @@ library(shiny.i18n)
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/APTranslations.json")
+i18n <- Translator$new(translation_json_path = "data/Translations/testTranslation.json")
 i18n$set_translation_language("English")
 
 
@@ -180,7 +180,7 @@ body <- {dashboardBody(
                        solidHeader = TRUE,
                        title = strong(i18n$t("Interactive Map")),
                        h4(i18n$t("Hover over the icon to see the name. Click on the icon to reveal its link.")),
-                       h4(i18n$t("Click the "), icon('search'), i18n$t("icon to search any address!")),
+                       h4(i18n$t("Click the"), icon('search'), i18n$t("icon to search any address!")),
                        leafletOutput("map")),
                    box(width = 5,
                        solidHeader = TRUE,
@@ -213,7 +213,7 @@ body <- {dashboardBody(
                    box(width = 4,
                        solidHeader = TRUE,
                        title = strong(i18n$t("Selected Variable Resources")),
-                       em("Select a variable to see a list of all the resources with the selected school zone."),
+                       em(i18n$t("Select a variable to see a list of all the resources with the selected school zone.")),
                        br(),
                        br(),
                        dataTableOutput("list"),
@@ -348,7 +348,7 @@ body <- {dashboardBody(
                                   plotlyOutput("es_barplots",
                                       width="auto",
                                       height = "auto"),
-                                  h4(i18n$t("All data was derived from "),
+                                  h4(i18n$t("All data was derived from"),
                                      a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                       ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                       ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -388,7 +388,7 @@ body <- {dashboardBody(
                                                    plotlyOutput("ms_barplots",
                                                                 width="auto",
                                                                 height = "auto"),
-                                                   h4(i18n$t("All data was derived from "),
+                                                   h4(i18n$t("All data was derived from"),
                                                       a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                                       ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                                       ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -427,7 +427,7 @@ body <- {dashboardBody(
                                                  plotlyOutput("hs_barplots",
                                                               width="auto",
                                                               height = "auto"),
-                                                 h4(i18n$t("All data was derived from "),
+                                                 h4(i18n$t("All data was derived from"),
                                                     a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                                     ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                                     ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -439,7 +439,7 @@ body <- {dashboardBody(
                                 box(width = 6,
                                     solidHeader = TRUE,
                                     title = strong(i18n$t("Select a Measurement")),
-                                    selectInput("hs_select", em("Click the drop down menu to select which measurement you would like to view."), 
+                                    selectInput("hs_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
                                                 choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
                                                                "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
                                                                "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -535,7 +535,7 @@ body <- {dashboardBody(
                    tabBox(
                      id = "tabset3", width = "auto", 
                      tabPanel(i18n$t("School Sports"), class = "text-center",
-                              selectInput("school_sports", em(i18n$t("Choose a school to view the Sports available.")), 
+                              selectInput("school_sports", em(i18n$t("Choose a school to view the sports available.")), 
                                           choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
                                                          "Hillside High",
                                                          "Jordan High",
@@ -625,7 +625,7 @@ body <- {dashboardBody(
         {tabItem(tabName = "artstab",
                  fluidRow(
                    box(width = 12,
-                       title = strong("Available Arts Programs In Each School"), background = "navy", solidHeader = TRUE,
+                       title = strong(i18n$t("Available Arts Programs In Each School")), background = "navy", solidHeader = TRUE,
                        column(12, align="center", tableOutput("available_arts")))
                  ),
                  fluidRow(
@@ -719,15 +719,12 @@ body <- {dashboardBody(
                  fluidRow(class= 'text-center',
                           box(width = 12,
                               solidHeader = TRUE,
-                              title = strong("Resources in Selected Schoolzone"),
-                              p(h4(align="left","These plots reveal the total number of each resource by number in each school district. The comparison
-            is not straightforward, as different school districts have different populations and thus different corresponding
-            numbers of resources. However, these plots are useful for getting a sense of the number of different kinds of
-            resources available in each school district at a glance."), br()),
+                              title = strong("Resources in Selected School Zone"),
+                              p(h4(align="left",i18n$t("These plots reveal the total number of each resource in each school district. Different school districts have different populations; therefore, there are different corresponding numbers of resources. These plots are useful for getting a sense of the of different types of resources available in each district at a glance.")), br()),
                               fluidRow(
                                 box(width = 2,
                                     solidHeader = TRUE,
-                                    title = strong("School Zone"),
+                                    title = strong(i18n$t("School Zone")),
                                     selectInput("insights_zone",
                                                 label = em(i18n$t("Choose a school zone to display")),
                                                 choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
@@ -825,7 +822,7 @@ body <- {dashboardBody(
 dashboardPage(
     skin = "black",
     dashboardHeader(
-        title = "Visualizing DPS"),
+        title = i18n$t("Visualizing DPS")),
     sidebar,
     body
 )
