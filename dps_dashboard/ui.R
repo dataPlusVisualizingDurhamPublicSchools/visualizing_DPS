@@ -161,7 +161,7 @@ body <- {dashboardBody(
                                      )),
                               column(class = 'text-center', width = 2,
                                      tags$a(
-                                         href="https://bassconnections.duke.edu/", 
+                                         href="https://sites.duke.edu/uacs/", 
                                          tags$img(src="bass connections.png", 
                                                   title="Bass Connections Logo",
                                                   class= "img-responsive")
@@ -252,7 +252,7 @@ body <- {dashboardBody(
                         br(),
                         fluidRow(
                           column(width = 1,
-                                 img(src = "cultural_icon.png", width = 40, height = 40, align = "left")),
+                                 (imgsrc = "cultural_icon.png", width = 40, height = 40, align = "left")),
                           column(width = 1),
                           column(width = 8, htmlOutput("cultureicon")
                           )),
@@ -538,8 +538,7 @@ body <- {dashboardBody(
                  fluidRow(
                    tabBox(
                      id = "tabset3", width = "auto", 
-                     tabPanel(i18n$t("School Sports"), class = "text-center",
-                              selectInput("school_sports", em(i18n$t("Choose a school to view the sports available.")), 
+                              selectInput("school_sports", em(i18n$t("Choose a school to view the Sports available.")), 
                                           choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
                                                          "Hillside High",
                                                          "Jordan High",
