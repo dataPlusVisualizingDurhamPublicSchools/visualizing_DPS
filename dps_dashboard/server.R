@@ -1595,7 +1595,7 @@ function(input, output, session) {
               "<br>", "<br>",
               i18n()$t("Due to the COVID-19 Pandemic, home prices increased, making the cost of living increase as well (all contributing to"), 
               strong(i18n()$t("gentrification")),HTML(paste0(tags$sup("1"))), 
-                     i18n()$t("Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the ten schools required free and reduced lunch."), "<br>", "<br>",
+                     i18n()$t("Most of these school zones fall above the North Carolina median. Because Durham has become an increasingly expensive city to live in, many of the students in the sixteen schools required free and reduced lunch."), "<br>", "<br>",
                      i18n()$t("Below is more information about home sale price:"), "<br>",
                      a(i18n()$t("Home Sale Price Data"),
                        href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index-Datasets.aspx"), "<br>",
