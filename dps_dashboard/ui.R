@@ -23,7 +23,7 @@ library(shiny.i18n)
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/testTranslation.json")
+i18n <- Translator$new(translation_json_path = "data/Translations/testTranslation.json")
 i18n$set_translation_language("English")
 
 
@@ -348,7 +348,7 @@ body <- {dashboardBody(
                                   plotlyOutput("es_barplots",
                                       width="auto",
                                       height = "auto"),
-                                  h4(i18n$t("All data was derived from "),
+                                  h4(i18n$t("All data was derived from"),
                                      a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                       ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                       ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -388,7 +388,7 @@ body <- {dashboardBody(
                                                    plotlyOutput("ms_barplots",
                                                                 width="auto",
                                                                 height = "auto"),
-                                                   h4(i18n$t("All data was derived from "),
+                                                   h4(i18n$t("All data was derived from"),
                                                       a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                                       ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                                       ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -427,7 +427,7 @@ body <- {dashboardBody(
                                                  plotlyOutput("hs_barplots",
                                                               width="auto",
                                                               height = "auto"),
-                                                 h4(i18n$t("All data was derived from "),
+                                                 h4(i18n$t("All data was derived from"),
                                                     a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                                     ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
                                                     ", ", a("Durham Public Schools", href="https://dpsnc.net"),
@@ -822,7 +822,7 @@ body <- {dashboardBody(
 dashboardPage(
     skin = "black",
     dashboardHeader(
-        title = "Visualizing DPS"),
+        title = i18n$t("Visualizing DPS")),
     sidebar,
     body
 )
