@@ -101,7 +101,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # Load/Rename Spatial Data
 {
     bus <- read.csv("data/2021/spatial_data/renamed_Bus Stops.csv")
-    childcare <- read_csv("data/2021/spatial_data/renamed_Childcare Centers_2022.csv")
+    childcare <- read_csv("data/2021/spatial_data/renamed_Childcare Centers.csv")
     cultural <- read.csv("data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
     gardens <- read.csv("data/2021/spatial_data/renamed_Community Gardens.csv")
     grocery <- read.csv("data/2021/spatial_data/renamed_Grocery Stores.csv") 
@@ -1191,7 +1191,7 @@ function(input, output, session) {
           
           else if(input$hs_select == "WiFi Access Points Per Classroom") {
             schoolstats21_summary <- HS_stats_21 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
-            p <- ggplot(schoolstats22_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+            p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
               geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
               geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
               coord_flip() +
