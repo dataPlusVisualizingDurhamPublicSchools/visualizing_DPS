@@ -1502,10 +1502,10 @@ function(input, output, session) {
                 href="https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm"))
       }
       else if (input$es_select == "BIPOC Students per School"){
-        paste(i18n()$t("This dataset shows the percentage of students of color in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and "), 
-              strong(i18n()$t("culturally-responsive pedagogy")),HTML(paste0(tags$sup("1"))), i18n()$t("is integral for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more."), 
+        paste(i18n()$t("This dataset shows the percentage of BIPOC students in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and "), 
+              strong(i18n()$t("culturally-responsive pedagogy")),HTML(paste0(tags$sup("1"))), i18n()$t("is integral for student success. Too often, BIPOC students are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more."), 
               "<br>","<br>",
-              i18n()$t("Below is more information about students of color:"), "<br>",
+              i18n()$t("Below is more information about BIPOC students:"), "<br>",
               a(i18n()$t("Racial/Ethnic Enrollment in NC Public Schools"),
                 href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
               a(i18n()$t("Why Representation Matters"),
@@ -1577,7 +1577,7 @@ function(input, output, session) {
       else if (input$es_select == "In-School Suspensions (ISS)"){
         paste(i18n()$t("In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel (https://supportiveschooldiscipline.org/suspension)."), 
               "<br>", "<br>",
-              i18n()$t("Students of color are more susceptible to harsher punishments in schools."),
+              i18n()$t("BIPOC students are more susceptible to harsher punishments in schools."),
               i18n()$t("Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the"), 
               strong(i18n()$t("school-to-prison pipeline")),HTML(paste0(tags$sup("1"))),".", "<br>","<br>",
               i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
@@ -1606,7 +1606,7 @@ function(input, output, session) {
       else if (input$es_select == "Median Household Income"){
         paste(i18n()$t("This graph shows the median household income for each school zone. According to the 2020 US census, the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the first statistically significant decline since 2011."), 
               "<br>","<br>", 
-              i18n()$t("According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom. Students’ basic human needs must be met in order to excel in the classroom."), "<br>", "<br>", 
+              i18n()$t("According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom."), "<br>", "<br>", 
               i18n()$t("Below are links to 
                   the US Census Information:"), "<br>",
               a(i18n()$t("Nationwide Census"), 
@@ -1615,20 +1615,20 @@ function(input, output, session) {
                 href="https://www.census.gov/quickfacts/NC"))
       }
       else if (input$es_select == "Racial Demographics"){
-        paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased."),
+        paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% BIPOC students, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of BIPOC students has increased."),
               "<br>", "<br>",
               i18n()$t("Representation of these students and "), 
               strong(i18n()$t("culturally-responsive pedagogy")),HTML(paste0(tags$sup("1"))), 
-              i18n()$t("is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more."), "<br>","<br>",
+              i18n()$t("is integral for student success. Too often BIPOC students are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more."), "<br>","<br>",
               i18n()$t("Below is more information about racial demographics in schools:"), "<br>",
               a(i18n()$t("Changing School Racial Demographics in Recent Decades"),
                 href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-              a(i18n()$t("More Students of Color in Public schools"),
+              a(i18n()$t("More BIPOC students in Public schools"),
                 href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
               "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("culturally-responsive pedagogy")), i18n()$t(": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom"))
       }
       else if (input$es_select == "School and Zone BIPOC Comparison") {
-        paste(i18n()$t("This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ") , 
+        paste(i18n()$t("This plot shows the percentage of BIPOC students in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for BIPOC students as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ") , 
               strong(i18n()$t("gentrification")),HTML(paste0(tags$sup("1"))),".", 
                    "Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods.", "<br>", "<br>",
                    i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
@@ -1825,7 +1825,7 @@ function(input, output, session) {
       } 
       else if (input$ms_select == "In-School Suspensions (ISS)"){
         paste(i18n()$t("In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel."), "<br>", 
-              "<br>",i18n()$t("Students of color are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the"), 
+              "<br>",i18n()$t("BIPOC students are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the"), 
               strong(i18n()$t("school-to-prison pipeline")),HTML(paste0(tags$sup("1"))), ".", "<br>","<br>",
               i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
               a(i18n()$t("Racial Bias in School Discipline"), 
@@ -1846,7 +1846,7 @@ function(input, output, session) {
         
       }
       else if (input$ms_select == "School and Zone BIPOC Comparison") {
-        paste(i18n()$t("This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ") , HTML(paste0(strong(i18n()$t("gentrification")),tags$sup("1"))),".", 
+        paste(i18n()$t("This plot shows the percentage of BIPOC students in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for BIPOC students as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ") , HTML(paste0(strong(i18n()$t("gentrification")),tags$sup("1"))),".", 
               i18n()$t("Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods."), "<br>", "<br>",
               i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
               a(i18n()$t("COVID-19 and Gentrification in Durham"), 
@@ -1860,11 +1860,11 @@ function(input, output, session) {
         
         }
       else if (input$ms_select == "BIPOC Students per School"){
-        paste(i18n()$t("This dataset shows the percentage of students of color in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and" 
+        paste(i18n()$t("This dataset shows the percentage of BIPOC students in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and" 
                   ), 
               HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), 
-              i18n()$t("is integral for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more."), "<br>","<br>",
-              i18n()$t("Below is more information about students of color:"), "<br>",
+              i18n()$t("is integral for student success. Too often, BIPOC students are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more."), "<br>","<br>",
+              i18n()$t("Below is more information about BIPOC students:"), "<br>",
               a(i18n()$t("Racial/Ethnic Enrollment in NC Public Schools"),
                 href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
               a(i18n()$t("Why Representation Matters"),
@@ -1876,14 +1876,14 @@ function(input, output, session) {
             
       }
       else if (input$ms_select == "Racial Demographics"){
-        paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased."),
+        paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% BIPOC students, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of BIPOC students has increased."),
               "<br>", "<br>", i18n()$t("Representation of these students and "), 
               HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), 
-              i18n()$t("is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more."), "<br>","<br>",
+              i18n()$t("is integral for student success. Too often BIPOC students are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more."), "<br>","<br>",
               i18n()$t("Below is more information about racial demographics in schools:"), "<br>",
               a(i18n()$t("Changing School Racial Demographics in Recent Decades"),
                 href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-              a(i18n()$t("More Students of Color in Public schools"),
+              a(i18n()$t("More BIPOC students in Public schools"),
                 href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
               "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("culturally-responsive pedagogy")), i18n()$t(": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom"))
 
@@ -1891,7 +1891,7 @@ function(input, output, session) {
       }
       else if (input$ms_select == "Median Household Income"){
         paste(i18n()$t("This graph shows the median household income for each school zone. According to the 2020 US census, the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the first statistically significant decline since 2011."), 
-              "<br>","<br>", i18n()$t("According to the 2020 US Census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom. Students’ basic human needs must be met in order to excel in the classroom."), "<br>",
+              "<br>","<br>", i18n()$t("According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom."), "<br>",
               "<br>", i18n()$t("Below are links to the US Census Information:"),
               "<br>",
               a(i18n()$t("Nationwide Census"), 
@@ -2091,7 +2091,7 @@ function(input, output, session) {
       }  
       else if (input$hs_select == "In-School Suspensions (ISS)"){
         paste(i18n()$t("In-school suspensions are described as: Instances in which a child is temporarily removed from his or her regular classrooms for at least half a day but remains under the direct supervision of school personnel."), 
-              i18n()$t("Students of color are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the"),
+              i18n()$t("BIPOC students are more susceptible to harsher punishments in schools. Black and Brown students are subject to higher disciplinary actions compared to their white peers. A reason for this is racial bias leading to the over policing of Black and Brown students, fueling the"),
               strong(i18n()$t("school-to-prison pipeline")),HTML(paste0(tags$sup("1"))), ".", "<br>","<br>",
               i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
               a(i18n()$t("Racial Bias in School Discipline"), 
@@ -2112,7 +2112,7 @@ function(input, output, session) {
         
       }
       else if (input$hs_select == "School and Zone BIPOC Comparison") {
-        paste(i18n()$t("This plot shows the percentage of students of color in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for students of color as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ") , HTML(paste0(strong(i18n()$t("gentrification")),tags$sup("1"))),".", 
+        paste(i18n()$t("This plot shows the percentage of BIPOC students in the school compared to the percentage of people of color in the school zone. This measurement shows the huge disparities in community representation for BIPOC students as most of these schools are not racially reflective of the school zones they inhabit. A contributing factor of this is ") , HTML(paste0(strong(i18n()$t("gentrification")),tags$sup("1"))),".", 
               i18n()$t("Gentrification has been an increasing problem, and the COVID-19 pandemic has only exacerbated it. Black and Brown neighborhoods are becoming increasingly expensive forcing families out of their homes, which ultimately changes the demographics of those neighborhoods."), "<br>", "<br>",
               i18n()$t("Below are articles on In-School Suspensions and the School-to-Prison Pipeline:"), "<br>", 
               a(i18n()$t("COVID-19 and Gentrification in Durham"), 
@@ -2126,11 +2126,11 @@ function(input, output, session) {
         
       }
       else if (input$hs_select == "BIPOC Students per School"){
-        paste(i18n()$t("This dataset shows the percentage of students of color in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and" 
+        paste(i18n()$t("This dataset shows the percentage of BIPOC students in each of the 16 schools. Each of the schools are “majority students of color” which means representation of these students and" 
         ), 
         HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), 
-        i18n()$t("is integral for student success. Too often, students of color are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more."), "<br>","<br>",
-        i18n()$t("Below is more information about students of color:"), "<br>",
+        i18n()$t("is integral for student success. Too often, BIPOC students are underrepresented and cannot relate to content/curriculum because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, etc. tend to engage with the content more."), "<br>","<br>",
+        i18n()$t("Below is more information about BIPOC students:"), "<br>",
         a(i18n()$t("Racial/Ethnic Enrollment in NC Public Schools"),
           href="https://nces.ed.gov/programs/coe/pdf/coe_cge.pdf"),
         a(i18n()$t("Why Representation Matters"),
@@ -2142,14 +2142,14 @@ function(input, output, session) {
         
       }
       else if (input$hs_select == "Racial Demographics"){
-        paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% students of color, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of students of color has increased."),
+        paste(i18n()$t("This dataset shows the racial breakdown of each of the 16 public schools. Durham Public Schools’ student population is 80.7% BIPOC students, but only 57% of Durham County is people of color. The racial demographics of all 16 schools has changed over time, specifically in the past 30 years. The number of white students has decreased, while the number of BIPOC students has increased."),
               "<br>", "<br>", i18n()$t("Representation of these students and "), 
               HTML(paste0(strong(i18n()$t("culturally-responsive pedagogy")),tags$sup("1"))), 
-              i18n()$t("is integral for student success. Too often students of color are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more."), "<br>","<br>",
+              i18n()$t("is integral for student success. Too often BIPOC students are underrepresented and cannot relate to the content because of cultural differences. Students who are able to connect with their tutors, teachers, administrators, and the content tend to engage with the content more."), "<br>","<br>",
               i18n()$t("Below is more information about racial demographics in schools:"), "<br>",
               a(i18n()$t("Changing School Racial Demographics in Recent Decades"),
                 href="https://www.urban.org/features/explore-your-schools-changing-demographics"), "<br>",
-              a(i18n()$t("More Students of Color in Public schools"),
+              a(i18n()$t("More BIPOC students in Public schools"),
                 href="https://www.publicschoolreview.com/blog/white-students-are-now-the-minority-in-u-s-public-schools"),
               "<br>", "<br>",HTML(paste0(tags$sup("1"))), strong(i18n()$t("culturally-responsive pedagogy")), i18n()$t(": style of individualized teaching that is cognizant of the varying cultures and ethnicities of the classroom"))
         
@@ -2158,7 +2158,7 @@ function(input, output, session) {
       else if (input$hs_select == "Median Household Income"){
         paste(i18n()$t("This graph shows the median household income for each school zone. According to the 2020 US census, the median household income in the United States is $67,521. This is a 2.9% decrease from 2019, which is the first statistically significant decline since 2011."), 
               "<br>","<br>", 
-              i18n()$t("According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom. Students’ basic human needs must be met in order to excel in the classroom."), "<br>",
+              i18n()$t("According to the 2020 US census, the average household income in North Carolina is $56,642, while the per capita income in the past twelve months is $31,993. All of these schools fall below the NC and US median, which is a cause for concern. Poverty directly affects how students learn and those suffering from food insecurity, for example, are hindered from reaching their full potential. Students’ basic human needs must be met in order to excel in the classroom."), "<br>",
               "<br>", i18n()$t("Below are links to the US Census Information:"),
               "<br>",
               a(i18n()$t("Nationwide Census"), 
@@ -2557,7 +2557,7 @@ function(input, output, session) {
               "<br>",
               "<br>",
               strong(i18n()$t("Visual:")),
-              i18n()$t("Visual arts consists of painting, drawing, printmaking, sculpture, ceramics,photography, video, filmmaking, design, crafts and architecture. Engaging in visual arts exposes children and adolescents to positive benefits that include; but are not limited to, having a space to create innovatively, improving motor skills, and expressing emotions."), 
+              i18n()$t("Visual arts consists of painting, drawing, printmaking, sculpture, ceramics, photography, video, filmmaking, design, crafts and architecture. Engaging in visual arts exposes children and adolescents to positive benefits that include; but are not limited to, having a space to create innovatively, improving motor skills, and expressing emotions."), 
               "<br>",
               a(i18n()$t("Benefits of Visual Arts"), 
                 href = "https://www.linkedin.com/pulse/20-benefits-visual-arts-children-aniruddah-andalib"),
@@ -2581,9 +2581,9 @@ function(input, output, session) {
       }
       else if(input$var == "Community Sports"){
         paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"), 
-              a(i18n()$t("CDC guidelines"),
+              a(i18n()$t("CDC guidelines."),
                 href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
-              a(i18n()$t(". The Office of Disease Prevention and Health Promotion"),
+              a(i18n()$t("The Office of Disease Prevention and Health Promotion"),
                 href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
               i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
               i18n()$t(". Visit"),
@@ -2592,7 +2592,7 @@ function(input, output, session) {
               i18n()$t("for more information."))
       }
       else if(input$var == "Farmers' Markets"){
-        paste(i18n()$t("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, Farmers’ markets can be a more affordable option for local residents."),
+        paste(i18n()$t("Farmers’ markets provide local citizens with fresh fruits and vegetables at the peak of their growing season. According to the University of Pittsburgh Medical Center, because everything sold is in-season, people that purchase produce from farmers’ markets get to experience the “truest flavors.” Because this produce is grown locally, there is a higher nutritional value. Local produce is typically minimally processed, and grown without the use of pesticides, antibiotics, and genetic modification. Due to the short travel to nearby markets and cheaper cost of produce, farmers’ markets can be a more affordable option for local residents."),
               "<br>",
               "<br>",
               i18n()$t("Below is more information about Farmers' Markets:"),
@@ -2663,7 +2663,7 @@ function(input, output, session) {
                 href = "https://projectaccessdurham.org/about/"))
       }
       else if(input$var == "Libraries"){
-        paste(i18n()$t("Found in urban, suburban, and rural areas, libraries often serveas community hubs. Their purpose is not only to provide academic resources for the community, but also be used to welcome new residents to the neighborhood, assist the homeless, and offer informational sessions on a variety of topics. As highlighted in an article by the Brookings Institute, a Pew Research study showed “[s]ome 90% of Americans ages 16 and older said that theclosing of their local public library would have an impact on their community, with 63% saying it would have a ‘major’ impact”"), 
+        paste(i18n()$t("Found in urban, suburban, and rural areas, libraries often serve as community hubs. Their purpose is not only to provide academic resources for the community, but can also be used to welcome new residents to the neighborhood, assist the homeless, and offer informational sessions on a variety of topics. As highlighted in an article by the Brookings Institute, a Pew Research study showed “[s]ome 90% of Americans ages 16 and older said that the closing of their local public library would have an impact on their community, with 63% saying it would have a ‘major’ impact”"), 
               HTML(paste0(strong(tags$sub("1")))),
               i18n()$t(". In Durham, there are seven public libraries, including the recently renovated Main Library downtown. Each library hosts several events daily for people of all ages."),
               "<br>",
@@ -2696,7 +2696,7 @@ function(input, output, session) {
             paste(i18n()$t("Recreation centers have varying amenities, frequently including fitness centers, basketball courts, and multipurpose rooms. These facilities can be utilized for afterschool programs, indoor and outdoor recreation, and meeting spaces. Similar to parks, recreation centers promote active lifestyles."), "<br>", "<br>", 
                   i18n()$t("Benefits include:"), "<br>", "<br>", 
                   i18n()$t("-Functioning as a community hub"), "<br>", 
-                  i18n()$t("-Ability to host before- and after-school care programs"), "<br>", 
+                  i18n()$t("-Hosting before- and after-school care programs"), "<br>", 
                   i18n()$t("-May offer inexpensive or free tutoring"),
                   "<br>",
                   "<br>",
@@ -2709,7 +2709,7 @@ function(input, output, session) {
                     href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
         }
       else if(input$var == "Religious Centers"){
-            paste(i18n()$t("Religious centers are huge assets to the community because of various services they provide. These services include donations, food drives, fundraisers, providing safe spaces for various cultures, counseling services, daycare, summer programs, and much more. Additionally, the Durham community has established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. Despite the diversity of religious orientations, Durham residents have shown their willingness to provide resources for all those in need, regardless of religious orientation."),
+            paste(i18n()$t("Religious centers are huge assets to the community because of various services they provide. These services include donations, food drives, fundraisers, providing safe spaces for various cultures, counseling services, daycare, summer programs, and much more. Additionally, the Durham community has established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. Durham residents have shown their willingness to provide resources for all those in need, regardless of religious orientation."),
                   "<br>",
                   "<br>",
                   i18n()$t("Below is more information about religious centers:"),
@@ -3843,8 +3843,8 @@ function(input, output, session) {
       
       output$sports_context <- renderText({
         paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
-              a(i18n()$t("CDC guidelines"), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
-              i18n()$t(". The Office of Disease Prevention and Health Promotion"), 
+              a(i18n()$t("CDC guidelines."), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
+              i18n()$t("The Office of Disease Prevention and Health Promotion"), 
               i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
               a(i18n()$t("2018 Physical Activity Guidelines for Americans Report"), href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
               i18n()$t(". Visit"),
