@@ -10,7 +10,7 @@
 library(shiny)
 library(shinydashboard)
 library(slickR)
-library(leaflet)
+library(leaflet) 
 library(leaflet.extras)
 library(tidyverse)
 library(plotly)
