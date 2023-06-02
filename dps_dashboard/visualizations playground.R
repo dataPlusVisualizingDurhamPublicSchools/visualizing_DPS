@@ -15,7 +15,7 @@ sports <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/vi
 sports_types <- as.factor(sports$sport)
 View(sports_types)
 sports$icon = ""
-sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
+sports$icon[sports$sport == "Varsity Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
 sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
 sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
 sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
