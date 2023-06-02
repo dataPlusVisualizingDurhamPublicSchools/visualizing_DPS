@@ -10,7 +10,7 @@
 library(shiny)
 library(shinydashboard)
 library(slickR)
-library(leaflet)
+library(leaflet) 
 library(leaflet.extras)
 library(tidyverse)
 library(plotly)
@@ -2386,7 +2386,7 @@ function(input, output, session) {
         {
             temp_df <- bus[grepl(input$zone, bus$school_zones), ]
             temp_df[c("STOP_NAME")]
-        }
+        } 
         else if(input$var == "Childcare Centers")
         {
             temp_df <- childcare[grepl(input$zone, childcare$school_zones), ]
