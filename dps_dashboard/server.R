@@ -3976,7 +3976,7 @@ function(input, output, session) {
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("JV Women's Soccer")),
                            h4(i18n()$t("Women's Varsity Lacrosse")),
-                           h4(i18n()$t("Women's JV Lacrosse"))
+                           h4(i18n()$t("Women's JV Lacrosse")),
                            h4(i18n()$t("Women's Varsity Soccer"))
                      )
                    }
