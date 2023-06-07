@@ -3523,7 +3523,7 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Boy's Cross Country")),
                            h4(i18n()$t("Boy’s Soccer")),
                            h4(i18n()$t("Football")),
-                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Girl's Volleyball")),
                            h4(i18n()$t("Girl's Cross Country"))
                      )
                    }
@@ -3532,39 +3532,39 @@ function(input, output, session) {
                            h4(i18n()$t("Girl's Cross Country")),
                            h4(i18n()$t("Boy’s Soccer")),
                            h4(i18n()$t("Football")),
-                           h4(i18n()$t("Volleyball"))
+                           h4(i18n()$t("Girl's Volleyball"))
                      )
                    }
                    else if(input$school_sports == "Lakewood Montesorri Middle"){
                      paste(h4(i18n()$t("Boy's Cross Country")),
                            h4(i18n()$t("Boy’s Soccer")),
-                           h4(i18n()$t("Volleyball"))
+                           h4(i18n()$t("Girl's Volleyball"))
                      )
                    }
                    else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Varsity Football")),
                            h4(i18n()$t("JV Football")),
                            h4(i18n()$t("Men’s JV Soccer")),
-                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
                            h4(i18n()$t("Women's Golf")),
                            h4(i18n()$t("Women's JV Volleyball")),
                            h4(i18n()$t("Women's Tennis")),
-                           h4(i18n()$t("Women's Volleyball"))
+                           h4(i18n()$t("Women's Varsity Volleyball"))
                      )
                    }
                    else if(input$school_sports == "Hillside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Varsity Football")),
                            h4(i18n()$t("JV Football")),
                            h4(i18n()$t("Men’s JV Soccer")),
-                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
                            h4(i18n()$t("Men's Cross Country")),
                            h4(i18n()$t("Women's Golf")),
-                           h4(i18n()$t("Women's Volleyball")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
                            h4(i18n()$t("Women's JV Volleyball")),
                            h4(i18n()$t("Women's Tennis")),
                            h4(i18n()$t("Women's Track"))
@@ -3572,14 +3572,15 @@ function(input, output, session) {
                    }
                    else if(input$school_sports == "Jordan High"){
                      paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Varsity Football")),
                            h4(i18n()$t("JV Football")),
                            h4(i18n()$t("Men’s JV Soccer")),
-                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
                            h4(i18n()$t("Women's Golf")),
                            h4(i18n()$t("Women's JV Volleyball")),
-                           h4(i18n()$t("Women's Volleyball")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
                            h4(i18n()$t("Women's Tennis"))
                      )
                    }
@@ -3604,19 +3605,19 @@ function(input, output, session) {
                    else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Gymnastics")),
                            h4(i18n()$t("Indoor Track")),
-                           h4(i18n()$t("Men's Basketball")),
+                           h4(i18n()$t("Men's Varsity Basketball")),
                            h4(i18n()$t("Men's JV Basketball")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Women's Basketball")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
                            h4(i18n()$t("Women's JV Basketball")),
                            h4(i18n()$t("Wrestling"))
                      )
                    }
                    else if(input$school_sports == "Hillside High"){
-                     paste(h4(i18n()$t("Men's Basketball")),
+                     paste(h4(i18n()$t("Men's Varsity Basketball")),
                            h4(i18n()$t("Men's JV Basketball")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Women's Basketball")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
                            h4(i18n()$t("Women's JV Basketball")),
                            h4(i18n()$t("Wrestling")),
                            h4(i18n()$t("Indoor Track"))
@@ -3625,10 +3626,10 @@ function(input, output, session) {
                    else if(input$school_sports == "Jordan High"){
                      paste(h4(i18n()$t("Gymnastics")),
                            h4(i18n()$t("Indoor Track")),
-                           h4(i18n()$t("Men's Basketball")),
+                           h4(i18n()$t("Men's Varsity Basketball")),
                            h4(i18n()$t("Men's JV Basketball")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Women's Basketball")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
                            h4(i18n()$t("Women's JV Basketball")),
                            h4(i18n()$t("Wrestling"))
                      )
@@ -3660,50 +3661,51 @@ function(input, output, session) {
                      )
                    }
                    else if(input$school_sports == "Riverside High"){
-                     paste(h4(i18n()$t("Baseball")),
+                     paste(h4(i18n()$t("Varsity Baseball")),
                            h4(i18n()$t("JV Baseball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
                            h4(i18n()$t("Men's JV Lacrosse")),
-                           h4(i18n()$t("Men's Lacrosse")),
-                           h4(i18n()$t("Men's Tennis")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
+                           h4(i18n()$t("Men's Varsity Tennis")),
                            h4(i18n()$t("Softball")),
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("JV Women's Soccer")),
-                           h4(i18n()$t("Women's Lacrosse")),
-                           h4(i18n()$t("Women's Soccer"))
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
+                           h4(i18n()$t("Women's JV Lacrosse"))
+                           h4(i18n()$t("Women's Varsity Soccer"))
                      )
                    }
                    else if(input$school_sports == "Hillside High"){
-                     paste(h4(i18n()$t("Baseball")),
+                     paste(h4(i18n()$t("Varsity Baseball")),
                            h4(i18n()$t("JV Baseball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
                            h4(i18n()$t("Men's JV Lacrosse")),
-                           h4(i18n()$t("Men's Lacrosse")),
-                           h4(i18n()$t("Men's Tennis")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
+                           h4(i18n()$t("Men's Varsity Tennis")),
                            h4(i18n()$t("Softball")),
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("Women's JV Lacrosse")),
-                           h4(i18n()$t("Women's Lacrosse")),
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
                            h4(i18n()$t("Women's JV Soccer")),
-                           h4(i18n()$t("Women's Soccer"))
+                           h4(i18n()$t("Women's Varsity Soccer"))
                      )
                    }
                    else if(input$school_sports == "Jordan High"){
-                     paste(h4(i18n()$t("Baseball")),
+                     paste(h4(i18n()$t("Varsity Baseball")),
                            h4(i18n()$t("JV Baseball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
                            h4(i18n()$t("Men's JV Lacrosse")),
-                           h4(i18n()$t("Men's Lacrosse")),
-                           h4(i18n()$t("Men's Tennis")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
+                           h4(i18n()$t("Men's Varsity Tennis")),
                            h4(i18n()$t("Softball")),
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("Women's JV Lacrosse")),
                            h4(i18n()$t("Women's JV Soccer")),
-                           h4(i18n()$t("Women's Lacrosse")),
-                           h4(i18n()$t("Women's Soccer"))
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
+                           h4(i18n()$t("Women's Varsity Soccer"))
                      )
                    }
                  })
