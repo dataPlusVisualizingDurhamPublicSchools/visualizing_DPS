@@ -23,7 +23,7 @@ library(shiny.i18n)
 library(DT)
 
 
-i18n <- Translator$new(translation_json_path = "data/Translations/fullTranslation.json")
+i18n <- Translator$new(translation_json_path = "/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
 i18n$set_translation_language("English")
 
 
