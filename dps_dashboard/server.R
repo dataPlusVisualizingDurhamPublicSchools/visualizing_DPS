@@ -3632,7 +3632,7 @@ function(input, output, session) {
                 h4(i18n()$t("Women's JV Basketball")),
                 h4(i18n()$t("Wrestling"))
           )
-        }
+        } 
       })
       output$springsports <- renderText({
         if(input$school_sports == "Brogden Middle"){

@@ -227,7 +227,7 @@ durham <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dash
 durham@data <- merge(durham_choro@data, counts_grouped, by = 'name')
 
 
-leaflet() %>%
+leaflet() %>% 
   addProviderTiles("CartoDB.Positron") %>%
   addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
   addResetMapButton() %>%

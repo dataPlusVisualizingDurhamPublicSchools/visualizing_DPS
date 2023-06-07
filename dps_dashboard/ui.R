@@ -400,7 +400,7 @@ body <- {dashboardBody(
                                                       i18n$t(", and"), a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
                                                       "."
                                                    )),
-                              fluidRow(
+                              fluidRow( 
                                 #Drop Down Widget for Box Plots
                                 box(width = 6,
                                     solidHeader = TRUE,
