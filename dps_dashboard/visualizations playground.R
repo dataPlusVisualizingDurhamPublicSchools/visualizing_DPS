@@ -11,7 +11,7 @@ library(DT)
 #sports tab
 
 #for the icons
-sports <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+sports <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
 sports_types <- as.factor(sports$sport)
 View(sports_types)
 sports$icon = ""
@@ -47,7 +47,7 @@ sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Gir
 View(subset(sports, !duplicated(icon)))
 
 #for the tables
-sports <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+sports <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
 sports$gender[sports$gender == 'All'] <- ''
 sports <- sports%>%
   unite(sport_name, gender, sport, sep=" ")
@@ -55,8 +55,8 @@ sports$sport_name <- trimws(sports$sport_name)
 sports %>% select(sport_name)
 View(sports)
 
-parks <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
-rec <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
+parks <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
+rec <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
 
 
 
@@ -74,9 +74,9 @@ View(df2[c("name","ADDRESS","URL")])
 
 
 #percentage bar chart
-counts <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts.csv", skip = 1)
-counts_grouped <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts grouped.csv")
-pop<- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/population.csv")
+counts <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts.csv", skip = 1)
+counts_grouped <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts grouped.csv")
+pop<- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/population.csv")
 
 #counts_grouped$varname <- as.factor(counts_grouped$varname)
 
@@ -183,7 +183,7 @@ variables <- as.factor(durham_choro@data$varname)
 View(variables)
 
 #for each var in variables:
-  #subset durham_choro@data
+#subset durham_choro@data
 durham_choro@data <- subset(durham_choro@data, durham_choro@data$varname == 'After-School Care Programs')
 View(durham_choro@data)
 
@@ -199,7 +199,7 @@ m <- sf::st_as_sf(durham_choro@data) %>% leaflet() %>%
 m
 
 #fixing racial demographics
-all_race <- read_excel("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
+all_race <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
 View(all_race)
 
 
@@ -230,7 +230,7 @@ leaflet(
 
 
 #checklist table for the arts programs tab
-schoolstats22 <- read.csv("C:/Users/poona/Desktop/College Doc Dump/Data+/Newest Repo/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
+schoolstats22 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
 schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
 schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
 schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
