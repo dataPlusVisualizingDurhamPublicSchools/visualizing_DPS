@@ -28,6 +28,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 
 # Load/Rename School Stats Data
 {
+<<<<<<< HEAD
   Race_SCHOOL_ONLY <- read_excel("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
   race <- read_excel("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/race.xlsx")
   ES_racecomp_21 <- read_excel("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_racecomp_21.xlsx")
@@ -75,10 +76,60 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   sports_22 <- read.csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
   
   
+=======
+    Race_SCHOOL_ONLY <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
+    race <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/race.xlsx")
+    ES_racecomp_21 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_racecomp_21.xlsx")
+    HS_racecomp_21 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_racecomp_21.xlsx")
+    race22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/race2022.xlsx")
+    ES_racecomp_22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_racecomp_22.xlsx")
+    MS_racecomp_22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_racecomp_22.xlsx")
+    HS_racecomp_22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_racecomp_22.xlsx")
+    race_diff <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/race diff.xlsx")
+    poc_per_school <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/poc per school.xlsx")
+    ES_poc_per_school_21 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_poc_per_school_21.xlsx")
+    HS_poc_per_school_21 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_poc_per_school_21.xlsx")
+    poc_per_school22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/poc per school22.xlsx")
+    ES_poc_per_school_22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_poc_per_school_22.xlsx")
+    MS_poc_per_school_22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_poc_per_school_22.xlsx")
+    HS_poc_per_school_22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_poc_per_school_22.xlsx")
+    funding <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/funding.xlsx")
+    all_race <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
+    ES_all_race <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_all race_2021.xlsx")
+    HS_all_race <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_all race_2021.xlsx")
+    all_race22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/all race 2022.xlsx")
+    ES_all_race22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_all race 2022.xlsx")
+    HS_all_race22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_all race 2022.xlsx")
+    MS_all_race22 <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_all race 2022.xlsx")
+   
+    
+    schoolstats <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/Data + School Info - School Statistics.csv")
+    schoolstats22 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
+    ES_stats_21 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_stats_21.csv")
+    MS_stats_21 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/MS_stats_21.csv")
+    HS_stats_21 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_stats_21.csv")
+    ES_stats_22 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_stats_22.csv")
+    MS_stats_22 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_stats_22.csv")
+    HS_stats_22 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_stats_22.csv")
+    
+    APCourses <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/AP Courses.xlsx")
+
+    
+    #data for the data insights tab
+    counts_2021 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts.csv", skip = 1)
+    counts_grouped_2021 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts grouped.csv")
+    pop<- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/population.csv")
+
+    CTECourses <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/CTE Courses.xlsx")
+    sports_22 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+    
+
+>>>>>>> main
 }
 
 # Load/Rename Map Data
 {
+<<<<<<< HEAD
   durham <- geojsonio::geojson_read("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
   cc <- geojsonio::geojson_read("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
   eastway <- geojsonio::geojson_read("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/map_data/Eastway Elementary.geojson", what = "sp")
@@ -96,10 +147,30 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   brogden <- geojsonio::geojson_read("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/map_data/Brogden Middle.geojson", what = "sp")
   lowesgr <- geojsonio::geojson_read("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
   riverside <- geojsonio::geojson_read("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/map_data/Riverside High.geojson", what = "sp")
+=======
+    durham <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
+    cc <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
+    eastway <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Eastway Elementary.geojson", what = "sp")
+    ek <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
+    fayetteville <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
+    forest <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Forest View Elementary.geojson", what = "sp")
+    hillside <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Hillside High.geojson", what = "sp")
+    jordan <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Jordan High.geojson", what = "sp")
+    lakewoodES <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
+    parkwood <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
+    southwest <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Southwest Elementary.geojson", what = "sp")
+    clubblv <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Club Boulevard Elementary.geojson", what = "sp")
+    lakewoodMS <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Lakewood Middle.geojson", what = "sp")
+    hillandale <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
+    brogden <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Brogden Middle.geojson", what = "sp")
+    lowesgr <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
+    riverside <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/Riverside High.geojson", what = "sp")
+>>>>>>> main
 }
 
 # Load/Rename Spatial Data
 {
+<<<<<<< HEAD
   bus <- read.csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Bus Stops.csv")
   childcare <- read_csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Childcare Centers.csv")
   cultural <- read.csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
@@ -116,6 +187,24 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   farmersmark <- read.csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Farmer's Markets.csv") 
   commarts <- read.csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Arts.csv")
   sports <- read.csv("/Users/ethanshang/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Sports.csv")
+=======
+    bus <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Bus Stops.csv")
+    childcare <- read_csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Childcare Centers.csv")
+    cultural <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
+    gardens <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Gardens.csv")
+    grocery <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Grocery Stores.csv") 
+    libraries <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Libraries.csv")
+    parks <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
+    rec <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
+    religious <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Religious Centers.csv")
+    schools <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/schools.csv")
+    hospitals <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
+    pantries <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Food Pantries.csv")
+    afterschool <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_After-School Care Programs.csv")
+    farmersmark <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Farmer's Markets.csv") 
+    commarts <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Arts.csv")
+    sports <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Sports.csv")
+>>>>>>> main
 }
 
 # Load/Rename Schools' Names
@@ -150,13 +239,22 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
   )
 }
 
+<<<<<<< HEAD
 translator <- Translator$new(translation_json_path = "/Users/ethanshang/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
+=======
+translator <- Translator$new(translation_json_path = "/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
+>>>>>>> main
 
 function(input, output, session) {
   
   #observeEvent(input$selected_language, {
+<<<<<<< HEAD
   # Here is where we update language in session
   #shiny.i18n::update_lang(session, input$selected_language)
+=======
+    # Here is where we update language in session
+    #shiny.i18n::update_lang(session, input$selected_language)
+>>>>>>> main
   #})
   
   i18n <- reactive({
@@ -2250,6 +2348,7 @@ function(input, output, session) {
   
   # Maps - Connecting variable drop down menu to variable info
   displayVar <- reactive({
+<<<<<<< HEAD
     switch(input$var,
            "Parks" = parks, 
            "Recreation Centers" = rec, 
@@ -2313,6 +2412,211 @@ function(input, output, session) {
            "Riverside High" = riverside,
            "Southwest Elementary" = southwest,
            "All" = durham
+=======
+        switch(input$var,
+               "Parks" = parks, 
+               "Recreation Centers" = rec, 
+               "Gardens" = gardens, 
+               "Bus Stops" = bus, 
+               "Childcare Centers" = childcare, 
+               "Food Pantries" = pantries,
+               "Farmers' Markets" = farmersmark,
+               "Community and Cultural Centers" = cultural, 
+               "Grocery Stores" = grocery, 
+               "Libraries" = libraries, 
+               "Religious Centers" = religious,
+               "Hospitals and Clinics" = hospitals,
+               "After-School Care Programs" = afterschool,
+               "Community Arts" = commarts,
+               "Community Sports" = sports)
+    })
+    
+    # Maps - Connecting map variables to their icons
+    displayIcon <- reactive({
+        switch(input$var,
+               "Parks" = iconSet$parks, 
+               "Recreation Centers" = iconSet$rec, 
+               "Gardens" = iconSet$gardens, 
+               "Bus Stops" = iconSet$bus, 
+               "Childcare Centers" = iconSet$childcare, 
+               "Community and Cultural Centers" = iconSet$cultural, 
+               "Food Pantries" = iconSet$pantries,
+               "Farmers' Markets" = iconSet$farmersmark,
+               "Grocery Stores" = iconSet$grocery, 
+               "Libraries" = iconSet$libraries, 
+               "Religious Centers" = iconSet$religious,
+               "Hospitals and Clinics" = iconSet$hospitals,
+               "After-School Care Programs" = iconSet$afterschool,
+               "Community Arts" = iconSet$commarts,
+               "Community Sports" = iconSet$sports)
+    })
+    
+    # Maps - Connecting name of school to input
+    displaySchool <- reactive({
+        schoolstats %>% filter(name == input$zone)
+    })
+    
+    # Maps - Connecting school zone drop down menu to school info
+    displayZone <- reactive({
+        switch(input$zone,
+               "Brogden Middle" = brogden,
+               "C.C. Spaulding Elementary" = cc,
+               "Club Boulevard Elementary" = clubblv,
+               "Eastway Elementary" = eastway,
+               "E.K. Powe Elementary" = ek, 
+               "Fayetteville Street Elementary" = fayetteville, 
+               "Forest View Elementary" = forest,
+               "Hillandale Elementary" = hillandale,
+               "Hillside High" = hillside,
+               "Jordan High" = jordan,
+               "Lakewood Elementary" = lakewoodES,
+               "Lakewood Montessori Middle" = lakewoodMS,
+               "Lowes Grove Middle" = lowesgr,
+               "Parkwood Elementary" = parkwood, 
+               "Riverside High" = riverside,
+               "Southwest Elementary" = southwest,
+               "All" = durham
+        )
+    })
+    
+    # Maps - School zone colors
+    displayColor <- reactive({
+        switch(input$zone,
+               "Brogden Middle" = "purple",
+               "C.C. Spaulding Elementary" = "red", 
+               "Club Boulevard Elementary" = "purple",
+               "Eastway Elementary" = "orange",
+               "E.K. Powe Elementary" = "yellow", 
+               "Fayetteville Street Elementary" = "green", 
+               "Forest View Elementary" = "blue",
+               "Hillandale Elementary" = "purple",
+               "Hillside High" = "violet",
+               "Jordan High" = "pink",
+               "Lakewood Elementary" = "darkred", 
+               "Lakewood Montessori Middle" = "purple",
+               "Lowes Grove Middle" = "purple",
+               "Parkwood Elementary" = "lightblue", 
+               "Riverside High" = "purple",
+               "Southwest Elementary" = "brown",
+               "All" = "transparent")
+    })
+    
+    # Maps - Leaflet aesthetics
+    output$map <- renderLeaflet({
+        leaflet(
+            displayZone()) %>%
+            addProviderTiles("CartoDB.Positron") %>%
+            addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
+            addResetMapButton() %>%
+            addPolygons(data = displayZone(),
+                        fillColor = displayColor(),
+                        stroke = TRUE,
+                        fillOpacity = 0.39,
+                        smoothFactor = 1) %>%
+            addMarkers(data = displayVar(), lng = ~LONGITUDE, lat= ~LATITUDE, 
+                       label = displayVar()$name, popup = displayVar()$URL, icon = displayIcon(), 
+                       clusterOptions = markerClusterOptions()) %>%
+            addMarkers(data = displaySchool(), lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools,
+                       label = displaySchool()["name"])
+    })
+    
+    #helper function to make links look better and be clickable
+    createLink <- function(val) {
+        sprintf('<a href="%s" target="_blank">%s</a>',val, val)
+    }
+    
+    #outputting the list of resources for that subset
+    output$list <- renderDataTable({
+        if(input$var == "Parks")
+        {
+            temp_df <- parks[grepl(input$zone, parks$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS","URL")]
+        }
+        else if(input$var == "Recreation Centers")
+        {
+            temp_df <- rec[grepl(input$zone, rec$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("NAME","ADDRESS","URL")]
+        }
+        else if(input$var == "Gardens")
+        {
+            temp_df <- gardens[grepl(input$zone, gardens$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("NAME","ADDRESS","URL")]
+        }
+        else if(input$var == "Bus Stops")
+        {
+            temp_df <- bus[grepl(input$zone, bus$school_zones), ]
+            temp_df[c("STOP_NAME")]
+        } 
+        else if(input$var == "Childcare Centers")
+        {
+            temp_df <- childcare[grepl(input$zone, childcare$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","URL")]
+        }
+        else if(input$var == "Community and Cultural Centers")
+        {
+            temp_df <- cultural[grepl(input$zone, cultural$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+        }
+        else if(input$var == "Grocery Stores")
+        {
+            temp_df <- grocery[grepl(input$zone, grocery$school_zones), ]
+            temp_df[c("STORE_NAME","ADDRESS")]
+        }
+        else if(input$var == "Libraries")
+        {
+            temp_df <- libraries[grepl(input$zone, libraries$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+        }
+        else if(input$var == "Religious Centers")
+        {
+            temp_df <- religious[grepl(input$zone, religious$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name", "URL")]
+        }
+        else if(input$var == "Hospitals and Clinics")
+        {
+            temp_df <- hospitals[grepl(input$zone, hospitals$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+        }
+        else if(input$var == "After-School Care Programs")
+        {
+            temp_df <- afterschool[grepl(input$zone, afterschool$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+        }
+        else if(input$var == "Food Pantries")
+        {
+            temp_df <- pantries[grepl(input$zone, pantries$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+        }
+        else if(input$var == "Farmers' Markets")
+        {
+            temp_df <- farmersmark[grepl(input$zone, farmersmark$school_zones), ]
+            temp_df$URL <- createLink(temp_df$URL)
+            temp_df[c("name","ADDRESS", "URL")]
+        }
+      else if(input$var == "Community Arts")
+      {
+        temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+        temp_df$URL <- createLink(temp_df$URL)
+        temp_df[c("name","Type","ADDRESS", "URL")]
+      }
+      else if(input$var == "Community Sports")
+      {
+        temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+        temp_df$URL <- createLink(temp_df$URL)
+        temp_df[c("name","Type","ADDRESS", "URL")]
+      }
+    }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE)
+>>>>>>> main
     )
   })
   
