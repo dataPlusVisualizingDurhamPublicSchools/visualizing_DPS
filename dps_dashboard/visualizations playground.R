@@ -7,6 +7,10 @@ library(readxl)
 library(stringr)
 library(tidyr)
 library(DT)
+library(plotly)
+library(leaflet.extras)
+library(geojsonio)
+
 
 #sports tab
 
@@ -70,7 +74,7 @@ createLink <- function(val) {
 
 df2$URL <- createLink(df2$URL)
 
-View(df2[c("name","ADDRESS","URL")])
+View(df2[c("NAME","ADDRESS","URL")])
 
 
 #percentage bar chart
@@ -155,13 +159,13 @@ draw_circular_chart(counts_grouped_1)
 draw_circular_chart(counts_grouped_2)
 
 #the old racial demographics plot
-ggplot(all_race, aes(factor(school), number, fill = race)) + 
+p3 <- ggplot(all_race, aes(factor(school), number, fill = race)) + 
   geom_bar(stat="identity", position = "dodge") +   scale_fill_manual(values = c("#1414AB", "#005BAD", "#60A6D4",
                                                                                  "#D1E3F4", "#C6CBCF")) +
   coord_flip() +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 1.5)) +
-  labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race")
+  labs(title = "Racial Demographics of Schools" , x = "School", y = "Students (%)", fill="Race") 
 ggplotly(p3)
 
 #a metric for comparing community wealth across school districts
@@ -170,10 +174,12 @@ ggplotly(p3)
 
 
 #CHOROPLETH MAP WORKING W GEOJSON
-
-durham_choro <- geojsonio::geojson_read("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
-durham_choro@data <- merge(durham_choro@data, counts_grouped, by = 'name')
-#durham_choro@data$varname <- as.factor(durham_choro@data$varname)
+library(geojsonio)
+library(dplyr)
+durham_choro <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
+data.frame(durham_choro)
+durham_choro@data <- merge(durham_choro@data, counts_grouped, by = 'name', all = TRUE)
+durham_choro@data$varname <- as.factor(durham_choro@data$varname)
 View(durham_choro@data %>% group_by(varname))
 
 grouped_by_varname <- durham_choro@data %>% group_by(varname) %>% group_split()
@@ -192,16 +198,22 @@ mypalette <- colorNumeric(palette="viridis", domain=durham_choro@data$count, na.
 mypalette(c(45,43))
 
 # Basic choropleth with leaflet?
+library(sf)
+library(leaflet)
+library(RColorBrewer)
+library(sfheaders)
 m <- sf::st_as_sf(durham_choro@data) %>% leaflet() %>% 
   addTiles()  %>%  
   addPolygons( fillColor = ~mypalette(count), stroke=FALSE )
 
 m
 
+
 #fixing racial demographics
 all_race <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
 View(all_race)
 
+cbPalette <- c("#FFC0CB", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) + 
   geom_bar(position="fill", stat="identity")+ ggtitle("Racial Demographics") + ylab("Percentage") + xlab("School Name")+
@@ -211,19 +223,16 @@ ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) +
   theme(plot.title = element_text(hjust = 0.5))
 
 #attempt 2
-durham <- geojsonio::geojson_read("C:/Users/poona/Desktop/College Doc Dump/Data+/New Repo/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
+durham <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
 durham@data <- merge(durham_choro@data, counts_grouped, by = 'name')
 
-cbPalette <- c("#FFC0CB", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
-
-leaflet(
-  displayZone()) %>%
+leaflet() %>%
   addProviderTiles("CartoDB.Positron") %>%
   addSearchOSM(options = searchOptions(autoCollapse = TRUE, minLength = 2)) %>%
   addResetMapButton() %>%
   addPolygons(data = durham,
-              fillColor = cbPalette(),
+              fillColor = cbPalette,
               stroke = TRUE,
               fillOpacity = 0.39,
               smoothFactor = 1)
@@ -241,3 +250,4 @@ schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArt
 #View(reshape2::dcast(schoolstats, SCHOOL_NAME ~ ARTS_PROGRAMS))
 
 View(schoolstats)
+
