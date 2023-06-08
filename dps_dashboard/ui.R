@@ -23,11 +23,7 @@ library(shiny.i18n)
 library(DT)
 
 
-<<<<<<< HEAD
-i18n <- Translator$new(translation_json_path = "/Users/ethanshang/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
-=======
 i18n <- Translator$new(translation_json_path = "/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
->>>>>>> main
 i18n$set_translation_language("English")
 
 
@@ -404,7 +400,7 @@ body <- {dashboardBody(
                                                           i18n$t(", and"), a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
                                                           "."
                                                        )),
-                          fluidRow(
+                          fluidRow( 
                             #Drop Down Widget for Box Plots
                             box(width = 6,
                                 solidHeader = TRUE,
@@ -834,4 +830,3 @@ dashboardPage(
   sidebar,
   body
 )
-
