@@ -28,92 +28,94 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 
 # Load/Rename School Stats Data
 {
-    Race_SCHOOL_ONLY <- read_excel("./data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
-    race <- read_excel("./data/2021/school_stats_data/race.xlsx")
-    ES_racecomp_21 <- read_excel("./data/2021/school_stats_data/ES_racecomp_21.xlsx")
-    HS_racecomp_21 <- read_excel("./data/2021/school_stats_data/HS_racecomp_21.xlsx")
-    race22 <- read_excel("./data/2022/school_stats_data/race2022.xlsx")
-    ES_racecomp_22 <- read_excel("./data/2022/school_stats_data/ES_racecomp_22.xlsx")
-    MS_racecomp_22 <- read_excel("./data/2022/school_stats_data/MS_racecomp_22.xlsx")
-    HS_racecomp_22 <- read_excel("./data/2022/school_stats_data/HS_racecomp_22.xlsx")
-    race_diff <- read_excel("./data/2021/school_stats_data/race diff.xlsx")
-    poc_per_school <- read_excel("./data/2021/school_stats_data/poc per school.xlsx")
-    ES_poc_per_school_21 <- read_excel("./data/2021/school_stats_data/ES_poc_per_school_21.xlsx")
-    HS_poc_per_school_21 <- read_excel("./data/2021/school_stats_data/HS_poc_per_school_21.xlsx")
-    poc_per_school22 <- read_excel("./data/2022/school_stats_data/poc per school22.xlsx")
-    ES_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/ES_poc_per_school_22.xlsx")
-    MS_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/MS_poc_per_school_22.xlsx")
-    HS_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/HS_poc_per_school_22.xlsx")
-    funding <- read_excel("./data/2021/school_stats_data/funding.xlsx")
-    all_race <- read_excel("./data/2021/school_stats_data/all race 1.xlsx")
-    ES_all_race <- read_excel("./data/2021/school_stats_data/ES_all race_2021.xlsx")
-    HS_all_race <- read_excel("./data/2021/school_stats_data/HS_all race_2021.xlsx")
-    all_race22 <- read_excel("./data/2022/school_stats_data/all race 2022.xlsx")
-    ES_all_race22 <- read_excel("./data/2022/school_stats_data/ES_all race 2022.xlsx")
-    HS_all_race22 <- read_excel("./data/2022/school_stats_data/HS_all race 2022.xlsx")
-    MS_all_race22 <- read_excel("./data/2022/school_stats_data/MS_all race 2022.xlsx")
-   
-    
-    schoolstats <- read.csv("./data/2021/school_stats_data/Data + School Info - School Statistics.csv")
-    schoolstats22 <- read.csv("./data/2022/school_stats_data/School Statistics 2022.csv")
-    ES_stats_21 <- read.csv("./data/2021/school_stats_data/ES_stats_21.csv")
-    MS_stats_21 <- read.csv("./data/2021/school_stats_data/MS_stats_21.csv")
-    HS_stats_21 <- read.csv("./data/2021/school_stats_data/HS_stats_21.csv")
-    ES_stats_22 <- read.csv("./data/2022/school_stats_data/ES_stats_22.csv")
-    MS_stats_22 <- read.csv("./data/2022/school_stats_data/MS_stats_22.csv")
-    HS_stats_22 <- read.csv("./data/2022/school_stats_data/HS_stats_22.csv")
-    
-    APCourses <- read_excel("./data/2022/AP Courses.xlsx")
-
-    
-    #data for the data insights tab
-    counts_2021 <- read.csv("./data/2021/spatial_data/counts.csv", skip = 1)
-    counts_grouped_2021 <- read.csv("./data/2021/spatial_data/counts grouped.csv")
-    pop<- read.csv("./data/2021/school_stats_data/population.csv")
-
-    CTECourses <- read_excel("./data/2022/CTE Courses.xlsx")
-    sports_22 <- read.csv("./data/2022/school_stats_data/sports.csv")
+  Race_SCHOOL_ONLY <- read_excel("./data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
+  race <- read_excel("./data/2021/school_stats_data/race.xlsx")
+  ES_racecomp_21 <- read_excel("./data/2021/school_stats_data/ES_racecomp_21.xlsx")
+  HS_racecomp_21 <- read_excel("./data/2021/school_stats_data/HS_racecomp_21.xlsx")
+  race22 <- read_excel("./data/2022/school_stats_data/race2022.xlsx")
+  ES_racecomp_22 <- read_excel("./data/2022/school_stats_data/ES_racecomp_22.xlsx")
+  MS_racecomp_22 <- read_excel("./data/2022/school_stats_data/MS_racecomp_22.xlsx")
+  HS_racecomp_22 <- read_excel("./data/2022/school_stats_data/HS_racecomp_22.xlsx")
+  race_diff <- read_excel("./data/2021/school_stats_data/race diff.xlsx")
+  poc_per_school <- read_excel("./data/2021/school_stats_data/poc per school.xlsx")
+  ES_poc_per_school_21 <- read_excel("./data/2021/school_stats_data/ES_poc_per_school_21.xlsx")
+  HS_poc_per_school_21 <- read_excel("./data/2021/school_stats_data/HS_poc_per_school_21.xlsx")
+  poc_per_school22 <- read_excel("./data/2022/school_stats_data/poc per school22.xlsx")
+  ES_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/ES_poc_per_school_22.xlsx")
+  MS_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/MS_poc_per_school_22.xlsx")
+  HS_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/HS_poc_per_school_22.xlsx")
+  funding <- read_excel("./data/2021/school_stats_data/funding.xlsx")
+  all_race <- read_excel("./data/2021/school_stats_data/all race 1.xlsx")
+  ES_all_race <- read_excel("./data/2021/school_stats_data/ES_all race_2021.xlsx")
+  HS_all_race <- read_excel("./data/2021/school_stats_data/HS_all race_2021.xlsx")
+  all_race22 <- read_excel("./data/2022/school_stats_data/all race 2022.xlsx")
+  ES_all_race22 <- read_excel("./data/2022/school_stats_data/ES_all race 2022.xlsx")
+  HS_all_race22 <- read_excel("./data/2022/school_stats_data/HS_all race 2022.xlsx")
+  MS_all_race22 <- read_excel("./data/2022/school_stats_data/MS_all race 2022.xlsx")
+  
+  
+  schoolstats <- read.csv("./data/2021/school_stats_data/Data + School Info - School Statistics.csv")
+  schoolstats22 <- read.csv("./data/2022/school_stats_data/School Statistics 2022.csv")
+  ES_stats_21 <- read.csv("./data/2021/school_stats_data/ES_stats_21.csv")
+  MS_stats_21 <- read.csv("./data/2021/school_stats_data/MS_stats_21.csv")
+  HS_stats_21 <- read.csv("./data/2021/school_stats_data/HS_stats_21.csv")
+  ES_stats_22 <- read.csv("./data/2022/school_stats_data/ES_stats_22.csv")
+  MS_stats_22 <- read.csv("./data/2022/school_stats_data/MS_stats_22.csv")
+  HS_stats_22 <- read.csv("./data/2022/school_stats_data/HS_stats_22.csv")
+  
+  APCourses <- read_excel("./data/2022/AP Courses.xlsx")
+  
+  
+  #data for the data insights tab
+  counts_2021 <- read.csv("./data/2021/spatial_data/counts.csv", skip = 1)
+  counts_grouped_2021 <- read.csv("./data/2021/spatial_data/counts grouped.csv")
+  pop<- read.csv("./data/2021/school_stats_data/population.csv")
+  
+  CTECourses <- read_excel("./data/2022/CTE Courses.xlsx")
+  sports_22 <- read.csv("./data/2022/school_stats_data/sports.csv")
+  
+  
 }
 
 # Load/Rename Map Data
 {
-    durham <- geojsonio::geojson_read("./data/2021/map_data/All.geojson", what = "sp")
-    cc <- geojsonio::geojson_read("./data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
-    eastway <- geojsonio::geojson_read("./data/2021/map_data/Eastway Elementary.geojson", what = "sp")
-    ek <- geojsonio::geojson_read("./data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
-    fayetteville <- geojsonio::geojson_read("./data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
-    forest <- geojsonio::geojson_read("./data/2021/map_data/Forest View Elementary.geojson", what = "sp")
-    hillside <- geojsonio::geojson_read("./data/2021/map_data/Hillside High.geojson", what = "sp")
-    jordan <- geojsonio::geojson_read("./data/2021/map_data/Jordan High.geojson", what = "sp")
-    lakewoodES <- geojsonio::geojson_read("./data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
-    parkwood <- geojsonio::geojson_read("./data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
-    southwest <- geojsonio::geojson_read("./data/2021/map_data/Southwest Elementary.geojson", what = "sp")
-    clubblv <- geojsonio::geojson_read("./data/2021/map_data/Club Boulevard Elementary.geojson", what = "sp")
-    lakewoodMS <- geojsonio::geojson_read("./data/2021/map_data/Lakewood Middle.geojson", what = "sp")
-    hillandale <- geojsonio::geojson_read("./data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
-    brogden <- geojsonio::geojson_read("./data/2021/map_data/Brogden Middle.geojson", what = "sp")
-    lowesgr <- geojsonio::geojson_read("./data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
-    riverside <- geojsonio::geojson_read("./data/2021/map_data/Riverside High.geojson", what = "sp")
+  durham <- geojsonio::geojson_read("./data/2021/map_data/All.geojson", what = "sp")
+  cc <- geojsonio::geojson_read("./data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
+  eastway <- geojsonio::geojson_read("./data/2021/map_data/Eastway Elementary.geojson", what = "sp")
+  ek <- geojsonio::geojson_read("./data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
+  fayetteville <- geojsonio::geojson_read("./data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
+  forest <- geojsonio::geojson_read("./data/2021/map_data/Forest View Elementary.geojson", what = "sp")
+  hillside <- geojsonio::geojson_read("./data/2021/map_data/Hillside High.geojson", what = "sp")
+  jordan <- geojsonio::geojson_read("./data/2021/map_data/Jordan High.geojson", what = "sp")
+  lakewoodES <- geojsonio::geojson_read("./data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
+  parkwood <- geojsonio::geojson_read("./data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
+  southwest <- geojsonio::geojson_read("./data/2021/map_data/Southwest Elementary.geojson", what = "sp")
+  clubblv <- geojsonio::geojson_read("./data/2021/map_data/Club Boulevard Elementary.geojson", what = "sp")
+  lakewoodMS <- geojsonio::geojson_read("./data/2021/map_data/Lakewood Middle.geojson", what = "sp")
+  hillandale <- geojsonio::geojson_read("./data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
+  brogden <- geojsonio::geojson_read("./data/2021/map_data/Brogden Middle.geojson", what = "sp")
+  lowesgr <- geojsonio::geojson_read("./data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
+  riverside <- geojsonio::geojson_read("./data/2021/map_data/Riverside High.geojson", what = "sp")
 }
 
 # Load/Rename Spatial Data
 {
-    bus <- read.csv("./data/2021/spatial_data/renamed_Bus Stops.csv")
-    childcare <- read_csv("./data/2021/spatial_data/renamed_Childcare Centers.csv")
-    cultural <- read.csv("./data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
-    gardens <- read.csv("./data/2021/spatial_data/renamed_Community Gardens.csv")
-    grocery <- read.csv("./data/2021/spatial_data/renamed_Grocery Stores.csv") 
-    libraries <- read.csv("./data/2021/spatial_data/renamed_Libraries.csv")
-    parks <- read.csv("./data/2021/spatial_data/renamed_Parks.csv")
-    rec <- read.csv("./data/2021/spatial_data/renamed_Recreation Centers.csv")
-    religious <- read.csv("./data/2021/spatial_data/renamed_Religious Centers.csv")
-    schools <- read.csv("./data/2021/schools.csv")
-    hospitals <- read.csv("./data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
-    pantries <- read.csv("./data/2021/spatial_data/renamed_Food Pantries.csv")
-    afterschool <- read.csv("./data/2021/spatial_data/renamed_After-School Care Programs.csv")
-    farmersmark <- read.csv("./data/2021/spatial_data/renamed_Farmer's Markets.csv") 
-    commarts <- read.csv("./data/2021/spatial_data/renamed_Community Arts.csv")
-    sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
+  bus <- read.csv("./data/2021/spatial_data/renamed_Bus Stops.csv")
+  childcare <- read_csv("./data/2021/spatial_data/renamed_Childcare Centers.csv")
+  cultural <- read.csv("./data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
+  gardens <- read.csv("./data/2021/spatial_data/renamed_Community Gardens.csv")
+  grocery <- read.csv("./data/2021/spatial_data/renamed_Grocery Stores.csv") 
+  libraries <- read.csv("./data/2021/spatial_data/renamed_Libraries.csv")
+  parks <- read.csv("./data/2021/spatial_data/renamed_Parks.csv")
+  rec <- read.csv("./data/2021/spatial_data/renamed_Recreation Centers.csv")
+  religious <- read.csv("./data/2021/spatial_data/renamed_Religious Centers.csv")
+  schools <- read.csv("./data/2021/schools.csv")
+  hospitals <- read.csv("./data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
+  pantries <- read.csv("./data/2021/spatial_data/renamed_Food Pantries.csv")
+  afterschool <- read.csv("./data/2021/spatial_data/renamed_After-School Care Programs.csv")
+  farmersmark <- read.csv("./data/2021/spatial_data/renamed_Farmer's Markets.csv") 
+  commarts <- read.csv("./data/2021/spatial_data/renamed_Community Arts.csv")
+  sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
 }
 
 # Load/Rename Schools' Names
@@ -2376,514 +2378,11 @@ function(input, output, session) {
     }
     else if(input$var == "Gardens")
     {
-<<<<<<< HEAD
-      output$AgCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong(i18n()$t("N/A"))))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(strong(i18n()$t("Financial Planning"))),
-                h4(strong(i18n()$t("NAF Academy of Finance"))))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(strong(i18n()$t("Animal Systems"))),
-                h4(em(i18n()$t("- Certified Veterinarian Assistant"))),
-                h4(strong(i18n()$t("Biotechnology and Agriscience Research (Local Pathway)"))),
-                h4(strong(i18n()$t("Plant Systems"))))
-        }
-      })
-      output$BusCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong(i18n()$t("Accounting"))),
-                h4(strong(i18n()$t("Entrepreneurship"))),
-                h4(strong(i18n()$t("Financial Planning"))),
-                h4(strong(i18n()$t("Sports & Entertainment Marketing"))))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(strong(i18n()$t("Entrepreneurship"))),
-                h4(strong(i18n()$t("Sports & Entertainment Marketing"))),
-                h4(strong(i18n()$t("Travel & Tourism"))))
-        }
-      })
-      output$CompCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong(i18n()$t("Adobe Academy"))),
-                h4(em(i18n()$t("- Adobe Illustrator"))),
-                h4(em(i18n()$t("- Adobe Photoshop"))),
-                h4(strong(i18n()$t("AP Computer Science"))),
-                h4(strong(i18n()$t("Digital Design and Animation"))),
-                h4(strong(i18n()$t("Autodesk 3DS Max"))),
-                h4(strong(i18n()$t("Game Art Design"))))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(strong(i18n()$t("Digital Design and Animation"))),
-                h4(em(i18n()$t("- Autodesk 3DS Max"))),
-                h4(strong(i18n()$t("NAF Academy of Information Technology"))),
-                h4(strong(i18n()$t("Python Programming"))),
-                h4(em(i18n()$t("- MTA 98-381 Introduction to Programming Using Python"))),
-                h4(em(i18n()$t("- PCAP Python Certified Associate"))))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-      })
-      output$FamCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong(i18n()$t("Early Childhood Development & Services"))),
-                h4(strong(i18n()$t("Food & Nutrition"))))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(strong(i18n()$t("Early Childhood Development & Services"))),
-                h4(strong(i18n()$t("Interior Design"))))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(strong(i18n()$t("Culinary Arts Applications"))),
-                h4(em(i18n()$t("- Pre-Professional Assessment and Certification in Culinary Arts"))),
-                h4(strong(i18n()$t("Food & Nutrition"))))
-        }
-      })
-      output$HealthCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-      })
-      output$TradeCTE <- renderText({
-        if(input$cte_school == "Riverside High"){
-          paste(h4(strong(i18n()$t("PLTW Engineering"))),
-                h4(strong(i18n()$t("Technology Engineering and Design"))))
-        }
-        else if(input$cte_school == "Hillside High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-        else if(input$cte_school == "Jordan High"){
-          paste(h4(i18n()$t("N/A")))
-        }
-      })
-    })
-    
-    
-    #Sports - Static
-    observeEvent(i18n(), 
-                 {
-      output$fallsports <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(i18n()$t("Boy's Cross Country")),
-                h4(i18n()$t("Boy’s Soccer")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Volleyball")),
-                h4(i18n()$t("Girl's Cross Country"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(i18n()$t("Boy's Cross Country")),
-                h4(i18n()$t("Girl's Cross Country")),
-                h4(i18n()$t("Boy’s Soccer")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Volleyball"))
-          )
-        }
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(i18n()$t("Boy's Cross Country")),
-                h4(i18n()$t("Boy’s Soccer")),
-                h4(i18n()$t("Volleyball"))
-          )
-        }
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Field Hockey")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("JV Football")),
-                h4(i18n()$t("Men’s JV Soccer")),
-                h4(i18n()$t("Men’s Soccer")),
-                h4(i18n()$t("Women's Golf")),
-                h4(i18n()$t("Women's JV Volleyball")),
-                h4(i18n()$t("Women's Tennis")),
-                h4(i18n()$t("Women's Volleyball"))
-          )
-        }
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Field Hockey")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("JV Football")),
-                h4(i18n()$t("Men’s JV Soccer")),
-                h4(i18n()$t("Men’s Soccer")),
-                h4(i18n()$t("Men's Cross Country")),
-                h4(i18n()$t("Women's Golf")),
-                h4(i18n()$t("Women's Volleyball")),
-                h4(i18n()$t("Women's JV Volleyball")),
-                h4(i18n()$t("Women's Tennis")),
-                h4(i18n()$t("Women's Track"))
-          )
-        }
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Field Hockey")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("JV Football")),
-                h4(i18n()$t("Men’s JV Soccer")),
-                h4(i18n()$t("Men’s Soccer")),
-                h4(i18n()$t("Women's Golf")),
-                h4(i18n()$t("Women's JV Volleyball")),
-                h4(i18n()$t("Women's Volleyball")),
-                h4(i18n()$t("Women's Tennis"))
-          )
-        }
-      })
-      output$wintersports <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(i18n()$t("Boy’s Basketball")),
-                h4(i18n()$t("Girl’s Basketball")),
-                h4(i18n()$t("Wrestling"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(i18n()$t("Boy’s Basketball")),
-                h4(i18n()$t("Girl’s Basketball"))
-          )
-        }
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(i18n()$t("Boy’s Basketball")),
-                h4(i18n()$t("Girl’s Basketball"))
-          )
-        }
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(i18n()$t("Gymnastics")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Men's Basketball")),
-                h4(i18n()$t("Men's JV Basketball")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Women's Basketball")),
-                h4(i18n()$t("Women's JV Basketball")),
-                h4(i18n()$t("Wrestling"))
-          )
-        }
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(i18n()$t("Men's Basketball")),
-                h4(i18n()$t("Men's JV Basketball")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Women's Basketball")),
-                h4(i18n()$t("Women's JV Basketball")),
-                h4(i18n()$t("Wrestling")),
-                h4(i18n()$t("Indoor Track"))
-          )
-        }
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(i18n()$t("Gymnastics")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Men's Basketball")),
-                h4(i18n()$t("Men's JV Basketball")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Women's Basketball")),
-                h4(i18n()$t("Women's JV Basketball")),
-                h4(i18n()$t("Wrestling"))
-          )
-        } 
-      })
-      output$springsports <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Girl’s Soccer")),
-                h4(i18n()$t("Girl’s Track")),
-                h4(i18n()$t("Boy’s Track")),
-                h4(i18n()$t("Softball"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Boy’s Track")),
-                h4(i18n()$t("Girl’s Soccer")),
-                h4(i18n()$t("Girl’s Track")),
-                h4(i18n()$t("Softball"))
-          )
-        }
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(i18n()$t("Boy’s Track")),
-                h4(i18n()$t("Girl’s Track")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Girl’s Soccer")),
-                h4(i18n()$t("Softball"))
-          )
-        }
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(i18n()$t("Baseball")),
-                h4(i18n()$t("JV Baseball")),
-                h4(i18n()$t("JV Softball")),
-                h4(i18n()$t("Men's Golf")),
-                h4(i18n()$t("Men's JV Lacrosse")),
-                h4(i18n()$t("Men's Lacrosse")),
-                h4(i18n()$t("Men's Tennis")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("JV Women's Soccer")),
-                h4(i18n()$t("Women's Lacrosse")),
-                h4(i18n()$t("Women's Soccer"))
-          )
-        }
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(i18n()$t("Baseball")),
-                h4(i18n()$t("JV Baseball")),
-                h4(i18n()$t("JV Softball")),
-                h4(i18n()$t("Men's Golf")),
-                h4(i18n()$t("Men's JV Lacrosse")),
-                h4(i18n()$t("Men's Lacrosse")),
-                h4(i18n()$t("Men's Tennis")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("Women's JV Lacrosse")),
-                h4(i18n()$t("Women's Lacrosse")),
-                h4(i18n()$t("Women's JV Soccer")),
-                h4(i18n()$t("Women's Soccer"))
-          )
-        }
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(i18n()$t("Baseball")),
-                h4(i18n()$t("JV Baseball")),
-                h4(i18n()$t("JV Softball")),
-                h4(i18n()$t("Men's Golf")),
-                h4(i18n()$t("Men's JV Lacrosse")),
-                h4(i18n()$t("Men's Lacrosse")),
-                h4(i18n()$t("Men's Tennis")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("Women's JV Lacrosse")),
-                h4(i18n()$t("Women's JV Soccer")),
-                h4(i18n()$t("Women's Lacrosse")),
-                h4(i18n()$t("Women's Soccer"))
-          )
-        }
-      })
-
-      output$male_sports_list <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Soccer")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Basketball")),
-                h4(i18n()$t("Wrestling")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track"))
-          )
-        }
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Soccer")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Basketball")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track"))
-          )
-        }
-        
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Soccer")),
-                h4(i18n()$t("Basketball")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track"))
-          )
-        }
-        
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Wrestling")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track and Field"))
-          )
-        }
-        
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Wrestling")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Gymnastics"))
-          )
-        }
-        
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Football")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Wrestling")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Gymnastics")),
-                h4(i18n()$t("Baseball"))
-          )
-        }
-
-      })
-      
-      output$female_sports_list <- renderText({
-        if(input$school_sports == "Brogden Middle"){
-          paste(h4(i18n()$t("Volleyball")),
-                h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Basketball")),
-                h4(i18n()$t("Soccer")),
-                h4(i18n()$t("Track")),
-                h4(i18n()$t("Softball"))
-          )
-        }
-        
-        else if(input$school_sports == "Lowes Grove Middle"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Volleyball")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Basketball")),
-                h4(i18n()$t("Soccer")),
-                h4(i18n()$t("Track"))
-          )
-        }
-        
-        else if(input$school_sports == "Lakewood Montesorri Middle"){
-          paste(h4(i18n()$t("Volleyball")),
-                h4(i18n()$t("Soccer")),
-                h4(i18n()$t("Basketball")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Track"))
-          )
-        }
-        
-        else if(input$school_sports == "Hillside High"){
-          paste(h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Field Hockey")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Track and Field"))
-          )
-        }
-        
-        else if(input$school_sports == "Jordan High"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Field Hockey")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Wrestling")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Baseball")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Gymnastics"))
-          )
-        }
-        
-        else if(input$school_sports == "Riverside High"){
-          paste(h4(i18n()$t("Cross Country")),
-                h4(i18n()$t("Field Hockey")),
-                h4(i18n()$t("Softball")),
-                h4(i18n()$t("Swimming")),
-                h4(i18n()$t("Indoor Track")),
-                h4(i18n()$t("Track and Field")),
-                h4(i18n()$t("Cheerleading")),
-                h4(i18n()$t("Gymnastics"))
-          )
-        }
-        
-      })
-      
-      output$sports_context <- renderText({
-        paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
-              a(i18n()$t("CDC guidelines."), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
-              i18n()$t("The Office of Disease Prevention and Health Promotion"), 
-              i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
-              a(i18n()$t("2018 Physical Activity Guidelines for Americans Report"), href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
-              i18n()$t(". Visit"),
-              a(i18n()$t("DPS’s Athletics webpage"), href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
-              i18n()$t("for more information."))
-      })
-
-    })
-    
-    #Sports - dynamic
-    # {
-    #   output$fallsports <- renderTable({
-    #     sports <- subset(sports_22, season == 'fall' & schoolname == input$school_sports)
-    #     sports$gender[sports$gender == 'All'] <- ''
-    #     sports <- sports%>%
-    #       unite(sport_name, gender, sport, sep=" ")
-    #     sports$sport_name <- trimws(sports$sport_name)
-    #     sports %>% select(sport_name)
-    #   },colnames = FALSE, align = 'c', spacing = 'l')
-    # 
-    #   output$wintersports <- renderTable({
-    #     sports <- subset(sports_22, season == 'winter' & schoolname == input$school_sports)
-    #     sports$gender[sports$gender == 'All'] <- ''
-    #     sports <- sports%>%
-    #       unite(sport_name, gender, sport, sep=" ")
-    #     sports$sport_name <- trimws(sports$sport_name)
-    #     sports %>% select(sport_name)
-    #   }, colnames = FALSE, align = 'c', spacing = 'l')
-    # 
-    #   output$springsports <- renderTable({
-    #     sports <- subset(sports_22, season == 'spring' & schoolname == input$school_sports)
-    #     sports$gender[sports$gender == 'All'] <- ''
-    #     sports <- sports%>%
-    #       unite(sport_name, gender, sport, sep=" ")
-    #     sports$sport_name <- trimws(sports$sport_name)
-    #     sports %>% select(sport_name)
-    #   }, colnames = FALSE, align = 'c', spacing = 'l')
-    # 
-    #   output$male_sports_list <- renderTable ({
-    #     sports <- sports_22
-    #     sports <- subset(sports, (gender == 'All' | gender == "Men's" | gender == "Boy's") & schoolname == input$school_sports)
-    #     sports <- subset(sports, !duplicated(sport))
-    #     sports %>% select(sport)
-    #   }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
-    # 
-    #   output$female_sports_list <- renderTable ({
-    #     sports <- sports_22
-    #     sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Girl's") & schoolname == input$school_sports)
-    #     sports <- subset(sports, !duplicated(sport))
-    #     sports %>% select(sport)
-    #   }, sanitize.text.function = function(x) x, align = 'c', colnames = FALSE)
-    # 
-    #   output$sports_context <- renderText({
-    #       paste("DPS provides a wide range of sports across middle and high schools to promote teambuilding,
-    #        responsibility, discipline, and leadership. Participation in school sports provides students with the
-    #        daily exercise requirements suggested in the ",a("CDC guidelines", href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
-    #             "The Office of Disease Prevention and Health Promotion concluded that 'higher amounts of physi
-    #              cal activity are associated with more favorable status for multiple health indicators, including
-    #             cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,'
-    #             in their",
-    #             a("2018 Physical Activity Guidelines for Americans Report", href = "https://health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines/scientific-report"),
-    #             "Visit ",
-    #             a("DPS’s Athletics webpage", href = " https://www.dpsathletics.com/page/show/5921314-dps-athletics"),
-    #             "for more information.")
-    #     })
-    # }
-
-
-    #Arts Programs
-    observeEvent(i18n(),
-=======
       temp_df <- gardens[grepl(input$zone, gardens$school_zones), ]
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("NAME","ADDRESS","URL")]
     }
     else if(input$var == "Bus Stops")
->>>>>>> main
     {
       temp_df <- bus[grepl(input$zone, bus$school_zones), ]
       temp_df[c("STOP_NAME")]
@@ -4435,5 +3934,3 @@ function(input, output, session) {
                }) 
   
 }
-
-
