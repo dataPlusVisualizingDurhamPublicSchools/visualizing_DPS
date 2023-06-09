@@ -15,7 +15,7 @@ library(geojsonio)
 #sports tab
 
 #for the icons
-sports <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+sports <- read.csv("./data/2022/school_stats_data/sports.csv")
 sports_types <- as.factor(sports$sport)
 View(sports_types)
 sports$icon = ""
@@ -51,7 +51,7 @@ sports <- subset(sports, (gender == 'All' | gender == "Women's" | gender == "Gir
 View(subset(sports, !duplicated(icon)))
 
 #for the tables
-sports <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+sports <- read.csv("./data/2022/school_stats_data/sports.csv")
 sports$gender[sports$gender == 'All'] <- ''
 sports <- sports%>%
   unite(sport_name, gender, sport, sep=" ")
@@ -59,8 +59,8 @@ sports$sport_name <- trimws(sports$sport_name)
 sports %>% select(sport_name)
 View(sports)
 
-parks <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
-rec <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
+parks <- read.csv("./data/2021/spatial_data/renamed_Parks.csv")
+rec <- read.csv("./data/2021/spatial_data/renamed_Recreation Centers.csv")
 
 
 
@@ -78,9 +78,9 @@ View(df2[c("NAME","ADDRESS","URL")])
 
 
 #percentage bar chart
-counts <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts.csv", skip = 1)
-counts_grouped <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts grouped.csv")
-pop<- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/population.csv")
+counts <- read.csv("./data/2021/spatial_data/counts.csv", skip = 1)
+counts_grouped <- read.csv("./data/2021/spatial_data/counts grouped.csv")
+pop<- read.csv("./data/2021/school_stats_data/population.csv")
 
 #counts_grouped$varname <- as.factor(counts_grouped$varname)
 
@@ -176,7 +176,7 @@ ggplotly(p3)
 #CHOROPLETH MAP WORKING W GEOJSON
 library(geojsonio)
 library(dplyr)
-durham_choro <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
+durham_choro <- geojsonio::geojson_read("./data/2021/map_data/All.geojson", what = "sp")
 data.frame(durham_choro)
 durham_choro@data <- merge(durham_choro@data, counts_grouped, by = 'name', all = TRUE)
 durham_choro@data$varname <- as.factor(durham_choro@data$varname)
@@ -210,7 +210,7 @@ m
 
 
 #fixing racial demographics
-all_race <- read_excel("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
+all_race <- read_excel("./data/2021/school_stats_data/all race 1.xlsx")
 View(all_race)
 
 cbPalette <- c("#FFC0CB", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
@@ -223,7 +223,7 @@ ggplot(all_race, aes(fill=race, y=number, x=as.factor(school))) +
   theme(plot.title = element_text(hjust = 0.5))
 
 #attempt 2
-durham <- geojsonio::geojson_read("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
+durham <- geojsonio::geojson_read("./data/2021/map_data/All.geojson", what = "sp")
 durham@data <- merge(durham_choro@data, counts_grouped, by = 'name')
 
 
@@ -239,7 +239,7 @@ leaflet() %>%
 
 
 #checklist table for the arts programs tab
-schoolstats22 <- read.csv("/Users/sreyagnanavel/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
+schoolstats22 <- read.csv("./data/2022/school_stats_data/School Statistics 2022.csv")
 schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
 schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
 schoolstats$VisualArts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
