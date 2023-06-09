@@ -347,7 +347,6 @@ body <- {dashboardBody(
                  #Box Plot Outputs
                  tabPanel(i18n$t("Elementary School"),
                           box(width = 12,
-<<<<<<< HEAD
                               solidHeader = TRUE,
                               title = strong(i18n$t("Our Partners")),
                               column(class = 'text-center', width = 2,
@@ -650,7 +649,6 @@ body <- {dashboardBody(
                                     title = strong(i18n$t("Context & Resources")),
                                     htmlOutput("ms_resources")
                                 )
-=======
                               background = "navy", 
                               solidHeader = TRUE, 
                               title = strong(i18n$t("Elementary School Charts")),
@@ -663,7 +661,6 @@ body <- {dashboardBody(
                                  ", ", a("Durham Public Schools", href="https://dpsnc.net"),
                                  i18n$t(", and"), a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
                                  "."
->>>>>>> main
                               )),
                           fluidRow(
                             #Drop Down Widget for Box Plots
