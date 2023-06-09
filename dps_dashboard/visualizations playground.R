@@ -248,6 +248,4 @@ schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class
 schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, VisualArts, Theatre, Dance)
 
 #View(reshape2::dcast(schoolstats, SCHOOL_NAME ~ ARTS_PROGRAMS))
-
 View(schoolstats)
-
