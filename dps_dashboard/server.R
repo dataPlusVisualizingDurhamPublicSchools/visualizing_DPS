@@ -70,6 +70,10 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   ES_racecomp_23 <- read_excel("./data/2023/school_stats_data/ES_racecomp_23.xlsx")
   ES_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/ES_poc_per_school_23.xlsx")
   ES_all_race23 <- read_excel("./data/2023/school_stats_data/ES_all race 2023.xlsx")
+  HS_stats_23 <- read.csv("./data/2023/school_stats_data/HS_stats_23.csv")
+  HS_racecomp_23 <- read_excel("./data/2023/school_stats_data/HS_racecomp_23.xlsx")
+  HS_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/HS_poc_per_school_23.xlsx")
+  HS_all_race23 <- read_excel("./data/2023/school_stats_data/HS_all race 2023.xlsx")
   
   HS_stats_23 <- read.csv("./data/2023/school_stats_data/HS_stats_23.csv")
   HS_racecomp_23 <- read_excel("./data/2023/school_stats_data/HS_racecomp_23.xlsx")
