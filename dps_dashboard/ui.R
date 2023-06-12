@@ -376,7 +376,7 @@ body <- {dashboardBody(
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
                                 selectInput("es_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
-                                            choices = list("Summer 2021", "Summer 2022")
+                                            choices = list("Summer 2021", "Summer 2022", "Summer 2023")
                                 )
                             ),
                             box(width = 6,
@@ -416,7 +416,7 @@ body <- {dashboardBody(
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
                                 selectInput("ms_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
-                                            choices = list("Summer 2022")
+                                            choices = list("Summer 2022", "Summer 2023")
                                 )
                             ),
                             box(width = 6,
@@ -455,7 +455,7 @@ body <- {dashboardBody(
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
                                 selectInput("hs_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
-                                            choices = list("Summer 2021", "Summer 2022")
+                                            choices = list("Summer 2021", "Summer 2022", "Summer 2023")
                                 )
                             ),
                             box(width = 6,
