@@ -113,6 +113,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   brogden <- geojsonio::geojson_read("./data/2021/map_data/Brogden Middle.geojson", what = "sp")
   lowesgr <- geojsonio::geojson_read("./data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
   riverside <- geojsonio::geojson_read("./data/2021/map_data/Riverside High.geojson", what = "sp")
+  enovalley <- geojsonio::geojson_read("./data/2023/map_data/Eno Valley Elementary.geojson", what = "sp")
 }
 
 # Load/Rename Spatial Data
