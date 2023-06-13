@@ -540,17 +540,22 @@ body <- {dashboardBody(
                tabBox(
                  id = "tabset3", width = "auto", 
                  selectInput("school_sports", em(i18n$t("Choose a school to view the Sports available.")), 
-                             choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
-                                            "Hillside High",
-                                            "Jordan High",
-                                            "Riverside High", 
+                             choices = list("Brogden Middle", 
+                                            "Lowes Grove Middle", 
+                                            "Lakewood Montesorri Middle",
                                             "Sherwood Githens Middle", 
                                             "Lucas Middle", 
                                             "Carrington Middle", 
                                             "Neal Middle", 
                                             "Rogers Herr Middle", 
                                             "Shepard Middle", 
-                                            "Durham School of the Arts Middle")
+                                            "Durham School of the Arts Middle",
+                                            "Hillside High",
+                                            "Durham School of Technology",
+                                            "Jordan High",
+                                            "Riverside High",
+                                            "Northern High",
+                                            "Southern High")
                  ),
                  fluidRow(
                    box(width = 4,

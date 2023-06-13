@@ -22,7 +22,7 @@ sports$icon = ""
 sports$icon[sports$sport == "Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
 sports$icon[sports$sport == "JV Baseball"] <-  '<i class="fab fa-jira fa-2x"></i>'
 sports$icon[sports$sport == "Cross Country"] <- '<i class="fas fa-shoe-prints fa-2x"></i>'
-sports$icon[sports$sport == "Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
+sports$icon[sports$sport == "Varisty Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
 sports$icon[sports$sport == "JV Soccer"] <- '<i class="fas fa-futbol fa-2x"></i>'
 sports$icon[sports$sport == "Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
 sports$icon[sports$sport == "JV Football"] <-'<i class="fas fa-football-ball fa-2x"></i>'
