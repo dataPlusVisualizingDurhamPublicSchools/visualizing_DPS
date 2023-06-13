@@ -546,7 +546,11 @@ body <- {dashboardBody(
                                             "Riverside High", 
                                             "Sherwood Githens Middle", 
                                             "Lucas Middle", 
-                                            "Carrington Middle")
+                                            "Carrington Middle", 
+                                            "Neal Middle", 
+                                            "Rogers Herr Middle", 
+                                            "Shepard Middle", 
+                                            "Durham School of the Arts Middle")
                  ),
                  fluidRow(
                    box(width = 4,
