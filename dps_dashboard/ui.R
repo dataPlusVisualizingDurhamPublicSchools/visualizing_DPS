@@ -23,7 +23,11 @@ library(shiny.i18n)
 library(DT)
 
 
+<<<<<<< HEAD
 i18n <- Translator$new(translation_json_path = "/Users/unzilababar/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
+=======
+i18n <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
+>>>>>>> main
 i18n$set_translation_language("English")
 
 
@@ -376,7 +380,11 @@ body <- {dashboardBody(
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
                                 selectInput("es_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+<<<<<<< HEAD
                                             choices = list("Summer 2021", "Summer 2022")
+=======
+                                            choices = list("Summer 2021", "Summer 2022", "Summer 2023")
+>>>>>>> main
                                 )
                             ),
                             box(width = 6,
@@ -400,7 +408,11 @@ body <- {dashboardBody(
                                                           i18n$t(", and"), a(" National Center for Education Statistics (NCES)", href="https://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&DistrictID=3701260"),
                                                           "."
                                                        )),
+<<<<<<< HEAD
                           fluidRow(
+=======
+                          fluidRow( 
+>>>>>>> main
                             #Drop Down Widget for Box Plots
                             box(width = 6,
                                 solidHeader = TRUE,
@@ -416,7 +428,11 @@ body <- {dashboardBody(
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
                                 selectInput("ms_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+<<<<<<< HEAD
                                             choices = list("Summer 2022")
+=======
+                                            choices = list("Summer 2022", "Summer 2023")
+>>>>>>> main
                                 )
                             ),
                             box(width = 6,
@@ -455,7 +471,11 @@ body <- {dashboardBody(
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
                                 selectInput("hs_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+<<<<<<< HEAD
                                             choices = list("Summer 2021", "Summer 2022")
+=======
+                                            choices = list("Summer 2021", "Summer 2022", "Summer 2023")
+>>>>>>> main
                                 )
                             ),
                             box(width = 6,
@@ -543,7 +563,18 @@ body <- {dashboardBody(
                              choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
                                             "Hillside High",
                                             "Jordan High",
+<<<<<<< HEAD
                                             "Riverside High")
+=======
+                                            "Riverside High", 
+                                            "Sherwood Githens Middle", 
+                                            "Lucas Middle", 
+                                            "Carrington Middle", 
+                                            "Neal Middle", 
+                                            "Rogers Herr Middle", 
+                                            "Shepard Middle", 
+                                            "Durham School of the Arts Middle")
+>>>>>>> main
                  ),
                  fluidRow(
                    box(width = 4,

@@ -1,3 +1,4 @@
+
 #
 # This is the server logic of a Shiny web application. You can run the
 # application by clicking 'Run App' above.
@@ -28,94 +29,116 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 
 # Load/Rename School Stats Data
 {
-  Race_SCHOOL_ONLY <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
-  race <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/race.xlsx")
-  ES_racecomp_21 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_racecomp_21.xlsx")
-  HS_racecomp_21 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_racecomp_21.xlsx")
-  race22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/race2022.xlsx")
-  ES_racecomp_22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_racecomp_22.xlsx")
-  MS_racecomp_22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_racecomp_22.xlsx")
-  HS_racecomp_22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_racecomp_22.xlsx")
-  race_diff <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/race diff.xlsx")
-  poc_per_school <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/poc per school.xlsx")
-  ES_poc_per_school_21 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_poc_per_school_21.xlsx")
-  HS_poc_per_school_21 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_poc_per_school_21.xlsx")
-  poc_per_school22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/poc per school22.xlsx")
-  ES_poc_per_school_22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_poc_per_school_22.xlsx")
-  MS_poc_per_school_22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_poc_per_school_22.xlsx")
-  HS_poc_per_school_22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_poc_per_school_22.xlsx")
-  funding <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/funding.xlsx")
-  all_race <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/all race 1.xlsx")
-  ES_all_race <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_all race_2021.xlsx")
-  HS_all_race <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_all race_2021.xlsx")
-  all_race22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/all race 2022.xlsx")
-  ES_all_race22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_all race 2022.xlsx")
-  HS_all_race22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_all race 2022.xlsx")
-  MS_all_race22 <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_all race 2022.xlsx")
+  Race_SCHOOL_ONLY <- read_excel("./data/2021/school_stats_data/Race SCHOOL ONLY.xlsx")
+  race <- read_excel("./data/2021/school_stats_data/race.xlsx")
+  ES_racecomp_21 <- read_excel("./data/2021/school_stats_data/ES_racecomp_21.xlsx")
+  HS_racecomp_21 <- read_excel("./data/2021/school_stats_data/HS_racecomp_21.xlsx")
+  race22 <- read_excel("./data/2022/school_stats_data/race2022.xlsx")
+  ES_racecomp_22 <- read_excel("./data/2022/school_stats_data/ES_racecomp_22.xlsx")
+  MS_racecomp_22 <- read_excel("./data/2022/school_stats_data/MS_racecomp_22.xlsx")
+  HS_racecomp_22 <- read_excel("./data/2022/school_stats_data/HS_racecomp_22.xlsx")
+  race_diff <- read_excel("./data/2021/school_stats_data/race diff.xlsx")
+  poc_per_school <- read_excel("./data/2021/school_stats_data/poc per school.xlsx")
+  ES_poc_per_school_21 <- read_excel("./data/2021/school_stats_data/ES_poc_per_school_21.xlsx")
+  HS_poc_per_school_21 <- read_excel("./data/2021/school_stats_data/HS_poc_per_school_21.xlsx")
+  poc_per_school22 <- read_excel("./data/2022/school_stats_data/poc per school22.xlsx")
+  ES_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/ES_poc_per_school_22.xlsx")
+  MS_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/MS_poc_per_school_22.xlsx")
+  HS_poc_per_school_22 <- read_excel("./data/2022/school_stats_data/HS_poc_per_school_22.xlsx")
+  funding <- read_excel("./data/2021/school_stats_data/funding.xlsx")
+  all_race <- read_excel("./data/2021/school_stats_data/all race 1.xlsx")
+  ES_all_race <- read_excel("./data/2021/school_stats_data/ES_all race_2021.xlsx")
+  HS_all_race <- read_excel("./data/2021/school_stats_data/HS_all race_2021.xlsx")
+  all_race22 <- read_excel("./data/2022/school_stats_data/all race 2022.xlsx")
+  ES_all_race22 <- read_excel("./data/2022/school_stats_data/ES_all race 2022.xlsx")
+  HS_all_race22 <- read_excel("./data/2022/school_stats_data/HS_all race 2022.xlsx")
+  MS_all_race22 <- read_excel("./data/2022/school_stats_data/MS_all race 2022.xlsx")
   
   
-  schoolstats <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/Data + School Info - School Statistics.csv")
-  schoolstats22 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/School Statistics 2022.csv")
-  ES_stats_21 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/ES_stats_21.csv")
-  MS_stats_21 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/MS_stats_21.csv")
-  HS_stats_21 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/HS_stats_21.csv")
-  ES_stats_22 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/ES_stats_22.csv")
-  MS_stats_22 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/MS_stats_22.csv")
-  HS_stats_22 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/HS_stats_22.csv")
+  schoolstats <- read.csv("./data/2021/school_stats_data/Data + School Info - School Statistics.csv")
+  schoolstats22 <- read.csv("./data/2022/school_stats_data/School Statistics 2022.csv")
+  ES_stats_21 <- read.csv("./data/2021/school_stats_data/ES_stats_21.csv")
+  MS_stats_21 <- read.csv("./data/2021/school_stats_data/MS_stats_21.csv")
+  HS_stats_21 <- read.csv("./data/2021/school_stats_data/HS_stats_21.csv")
+  ES_stats_22 <- read.csv("./data/2022/school_stats_data/ES_stats_22.csv")
+  MS_stats_22 <- read.csv("./data/2022/school_stats_data/MS_stats_22.csv")
+  HS_stats_22 <- read.csv("./data/2022/school_stats_data/HS_stats_22.csv")
   
-  APCourses <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/AP Courses.xlsx")
+  APCourses <- read_excel("./data/2022/AP Courses.xlsx")
+  
+  #data for 2023 summer 
+  ES_stats_23 <- read.csv("./data/2023/school_stats_data/ES_stats_23.csv")
+  ES_racecomp_23 <- read_excel("./data/2023/school_stats_data/ES_racecomp_23.xlsx")
+  ES_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/ES_poc_per_school_23.xlsx")
+  ES_all_race23 <- read_excel("./data/2023/school_stats_data/ES_all race 2023.xlsx")
+  HS_stats_23 <- read.csv("./data/2023/school_stats_data/HS_stats_23.csv")
+  HS_racecomp_23 <- read_excel("./data/2023/school_stats_data/HS_racecomp_23.xlsx")
+  HS_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/HS_poc_per_school_23.xlsx")
+  HS_all_race23 <- read_excel("./data/2023/school_stats_data/HS_all race 2023.xlsx")
+  
+  MS_stats_23 <- read.csv("./data/2023/school_stats_data/MS_stats_23.csv")
+  MS_racecomp_23 <- read_excel("./data/2023/school_stats_data/MS_racecomp_23.xlsx")
+  MS_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/MS_poc_per_school_23.xlsx")
+  MS_all_race23 <- read_excel("./data/2023/school_stats_data/MS_all race 2023.xlsx")
+  
+  
+  HS_stats_23 <- read.csv("./data/2023/school_stats_data/HS_stats_23.csv")
+  HS_racecomp_23 <- read_excel("./data/2023/school_stats_data/HS_racecomp_23.xlsx")
+  HS_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/HS_poc_per_school_23.xlsx")
+  HS_all_race23 <- read_excel("./data/2023/school_stats_data/HS_all race 2023.xlsx")
   
   
   #data for the data insights tab
-  counts_2021 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts.csv", skip = 1)
-  counts_grouped_2021 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/counts grouped.csv")
-  pop<- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/school_stats_data/population.csv")
+  counts_2021 <- read.csv("./data/2021/spatial_data/counts.csv", skip = 1)
+  counts_grouped_2021 <- read.csv("./data/2021/spatial_data/counts grouped.csv")
+  pop<- read.csv("./data/2021/school_stats_data/population.csv")
   
-  CTECourses <- read_excel("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/CTE Courses.xlsx")
-  sports_22 <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2022/school_stats_data/sports.csv")
+  CTECourses <- read_excel("./data/2022/CTE Courses.xlsx")
+  sports_22 <- read.csv("./data/2022/school_stats_data/sports.csv")
   
   
 }
 
 # Load/Rename Map Data
 {
-  durham <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/All.geojson", what = "sp")
-  cc <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
-  eastway <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Eastway Elementary.geojson", what = "sp")
-  ek <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
-  fayetteville <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
-  forest <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Forest View Elementary.geojson", what = "sp")
-  hillside <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Hillside High.geojson", what = "sp")
-  jordan <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Jordan High.geojson", what = "sp")
-  lakewoodES <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
-  parkwood <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
-  southwest <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Southwest Elementary.geojson", what = "sp")
-  clubblv <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Club Boulevard Elementary.geojson", what = "sp")
-  lakewoodMS <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Lakewood Middle.geojson", what = "sp")
-  hillandale <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
-  brogden <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Brogden Middle.geojson", what = "sp")
-  lowesgr <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
-  riverside <- geojsonio::geojson_read("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/map_data/Riverside High.geojson", what = "sp")
+  durham <- geojsonio::geojson_read("./data/2021/map_data/All.geojson", what = "sp")
+  cc <- geojsonio::geojson_read("./data/2021/map_data/C.C. Spaulding Elementary.geojson", what = "sp")
+  eastway <- geojsonio::geojson_read("./data/2021/map_data/Eastway Elementary.geojson", what = "sp")
+  ek <- geojsonio::geojson_read("./data/2021/map_data/E.K. Powe Elementary.geojson", what = "sp")
+  fayetteville <- geojsonio::geojson_read("./data/2021/map_data/Fayetteville Street Elementary.geojson", what = "sp")
+  forest <- geojsonio::geojson_read("./data/2021/map_data/Forest View Elementary.geojson", what = "sp")
+  hillside <- geojsonio::geojson_read("./data/2021/map_data/Hillside High.geojson", what = "sp")
+  jordan <- geojsonio::geojson_read("./data/2021/map_data/Jordan High.geojson", what = "sp")
+  lakewoodES <- geojsonio::geojson_read("./data/2021/map_data/Lakewood Elementary.geojson", what = "sp")
+  parkwood <- geojsonio::geojson_read("./data/2021/map_data/Parkwood Elementary.geojson", what = "sp")
+  southwest <- geojsonio::geojson_read("./data/2021/map_data/Southwest Elementary.geojson", what = "sp")
+  clubblv <- geojsonio::geojson_read("./data/2021/map_data/Club Boulevard Elementary.geojson", what = "sp")
+  lakewoodMS <- geojsonio::geojson_read("./data/2021/map_data/Lakewood Middle.geojson", what = "sp")
+  hillandale <- geojsonio::geojson_read("./data/2021/map_data/Hillandale Elementary.geojson", what = "sp")
+  brogden <- geojsonio::geojson_read("./data/2021/map_data/Brogden Middle.geojson", what = "sp")
+  lowesgr <- geojsonio::geojson_read("./data/2021/map_data/Lowes Grove Middle.geojson", what = "sp")
+  riverside <- geojsonio::geojson_read("./data/2021/map_data/Riverside High.geojson", what = "sp")
+  enovalley <- geojsonio::geojson_read("./data/2023/map_data/Eno Valley Elementary.geojson", what = "sp")
 }
 
 # Load/Rename Spatial Data
 {
-  bus <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Bus Stops.csv")
-  childcare <- read_csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Childcare Centers.csv")
-  cultural <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
-  gardens <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Gardens.csv")
-  grocery <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Grocery Stores.csv") 
-  libraries <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Libraries.csv")
-  parks <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Parks.csv")
-  rec <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Recreation Centers.csv")
-  religious <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Religious Centers.csv")
-  schools <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/schools.csv")
-  hospitals <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
-  pantries <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Food Pantries.csv")
-  afterschool <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_After-School Care Programs.csv")
-  farmersmark <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Farmer's Markets.csv") 
-  commarts <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Arts.csv")
-  sports <- read.csv("/Users/unzilababar/visualizing_DPS/dps_dashboard/data/2021/spatial_data/renamed_Community Sports.csv")
+  bus <- read.csv("./data/2021/spatial_data/renamed_Bus Stops.csv")
+  childcare <- read_csv("./data/2021/spatial_data/renamed_Childcare Centers.csv")
+  cultural <- read.csv("./data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
+  gardens <- read.csv("./data/2021/spatial_data/renamed_Community Gardens.csv")
+  grocery <- read.csv("./data/2021/spatial_data/renamed_Grocery Stores.csv") 
+  libraries <- read.csv("./data/2021/spatial_data/renamed_Libraries.csv")
+  parks <- read.csv("./data/2021/spatial_data/renamed_Parks.csv")
+  rec <- read.csv("./data/2021/spatial_data/renamed_Recreation Centers.csv")
+  religious <- read.csv("./data/2021/spatial_data/renamed_Religious Centers.csv")
+  schools <- read.csv("./data/2021/schools.csv")
+  hospitals <- read.csv("./data/2021/spatial_data/renamed_Hospitals and Clinics.csv")
+  pantries <- read.csv("./data/2021/spatial_data/renamed_Food Pantries.csv")
+  afterschool <- read.csv("./data/2021/spatial_data/renamed_After-School Care Programs.csv")
+  farmersmark <- read.csv("./data/2021/spatial_data/renamed_Farmer's Markets.csv") 
+  commarts <- read.csv("./data/2021/spatial_data/renamed_Community Arts.csv")
+  sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
 }
 
 # Load/Rename Schools' Names
@@ -150,7 +173,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
   )
 }
 
-translator <- Translator$new(translation_json_path = "/Users/unzilababar/visualizing_DPS/dps_dashboard/data/Translations/fullTranslation.json")
+translator <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 
 function(input, output, session) {
   
@@ -655,6 +678,249 @@ function(input, output, session) {
           ggplotly(p, tooltip = c("text")) 
         } 
       }
+      else if(input$es_year == "Summer 2023"){
+        if(input$es_select == "Average Class Size") {
+          schoolstats22_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Bachelor Degree Rate") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$BACHELOR_DEG_RATE),], aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
+            geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$es_select == "BIPOC Students per School") {
+          p <- ggplot(ES_poc_per_school_23, aes(reorder(place, -number), number)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
+            geom_text(aes(label = number), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Enrollment") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
+          p <-  ggplot(schoolstats_summary[!is.na(schoolstats_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$es_select == "Experienced Teacher Ratio"){
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$EXP_TEACHER_RATIO),], aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 79%", yintercept = 79), color ='#01016D') +
+            coord_flip() +
+            theme(plot.title = element_text(hjust = 0.5)) +
+            theme_minimal() +
+            labs(title = i18n()$t("Experienced Teacher Ratio"), x = "School", y = "Experienced Teachers (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Free and Reduced Lunch"){
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = FREE_RED_PERCENT), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 51.65%", yintercept = 51.65), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Funding Per Pupil") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = FUNDING_PER_PUPIL), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = $11,672", yintercept = 11672), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "English as a Second Language (ESL) Student Enrollment") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = ESL_PERCENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "In-School Suspensions (ISS)") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = IN_SCHOOL_SUSP_PER_1000), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 188.92", yintercept = 93.69), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$es_select == "Median Age") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_AGE),], aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = MED_AGE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 35.2", yintercept = 35.2), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Med Age of School Zones"), x = "School Zone", y = "Median Age")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Median Homesale Price") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOMESALE_PRICE),], aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = $278,000", yintercept = 278000), color ='#01016D') +
+            geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$es_select == "Median Household Income") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$MED_HOUSEHOLD_INC),], aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            geom_hline(aes(text="Durham County Average = $58,190", yintercept = 58190), color ='#01016D') +
+            geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$es_select == "Racial Demographics") {
+          
+          p <- ggplot(ES_all_race23, aes(fill=race, y=number, x=as.factor(school))) + 
+            geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
+            coord_flip() +
+            theme_minimal() +
+            scale_fill_manual(values=cbPalette) +
+            theme(plot.title = element_text(hjust = 0.5))
+          ggplotly(p, tooltip = c("race", "number"))
+          
+        }
+        else if(input$es_select == "School and Zone BIPOC Comparison"){
+          p <- ggplot(ES_racecomp_23, aes(factor(place), number, fill = sorz)) + 
+            geom_bar(stat="identity", position = "dodge") + 
+            coord_flip() +
+            scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+          ggplotly(p, tooltip = c("text", "text1", "number", "place"))
+        }
+        else if(input$es_select == "Sidewalk Coverage") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$SIDEWALK_COVG),], aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
+            geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$es_select == "Students Per Device") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENTS_PER_DEVICE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = .8", yintercept = .8), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Student-Teacher Ratio, Elementary School") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENT_TEACHER_ELEM), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 20.5", yintercept = 20.5), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Elementary School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$es_select == "Students With Disabilities") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = DISABLED_PERCENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 13.3%", yintercept = 13.3), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+          
+        }
+        
+        else if(input$es_select == "Titles Per Student") {
+          schoolstats21_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+          p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        }
+        
+        else if(input$es_select == "WiFi Access Points Per Classroom") {
+          schoolstats21_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+          p <- ggplot(schoolstats21_summary[!is.na(schoolstats21_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        }
+      }
     })
     
     
@@ -706,7 +972,7 @@ function(input, output, session) {
             theme(plot.title = element_text(hjust = 1.5)) +
             labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
           ggplotly(p, tooltip = c("text"))
-        } 
+        }  
         else if(input$ms_select == "Enrollment") {
           schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
           p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
@@ -901,6 +1167,258 @@ function(input, output, session) {
         else if(input$ms_select == "WiFi Access Points Per Classroom") {
           schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
           p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        } 
+      } 
+      else if(input$ms_year == "Summer 2023"){
+        if(input$ms_select == "Average Class Size") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "Bachelor Degree Rate") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
+          p <- ggplot(schoolstats23_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
+            geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "BIPOC Students per School") {
+          p <- ggplot(MS_poc_per_school_23, aes(reorder(place, -number), number)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
+            geom_text(aes(label = number), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "CTE Course Enrollment Rate, Middle School") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = CTE_RATE), hjust = -.1, color = "black") +
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 56%", yintercept = 56), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "Enrollment") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
+          p <-  ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "English as a Second Language (ESL) Student Enrollment") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats23_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = ESL_PERCENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "Experienced Teacher Ratio"){
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
+          p <- ggplot(schoolstats23_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 82.4%", yintercept = 82.4), color ='#01016D') +
+            coord_flip() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            theme_minimal() +
+            labs(title = "Experienced Teacher Ratio", x = "School", y = "Experienced Teachers (%)")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "Free and Reduced Lunch"){
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = FREE_RED_PERCENT), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 51.65%", yintercept = 51.65), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "Funding Per Pupil") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = FUNDING_PER_PUPIL), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = $12,945", yintercept = 12945), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "In-School Suspensions (ISS)") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = IN_SCHOOL_SUSP_PER_1000), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 1.65", yintercept = 1.65), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "Median Age") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
+          p <- ggplot(schoolstats23_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = MED_AGE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 35.4", yintercept = 35.4), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Age of School Zones"), x = "School Zone", y = "Median Age")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "Median Homesale Price") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
+          p <- ggplot(schoolstats23_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = $290,500", yintercept = 290500), color ='#01016D') +
+            geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "Median Household Income") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
+          p <- ggplot(schoolstats23_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            geom_hline(aes(text="Durham County Average = $60,958", yintercept = 60958), color ='#01016D') +
+            geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "Racial Demographics") {
+          
+          p <- ggplot(MS_all_race23, aes(fill=race, y=number, x=as.factor(school))) + 
+            geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
+            coord_flip() +
+            theme_minimal() +
+            scale_fill_manual(values=cbPalette) +
+            theme(plot.title = element_text(hjust = 0.5))
+          ggplotly(p, tooltip = c("race", "number"))
+          
+        }
+        else if(input$ms_select == "School and Zone BIPOC Comparison"){
+          p <- ggplot(MS_racecomp_23, aes(factor(place), number, fill = sorz)) + 
+            geom_bar(stat="identity", position = "dodge") + 
+            coord_flip() +
+            scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+          ggplotly(p, tooltip = c("text", "text1", "number", "place"))
+        }
+        else if(input$ms_select == "Sidewalk Coverage") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
+          p <- ggplot(schoolstats23_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
+            geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$ms_select == "Students Per Device") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENTS_PER_DEVICE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = .79", yintercept = .79), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "Student-Teacher Ratio, Middle School") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_MS)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$STUDENT_TEACHER_MS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_MS), y=STUDENT_TEACHER_MS)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENT_TEACHER_MS), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 15.4", yintercept = 15.4), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Middle School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$ms_select == "Students With Disabilities") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = DISABLED_PERCENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        } 
+        else if(input$ms_select == "Titles Per Student") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        } 
+        else if(input$ms_select == "WiFi Access Points Per Classroom") {
+          schoolstats23_summary <- MS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+          p <- ggplot(schoolstats23_summary[!is.na(schoolstats23_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
             geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
             geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
             coord_flip() +
@@ -1478,7 +1996,282 @@ function(input, output, session) {
           ggplotly(p, tooltip = c("text")) 
         } 
       }
+      else if(input$hs_year == "Summer 2023"){
+        if(input$hs_select == "Average Class Size") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "Bachelor Degree Rate") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
+          p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 44.1%", yintercept = 44.1), color ='#01016D') +
+            geom_text(aes(label = BACHELOR_DEG_RATE), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Bachelor Degree Rate"), y = "Bachelor Degree Rate", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "BIPOC Students per School") {
+          p <- ggplot(HS_poc_per_school_23, aes(reorder(place, -number), number)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 80.7%", yintercept = 80.7), color ='#01016D') +
+            geom_text(aes(label = number), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Percentage of BIPOC Students") , x = "School", y = "BIPOC Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "CTE Course Enrollment Rate, High School") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(CTE_RATE)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$CTE_RATE),], aes(x=reorder(SCHOOL_NAME, -CTE_RATE), y=CTE_RATE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = CTE_RATE), hjust = -.1, color = "black") +
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 56%", yintercept = 56), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Enrollment") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
+          p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_text(aes(label = ENROLLMENT_NA, text = ENROLLMENT_NA), vjust = 0, color = "black")+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("School Enrollment") , x = "School", y = "Students")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "English as a Second Language (ESL) Student Enrollment") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(ESL_PERCENT)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ESL_PERCENT),], aes(x= reorder(SCHOOL_NAME, -ESL_PERCENT), ESL_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = ESL_PERCENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = 15.8%", yintercept = 15.8), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("ESL Student Enrollment"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Experienced Teacher Ratio"){
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(EXP_TEACHER_RATIO) 
+          p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -EXP_TEACHER_RATIO), y = EXP_TEACHER_RATIO)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = EXP_TEACHER_RATIO), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 82.4%", yintercept = 82.4), color ='#01016D') +
+            coord_flip() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            theme_minimal() +
+            labs(title = i18n()$t("Experienced Teacher Ratio"), x = "School", y = "Experienced Teachers (%)")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "Free and Reduced Lunch"){
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(FREE_RED_PERCENT)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FREE_RED_PERCENT),], aes(x=reorder(SCHOOL_NAME, -FREE_RED_PERCENT), y=FREE_RED_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = FREE_RED_PERCENT), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 51.65%", yintercept = 51.65), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Students Receiving Free and Reduced Lunch"), x = "School", y = "Students")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Funding Per Pupil") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(FUNDING_PER_PUPIL)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$FUNDING_PER_PUPIL),], aes(x=reorder(SCHOOL_NAME, -FUNDING_PER_PUPIL), y=FUNDING_PER_PUPIL)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = FUNDING_PER_PUPIL), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = $12,945", yintercept = 12945), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Funding Per Pupil"), x = "School", y = "Amount of Funding (USD)")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Graduation Rate") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(GRADUATION_RATE)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$GRADUATION_RATE),], aes(x=reorder(SCHOOL_NAME, -GRADUATION_RATE), y=GRADUATION_RATE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = GRADUATION_RATE), hjust = -.1, color = "black") +
+            geom_hline(aes(text="Durham County Average = 87%", yintercept = 87), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Graduation Rate"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "In-School Suspensions (ISS)") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(IN_SCHOOL_SUSP_PER_1000)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$IN_SCHOOL_SUSP_PER_1000),], aes(x=reorder(SCHOOL_NAME, -IN_SCHOOL_SUSP_PER_1000), y=IN_SCHOOL_SUSP_PER_1000)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = IN_SCHOOL_SUSP_PER_1000), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 1.65", yintercept = 1.65), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("In-School Suspensions"), x = "School", y = "Students Per 1000")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "Median Age") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_AGE)
+          p <- ggplot(schoolstats22_summary, aes(x=reorder(SCHOOL_NAME, -MED_AGE), y=MED_AGE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = MED_AGE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 35.4", yintercept = 35.4), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Age of School Zones"), x = "School Zone", y = "Median Age")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Median Homesale Price") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOMESALE_PRICE)
+          p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOMESALE_PRICE), MED_HOMESALE_PRICE)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            theme_minimal() +
+            geom_hline(aes(text="Durham County Average = $290,500", yintercept = 290500), color ='#01016D') +
+            geom_text(aes(label = MED_HOMESALE_PRICE), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Homesale Price"), y = "Median Homesale Price ($)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "Median Household Income") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(MED_HOUSEHOLD_INC)
+          p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -MED_HOUSEHOLD_INC), MED_HOUSEHOLD_INC)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            scale_y_continuous(labels=scales::dollar_format()) +
+            geom_hline(aes(text="Durham County Average = $60,958", yintercept = 60958), color ='#01016D') +
+            geom_text(aes(label = MED_HOUSEHOLD_INC), vjust = 0)+
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Median Household Income"), y = "Median Household Income ($)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "Racial Demographics") {
+          p <- ggplot(HS_all_race23, aes(fill=race, y=number, x=as.factor(school))) + 
+            geom_bar(position="fill", stat="identity")+ ggtitle(i18n()$t("Racial Demographics")) + ylab("Percentage") + xlab("School Name")+
+            coord_flip() +
+            theme_minimal() +
+            scale_fill_manual(values=cbPalette) +
+            theme(plot.title = element_text(hjust = 0.5))
+          ggplotly(p, tooltip = c("race", "number"))
+        }
+        else if(input$hs_select == "School and Zone BIPOC Comparison"){
+          p <- ggplot(HS_racecomp_23, aes(factor(place), number, fill = sorz)) + 
+            geom_bar(stat="identity", position = "dodge") + 
+            coord_flip() +
+            scale_fill_manual(values = c("#D1E3F4", "#76B9F0")) +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("BIPOC Comparison of Schools vs. School Zones") , x = "School/School Zone", y = "BIPOC Students (%)", fill=" ")
+          ggplotly(p, tooltip = c("text", "text1", "number", "place"))
+        }
+        else if(input$hs_select == "Sidewalk Coverage") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(SIDEWALK_COVG)
+          p <- ggplot(schoolstats22_summary, aes(reorder(SCHOOL_NAME, -SIDEWALK_COVG), SIDEWALK_COVG)) + 
+            geom_bar(stat="identity", position = "dodge", fill="#76B9F0") + 
+            coord_flip() +
+            theme_minimal() +
+            geom_text(aes(label = SIDEWALK_COVG), vjust = 0)+
+            geom_hline(aes(text="Durham County Average = 35%", yintercept = 35), color ='#01016D') +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Sidewalk Coverage per School Zone"), y = "Sidewalk Coverage (%)", x = "School Zone")
+          ggplotly(p, tooltip = c("text"))
+        }
+        else if(input$hs_select == "Students Per Device") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENTS_PER_DEVICE)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENTS_PER_DEVICE),], aes(x=reorder(SCHOOL_NAME, -STUDENTS_PER_DEVICE), y=STUDENTS_PER_DEVICE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENTS_PER_DEVICE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = .79", yintercept = .79), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Students Per Device"), x = "School", y = "Student to Device Ratio")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Student-Teacher Ratio, Elementary School") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_ELEM)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_ELEM),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_ELEM), y=STUDENT_TEACHER_ELEM)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENT_TEACHER_ELEM), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 15.4", yintercept = 15.4), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Elementary School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Student-Teacher Ratio, High School") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(STUDENT_TEACHER_HS)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$STUDENT_TEACHER_HS),], aes(x=reorder(SCHOOL_NAME, -STUDENT_TEACHER_HS), y=STUDENT_TEACHER_HS)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = STUDENT_TEACHER_HS), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 15.4", yintercept = 15.4), color ='#01016D') +
+            coord_flip() +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("High School Student-Teacher Ratio"), x = "School", y = "Students per Teacher")
+          ggplotly(p, tooltip = c("text"))
+        } 
+        else if(input$hs_select == "Students With Disabilities") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(DISABLED_PERCENT)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$DISABLED_PERCENT),], aes(x= reorder(SCHOOL_NAME, -DISABLED_PERCENT), y=DISABLED_PERCENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = DISABLED_PERCENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 13.7%", yintercept = 13.7), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Percent of Students with Disabilities"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        } 
+        else if(input$hs_select == "Titles Per Student") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(TITLES_PER_STUDENT)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$TITLES_PER_STUDENT),], aes(x= reorder(SCHOOL_NAME, -TITLES_PER_STUDENT), y=TITLES_PER_STUDENT)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = TITLES_PER_STUDENT), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 17.16%", yintercept = 17.16), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Titles Per Student"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        } 
+        else if(input$hs_select == "WiFi Access Points Per Classroom") {
+          schoolstats22_summary <- HS_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(WIFI_ACCESS_PTS)
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$WIFI_ACCESS_PTS),], aes(x= reorder(SCHOOL_NAME, -WIFI_ACCESS_PTS), y=WIFI_ACCESS_PTS)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = WIFI_ACCESS_PTS), hjust = 1.5, color = "black") +
+            coord_flip() +
+            geom_hline(aes(text="Durham County Average = 1.06%", yintercept = 1.06), color ='#01016D') +
+            theme_minimal() +
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("WiFi Access Points Per Classroom"), x = "School", y = "Students (%)")
+          ggplotly(p, tooltip = c("text")) 
+        }
+      }
     })
+    
   }
   
   # SchoolStats - Context and Resources
@@ -3545,45 +4338,159 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Varsity Football")),
                            h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
                            h4(i18n()$t("Men’s JV Soccer")),
-                           h4(i18n()$t("Men’s Soccer")),
                            h4(i18n()$t("Women's Golf")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
                            h4(i18n()$t("Women's JV Volleyball")),
-                           h4(i18n()$t("Women's Tennis")),
-                           h4(i18n()$t("Women's Volleyball"))
+                           h4(i18n()$t("Women's Tennis"))
                      )
                    }
                    else if(input$school_sports == "Hillside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Varsity Football")),
                            h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
                            h4(i18n()$t("Men’s JV Soccer")),
-                           h4(i18n()$t("Men’s Soccer")),
                            h4(i18n()$t("Men's Cross Country")),
                            h4(i18n()$t("Women's Golf")),
-                           h4(i18n()$t("Women's Volleyball")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
                            h4(i18n()$t("Women's JV Volleyball")),
                            h4(i18n()$t("Women's Tennis")),
-                           h4(i18n()$t("Women's Track"))
+                           h4(i18n()$t("Women's Track")),
+                           h4(i18n()$t("Indoor Track"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of Technology"){
+                     paste(h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Field Hockey")),
+                           h4(i18n()$t("Varsity Football")),
+                           h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
+                           h4(i18n()$t("Men’s JV Soccer")),
+                           h4(i18n()$t("Men's Cross Country")),
+                           h4(i18n()$t("Women's Golf")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
+                           h4(i18n()$t("Women's JV Volleyball")),
+                           h4(i18n()$t("Women's Tennis")),
+                           h4(i18n()$t("Women's Track")),
+                           h4(i18n()$t("Indoor Track"))
                      )
                    }
                    else if(input$school_sports == "Jordan High"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Varsity Football")),
                            h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
                            h4(i18n()$t("Men’s JV Soccer")),
-                           h4(i18n()$t("Men’s Soccer")),
                            h4(i18n()$t("Women's Golf")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
                            h4(i18n()$t("Women's JV Volleyball")),
-                           h4(i18n()$t("Women's Volleyball")),
                            h4(i18n()$t("Women's Tennis"))
                      )
                    }
+                   else if(input$school_sports == "Northern High"){
+                     paste(h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Varsity Football")),
+                           h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
+                           h4(i18n()$t("Men’s JV Soccer")),
+                           h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Women's Golf")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
+                           h4(i18n()$t("Women's JV Volleyball")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Southern High"){
+                     paste(h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Field Hockey")),
+                           h4(i18n()$t("Varsity Football")),
+                           h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
+                           h4(i18n()$t("Men’s JV Soccer")),
+                           h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Women's Golf")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
+                           h4(i18n()$t("Women's JV Volleyball")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Riverside High"){
+                     paste(h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Field Hockey")),
+                           h4(i18n()$t("Varsity Football")),
+                           h4(i18n()$t("JV Football")),
+                           h4(i18n()$t("Men’s Varsity Soccer")),
+                           h4(i18n()$t("Men’s JV Soccer")),
+                           h4(i18n()$t("Women's Golf")),
+                           h4(i18n()$t("Women's Varsity Volleyball")),
+                           h4(i18n()$t("Women's JV Volleyball")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Ultimate Frisbee")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball"))
+                     )
+                   }
+                   
+                   else if(input$school_sports == "Rogers Herr Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Volleyball"))
+                     )
+                   }
+                   else if(input$school_sports == "Shepard Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of the Arts Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball"))
+                     )
+                   }
                  })
+                 
                  output$wintersports <- renderText({
                    if(input$school_sports == "Brogden Middle"){
                      paste(h4(i18n()$t("Boy’s Basketball")),
@@ -3604,19 +4511,19 @@ function(input, output, session) {
                    else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Gymnastics")),
                            h4(i18n()$t("Indoor Track")),
-                           h4(i18n()$t("Men's Basketball")),
+                           h4(i18n()$t("Men's Varsity Basketball")),
                            h4(i18n()$t("Men's JV Basketball")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Women's Basketball")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
                            h4(i18n()$t("Women's JV Basketball")),
                            h4(i18n()$t("Wrestling"))
                      )
                    }
                    else if(input$school_sports == "Hillside High"){
-                     paste(h4(i18n()$t("Men's Basketball")),
+                     paste(h4(i18n()$t("Men's Varsity Basketball")),
                            h4(i18n()$t("Men's JV Basketball")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Women's Basketball")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
                            h4(i18n()$t("Women's JV Basketball")),
                            h4(i18n()$t("Wrestling")),
                            h4(i18n()$t("Indoor Track"))
@@ -3625,12 +4532,87 @@ function(input, output, session) {
                    else if(input$school_sports == "Jordan High"){
                      paste(h4(i18n()$t("Gymnastics")),
                            h4(i18n()$t("Indoor Track")),
-                           h4(i18n()$t("Men's Basketball")),
+                           h4(i18n()$t("Men's Varsity Basketball")),
                            h4(i18n()$t("Men's JV Basketball")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Women's Basketball")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
                            h4(i18n()$t("Women's JV Basketball")),
                            h4(i18n()$t("Wrestling"))
+                     )
+                   } 
+                   else if(input$school_sports == "Durham School of Technology"){
+                     paste(h4(i18n()$t("Men's Varisty Basketball")),
+                           h4(i18n()$t("Men's JV Basketball")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
+                           h4(i18n()$t("Women's JV Basketball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Indoor Track"))
+                     )
+                   }
+                   else if(input$school_sports == "Northern High"){
+                     paste(h4(i18n()$t("Gymnastics")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Men's Varsity Basketball")),
+                           h4(i18n()$t("Men's JV Basketball")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
+                           h4(i18n()$t("Women's JV Basketball")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Southern High"){
+                     paste(h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Men's Varsity Basketball")),
+                           h4(i18n()$t("Men's JV Basketball")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Women's Varsity Basketball")),
+                           h4(i18n()$t("Women's JV Basketball")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Rogers Herr Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   else if(input$school_sports == "Shepard Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of the Arts Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Girl’s Basketball"))
                      )
                    }
                  })
@@ -3662,48 +4644,162 @@ function(input, output, session) {
                    else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Baseball")),
                            h4(i18n()$t("JV Baseball")),
+                           h4(i18n()$t("Softball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
                            h4(i18n()$t("Men's JV Lacrosse")),
-                           h4(i18n()$t("Men's Lacrosse")),
                            h4(i18n()$t("Men's Tennis")),
-                           h4(i18n()$t("Softball")),
                            h4(i18n()$t("Track and Field")),
-                           h4(i18n()$t("JV Women's Soccer")),
-                           h4(i18n()$t("Women's Lacrosse")),
-                           h4(i18n()$t("Women's Soccer"))
+                           h4(i18n()$t("Women's Varsity Soccer")),
+                           h4(i18n()$t("Women's JV Soccer")),
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
+                           h4(i18n()$t("Women's JV Lacrosse")),
+                           h4(i18n()$t("Men's Varsity Volleyball")),
+                           h4(i18n()$t("Men's JV Volleyball"))
                      )
                    }
                    else if(input$school_sports == "Hillside High"){
-                     paste(h4(i18n()$t("Baseball")),
+                     paste(h4(i18n()$t("Varsity Baseball")),
                            h4(i18n()$t("JV Baseball")),
+                           h4(i18n()$t("Varsity Softball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
                            h4(i18n()$t("Men's JV Lacrosse")),
-                           h4(i18n()$t("Men's Lacrosse")),
                            h4(i18n()$t("Men's Tennis")),
-                           h4(i18n()$t("Softball")),
                            h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
                            h4(i18n()$t("Women's JV Lacrosse")),
-                           h4(i18n()$t("Women's Lacrosse")),
-                           h4(i18n()$t("Women's JV Soccer")),
-                           h4(i18n()$t("Women's Soccer"))
+                           h4(i18n()$t("Women's Varsity Soccer")),
+                           h4(i18n()$t("Women's JV Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of Technology"){
+                     paste(h4(i18n()$t("Varsity Baseball")),
+                           h4(i18n()$t("JV Baseball")),
+                           h4(i18n()$t("Varsity Softball")),
+                           h4(i18n()$t("JV Softball")),
+                           h4(i18n()$t("Men's Golf")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
+                           h4(i18n()$t("Men's JV Lacrosse")),
+                           h4(i18n()$t("Men's Tennis")),
+                           h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
+                           h4(i18n()$t("Women's JV Lacrosse")),
+                           h4(i18n()$t("Women's Varsity Soccer")),
+                           h4(i18n()$t("Women's JV Soccer"))
                      )
                    }
                    else if(input$school_sports == "Jordan High"){
-                     paste(h4(i18n()$t("Baseball")),
+                     paste(h4(i18n()$t("Varsity Baseball")),
                            h4(i18n()$t("JV Baseball")),
+                           h4(i18n()$t("Varsity Softball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
                            h4(i18n()$t("Men's JV Lacrosse")),
                            h4(i18n()$t("Men's Lacrosse")),
                            h4(i18n()$t("Men's Tennis")),
-                           h4(i18n()$t("Softball")),
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("Women's JV Lacrosse")),
                            h4(i18n()$t("Women's JV Soccer")),
                            h4(i18n()$t("Women's Lacrosse")),
                            h4(i18n()$t("Women's Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Northern High"){
+                     paste(h4(i18n()$t("Varsity Baseball")),
+                           h4(i18n()$t("JV Baseball")),
+                           h4(i18n()$t("Varsity Softball")),
+                           h4(i18n()$t("JV Softball")),
+                           h4(i18n()$t("Men's Golf")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
+                           h4(i18n()$t("Men's JV Lacrosse")),
+                           h4(i18n()$t("Men's Tennis")),
+                           h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
+                           h4(i18n()$t("Women's JV Lacrosse")),
+                           h4(i18n()$t("Women's Varsity Soccer")),
+                           h4(i18n()$t("Women's JV Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Southern High"){
+                     paste(h4(i18n()$t("Varsity Baseball")),
+                           h4(i18n()$t("JV Baseball")),
+                           h4(i18n()$t("Varsity Softball")),
+                           h4(i18n()$t("JV Softball")),
+                           h4(i18n()$t("Men's Golf")),
+                           h4(i18n()$t("Men's Varsity Lacrosse")),
+                           h4(i18n()$t("Men's JV Lacrosse")),
+                           h4(i18n()$t("Men's Tennis")),
+                           h4(i18n()$t("Women's Volleyball")),
+                           h4(i18n()$t("Women's Varsity Lacrosse")),
+                           h4(i18n()$t("Women's JV Lacrosse")),
+                           h4(i18n()$t("Women's Varsity Soccer")),
+                           h4(i18n()$t("Women's JV Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Boy's Lacrosse")),
+                           h4(i18n()$t("Girl’s Lacrosse")),
+                           h4(i18n()$t("Boy’s Tennis")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Soccer")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girls’s Track")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Boy’s Tennis")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Soccer")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Rogers Herr Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Girl's Soccer")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Shepard Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Girl's Soccer")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of the Arts Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Girl's Soccer")),
+                           h4(i18n()$t("Softball"))
                      )
                    }
                  })
@@ -3741,38 +4837,183 @@ function(input, output, session) {
                    else if(input$school_sports == "Hillside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Basketball")),
                            h4(i18n()$t("Swimming")),
                            h4(i18n()$t("Wrestling")),
                            h4(i18n()$t("Indoor Track")),
                            h4(i18n()$t("Baseball")),
-                           h4(i18n()$t("Track and Field"))
+                           h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of Technology"){
+                     paste(h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis"))
                      )
                    }
                    
                    else if(input$school_sports == "Jordan High"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer")),
                            h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
                            h4(i18n()$t("Wrestling")),
                            h4(i18n()$t("Indoor Track")),
                            h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Golf")),
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("Cheerleading")),
-                           h4(i18n()$t("Gymnastics"))
+                           h4(i18n()$t("Gymnastics")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Lacrosse"))
                      )
                    }
                    
                    else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer")),
                            h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
                            h4(i18n()$t("Wrestling")),
                            h4(i18n()$t("Indoor Track")),
                            h4(i18n()$t("Baseball")),
                            h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Volleyball")),
                            h4(i18n()$t("Cheerleading")),
-                           h4(i18n()$t("Gymnastics")),
-                           h4(i18n()$t("Baseball"))
+                           h4(i18n()$t("Gymnastics"))
+                     )
+                   }
+                   else if(input$school_sports == "Northern High"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Gymnastics"))
+                     )
+                   }
+                   else if(input$school_sports == "Southern High"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Ultimate Frisbee")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Rogers Herr Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Shepard Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of the Arts Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Soccer"))
                      )
                    }
                    
@@ -3811,24 +5052,48 @@ function(input, output, session) {
                    else if(input$school_sports == "Hillside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Field Hockey")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Track")),
                            h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
                            h4(i18n()$t("Indoor Track")),
                            h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer")),
                            h4(i18n()$t("Track and Field"))
                      )
                    }
-                   
+                   else if(input$school_sports == "Durham School of Technology"){
+                     paste(h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Field Hockey")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Track and Field"))
+                     )
+                   }
                    else if(input$school_sports == "Jordan High"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Baseball")),
-                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Tennis")),
                            h4(i18n()$t("Swimming")),
-                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Basketball")),
                            h4(i18n()$t("Indoor Track")),
-                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer")),
                            h4(i18n()$t("Track and Field")),
-                           h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Gymnastics"))
                      )
                    }
@@ -3836,12 +5101,130 @@ function(input, output, session) {
                    else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
-                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Tennis")),
                            h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
                            h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer")),
                            h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Gymnastics")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   else if(input$school_sports == "Northern High"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Track and Field")),
+                           h4(i18n()$t("Gymnastics")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   else if(input$school_sports == "Southern High"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Field Hockey")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Swimming")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Indoor Track")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Ultimate Frisbee")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Lacrosse")),
                            h4(i18n()$t("Cheerleading")),
-                           h4(i18n()$t("Gymnastics"))
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Rogers Herr Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Shepard Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Durham School of the Arts Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Soccer"))
                      )
                    }
                    
