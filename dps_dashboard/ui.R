@@ -543,7 +543,10 @@ body <- {dashboardBody(
                              choices = list("Brogden Middle", "Lowes Grove Middle", "Lakewood Montesorri Middle",
                                             "Hillside High",
                                             "Jordan High",
-                                            "Riverside High")
+                                            "Riverside High", 
+                                            "Sherwood Githens Middle", 
+                                            "Lucas Middle", 
+                                            "Carrington Middle")
                  ),
                  fluidRow(
                    box(width = 4,

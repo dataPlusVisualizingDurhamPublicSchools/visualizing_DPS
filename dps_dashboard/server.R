@@ -4375,7 +4375,47 @@ function(input, output, session) {
                            h4(i18n()$t("Women's Tennis"))
                      )
                    }
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Ultimate Frisbee")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Women's Tennis"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball"))
+                    )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Men’s Soccer")),
+                           h4(i18n()$t("Volleyball"))
+                     )
+                   }
                  })
+                 
                  output$wintersports <- renderText({
                    if(input$school_sports == "Brogden Middle"){
                      paste(h4(i18n()$t("Boy’s Basketball")),
@@ -4425,6 +4465,32 @@ function(input, output, session) {
                            h4(i18n()$t("Wrestling"))
                      )
                    } 
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Cheerleading"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Boy’s Basketball")),
+                           h4(i18n()$t("Girl’s Basketball")),
+                           h4(i18n()$t("Wrestling"))
+                     )
+                   }
                  })
                  output$springsports <- renderText({
                    if(input$school_sports == "Brogden Middle"){
@@ -4498,6 +4564,43 @@ function(input, output, session) {
                            h4(i18n()$t("Women's Soccer"))
                      )
                    }
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Boy's Lacrosse")),
+                           h4(i18n()$t("Girl’s Lacrosse")),
+                           h4(i18n()$t("Boy’s Tennis")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Soccer")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girls’s Track")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Boy’s Tennis")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girl’s Soccer")),
+                           h4(i18n()$t("Girl’s Track")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Boy’s Track")),
+                           h4(i18n()$t("Girls’s Track")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Softball"))
+                     )
+                   }
                  })
                  
                  output$male_sports_list <- renderText({
@@ -4568,6 +4671,52 @@ function(input, output, session) {
                      )
                    }
                    
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Ultimate Frisbee")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   
                  })
                  
                  output$female_sports_list <- renderText({
@@ -4634,6 +4783,52 @@ function(input, output, session) {
                            h4(i18n()$t("Track and Field")),
                            h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Gymnastics"))
+                     )
+                   }
+                   
+                   else if(input$school_sports == "Sherwood Githens Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Tennis")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Ultimate Frisbee")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Lucas Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Football")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Carrington Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Cheerleading")),
+                           h4(i18n()$t("Soccer"))
+                     )
+                   }
+                   else if(input$school_sports == "Neal Middle"){
+                     paste(h4(i18n()$t("Cross Country")),
+                           h4(i18n()$t("Track")),
+                           h4(i18n()$t("Basketball")),
+                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Baseball")),
+                           h4(i18n()$t("Wrestling")),
+                           h4(i18n()$t("Lacrosse")),
+                           h4(i18n()$t("Golf")),
+                           h4(i18n()$t("Soccer"))
                      )
                    }
                    
