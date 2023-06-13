@@ -971,7 +971,7 @@ function(input, output, session) {
             theme(plot.title = element_text(hjust = 1.5)) +
             labs(title = i18n()$t("CTE Course Enrollment Rate"), x = "School", y = "Students (%)")
           ggplotly(p, tooltip = c("text"))
-        } 
+        }  
         else if(input$ms_select == "Enrollment") {
           schoolstats22_summary <- MS_stats_22 %>% group_by(SCHOOL_NAME) %>% summarise(ENROLLMENT_NA)
           p <-  ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$ENROLLMENT_NA),], aes(reorder(SCHOOL_NAME, -ENROLLMENT_NA), ENROLLMENT_NA)) + 
