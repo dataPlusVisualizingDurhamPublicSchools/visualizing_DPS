@@ -767,6 +767,38 @@ body <- {dashboardBody(
              
              fluidRow(
                box(width = 12,
+                   background = "navy",
+                   class = "text-center",
+                   h3(strong(i18n$t("Meet Our Team - Data+ 2023"))),
+                   br(),
+                   fluidRow(
+                     column(width = 3,
+                            img(align = "center", src = "ethan.jpg")),
+                     column(width =3,
+                            p(i18n$t("Ethan Shang is a rising sophomore at Duke University from Chapel Hill, North Carolina. Currently, he is studying Data Science, with a minor in Economics. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and to support a vibrant community that has surrounded him from an early age."))),
+                     column(width = 3,
+                            img(src = "sreya.jpg")),
+                     column(width = 3,
+                            p(i18n$t("Sreya Gnanavel is a sophomore at Duke University originally from Cary, North Carolina. She intends to major in Data Science and minor in Finance. Sreya is passionate about using data science to help uncover meaningful insights and use to make informed decisions. She hopes this project will bring more awareness to the available resources in the Durham Public System and help expand the reach to other community schools. She was motivated to join this project as it aligns with her goal of applying her data science skills to create positive change particularly by promoting equal access to resources and opportunities for all students.")))),
+                   br(),
+                   fluidRow(
+                     column(width = 3,
+                            img(src = "unzila.jpg")),
+                     column(width = 3,
+                            p(i18n$t("Unzila Sakina Babar, a sophomore at Duke University, is a passionate computer and data scientist hailing from Lahore, Pakistan. Alongside her academic pursuits, she possesses a keen interest in the education system. Unzila's deep-rooted desire to revolutionize the schooling system in her home country fuels her involvement in this project. She envisions fostering a robust sense of community within Pakistan School Systems while raising awareness about the abundant resources and communities available in the Public Schools of Durham County.  She seeks to synergize her own expertise with the capabilities of this dashboard to create a lasting impact on Durham Public Schools and extend this influence beyond its boundaries. "))),
+                     column(width = 3,
+                            img(src = "lauren.jpg")),
+                     column(width = 3,
+                            p(i18n$t("Lauren Walker is a Junior at Duke University from Needham, Massachusetts. She is studying Computer Science with a minor in Statistics. Lauren joined this Data+ project team because she is eager to strengthen the relationship and partnership between Durham Public Schools and local universities. She also enjoys coding and is looking forward to improving her data science skills. She hopes that this dashboard will serve as a valuable resource for those looking to learn more about the resources offered throughout the Durham Public School system and make education more accessible and equitable.")))),
+                   br(),
+                   fluidRow(
+                     column(width = 3,
+                            img(src = "surabhi.jpg")),
+                     column(width = 3,
+                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
+             
+             fluidRow(
+               box(width = 12,
                    background = "light-blue",
                    class = "text-center",
                    h3(strong(i18n$t("Meet Our Team - Data+ 2022"))),
