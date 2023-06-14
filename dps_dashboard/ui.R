@@ -498,7 +498,12 @@ body <- {dashboardBody(
                           selectInput("ap_school", em(i18n$t("Choose a school to view the AP Courses available.")), 
                                       choices = list("Hillside High",
                                                      "Jordan High",
-                                                     "Riverside High")
+                                                     "Riverside High",
+                                                     "City of Medicine Academy",
+                                                     "Durham School of Technology",
+                                                     "Northern High",
+                                                     "Southern School of Energy and Sustainability")
+                                      
                           ),
                           fluidRow(
                             box(width = 4,
