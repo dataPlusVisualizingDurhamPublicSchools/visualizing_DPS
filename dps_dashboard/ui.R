@@ -50,7 +50,8 @@ sidebar <- {dashboardSidebar(
     menuItem(i18n$t("School Sports"), tabName = "sportstab", icon = icon("basketball-ball")),
     menuItem(i18n$t("Arts Programs"), tabName = "artstab", icon = icon("paint-brush")),
     menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
-    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users"))
+    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users")),
+    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment"))
   )
 )
 }
@@ -646,7 +647,7 @@ body <- {dashboardBody(
              ),
              fluidRow(
                box(width = 6, title = strong(i18n$t("Durham Public Schools and the Arts")), status = "primary", solidHeader = TRUE,
-                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Vist"), 
+                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit"), 
                         a(i18n$t("Arts at DPS"), href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
                         i18n$t("to learn more."))),
                    br(),
@@ -860,7 +861,21 @@ body <- {dashboardBody(
                             img(src = "nico3.jpg")),
                      column(width = 3,
                             p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
-    )} 
+    )},
+    
+    #feedback
+    {tabItem(tabName = "feedback",
+          
+             fluidRow(
+               class = "text-center",
+               size = 20,
+               box(width = 12,
+                   background = "navy",
+                   solidHeader = TRUE,
+                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/qUd3BcBCAfF7DEty5", style = "color:white;font-size:30px"),
+                   style = "font-size:18px",
+                   "Click the text above to fill out our feedback form"))
+    )}
     
     
   )
