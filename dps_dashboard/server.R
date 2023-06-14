@@ -681,10 +681,7 @@ function(input, output, session) {
       }
       else if (input$es_year == "Summer 2023") {
         if (input$es_select == "Average Class Size") {
-          schoolstats22_summary <- ES_stats_23 %>%
-            group_by(SCHOOL_NAME) %>%
-            summarise(AVG_CLASS_SIZE)
-          
+          schoolstats22_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
           p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE), ],
                       aes(x = reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y = AVG_CLASS_SIZE, fill = SCHOOL_NAME)) +
             geom_col(color = "white", width = 0.5) +
