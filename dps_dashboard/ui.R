@@ -898,7 +898,7 @@ body <- {dashboardBody(
                box(width = 12,
                    background = "navy",
                    solidHeader = TRUE,
-                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/qUd3BcBCAfF7DEty5", style = "color:white;font-size:30px"),
+                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/eQ5vUEz3W99CmMa4A", style = "color:white;font-size:30px"),
                    style = "font-size:18px",
                    "Click the text above to fill out our feedback form"))
     )}
