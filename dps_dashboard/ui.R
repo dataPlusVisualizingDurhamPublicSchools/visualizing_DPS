@@ -115,7 +115,7 @@ body <- {dashboardBody(
                    solidHeader = TRUE,
                    leafletOutput("home"))),
              fluidRow(class = "text-center",
-                      box(title = strong(i18n$t("View Our 16 Schools")),
+                      box(title = strong(i18n$t("View Our 55 Schools")),
                           width = 12,
                           background = "light-blue",
                           actionButton("viewMap", i18n$t("View Geospatial Data")),
