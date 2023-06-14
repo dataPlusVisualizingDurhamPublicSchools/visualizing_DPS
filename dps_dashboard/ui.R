@@ -209,8 +209,8 @@ body <- {dashboardBody(
                    selectInput("var",
                                label = em(i18n$t("Choose a variable to display")),
                                choices = c("After-School Care Programs", "Bus Stops", 
-                                           "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
-                                           "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
+                                           "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Food Banks", "Gardens",
+                                           "Grocery Stores", "Hospitals and Clinics","Libraries", "Homeless Shelters", "Parks", "Pharmacies",  
                                            "Recreation Centers", "Religious Centers"
                                ),
                                multiple = FALSE)
@@ -288,6 +288,13 @@ body <- {dashboardBody(
                     br(),
                     fluidRow(
                       column(width = 1,
+                             img(src = "foodbank.jpg", width = 40, height = 40, align = "left")),
+                      column(width = 1),
+                      column(width = 8, htmlOutput("foodbank")
+                      )),
+                    br(),
+                    fluidRow(
+                      column(width = 1,
                              img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("gardenicon")
@@ -309,6 +316,13 @@ body <- {dashboardBody(
                     br(),
                     fluidRow(
                       column(width = 1,
+                             img(src = "homelesshelter.jpg", width = 40, height = 40, align = "left")),
+                      column(width = 1),
+                      column(width = 8, htmlOutput("homelesshelter")
+                      )),
+                    br(),
+                    fluidRow(
+                      column(width = 1,
                              img(src = "library_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("libraryicon")
@@ -319,6 +333,13 @@ body <- {dashboardBody(
                              img(src = "park_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("parkicon")
+                      )),
+                    br(),
+                    fluidRow(
+                      column(width = 1,
+                             img(src = "pharmacy.jpg", width = 40, height = 40, align = "left")),
+                      column(width = 1),
+                      column(width = 8, htmlOutput("pharmacy")
                       )),
                     br(),
                     fluidRow(
