@@ -86,6 +86,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   HS_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/HS_poc_per_school_23.xlsx")
   HS_all_race23 <- read_excel("./data/2023/school_stats_data/HS_all race 2023.xlsx")
   
+  schoolstats23 <- read.csv("./data/2023/school_stats_data/all_school_stats.csv")
+  
   
   #data for the data insights tab
   counts_2021 <- read.csv("./data/2021/spatial_data/counts.csv", skip = 1)
@@ -5305,12 +5307,12 @@ function(input, output, session) {
   observeEvent(i18n(),
                {
                  output$available_arts <- renderTable ({
-                   schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
-                   schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats$Visual_Arts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, Visual_Arts, Theatre, Dance)
+                   schoolstats23 <- schoolstats23 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
+                   schoolstats23$Music <- ifelse(grepl("Music", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Visual_Arts <- ifelse(grepl("Visual Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Theatre <- ifelse(grepl("Theatre Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Dance <- ifelse(grepl("Dance", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23 %>% rename(School = SCHOOL_NAME) %>% select(School, Music, Visual_Arts, Theatre, Dance)
                  }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
                  
                }) 
