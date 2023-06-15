@@ -50,7 +50,8 @@ sidebar <- {dashboardSidebar(
     menuItem(i18n$t("School Sports"), tabName = "sportstab", icon = icon("basketball-ball")),
     menuItem(i18n$t("Arts Programs"), tabName = "artstab", icon = icon("paint-brush")),
     menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
-    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users"))
+    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users")),
+    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment"))
   )
 )
 }
@@ -114,7 +115,7 @@ body <- {dashboardBody(
                    solidHeader = TRUE,
                    leafletOutput("home"))),
              fluidRow(class = "text-center",
-                      box(title = strong(i18n$t("View Our 16 Schools")),
+                      box(title = strong(i18n$t("View Our 55 Schools")),
                           width = 12,
                           background = "light-blue",
                           actionButton("viewMap", i18n$t("View Geospatial Data")),
@@ -208,8 +209,8 @@ body <- {dashboardBody(
                    selectInput("var",
                                label = em(i18n$t("Choose a variable to display")),
                                choices = c("After-School Care Programs", "Bus Stops", 
-                                           "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
-                                           "Grocery Stores", "Hospitals and Clinics","Libraries", "Parks", 
+                                           "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Food Banks", "Gardens",
+                                           "Grocery Stores", "Hospitals and Clinics","Libraries", "Homeless Shelters", "Parks", "Pharmacies",  
                                            "Recreation Centers", "Religious Centers"
                                ),
                                multiple = FALSE)
@@ -287,6 +288,13 @@ body <- {dashboardBody(
                     br(),
                     fluidRow(
                       column(width = 1,
+                             img(src = "foodbank.jpg", width = 40, height = 40, align = "left")),
+                      column(width = 1),
+                      column(width = 8, htmlOutput("foodbank")
+                      )),
+                    br(),
+                    fluidRow(
+                      column(width = 1,
                              img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("gardenicon")
@@ -308,6 +316,13 @@ body <- {dashboardBody(
                     br(),
                     fluidRow(
                       column(width = 1,
+                             img(src = "homelesshelter.jpg", width = 40, height = 40, align = "left")),
+                      column(width = 1),
+                      column(width = 8, htmlOutput("homelesshelter")
+                      )),
+                    br(),
+                    fluidRow(
+                      column(width = 1,
                              img(src = "library_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("libraryicon")
@@ -318,6 +333,13 @@ body <- {dashboardBody(
                              img(src = "park_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("parkicon")
+                      )),
+                    br(),
+                    fluidRow(
+                      column(width = 1,
+                             img(src = "pharmacy.jpg", width = 40, height = 40, align = "left")),
+                      column(width = 1),
+                      column(width = 8, htmlOutput("pharmacy")
                       )),
                     br(),
                     fluidRow(
@@ -476,7 +498,12 @@ body <- {dashboardBody(
                           selectInput("ap_school", em(i18n$t("Choose a school to view the AP Courses available.")), 
                                       choices = list("Hillside High",
                                                      "Jordan High",
-                                                     "Riverside High")
+                                                     "Riverside High",
+                                                     "City of Medicine Academy",
+                                                     "Durham School of Technology",
+                                                     "Northern High",
+                                                     "Southern School of Energy and Sustainability")
+                                      
                           ),
                           fluidRow(
                             box(width = 4,
@@ -646,7 +673,7 @@ body <- {dashboardBody(
              ),
              fluidRow(
                box(width = 6, title = strong(i18n$t("Durham Public Schools and the Arts")), status = "primary", solidHeader = TRUE,
-                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Vist"), 
+                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit"), 
                         a(i18n$t("Arts at DPS"), href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
                         i18n$t("to learn more."))),
                    br(),
@@ -767,6 +794,38 @@ body <- {dashboardBody(
              
              fluidRow(
                box(width = 12,
+                   background = "navy",
+                   class = "text-center",
+                   h3(strong(i18n$t("Meet Our Team - Data+ 2023"))),
+                   br(),
+                   fluidRow(
+                     column(width = 3,
+                            img(align = "center", src = "ethan.jpg")),
+                     column(width =3,
+                            p(i18n$t("Ethan Shang is a rising sophomore at Duke University from Chapel Hill, North Carolina. Currently, he is studying Data Science, with a minor in Economics. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and to support a vibrant community that has surrounded him from an early age."))),
+                     column(width = 3,
+                            img(src = "sreya.jpeg")),
+                     column(width = 3,
+                            p(i18n$t("Sreya Gnanavel is a sophomore at Duke University originally from Cary, North Carolina. She intends to major in Data Science and minor in Finance. Sreya is passionate about using data science to help uncover meaningful insights and use to make informed decisions. She hopes this project will bring more awareness to the available resources in the Durham Public System and help expand the reach to other community schools. She was motivated to join this project as it aligns with her goal of applying her data science skills to create positive change particularly by promoting equal access to resources and opportunities for all students.")))),
+                   br(),
+                   fluidRow(
+                     column(width = 3,
+                            img(src = "unzila.jpg")),
+                     column(width = 3,
+                            p(i18n$t("Unzila Sakina Babar, a sophomore at Duke University, is a passionate computer and data scientist hailing from Lahore, Pakistan. Alongside her academic pursuits, she possesses a keen interest in the education system. Unzila's deep-rooted desire to revolutionize the schooling system in her home country fuels her involvement in this project. She envisions fostering a robust sense of community within Pakistan School Systems while raising awareness about the abundant resources and communities available in the Public Schools of Durham County.  She seeks to synergize her own expertise with the capabilities of this dashboard to create a lasting impact on Durham Public Schools and extend this influence beyond its boundaries. "))),
+                     column(width = 3,
+                            img(src = "lauren.jpeg")),
+                     column(width = 3,
+                            p(i18n$t("Lauren Walker is a Junior at Duke University from Needham, Massachusetts. She is studying Computer Science with a minor in Statistics. Lauren joined this Data+ project team because she is eager to strengthen the relationship and partnership between Durham Public Schools and local universities. She also enjoys coding and is looking forward to improving her data science skills. She hopes that this dashboard will serve as a valuable resource for those looking to learn more about the resources offered throughout the Durham Public School system and make education more accessible and equitable.")))),
+                   br(),
+                   fluidRow(
+                     column(width = 3,
+                            img(src = "surabhi.jpg")),
+                     column(width = 3,
+                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
+             
+             fluidRow(
+               box(width = 12,
                    background = "light-blue",
                    class = "text-center",
                    h3(strong(i18n$t("Meet Our Team - Data+ 2022"))),
@@ -828,7 +887,21 @@ body <- {dashboardBody(
                             img(src = "nico3.jpg")),
                      column(width = 3,
                             p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
-    )} 
+    )},
+    
+    #feedback
+    {tabItem(tabName = "feedback",
+          
+             fluidRow(
+               class = "text-center",
+               size = 20,
+               box(width = 12,
+                   background = "navy",
+                   solidHeader = TRUE,
+                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/qUd3BcBCAfF7DEty5", style = "color:white;font-size:30px"),
+                   style = "font-size:18px",
+                   "Click the text above to fill out our feedback form"))
+    )}
     
     
   )

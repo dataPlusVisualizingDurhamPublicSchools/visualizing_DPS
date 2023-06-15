@@ -1584,7 +1584,13 @@
 "Spanish": "Puntos de internet (WiFi) en cada salón de clase"},
 
 {"English": "Advanced Placement Course Enrollment",
-"Spanish": "Número de estudiantes en cursos avanzados"}
+"Spanish": "Número de estudiantes en cursos avanzados"},
+    
+{"English": "We want to hear your feedback!",
+"Spanish": "¡Queremos eschuchar sus comentarios!"},
+    
+{"English": "Click the text above to fill out our feedback form",
+"Spanish": "Haga clic en el texto de arriba para completar nuestro formulario de comentarios"}
      
 ]
 }

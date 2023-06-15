@@ -86,6 +86,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   HS_poc_per_school_23 <- read_excel("./data/2023/school_stats_data/HS_poc_per_school_23.xlsx")
   HS_all_race23 <- read_excel("./data/2023/school_stats_data/HS_all race 2023.xlsx")
   
+  schoolstats23 <- read.csv("./data/2023/school_stats_data/all_school_stats.csv")
+  
   
   #data for the data insights tab
   counts_2021 <- read.csv("./data/2021/spatial_data/counts.csv", skip = 1)
@@ -677,19 +679,23 @@ function(input, output, session) {
           ggplotly(p, tooltip = c("text")) 
         } 
       }
-      else if(input$es_year == "Summer 2023"){
-        if(input$es_select == "Average Class Size") {
+      else if (input$es_year == "Summer 2023") {
+        if (input$es_select == "Average Class Size") {
           schoolstats22_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
-          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
-            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
-            geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
-            geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
+          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE), ],
+                      aes(x = reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y = AVG_CLASS_SIZE, fill = SCHOOL_NAME)) +
+            geom_col(color = "white", width = 0.5) +
+            geom_text(aes(label = AVG_CLASS_SIZE), vjust = -0.5, color = "black") +
+            geom_hline(aes(text = "Durham County Average = 19", yintercept = 19), color = '#01016D') +
             coord_flip() +
             theme_minimal() +
-            theme(plot.title = element_text(hjust = 1.5)) +
-            labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
+            theme(plot.title = element_text(hjust = 1.5),
+                  axis.text.y = element_blank(),
+                  axis.ticks.y = element_blank()) +
+            labs(title = i18n()$t("Average Class Size"), x = "School", y = NULL)
+          
           ggplotly(p, tooltip = c("text"))
-        } 
+        }
         else if(input$es_select == "Bachelor Degree Rate") {
           schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(BACHELOR_DEG_RATE)
           p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$BACHELOR_DEG_RATE),], aes(reorder(SCHOOL_NAME, -BACHELOR_DEG_RATE), y=BACHELOR_DEG_RATE)) + 
@@ -4056,148 +4062,275 @@ function(input, output, session) {
   output$APTable <- renderTable(APCourses, bordered = TRUE, striped = TRUE, width = "150%", align = "c", digits = 0)
   
   #AP Courses
-  observeEvent(i18n(), 
-               {
-                 output$APEnglish <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("- AP English Language")),
-                           h4(i18n()$t("- AP English Literature")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP Language and Composition")),
-                           h4(i18n()$t("- AP Literature and Composition")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP English Language")),
-                           h4(i18n()$t("- AP English Literature")))
-                   }
-                 })
-                 output$APMath <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("- AP Statistics")),
-                           h4(i18n()$t("- AP Calculus AB")),
-                           h4(i18n()$t("- AP Calculus BC")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP Calculus")),
-                           h4(i18n()$t("- AP Statistics")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP Calculus AB")),
-                           h4(i18n()$t("- AP Calculus BC")),
-                           h4(i18n()$t("- AP Statistics")))
-                   }
-                 })
-                 output$APScience <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("- AP Biology")),
-                           h4(i18n()$t("- AP Chemistry")),
-                           h4(i18n()$t("- AP Environmental Science")),
-                           h4(i18n()$t("- AP Physics C: Mechanics")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP Environmental Science")),
-                           h4(i18n()$t("- AP Physics I")),
-                           h4(i18n()$t("- AP Physics II")),
-                           h4(i18n()$t("- AP Biology")),
-                           h4(i18n()$t("- AP Physics C: Mechanics")),
-                           h4(i18n()$t("- AP Physics C: Electricity and Magnetism")),
-                           h4(i18n()$t("- AP Chemistry")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP Chemistry")),
-                           h4(i18n()$t("- AP Biology")),
-                           h4(i18n()$t("- AP Environmental Science")),
-                           h4(i18n()$t("- AP Physics C: Mechanics")),
-                           h4(i18n()$t("- AP Physics 1: Algebra Based")),
-                           h4(i18n()$t("- AP Physics 2: Algebra Based")))
-                   }
-                 })
-                 output$APSocial <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("- AP Human Geography")),
-                           h4(i18n()$t("- AP World History")),
-                           h4(i18n()$t("- AP US History")),
-                           h4(i18n()$t("- AP Psychology")),
-                           h4(i18n()$t("- AP Macroeconomics")),
-                           h4(i18n()$t("- AP Government and Politics")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP European History")),
-                           h4(i18n()$t("- AP US Government and Politics")),
-                           h4(i18n()$t("- AP US History")),
-                           h4(i18n()$t("- AP World History: Modern")),
-                           h4(i18n()$t("- AP Human Geography")),
-                           h4(i18n()$t("- AP Microeconomics")),
-                           h4(i18n()$t("- AP Macroeconomics")),
-                           h4(i18n()$t("- AP Psychology")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP European History")),
-                           h4(i18n()$t("- AP Government and Politics")),
-                           h4(i18n()$t("- AP Human Geography")),
-                           h4(i18n()$t("- AP Psychology")),
-                           h4(i18n()$t("- AP Seminar")),
-                           h4(i18n()$t("- AP US History")),
-                           h4(i18n()$t("- AP World History")))
-                   }
-                 })
-                 output$APWLang <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("- AP Latin")),
-                           h4(i18n()$t("- AP Spanish Language")),
-                           h4(i18n()$t("- AP Spanish Literature")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP French Language")),
-                           h4(i18n()$t("- AP Spanish Language & Culture")),
-                           h4(i18n()$t("- AP Italian")),
-                           h4(i18n()$t("- AP Chinese")),
-                           h4(i18n()$t("- AP Vergil Latin")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP French Language")),
-                           h4(i18n()$t("- AP Spanish Language")),
-                           h4(i18n()$t("- AP Spanish Literature")))
-                   }
-                 })
-                 output$APMusArts <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("N/A")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP Studio Art Drawing")),
-                           h4(i18n()$t("- AP Studio Art: 2D Design")),
-                           h4(i18n()$t("- AP Studio Art: 3D Design")),
-                           h4(i18n()$t("- AP Art History")),
-                           h4(i18n()$t("- AP Music Theory")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP Art History")),
-                           h4(i18n()$t("- AP Music Theory")),
-                           h4(i18n()$t("- AP Studio Art")))
-                   }
-                 })
-                 output$APEngine <- renderText({
-                   if(input$ap_school == "Riverside High"){
-                     paste(h4(i18n()$t("- AP Computer Science")),
-                           h4(i18n()$t("- AP Intro to Engineering Design")),
-                           h4(i18n()$t("- AP Principles of Engineering")),
-                           h4(i18n()$t("- AP Digital Electronics")),
-                           h4(i18n()$t("- AP Civil Engineering & Architecture")),
-                           h4(i18n()$t("- AP Aerospace Engineering")),
-                           h4(i18n()$t("- AP Computer Integrated Manufacturing")))
-                   }
-                   else if(input$ap_school == "Hillside High"){
-                     paste(h4(i18n()$t("- AP Computer Science Principles")),
-                           h4(i18n()$t("- AP Computer Science")))
-                   }
-                   else if(input$ap_school == "Jordan High"){
-                     paste(h4(i18n()$t("- AP Computer Science Principles")),
-                           h4(i18n()$t("- AP Computer Science A")))
-                   }
-                 })
-               })
+  observeEvent(i18n(), {
+    output$APEnglish <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP English Language")),
+          h4(i18n()$t("- AP English Literature"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP Language and Composition")),
+          h4(i18n()$t("- AP Literature and Composition"))
+        )
+      } else if (input$ap_school == "Jordan High") {
+        paste(
+          h4(i18n()$t("- AP English Language")),
+          h4(i18n()$t("- AP English Literature"))
+        )
+      } else if (input$ap_school == "City of Medicine Academy") {
+        paste(
+          h4(i18n()$t("- AP English Language and Composition")),
+          h4(i18n()$t("- AP English Literature and Composition"))
+        )
+      } else if (input$ap_school == "Durham School of Technology") {
+        paste(
+          h4(i18n()$t("- AP English Language and Composition")),
+          h4(i18n()$t("- AP English Literature and Composition"))
+        )
+      } else if (input$ap_school == "Northern High") {
+        paste(
+          h4(i18n()$t("- AP English Language and Composition")),
+          h4(i18n()$t("- AP English Literature and Composition"))
+        )
+      } else if (input$ap_school == "Southern School of Energy and Sustainability") {
+        paste(
+          h4(i18n()$t("- AP English Language and Composition")),
+          h4(i18n()$t("- AP English Literature and Composition"))
+        )
+      }
+    })
+    
+    output$APMath <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP Statistics")),
+          h4(i18n()$t("- AP Calculus AB")),
+          h4(i18n()$t("- AP Calculus BC"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP Calculus AB")),
+          h4(i18n()$t("- AP Statistics"))
+        )
+      } else if (input$ap_school == "Jordan High") {
+        paste(
+          h4(i18n()$t("- AP Calculus AB")),
+          h4(i18n()$t("- AP Calculus BC")),
+          h4(i18n()$t("- AP Statistics"))
+        )
+      } else if (input$ap_school == "Durham School of Technology") {
+        paste(
+          h4(i18n()$t("- AP Calculus AB"))
+        )
+      } else if (input$ap_school == "Northern High") {
+        paste(
+          h4(i18n()$t("- AP Calculus AB")),
+          h4(i18n()$t("- AP Calculus BC")),
+          h4(i18n()$t("- AP Statistics"))
+        )
+      } else if (input$ap_school == "Southern School of Energy and Sustainability") {
+        paste(
+          h4(i18n()$t("- AP Calculus AB")),
+          h4(i18n()$t("- AP Statistics"))
+        )
+      }
+    })
+    
+    output$APScience <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP Biology")),
+          h4(i18n()$t("- AP Chemistry")),
+          h4(i18n()$t("- AP Environmental Science")),
+          h4(i18n()$t("- AP Physics I")),
+          h4(i18n()$t("- AP Physics II")),
+          h4(i18n()$t("- AP Physics C: Mechanics"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP Environmental Science")),
+          h4(i18n()$t("- AP Physics I")),
+          h4(i18n()$t("- AP Physics II")),
+          h4(i18n()$t("- AP Biology")),
+          h4(i18n()$t("- AP Physics C: Mechanics")),
+          h4(i18n()$t("- AP Physics C: Electricity and Magnetism")),
+          h4(i18n()$t("- AP Chemistry"))
+        )
+      } else if (input$ap_school == "Jordan High") {
+        paste(
+          h4(i18n()$t("- AP Chemistry")),
+          h4(i18n()$t("- AP Biology")),
+          h4(i18n()$t("- AP Environmental Science")),
+          h4(i18n()$t("- AP Physics C: Mechanics")),
+          h4(i18n()$t("- AP Physics 1: Algebra Based")),
+          h4(i18n()$t("- AP Physics 2: Algebra Based"))
+        )
+      } else if (input$ap_school == "City of Medicine Academy") {
+        paste(
+          h4(i18n()$t("- AP Biology")),
+          h4(i18n()$t("- AP Environmental Science"))
+        )
+      } else if (input$ap_school == "Durham School of Technology") {
+        paste(
+          h4(i18n()$t("- AP Environmental Science"))
+        )
+      } else if (input$ap_school == "Northern High") {
+        paste(
+          h4(i18n()$t("- AP Biology")),
+          h4(i18n()$t("- AP Environmental Science"))
+        )
+      } else if (input$ap_school == "Southern School of Energy and Sustainability") {
+        paste(
+          h4(i18n()$t("- AP Biology")),
+          h4(i18n()$t("- AP Chemistry")),
+          h4(i18n()$t("- AP Environmental Science"))
+        )
+      }
+    })
+    
+    output$APSocial <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP Psychology")),
+          h4(i18n()$t("- AP U.S. Government and Politics")),
+          h4(i18n()$t("- AP U.S. History")),
+          h4(i18n()$t("- AP European History")),
+          h4(i18n()$t("- AP Human Geography")),
+          h4(i18n()$t("- AP Macroeconomics")),
+          h4(i18n()$t("- AP Microeconomics")),
+          h4(i18n()$t("- AP Comparative Government and Politics")),
+          h4(i18n()$t("- AP World History"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP European History")),
+          h4(i18n()$t("- AP Human Geography")),
+          h4(i18n()$t("- AP U.S. Government and Politics")),
+          h4(i18n()$t("- AP U.S. History")),
+          h4(i18n()$t("- AP Comparative Government and Politics"))
+        )
+      } else if (input$ap_school == "Jordan High") {
+        paste(
+          h4(i18n()$t("- AP U.S. Government and Politics")),
+          h4(i18n()$t("- AP U.S. History")),
+          h4(i18n()$t("- AP World History")),
+          h4(i18n()$t("- AP Human Geography")),
+          h4(i18n()$t("- AP European History")),
+          h4(i18n()$t("- AP Psychology")),
+          h4(i18n()$t("- AP Macroeconomics")),
+          h4(i18n()$t("- AP Microeconomics"))
+        )
+      } else if (input$ap_school == "City of Medicine Academy") {
+        paste(
+          h4(i18n()$t("- AP Psychology")),
+          h4(i18n()$t("- AP U.S. Government and Politics"))
+        )
+      } else if (input$ap_school == "Durham School of Technology") {
+        paste(
+          h4(i18n()$t("- AP U.S. Government and Politics"))
+        )
+      } else if (input$ap_school == "Northern High") {
+        paste(
+          h4(i18n()$t("- AP U.S. Government and Politics")),
+          h4(i18n()$t("- AP U.S. History")),
+          h4(i18n()$t("- AP Human Geography")),
+          h4(i18n()$t("- AP Psychology"))
+        )
+      } else if (input$ap_school == "Southern School of Energy and Sustainability") {
+        paste(
+          h4(i18n()$t("- AP U.S. Government and Politics")),
+          h4(i18n()$t("- AP U.S. History")),
+          h4(i18n()$t("- AP Human Geography")),
+          h4(i18n()$t("- AP Psychology"))
+        )
+      }
+    })
+    
+    output$APWLang <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP Spanish Language and Culture")),
+          h4(i18n()$t("- AP Spanish Literature and Culture")),
+          h4(i18n()$t("- AP Latin")),
+          h4(i18n()$t("- AP French Language and Culture"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP Spanish Language and Culture")),
+          h4(i18n()$t("- AP French Language and Culture"))
+        )
+      } else if (input$ap_school == "Jordan High") {
+        paste(
+          h4(i18n()$t("- AP Spanish Language and Culture")),
+          h4(i18n()$t("- AP Spanish Literature and Culture")),
+          h4(i18n()$t("- AP French Language and Culture")),
+          h4(i18n()$t("- AP German Language and Culture"))
+        )
+      } else if (input$ap_school == "Southern School of Energy and Sustainability") {
+        paste(
+          h4(i18n()$t("- AP Spanish Language and Culture")),
+          h4(i18n()$t("- AP Spanish Literature and Culture"))
+        )
+      }
+    })
+    
+    output$APMusArts <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP Music Theory")),
+          h4(i18n()$t("- AP Studio Art: 2-D Design")),
+          h4(i18n()$t("- AP Studio Art: Drawing"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP Music Theory")),
+          h4(i18n()$t("- AP Studio Art: 2-D Design")),
+          h4(i18n()$t("- AP Studio Art: Drawing"))
+        )
+      } else if (input$ap_school == "Northern High") {
+        paste(
+          h4(i18n()$t("- AP Studio Art: 2-D Design"))
+        )
+      } else if (input$ap_school == "Jordan High") {
+        paste(
+          h4(i18n()$t("- AP Music Theory")),
+          h4(i18n()$t("- AP Art History")),
+          h4(i18n()$t("- AP Studio Art: 2-D Design")),
+          h4(i18n()$t("- AP Studio Art: 3-D Design")),
+          h4(i18n()$t("- AP Studio Art: Drawing"))
+        )
+      }
+    })
+    
+    output$APEngine <- renderText({
+      if (input$ap_school == "Riverside High") {
+        paste(
+          h4(i18n()$t("- AP Computer Science A")),
+          h4(i18n()$t("- AP Computer Science Principles")),
+          h4(i18n()$t("- AP Physics C: Electricity and Magnetism")),
+          h4(i18n()$t("- AP Physics C: Mechanics"))
+        )
+      } else if (input$ap_school == "Hillside High") {
+        paste(
+          h4(i18n()$t("- AP Computer Science A")),
+          h4(i18n()$t("- AP Computer Science Principles")),
+          h4(i18n()$t("- AP Physics C: Electricity and Magnetism")),
+          h4(i18n()$t("- AP Physics C: Mechanics"))
+        )
+      } else if (input$ap_school == "Durham School of Technology") {
+        paste(
+          h4(i18n()$t("- AP Computer Science A"))
+        )
+      } else if (input$ap_school == "Southern School of Energy and Sustainability") {
+        paste(
+          h4(i18n()$t("- AP Computer Science Principles"))
+        )
+      }
+    })
+  })
+  
   
   observeEvent(input$viewAP, {
     updateTabItems(session, "TabItems", selected = "coursestab")
@@ -5175,12 +5308,12 @@ function(input, output, session) {
   observeEvent(i18n(),
                {
                  output$available_arts <- renderTable ({
-                   schoolstats <- schoolstats22 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
-                   schoolstats$Music <- ifelse(grepl("Music", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats$Visual_Arts <- ifelse(grepl("Visual Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats$Theatre <- ifelse(grepl("Theatre Arts", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats$Dance <- ifelse(grepl("Dance", schoolstats$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats %>% rename(School = SCHOOL_NAME) %>% select(School, Music, Visual_Arts, Theatre, Dance)
+                   schoolstats23 <- schoolstats23 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
+                   schoolstats23$Music <- ifelse(grepl("Music", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Visual_Arts <- ifelse(grepl("Visual Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Theatre <- ifelse(grepl("Theatre Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Dance <- ifelse(grepl("Dance", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23 %>% rename(School = SCHOOL_NAME) %>% select(School, Music, Visual_Arts, Theatre, Dance)
                  }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
                  
                }) 
