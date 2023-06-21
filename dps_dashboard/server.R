@@ -166,6 +166,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   cultural <- read.csv("./data/2021/spatial_data/renamed_Community & Cultural Centers.csv")
   gardens <- read.csv("./data/2021/spatial_data/renamed_Community Gardens.csv")
   grocery <- read.csv("./data/2021/spatial_data/renamed_Grocery Stores.csv") 
+  #grocery <- read.csv("./data/2021/spatial_data/renamed_Grocery Stores.csv") 
   libraries <- read.csv("./data/2021/spatial_data/renamed_Libraries.csv")
   parks <- read.csv("./data/2021/spatial_data/renamed_Parks.csv")
   rec <- read.csv("./data/2021/spatial_data/renamed_Recreation Centers.csv")
