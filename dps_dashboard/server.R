@@ -5310,12 +5310,11 @@ function(input, output, session) {
                  output$available_arts <- renderTable ({
                    schoolstats23 <- schoolstats23 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
                    schoolstats23$Music <- ifelse(grepl("Music", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats23$Visual_Arts <- ifelse(grepl("Visual Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
-                   schoolstats23$Theatre <- ifelse(grepl("Theatre Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Visual_Arts <- ifelse(grepl("Visual.Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
+                   schoolstats23$Theatre <- ifelse(grepl("Theatre.Arts", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
                    schoolstats23$Dance <- ifelse(grepl("Dance", schoolstats23$ARTS_PROGRAMS), '<i class="fas fa-check"></i>', '')
                    schoolstats23 %>% rename(School = SCHOOL_NAME) %>% select(School, Music, Visual_Arts, Theatre, Dance)
                  }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
                  
                }) 
-  
 }
