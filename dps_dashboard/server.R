@@ -128,6 +128,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   lakeview <- geojsonio::geojson_read("./data/2023/map_data/Lakeview High.geojson", what = "sp")
   lucas <- geojsonio::geojson_read("./data/2023/map_data/Lucas Middle.geojson", what = "sp")
   middlecollege <- geojsonio::geojson_read("./data/2023/map_data/Middle College.geojson", what = "sp")
+  morehead <- geojsonio::geojson_read("./data/2023/map_data/Morehead Montessori School.geojson", what = "sp")
   neal <- geojsonio::geojson_read("./data/2023/map_data/Neal Middle.geojson", what = "sp")
   northern <- geojsonio::geojson_read("./data/2023/map_data/Northern High.geojson", what = "sp")
   pearsontown <- geojsonio::geojson_read("./data/2023/map_data/Pearsontown Elementary.geojson", what = "sp")
@@ -139,7 +140,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   sherwoodgithens <- geojsonio::geojson_read("./data/2023/map_data/Sherwood Githens Middle.geojson", what = "sp")
   southernenergy <- geojsonio::geojson_read("./data/2023/map_data/Southern School of Energy and Sustainability.geojson", what = "sp")
   springvalley <- geojsonio::geojson_read("./data/2023/map_data/Spring Valley Elementary.geojson", what = "sp")
-  wgpearson <- geojsonio::geojson_read("./data/2023/map_data/W.G. Pearson Elementary.geojson", what = "sp")
+  wgpearson <- geojsonio::geojson_read("./data/20e23/map_data/W.G. Pearson Elementary.geojson", what = "sp")
   yesmith <- geojsonio::geojson_read("./data/2023/map_data/Y.E. Smith Elementary.geojson", what = "sp")
   bethesda <- geojsonio::geojson_read("./data/2023/map_data/Bethesda Elementary.geojson", what = "sp")
   burton <- geojsonio::geojson_read("./data/2023/map_data/Burton Elementary.geojson", what = "sp")
@@ -154,6 +155,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   merrickmoore <- geojsonio::geojson_read("./data/2023/map_data/Merrick-Moore Elementary.geojson", what = "sp")
   oakgrove <- geojsonio::geojson_read("./data/2023/map_data/Oak Grove Elementary.geojson", what = "sp")
   
+  
+
 }
 
 # Load/Rename Spatial Data
@@ -3144,6 +3147,40 @@ function(input, output, session) {
            "Parkwood Elementary" = parkwood, 
            "Riverside High" = riverside,
            "Southwest Elementary" = southwest,
+           "Bethesda Elementary" = bethesda,
+           "Burton Elementary" = burton, 
+           "Carrington Middle" = carrington, 
+           "City of Medicine Academy" = citymedicine, 
+           "Creekside Elementary" = creekside,
+           "Lakeview High" = lakeview,
+           "Y.E. Smith Elementary" = yesmith,
+           "W.G. Pearson Elementary" = wgpearson,
+           "Spring Valley Elementary" = springvalley,
+           "Southern School of Energy and Sustainability" = southernenergy,
+           "Sherwood Githens Middle" = sherwoodgithens,
+           "Shepard Middle" = shepardmiddle,
+           "School for Creative Studies"= creativestudies,
+           "Sandy Ridge Elementary" = sandyridge,
+           "Rogers-Herr Middle" = rogersherr,
+           "R.N. Harris Elementary" = rnharris,
+           "Durham School of the Arts" = durhamschoolofarts, 
+           "Easley Elementary" = easley, 
+           "Eno Valley Elementary" = enovalley, 
+           "George Watts Elementary" = georgewatts, 
+           "Glenn Elementary" = glenn, 
+           "Holt Elementary" = holt, 
+           "Oak Grove Elementary" = oakgrove,
+           "Mangum Elementary" = mangum,
+           "Hope Valley Elementary" = hopevalley,
+           "Holton Career" = holtoncareer, 
+           "J.D. Clement Early College" = jdclement, 
+           "Lucas Middle" = lucas, 
+           "Merrick Moore Elementary" = merrickmoore, 
+           "Middle College" = middlecollege, 
+           "Morehead Montessori" = morehead, 
+           "Neal Middle" = neal,
+           "Northern High", northern, 
+           "Pearsontown Elementary"  = pearsontown,
            "All" = durham
     )
   })
