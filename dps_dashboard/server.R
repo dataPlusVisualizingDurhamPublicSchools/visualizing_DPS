@@ -140,7 +140,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   sherwoodgithens <- geojsonio::geojson_read("./data/2023/map_data/Sherwood Githens Middle.geojson", what = "sp")
   southernenergy <- geojsonio::geojson_read("./data/2023/map_data/Southern School of Energy and Sustainability.geojson", what = "sp")
   springvalley <- geojsonio::geojson_read("./data/2023/map_data/Spring Valley Elementary.geojson", what = "sp")
-  wgpearson <- geojsonio::geojson_read("./data/20e23/map_data/W.G. Pearson Elementary.geojson", what = "sp")
+  wgpearson <- geojsonio::geojson_read("./data/2023/map_data/W.G. Pearson Elementary.geojson", what = "sp")
   yesmith <- geojsonio::geojson_read("./data/2023/map_data/Y.E. Smith Elementary.geojson", what = "sp")
   bethesda <- geojsonio::geojson_read("./data/2023/map_data/Bethesda Elementary.geojson", what = "sp")
   burton <- geojsonio::geojson_read("./data/2023/map_data/Burton Elementary.geojson", what = "sp")
@@ -3179,7 +3179,7 @@ function(input, output, session) {
            "Middle College" = middlecollege, 
            "Morehead Montessori" = morehead, 
            "Neal Middle" = neal,
-           "Northern High", northern, 
+           "Northern High" = northern, 
            "Pearsontown Elementary"  = pearsontown,
            "All" = durham
     )
