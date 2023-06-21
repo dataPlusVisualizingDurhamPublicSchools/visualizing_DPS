@@ -193,7 +193,7 @@ body <- {dashboardBody(
                    htmlOutput("context")),
                
              ),
-             fluidRow(
+             fluidRow( 
                box(width = 4,
                    solidHeader = TRUE,
                    title = strong(i18n$t("Measurement")),
