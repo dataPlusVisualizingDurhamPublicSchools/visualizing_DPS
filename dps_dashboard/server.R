@@ -3312,13 +3312,13 @@ function(input, output, session) {
     }
     else if(input$var == "Community Arts")
     {
-      temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+      temp_df <- commarts[grepl(input$zone, commarts$school_zones), ]
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name","Type","ADDRESS", "URL")]
     }
     else if(input$var == "Community Sports")
     {
-      temp_df <- commarts[grepl(input$zone, farmersmark$school_zones), ]
+      temp_df <- sports[grepl(input$zone, sports$school_zones), ]
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name","Type","ADDRESS", "URL")]
     }

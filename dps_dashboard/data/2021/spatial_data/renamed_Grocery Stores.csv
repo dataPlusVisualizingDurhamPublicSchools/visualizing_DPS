@@ -1,54 +1,52 @@
-...1,Unnamed: 0,Unnamed: 0.1,Unnamed: 0.1.1,Unnamed: 0.1.1.1,Unnamed: 0.1.1.1.1,Unnamed: 0.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,Unnamed: 0.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1,STORE_NAME,ADDRESS,LATITUDE,LONGITUDE,school_zones
-(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(double),(character),(character),(double),(double),(character)
+ï»¿STORE_NAME,ADDRESS,LATITUDE,LONGITUDE,school_zones,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+TriangleÂ MiniÂ Mart,4003Â FayettevilleÂ St,35.94921,-78.90328,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MoreheadÂ MiniÂ Mart,1601Â MoreheadÂ Ave,35.99189,-78.92153,"All,BrogdenÂ Middle,JordanÂ High,LakewoodÂ Elementary,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FoodÂ LionÂ #939,4621Â HillsboroughÂ Rd,36.03208,-78.97963,"All,BrogdenÂ Middle,HillandaleÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DurhamÂ FoodÂ World,401Â EÂ LakewoodÂ AveÂ #Â A,35.98777,-78.89996,"All,BrogdenÂ Middle,C.C.Â SpauldingÂ Elementary,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FoodÂ LionÂ #747,3500Â NÂ RoxboroÂ St,36.03762,-78.89255,"All,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WalmartÂ SupercenterÂ #1614,1525Â GlennÂ SchoolÂ Rd,36.02831,-78.84346,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MiÂ BarrioÂ Grocery,2405Â GuessÂ Rd,36.02622,-78.92259,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FayÂ StreetÂ GroceryÂ &Â Grill,1302Â FayÂ St,35.99883,-78.88044,"All,EastwayÂ Elementary,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SunshineÂ Mart,2014Â GuessÂ Rd,36.02301,-78.91784,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ParkviewÂ MiniÂ Mart,433Â EÂ PilotÂ St,35.96409,-78.90759,"All,FayettevilleÂ StreetÂ Elementary,HillsideÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LeoneÂ InternationalÂ Foods,810Â FayettevilleÂ StÂ #Â 108,35.98531,-78.89904,"All,BrogdenÂ Middle,C.C.Â SpauldingÂ Elementary,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SproutsÂ FarmersÂ Market,105Â WÂ NCÂ 54Â Hwy,35.91002,-78.93843,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NewÂ YorkÂ MiniÂ Mart,2929Â AngierÂ Ave,35.97299,-78.86642,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FreshÂ Market,4215Â UniversityÂ DrÂ #Â A3,35.96277,-78.95871,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+JoyÂ SpeedÂ Mart,1624Â GlennÂ SchoolÂ Rd,36.03125,-78.84041,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+AroundÂ TheÂ WorldÂ Market,1708Â EÂ NCÂ HighwayÂ 54,35.90196,-78.90243,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle,ParkwoodÂ Elementary",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Al-TaibaÂ Market,1008Â WÂ ChapelÂ HillÂ St,35.99713,-78.91571,"All,BrogdenÂ Middle,C.C.Â SpauldingÂ Elementary,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FoodÂ LionÂ #2646,"2121Â TWÂ AlexanderÂ DrÂ #Â 107,Â Morrisville,Â NCÂ 27560",35.92025,-78.81038,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+King'sÂ RedÂ &Â WhiteÂ Supermarket,305Â EÂ ClubÂ Blvd,36.01987,-78.88955,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+OneÂ HopÂ FoodÂ Mart,2021Â GuessÂ Rd,36.02288,-78.91846,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WholeÂ FoodsÂ Market,621Â BroadÂ St,36.00699,-78.92063,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+TortilleriaÂ Miguelena,4739Â NCÂ HighwayÂ 55,35.9009,-78.89584,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle,ParkwoodÂ Elementary",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aldi,7906Â NCÂ HighwayÂ 751,35.90004,-78.96084,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HarrisÂ TeeterÂ #120,"116Â WÂ BarbeeÂ ChapelÂ Rd,Â ChapelÂ Hill,Â NCÂ 27517",35.90637,-79.01042,"All, Lakewood Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Target,4037Â DurhamÂ ChapelÂ HillÂ Blvd,35.96627,-78.95901,"All,ForestÂ ViewÂ Elementary,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HarrisÂ TeeterÂ #172,1817Â MartinÂ LutherÂ KingÂ Pkwy,35.9598,-78.95936,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HalgoÂ EuropeanÂ DeliÂ &Â Grocery,4520Â SÂ AlstonÂ Ave,35.90189,-78.88921,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HarrisÂ TeeterÂ #497,1802Â NorthÂ PointeÂ Dr,36.02924,-78.92135,"All,BrogdenÂ Middle,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GeerÂ St.Â MiniÂ Mart,201Â EÂ GeerÂ St,36.00352,-78.8928,"All,EastwayÂ Elementary,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CompareÂ Foods,2000Â AvondaleÂ Dr,36.01511,-78.88813,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HarrisÂ TeeterÂ #304,"10440Â GlenwoodÂ Ave,Â Raleigh,Â NCÂ 27617",35.96781,-78.84068,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CompareÂ Foods,1233Â UniversityÂ Dr,35.98516,-78.90957,"All,BrogdenÂ Middle,C.C.Â SpauldingÂ Elementary,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WalmartÂ SupercenterÂ #2137,5450Â NewÂ HopeÂ CommonsÂ Dr,35.95481,-78.99897,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WalmartÂ Supercenter,1525Â GlennÂ SchoolÂ Rd,36.02851,-78.84378,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CarlieÂ C'sÂ IGA,3729Â WakeÂ ForestÂ Rd,35.98233,-78.82175,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+UÂ CÂ Stop,710Â SÂ AlstonÂ Ave,35.97987,-78.89197,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LaÂ CentralÂ Market,2022Â GuessÂ RdÂ #C,36.02329,-78.91812,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CircusÂ FoodÂ Store,3801Â WakeÂ ForestÂ Rd,35.98175,-78.82055,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WalmartÂ Supercenter,5450Â NewÂ HopeÂ CommonsÂ Dr,35.95452,-78.99864,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ShillaÂ OrientalÂ MarketÂ Llc,2107Â AllendownÂ DrÂ #Â 103,35.89912,-78.89531,"All,HillsideÂ High,LakewoodÂ Middle,LowesÂ GroveÂ Middle,ParkwoodÂ Elementary",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GuessÂ RoadÂ Minimart,2014Â GuessÂ Rd,36.02301,-78.91784,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Save-A-Lot,812Â LibertyÂ St,35.99231,-78.88651,"All,BrogdenÂ Middle,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+HarrisÂ TeeterÂ #492,3457Â HillsboroughÂ Rd,36.01893,-78.94845,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+PlazaÂ Latina,3801Â WakeÂ ForestÂ RdÂ #Â 118,35.98175,-78.82055,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sheetz,3414Â HillsboroughÂ Rd,36.01954,-78.94593,"All,BrogdenÂ Middle,E.K.Â PoweÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LighthouseÂ FoodÂ Mart,2944Â HollowayÂ St,35.98654,-78.84427,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+TrinityÂ FoodÂ Mart,403Â WÂ TrinityÂ Ave,36.00518,-78.90176,"All,BrogdenÂ Middle,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+TiendaÂ MiÂ Tierra,4226Â GarrettÂ RdÂ #C,35.95952,-78.97606,"All,JordanÂ High,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FoodÂ LionÂ #420,3808Â GuessÂ Rd,36.05851,-78.92777,"All,HillandaleÂ Elementary,LakewoodÂ Middle,RiversideÂ High",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+FoodÂ LionÂ #234,2400Â HollowayÂ StÂ #Â C,35.98929,-78.85942,"All,LakewoodÂ Middle",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,TriangleÊMiniÊMart,4003ÊFayettevilleÊSt,35.94921,-78.90328,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle"
-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,MoreheadÊMiniÊMart,1601ÊMoreheadÊAve,35.99189,-78.92153,"All,BrogdenÊMiddle,JordanÊHigh,LakewoodÊElementary,LakewoodÊMiddle"
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,FoodÊLionÊ#939,4621ÊHillsboroughÊRd,36.03208,-78.97963,"All,BrogdenÊMiddle,HillandaleÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,DurhamÊFoodÊWorld,401ÊEÊLakewoodÊAveÊ#ÊA,35.98777,-78.89996,"All,BrogdenÊMiddle,C.C.ÊSpauldingÊElementary,JordanÊHigh,LakewoodÊMiddle"
-4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,FoodÊLionÊ#747,3500ÊNÊRoxboroÊSt,36.03762,-78.89255,"All,LakewoodÊMiddle,RiversideÊHigh"
-5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,WalmartÊSupercenterÊ#1614,1525ÊGlennÊSchoolÊRd,36.02831,-78.84346,"All,LakewoodÊMiddle"
-6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,MiÊBarrioÊGrocery,2405ÊGuessÊRd,36.02622,-78.92259,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,FayÊStreetÊGroceryÊ&ÊGrill,1302ÊFayÊSt,35.99883,-78.88044,"All,EastwayÊElementary,LakewoodÊMiddle"
-8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,SunshineÊMart,2014ÊGuessÊRd,36.02301,-78.91784,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,ParkviewÊMiniÊMart,433ÊEÊPilotÊSt,35.96409,-78.90759,"All,FayettevilleÊStreetÊElementary,HillsideÊHigh,LakewoodÊMiddle"
-10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,LeoneÊInternationalÊFoods,810ÊFayettevilleÊStÊ#Ê108,35.98531,-78.89904,"All,BrogdenÊMiddle,C.C.ÊSpauldingÊElementary,JordanÊHigh,LakewoodÊMiddle"
-11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,SproutsÊFarmersÊMarket,105ÊWÊNCÊ54ÊHwy,35.91002,-78.93843,"All,JordanÊHigh,LakewoodÊMiddle"
-12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,NewÊYorkÊMiniÊMart,2929ÊAngierÊAve,35.97299,-78.86642,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle"
-13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,FreshÊMarket,4215ÊUniversityÊDrÊ#ÊA3,35.96277,-78.95871,"All,JordanÊHigh,LakewoodÊMiddle"
-14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,JoyÊSpeedÊMart,1624ÊGlennÊSchoolÊRd,36.03125,-78.84041,"All,LakewoodÊMiddle"
-15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,AroundÊTheÊWorldÊMarket,1708ÊEÊNCÊHighwayÊ54,35.90196,-78.90243,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle,ParkwoodÊElementary"
-16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,Al-TaibaÊMarket,1008ÊWÊChapelÊHillÊSt,35.99713,-78.91571,"All,BrogdenÊMiddle,C.C.ÊSpauldingÊElementary,JordanÊHigh,LakewoodÊMiddle"
-17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,FoodÊLionÊ#2646,"2121ÊTWÊAlexanderÊDrÊ#Ê107,ÊMorrisville,ÊNCÊ27560",35.92025,-78.81038,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle"
-18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,King'sÊRedÊ&ÊWhiteÊSupermarket,305ÊEÊClubÊBlvd,36.01987,-78.88955,"All,LakewoodÊMiddle"
-19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,OneÊHopÊFoodÊMart,2021ÊGuessÊRd,36.02288,-78.91846,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,WholeÊFoodsÊMarket,621ÊBroadÊSt,36.00699,-78.92063,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,TortilleriaÊMiguelena,4739ÊNCÊHighwayÊ55,35.9009,-78.89584,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle,ParkwoodÊElementary"
-22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,Aldi,7906ÊNCÊHighwayÊ751,35.90004,-78.96084,"All,JordanÊHigh,LakewoodÊMiddle"
-23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,HarrisÊTeeterÊ#120,"116ÊWÊBarbeeÊChapelÊRd,ÊChapelÊHill,ÊNCÊ27517",35.90637,-79.01042,NA
-24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,Target,4037ÊDurhamÊChapelÊHillÊBlvd,35.96627,-78.95901,"All,ForestÊViewÊElementary,JordanÊHigh,LakewoodÊMiddle"
-25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,HarrisÊTeeterÊ#172,1817ÊMartinÊLutherÊKingÊPkwy,35.9598,-78.95936,"All,JordanÊHigh,LakewoodÊMiddle"
-26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,HalgoÊEuropeanÊDeliÊ&ÊGrocery,4520ÊSÊAlstonÊAve,35.90189,-78.88921,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle"
-27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,27,HarrisÊTeeterÊ#497,1802ÊNorthÊPointeÊDr,36.02924,-78.92135,"All,BrogdenÊMiddle,LakewoodÊMiddle,RiversideÊHigh"
-28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,GeerÊSt.ÊMiniÊMart,201ÊEÊGeerÊSt,36.00352,-78.8928,"All,EastwayÊElementary,LakewoodÊMiddle"
-29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,CompareÊFoods,2000ÊAvondaleÊDr,36.01511,-78.88813,"All,LakewoodÊMiddle"
-30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,HarrisÊTeeterÊ#304,"10440ÊGlenwoodÊAve,ÊRaleigh,ÊNCÊ27617",35.96781,-78.84068,"All,LakewoodÊMiddle"
-31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,CompareÊFoods,1233ÊUniversityÊDr,35.98516,-78.90957,"All,BrogdenÊMiddle,C.C.ÊSpauldingÊElementary,JordanÊHigh,LakewoodÊMiddle"
-32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,WalmartÊSupercenterÊ#2137,5450ÊNewÊHopeÊCommonsÊDr,35.95481,-78.99897,"All,JordanÊHigh,LakewoodÊMiddle"
-33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,WalmartÊSupercenter,1525ÊGlennÊSchoolÊRd,36.02851,-78.84378,"All,LakewoodÊMiddle"
-34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,CarlieÊC'sÊIGA,3729ÊWakeÊForestÊRd,35.98233,-78.82175,"All,LakewoodÊMiddle"
-35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,UÊCÊStop,710ÊSÊAlstonÊAve,35.97987,-78.89197,"All,JordanÊHigh,LakewoodÊMiddle"
-36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,LaÊCentralÊMarket,2022ÊGuessÊRdÊ#C,36.02329,-78.91812,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,CircusÊFoodÊStore,3801ÊWakeÊForestÊRd,35.98175,-78.82055,"All,LakewoodÊMiddle"
-38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,WalmartÊSupercenter,5450ÊNewÊHopeÊCommonsÊDr,35.95452,-78.99864,"All,JordanÊHigh,LakewoodÊMiddle"
-39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,39,ShillaÊOrientalÊMarketÊLlc,2107ÊAllendownÊDrÊ#Ê103,35.89912,-78.89531,"All,HillsideÊHigh,LakewoodÊMiddle,LowesÊGroveÊMiddle,ParkwoodÊElementary"
-40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,GuessÊRoadÊMinimart,2014ÊGuessÊRd,36.02301,-78.91784,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,41,Save-A-Lot,812ÊLibertyÊSt,35.99231,-78.88651,"All,BrogdenÊMiddle,LakewoodÊMiddle,RiversideÊHigh"
-42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,HarrisÊTeeterÊ#492,3457ÊHillsboroughÊRd,36.01893,-78.94845,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,PlazaÊLatina,3801ÊWakeÊForestÊRdÊ#Ê118,35.98175,-78.82055,"All,LakewoodÊMiddle"
-44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,Sheetz,3414ÊHillsboroughÊRd,36.01954,-78.94593,"All,BrogdenÊMiddle,E.K.ÊPoweÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,45,LighthouseÊFoodÊMart,2944ÊHollowayÊSt,35.98654,-78.84427,"All,LakewoodÊMiddle"
-46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,46,TrinityÊFoodÊMart,403ÊWÊTrinityÊAve,36.00518,-78.90176,"All,BrogdenÊMiddle,LakewoodÊMiddle,RiversideÊHigh"
-47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,TiendaÊMiÊTierra,4226ÊGarrettÊRdÊ#C,35.95952,-78.97606,"All,JordanÊHigh,LakewoodÊMiddle"
-48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,FoodÊLionÊ#420,3808ÊGuessÊRd,36.05851,-78.92777,"All,HillandaleÊElementary,LakewoodÊMiddle,RiversideÊHigh"
-49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,FoodÊLionÊ#234,2400ÊHollowayÊStÊ#ÊC,35.98929,-78.85942,"All,LakewoodÊMiddle"
-Previewing first 50 entries.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
