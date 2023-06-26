@@ -61,8 +61,7 @@ body <- {dashboardBody(
   div(style = "float: right;",
       selectInput('selected_language',
                   i18n$t("Change Language"),
-                  choices = i18n$get_languages(),
-                  selected = i18n$get_key_translation())
+                  choices = c("English", "Spanish"))
   ),
   tabItems(
     #Home Page
