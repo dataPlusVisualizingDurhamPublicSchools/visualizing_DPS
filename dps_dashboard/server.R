@@ -4846,9 +4846,9 @@ function(input, output, session) {
                      )
                    }
                    else if(input$school_sports == "Riverside High"){
-                     paste(h4(i18n()$t("Baseball")),
+                     paste(h4(i18n()$t("Varsity Baseball")),
                            h4(i18n()$t("JV Baseball")),
-                           h4(i18n()$t("Softball")),
+                           h4(i18n()$t("Varsity Softball")),
                            h4(i18n()$t("JV Softball")),
                            h4(i18n()$t("Men's Golf")),
                            h4(i18n()$t("Men's Varsity Lacrosse")),
