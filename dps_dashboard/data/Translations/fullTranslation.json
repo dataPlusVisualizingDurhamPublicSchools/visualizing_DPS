@@ -1590,7 +1590,46 @@
 "Spanish": "¡Queremos eschuchar sus comentarios!"},
     
 {"English": "Click the text above to fill out our feedback form",
-"Spanish": "Haga clic en el texto de arriba para completar nuestro formulario de comentarios"}
-     
+"Spanish": "Haga clic en el texto de arriba para completar nuestro formulario de comentarios"},
+
+{"English": "Women's Varsity Basketball",
+"Spanish": "El Balencesto (Equipo Universitario) para Mujeres"},
+
+{"English": "Men's Varsity Basketball",
+"Spanish": "El Balencesto (Equipo Universitario) para Hombres"},
+
+{"English": "Women's Varsity Lacrosse",
+"Spanish": "El Lacrosse (Equipo Universitario) para Mujeres"},
+
+{"English": "Men's Varsity Lacrosse",
+"Spanish": "El Lacrosse (Equipo Universitario) para Hombres"},
+
+{"English": "Women's Varsity Soccer",
+"Spanish": "El Fútbol (Equipo Universitario) para Mujeres"},
+
+{"English": "Men's Varsity Soccer",
+"Spanish": "El Fútbol (Equipo Universitario) para Hombres"},
+
+{"English": "Varsity Football",
+"Spanish": "El Fútbol Americano (Equipo Universitario)"},
+
+{"English": "Women's Varsity Soccer",
+"Spanish": "El Fútbol (Equipo Universitario) para Mujeres"},
+
+{"English": "Women's Varsity Volleyball",
+"Spanish": "El Voleibol (Equipo Universitario) para Mujeres"},
+
+{"English": "Men's Varsity Volleyball",
+"Spanish": "El Voleibol (Equipo Universitario) para Hombres"},
+
+{"English": "Men's JV Volleyball",
+"Spanish": "El Voleibol (Equipo Juvenil Júnior) para Hombres"},
+
+{"English": "Varsity Softball",
+"Spanish": "El Sóftbal (Equipo Universitario)"},
+
+{"English": "Varsity Baseball",
+"Spanish": "El Beisbol (Equipo Universitario)"}
+
 ]
 }
