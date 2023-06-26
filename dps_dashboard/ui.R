@@ -193,7 +193,7 @@ body <- {dashboardBody(
                    htmlOutput("context")),
                
              ),
-             fluidRow(
+             fluidRow( 
                box(width = 4,
                    solidHeader = TRUE,
                    title = strong(i18n$t("Measurement")),
@@ -203,8 +203,19 @@ body <- {dashboardBody(
                                            "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                            "Forest View Elementary", "Hillandale Elementary","Hillside High",
                                            "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                           "Parkwood Elementary", "Riverside High", "Southwest Elementary"
+                                           "Parkwood Elementary", "Riverside High", "Southwest Elementary", "Bethesda Elementary", "Burton Elementary", "Carrington Middle",
+                                           "City of Medicine Academy", "Creekside Elementary", "Durham School of the Arts",
+                                           "Easley Elementary", "Eno Valley Elementary", "George Watts Elementary",
+                                           "Glenn Elementary", "Holt Elementary", "Holton Career", "Hope Valley Elementary",
+                                           "J.D. Clement Early College", "Lakewiew High", "Lucas Middle", "Mangum Elementary",
+                                           "Merrick-Moore Elementary", "Middle College", "Morehead Montessori School",
+                                           "Neal Middle", "Northern High", "Oak Grove Elementary", "Pearsontown Elementary",
+                                           "R.N. Harris Elementary", "Rogers Herr Middle", "Sandy Ridge Elementary",
+                                           "School for Creative Studies", "Shepard Middle", "Sherwood Githens Middle",
+                                           "Southern School of Energy and Sustainability", "Spring Valley Elementary",
+                                           "W.G. Pearson Elementary", "Y.E. Smith Elementary"
                                ),
+                               
                                multiple = FALSE),
                    selectInput("var",
                                label = em(i18n$t("Choose a variable to display")),
