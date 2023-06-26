@@ -216,10 +216,6 @@ translator <- Translator$new(translation_json_path = "./data/Translations/fullTr
 
 function(input, output, session) {
   
-  #observeEvent(input$selected_language, {
-  # Here is where we update language in session
-  #shiny.i18n::update_lang(session, input$selected_language)
-  #})
   
   i18n <- reactive({
     selected <- input$selected_language
@@ -228,6 +224,12 @@ function(input, output, session) {
     }
     translator
   })
+  
+  observeEvent(input$selected_language, {
+    #Here is where we update language in session
+    shiny.i18n::update_lang(session, input$selected_language)
+  })
+  str(input$selected_language)
   
   # SchoolStats - GGPlots
   {
