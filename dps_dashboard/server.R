@@ -3619,6 +3619,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
 ."),
                          "<br>",
                          "<br>",
+                         
                          i18n()$t("Below is more information about homeless shelters:"),
                          "<br>",
                          a(i18n()$t("Emergency Shelters"),
