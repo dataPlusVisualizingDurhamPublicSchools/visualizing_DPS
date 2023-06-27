@@ -3602,6 +3602,28 @@ function(input, output, session) {
                          a(i18n()$t("Recreation Centers Play an Important Role in Communities"),
                            href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
                  }
+                 else if(input$var == "Pharmacies"){
+                   paste(i18n()$t("Pharmacies are essential for several reasons. They provide convenient access to prescribed medications and over-the-counter drugs, ensuring patients have timely access to the treatments they need. Pharmacists, as highly trained healthcare professionals, offer expertise and guidance on medication usage, potential side effects, and drug interactions, promoting the safe and effective use of medications.
+Moreover, pharmacies contribute to public health by offering services like immunizations, health screenings, and wellness programs. They play a critical role in disease prevention and early detection. During public health emergencies, pharmacies are crucial for the distribution of vaccines and medications, supporting community health and well-being. Overall, pharmacies are vital healthcare destinations, ensuring medication access and providing expert advice to improve patient outcomes and promote community health.
+"),
+                         "<br>",
+                         "<br>",
+                         i18n()$t("Below is more information about pharmacies:"),
+                         "<br>",
+                         a(i18n()$t("The Role of Community Pharmacists in Patient Safety"),
+                           href = "https://psnet.ahrq.gov/perspective/role-community-pharmacists-patient-safety"))
+                 }
+                 else if(input$var == "Homeless Shelters"){
+                   paste(i18n()$t("Homeless shelters provide immediate assistance and support to individuals facing homelessness. They offer temporary housing, meals, clothing, and hygiene facilities. These shelters also collaborate with social workers, counselors, and job placement agencies to provide comprehensive support for individuals seeking to transition out of homelessness. Programs such as job training, education, mental health counseling, and substance abuse rehabilitation are offered to address the underlying causes of homelessness. Homeless shelters also contribute to the community by providing employment opportunities, vocational training, and community engagement programs. They serve as vital hubs for support, facilitating access to essential services and creating opportunities for both individuals experiencing homelessness and the community at large.
+
+."),
+                         "<br>",
+                         "<br>",
+                         i18n()$t("Below is more information about homeless shelters:"),
+                         "<br>",
+                         a(i18n()$t("Emergency Shelters"),
+                           href = "https://endhomelessness.org/topics/emergency-shelters/"))
+                 }
                  else if(input$var == "Religious Centers"){
                    paste(i18n()$t("Religious centers are huge assets to the community because of various services they provide. These services include donations, food drives, fundraisers, providing safe spaces for various cultures, counseling services, daycare, summer programs, and much more. Additionally, the Durham community has established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. Durham residents have shown their willingness to provide resources for all those in need, regardless of religious orientation."),
                          "<br>",
