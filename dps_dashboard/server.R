@@ -178,6 +178,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   farmersmark <- read.csv("./data/2021/spatial_data/renamed_Farmer's Markets.csv") 
   commarts <- read.csv("./data/2021/spatial_data/renamed_Community Arts.csv")
   sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
+  pharmacies <- read.csv("./data/2023/spatial_data/pharmacies.csv")
 }
 
 # Load/Rename Schools' Names
@@ -3101,6 +3102,7 @@ function(input, output, session) {
            "Hospitals and Clinics" = hospitals,
            "After-School Care Programs" = afterschool,
            "Community Arts" = commarts,
+           "Pharmacies" = pharmacies,
            "Community Sports" = sports)
   })
   
@@ -3315,6 +3317,11 @@ function(input, output, session) {
       temp_df <- commarts[grepl(input$zone, commarts$school_zones), ]
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name","Type","ADDRESS", "URL")]
+    }
+    else if(input$var == "Pharmacies")
+    {
+      temp_df <- pharmacies[grepl(input$zone, pharmacies$school_zones), ]
+      temp_df[c("name", "ADDRESS", "URL")]
     }
     else if(input$var == "Community Sports")
     {
