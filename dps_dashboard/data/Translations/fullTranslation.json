@@ -866,6 +866,9 @@
 {"English": "- AP Studio Art: 3D Design",
      "Spanish": "- AP Estudio de Arte: Diseño de tres dimensiones"},
 
+{"English": "- AP Studio Art: 3-D Design",
+     "Spanish": "- AP Estudio de Arte: Diseño de tres dimensiones"},
+
 {"English": "- AP Art History",
      "Spanish": "- AP Historia de Arte"},
 
@@ -1679,7 +1682,22 @@
 "Spanish": "- AP Estudio de Arte: El dibujo"},
 
 {"English": "2018 Physical Activity Guidelines for Americans Report",
-"Spanish": "Informe de las Pautas de actividad física para los estadounidenses de 2018"}
+"Spanish": "Informe de las Pautas de actividad física para los estadounidenses de 2018"},
+
+{"English": "- AP Spanish Literature and Culture",
+"Spanish": "- AP Literatura y Cultura Española"},
+
+{"English": "- AP English Literature and Culture",
+"Spanish": "- AP Literatura y Cultura Inglesa"},
+
+{"English": "- AP German Language and Culture",
+"Spanish": "- AP Lengua y Cultura Alemana"},
+
+{"English": "- AP English Language and Composition",
+"Spanish": "- AP Lengua y Composición Inglesa"},
+
+{"English": "- AP English Literature and Composition",
+"Spanish": "- AP Literatura y Composición Inglesa"}
 
 ]
 }
