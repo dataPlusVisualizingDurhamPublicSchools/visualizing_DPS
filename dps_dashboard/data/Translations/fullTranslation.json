@@ -1601,7 +1601,7 @@
 {"English": "Women's Varsity Basketball",
 "Spanish": "El Balencesto (Equipo Universitario) para Mujeres"},
 
-{"English": "Men's Varsity Basketball",
+{"English": "Men's Varisty Basketball",
 "Spanish": "El Balencesto (Equipo Universitario) para Hombres"},
 
 {"English": "Women's Varsity Lacrosse",
@@ -1613,7 +1613,7 @@
 {"English": "Women's Varsity Soccer",
 "Spanish": "El Fútbol (Equipo Universitario) para Mujeres"},
 
-{"English": "Men's Varsity Soccer",
+{"English": "Men’s Varsity Soccer",
 "Spanish": "El Fútbol (Equipo Universitario) para Hombres"},
 
 {"English": "Varsity Football",
@@ -1696,7 +1696,25 @@
 "Spanish": "- AP Lengua y Composición Inglesa"},
 
 {"English": "- AP English Literature and Composition",
-"Spanish": "- AP Literatura y Composición Inglesa"}
+"Spanish": "- AP Literatura y Composición Inglesa"},
+
+{"English": "Boy's Lacrosse",
+"Spanish": "El Lacrosse para Niños"},
+
+{"English": "Girl's Lacrosse",
+"Spanish": "El Lacrosse para Niñas"},
+
+{"English": "Boy's Tennis",
+"Spanish": "El Tenis para Niños"},
+
+{"English": "Ultimate Frisbee",
+"Spanish": "Ultimate Frisbee"},
+
+{"English": "Girl's Track",
+"Spanish": "El Atletismo para Niñas"},
+
+{"English": "Girl's Soccer",
+"Spanish": "El Fútbol para Niñas"}
 
 ]
 }
