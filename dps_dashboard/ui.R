@@ -219,7 +219,7 @@ body <- {dashboardBody(
                    selectInput("var",
                                label = em(i18n$t("Choose a variable to display")),
                                choices = c("After-School Care Programs", "Bus Stops", 
-                                           "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Food Banks", "Gardens",
+                                           "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                            "Grocery Stores", "Hospitals and Clinics","Libraries", "Homeless Shelters", "Parks", "Pharmacies",  
                                            "Recreation Centers", "Religious Centers"
                                ),
