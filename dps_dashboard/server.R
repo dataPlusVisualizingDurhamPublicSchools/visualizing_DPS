@@ -179,6 +179,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   commarts <- read.csv("./data/2021/spatial_data/renamed_Community Arts.csv")
   sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
   pharmacies <- read.csv("./data/2023/spatial_data/pharmacies.csv")
+  shelters <- read.csv("./data/2023/spatial_data/homeless_shelter.csv")
 }
 
 # Load/Rename Schools' Names
@@ -210,6 +211,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20),
     commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20),
     pharmacies = makeIcon("https://img.icons8.com/ios-filled/50/000000/pharmacy.png", iconWidth=20, iconHeight=20),
+    shelter = makeIcon("https://img.icons8.com/ios-filled/50/000000/homeless-shelter.png", iconWidth=20, iconHeight=20), 
     sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20)
   )
 }
@@ -3104,6 +3106,7 @@ function(input, output, session) {
            "After-School Care Programs" = afterschool,
            "Community Arts" = commarts,
            "Pharmacies" = pharmacies,
+           "Homeless Shelters" = shelters,
            "Community Sports" = sports)
   })
   
@@ -3125,6 +3128,7 @@ function(input, output, session) {
            "After-School Care Programs" = iconSet$afterschool,
            "Community Arts" = iconSet$commarts,
            "Pharmacies" = iconSet$pharmacies,
+           "Homeless Shelters" = iconSet$shelters,
            "Community Sports" = iconSet$sports)
   })
   
@@ -3323,6 +3327,11 @@ function(input, output, session) {
     else if(input$var == "Pharmacies")
     {
       temp_df <- pharmacies[grepl(input$zone, pharmacies$school_zones), ]
+      temp_df[c("name", "ADDRESS", "URL")]
+    }
+    else if(input$var == "Homeless Shelters")
+    {
+      temp_df <- shelters[grepl(input$zone, shelters$school_zones), ]
       temp_df[c("name", "ADDRESS", "URL")]
     }
     else if(input$var == "Community Sports")
