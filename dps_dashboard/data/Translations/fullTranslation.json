@@ -866,6 +866,9 @@
 {"English": "- AP Studio Art: 3D Design",
      "Spanish": "- AP Estudio de Arte: Diseño de tres dimensiones"},
 
+{"English": "- AP Studio Art: 3-D Design",
+     "Spanish": "- AP Estudio de Arte: Diseño de tres dimensiones"},
+
 {"English": "- AP Art History",
      "Spanish": "- AP Historia de Arte"},
 
@@ -1307,7 +1310,11 @@
     {"English": "providing “diverse music entertainment and serving as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the",
      "Spanish": "que brinda entretenimiento musical diverso y sirve como un recurso educativo para nuestra comunidad y en el extranjero NCCU también brinda oportunidades de voluntariado para sus estudiantes en el programa"
      },
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8044aed489ae0a860dfeabbae06cdb69f7001c7d
     {"English": "KidzNotes program",
      "Spanish": "KidzNotes programa"},
     
@@ -1655,8 +1662,46 @@
   "Spanish": "Lauren Walker es estudiante de tercer año en la Universidad y es de Duke de Needham, Massachusetts. Ella está estudiando Ciencias de la Computación con una especialización en Estadística. Lauren se unió a este equipo del proyecto Data+ porque está ansiosa por fortalecer la relación y la asociación entre las Escuelas Públicas de Durham y las universidades locales. También le gusta programar y espera mejorar sus habilidades en ciencia de datos. Ella espera que este tablero sirva como un recurso valioso para aquellos que buscan aprender más sobre los recursos que se ofrecen en todo el sistema de las Escuelas Públicas de Durham y hacer que la educación sea más accesible y equitativa."
 }, 
 {"English": "Unzila Sakina Babar, a sophomore at Duke University, is a passionate computer and data scientist hailing from Lahore, Pakistan. Alongside her academic pursuits, she possesses a keen interest in the education system. Unzila's deep-rooted desire to revolutionize the schooling system in her home country fuels her involvement in this project. She envisions fostering a robust sense of community within Pakistan School Systems while raising awareness about the abundant resources and communities available in the Public Schools of Durham County.  She seeks to synergize her own expertise with the capabilities of this dashboard to create a lasting impact on Durham Public Schools and extend this influence beyond its boundaries. ", 
-  "Spanish": "Unzila Sakina Babar, estudiante de segundo año en la Universidad de Duke, es una apasionada científica informática y de datos oriunda de Lahore, Pakistán. Además de sus actividades académicas, posee un gran interés en el sistema educativo. El deseo profundamente arraigado de Unzila de revolucionar el sistema educativo en su país de origen impulsa su participación en este proyecto. Ella prevé fomentar un sólido sentido de comunidad dentro de los sistemas escolares de Pakistán mientras crea conciencia sobre los abundantes recursos y comunidades disponibles en las escuelas públicas del condado de Durham. Ella busca combinar su propia experiencia con las capacidades de este tablero para crear un impacto duradero en las Escuelas Públicas de Durham y extender esta influencia más allá de sus límites."}
+  "Spanish": "Unzila Sakina Babar, estudiante de segundo año en la Universidad de Duke, es una apasionada científica informática y de datos oriunda de Lahore, Pakistán. Además de sus actividades académicas, posee un gran interés en el sistema educativo. El deseo profundamente arraigado de Unzila de revolucionar el sistema educativo en su país de origen impulsa su participación en este proyecto. Ella prevé fomentar un sólido sentido de comunidad dentro de los sistemas escolares de Pakistán mientras crea conciencia sobre los abundantes recursos y comunidades disponibles en las escuelas públicas del condado de Durham. Ella busca combinar su propia experiencia con las capacidades de este tablero para crear un impacto duradero en las Escuelas Públicas de Durham y extender esta influencia más allá de sus límites."},
 
+{"English": "- AP U.S. Government and Politics",
+"Spanish": "- AP Gobierno y política"},
+
+{"English": "- AP U.S. History",
+"Spanish": "- AP Historia de los Estados Unidos"},
+
+{"English": "- AP Comparative Government and Politics",
+"Spanish": "- AP Comparado Gobierno y Política"},
+
+{"English": "- AP Spanish Language and Culture",
+"Spanish": "- AP Lengua y Cultura Española"},
+
+{"English": "- AP French Language and Culture",
+"Spanish": "- AP Lengua y Cultura Francesa"},
+
+{"English": "- AP Studio Art: 2-D Design",
+"Spanish": "- AP Estudio de Arte: Diseño de dos dimensiones"},
+
+{"English": "- AP Studio Art: Drawing",
+"Spanish": "- AP Estudio de Arte: El dibujo"},
+
+{"English": "2018 Physical Activity Guidelines for Americans Report",
+"Spanish": "Informe de las Pautas de actividad física para los estadounidenses de 2018"},
+
+{"English": "- AP Spanish Literature and Culture",
+"Spanish": "- AP Literatura y Cultura Española"},
+
+{"English": "- AP English Literature and Culture",
+"Spanish": "- AP Literatura y Cultura Inglesa"},
+
+{"English": "- AP German Language and Culture",
+"Spanish": "- AP Lengua y Cultura Alemana"},
+
+{"English": "- AP English Language and Composition",
+"Spanish": "- AP Lengua y Composición Inglesa"},
+
+{"English": "- AP English Literature and Composition",
+"Spanish": "- AP Literatura y Composición Inglesa"}
 
 ]
 }
