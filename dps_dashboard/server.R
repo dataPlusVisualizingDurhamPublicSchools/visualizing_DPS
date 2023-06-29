@@ -3327,11 +3327,13 @@ function(input, output, session) {
     else if(input$var == "Pharmacies")
     {
       temp_df <- pharmacies[grepl(input$zone, pharmacies$school_zones), ]
+      temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name", "ADDRESS", "URL")]
     }
     else if(input$var == "Homeless Shelters")
     {
       temp_df <- shelters[grepl(input$zone, shelters$school_zones), ]
+      temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name", "ADDRESS", "URL")]
     }
     else if(input$var == "Community Sports")
