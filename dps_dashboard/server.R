@@ -3323,6 +3323,7 @@ function(input, output, session) {
       temp_df <- commarts[grepl(input$zone, commarts$school_zones), ]
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name","Type","ADDRESS", "URL")]
+      
     }
     else if(input$var == "Pharmacies")
     {
