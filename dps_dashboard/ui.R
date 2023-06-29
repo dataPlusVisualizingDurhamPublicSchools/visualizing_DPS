@@ -799,7 +799,7 @@ body <- {dashboardBody(
                                                         "City of Medicine Academy",
                                                         "JD Clement High",
                                                         "Durham School of Technology",
-                                                        "Middle College",
+                                                        "Middle College High",
                                                         "Holton Career and Resource Center",
                                                         "Northern High",
                                                         "Southern School of Energy and Sustainability",
