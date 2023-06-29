@@ -783,7 +783,7 @@ body <- {dashboardBody(
                                                         "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
                                                         "Parkwood Elementary", "Riverside High", "Southwest Elementary", "Eno Valley Elementary", "Glenn Elementary", 
                                                         "Creekside Elementary", "Easley Elementary", "Burton Elementary", "Bethesda Elementary", "George Watts Elementary", 
-                                                        "Holt Elementary", "Hope Valley Elementary", "Magnum Elementary", "Morehead Montessori Elementary", "Merrick-Moore Elementary", 
+                                                        "Holt Elementary", "Hope Valley Elementary", "Mangum Elementary", "Morehead Montessori Elementary", "Merrick-Moore Elementary", 
                                                         "Oak Grove Elementary", "Pearsontown Elementary", "W.G. Pearson Elementary", "Sandy Ridge Elementary",  "R.N. Harris Elementary", 
                                                         "Spring Valley Elementary", 
                                                         "YE Smith Elementary",
