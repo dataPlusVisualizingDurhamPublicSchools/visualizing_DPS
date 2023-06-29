@@ -3369,7 +3369,7 @@ function(input, output, session) {
     counts_grouped<-counts_grouped_2021[!(counts_grouped_2021$name=="All School"),]
     counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Elementary School', 'Lakewood Elementary')
     counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Middle School', 'Lakewood Middle')
-    counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
+    #counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
     counts_grouped <- subset(counts_grouped, name == input$insights_zone)
     ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
       ylab("Number of Resource") + xlab("Resource Type")
