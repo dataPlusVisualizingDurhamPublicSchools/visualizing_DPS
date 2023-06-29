@@ -823,7 +823,7 @@ body <- {dashboardBody(
              fluidRow(
                tabBox(
                 tabPanel(i18n$t("Undergraduate Studens")),
-                tabPanel(i18n$t("Staff/Faculty")))),
+                tabPanel(i18n$t("Staff/Faculty"))))
     )},
     
     #Meet the team tab
