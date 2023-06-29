@@ -50,6 +50,7 @@ sidebar <- {dashboardSidebar(
     menuItem(i18n$t("School Sports"), tabName = "sportstab", icon = icon("basketball-ball")),
     menuItem(i18n$t("Arts Programs"), tabName = "artstab", icon = icon("paint-brush")),
     menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
+    menuItem(i18n$t("Duke/NCCU Engagement"), tabName = "engagementtab", icon = icon("fas fa-handshake-angle")),
     menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users")),
     menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment"))
   )
@@ -815,6 +816,14 @@ body <- {dashboardBody(
              
              
              
+    )},
+    
+    ##NCCU/DUKE engagement tab
+    {tabItem(tabName = "engagementtab",
+             fluidRow(
+               tabBox(
+                tabPanel(i18n$t("Undergraduate Studens")),
+                tabPanel(i18n$t("Staff/Faculty")))),
     )},
     
     #Meet the team tab
