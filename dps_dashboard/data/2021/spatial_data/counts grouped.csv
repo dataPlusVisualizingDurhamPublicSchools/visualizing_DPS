@@ -306,7 +306,7 @@
 304,Pharmacies,Eno Valley Elementary School,0
 305,Homeless Shelters,Eno Valley Elementary School,0
 306,After-School Care Programs,Glenn Elementary School,1
-307,Bus Stops,Glenn Elementary School,
+307,Bus Stops,Glenn Elementary School,0
 308,Childcare Centers,Glenn Elementary School,2
 309,Community & Cultural Centers,Glenn Elementary School,1
 310,Community Arts,Glenn Elementary School,11
@@ -323,7 +323,7 @@
 321,Pharmacies,Glenn Elementary School,1
 322,Homeless Shelters,Glenn Elementary School,0
 323,After-School Care Programs,Creekside Elementary School,2
-324,Bus Stops,Creekside Elementary School,
+324,Bus Stops,Creekside Elementary School,0
 325,Childcare Centers,Creekside Elementary School,0
 326,Community & Cultural Centers,Creekside Elementary School,0
 327,Community Arts,Creekside Elementary School,4
@@ -340,7 +340,7 @@
 338,Pharmacies,Creekside Elementary School,2
 339,Homeless Shelters,Creekside Elementary School,0
 340,After-School Care Programs,Easley Elementary School,1
-341,Bus Stops,Easley Elementary School,
+341,Bus Stops,Easley Elementary School,0
 342,Childcare Centers,Easley Elementary School,1
 343,Community & Cultural Centers,Easley Elementary School,0
 344,Community Arts,Easley Elementary School,4
@@ -356,9 +356,9 @@
 354,Religious Centers,Easley Elementary School,1
 355,Pharmacies,Easley Elementary School,7
 356,Homeless Shelters,Easley Elementary School,0
-357,After-School Care Programs,Burton Elementary School,
+357,After-School Care Programs,Burton Elementary School,0
 358,Bus Stops,Burton Elementary School,1
-359,Childcare Centers,Burton Elementary School,
+359,Childcare Centers,Burton Elementary School,0
 360,Community & Cultural Centers,Burton Elementary School,1
 361,Community Arts,Burton Elementary School,0
 362,Community Gardens,Burton Elementary School,0
@@ -374,7 +374,7 @@
 372,Pharmacies,Burton Elementary School,0
 373,Homeless Shelters,Burton Elementary School,0
 374,After-School Care Programs,Bethesda Elementary School,0
-375,Bus Stops,Bethesda Elementary School,
+375,Bus Stops,Bethesda Elementary School,0
 376,Childcare Centers,Bethesda Elementary School,2
 377,Community & Cultural Centers,Bethesda Elementary School,0
 378,Community Arts,Bethesda Elementary School,1
@@ -391,7 +391,7 @@
 389,Pharmacies,Bethesda Elementary School,1
 390,Homeless Shelters,Bethesda Elementary School,0
 391,After-School Care Programs,George Watts Elementary School,1
-392,Bus Stops,George Watts Elementary School,
+392,Bus Stops,George Watts Elementary School,0
 393,Childcare Centers,George Watts Elementary School,0
 394,Community & Cultural Centers,George Watts Elementary School,0
 395,Community Arts,George Watts Elementary School,6
@@ -408,7 +408,7 @@
 406,Pharmacies,George Watts Elementary School,0
 407,Homeless Shelters,George Watts Elementary School,0
 408,After-School Care Programs,Holt Elementary School,3
-409,Bus Stops,Holt Elementary School,
+409,Bus Stops,Holt Elementary School,0
 410,Childcare Centers,Holt Elementary School,3
 411,Community & Cultural Centers,Holt Elementary School,1
 412,Community Arts,Holt Elementary School,15
@@ -425,7 +425,7 @@
 423,Pharmacies,Holt Elementary School,7
 424,Homeless Shelters,Holt Elementary School,2
 425,After-School Care Programs,Hope Valley Elementary School,2
-426,Bus Stops,Hope Valley Elementary School,
+426,Bus Stops,Hope Valley Elementary School,0
 427,Childcare Centers,Hope Valley Elementary School,3
 428,Community & Cultural Centers,Hope Valley Elementary School,1
 429,Community Arts,Hope Valley Elementary School,3
@@ -442,7 +442,7 @@
 440,Pharmacies,Hope Valley Elementary School,3
 441,Homeless Shelters,Hope Valley Elementary School,0
 442,After-School Care Programs,Little River K-8 School,1
-443,Bus Stops,Little River K-8 School,
+443,Bus Stops,Little River K-8 School,0
 444,Childcare Centers,Little River K-8 School,1
 445,Community & Cultural Centers,Little River K-8 School,0
 446,Community Arts,Little River K-8 School,1
@@ -459,7 +459,7 @@
 457,Pharmacies,Little River K-8 School,0
 458,Homeless Shelters,Little River K-8 School,0
 459,After-School Care Programs,Morehead Montessori School,1
-460,Bus Stops,Morehead Montessori School,
+460,Bus Stops,Morehead Montessori School,0
 461,Childcare Centers,Morehead Montessori School,0
 462,Community & Cultural Centers,Morehead Montessori School,1
 463,Community Arts,Morehead Montessori School,2
@@ -476,7 +476,7 @@
 474,Pharmacies,Morehead Montessori School,0
 475,Homeless Shelters,Morehead Montessori School,0
 476,After-School Care Programs,Merrick-Moore Elementary School,1
-477,Bus Stops,Merrick-Moore Elementary School,
+477,Bus Stops,Merrick-Moore Elementary School,0
 478,Childcare Centers,Merrick-Moore Elementary School,0
 479,Community & Cultural Centers,Merrick-Moore Elementary School,0
 480,Community Arts,Merrick-Moore Elementary School,0
@@ -493,7 +493,7 @@
 491,Pharmacies,Merrick-Moore Elementary School,0
 492,Homeless Shelters,Merrick-Moore Elementary School,0
 493,After-School Care Programs,Oak Grove Elementary School,1
-494,Bus Stops,Oak Grove Elementary School,
+494,Bus Stops,Oak Grove Elementary School,0
 495,Childcare Centers,Oak Grove Elementary School,0
 496,Community & Cultural Centers,Oak Grove Elementary School,0
 497,Community Arts,Oak Grove Elementary School,0
@@ -510,7 +510,7 @@
 508,Pharmacies,Oak Grove Elementary School,1
 509,Homeless Shelters,Oak Grove Elementary School,0
 510,After-School Care Programs,Pearsontown Elementary School,3
-511,Bus Stops,Pearsontown Elementary School,
+511,Bus Stops,Pearsontown Elementary School,0
 512,Childcare Centers,Pearsontown Elementary School,6
 513,Community & Cultural Centers,Pearsontown Elementary School,3
 514,Community Arts,Pearsontown Elementary School,36
@@ -527,7 +527,7 @@
 525,Pharmacies,Pearsontown Elementary School,12
 526,Homeless Shelters,Pearsontown Elementary School,3
 527,After-School Care Programs,W.G. Pearson Elementary School,1
-528,Bus Stops,W.G. Pearson Elementary School,
+528,Bus Stops,W.G. Pearson Elementary School,0
 529,Childcare Centers,W.G. Pearson Elementary School,0
 530,Community & Cultural Centers,W.G. Pearson Elementary School,0
 531,Community Arts,W.G. Pearson Elementary School,3
@@ -544,7 +544,7 @@
 542,Pharmacies,W.G. Pearson Elementary School,2
 543,Homeless Shelters,W.G. Pearson Elementary School,3
 544,After-School Care Programs,Sandy Ridge Elementary School,2
-545,Bus Stops,Sandy Ridge Elementary School,
+545,Bus Stops,Sandy Ridge Elementary School,0
 546,Childcare Centers,Sandy Ridge Elementary School,0
 547,Community & Cultural Centers,Sandy Ridge Elementary School,0
 548,Community Arts,Sandy Ridge Elementary School,0
@@ -561,7 +561,7 @@
 559,Pharmacies,Sandy Ridge Elementary School,1
 560,Homeless Shelters,Sandy Ridge Elementary School,0
 561,After-School Care Programs,R.N. Harris Elementary School,1
-562,Bus Stops,R.N. Harris Elementary School,
+562,Bus Stops,R.N. Harris Elementary School,0
 563,Childcare Centers,R.N. Harris Elementary School,0
 564,Community & Cultural Centers,R.N. Harris Elementary School,0
 565,Community Arts,R.N. Harris Elementary School,0
@@ -578,7 +578,7 @@
 576,Pharmacies,R.N. Harris Elementary School,0
 577,Homeless Shelters,R.N. Harris Elementary School,0
 578,After-School Care Programs,Y.E. Smith Elementary School,1
-579,Bus Stops,Y.E. Smith Elementary School,
+579,Bus Stops,Y.E. Smith Elementary School,0
 580,Childcare Centers,Y.E. Smith Elementary School,0
 581,Community & Cultural Centers,Y.E. Smith Elementary School,0
 582,Community Arts,Y.E. Smith Elementary School,0
@@ -663,7 +663,7 @@
 661,Pharmacies,Neal Middle School,2
 662,Homeless Shelters,Neal Middle School,2
 663,After-School Care Programs,Rogers-Herr Middle School,2
-664,Bus Stops,Rogers-Herr Middle School,
+664,Bus Stops,Rogers-Herr Middle School,0
 665,Childcare Centers,Rogers-Herr Middle School,8
 666,Community & Cultural Centers,Rogers-Herr Middle School,2
 667,Community Arts,Rogers-Herr Middle School,35
@@ -714,7 +714,7 @@
 712,Pharmacies,School for Creative Studies,35
 713,Homeless Shelters,School for Creative Studies,11
 714,After-School Care Programs,Shepard Middle School,1
-715,Bus Stops,Shepard Middle School,
+715,Bus Stops,Shepard Middle School,0
 716,Childcare Centers,Shepard Middle School,0
 717,Community & Cultural Centers,Shepard Middle School,0
 718,Community Arts,Shepard Middle School,0
@@ -731,7 +731,7 @@
 729,Pharmacies,Shepard Middle School,0
 730,Homeless Shelters,Shepard Middle School,0
 731,After-School Care Programs,JD Clement High School,0
-732,Bus Stops,JD Clement High School,
+732,Bus Stops,JD Clement High School,0
 733,Childcare Centers,JD Clement High School,0
 734,Community & Cultural Centers,JD Clement High School,0
 735,Community Arts,JD Clement High School,0
@@ -748,7 +748,7 @@
 746,Pharmacies,JD Clement High School,0
 747,Homeless Shelters,JD Clement High School,0
 748,After-School Care Programs,Durham School of Technology,0
-749,Bus Stops,Durham School of Technology,
+749,Bus Stops,Durham School of Technology,0
 750,Childcare Centers,Durham School of Technology,0
 751,Community & Cultural Centers,Durham School of Technology,0
 752,Community Arts,Durham School of Technology,2
@@ -799,7 +799,7 @@
 797,Pharmacies,Holton Career and Resource Center,35
 798,Homeless Shelters,Holton Career and Resource Center,11
 799,After-School Care Programs,Northern High School,7
-800,Bus Stops,Northern High School,
+800,Bus Stops,Northern High School,0
 801,Childcare Centers,Northern High School,2
 802,Community & Cultural Centers,Northern High School,0
 803,Community Arts,Northern High School,4
@@ -816,7 +816,7 @@
 814,Pharmacies,Northern High School,3
 815,Homeless Shelters,Northern High School,1
 816,After-School Care Programs,Southern School of Energy and Sustainability,4
-817,Bus Stops,Southern School of Energy and Sustainability,
+817,Bus Stops,Southern School of Energy and Sustainability,0
 818,Childcare Centers,Southern School of Energy and Sustainability,0
 819,Community & Cultural Centers,Southern School of Energy and Sustainability,0
 820,Community Arts,Southern School of Energy and Sustainability,0
@@ -833,7 +833,7 @@
 831,Pharmacies,Southern School of Energy and Sustainability,2
 832,Homeless Shelters,Southern School of Energy and Sustainability,2
 833,After-School Care Programs,Lakeview High School,0
-834,Bus Stops,Lakeview High School,
+834,Bus Stops,Lakeview High School,0
 835,Childcare Centers,Lakeview High School,0
 836,Community & Cultural Centers,Lakeview High School,0
 837,Community Arts,Lakeview High School,0
