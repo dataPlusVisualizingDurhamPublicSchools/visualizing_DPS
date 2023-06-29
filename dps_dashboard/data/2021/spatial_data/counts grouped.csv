@@ -1,21 +1,21 @@
 ,varname,name,count
-0,After-School Care Programs,All ,49
-1,Bus Stops,All ,1046
-2,Childcare Centers,All ,54
-3,Community & Cultural Centers,All ,17
-4,Community Arts,All ,63
-5,Community Gardens,All ,9
-6,Community Sports,All ,23
-7,Farmer's Markets,All ,5
-8,Food Pantries,All ,56
-9,Grocery Stores,All ,50
-10,Hospitals and Clinics,All ,19
-11,Libraries,All ,8
-12,Parks,All ,23
-13,Recreation Centers,All ,13
-14,Religious Centers,All ,47
-15,Pharmacies,All ,35
-16,Homeless Shelters,All ,11
+0,After-School Care Programs,All School,49
+1,Bus Stops,All School,1046
+2,Childcare Centers,All School,54
+3,Community & Cultural Centers,All School,17
+4,Community Arts,All School,63
+5,Community Gardens,All School,9
+6,Community Sports,All School,23
+7,Farmer's Markets,All School,5
+8,Food Pantries,All School,56
+9,Grocery Stores,All School,50
+10,Hospitals and Clinics,All School,19
+11,Libraries,All School,8
+12,Parks,All School,23
+13,Recreation Centers,All School,13
+14,Religious Centers,All School,47
+15,Pharmacies,All School,35
+16,Homeless Shelters,All School,11
 17,After-School Care Programs,Brogden Middle,14
 18,Bus Stops,Brogden Middle,402
 19,Childcare Centers,Brogden Middle,16
@@ -84,601 +84,601 @@
 82,Religious Centers,E.K. Powe Elementary,2
 83,Pharmacies,E.K. Powe Elementary,3
 84,Homeless Shelters,E.K. Powe Elementary,0
-85,After-School Care Programs,Eastway Elementary ,1
-86,Bus Stops,Eastway Elementary ,51
-87,Childcare Centers,Eastway Elementary ,2
-88,Community & Cultural Centers,Eastway Elementary ,1
-89,Community Arts,Eastway Elementary ,1
-90,Community Gardens,Eastway Elementary ,1
-91,Community Sports,Eastway Elementary ,0
-92,Farmer's Markets,Eastway Elementary ,1
-93,Food Pantries,Eastway Elementary ,6
-94,Grocery Stores,Eastway Elementary ,2
-95,Hospitals and Clinics,Eastway Elementary ,0
-96,Libraries,Eastway Elementary ,1
-97,Parks,Eastway Elementary ,2
-98,Recreation Centers,Eastway Elementary ,1
-99,Religious Centers,Eastway Elementary ,3
-100,Pharmacies,Eastway Elementary ,0
-101,Homeless Shelters,Eastway Elementary ,4
-102,After-School Care Programs,Fayetteville Street Elementary ,2
-103,Bus Stops,Fayetteville Street Elementary ,34
-104,Childcare Centers,Fayetteville Street Elementary ,2
-105,Community & Cultural Centers,Fayetteville Street Elementary ,3
-106,Community Arts,Fayetteville Street Elementary ,4
-107,Community Gardens,Fayetteville Street Elementary ,0
-108,Community Sports,Fayetteville Street Elementary ,1
-109,Farmer's Markets,Fayetteville Street Elementary ,1
-110,Food Pantries,Fayetteville Street Elementary ,5
-111,Grocery Stores,Fayetteville Street Elementary ,3
-112,Hospitals and Clinics,Fayetteville Street Elementary ,1
-113,Libraries,Fayetteville Street Elementary ,2
-114,Parks,Fayetteville Street Elementary ,0
-115,Recreation Centers,Fayetteville Street Elementary ,0
-116,Religious Centers,Fayetteville Street Elementary ,7
-117,Pharmacies,Fayetteville Street Elementary ,2
-118,Homeless Shelters,Fayetteville Street Elementary ,0
-119,After-School Care Programs,Forest View Elementary ,0
-120,Bus Stops,Forest View Elementary ,55
-121,Childcare Centers,Forest View Elementary ,2
-122,Community & Cultural Centers,Forest View Elementary ,1
-123,Community Arts,Forest View Elementary ,4
-124,Community Gardens,Forest View Elementary ,0
-125,Community Sports,Forest View Elementary ,0
-126,Farmer's Markets,Forest View Elementary ,0
-127,Food Pantries,Forest View Elementary ,1
-128,Grocery Stores,Forest View Elementary ,4
-129,Hospitals and Clinics,Forest View Elementary ,4
-130,Libraries,Forest View Elementary ,1
-131,Parks,Forest View Elementary ,1
-132,Recreation Centers,Forest View Elementary ,0
-133,Religious Centers,Forest View Elementary ,0
-134,Pharmacies,Forest View Elementary ,2
-135,Homeless Shelters,Forest View Elementary ,1
-136,After-School Care Programs,Hillandale Elementary ,0
-137,Bus Stops,Hillandale Elementary ,48
-138,Childcare Centers,Hillandale Elementary ,3
-139,Community & Cultural Centers,Hillandale Elementary ,0
-140,Community Arts,Hillandale Elementary ,5
-141,Community Gardens,Hillandale Elementary ,0
-142,Community Sports,Hillandale Elementary ,2
-143,Farmer's Markets,Hillandale Elementary ,1
-144,Food Pantries,Hillandale Elementary ,2
-145,Grocery Stores,Hillandale Elementary ,2
-146,Hospitals and Clinics,Hillandale Elementary ,1
-147,Libraries,Hillandale Elementary ,0
-148,Parks,Hillandale Elementary ,0
-149,Recreation Centers,Hillandale Elementary ,0
-150,Religious Centers,Hillandale Elementary ,0
-151,Pharmacies,Hillandale Elementary ,3
-152,Homeless Shelters,Hillandale Elementary ,0
-153,After-School Care Programs,Hillside High ,4
-154,Bus Stops,Hillside High ,251
-155,Childcare Centers,Hillside High ,11
-156,Community & Cultural Centers,Hillside High ,1
-157,Community Arts,Hillside High ,2
-158,Community Gardens,Hillside High ,1
-159,Community Sports,Hillside High ,5
-160,Farmer's Markets,Hillside High ,3
-161,Food Pantries,Hillside High ,11
-162,Grocery Stores,Hillside High ,8
-163,Hospitals and Clinics,Hillside High ,1
-164,Libraries,Hillside High ,2
-165,Parks,Hillside High ,3
-166,Recreation Centers,Hillside High ,3
-167,Religious Centers,Hillside High ,17
-168,Pharmacies,Hillside High ,3
-169,Homeless Shelters,Hillside High ,0
-170,After-School Care Programs,Jordan High ,9
-171,Bus Stops,Jordan High ,222
-172,Childcare Centers,Jordan High ,17
-173,Community & Cultural Centers,Jordan High ,9
-174,Community Arts,Jordan High ,21
-175,Community Gardens,Jordan High ,2
-176,Community Sports,Jordan High ,7
-177,Farmer's Markets,Jordan High ,0
-178,Food Pantries,Jordan High ,10
-179,Grocery Stores,Jordan High ,14
-180,Hospitals and Clinics,Jordan High ,3
-181,Libraries,Jordan High ,2
-182,Parks,Jordan High ,6
-183,Recreation Centers,Jordan High ,4
-184,Religious Centers,Jordan High ,17
-185,Pharmacies,Jordan High ,9
-186,Homeless Shelters,Jordan High ,1
-187,After-School Care Programs,Lakewood Elementary ,2
-188,Bus Stops,Lakewood Elementary ,41
-189,Childcare Centers,Lakewood Elementary ,2
-190,Community & Cultural Centers,Lakewood Elementary ,3
-191,Community Arts,Lakewood Elementary ,3
-192,Community Gardens,Lakewood Elementary ,6
-193,Community Sports,Lakewood Elementary ,1
-194,Farmer's Markets,Lakewood Elementary ,0
-195,Food Pantries,Lakewood Elementary ,3
-196,Grocery Stores,Lakewood Elementary ,4
-197,Hospitals and Clinics,Lakewood Elementary ,0
-198,Libraries,Lakewood Elementary ,0
-199,Parks,Lakewood Elementary ,2
-200,Recreation Centers,Lakewood Elementary ,0
-201,Religious Centers,Lakewood Elementary ,1
-202,Pharmacies,Lakewood Elementary ,0
-203,Homeless Shelters,Lakewood Elementary ,0
-204,After-School Care Programs,Lakewood Middle ,24
-205,Bus Stops,Lakewood Middle ,214
-206,Childcare Centers,Lakewood Middle ,42
-207,Community & Cultural Centers,Lakewood Middle ,10
-208,Community Arts,Lakewood Middle ,6
-209,Community Gardens,Lakewood Middle ,0
-210,Community Sports,Lakewood Middle ,1
-211,Farmer's Markets,Lakewood Middle ,0
-212,Food Pantries,Lakewood Middle ,50
-213,Grocery Stores,Lakewood Middle ,50
-214,Hospitals and Clinics,Lakewood Middle ,16
-215,Libraries,Lakewood Middle ,1
-216,Parks,Lakewood Middle ,0
-217,Recreation Centers,Lakewood Middle ,0
-218,Religious Centers,Lakewood Middle ,0
-219,Pharmacies,Lakewood Middle ,0
-220,Homeless Shelters,Lakewood Middle ,0
-221,After-School Care Programs,Lowes Grove Middle ,8
-222,Bus Stops,Lowes Grove Middle ,35
-223,Childcare Centers,Lowes Grove Middle ,9
-224,Community & Cultural Centers,Lowes Grove Middle ,1
-225,Community Arts,Lowes Grove Middle ,2
-226,Community Gardens,Lowes Grove Middle ,1
-227,Community Sports,Lowes Grove Middle ,4
-228,Farmer's Markets,Lowes Grove Middle ,3
-229,Food Pantries,Lowes Grove Middle ,8
-230,Grocery Stores,Lowes Grove Middle ,7
-231,Hospitals and Clinics,Lowes Grove Middle ,1
-232,Libraries,Lowes Grove Middle ,1
-233,Parks,Lowes Grove Middle ,1
-234,Recreation Centers,Lowes Grove Middle ,2
-235,Religious Centers,Lowes Grove Middle ,9
-236,Pharmacies,Lowes Grove Middle ,3
-237,Homeless Shelters,Lowes Grove Middle ,0
-238,After-School Care Programs,Parkwood Elementary ,1
-239,Bus Stops,Parkwood Elementary ,13
-240,Childcare Centers,Parkwood Elementary ,2
-241,Community & Cultural Centers,Parkwood Elementary ,2
-242,Community Arts,Parkwood Elementary ,0
-243,Community Gardens,Parkwood Elementary ,0
-244,Community Sports,Parkwood Elementary ,1
-245,Farmer's Markets,Parkwood Elementary ,2
-246,Food Pantries,Parkwood Elementary ,0
-247,Grocery Stores,Parkwood Elementary ,3
-248,Hospitals and Clinics,Parkwood Elementary ,3
-249,Libraries,Parkwood Elementary ,0
-250,Parks,Parkwood Elementary ,1
-251,Recreation Centers,Parkwood Elementary ,0
-252,Religious Centers,Parkwood Elementary ,1
-253,Pharmacies,Parkwood Elementary ,2
-254,Homeless Shelters,Parkwood Elementary ,0
-255,After-School Care Programs,Riverside High ,10
-256,Bus Stops,Riverside High ,58
-257,Childcare Centers,Riverside High ,15
-258,Community & Cultural Centers,Riverside High ,5
-259,Community Arts,Riverside High ,33
-260,Community Gardens,Riverside High ,2
-261,Community Sports,Riverside High ,7
-262,Farmer's Markets,Riverside High ,2
-263,Food Pantries,Riverside High ,11
-264,Grocery Stores,Riverside High ,14
-265,Hospitals and Clinics,Riverside High ,12
-266,Libraries,Riverside High ,1
-267,Parks,Riverside High ,4
-268,Recreation Centers,Riverside High ,4
-269,Religious Centers,Riverside High ,6
-270,Pharmacies,Riverside High ,17
-271,Homeless Shelters,Riverside High ,7
-272,After-School Care Programs,Southwest Elementary ,1
-273,Bus Stops,Southwest Elementary ,10
-274,Childcare Centers,Southwest Elementary ,2
-275,Community & Cultural Centers,Southwest Elementary ,2
-276,Community Arts,Southwest Elementary ,1
-277,Community Gardens,Southwest Elementary ,0
-278,Community Sports,Southwest Elementary ,0
-279,Farmer's Markets,Southwest Elementary ,0
-280,Food Pantries,Southwest Elementary ,0
-281,Grocery Stores,Southwest Elementary ,2
-282,Hospitals and Clinics,Southwest Elementary ,0
-283,Libraries,Southwest Elementary ,0
-284,Parks,Southwest Elementary ,0
-285,Recreation Centers,Southwest Elementary ,0
-286,Religious Centers,Southwest Elementary ,3
-287,Pharmacies,Southwest Elementary ,0
-288,Homeless Shelters,Southwest Elementary ,2
-289,After-School Care Programs,Eno Valley Elementary ,3
-290,Bus Stops,Eno Valley Elementary ,0
-291,Childcare Centers,Eno Valley Elementary ,0
-292,Community & Cultural Centers,Eno Valley Elementary ,0
-293,Community Arts,Eno Valley Elementary ,1
-294,Community Gardens,Eno Valley Elementary ,6
-295,Community Sports,Eno Valley Elementary ,0
-296,Farmer's Markets,Eno Valley Elementary ,0
-297,Food Pantries,Eno Valley Elementary ,0
-298,Grocery Stores,Eno Valley Elementary ,0
-299,Hospitals and Clinics,Eno Valley Elementary ,0
-300,Libraries,Eno Valley Elementary ,0
-301,Parks,Eno Valley Elementary ,2
-302,Recreation Centers,Eno Valley Elementary ,0
-303,Religious Centers,Eno Valley Elementary ,0
-304,Pharmacies,Eno Valley Elementary ,0
-305,Homeless Shelters,Eno Valley Elementary ,0
-306,After-School Care Programs,Glenn Elementary ,1
-307,Bus Stops,Glenn Elementary ,0
-308,Childcare Centers,Glenn Elementary ,2
-309,Community & Cultural Centers,Glenn Elementary ,1
-310,Community Arts,Glenn Elementary ,11
-311,Community Gardens,Glenn Elementary ,1
-312,Community Sports,Glenn Elementary ,2
-313,Farmer's Markets,Glenn Elementary ,1
-314,Food Pantries,Glenn Elementary ,0
-315,Grocery Stores,Glenn Elementary ,3
-316,Hospitals and Clinics,Glenn Elementary ,0
-317,Libraries,Glenn Elementary ,1
-318,Parks,Glenn Elementary ,2
-319,Recreation Centers,Glenn Elementary ,0
-320,Religious Centers,Glenn Elementary ,1
-321,Pharmacies,Glenn Elementary ,1
-322,Homeless Shelters,Glenn Elementary ,0
-323,After-School Care Programs,Creekside Elementary ,2
-324,Bus Stops,Creekside Elementary ,0
-325,Childcare Centers,Creekside Elementary ,0
-326,Community & Cultural Centers,Creekside Elementary ,0
-327,Community Arts,Creekside Elementary ,4
-328,Community Gardens,Creekside Elementary ,0
-329,Community Sports,Creekside Elementary ,1
-330,Farmer's Markets,Creekside Elementary ,0
-331,Food Pantries,Creekside Elementary ,0
-332,Grocery Stores,Creekside Elementary ,0
-333,Hospitals and Clinics,Creekside Elementary ,0
-334,Libraries,Creekside Elementary ,0
-335,Parks,Creekside Elementary ,2
-336,Recreation Centers,Creekside Elementary ,0
-337,Religious Centers,Creekside Elementary ,0
-338,Pharmacies,Creekside Elementary ,2
-339,Homeless Shelters,Creekside Elementary ,0
-340,After-School Care Programs,Easley Elementary ,1
-341,Bus Stops,Easley Elementary ,0
-342,Childcare Centers,Easley Elementary ,1
-343,Community & Cultural Centers,Easley Elementary ,0
-344,Community Arts,Easley Elementary ,4
-345,Community Gardens,Easley Elementary ,0
-346,Community Sports,Easley Elementary ,4
-347,Farmer's Markets,Easley Elementary ,1
-348,Food Pantries,Easley Elementary ,2
-349,Grocery Stores,Easley Elementary ,0
-350,Hospitals and Clinics,Easley Elementary ,0
-351,Libraries,Easley Elementary ,0
-352,Parks,Easley Elementary ,1
-353,Recreation Centers,Easley Elementary ,0
-354,Religious Centers,Easley Elementary ,1
-355,Pharmacies,Easley Elementary ,7
-356,Homeless Shelters,Easley Elementary ,0
-357,After-School Care Programs,Burton Elementary ,0
-358,Bus Stops,Burton Elementary ,1
-359,Childcare Centers,Burton Elementary ,0
-360,Community & Cultural Centers,Burton Elementary ,1
-361,Community Arts,Burton Elementary ,0
-362,Community Gardens,Burton Elementary ,0
-363,Community Sports,Burton Elementary ,0
-364,Farmer's Markets,Burton Elementary ,0
-365,Food Pantries,Burton Elementary ,0
-366,Grocery Stores,Burton Elementary ,0
-367,Hospitals and Clinics,Burton Elementary ,0
-368,Libraries,Burton Elementary ,0
-369,Parks,Burton Elementary ,0
-370,Recreation Centers,Burton Elementary ,0
-371,Religious Centers,Burton Elementary ,0
-372,Pharmacies,Burton Elementary ,0
-373,Homeless Shelters,Burton Elementary ,0
-374,After-School Care Programs,Bethesda Elementary ,0
-375,Bus Stops,Bethesda Elementary ,0
-376,Childcare Centers,Bethesda Elementary ,2
-377,Community & Cultural Centers,Bethesda Elementary ,0
-378,Community Arts,Bethesda Elementary ,1
-379,Community Gardens,Bethesda Elementary ,1
-380,Community Sports,Bethesda Elementary ,3
-381,Farmer's Markets,Bethesda Elementary ,0
-382,Food Pantries,Bethesda Elementary ,0
-383,Grocery Stores,Bethesda Elementary ,0
-384,Hospitals and Clinics,Bethesda Elementary ,0
-385,Libraries,Bethesda Elementary ,1
-386,Parks,Bethesda Elementary ,0
-387,Recreation Centers,Bethesda Elementary ,2
-388,Religious Centers,Bethesda Elementary ,5
-389,Pharmacies,Bethesda Elementary ,1
-390,Homeless Shelters,Bethesda Elementary ,0
-391,After-School Care Programs,George Watts Elementary ,1
-392,Bus Stops,George Watts Elementary ,0
-393,Childcare Centers,George Watts Elementary ,0
-394,Community & Cultural Centers,George Watts Elementary ,0
-395,Community Arts,George Watts Elementary ,6
-396,Community Gardens,George Watts Elementary ,0
-397,Community Sports,George Watts Elementary ,0
-398,Farmer's Markets,George Watts Elementary ,0
-399,Food Pantries,George Watts Elementary ,0
-400,Grocery Stores,George Watts Elementary ,0
-401,Hospitals and Clinics,George Watts Elementary ,0
-402,Libraries,George Watts Elementary ,0
-403,Parks,George Watts Elementary ,0
-404,Recreation Centers,George Watts Elementary ,0
-405,Religious Centers,George Watts Elementary ,0
-406,Pharmacies,George Watts Elementary ,0
-407,Homeless Shelters,George Watts Elementary ,0
-408,After-School Care Programs,Holt Elementary ,3
-409,Bus Stops,Holt Elementary ,0
-410,Childcare Centers,Holt Elementary ,3
-411,Community & Cultural Centers,Holt Elementary ,1
-412,Community Arts,Holt Elementary ,15
-413,Community Gardens,Holt Elementary ,5
-414,Community Sports,Holt Elementary ,6
-415,Farmer's Markets,Holt Elementary ,2
-416,Food Pantries,Holt Elementary ,3
-417,Grocery Stores,Holt Elementary ,0
-418,Hospitals and Clinics,Holt Elementary ,0
-419,Libraries,Holt Elementary ,0
-420,Parks,Holt Elementary ,1
-421,Recreation Centers,Holt Elementary ,2
-422,Religious Centers,Holt Elementary ,0
-423,Pharmacies,Holt Elementary ,7
-424,Homeless Shelters,Holt Elementary ,2
-425,After-School Care Programs,Hope Valley Elementary ,2
-426,Bus Stops,Hope Valley Elementary ,0
-427,Childcare Centers,Hope Valley Elementary ,3
-428,Community & Cultural Centers,Hope Valley Elementary ,1
-429,Community Arts,Hope Valley Elementary ,3
-430,Community Gardens,Hope Valley Elementary ,0
-431,Community Sports,Hope Valley Elementary ,2
-432,Farmer's Markets,Hope Valley Elementary ,0
-433,Food Pantries,Hope Valley Elementary ,0
-434,Grocery Stores,Hope Valley Elementary ,0
-435,Hospitals and Clinics,Hope Valley Elementary ,0
-436,Libraries,Hope Valley Elementary ,1
-437,Parks,Hope Valley Elementary ,0
-438,Recreation Centers,Hope Valley Elementary ,0
-439,Religious Centers,Hope Valley Elementary ,1
-440,Pharmacies,Hope Valley Elementary ,3
-441,Homeless Shelters,Hope Valley Elementary ,0
-442,After-School Care Programs,Little River K-8 ,1
-443,Bus Stops,Little River K-8 ,0
-444,Childcare Centers,Little River K-8 ,1
-445,Community & Cultural Centers,Little River K-8 ,0
-446,Community Arts,Little River K-8 ,1
-447,Community Gardens,Little River K-8 ,0
-448,Community Sports,Little River K-8 ,0
-449,Farmer's Markets,Little River K-8 ,0
-450,Food Pantries,Little River K-8 ,0
-451,Grocery Stores,Little River K-8 ,0
-452,Hospitals and Clinics,Little River K-8 ,0
-453,Libraries,Little River K-8 ,0
-454,Parks,Little River K-8 ,1
-455,Recreation Centers,Little River K-8 ,0
-456,Religious Centers,Little River K-8 ,0
-457,Pharmacies,Little River K-8 ,0
-458,Homeless Shelters,Little River K-8 ,0
-459,After-School Care Programs,Morehead Montessori ,1
-460,Bus Stops,Morehead Montessori ,0
-461,Childcare Centers,Morehead Montessori ,0
-462,Community & Cultural Centers,Morehead Montessori ,1
-463,Community Arts,Morehead Montessori ,2
-464,Community Gardens,Morehead Montessori ,1
-465,Community Sports,Morehead Montessori ,1
-466,Farmer's Markets,Morehead Montessori ,0
-467,Food Pantries,Morehead Montessori ,1
-468,Grocery Stores,Morehead Montessori ,1
-469,Hospitals and Clinics,Morehead Montessori ,0
-470,Libraries,Morehead Montessori ,0
-471,Parks,Morehead Montessori ,0
-472,Recreation Centers,Morehead Montessori ,0
-473,Religious Centers,Morehead Montessori ,0
-474,Pharmacies,Morehead Montessori ,0
-475,Homeless Shelters,Morehead Montessori ,0
-476,After-School Care Programs,Merrick-Moore Elementary ,1
-477,Bus Stops,Merrick-Moore Elementary ,0
-478,Childcare Centers,Merrick-Moore Elementary ,0
-479,Community & Cultural Centers,Merrick-Moore Elementary ,0
-480,Community Arts,Merrick-Moore Elementary ,0
-481,Community Gardens,Merrick-Moore Elementary ,0
-482,Community Sports,Merrick-Moore Elementary ,1
-483,Farmer's Markets,Merrick-Moore Elementary ,0
-484,Food Pantries,Merrick-Moore Elementary ,0
-485,Grocery Stores,Merrick-Moore Elementary ,0
-486,Hospitals and Clinics,Merrick-Moore Elementary ,0
-487,Libraries,Merrick-Moore Elementary ,0
-488,Parks,Merrick-Moore Elementary ,1
-489,Recreation Centers,Merrick-Moore Elementary ,0
-490,Religious Centers,Merrick-Moore Elementary ,0
-491,Pharmacies,Merrick-Moore Elementary ,0
-492,Homeless Shelters,Merrick-Moore Elementary ,0
-493,After-School Care Programs,Oak Grove Elementary ,1
-494,Bus Stops,Oak Grove Elementary ,0
-495,Childcare Centers,Oak Grove Elementary ,0
-496,Community & Cultural Centers,Oak Grove Elementary ,0
-497,Community Arts,Oak Grove Elementary ,0
-498,Community Gardens,Oak Grove Elementary ,1
-499,Community Sports,Oak Grove Elementary ,1
-500,Farmer's Markets,Oak Grove Elementary ,0
-501,Food Pantries,Oak Grove Elementary ,0
-502,Grocery Stores,Oak Grove Elementary ,0
-503,Hospitals and Clinics,Oak Grove Elementary ,0
-504,Libraries,Oak Grove Elementary ,1
-505,Parks,Oak Grove Elementary ,0
-506,Recreation Centers,Oak Grove Elementary ,0
-507,Religious Centers,Oak Grove Elementary ,0
-508,Pharmacies,Oak Grove Elementary ,1
-509,Homeless Shelters,Oak Grove Elementary ,0
-510,After-School Care Programs,Pearsontown Elementary ,3
-511,Bus Stops,Pearsontown Elementary ,0
-512,Childcare Centers,Pearsontown Elementary ,6
-513,Community & Cultural Centers,Pearsontown Elementary ,3
-514,Community Arts,Pearsontown Elementary ,36
-515,Community Gardens,Pearsontown Elementary ,4
-516,Community Sports,Pearsontown Elementary ,12
-517,Farmer's Markets,Pearsontown Elementary ,3
-518,Food Pantries,Pearsontown Elementary ,1
-519,Grocery Stores,Pearsontown Elementary ,0
-520,Hospitals and Clinics,Pearsontown Elementary ,0
-521,Libraries,Pearsontown Elementary ,0
-522,Parks,Pearsontown Elementary ,0
-523,Recreation Centers,Pearsontown Elementary ,0
-524,Religious Centers,Pearsontown Elementary ,0
-525,Pharmacies,Pearsontown Elementary ,12
-526,Homeless Shelters,Pearsontown Elementary ,3
-527,After-School Care Programs,W.G. Pearson Elementary ,1
-528,Bus Stops,W.G. Pearson Elementary ,0
-529,Childcare Centers,W.G. Pearson Elementary ,0
-530,Community & Cultural Centers,W.G. Pearson Elementary ,0
-531,Community Arts,W.G. Pearson Elementary ,3
-532,Community Gardens,W.G. Pearson Elementary ,0
-533,Community Sports,W.G. Pearson Elementary ,1
-534,Farmer's Markets,W.G. Pearson Elementary ,0
-535,Food Pantries,W.G. Pearson Elementary ,1
-536,Grocery Stores,W.G. Pearson Elementary ,0
-537,Hospitals and Clinics,W.G. Pearson Elementary ,0
-538,Libraries,W.G. Pearson Elementary ,2
-539,Parks,W.G. Pearson Elementary ,1
-540,Recreation Centers,W.G. Pearson Elementary ,0
-541,Religious Centers,W.G. Pearson Elementary ,7
-542,Pharmacies,W.G. Pearson Elementary ,2
-543,Homeless Shelters,W.G. Pearson Elementary ,3
-544,After-School Care Programs,Sandy Ridge Elementary ,2
-545,Bus Stops,Sandy Ridge Elementary ,0
-546,Childcare Centers,Sandy Ridge Elementary ,0
-547,Community & Cultural Centers,Sandy Ridge Elementary ,0
-548,Community Arts,Sandy Ridge Elementary ,0
-549,Community Gardens,Sandy Ridge Elementary ,0
-550,Community Sports,Sandy Ridge Elementary ,0
-551,Farmer's Markets,Sandy Ridge Elementary ,0
-552,Food Pantries,Sandy Ridge Elementary ,0
-553,Grocery Stores,Sandy Ridge Elementary ,0
-554,Hospitals and Clinics,Sandy Ridge Elementary ,0
-555,Libraries,Sandy Ridge Elementary ,0
-556,Parks,Sandy Ridge Elementary ,0
-557,Recreation Centers,Sandy Ridge Elementary ,0
-558,Religious Centers,Sandy Ridge Elementary ,0
-559,Pharmacies,Sandy Ridge Elementary ,1
-560,Homeless Shelters,Sandy Ridge Elementary ,0
-561,After-School Care Programs,R.N. Harris Elementary ,1
-562,Bus Stops,R.N. Harris Elementary ,0
-563,Childcare Centers,R.N. Harris Elementary ,0
-564,Community & Cultural Centers,R.N. Harris Elementary ,0
-565,Community Arts,R.N. Harris Elementary ,0
-566,Community Gardens,R.N. Harris Elementary ,0
-567,Community Sports,R.N. Harris Elementary ,0
-568,Farmer's Markets,R.N. Harris Elementary ,0
-569,Food Pantries,R.N. Harris Elementary ,0
-570,Grocery Stores,R.N. Harris Elementary ,0
-571,Hospitals and Clinics,R.N. Harris Elementary ,0
-572,Libraries,R.N. Harris Elementary ,0
-573,Parks,R.N. Harris Elementary ,0
-574,Recreation Centers,R.N. Harris Elementary ,0
-575,Religious Centers,R.N. Harris Elementary ,0
-576,Pharmacies,R.N. Harris Elementary ,0
-577,Homeless Shelters,R.N. Harris Elementary ,0
-578,After-School Care Programs,Y.E. Smith Elementary ,1
-579,Bus Stops,Y.E. Smith Elementary ,0
-580,Childcare Centers,Y.E. Smith Elementary ,0
-581,Community & Cultural Centers,Y.E. Smith Elementary ,0
-582,Community Arts,Y.E. Smith Elementary ,0
-583,Community Gardens,Y.E. Smith Elementary ,0
-584,Community Sports,Y.E. Smith Elementary ,0
-585,Farmer's Markets,Y.E. Smith Elementary ,0
-586,Food Pantries,Y.E. Smith Elementary ,0
-587,Grocery Stores,Y.E. Smith Elementary ,0
-588,Hospitals and Clinics,Y.E. Smith Elementary ,0
-589,Libraries,Y.E. Smith Elementary ,0
-590,Parks,Y.E. Smith Elementary ,0
-591,Recreation Centers,Y.E. Smith Elementary ,1
-592,Religious Centers,Y.E. Smith Elementary ,3
-593,Pharmacies,Y.E. Smith Elementary ,1
-594,Homeless Shelters,Y.E. Smith Elementary ,2
-595,After-School Care Programs,Sherwood Githens Middle ,10
-596,Bus Stops,Sherwood Githens Middle ,85
-597,Childcare Centers,Sherwood Githens Middle ,11
-598,Community & Cultural Centers,Sherwood Githens Middle ,3
-599,Community Arts,Sherwood Githens Middle ,15
-600,Community Gardens,Sherwood Githens Middle ,0
-601,Community Sports,Sherwood Githens Middle ,5
-602,Farmer's Markets,Sherwood Githens Middle ,0
-603,Food Pantries,Sherwood Githens Middle ,0
-604,Grocery Stores,Sherwood Githens Middle ,0
-605,Hospitals and Clinics,Sherwood Githens Middle ,3
-606,Libraries,Sherwood Githens Middle ,3
-607,Parks,Sherwood Githens Middle ,3
-608,Recreation Centers,Sherwood Githens Middle ,0
-609,Religious Centers,Sherwood Githens Middle ,0
-610,Pharmacies,Sherwood Githens Middle ,8
-611,Homeless Shelters,Sherwood Githens Middle ,1
-612,After-School Care Programs,Lucas Middle ,2
-613,Bus Stops,Lucas Middle ,59
-614,Childcare Centers,Lucas Middle ,0
-615,Community & Cultural Centers,Lucas Middle ,0
-616,Community Arts,Lucas Middle ,1
-617,Community Gardens,Lucas Middle ,0
-618,Community Sports,Lucas Middle ,0
-619,Farmer's Markets,Lucas Middle ,0
-620,Food Pantries,Lucas Middle ,1
-621,Grocery Stores,Lucas Middle ,0
-622,Hospitals and Clinics,Lucas Middle ,0
-623,Libraries,Lucas Middle ,1
-624,Parks,Lucas Middle ,5
-625,Recreation Centers,Lucas Middle ,0
-626,Religious Centers,Lucas Middle ,2
-627,Pharmacies,Lucas Middle ,0
-628,Homeless Shelters,Lucas Middle ,0
-629,After-School Care Programs,Carrington Middle ,6
-630,Bus Stops,Carrington Middle ,110
-631,Childcare Centers,Carrington Middle ,0
-632,Community & Cultural Centers,Carrington Middle ,0
-633,Community Arts,Carrington Middle ,3
-634,Community Gardens,Carrington Middle ,2
-635,Community Sports,Carrington Middle ,3
-636,Farmer's Markets,Carrington Middle ,0
-637,Food Pantries,Carrington Middle ,2
-638,Grocery Stores,Carrington Middle ,0
-639,Hospitals and Clinics,Carrington Middle ,0
-640,Libraries,Carrington Middle ,1
-641,Parks,Carrington Middle ,2
-642,Recreation Centers,Carrington Middle ,0
-643,Religious Centers,Carrington Middle ,1
-644,Pharmacies,Carrington Middle ,9
-645,Homeless Shelters,Carrington Middle ,2
-646,After-School Care Programs,Neal Middle ,6
-647,Bus Stops,Neal Middle ,98
-648,Childcare Centers,Neal Middle ,3
-649,Community & Cultural Centers,Neal Middle ,0
-650,Community Arts,Neal Middle ,0
-651,Community Gardens,Neal Middle ,0
-652,Community Sports,Neal Middle ,4
-653,Farmer's Markets,Neal Middle ,0
-654,Food Pantries,Neal Middle ,1
-655,Grocery Stores,Neal Middle ,0
-656,Hospitals and Clinics,Neal Middle ,0
-657,Libraries,Neal Middle ,1
-658,Parks,Neal Middle ,1
-659,Recreation Centers,Neal Middle ,2
-660,Religious Centers,Neal Middle ,3
-661,Pharmacies,Neal Middle ,2
-662,Homeless Shelters,Neal Middle ,2
-663,After-School Care Programs,Rogers-Herr Middle ,2
-664,Bus Stops,Rogers-Herr Middle ,0
-665,Childcare Centers,Rogers-Herr Middle ,8
-666,Community & Cultural Centers,Rogers-Herr Middle ,2
-667,Community Arts,Rogers-Herr Middle ,35
-668,Community Gardens,Rogers-Herr Middle ,4
-669,Community Sports,Rogers-Herr Middle ,12
-670,Farmer's Markets,Rogers-Herr Middle ,3
-671,Food Pantries,Rogers-Herr Middle ,1
-672,Grocery Stores,Rogers-Herr Middle ,0
-673,Hospitals and Clinics,Rogers-Herr Middle ,0
-674,Libraries,Rogers-Herr Middle ,1
-675,Parks,Rogers-Herr Middle ,0
-676,Recreation Centers,Rogers-Herr Middle ,0
-677,Religious Centers,Rogers-Herr Middle ,0
-678,Pharmacies,Rogers-Herr Middle ,11
-679,Homeless Shelters,Rogers-Herr Middle ,3
+85,After-School Care Programs,Eastway Elementary,1
+86,Bus Stops,Eastway Elementary,51
+87,Childcare Centers,Eastway Elementary,2
+88,Community & Cultural Centers,Eastway Elementary,1
+89,Community Arts,Eastway Elementary,1
+90,Community Gardens,Eastway Elementary,1
+91,Community Sports,Eastway Elementary,0
+92,Farmer's Markets,Eastway Elementary,1
+93,Food Pantries,Eastway Elementary,6
+94,Grocery Stores,Eastway Elementary,2
+95,Hospitals and Clinics,Eastway Elementary,0
+96,Libraries,Eastway Elementary,1
+97,Parks,Eastway Elementary,2
+98,Recreation Centers,Eastway Elementary,1
+99,Religious Centers,Eastway Elementary,3
+100,Pharmacies,Eastway Elementary,0
+101,Homeless Shelters,Eastway Elementary,4
+102,After-School Care Programs,Fayetteville Street Elementary,2
+103,Bus Stops,Fayetteville Street Elementary,34
+104,Childcare Centers,Fayetteville Street Elementary,2
+105,Community & Cultural Centers,Fayetteville Street Elementary,3
+106,Community Arts,Fayetteville Street Elementary,4
+107,Community Gardens,Fayetteville Street Elementary,0
+108,Community Sports,Fayetteville Street Elementary,1
+109,Farmer's Markets,Fayetteville Street Elementary,1
+110,Food Pantries,Fayetteville Street Elementary,5
+111,Grocery Stores,Fayetteville Street Elementary,3
+112,Hospitals and Clinics,Fayetteville Street Elementary,1
+113,Libraries,Fayetteville Street Elementary,2
+114,Parks,Fayetteville Street Elementary,0
+115,Recreation Centers,Fayetteville Street Elementary,0
+116,Religious Centers,Fayetteville Street Elementary,7
+117,Pharmacies,Fayetteville Street Elementary,2
+118,Homeless Shelters,Fayetteville Street Elementary,0
+119,After-School Care Programs,Forest View Elementary,0
+120,Bus Stops,Forest View Elementary,55
+121,Childcare Centers,Forest View Elementary,2
+122,Community & Cultural Centers,Forest View Elementary,1
+123,Community Arts,Forest View Elementary,4
+124,Community Gardens,Forest View Elementary,0
+125,Community Sports,Forest View Elementary,0
+126,Farmer's Markets,Forest View Elementary,0
+127,Food Pantries,Forest View Elementary,1
+128,Grocery Stores,Forest View Elementary,4
+129,Hospitals and Clinics,Forest View Elementary,4
+130,Libraries,Forest View Elementary,1
+131,Parks,Forest View Elementary,1
+132,Recreation Centers,Forest View Elementary,0
+133,Religious Centers,Forest View Elementary,0
+134,Pharmacies,Forest View Elementary,2
+135,Homeless Shelters,Forest View Elementary,1
+136,After-School Care Programs,Hillandale Elementary,0
+137,Bus Stops,Hillandale Elementary,48
+138,Childcare Centers,Hillandale Elementary,3
+139,Community & Cultural Centers,Hillandale Elementary,0
+140,Community Arts,Hillandale Elementary,5
+141,Community Gardens,Hillandale Elementary,0
+142,Community Sports,Hillandale Elementary,2
+143,Farmer's Markets,Hillandale Elementary,1
+144,Food Pantries,Hillandale Elementary,2
+145,Grocery Stores,Hillandale Elementary,2
+146,Hospitals and Clinics,Hillandale Elementary,1
+147,Libraries,Hillandale Elementary,0
+148,Parks,Hillandale Elementary,0
+149,Recreation Centers,Hillandale Elementary,0
+150,Religious Centers,Hillandale Elementary,0
+151,Pharmacies,Hillandale Elementary,3
+152,Homeless Shelters,Hillandale Elementary,0
+153,After-School Care Programs,Hillside High,4
+154,Bus Stops,Hillside High,251
+155,Childcare Centers,Hillside High,11
+156,Community & Cultural Centers,Hillside High,1
+157,Community Arts,Hillside High,2
+158,Community Gardens,Hillside High,1
+159,Community Sports,Hillside High,5
+160,Farmer's Markets,Hillside High,3
+161,Food Pantries,Hillside High,11
+162,Grocery Stores,Hillside High,8
+163,Hospitals and Clinics,Hillside High,1
+164,Libraries,Hillside High,2
+165,Parks,Hillside High,3
+166,Recreation Centers,Hillside High,3
+167,Religious Centers,Hillside High,17
+168,Pharmacies,Hillside High,3
+169,Homeless Shelters,Hillside High,0
+170,After-School Care Programs,Jordan High,9
+171,Bus Stops,Jordan High,222
+172,Childcare Centers,Jordan High,17
+173,Community & Cultural Centers,Jordan High,9
+174,Community Arts,Jordan High,21
+175,Community Gardens,Jordan High,2
+176,Community Sports,Jordan High,7
+177,Farmer's Markets,Jordan High,0
+178,Food Pantries,Jordan High,10
+179,Grocery Stores,Jordan High,14
+180,Hospitals and Clinics,Jordan High,3
+181,Libraries,Jordan High,2
+182,Parks,Jordan High,6
+183,Recreation Centers,Jordan High,4
+184,Religious Centers,Jordan High,17
+185,Pharmacies,Jordan High,9
+186,Homeless Shelters,Jordan High,1
+187,After-School Care Programs,Lakewood Elementary,2
+188,Bus Stops,Lakewood Elementary,41
+189,Childcare Centers,Lakewood Elementary,2
+190,Community & Cultural Centers,Lakewood Elementary,3
+191,Community Arts,Lakewood Elementary,3
+192,Community Gardens,Lakewood Elementary,6
+193,Community Sports,Lakewood Elementary,1
+194,Farmer's Markets,Lakewood Elementary,0
+195,Food Pantries,Lakewood Elementary,3
+196,Grocery Stores,Lakewood Elementary,4
+197,Hospitals and Clinics,Lakewood Elementary,0
+198,Libraries,Lakewood Elementary,0
+199,Parks,Lakewood Elementary,2
+200,Recreation Centers,Lakewood Elementary,0
+201,Religious Centers,Lakewood Elementary,1
+202,Pharmacies,Lakewood Elementary,0
+203,Homeless Shelters,Lakewood Elementary,0
+204,After-School Care Programs,Lakewood Middle,24
+205,Bus Stops,Lakewood Middle,214
+206,Childcare Centers,Lakewood Middle,42
+207,Community & Cultural Centers,Lakewood Middle,10
+208,Community Arts,Lakewood Middle,6
+209,Community Gardens,Lakewood Middle,0
+210,Community Sports,Lakewood Middle,1
+211,Farmer's Markets,Lakewood Middle,0
+212,Food Pantries,Lakewood Middle,50
+213,Grocery Stores,Lakewood Middle,50
+214,Hospitals and Clinics,Lakewood Middle,16
+215,Libraries,Lakewood Middle,1
+216,Parks,Lakewood Middle,0
+217,Recreation Centers,Lakewood Middle,0
+218,Religious Centers,Lakewood Middle,0
+219,Pharmacies,Lakewood Middle,0
+220,Homeless Shelters,Lakewood Middle,0
+221,After-School Care Programs,Lowes Grove Middle,8
+222,Bus Stops,Lowes Grove Middle,35
+223,Childcare Centers,Lowes Grove Middle,9
+224,Community & Cultural Centers,Lowes Grove Middle,1
+225,Community Arts,Lowes Grove Middle,2
+226,Community Gardens,Lowes Grove Middle,1
+227,Community Sports,Lowes Grove Middle,4
+228,Farmer's Markets,Lowes Grove Middle,3
+229,Food Pantries,Lowes Grove Middle,8
+230,Grocery Stores,Lowes Grove Middle,7
+231,Hospitals and Clinics,Lowes Grove Middle,1
+232,Libraries,Lowes Grove Middle,1
+233,Parks,Lowes Grove Middle,1
+234,Recreation Centers,Lowes Grove Middle,2
+235,Religious Centers,Lowes Grove Middle,9
+236,Pharmacies,Lowes Grove Middle,3
+237,Homeless Shelters,Lowes Grove Middle,0
+238,After-School Care Programs,Parkwood Elementary,1
+239,Bus Stops,Parkwood Elementary,13
+240,Childcare Centers,Parkwood Elementary,2
+241,Community & Cultural Centers,Parkwood Elementary,2
+242,Community Arts,Parkwood Elementary,0
+243,Community Gardens,Parkwood Elementary,0
+244,Community Sports,Parkwood Elementary,1
+245,Farmer's Markets,Parkwood Elementary,2
+246,Food Pantries,Parkwood Elementary,0
+247,Grocery Stores,Parkwood Elementary,3
+248,Hospitals and Clinics,Parkwood Elementary,3
+249,Libraries,Parkwood Elementary,0
+250,Parks,Parkwood Elementary,1
+251,Recreation Centers,Parkwood Elementary,0
+252,Religious Centers,Parkwood Elementary,1
+253,Pharmacies,Parkwood Elementary,2
+254,Homeless Shelters,Parkwood Elementary,0
+255,After-School Care Programs,Riverside High,10
+256,Bus Stops,Riverside High,58
+257,Childcare Centers,Riverside High,15
+258,Community & Cultural Centers,Riverside High,5
+259,Community Arts,Riverside High,33
+260,Community Gardens,Riverside High,2
+261,Community Sports,Riverside High,7
+262,Farmer's Markets,Riverside High,2
+263,Food Pantries,Riverside High,11
+264,Grocery Stores,Riverside High,14
+265,Hospitals and Clinics,Riverside High,12
+266,Libraries,Riverside High,1
+267,Parks,Riverside High,4
+268,Recreation Centers,Riverside High,4
+269,Religious Centers,Riverside High,6
+270,Pharmacies,Riverside High,17
+271,Homeless Shelters,Riverside High,7
+272,After-School Care Programs,Southwest Elementary,1
+273,Bus Stops,Southwest Elementary,10
+274,Childcare Centers,Southwest Elementary,2
+275,Community & Cultural Centers,Southwest Elementary,2
+276,Community Arts,Southwest Elementary,1
+277,Community Gardens,Southwest Elementary,0
+278,Community Sports,Southwest Elementary,0
+279,Farmer's Markets,Southwest Elementary,0
+280,Food Pantries,Southwest Elementary,0
+281,Grocery Stores,Southwest Elementary,2
+282,Hospitals and Clinics,Southwest Elementary,0
+283,Libraries,Southwest Elementary,0
+284,Parks,Southwest Elementary,0
+285,Recreation Centers,Southwest Elementary,0
+286,Religious Centers,Southwest Elementary,3
+287,Pharmacies,Southwest Elementary,0
+288,Homeless Shelters,Southwest Elementary,2
+289,After-School Care Programs,Eno Valley Elementary,3
+290,Bus Stops,Eno Valley Elementary,0
+291,Childcare Centers,Eno Valley Elementary,0
+292,Community & Cultural Centers,Eno Valley Elementary,0
+293,Community Arts,Eno Valley Elementary,1
+294,Community Gardens,Eno Valley Elementary,6
+295,Community Sports,Eno Valley Elementary,0
+296,Farmer's Markets,Eno Valley Elementary,0
+297,Food Pantries,Eno Valley Elementary,0
+298,Grocery Stores,Eno Valley Elementary,0
+299,Hospitals and Clinics,Eno Valley Elementary,0
+300,Libraries,Eno Valley Elementary,0
+301,Parks,Eno Valley Elementary,2
+302,Recreation Centers,Eno Valley Elementary,0
+303,Religious Centers,Eno Valley Elementary,0
+304,Pharmacies,Eno Valley Elementary,0
+305,Homeless Shelters,Eno Valley Elementary,0
+306,After-School Care Programs,Glenn Elementary,1
+307,Bus Stops,Glenn Elementary,0
+308,Childcare Centers,Glenn Elementary,2
+309,Community & Cultural Centers,Glenn Elementary,1
+310,Community Arts,Glenn Elementary,11
+311,Community Gardens,Glenn Elementary,1
+312,Community Sports,Glenn Elementary,2
+313,Farmer's Markets,Glenn Elementary,1
+314,Food Pantries,Glenn Elementary,0
+315,Grocery Stores,Glenn Elementary,3
+316,Hospitals and Clinics,Glenn Elementary,0
+317,Libraries,Glenn Elementary,1
+318,Parks,Glenn Elementary,2
+319,Recreation Centers,Glenn Elementary,0
+320,Religious Centers,Glenn Elementary,1
+321,Pharmacies,Glenn Elementary,1
+322,Homeless Shelters,Glenn Elementary,0
+323,After-School Care Programs,Creekside Elementary,2
+324,Bus Stops,Creekside Elementary,0
+325,Childcare Centers,Creekside Elementary,0
+326,Community & Cultural Centers,Creekside Elementary,0
+327,Community Arts,Creekside Elementary,4
+328,Community Gardens,Creekside Elementary,0
+329,Community Sports,Creekside Elementary,1
+330,Farmer's Markets,Creekside Elementary,0
+331,Food Pantries,Creekside Elementary,0
+332,Grocery Stores,Creekside Elementary,0
+333,Hospitals and Clinics,Creekside Elementary,0
+334,Libraries,Creekside Elementary,0
+335,Parks,Creekside Elementary,2
+336,Recreation Centers,Creekside Elementary,0
+337,Religious Centers,Creekside Elementary,0
+338,Pharmacies,Creekside Elementary,2
+339,Homeless Shelters,Creekside Elementary,0
+340,After-School Care Programs,Easley Elementary,1
+341,Bus Stops,Easley Elementary,0
+342,Childcare Centers,Easley Elementary,1
+343,Community & Cultural Centers,Easley Elementary,0
+344,Community Arts,Easley Elementary,4
+345,Community Gardens,Easley Elementary,0
+346,Community Sports,Easley Elementary,4
+347,Farmer's Markets,Easley Elementary,1
+348,Food Pantries,Easley Elementary,2
+349,Grocery Stores,Easley Elementary,0
+350,Hospitals and Clinics,Easley Elementary,0
+351,Libraries,Easley Elementary,0
+352,Parks,Easley Elementary,1
+353,Recreation Centers,Easley Elementary,0
+354,Religious Centers,Easley Elementary,1
+355,Pharmacies,Easley Elementary,7
+356,Homeless Shelters,Easley Elementary,0
+357,After-School Care Programs,Burton Elementary,0
+358,Bus Stops,Burton Elementary,1
+359,Childcare Centers,Burton Elementary,0
+360,Community & Cultural Centers,Burton Elementary,1
+361,Community Arts,Burton Elementary,0
+362,Community Gardens,Burton Elementary,0
+363,Community Sports,Burton Elementary,0
+364,Farmer's Markets,Burton Elementary,0
+365,Food Pantries,Burton Elementary,0
+366,Grocery Stores,Burton Elementary,0
+367,Hospitals and Clinics,Burton Elementary,0
+368,Libraries,Burton Elementary,0
+369,Parks,Burton Elementary,0
+370,Recreation Centers,Burton Elementary,0
+371,Religious Centers,Burton Elementary,0
+372,Pharmacies,Burton Elementary,0
+373,Homeless Shelters,Burton Elementary,0
+374,After-School Care Programs,Bethesda Elementary,0
+375,Bus Stops,Bethesda Elementary,0
+376,Childcare Centers,Bethesda Elementary,2
+377,Community & Cultural Centers,Bethesda Elementary,0
+378,Community Arts,Bethesda Elementary,1
+379,Community Gardens,Bethesda Elementary,1
+380,Community Sports,Bethesda Elementary,3
+381,Farmer's Markets,Bethesda Elementary,0
+382,Food Pantries,Bethesda Elementary,0
+383,Grocery Stores,Bethesda Elementary,0
+384,Hospitals and Clinics,Bethesda Elementary,0
+385,Libraries,Bethesda Elementary,1
+386,Parks,Bethesda Elementary,0
+387,Recreation Centers,Bethesda Elementary,2
+388,Religious Centers,Bethesda Elementary,5
+389,Pharmacies,Bethesda Elementary,1
+390,Homeless Shelters,Bethesda Elementary,0
+391,After-School Care Programs,George Watts Elementary,1
+392,Bus Stops,George Watts Elementary,0
+393,Childcare Centers,George Watts Elementary,0
+394,Community & Cultural Centers,George Watts Elementary,0
+395,Community Arts,George Watts Elementary,6
+396,Community Gardens,George Watts Elementary,0
+397,Community Sports,George Watts Elementary,0
+398,Farmer's Markets,George Watts Elementary,0
+399,Food Pantries,George Watts Elementary,0
+400,Grocery Stores,George Watts Elementary,0
+401,Hospitals and Clinics,George Watts Elementary,0
+402,Libraries,George Watts Elementary,0
+403,Parks,George Watts Elementary,0
+404,Recreation Centers,George Watts Elementary,0
+405,Religious Centers,George Watts Elementary,0
+406,Pharmacies,George Watts Elementary,0
+407,Homeless Shelters,George Watts Elementary,0
+408,After-School Care Programs,Holt Elementary,3
+409,Bus Stops,Holt Elementary,0
+410,Childcare Centers,Holt Elementary,3
+411,Community & Cultural Centers,Holt Elementary,1
+412,Community Arts,Holt Elementary,15
+413,Community Gardens,Holt Elementary,5
+414,Community Sports,Holt Elementary,6
+415,Farmer's Markets,Holt Elementary,2
+416,Food Pantries,Holt Elementary,3
+417,Grocery Stores,Holt Elementary,0
+418,Hospitals and Clinics,Holt Elementary,0
+419,Libraries,Holt Elementary,0
+420,Parks,Holt Elementary,1
+421,Recreation Centers,Holt Elementary,2
+422,Religious Centers,Holt Elementary,0
+423,Pharmacies,Holt Elementary,7
+424,Homeless Shelters,Holt Elementary,2
+425,After-School Care Programs,Hope Valley Elementary,2
+426,Bus Stops,Hope Valley Elementary,0
+427,Childcare Centers,Hope Valley Elementary,3
+428,Community & Cultural Centers,Hope Valley Elementary,1
+429,Community Arts,Hope Valley Elementary,3
+430,Community Gardens,Hope Valley Elementary,0
+431,Community Sports,Hope Valley Elementary,2
+432,Farmer's Markets,Hope Valley Elementary,0
+433,Food Pantries,Hope Valley Elementary,0
+434,Grocery Stores,Hope Valley Elementary,0
+435,Hospitals and Clinics,Hope Valley Elementary,0
+436,Libraries,Hope Valley Elementary,1
+437,Parks,Hope Valley Elementary,0
+438,Recreation Centers,Hope Valley Elementary,0
+439,Religious Centers,Hope Valley Elementary,1
+440,Pharmacies,Hope Valley Elementary,3
+441,Homeless Shelters,Hope Valley Elementary,0
+442,After-School Care Programs,Little River K-8,1
+443,Bus Stops,Little River K-8,0
+444,Childcare Centers,Little River K-8,1
+445,Community & Cultural Centers,Little River K-8,0
+446,Community Arts,Little River K-8,1
+447,Community Gardens,Little River K-8,0
+448,Community Sports,Little River K-8,0
+449,Farmer's Markets,Little River K-8,0
+450,Food Pantries,Little River K-8,0
+451,Grocery Stores,Little River K-8,0
+452,Hospitals and Clinics,Little River K-8,0
+453,Libraries,Little River K-8,0
+454,Parks,Little River K-8,1
+455,Recreation Centers,Little River K-8,0
+456,Religious Centers,Little River K-8,0
+457,Pharmacies,Little River K-8,0
+458,Homeless Shelters,Little River K-8,0
+459,After-School Care Programs,Morehead Montessori,1
+460,Bus Stops,Morehead Montessori,0
+461,Childcare Centers,Morehead Montessori,0
+462,Community & Cultural Centers,Morehead Montessori,1
+463,Community Arts,Morehead Montessori,2
+464,Community Gardens,Morehead Montessori,1
+465,Community Sports,Morehead Montessori,1
+466,Farmer's Markets,Morehead Montessori,0
+467,Food Pantries,Morehead Montessori,1
+468,Grocery Stores,Morehead Montessori,1
+469,Hospitals and Clinics,Morehead Montessori,0
+470,Libraries,Morehead Montessori,0
+471,Parks,Morehead Montessori,0
+472,Recreation Centers,Morehead Montessori,0
+473,Religious Centers,Morehead Montessori,0
+474,Pharmacies,Morehead Montessori,0
+475,Homeless Shelters,Morehead Montessori,0
+476,After-School Care Programs,Merrick-Moore Elementary,1
+477,Bus Stops,Merrick-Moore Elementary,0
+478,Childcare Centers,Merrick-Moore Elementary,0
+479,Community & Cultural Centers,Merrick-Moore Elementary,0
+480,Community Arts,Merrick-Moore Elementary,0
+481,Community Gardens,Merrick-Moore Elementary,0
+482,Community Sports,Merrick-Moore Elementary,1
+483,Farmer's Markets,Merrick-Moore Elementary,0
+484,Food Pantries,Merrick-Moore Elementary,0
+485,Grocery Stores,Merrick-Moore Elementary,0
+486,Hospitals and Clinics,Merrick-Moore Elementary,0
+487,Libraries,Merrick-Moore Elementary,0
+488,Parks,Merrick-Moore Elementary,1
+489,Recreation Centers,Merrick-Moore Elementary,0
+490,Religious Centers,Merrick-Moore Elementary,0
+491,Pharmacies,Merrick-Moore Elementary,0
+492,Homeless Shelters,Merrick-Moore Elementary,0
+493,After-School Care Programs,Oak Grove Elementary,1
+494,Bus Stops,Oak Grove Elementary,0
+495,Childcare Centers,Oak Grove Elementary,0
+496,Community & Cultural Centers,Oak Grove Elementary,0
+497,Community Arts,Oak Grove Elementary,0
+498,Community Gardens,Oak Grove Elementary,1
+499,Community Sports,Oak Grove Elementary,1
+500,Farmer's Markets,Oak Grove Elementary,0
+501,Food Pantries,Oak Grove Elementary,0
+502,Grocery Stores,Oak Grove Elementary,0
+503,Hospitals and Clinics,Oak Grove Elementary,0
+504,Libraries,Oak Grove Elementary,1
+505,Parks,Oak Grove Elementary,0
+506,Recreation Centers,Oak Grove Elementary,0
+507,Religious Centers,Oak Grove Elementary,0
+508,Pharmacies,Oak Grove Elementary,1
+509,Homeless Shelters,Oak Grove Elementary,0
+510,After-School Care Programs,Pearsontown Elementary,3
+511,Bus Stops,Pearsontown Elementary,0
+512,Childcare Centers,Pearsontown Elementary,6
+513,Community & Cultural Centers,Pearsontown Elementary,3
+514,Community Arts,Pearsontown Elementary,36
+515,Community Gardens,Pearsontown Elementary,4
+516,Community Sports,Pearsontown Elementary,12
+517,Farmer's Markets,Pearsontown Elementary,3
+518,Food Pantries,Pearsontown Elementary,1
+519,Grocery Stores,Pearsontown Elementary,0
+520,Hospitals and Clinics,Pearsontown Elementary,0
+521,Libraries,Pearsontown Elementary,0
+522,Parks,Pearsontown Elementary,0
+523,Recreation Centers,Pearsontown Elementary,0
+524,Religious Centers,Pearsontown Elementary,0
+525,Pharmacies,Pearsontown Elementary,12
+526,Homeless Shelters,Pearsontown Elementary,3
+527,After-School Care Programs,W.G. Pearson Elementary,1
+528,Bus Stops,W.G. Pearson Elementary,0
+529,Childcare Centers,W.G. Pearson Elementary,0
+530,Community & Cultural Centers,W.G. Pearson Elementary,0
+531,Community Arts,W.G. Pearson Elementary,3
+532,Community Gardens,W.G. Pearson Elementary,0
+533,Community Sports,W.G. Pearson Elementary,1
+534,Farmer's Markets,W.G. Pearson Elementary,0
+535,Food Pantries,W.G. Pearson Elementary,1
+536,Grocery Stores,W.G. Pearson Elementary,0
+537,Hospitals and Clinics,W.G. Pearson Elementary,0
+538,Libraries,W.G. Pearson Elementary,2
+539,Parks,W.G. Pearson Elementary,1
+540,Recreation Centers,W.G. Pearson Elementary,0
+541,Religious Centers,W.G. Pearson Elementary,7
+542,Pharmacies,W.G. Pearson Elementary,2
+543,Homeless Shelters,W.G. Pearson Elementary,3
+544,After-School Care Programs,Sandy Ridge Elementary,2
+545,Bus Stops,Sandy Ridge Elementary,0
+546,Childcare Centers,Sandy Ridge Elementary,0
+547,Community & Cultural Centers,Sandy Ridge Elementary,0
+548,Community Arts,Sandy Ridge Elementary,0
+549,Community Gardens,Sandy Ridge Elementary,0
+550,Community Sports,Sandy Ridge Elementary,0
+551,Farmer's Markets,Sandy Ridge Elementary,0
+552,Food Pantries,Sandy Ridge Elementary,0
+553,Grocery Stores,Sandy Ridge Elementary,0
+554,Hospitals and Clinics,Sandy Ridge Elementary,0
+555,Libraries,Sandy Ridge Elementary,0
+556,Parks,Sandy Ridge Elementary,0
+557,Recreation Centers,Sandy Ridge Elementary,0
+558,Religious Centers,Sandy Ridge Elementary,0
+559,Pharmacies,Sandy Ridge Elementary,1
+560,Homeless Shelters,Sandy Ridge Elementary,0
+561,After-School Care Programs,R.N. Harris Elementary,1
+562,Bus Stops,R.N. Harris Elementary,0
+563,Childcare Centers,R.N. Harris Elementary,0
+564,Community & Cultural Centers,R.N. Harris Elementary,0
+565,Community Arts,R.N. Harris Elementary,0
+566,Community Gardens,R.N. Harris Elementary,0
+567,Community Sports,R.N. Harris Elementary,0
+568,Farmer's Markets,R.N. Harris Elementary,0
+569,Food Pantries,R.N. Harris Elementary,0
+570,Grocery Stores,R.N. Harris Elementary,0
+571,Hospitals and Clinics,R.N. Harris Elementary,0
+572,Libraries,R.N. Harris Elementary,0
+573,Parks,R.N. Harris Elementary,0
+574,Recreation Centers,R.N. Harris Elementary,0
+575,Religious Centers,R.N. Harris Elementary,0
+576,Pharmacies,R.N. Harris Elementary,0
+577,Homeless Shelters,R.N. Harris Elementary,0
+578,After-School Care Programs,Y.E. Smith Elementary,1
+579,Bus Stops,Y.E. Smith Elementary,0
+580,Childcare Centers,Y.E. Smith Elementary,0
+581,Community & Cultural Centers,Y.E. Smith Elementary,0
+582,Community Arts,Y.E. Smith Elementary,0
+583,Community Gardens,Y.E. Smith Elementary,0
+584,Community Sports,Y.E. Smith Elementary,0
+585,Farmer's Markets,Y.E. Smith Elementary,0
+586,Food Pantries,Y.E. Smith Elementary,0
+587,Grocery Stores,Y.E. Smith Elementary,0
+588,Hospitals and Clinics,Y.E. Smith Elementary,0
+589,Libraries,Y.E. Smith Elementary,0
+590,Parks,Y.E. Smith Elementary,0
+591,Recreation Centers,Y.E. Smith Elementary,1
+592,Religious Centers,Y.E. Smith Elementary,3
+593,Pharmacies,Y.E. Smith Elementary,1
+594,Homeless Shelters,Y.E. Smith Elementary,2
+595,After-School Care Programs,Sherwood Githens Middle,10
+596,Bus Stops,Sherwood Githens Middle,85
+597,Childcare Centers,Sherwood Githens Middle,11
+598,Community & Cultural Centers,Sherwood Githens Middle,3
+599,Community Arts,Sherwood Githens Middle,15
+600,Community Gardens,Sherwood Githens Middle,0
+601,Community Sports,Sherwood Githens Middle,5
+602,Farmer's Markets,Sherwood Githens Middle,0
+603,Food Pantries,Sherwood Githens Middle,0
+604,Grocery Stores,Sherwood Githens Middle,0
+605,Hospitals and Clinics,Sherwood Githens Middle,3
+606,Libraries,Sherwood Githens Middle,3
+607,Parks,Sherwood Githens Middle,3
+608,Recreation Centers,Sherwood Githens Middle,0
+609,Religious Centers,Sherwood Githens Middle,0
+610,Pharmacies,Sherwood Githens Middle,8
+611,Homeless Shelters,Sherwood Githens Middle,1
+612,After-School Care Programs,Lucas Middle,2
+613,Bus Stops,Lucas Middle,59
+614,Childcare Centers,Lucas Middle,0
+615,Community & Cultural Centers,Lucas Middle,0
+616,Community Arts,Lucas Middle,1
+617,Community Gardens,Lucas Middle,0
+618,Community Sports,Lucas Middle,0
+619,Farmer's Markets,Lucas Middle,0
+620,Food Pantries,Lucas Middle,1
+621,Grocery Stores,Lucas Middle,0
+622,Hospitals and Clinics,Lucas Middle,0
+623,Libraries,Lucas Middle,1
+624,Parks,Lucas Middle,5
+625,Recreation Centers,Lucas Middle,0
+626,Religious Centers,Lucas Middle,2
+627,Pharmacies,Lucas Middle,0
+628,Homeless Shelters,Lucas Middle,0
+629,After-School Care Programs,Carrington Middle,6
+630,Bus Stops,Carrington Middle,110
+631,Childcare Centers,Carrington Middle,0
+632,Community & Cultural Centers,Carrington Middle,0
+633,Community Arts,Carrington Middle,3
+634,Community Gardens,Carrington Middle,2
+635,Community Sports,Carrington Middle,3
+636,Farmer's Markets,Carrington Middle,0
+637,Food Pantries,Carrington Middle,2
+638,Grocery Stores,Carrington Middle,0
+639,Hospitals and Clinics,Carrington Middle,0
+640,Libraries,Carrington Middle,1
+641,Parks,Carrington Middle,2
+642,Recreation Centers,Carrington Middle,0
+643,Religious Centers,Carrington Middle,1
+644,Pharmacies,Carrington Middle,9
+645,Homeless Shelters,Carrington Middle,2
+646,After-School Care Programs,Neal Middle,6
+647,Bus Stops,Neal Middle,98
+648,Childcare Centers,Neal Middle,3
+649,Community & Cultural Centers,Neal Middle,0
+650,Community Arts,Neal Middle,0
+651,Community Gardens,Neal Middle,0
+652,Community Sports,Neal Middle,4
+653,Farmer's Markets,Neal Middle,0
+654,Food Pantries,Neal Middle,1
+655,Grocery Stores,Neal Middle,0
+656,Hospitals and Clinics,Neal Middle,0
+657,Libraries,Neal Middle,1
+658,Parks,Neal Middle,1
+659,Recreation Centers,Neal Middle,2
+660,Religious Centers,Neal Middle,3
+661,Pharmacies,Neal Middle,2
+662,Homeless Shelters,Neal Middle,2
+663,After-School Care Programs,Rogers-Herr Middle,2
+664,Bus Stops,Rogers-Herr Middle,0
+665,Childcare Centers,Rogers-Herr Middle,8
+666,Community & Cultural Centers,Rogers-Herr Middle,2
+667,Community Arts,Rogers-Herr Middle,35
+668,Community Gardens,Rogers-Herr Middle,4
+669,Community Sports,Rogers-Herr Middle,12
+670,Farmer's Markets,Rogers-Herr Middle,3
+671,Food Pantries,Rogers-Herr Middle,1
+672,Grocery Stores,Rogers-Herr Middle,0
+673,Hospitals and Clinics,Rogers-Herr Middle,0
+674,Libraries,Rogers-Herr Middle,1
+675,Parks,Rogers-Herr Middle,0
+676,Recreation Centers,Rogers-Herr Middle,0
+677,Religious Centers,Rogers-Herr Middle,0
+678,Pharmacies,Rogers-Herr Middle,11
+679,Homeless Shelters,Rogers-Herr Middle,3
 680,After-School Care Programs,Durham School of Arts,49
 681,Bus Stops,Durham School of Arts,1046
 682,Childcare Centers,Durham School of Arts,54
@@ -713,7 +713,7 @@
 711,Religious Centers,School for Creative Studies,47
 712,Pharmacies,School for Creative Studies,35
 713,Homeless Shelters,School for Creative Studies,11
-714,After-School Care Programs,Shepard Middle ,1
+714,After-School Care Programs,Shepard Middle,1
 715,Bus Stops,Shepard Middle ,0
 716,Childcare Centers,Shepard Middle ,0
 717,Community & Cultural Centers,Shepard Middle ,0
@@ -730,57 +730,57 @@
 728,Religious Centers,Shepard Middle ,0
 729,Pharmacies,Shepard Middle ,0
 730,Homeless Shelters,Shepard Middle ,0
-731,After-School Care Programs,JD Clement High ,0
-732,Bus Stops,JD Clement High ,0
-733,Childcare Centers,JD Clement High ,0
-734,Community & Cultural Centers,JD Clement High ,0
-735,Community Arts,JD Clement High ,0
-736,Community Gardens,JD Clement High ,0
-737,Community Sports,JD Clement High ,0
-738,Farmer's Markets,JD Clement High ,0
-739,Food Pantries,JD Clement High ,0
-740,Grocery Stores,JD Clement High ,0
-741,Hospitals and Clinics,JD Clement High ,0
-742,Libraries,JD Clement High ,0
-743,Parks,JD Clement High ,0
-744,Recreation Centers,JD Clement High ,0
-745,Religious Centers,JD Clement High ,0
-746,Pharmacies,JD Clement High ,0
+731,After-School Care Programs,JD Clement High,0
+732,Bus Stops,JD Clement High,0
+733,Childcare Centers,JD Clement High,0
+734,Community & Cultural Centers,JD Clement High,0
+735,Community Arts,JD Clement High,0
+736,Community Gardens,JD Clement High,0
+737,Community Sports,JD Clement High,0
+738,Farmer's Markets,JD Clement High,0
+739,Food Pantries,JD Clement High,0
+740,Grocery Stores,JD Clement High,0
+741,Hospitals and Clinics,JD Clement High,0
+742,Libraries,JD Clement High,0
+743,Parks,JD Clement High,0
+744,Recreation Centers,JD Clement High,0
+745,Religious Centers,JD Clement High,0
+746,Pharmacies,JD Clement High,0
 747,Homeless Shelters,JD Clement High ,0
-748,After-School Care Programs,Durham  of Technology,0
-749,Bus Stops,Durham  of Technology,0
-750,Childcare Centers,Durham  of Technology,0
-751,Community & Cultural Centers,Durham  of Technology,0
-752,Community Arts,Durham  of Technology,2
-753,Community Gardens,Durham  of Technology,2
-754,Community Sports,Durham  of Technology,0
-755,Farmer's Markets,Durham  of Technology,0
-756,Food Pantries,Durham  of Technology,0
-757,Grocery Stores,Durham  of Technology,0
-758,Hospitals and Clinics,Durham  of Technology,0
-759,Libraries,Durham  of Technology,0
-760,Parks,Durham  of Technology,0
-761,Recreation Centers,Durham  of Technology,0
-762,Religious Centers,Durham  of Technology,0
-763,Pharmacies,Durham  of Technology,2
-764,Homeless Shelters,Durham  of Technology,0
-765,After-School Care Programs,Middle College High ,49
-766,Bus Stops,Middle College High ,1046
-767,Childcare Centers,Middle College High ,54
-768,Community & Cultural Centers,Middle College High ,17
-769,Community Arts,Middle College High ,63
-770,Community Gardens,Middle College High ,9
-771,Community Sports,Middle College High ,23
-772,Farmer's Markets,Middle College High ,5
-773,Food Pantries,Middle College High ,56
-774,Grocery Stores,Middle College High ,50
-775,Hospitals and Clinics,Middle College High ,19
-776,Libraries,Middle College High ,8
-777,Parks,Middle College High ,23
-778,Recreation Centers,Middle College High ,13
-779,Religious Centers,Middle College High ,47
-780,Pharmacies,Middle College High ,35
-781,Homeless Shelters,Middle College High ,11
+748,After-School Care Programs,Durham School of Technology,0
+749,Bus Stops,Durham School of Technology,0
+750,Childcare Centers,Durham School of Technology,0
+751,Community & Cultural Centers,Durham School of Technology,0
+752,Community Arts,Durham School of Technology,2
+753,Community Gardens,Durham School of Technology,2
+754,Community Sports,Durham School of Technology,0
+755,Farmer's Markets,Durham School of Technology,0
+756,Food Pantries,Durham School of Technology,0
+757,Grocery Stores,Durham School of Technology,0
+758,Hospitals and Clinics,Durham School of Technology,0
+759,Libraries,Durham School of Technology,0
+760,Parks,Durham School of Technology,0
+761,Recreation Centers,Durham School of Technology,0
+762,Religious Centers,Durham School of Technology,0
+763,Pharmacies,Durham School of Technology,2
+764,Homeless Shelters,Durham School of Technology,0
+765,After-School Care Programs,Middle College High,49
+766,Bus Stops,Middle College High,1046
+767,Childcare Centers,Middle College High,54
+768,Community & Cultural Centers,Middle College High,17
+769,Community Arts,Middle College High,63
+770,Community Gardens,Middle College High,9
+771,Community Sports,Middle College High,23
+772,Farmer's Markets,Middle College High,5
+773,Food Pantries,Middle College High,56
+774,Grocery Stores,Middle College High,50
+775,Hospitals and Clinics,Middle College High,19
+776,Libraries,Middle College High,8
+777,Parks,Middle College High,23
+778,Recreation Centers,Middle College High,13
+779,Religious Centers,Middle College High,47
+780,Pharmacies,Middle College High,35
+781,Homeless Shelters,Middle College High,11
 782,After-School Care Programs,Holton Career and Resource Center,49
 783,Bus Stops,Holton Career and Resource Center,1046
 784,Childcare Centers,Holton Career and Resource Center,54
@@ -798,23 +798,23 @@
 796,Religious Centers,Holton Career and Resource Center,47
 797,Pharmacies,Holton Career and Resource Center,35
 798,Homeless Shelters,Holton Career and Resource Center,11
-799,After-School Care Programs,Northern High ,7
-800,Bus Stops,Northern High ,0
-801,Childcare Centers,Northern High ,2
-802,Community & Cultural Centers,Northern High ,0
-803,Community Arts,Northern High ,4
-804,Community Gardens,Northern High ,4
-805,Community Sports,Northern High ,0
-806,Farmer's Markets,Northern High ,1
-807,Food Pantries,Northern High ,4
-808,Grocery Stores,Northern High ,0
-809,Hospitals and Clinics,Northern High ,0
-810,Libraries,Northern High ,2
-811,Parks,Northern High ,8
-812,Recreation Centers,Northern High ,1
-813,Religious Centers,Northern High ,4
-814,Pharmacies,Northern High ,3
-815,Homeless Shelters,Northern High ,1
+799,After-School Care Programs,Northern High,7
+800,Bus Stops,Northern High,0
+801,Childcare Centers,Northern High,2
+802,Community & Cultural Centers,Northern High,0
+803,Community Arts,Northern High,4
+804,Community Gardens,Northern High,4
+805,Community Sports,Northern High,0
+806,Farmer's Markets,Northern High,1
+807,Food Pantries,Northern High,4
+808,Grocery Stores,Northern High,0
+809,Hospitals and Clinics,Northern High,0
+810,Libraries,Northern High,2
+811,Parks,Northern High,8
+812,Recreation Centers,Northern High,1
+813,Religious Centers,Northern High,4
+814,Pharmacies,Northern High,3
+815,Homeless Shelters,Northern High,1
 816,After-School Care Programs,Southern School of Energy and Sustainability,4
 817,Bus Stops,Southern School of Energy and Sustainability,0
 818,Childcare Centers,Southern School of Energy and Sustainability,0
@@ -832,20 +832,20 @@
 830,Religious Centers,Southern School of Energy and Sustainability,3
 831,Pharmacies,Southern School of Energy and Sustainability,2
 832,Homeless Shelters,Southern School of Energy and Sustainability,2
-833,After-School Care Programs,Lakeview High ,0
-834,Bus Stops,Lakeview High ,0
-835,Childcare Centers,Lakeview High ,0
-836,Community & Cultural Centers,Lakeview High ,0
-837,Community Arts,Lakeview High ,0
-838,Community Gardens,Lakeview High ,0
-839,Community Sports,Lakeview High ,0
-840,Farmer's Markets,Lakeview High ,0
-841,Food Pantries,Lakeview High ,0
-842,Grocery Stores,Lakeview High ,0
-843,Hospitals and Clinics,Lakeview High ,0
-844,Libraries,Lakeview High ,0
-845,Parks,Lakeview High ,0
-846,Recreation Centers,Lakeview High ,0
-847,Religious Centers,Lakeview High ,0
-848,Pharmacies,Lakeview High ,0
-849,Homeless Shelters,Lakeview High ,0
+833,After-School Care Programs,Lakeview High,0
+834,Bus Stops,Lakeview High,0
+835,Childcare Centers,Lakeview High,0
+836,Community & Cultural Centers,Lakeview High,0
+837,Community Arts,Lakeview High,0
+838,Community Gardens,Lakeview High,0
+839,Community Sports,Lakeview High,0
+840,Farmer's Markets,Lakeview High,0
+841,Food Pantries,Lakeview High,0
+842,Grocery Stores,Lakeview High,0
+843,Hospitals and Clinics,Lakeview High,0
+844,Libraries,Lakeview High,0
+845,Parks,Lakeview High,0
+846,Recreation Centers,Lakeview High,0
+847,Religious Centers,Lakeview High,0
+848,Pharmacies,Lakeview High,0
+849,Homeless Shelters,Lakeview High,0
