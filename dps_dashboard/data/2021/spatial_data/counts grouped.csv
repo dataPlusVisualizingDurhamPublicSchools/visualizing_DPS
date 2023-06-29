@@ -458,23 +458,23 @@
 456,Religious Centers,Little River K-8,0
 457,Pharmacies,Little River K-8,0
 458,Homeless Shelters,Little River K-8,0
-459,After-School Care Programs,Morehead Montessori,1
-460,Bus Stops,Morehead Montessori,0
-461,Childcare Centers,Morehead Montessori,0
-462,Community & Cultural Centers,Morehead Montessori,1
-463,Community Arts,Morehead Montessori,2
-464,Community Gardens,Morehead Montessori,1
-465,Community Sports,Morehead Montessori,1
-466,Farmer's Markets,Morehead Montessori,0
-467,Food Pantries,Morehead Montessori,1
-468,Grocery Stores,Morehead Montessori,1
-469,Hospitals and Clinics,Morehead Montessori,0
-470,Libraries,Morehead Montessori,0
-471,Parks,Morehead Montessori,0
-472,Recreation Centers,Morehead Montessori,0
-473,Religious Centers,Morehead Montessori,0
-474,Pharmacies,Morehead Montessori,0
-475,Homeless Shelters,Morehead Montessori,0
+459,After-School Care Programs,Morehead Montessori Elementary,1
+460,Bus Stops,Morehead Montessori Elementary,0
+461,Childcare Centers,Morehead Montessori Elementary,0
+462,Community & Cultural Centers,Morehead Montessori Elementary,1
+463,Community Arts,Morehead Montessori Elementary,2
+464,Community Gardens,Morehead Montessori Elementary,1
+465,Community Sports,Morehead Montessori Elementary,1
+466,Farmer's Markets,Morehead Montessori Elementary,0
+467,Food Pantries,Morehead Montessori Elementary,1
+468,Grocery Stores,Morehead Montessori Elementary,1
+469,Hospitals and Clinics,Morehead Montessori Elementary,0
+470,Libraries,Morehead Montessori Elementary,0
+471,Parks,Morehead Montessori Elementary,0
+472,Recreation Centers,Morehead Montessori Elementary,0
+473,Religious Centers,Morehead Montessori Elementary,0
+474,Pharmacies,Morehead Montessori Elementary,0
+475,Homeless Shelters,Morehead Montessori Elementary,0
 476,After-School Care Programs,Merrick-Moore Elementary,1
 477,Bus Stops,Merrick-Moore Elementary,0
 478,Childcare Centers,Merrick-Moore Elementary,0
@@ -714,22 +714,22 @@
 712,Pharmacies,School for Creative Studies,35
 713,Homeless Shelters,School for Creative Studies,11
 714,After-School Care Programs,Shepard Middle,1
-715,Bus Stops,Shepard Middle ,0
-716,Childcare Centers,Shepard Middle ,0
-717,Community & Cultural Centers,Shepard Middle ,0
-718,Community Arts,Shepard Middle ,0
-719,Community Gardens,Shepard Middle ,0
-720,Community Sports,Shepard Middle ,0
-721,Farmer's Markets,Shepard Middle ,0
-722,Food Pantries,Shepard Middle ,0
-723,Grocery Stores,Shepard Middle ,0
-724,Hospitals and Clinics,Shepard Middle ,0
-725,Libraries,Shepard Middle ,1
-726,Parks,Shepard Middle ,0
-727,Recreation Centers,Shepard Middle ,0
-728,Religious Centers,Shepard Middle ,0
-729,Pharmacies,Shepard Middle ,0
-730,Homeless Shelters,Shepard Middle ,0
+715,Bus Stops,Shepard Middle,0
+716,Childcare Centers,Shepard Middle,0
+717,Community & Cultural Centers,Shepard Middle,0
+718,Community Arts,Shepard Middle,0
+719,Community Gardens,Shepard Middle,0
+720,Community Sports,Shepard Middle,0
+721,Farmer's Markets,Shepard Middle,0
+722,Food Pantries,Shepard Middle,0
+723,Grocery Stores,Shepard Middle,0
+724,Hospitals and Clinics,Shepard Middle,0
+725,Libraries,Shepard Middle,1
+726,Parks,Shepard Middle,0
+727,Recreation Centers,Shepard Middle,0
+728,Religious Centers,Shepard Middle,0
+729,Pharmacies,Shepard Middle,0
+730,Homeless Shelters,Shepard Middle,0
 731,After-School Care Programs,JD Clement High,0
 732,Bus Stops,JD Clement High,0
 733,Childcare Centers,JD Clement High,0
@@ -849,3 +849,37 @@
 847,Religious Centers,Lakeview High,0
 848,Pharmacies,Lakeview High,0
 849,Homeless Shelters,Lakeview High,0
+850,After-School Care Programs,Mangum Elementary,1
+851,Bus Stops,Mangum Elementary,0
+852,Childcare Centers,Mangum Elementary,0
+853,Community & Cultural Centers,Mangum Elementary,0
+854,Community Arts,Mangum Elementary,0
+855,Community Gardens,Mangum Elementary,0
+856,Community Sports,Mangum Elementary,0
+857,Farmer's Markets,Mangum Elementary,0
+858,Food Pantries,Mangum Elementary,1
+859,Grocery Stores,Mangum Elementary,0
+860,Hospitals and Clinics,Mangum Elementary,0
+861,Libraries,Mangum Elementary,0
+862,Parks,Mangum Elementary,2
+863,Recreation Centers,Mangum Elementary,0
+864,Religious Centers,Mangum Elementary,0
+865,Pharmacies,Mangum Elementary,0
+866,Homeless Shelters,Mangum Elementary,0
+867,After-School Care Programs,Spring Valley Elementary,1
+868,Bus Stops,Spring Valley Elementary,0
+869,Childcare Centers,Spring Valley Elementary,1
+870,Community & Cultural Centers,Spring Valley Elementary,0
+871,Community Arts,Spring Valley Elementary,0
+872,Community Gardens,Spring Valley Elementary,0
+873,Community Sports,Spring Valley Elementary,1
+874,Farmer's Markets,Spring Valley Elementary,0
+875,Food Pantries,Spring Valley Elementary,0
+876,Grocery Stores,Spring Valley Elementary,0
+877,Hospitals and Clinics,Spring Valley Elementary,0
+878,Libraries,Spring Valley Elementary,0
+879,Parks,Spring Valley Elementary,0
+880,Recreation Centers,Spring Valley Elementary,0
+881,Religious Centers,Spring Valley Elementary,0
+882,Pharmacies,Spring Valley Elementary,0
+883,Homeless Shelters,Spring Valley Elementary,0
