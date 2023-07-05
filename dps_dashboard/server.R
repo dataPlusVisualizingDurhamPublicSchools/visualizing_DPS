@@ -97,6 +97,9 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   CTECourses <- read_excel("./data/2022/CTE Courses.xlsx")
   sports_22 <- read.csv("./data/2022/school_stats_data/sports.csv")
   
+  #data for engagement tab
+  faculty <- read.csv("./data/2023/Faculty_Resources.csv") 
+  
   
 }
 
@@ -3350,8 +3353,15 @@ function(input, output, session) {
   
   
   
-  #Data Insight tab plots
-  
+  #Engagement tab plots
+  output$engagetable <- renderDataTable({
+    if(input$tab == "Staff/Faculty")
+    {
+      temp_df <- faculty
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE))
   
   # output$choropleth <- renderLeaflet({
   #   leaflet(
