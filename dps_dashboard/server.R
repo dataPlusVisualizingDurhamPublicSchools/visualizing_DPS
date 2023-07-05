@@ -3359,7 +3359,7 @@ function(input, output, session) {
     {
       temp_df <- faculty
       temp_df$URL <- createLink(temp_df$URL)
-      temp_df[c("School","club_name","URL","Subject")]
+      temp_df[c("School","Name","URL","Subject")]
     }
     }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE))
   
