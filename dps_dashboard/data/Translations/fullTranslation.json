@@ -1718,9 +1718,6 @@
 
 {"English": "Math",
 "Spanish": "Las matemáticas"},
-
-{"English": "English",
-"Spanish": "El inglés"},
   
 {"English": "Healthcare",
 "Spanish": "Asistencia médica"},
@@ -1745,7 +1742,6 @@
 
 {"English": "Search:",
 "Spanish": "Buscar:"}
-
     
 ]
 }
