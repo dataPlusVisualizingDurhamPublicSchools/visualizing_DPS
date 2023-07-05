@@ -211,7 +211,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20),
     commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20),
     pharmacies = makeIcon("https://img.icons8.com/ios-filled/50/000000/pharmacy.png", iconWidth=20, iconHeight=20),
-    shelters = makeIcon("https://img.icons8.com/ios-filled/50/000000/homeless-shelter.png", iconWidth=20, iconHeight=20), 
+    shelters = makeIcon("https://img.icons8.com/ios-filled/50/000000/roofing.png", iconWidth=20, iconHeight=20), 
     sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20)
   )
 }

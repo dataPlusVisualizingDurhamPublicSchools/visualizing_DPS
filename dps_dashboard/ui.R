@@ -296,13 +296,6 @@ body <- {dashboardBody(
                     br(),
                     fluidRow(
                       column(width = 1,
-                             img(src = "foodbank.jpg", width = 40, height = 40, align = "left")),
-                      column(width = 1),
-                      column(width = 8, htmlOutput("foodbank")
-                      )),
-                    br(),
-                    fluidRow(
-                      column(width = 1,
                              img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("gardenicon")
