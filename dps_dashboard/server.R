@@ -3351,8 +3351,15 @@ function(input, output, session) {
   
   
   
-  #Data Insight tab plots
-  
+  #Engagement tab plots
+  output$engagetable <- renderDataTable({
+    if(input$tab == "Staff/Faculty")
+    {
+      temp_df <- faculty
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","club_name","URL","Subject")]
+    }
+    }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE))
   
   # output$choropleth <- renderLeaflet({
   #   leaflet(

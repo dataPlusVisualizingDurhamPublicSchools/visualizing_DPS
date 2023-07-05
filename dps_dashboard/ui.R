@@ -820,10 +820,15 @@ body <- {dashboardBody(
     
     ##NCCU/DUKE engagement tab
     {tabItem(tabName = "engagementtab",
-             fluidRow(
-               tabBox(
-                tabPanel(i18n$t("Undergraduate Studens")),
-                tabPanel(i18n$t("Staff/Faculty"))))
+             selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                         choices = list("Staff/Faculty",
+                                        "Undergraduate Students"),
+                         multiple = FALSE),
+             br(),
+             dataTableOutput("engagetable"),
+             
+          
+             
     )},
     
     #Meet the team tab
