@@ -1714,7 +1714,38 @@
 "Spanish": "El Atletismo para Niñas"},
 
 {"English": "Girl's Soccer",
-"Spanish": "El Fútbol para Niñas"}
+"Spanish": "El Fútbol para Niñas"},
 
+{"English": "Math",
+"Spanish": "Las matemáticas"},
+
+{"English": "English",
+"Spanish": "El inglés"},
+  
+{"English": "Healthcare",
+"Spanish": "Asistencia médica"},
+
+{"English": "Internships",
+"Spanish": "los internados"},
+
+{"English": "History",
+"Spanish": "La historia"},
+
+{"English": "Academics",
+"Spanish": "Los académicos"},
+
+{"English": "Real Estate",
+"Spanish": "El inmueble"},
+
+{"English": "Tutoring",
+"Spanish": "La tutoría"},
+
+{"English": "Choose a Division to View Community Engagement Oppurtunities",
+"Spanish": "Elige una división para ver las oportunidades de participación comunitaria"},
+
+{"English": "Search:",
+"Spanish": "Buscar:"}
+
+    
 ]
 }
