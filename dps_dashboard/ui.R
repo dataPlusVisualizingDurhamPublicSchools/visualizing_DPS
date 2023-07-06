@@ -820,8 +820,13 @@ body <- {dashboardBody(
              br(),
              dataTableOutput("engagetable"),
              
-          
-             
+             fluidRow(
+               box(width = 12,
+                   background = "light-blue",
+                   solidHeader = TRUE,
+                   slickROutput("carou", width = "auto", height = "auto"),
+                   use_gotop(color = "black"))
+             )
     )},
     
     #Meet the team tab
