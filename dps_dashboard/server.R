@@ -3361,7 +3361,16 @@ function(input, output, session) {
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("School","Name","URL","Subject")]
     }
-    }, escape = FALSE, options = list(pageLength = 5, scrollX = TRUE))
+    }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
+  
+  
+  #Engagement Tab - Carousal
+  output$carou <- renderSlickR({
+    imgs <- list.files(path = "data/2023/engagement_slides", pattern = "*.png", full.names = TRUE)
+    slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
+                                                       slidesToShow = 4,
+                                                       slidesToScroll = 1)
+  })
   
   # output$choropleth <- renderLeaflet({
   #   leaflet(

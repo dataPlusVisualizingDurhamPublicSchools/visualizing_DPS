@@ -820,8 +820,13 @@ body <- {dashboardBody(
              br(),
              dataTableOutput("engagetable"),
              
-          
-             
+             fluidRow(
+               box(width = 12,
+                   background = "light-blue",
+                   solidHeader = TRUE,
+                   slickROutput("carou", width = "auto", height = "auto"),
+                   use_gotop(color = "black"))
+             )
     )},
     
     #Meet the team tab
@@ -931,11 +936,25 @@ body <- {dashboardBody(
                class = "text-center",
                size = 20,
                box(width = 12,
-                   background = "navy",
+                   background = "light-blue",
                    solidHeader = TRUE,
-                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/eQ5vUEz3W99CmMa4A", style = "color:white;font-size:30px"),
-                   style = "font-size:18px",
-                   "Click the text above to fill out our feedback form"))
+                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/eQ5vUEz3W99CmMa4A", style = "color:black;font-size:30px;text-decoration:underline"),
+                   style = "color:black;font-size:18px",
+                   "Click the text above to fill out our feedback form")),
+             fluidRow(
+               class = "text-center",
+               size = 20,
+               box(width = 12,
+                   #background = "white",
+                   solidHeader = TRUE,
+                   title = a(i18n$t("Learn More!"), style = "color:black;font-size:30px"),
+                   a(i18n$t("Data+ 2023"), href="https://bigdata.duke.edu/projects/strengthening-partnerships-durham-schools-local-universities/", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("Bass Connecions 2022-2023"), href="https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2022", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("Duke Public School Collaboration Published in Journal"), href="https://community.duke.edu/impact-story/duke-public-school-collaboration-published-in-journal/", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), href="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", style = "color:black;font-size:18px;text-decoration:underline"))),
     )}
     
     
