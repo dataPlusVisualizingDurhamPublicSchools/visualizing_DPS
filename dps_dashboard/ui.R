@@ -948,6 +948,8 @@ body <- {dashboardBody(
                    #background = "white",
                    solidHeader = TRUE,
                    title = a(i18n$t("Learn More!"), style = "color:black;font-size:30px"),
+                   a(i18n$t("Community School Partnership"), href="https://sites.duke.edu/uacs/outputs/", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
                    a(i18n$t("Data+ 2023"), href="https://bigdata.duke.edu/projects/strengthening-partnerships-durham-schools-local-universities/", style = "color:black;font-size:18px;text-decoration:underline"),
                    br(),
                    a(i18n$t("Bass Connecions 2022-2023"), href="https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2022", style = "color:black;font-size:18px;text-decoration:underline"),
