@@ -1,0 +1,13 @@
+name: dps_dashboard
+title: dps_dashboard
+username:
+account: visualizingdps23
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9423487
+bundleId: 7431768
+url: https://visualizingdps23.shinyapps.io/dps_dashboard/
+when: 1688743652.94518
+lastSyncTime: 1688743652.94519
+asMultiple: FALSE
+asStatic: FALSE
