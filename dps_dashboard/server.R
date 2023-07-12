@@ -233,7 +233,7 @@ function(input, output, session) {
   i18n <- reactive({
     selected <- input$selected_language
     if (length(selected) > 0 && selected %in% translator$get_languages()) {
-      translator$set_translation_language(selected)
+      translator$set_translation_language("Spanish")
     }
     translator
   })
@@ -727,20 +727,16 @@ function(input, output, session) {
         } 
       }
       else if (input$es_year == "Summer 2023") {
-        if (input$es_select == "Average Class Size") {
-          schoolstats22_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
-          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE), ],
-                      aes(x = reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y = AVG_CLASS_SIZE, fill = SCHOOL_NAME)) +
-            geom_col(color = "white", width = 0.5) +
-            geom_text(aes(label = AVG_CLASS_SIZE), vjust = -0.5, color = "black") +
-            geom_hline(aes(text = "Durham County Average = 19", yintercept = 19), color = '#01016D') +
+        if(input$es_select == "Average Class Size") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
             coord_flip() +
             theme_minimal() +
-            theme(plot.title = element_text(hjust = 1.5),
-                  axis.text.y = element_blank(),
-                  axis.ticks.y = element_blank()) +
-            labs(title = i18n()$t("Average Class Size"), x = "School", y = NULL)
-          
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
           ggplotly(p, tooltip = c("text"))
         }
         else if(input$es_select == "Bachelor Degree Rate") {
