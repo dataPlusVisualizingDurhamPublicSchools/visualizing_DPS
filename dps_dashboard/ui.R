@@ -375,7 +375,7 @@ body <- {dashboardBody(
                               title = strong(i18n$t("Elementary School Charts")),
                               plotlyOutput("es_barplots",
                                            width="auto",
-                                           height = "auto"),
+                                           height = "800px"),
                               h4(i18n$t("All data was derived from"),
                                  a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                  ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 

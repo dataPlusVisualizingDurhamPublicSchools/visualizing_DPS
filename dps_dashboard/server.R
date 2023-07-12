@@ -730,7 +730,7 @@ function(input, output, session) {
         if(input$es_select == "Average Class Size") {
           schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
           p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
-            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white") +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white", width = 1.0) +
             geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
             geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
             coord_flip() +
