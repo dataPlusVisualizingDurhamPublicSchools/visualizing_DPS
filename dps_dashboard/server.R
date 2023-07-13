@@ -4301,7 +4301,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
       addProviderTiles("CartoDB.Positron") %>%
       addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$uni, label = "Duke University") %>%
       addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$uni, label = "North Carolina Central University") %>%
-      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schoolstats$SCHOOL_NAME)
+      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schoolstats23$NAME)
   })
   
   #Home Page - Got to Maps tab button
