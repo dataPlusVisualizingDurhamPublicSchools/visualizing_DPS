@@ -46,13 +46,13 @@ sidebar <- {dashboardSidebar(
     menuItem(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
     menuItem(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
     menuItem(i18n$t("School Statistics"), tabName = "statstab", icon = icon("fas fa-chart-bar")),
+    menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
     menuItem(i18n$t("AP & CTE Courses"), tabName = "coursestab", icon = icon("book")),
     menuItem(i18n$t("School Sports"), tabName = "sportstab", icon = icon("basketball-ball")),
     menuItem(i18n$t("Arts Programs"), tabName = "artstab", icon = icon("paint-brush")),
-    menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
     menuItem(i18n$t("Duke/NCCU Engagement"), tabName = "engagementtab", icon = icon("fas fa-handshake-angle")),
-    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users")),
-    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment"))
+    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment")),
+    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users"))
   )
 )
 }
@@ -99,10 +99,10 @@ body <- {dashboardBody(
                  valueBox(1, i18n$t("Centralized Web Application"), icon = icon("window-restore"), color = "light-blue", width = 4))),
              fluidRow(
                class = "text-center",
-               box(title = strong(i18n$t("2 Universities, 52 Public Schools")),
+               box(title = strong(i18n$t("2 Universities, 50 Public Schools")),
                    solidHeader = TRUE,
                    width = 7,
-                   p(i18n$t("The Durham Public School District has 52 public schools: 29 elementary, 12 middle, 13 high.")),
+                   p(i18n$t("The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high.")),
                    br(),
                    p(i18n$t("Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”")),
                    br(),
@@ -112,7 +112,7 @@ body <- {dashboardBody(
                    solidHeader = TRUE,
                    leafletOutput("home"))),
              fluidRow(class = "text-center",
-                      box(title = strong(i18n$t("View Our 52 Schools")),
+                      box(title = strong(i18n$t("View Our 50 Schools")),
                           width = 12,
                           background = "light-blue",
                           actionButton("viewMap", i18n$t("View Geospatial Data")),
@@ -485,6 +485,66 @@ body <- {dashboardBody(
                             )
                           ))
                )))},
+    #Data Insights tab
+    {tabItem(tabName = "insightstab",
+             
+             # fluidRow(
+             #   box(width  = 12,
+             #       solidHeader = TRUE,
+             #       title = strong("Map Comparison Of School Districts"),
+             #       h4("Different school districts are differently colored according to the variable selected."),
+             #       leafletOutput("choropleth")),
+             # ), 
+             fluidRow(class= 'text-center',
+                      box(width = 12,
+                          solidHeader = TRUE,
+                          title = strong("Resources in Selected School Zone"),
+                          p(h4(align="left",i18n$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance.")), br()),
+                          fluidRow(
+                            box(width = 2,
+                                solidHeader = TRUE,
+                                title = strong(i18n$t("School Zone")),
+                                selectInput("insights_zone",
+                                            label = em(i18n$t("Choose a school zone to display")),
+                                            choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                                        "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                                        "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                                        "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                                        "Parkwood Elementary", "Riverside High", "Southwest Elementary", "Eno Valley Elementary", "Glenn Elementary", 
+                                                        "Creekside Elementary", "Easley Elementary", "Burton Elementary", "Bethesda Elementary", "George Watts Elementary", 
+                                                        "Holt Elementary", "Hope Valley Elementary", "Mangum Elementary", "Morehead Montessori Elementary", "Merrick-Moore Elementary", 
+                                                        "Oak Grove Elementary", "Pearsontown Elementary", "W.G. Pearson Elementary", "Sandy Ridge Elementary",  "R.N. Harris Elementary", 
+                                                        "Spring Valley Elementary", 
+                                                        "Y.E. Smith Elementary",
+                                                        "Sherwood Githens Middle",
+                                                        "Lucas Middle",
+                                                        "Carrington Middle",
+                                                        "Neal Middle",
+                                                        "Rogers-Herr Middle",
+                                                        "Shepard Middle", 
+                                                        "Durham School of Arts",
+                                                        "School for Creative Studies",
+                                                        "JD Clement High",
+                                                        "Durham School of Technology",
+                                                        "Middle College High",
+                                                        "Holton Career and Resource Center",
+                                                        "Northern High",
+                                                        "Southern School of Energy and Sustainability",
+                                                        "Lakeview High"
+                                                        
+                                            ),
+                                            multiple = FALSE)),
+                            box(width = 10,
+                                solidHeader = TRUE,
+                                plotlyOutput("insights_individualplots",
+                                             width="auto",
+                                             height = "auto"))
+                          ))
+             )
+             
+             
+             
+    )},
     
     #AP & CTE Tab
     {tabItem(tabName = "coursestab",
@@ -747,67 +807,7 @@ body <- {dashboardBody(
              ) 
     )},
     
-    #Data Insights tab
-    {tabItem(tabName = "insightstab",
-             
-             # fluidRow(
-             #   box(width  = 12,
-             #       solidHeader = TRUE,
-             #       title = strong("Map Comparison Of School Districts"),
-             #       h4("Different school districts are differently colored according to the variable selected."),
-             #       leafletOutput("choropleth")),
-             # ), 
-             fluidRow(class= 'text-center',
-                      box(width = 12,
-                          solidHeader = TRUE,
-                          title = strong("Resources in Selected School Zone"),
-                          p(h4(align="left",i18n$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance.")), br()),
-                          fluidRow(
-                            box(width = 2,
-                                solidHeader = TRUE,
-                                title = strong(i18n$t("School Zone")),
-                                selectInput("insights_zone",
-                                            label = em(i18n$t("Choose a school zone to display")),
-                                            choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
-                                                        "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                                        "Forest View Elementary", "Hillandale Elementary","Hillside High",
-                                                        "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                                        "Parkwood Elementary", "Riverside High", "Southwest Elementary", "Eno Valley Elementary", "Glenn Elementary", 
-                                                        "Creekside Elementary", "Easley Elementary", "Burton Elementary", "Bethesda Elementary", "George Watts Elementary", 
-                                                        "Holt Elementary", "Hope Valley Elementary", "Mangum Elementary", "Morehead Montessori Elementary", "Merrick-Moore Elementary", 
-                                                        "Oak Grove Elementary", "Pearsontown Elementary", "W.G. Pearson Elementary", "Sandy Ridge Elementary",  "R.N. Harris Elementary", 
-                                                        "Spring Valley Elementary", 
-                                                        "Y.E. Smith Elementary",
-                                                        "Sherwood Githens Middle",
-                                                        "Lucas Middle",
-                                                        "Carrington Middle",
-                                                        "Neal Middle",
-                                                        "Rogers-Herr Middle",
-                                                        "Shepard Middle", 
-                                                        "Durham School of Arts",
-                                                        "School for Creative Studies",
-                                                        "JD Clement High",
-                                                        "Durham School of Technology",
-                                                        "Middle College High",
-                                                        "Holton Career and Resource Center",
-                                                        "Northern High",
-                                                        "Southern School of Energy and Sustainability",
-                                                        "Lakeview High"
-                                                        
-                                            ),
-                                            multiple = FALSE)),
-                            box(width = 10,
-                                solidHeader = TRUE,
-                                plotlyOutput("insights_individualplots",
-                                             width="auto",
-                                             height = "auto"))
-                          ))
-             )
-             
-             
-             
-    )},
-    
+   
     ##NCCU/DUKE engagement tab
     {tabItem(tabName = "engagementtab",
              selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
