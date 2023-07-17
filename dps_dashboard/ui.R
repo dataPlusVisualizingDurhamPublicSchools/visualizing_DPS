@@ -953,7 +953,9 @@ body <- {dashboardBody(
                    br(),
                    a(i18n$t("Duke and NCCU Collaboration Published in Community Schooling Journal"), href="https://community.duke.edu/impact-story/duke-public-school-collaboration-published-in-journal/", style = "color:black;font-size:18px;text-decoration:underline"),
                    br(),
-                   a(i18n$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), href="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", style = "color:black;font-size:18px;text-decoration:underline"))),
+                   a(i18n$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), href="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   img(src = "project_logo.png", align="center"))),
     )}
     
     
