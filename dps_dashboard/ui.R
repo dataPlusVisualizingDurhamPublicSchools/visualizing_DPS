@@ -822,12 +822,20 @@ body <- {dashboardBody(
    
     ##NCCU/DUKE engagement tab
     {tabItem(tabName = "engagementtab",
-             selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+             tabBox(
+               # The id lets us use input$tabset1 on the server to find the current tab
+               id = "tabset1", width = "auto",
+               #Table Outputs
+               tabPanel(i18n$t("Service"),
+                        selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
                          choices = list("Staff/Faculty",
                                         "Undergraduate Students"),
                          multiple = FALSE),
-             br(),
-             dataTableOutput("engagetable"),
+                        br(),
+                        dataTableOutput("engagetable")),
+               tabPanel(i18n$t("Teaching and Learning")),
+               tabPanel(i18n$t("Research"))
+               ),
              
              fluidRow(
                box(width = 12,
