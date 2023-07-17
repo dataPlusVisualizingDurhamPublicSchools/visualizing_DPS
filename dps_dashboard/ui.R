@@ -822,8 +822,18 @@ body <- {dashboardBody(
                    background = "light-blue",
                    solidHeader = TRUE,
                    slickROutput("carou", width = "auto", height = "auto"),
-                   use_gotop(color = "black"))
-             )
+                   use_gotop(color = "black")),
+               
+             ),
+      
+            fluidRow(
+              box(width = 12,
+                  background = "black",
+                  i18n$t("All data was derived from"),
+                  a("Duke Office of Durham & Community Affairs", href="https://community.duke.edu/"), 
+                  ", ", a("Duke CampusGroups", href="https://dukegroups.com/home_login"), 
+                  i18n$t(", and"), 
+                  a("NCCU Office of Community Engagement and Service", href="https://www.nccu.edu/oces")))
     )},
     
     #Meet the team tab
