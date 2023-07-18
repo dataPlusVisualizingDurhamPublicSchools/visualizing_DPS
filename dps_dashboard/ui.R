@@ -332,7 +332,7 @@ body <- {dashboardBody(
                                            "Carrington Middle","Lucas Middle","Lakewood Montessori Middle", "Lowes Grove Middle", "Neal Middle","Rogers Herr Middle", 
                                            "Shepard Middle", "Sherwood Githens Middle","City of Medicine Academy", "Durham School of the Arts","J.D. Clement Early College",
                                            "Hillside High","Holton Career","Jordan High","Lakewiew High","Middle College", "Morehead Montessori School",
-                                           "Northern High","Riverside High","School for Creative Studies", 
+                                           "Northern High","Riverside High","School for Creative Studies",
                                            "Southern School of Energy and Sustainability"   
                                             
                                            

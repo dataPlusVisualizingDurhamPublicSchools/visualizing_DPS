@@ -100,8 +100,6 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   #data for engagement tab
   faculty_service <- read.csv("./data/2023/Faculty_Resources.csv")
   student_service <- read.csv("./data/2023/us_service.csv") 
-  student_research <- read.csv("./data/2023/us_research.csv")
-  faculty_research <- read.csv("./data/2023/sf_research.csv") 
   
   
 }
@@ -191,15 +189,15 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 }
 
 # Load/Rename Schools' Names
-schoolstats$name <- c("All", "Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
+schoolstats$name <- c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
                       "Eastway Elementary", "Easley Elementary", "Eno Valley Elementary", "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                       "Forest View Elementary", "George Watts Elementary", "Glenn Elementary",  "Holt Elementary","Hope Valley Elementary",
                       "Hillandale Elementary","Lakewood Elementary", "Mangum Elementary","Merrick-Moore Elementary","Oak Grove Elementary","Pearsontown Elementary","Parkwood Elementary","R.N. Harris Elementary","Southwest Elementary",
                       "Sandy Ridge Elementary","Spring Valley Elementary","W.G. Pearson Elementary", "Y.E. Smith Elementary","Brogden Middle", 
                       "Carrington Middle","Lucas Middle","Lakewood Montessori Middle", "Lowes Grove Middle", "Neal Middle","Rogers Herr Middle", 
-                      "Shepard Middle", "Sherwood Githens Middle","City of Medicine Academy", "Durham School of the Arts","J.D. Clement Early College",
+                      "Shepard Middle", "Sherwood Githens Middle","City of Medicine Academy", "Durham School of the Arts","Durham School of Technology","J.D. Clement Early College",
                       "Hillside High","Holton Career","Jordan High","Lakewiew High","Middle College", "Morehead Montessori School",
-                      "Northern High","Riverside High","School for Creative Studies")
+                      "Northern High","Riverside High","Southern High", "School for Creative Studies")
 
 # Load/Rename Icons
 {
@@ -3364,49 +3362,33 @@ function(input, output, session) {
   )
   
   
+  
   #Engagement tab plots
-  #service
+  #Engagement tab plots
   output$engagetable_1 <- renderDataTable({
-    if(input$tab1 == "Staff/Faculty")
+    if(input$tab == "Staff/Faculty")
     {
       temp_df <- faculty_service
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("School","Name","URL","Subject")]
     }
     
-    else if(input$tab1 == "Undergraduate Students"){
+    else if(input$tab == "Undergraduate Students"){
       temp_df <- student_service
       temp_df$URL <- createLink(temp_df$URL)
-      temp_df[c("School","Name","URL","Subject")]
-    }
-    
-  }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
-  
-  #research
-  output$engagetable_3 <- renderDataTable({
-    if(input$tab3 == "Staff/Faculty")
-    {
-      temp_df <- faculty_research
-      temp_df$URL <- createLink(temp_df$URL)
-      temp_df[c("School","Name","URL","Subject")]
-    }
-    
-    else if(input$tab3 == "Undergraduate Students"){
-      temp_df <- student_research
-      temp_df$URL <- createLink(temp_df$URL)
-      temp_df[c("School","Name","URL","Program")]
+      temp_df[c("SCHOOL","CLUB_NAME","URL","SUBJECT")]
     }
     
   }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
   
   
   #Engagement Tab - Carousal
-  #output$carou <- renderSlickR({
-    #imgs <- list.files(path = "data/2023/engagement_slides", pattern = "*.png", full.names = TRUE)
-    #slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
-                                                       #slidesToShow = 4,
-                                                       #slidesToScroll = 1)
-  #})
+  output$carou <- renderSlickR({
+    imgs <- list.files(path = "data/2023/engagement_slides", pattern = "*.png", full.names = TRUE)
+    slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
+                                                       slidesToShow = 4,
+                                                       slidesToScroll = 1)
+  })
   
   # output$choropleth <- renderLeaflet({
   #   leaflet(
@@ -4419,10 +4401,11 @@ Moreover, pharmacies contribute to public health by offering services like immun
   #Home Page - Leaflet Map showing Duke, NCCU, and the Ten Schools
   output$home <- renderLeaflet({
     leaflet() %>%
+      setView(lng = -78.8970, lat = 35.9940, zoom = 10.5) %>%
       addProviderTiles("CartoDB.Positron") %>%
       addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$uni, label = "Duke University") %>%
       addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$uni, label = "North Carolina Central University") %>%
-      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schools$NAME)
+      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = ~NAME)
   })
   
   #Home Page - Got to Maps tab button
