@@ -40,19 +40,34 @@ sidebar <- {dashboardSidebar(
           }
         };
       '))),
-  
+  navbarPage("Visualizing DPS",
+             tabPanel("Home",icon = icon("fas fa-home") ),
+             tabPanel("Maps",icon = icon("fas fa-map-marked-alt")),
+             tabPanel("School Statistics", icon = icon("fas fa-chart-bar")), 
+             tabPanel("Data Insights", icon = icon("fas fa-chart-line")),
+             tabPanel("Courses", icon = icon("book")),
+             tabPanel("Sports", icon = icon("basketball-ball")),
+             tabPanel("Arts", icon = icon("paint-brush")),
+             tabPanel("Duke/NCCU Engagement", icon = icon("fas fa-handshake-angle")),
+             tabPanel("Feedback", icon = icon("fas fa-comment")),
+             tabPanel("Meet the Team", icon = icon("fas fa-users")),
+             collapsible = FALSE,
+             position = ("fixed-top")
+  ),
   sidebarMenu(
     id = "TabItems",
     menuItem(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
     menuItem(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
     menuItem(i18n$t("School Statistics"), tabName = "statstab", icon = icon("fas fa-chart-bar")),
+    menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
     menuItem(i18n$t("AP & CTE Courses"), tabName = "coursestab", icon = icon("book")),
     menuItem(i18n$t("School Sports"), tabName = "sportstab", icon = icon("basketball-ball")),
     menuItem(i18n$t("Arts Programs"), tabName = "artstab", icon = icon("paint-brush")),
-    menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
-    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users")),
-    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment"))
+    menuItem(i18n$t("Duke/NCCU Engagement"), tabName = "engagementtab", icon = icon("fas fa-handshake-angle")),
+    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment")),
+    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users"))
   )
+  
 )
 }
 
@@ -80,11 +95,11 @@ body <- {dashboardBody(
                    width = 12,
                    background = "navy",
                    br(),
-                   p(i18n$t("This project is inspired by an inter-institutional Bass Connections team from Duke University and North Carolina Central University that is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. The objective of this project is to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. Our application aims to inform future pre-service trainings for university students, support local neighborhood schools in visualizing their communities, and help varied university offices articulate what “community” actually looks like.")),
+                   p(i18n$t("The inspiration for this project is rooted in the inter-institutional Bass Connections team from Duke University and North Carolina Central University, which is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. This project aims to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. In addition, our application aims to inform future pre-service training for university students, support local neighborhood schools in visualizing their communities, and help various university offices articulate what “community” actually looks like.")),
                    br(),
-                   p(i18n$t("By using spatial data and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets.")),
-                   p(i18n$t("Visit the"), a("Visualizing DPS and Bass Connections website",
-                                            href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2021", target="_blank"),
+                   p(i18n$t("Using spatial and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets.")),
+                   p(i18n$t("Visit the"), a("Durham UACS Research Collective website",
+                                            href = "https://sites.duke.edu/uacs/", target="_blank"),
                      i18n$t("for more information!")))),
              fluidRow(
                class = "text-center",
@@ -92,29 +107,25 @@ body <- {dashboardBody(
                  solidHeader = TRUE,
                  br(),
                  width = 12,
-                 valueBox(13, i18n$t("Geospatial Variables"), icon = icon("map"), color = "light-blue", width = 4),
-                 valueBox(23, i18n$t("School-Specific Variables"), icon = icon("pencil"), color = "light-blue", width = 4),
+                 valueBox(17, i18n$t("Geospatial Variables"), icon = icon("map"), color = "light-blue", width = 4),
+                 valueBox(41, i18n$t("School-Specific Variables"), icon = icon("pencil"), color = "light-blue", width = 4),
                  valueBox(1, i18n$t("Centralized Web Application"), icon = icon("window-restore"), color = "light-blue", width = 4))),
              fluidRow(
                class = "text-center",
-               box(title = strong(i18n$t("2 Universities, 16 Public Schools")),
+               box(title = strong(i18n$t("2 Universities, 50 Public Schools")),
                    solidHeader = TRUE,
                    width = 7,
-                   p(i18n$t("The Durham Public Schools District contains 54 public schools: 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. Our project focuses on the 16 schools that most frequently partner with Duke University and North Carolina Central University"),
-                     i18n$t(", or are part of the"),
-                     a("Principal Leadership Fellowship", href="https://www.bullcityschools.org/principal-leadership-fellowship"),
-                     i18n$t("organized by the Durham Public Schools Foundation."),
-                     i18n$t("These include 10 elementary schools: C.C. Spaulding, Eastway, E.K. Powe, Fayetteville Street, Forest View, Lakewood, Parkwood, Southwest, Hillandale, and Club Boulevard, 3 middle schools: Lakewood Montessori, Lowes Grove, and Brogden, and 3 high schools: Hillside, Jordan, and Riverside.")),
+                   p(i18n$t("The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high.")),
                    br(),
-                   p(i18n$t("The shared goal of both Duke and NCCU is to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that an issue preventing meaningful engagement between Duke, NCCU, and Durham public schools is that ‘many university students lack an understanding of city and community dynamics.’ Additionally, they found that there is a ‘lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.’")),
+                   p(i18n$t("Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”")),
                    br(),
-                   p(strong(i18n$t("Motivated by this research, our project explores a way of visualizing schools as the center of the community that brings together academics, health and social services, youth and community development, and community engagement under one roof.")))),
+                   p(strong(i18n$t("Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.")))),
                box(width = 5,
                    background = "light-blue",
                    solidHeader = TRUE,
                    leafletOutput("home"))),
              fluidRow(class = "text-center",
-                      box(title = strong(i18n$t("View Our 55 Schools")),
+                      box(title = strong(i18n$t("View Our 50 Schools")),
                           width = 12,
                           background = "light-blue",
                           actionButton("viewMap", i18n$t("View Geospatial Data")),
@@ -198,21 +209,18 @@ body <- {dashboardBody(
                    title = strong(i18n$t("Measurement")),
                    selectInput("zone",
                                label = em(i18n$t("Choose a school zone to display")),
-                               choices = c("All", "Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
-                                           "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                           "Forest View Elementary", "Hillandale Elementary","Hillside High",
-                                           "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                           "Parkwood Elementary", "Riverside High", "Southwest Elementary", "Bethesda Elementary", "Burton Elementary", "Carrington Middle",
-                                           "City of Medicine Academy", "Creekside Elementary", "Durham School of the Arts",
-                                           "Easley Elementary", "Eno Valley Elementary", "George Watts Elementary",
-                                           "Glenn Elementary", "Holt Elementary", "Holton Career", "Hope Valley Elementary",
-                                           "J.D. Clement Early College", "Lakewiew High", "Lucas Middle", "Mangum Elementary",
-                                           "Merrick-Moore Elementary", "Middle College", "Morehead Montessori School",
-                                           "Neal Middle", "Northern High", "Oak Grove Elementary", "Pearsontown Elementary",
-                                           "R.N. Harris Elementary", "Rogers Herr Middle", "Sandy Ridge Elementary",
-                                           "School for Creative Studies", "Shepard Middle", "Sherwood Githens Middle",
-                                           "Southern School of Energy and Sustainability", "Spring Valley Elementary",
-                                           "W.G. Pearson Elementary", "Y.E. Smith Elementary"
+                               choices = c("All", "Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
+                                           "Eastway Elementary", "Easley Elementary", "Eno Valley Elementary", "E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                           "Forest View Elementary", "George Watts Elementary", "Glenn Elementary",  "Holt Elementary","Hope Valley Elementary",
+                                           "Hillandale Elementary","Lakewood Elementary", "Mangum Elementary","Merrick-Moore Elementary","Oak Grove Elementary","Pearsontown Elementary","Parkwood Elementary","R.N. Harris Elementary","Southwest Elementary",
+                                           "Sandy Ridge Elementary","Spring Valley Elementary","W.G. Pearson Elementary", "Y.E. Smith Elementary","Brogden Middle", 
+                                           "Carrington Middle","Lucas Middle","Lakewood Montessori Middle", "Lowes Grove Middle", "Neal Middle","Rogers Herr Middle", 
+                                           "Shepard Middle", "Sherwood Githens Middle","City of Medicine Academy", "Durham School of the Arts","J.D. Clement Early College",
+                                           "Hillside High","Holton Career","Jordan High","Lakewiew High","Middle College", "Morehead Montessori School",
+                                           "Northern High","Riverside High","School for Creative Studies", 
+                                           "Southern School of Energy and Sustainability"   
+                                            
+                                           
                                ),
                                
                                multiple = FALSE),
@@ -298,13 +306,6 @@ body <- {dashboardBody(
                     br(),
                     fluidRow(
                       column(width = 1,
-                             img(src = "foodbank.jpg", width = 40, height = 40, align = "left")),
-                      column(width = 1),
-                      column(width = 8, htmlOutput("foodbank")
-                      )),
-                    br(),
-                    fluidRow(
-                      column(width = 1,
                              img(src = "garden_icon.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
                       column(width = 8, htmlOutput("gardenicon")
@@ -384,7 +385,7 @@ body <- {dashboardBody(
                               title = strong(i18n$t("Elementary School Charts")),
                               plotlyOutput("es_barplots",
                                            width="auto",
-                                           height = "auto"),
+                                           height = "750px"),
                               h4(i18n$t("All data was derived from"),
                                  a("Durham Neighborhood Compass", href="https://compass.durhamnc.gov/en"), 
                                  ", ", a("NC School Report Cards", href="https://ncreports.ondemand.sas.com/src/?county=Durham"), 
@@ -497,6 +498,66 @@ body <- {dashboardBody(
                             )
                           ))
                )))},
+    #Data Insights tab
+    {tabItem(tabName = "insightstab",
+             
+             # fluidRow(
+             #   box(width  = 12,
+             #       solidHeader = TRUE,
+             #       title = strong("Map Comparison Of School Districts"),
+             #       h4("Different school districts are differently colored according to the variable selected."),
+             #       leafletOutput("choropleth")),
+             # ), 
+             fluidRow(class= 'text-center',
+                      box(width = 12,
+                          solidHeader = TRUE,
+                          title = strong("Resources in Selected School Zone"),
+                          p(h4(align="left",i18n$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance.")), br()),
+                          fluidRow(
+                            box(width = 2,
+                                solidHeader = TRUE,
+                                title = strong(i18n$t("School Zone")),
+                                selectInput("insights_zone",
+                                            label = em(i18n$t("Choose a school zone to display")),
+                                            choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
+                                                        "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                                                        "Forest View Elementary", "Hillandale Elementary","Hillside High",
+                                                        "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
+                                                        "Parkwood Elementary", "Riverside High", "Southwest Elementary", "Eno Valley Elementary", "Glenn Elementary", 
+                                                        "Creekside Elementary", "Easley Elementary", "Burton Elementary", "Bethesda Elementary", "George Watts Elementary", 
+                                                        "Holt Elementary", "Hope Valley Elementary", "Mangum Elementary", "Morehead Montessori Elementary", "Merrick-Moore Elementary", 
+                                                        "Oak Grove Elementary", "Pearsontown Elementary", "W.G. Pearson Elementary", "Sandy Ridge Elementary",  "R.N. Harris Elementary", 
+                                                        "Spring Valley Elementary", 
+                                                        "Y.E. Smith Elementary",
+                                                        "Sherwood Githens Middle",
+                                                        "Lucas Middle",
+                                                        "Carrington Middle",
+                                                        "Neal Middle",
+                                                        "Rogers-Herr Middle",
+                                                        "Shepard Middle", 
+                                                        "Durham School of Arts",
+                                                        "School for Creative Studies",
+                                                        "JD Clement High",
+                                                        "Durham School of Technology",
+                                                        "Middle College High",
+                                                        "Holton Career and Resource Center",
+                                                        "Northern High",
+                                                        "Southern School of Energy and Sustainability",
+                                                        "Lakeview High"
+                                                        
+                                            ),
+                                            multiple = FALSE)),
+                            box(width = 10,
+                                solidHeader = TRUE,
+                                plotlyOutput("insights_individualplots",
+                                             width="auto",
+                                             height = "auto"))
+                          ))
+             )
+             
+             
+             
+    )},
     
     #AP & CTE Tab
     {tabItem(tabName = "coursestab",
@@ -683,7 +744,7 @@ body <- {dashboardBody(
              ),
              fluidRow(
                box(width = 6, title = strong(i18n$t("Durham Public Schools and the Arts")), status = "primary", solidHeader = TRUE,
-                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit"), 
+                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curriculum for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit"), 
                         a(i18n$t("Arts at DPS"), href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
                         i18n$t("to learn more."))),
                    br(),
@@ -727,29 +788,29 @@ body <- {dashboardBody(
                                      class= "img-responsive")))
                ),
                box(width = 6, title = strong(i18n$t("Durham County and the Arts")), status = "primary", solidHeader = TRUE,
-                   p(h4(i18n$t("Durham has a rich history of highlighting the arts. In the mid-20th century the non-profit organization "),
+                   p(h4(i18n$t("Durham has a rich history of highlighting the arts. Durham has a rich history of highlighting the arts. Founded in the mid-20th century, the non-profit organization "),
                         a(i18n$t("Durham Arts Council"), href="https://durhamarts.org/"),
-                        i18n$t("was founded to promote and provide access to various opportunities and resources for those in the arts. The Durham Arts Council also provides a directory of artists to network with one another through the"),
+                        i18n$t("promotes and provides access to various opportunities and resources for those in the arts. The Durham Arts Council also offers a directory of artists to network with one another through the "),
                         a(i18n$t("Durham Arts Network"), href="https://www.durhamartsnetwork.org/"),
-                        i18n$t(". The city of Durham funded the"), a("Cultural & Public Art Program ", 
+                        i18n$t(". In addition, the city of Durham funded the"), a("Cultural & Public Art Program ", 
                                                                      href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
-                        i18n$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work"),
+                        i18n$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work. "),
                         a(i18n$t("Discover Durham"), href="https://www.discoverdurham.com/things-to-do/arts/"),
-                        i18n$t("provides an extensive list of events for visitors and residents to do surrounding the arts. This includes festivals, concerts, performances, museums, art shows, etc."),
+                        i18n$t("provides an extensive list of events for visitors and residents to do around the arts: including festivals, concerts, performances, museums, art shows, etc. "),
                         br(),br(),
                         a(i18n$t("The Nasher Museum of Art at Duke University"),
                           href="https://nasher.duke.edu/"),
-                        i18n$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream arts institutions, and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art and ancient American art."),
+                        i18n$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream art institutions and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art, and ancient American art."),
                         i18n$t("North Carolina Central University students host various musical ensembles, such as the"),
                         a(i18n$t("NCCU Jazz Vocal Ensemble"),
                           href="https://www.nccu.edu/cash/music/ensembles/vocal-jazz"),
                         i18n$t("and the"),
                         a(i18n$t("NCCU Sound Machine Marching Band"),
                           href="https://www.nccusoundmachine.com/"),
-                        i18n$t(", that perform throughout the city of Durham, North Carolina and the United States."),
+                        i18n$t(", that perform throughout the city of Durham, North Carolina, and the United States."),
                         a(i18n$t("WNCU 90.7 FM is Central’s Jazz radio station"),
                           href="https://www.wncu.org/"),
-                        i18n$t("which provides “diverse music entertainment and serve as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"),
+                        i18n$t("providing “diverse music entertainment and serving as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"),
                         a(i18n$t("KidzNotes program"),
                           href="https://kidznotes.org/"),
                         i18n$t("via Fayetteville Street Elementary’s AT&T Believe Program.")
@@ -759,44 +820,48 @@ body <- {dashboardBody(
              ) 
     )},
     
-    #Data Insights tab
-    {tabItem(tabName = "insightstab",
+   
+    ##NCCU/DUKE engagement tab
+    {tabItem(tabName = "engagementtab",
+             tabBox(
+               # The id lets us use input$tabset1 on the server to find the current tab
+               id = "tabset1", width = "auto",
+               #Table Outputs
+               tabPanel(i18n$t("Service"),
+                        selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                         choices = list("Staff/Faculty",
+                                        "Undergraduate Students"),
+                         multiple = FALSE),
+                        br(),
+                        dataTableOutput("engagetable")),
+               tabPanel(i18n$t("Teaching and Learning")),
+               tabPanel(i18n$t("Research"))
+               ),
              
-             # fluidRow(
-             #   box(width  = 12,
-             #       solidHeader = TRUE,
-             #       title = strong("Map Comparison Of School Districts"),
-             #       h4("Different school districts are differently colored according to the variable selected."),
-             #       leafletOutput("choropleth")),
-             # ), 
-             fluidRow(class= 'text-center',
-                      box(width = 12,
-                          solidHeader = TRUE,
-                          title = strong("Resources in Selected School Zone"),
-                          p(h4(align="left",i18n$t("These plots reveal the total number of each resource in each school district. Different school districts have different populations; therefore, there are different corresponding numbers of resources. These plots are useful for getting a sense of the of different types of resources available in each district at a glance.")), br()),
-                          fluidRow(
-                            box(width = 2,
-                                solidHeader = TRUE,
-                                title = strong(i18n$t("School Zone")),
-                                selectInput("insights_zone",
-                                            label = em(i18n$t("Choose a school zone to display")),
-                                            choices = c("Brogden Middle", "C.C. Spaulding Elementary", "Club Boulevard Elementary",
-                                                        "Eastway Elementary","E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                                                        "Forest View Elementary", "Hillandale Elementary","Hillside High",
-                                                        "Jordan High","Lakewood Elementary", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                                                        "Parkwood Elementary", "Riverside High", "Southwest Elementary"
-                                            ),
-                                            multiple = FALSE)),
-                            box(width = 10,
-                                solidHeader = TRUE,
-                                plotlyOutput("insights_individualplots",
-                                             width="auto",
-                                             height = "auto"))
-                          ))
-             )
+             fluidRow(
+               box(width = 12,
+                   title = strong(i18n$t("Context")),
+                   i18n$t("From "),
+                   a(i18n$t("creating free math workshops for girls who attend Durham Public Schools "), href="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools"), 
+                   i18n$t("to "), 
+                   a(i18n$t("faculty research projects that engage with "), href="https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues"),
+                   a(i18n$t("“Racial and Social Equity in Local Contexts”, "), href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact"),
+                   i18n$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list includes initiatives that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
+                   a(i18n$t("Duke Office of Durham & Community Affairs, "), href="https://community.duke.edu/"), 
+                   a(i18n$t("Duke CampusGroups, "), href="https://dukegroups.com/home_login"), 
+                   i18n$t("and, "), 
+                   a(i18n$t("NCCU Office of Community Engagement and Service."), href="https://www.nccu.edu/oces")))
+               
              
-             
-             
+             #fluidRow(
+               #box(width = 12,
+                   #background = "light-blue",
+                   #solidHeader = TRUE,
+                   #slickROutput("carou", width = "auto", height = "auto"),
+                   #use_gotop(color = "black")),
+             #),
+  
+                  
     )},
     
     #Meet the team tab
@@ -844,27 +909,27 @@ body <- {dashboardBody(
                      column(width = 3,
                             img(align = "center", src = "emily250.jpg")),
                      column(width =3,
-                            p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro, North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our educational and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
+                            p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro, North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our education and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
                      column(width = 3,
                             img(src = "aryan250.jpg")),
                      column(width = 3,
-                            p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently, he is studying Data Science, with a minor in Political Science. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and find better paths to their improvement.")))),
+                            p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently, he is studying Data Science with a minor in Political Science. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools and find better paths to their improvement.")))),
                    br(),
                    fluidRow(
                      column(width = 3,
                             img(src = "patience3.jpg")),
                      column(width = 3,
-                            p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team because she was wanted to continue the work she did the previous summer in hopes to improve the dashboard to make it more accessible. With her background in education policy, she hopes to integrate her own knowledge with this dashboard to make an impact on Durham Public Schools and beyond."))),
+                            p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team in hopes of improving the dashboard to make it more accessible. With her background in education policy, she hopes to integrate her own knowledge with the dashboard to make an impact on Durham Public Schools and beyond."))),
                      column(width = 3,
                             img(src = "mel250.jpg")),
                      column(width = 3,
-                            p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina. She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the previous research and efforts that have equipped the corresponding Bass Connections team with organized information and statistics to pinpoint the resources that would be most beneficial for specific schools. Melanie hopes this dashboard will help increase equity within schools, and promote a greater sense of community throughout Durham, North Carolina.")))),
+                            p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina. She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the existing research and efforts that have equipped the Bass Connections team with organized information  to pinpoint the resources that would be most beneficial for schools. Melanie hopes this dashboard will help increase equity within schools and promote a greater sense of community throughout Durham.")))),
                    br(),
                    fluidRow(
                      column(width = 3,
                             img(src = "surabhi.jpg")),
                      column(width = 3,
-                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
+                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with this project. Allyson Ashekun is a junior at Duke University from Clearwater, Florida. Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science.")))))),
              
              fluidRow(
                box(width = 12,
@@ -880,17 +945,17 @@ body <- {dashboardBody(
                      column(width = 3,
                             img(src = "drewheadshot3 copy.jpg")),
                      column(width = 3,
-                            p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help adequately prepare college students to enter schools as well as allow Durham residents tolocate the myriad resources accessible to help form an even stronger community built around the schools.")))),
+                            p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help Durham residents to locate the myriad resources accessible to help form an even stronger community built around public schools.")))),
                    br(),
                    fluidRow(
                      column(width = 3,
                             img(src = "patience3.jpg")),
                      column(width = 3,
-                            p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into education policy. She hopes this dashboard makes an impact on not only these ten community schools in the dataset, but students in all Durham Public Schools and beyond, in hopes to make education more accessible to all students."))),
+                            p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into education policy. She hopes this dashboard makes an impact on students in all Durham Public Schools and beyond, in hopes of making education more accessible to all students."))),
                      column(width = 3,
                             img(src = "rhea3.jpg")),
                      column(width = 3,
-                            p(i18n$t("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey. She is studying Computer Science and Economics. Rhea decided to join this project teambecause she has a passion for data science and hopes that this app will help local universities have a productive relationship with the community. She is proud of the work the team accomplished, and is excited to see the long term impacts that this web app has!")))),
+                            p(i18n$t("Rhea decided to join this project team because she has a passion for data science and hopes that this app will help local universities maintain a productive relationship with the community. She is proud of the work the team has accomplished, and is excited to see the long term impacts it has!")))),
                    br(),
                    fluidRow(
                      column(width = 3,
@@ -906,11 +971,29 @@ body <- {dashboardBody(
                class = "text-center",
                size = 20,
                box(width = 12,
-                   background = "navy",
+                   background = "light-blue",
                    solidHeader = TRUE,
-                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/qUd3BcBCAfF7DEty5", style = "color:white;font-size:30px"),
-                   style = "font-size:18px",
-                   "Click the text above to fill out our feedback form"))
+                   title = a(i18n$t("We want to hear your feedback!"), href= "https://forms.gle/eQ5vUEz3W99CmMa4A", style = "color:black;font-size:30px;text-decoration:underline"),
+                   style = "color:black;font-size:18px",
+                   "Click the text above to fill out our feedback form")),
+             fluidRow(
+               class = "text-center",
+               size = 20,
+               box(width = 12,
+                   #background = "white",
+                   solidHeader = TRUE,
+                   title = a(i18n$t("Learn More!"), style = "color:black;font-size:30px"),
+                   a(i18n$t("Community School Partnership"), href="https://sites.duke.edu/uacs/outputs/", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("Data+ 2023"), href="https://bigdata.duke.edu/projects/strengthening-partnerships-durham-schools-local-universities/", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("Bass Connecions 2022-2023"), href="https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2022", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("Duke and NCCU Collaboration Published in Community Schooling Journal"), href="https://community.duke.edu/impact-story/duke-public-school-collaboration-published-in-journal/", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   a(i18n$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), href="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", style = "color:black;font-size:18px;text-decoration:underline"),
+                   br(),
+                   img(src = "project_logo.png", align="center"))),
     )}
     
     

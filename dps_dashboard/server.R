@@ -97,6 +97,9 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   CTECourses <- read_excel("./data/2022/CTE Courses.xlsx")
   sports_22 <- read.csv("./data/2022/school_stats_data/sports.csv")
   
+  #data for engagement tab
+  faculty <- read.csv("./data/2023/Faculty_Resources.csv") 
+  
   
 }
 
@@ -178,6 +181,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   farmersmark <- read.csv("./data/2021/spatial_data/renamed_Farmer's Markets.csv") 
   commarts <- read.csv("./data/2021/spatial_data/renamed_Community Arts.csv")
   sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
+  pharmacies <- read.csv("./data/2023/spatial_data/pharmacies.csv")
+  shelters <- read.csv("./data/2023/spatial_data/homeless_shelter.csv")
 }
 
 # Load/Rename Schools' Names
@@ -208,9 +213,13 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     afterschool = makeIcon("https://img.icons8.com/ios-filled/50/000000/children.png",iconWidth = 20, iconHeight = 20),
     farmersmark = makeIcon("https://img.icons8.com/ios-filled/50/undefined/carrot.png",iconWidth = 20, iconHeight = 20),
     commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20),
+    pharmacies = makeIcon("https://img.icons8.com/ios-filled/50/000000/pharmacy.png", iconWidth=20, iconHeight=20),
+    shelters = makeIcon("https://img.icons8.com/ios-filled/50/000000/roofing.png", iconWidth=20, iconHeight=20), 
     sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20)
   )
 }
+
+
 
 translator <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 
@@ -224,7 +233,7 @@ function(input, output, session) {
   i18n <- reactive({
     selected <- input$selected_language
     if (length(selected) > 0 && selected %in% translator$get_languages()) {
-      translator$set_translation_language(selected)
+      translator$set_translation_language("English")
     }
     translator
   })
@@ -718,20 +727,16 @@ function(input, output, session) {
         } 
       }
       else if (input$es_year == "Summer 2023") {
-        if (input$es_select == "Average Class Size") {
-          schoolstats22_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
-          p <- ggplot(schoolstats22_summary[!is.na(schoolstats22_summary$AVG_CLASS_SIZE), ],
-                      aes(x = reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y = AVG_CLASS_SIZE, fill = SCHOOL_NAME)) +
-            geom_col(color = "white", width = 0.5) +
-            geom_text(aes(label = AVG_CLASS_SIZE), vjust = -0.5, color = "black") +
-            geom_hline(aes(text = "Durham County Average = 19", yintercept = 19), color = '#01016D') +
+        if(input$es_select == "Average Class Size") {
+          schoolstats_summary <- ES_stats_23 %>% group_by(SCHOOL_NAME) %>% summarise(AVG_CLASS_SIZE)
+          p <- ggplot(schoolstats_summary[!is.na(schoolstats_summary$AVG_CLASS_SIZE),], aes(x=reorder(SCHOOL_NAME, -AVG_CLASS_SIZE), y=AVG_CLASS_SIZE)) +
+            geom_bar(stat = 'identity', fill = "#76B9F0", color = "white", width = 1.0) +
+            geom_text(aes(label = AVG_CLASS_SIZE), hjust = 1.5, color = "black") +
+            geom_hline(aes(text="Durham County Average = 19", yintercept = 19), color ='#01016D') +
             coord_flip() +
             theme_minimal() +
-            theme(plot.title = element_text(hjust = 1.5),
-                  axis.text.y = element_blank(),
-                  axis.ticks.y = element_blank()) +
-            labs(title = i18n()$t("Average Class Size"), x = "School", y = NULL)
-          
+            theme(plot.title = element_text(hjust = 1.5)) +
+            labs(title = i18n()$t("Average Class Size"), x = "School", y = "Average # of Students")
           ggplotly(p, tooltip = c("text"))
         }
         else if(input$es_select == "Bachelor Degree Rate") {
@@ -3101,6 +3106,8 @@ function(input, output, session) {
            "Hospitals and Clinics" = hospitals,
            "After-School Care Programs" = afterschool,
            "Community Arts" = commarts,
+           "Pharmacies" = pharmacies,
+           "Homeless Shelters" = shelters,
            "Community Sports" = sports)
   })
   
@@ -3121,6 +3128,8 @@ function(input, output, session) {
            "Hospitals and Clinics" = iconSet$hospitals,
            "After-School Care Programs" = iconSet$afterschool,
            "Community Arts" = iconSet$commarts,
+           "Pharmacies" = iconSet$pharmacies,
+           "Homeless Shelters" = iconSet$shelters,
            "Community Sports" = iconSet$sports)
   })
   
@@ -3315,6 +3324,19 @@ function(input, output, session) {
       temp_df <- commarts[grepl(input$zone, commarts$school_zones), ]
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name","Type","ADDRESS", "URL")]
+      
+    }
+    else if(input$var == "Pharmacies")
+    {
+      temp_df <- pharmacies[grepl(input$zone, pharmacies$school_zones), ]
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("name", "ADDRESS", "URL")]
+    }
+    else if(input$var == "Homeless Shelters")
+    {
+      temp_df <- shelters[grepl(input$zone, shelters$school_zones), ]
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("name", "ADDRESS", "URL")]
     }
     else if(input$var == "Community Sports")
     {
@@ -3327,8 +3349,24 @@ function(input, output, session) {
   
   
   
-  #Data Insight tab plots
+  #Engagement tab plots
+  output$engagetable <- renderDataTable({
+    if(input$tab == "Staff/Faculty")
+    {
+      temp_df <- faculty
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
   
+  
+  #Engagement Tab - Carousal
+  output$carou <- renderSlickR({
+    imgs <- list.files(path = "data/2023/engagement_slides", pattern = "*.png", full.names = TRUE)
+    slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
+                                                       slidesToShow = 4,
+                                                       slidesToScroll = 1)
+  })
   
   # output$choropleth <- renderLeaflet({
   #   leaflet(
@@ -3348,7 +3386,7 @@ function(input, output, session) {
     counts_grouped<-counts_grouped_2021[!(counts_grouped_2021$name=="All School"),]
     counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Elementary School', 'Lakewood Elementary')
     counts_grouped$name <- str_replace_all(counts_grouped$name, 'Lakewood Middle School', 'Lakewood Middle')
-    counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
+    #counts_grouped$name <- str_replace_all(counts_grouped$name, ' School', '')
     counts_grouped <- subset(counts_grouped, name == input$insights_zone)
     ggplot(data=counts_grouped, aes(x=varname, y=count)) + geom_bar(stat="identity", fill="lightblue") + coord_flip(ylim=c(0,200)) +
       ylab("Number of Resource") + xlab("Resource Type")
@@ -3584,6 +3622,29 @@ function(input, output, session) {
                          a(i18n()$t("Recreation Centers Play an Important Role in Communities"),
                            href = "https://www.nrpa.org/publications-research/park-pulse/park-pulse-survey-recreation-centers-role-in-communities/"))
                  }
+                 else if(input$var == "Pharmacies"){
+                   paste(i18n()$t("Pharmacies are essential for several reasons. They provide convenient access to prescribed medications and over-the-counter drugs, ensuring patients have timely access to the treatments they need. Pharmacists, as highly trained healthcare professionals, offer expertise and guidance on medication usage, potential side effects, and drug interactions, promoting the safe and effective use of medications.
+Moreover, pharmacies contribute to public health by offering services like immunizations, health screenings, and wellness programs. They play a critical role in disease prevention and early detection. During public health emergencies, pharmacies are crucial for the distribution of vaccines and medications, supporting community health and well-being. Overall, pharmacies are vital healthcare destinations, ensuring medication access and providing expert advice to improve patient outcomes and promote community health.
+"),
+                         "<br>",
+                         "<br>",
+                         i18n()$t("Below is more information about pharmacies:"),
+                         "<br>",
+                         a(i18n()$t("The Role of Community Pharmacists in Patient Safety"),
+                           href = "https://psnet.ahrq.gov/perspective/role-community-pharmacists-patient-safety"))
+                 }
+                 else if(input$var == "Homeless Shelters"){
+                   paste(i18n()$t("Homeless shelters provide immediate assistance and support to individuals facing homelessness. They offer temporary housing, meals, clothing, and hygiene facilities. These shelters also collaborate with social workers, counselors, and job placement agencies to provide comprehensive support for individuals seeking to transition out of homelessness. Programs such as job training, education, mental health counseling, and substance abuse rehabilitation are offered to address the underlying causes of homelessness. Homeless shelters also contribute to the community by providing employment opportunities, vocational training, and community engagement programs. They serve as vital hubs for support, facilitating access to essential services and creating opportunities for both individuals experiencing homelessness and the community at large.
+
+."),
+                         "<br>",
+                         "<br>",
+                         
+                         i18n()$t("Below is more information about homeless shelters:"),
+                         "<br>",
+                         a(i18n()$t("Emergency Shelters"),
+                           href = "https://endhomelessness.org/topics/emergency-shelters/"))
+                 }
                  else if(input$var == "Religious Centers"){
                    paste(i18n()$t("Religious centers are huge assets to the community because of various services they provide. These services include donations, food drives, fundraisers, providing safe spaces for various cultures, counseling services, daycare, summer programs, and much more. Additionally, the Durham community has established a rich inter-religion culture, especially in advocacy efforts for the city as a whole. Durham residents have shown their willingness to provide resources for all those in need, regardless of religious orientation."),
                          "<br>",
@@ -3631,6 +3692,11 @@ function(input, output, session) {
                      paste(h4(i18n()$t("After-School Care Programs")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("After-School Care Programs")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("After-School Care Programs")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("After-School Care Programs")))
+                   
                    
                  })
                  
@@ -3665,6 +3731,11 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Bus Stops")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Bus Stops")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Bus Stops")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Bus Stops")))
+                   
                  })
                  
                  output$childcareicon <- renderText({
@@ -3697,6 +3768,10 @@ function(input, output, session) {
                    else if(input$var == "Community Arts")
                      paste(h4(i18n()$t("Childcare Centers")))
                    else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Childcare Centers")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Childcare Centers")))
+                   else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Childcare Centers")))
                  })
                  
@@ -3731,6 +3806,10 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Parks")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Parks")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Parks")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Parks")))
                  })
                  
                  output$recicon <- renderText({
@@ -3763,6 +3842,10 @@ function(input, output, session) {
                    else if(input$var == "Community Arts")
                      paste(h4(i18n()$t("Recreation Centers")))
                    else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Recreation Centers")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Recreation Centers")))
+                   else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Recreation Centers")))
                  })
                  
@@ -3797,6 +3880,10 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Gardens")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Gardens")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Gardens")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Gardens")))
                  })
                  
                  output$cultureicon <- renderText({
@@ -3829,6 +3916,10 @@ function(input, output, session) {
                    else if(input$var == "Community Arts")
                      paste(h4(i18n()$t("Community and Cultural Centers")))
                    else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Community and Cultural Centers")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Community and Cultural Centers")))
+                   else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Community and Cultural Centers")))
                  })
                  
@@ -3863,6 +3954,10 @@ function(input, output, session) {
                      paste(h4(HTML(paste0(strong(i18n()$t("Community Arts"))))))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Community Arts")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Community Arts")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Community Arts")))
                  })
                  
                  output$groceryicon <- renderText({
@@ -3895,6 +3990,10 @@ function(input, output, session) {
                    else if(input$var == "Community Arts")
                      paste(h4(i18n()$t("Grocery Stores")))
                    else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Grocery Stores")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Grocery Stores")))
+                   else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Grocery Stores")))
                  })
                  
@@ -3929,6 +4028,10 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Libraries")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Libraries")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Libraries")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Libraries")))
                  })
                  
                  output$religiousicon <- renderText({
@@ -3961,6 +4064,10 @@ function(input, output, session) {
                    else if(input$var == "Community Arts")
                      paste(h4(i18n()$t("Religious Centers")))
                    else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Religious Centers")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Religious Centers")))
+                   else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Religious Centers")))
                  })
                  
@@ -3995,6 +4102,10 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Hospitals & Clinics")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Hospitals & Clinics")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Hospitals & Clinics")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Hospitals & Clinics")))
                  })
                  
                  output$pantryicon <- renderText({
@@ -4027,6 +4138,10 @@ function(input, output, session) {
                    else if(input$var == "Community Arts")
                      paste(h4(i18n()$t("Food Pantries")))
                    else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Food Pantries")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Food Pantries")))
+                   else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Food Pantries")))
                  })
                  
@@ -4061,6 +4176,10 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Farmers' Markets")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Farmers' Markets")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Farmers' Markets")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Farmers' Markets")))
                  })
                  
                  output$sportsicon <- renderText({
@@ -4094,6 +4213,84 @@ function(input, output, session) {
                      paste(h4(i18n()$t("Community Sports")))
                    else if(input$var == "Community Sports")
                      paste(h4(HTML(paste0(strong(i18n()$t("Community Sports"))))))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Community Sports")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Community Sports")))
+                 })
+                 
+                 output$pharmacy <- renderText({
+                   if(input$var == "After-School Care Programs")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if (input$var == "Parks")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Recreation Centers")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Gardens")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Bus Stops")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Childcare Centers")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Community and Cultural Centers")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Grocery Stores")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Libraries")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Religious Centers")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Hospitals and Clinics")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Food Pantries")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Farmers' Markets")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Community Arts")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(HTML(paste0(strong(i18n()$t("Pharmacies"))))))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Pharmacies")))
+                 })
+                 
+                 output$homelesshelter <- renderText({
+                   if(input$var == "After-School Care Programs")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if (input$var == "Parks")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Recreation Centers")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Gardens")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Bus Stops")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Childcare Centers")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Community and Cultural Centers")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Grocery Stores")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Libraries")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Religious Centers")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Hospitals and Clinics")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Food Pantries")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Farmers' Markets")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Community Arts")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(HTML(paste0(strong(i18n()$t("Homeless Shelters"))))))
                  })
                  
                })
@@ -4104,7 +4301,7 @@ function(input, output, session) {
       addProviderTiles("CartoDB.Positron") %>%
       addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$uni, label = "Duke University") %>%
       addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$uni, label = "North Carolina Central University") %>%
-      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schoolstats$SCHOOL_NAME)
+      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schoolstats23$NAME)
   })
   
   #Home Page - Got to Maps tab button
