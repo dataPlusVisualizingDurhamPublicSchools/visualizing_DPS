@@ -854,7 +854,13 @@ body <- {dashboardBody(
                         br(),
                         dataTableOutput("engagetable_1")),
                tabPanel(i18n$t("Teaching and Learning")),
-               tabPanel(i18n$t("Research"))
+               tabPanel(i18n$t("Research"),
+                        selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                                    choices = list("Staff/Faculty",
+                                                   "Undergraduate Students"),
+                                    multiple = FALSE),
+                        br(),
+                        dataTableOutput("engagetable_2"))
                ),
              
              fluidRow(
