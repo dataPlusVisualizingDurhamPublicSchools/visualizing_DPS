@@ -3365,46 +3365,46 @@ function(input, output, session) {
   #Engagement tab plots
   #service
   output$engagetable_1 <- renderDataTable({
-    if(input$tab == "Staff/Faculty")
+    if(input$tab1 == "Staff/Faculty")
     {
       temp_df <- faculty_service
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("School","Name","URL","Subject")]
     }
     
-    else if(input$tab == "Undergraduate Students"){
+    else if(input$tab1 == "Undergraduate Students"){
       temp_df <- student_service
       temp_df$URL <- createLink(temp_df$URL)
-      temp_df[c("SCHOOL","CLUB_NAME","URL","SUBJECT")]
+      temp_df[c("School","Name","URL","Subject")]
     }
     
   }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
   
   #research
-  output$engagetable_2 <- renderDataTable({
-    if(input$tab == "Staff/Faculty")
+  output$engagetable_3 <- renderDataTable({
+    if(input$tab3 == "Staff/Faculty")
     {
       temp_df <- faculty_research
-      temp_df$URL <- createLink(temp_df$url)
-      temp_df[c("school","name","url","subject")]
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
     }
     
-    else if(input$tab == "Undergraduate Students"){
+    else if(input$tab3 == "Undergraduate Students"){
       temp_df <- student_research
-      temp_df$URL <- createLink(temp_df$url)
-      temp_df[c("school","name","url","program")]
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Program")]
     }
     
   }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
   
   
   #Engagement Tab - Carousal
-  output$carou <- renderSlickR({
-    imgs <- list.files(path = "data/2023/engagement_slides", pattern = "*.png", full.names = TRUE)
-    slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
-                                                       slidesToShow = 4,
-                                                       slidesToScroll = 1)
-  })
+  #output$carou <- renderSlickR({
+    #imgs <- list.files(path = "data/2023/engagement_slides", pattern = "*.png", full.names = TRUE)
+    #slickR(imgs, width = 200, height = 200) + settings(autoplay = TRUE,
+                                                       #slidesToShow = 4,
+                                                       #slidesToScroll = 1)
+  #})
   
   # output$choropleth <- renderLeaflet({
   #   leaflet(
