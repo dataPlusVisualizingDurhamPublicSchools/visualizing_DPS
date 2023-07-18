@@ -935,14 +935,20 @@ body <- {dashboardBody(
                id = "tabset1", width = "auto",
                #Table Outputs
                tabPanel(i18n$t("Service"),
-                        selectInput("tab", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                        selectInput("tab1", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
                          choices = list("Staff/Faculty",
                                         "Undergraduate Students"),
                          multiple = FALSE),
                         br(),
                         dataTableOutput("engagetable_1")),
                tabPanel(i18n$t("Teaching and Learning")),
-               tabPanel(i18n$t("Research"))
+               tabPanel(i18n$t("Research"),
+                        selectInput("tab3", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                                    choices = list("Staff/Faculty",
+                                                   "Undergraduate Students"),
+                                    multiple = FALSE),
+                        br(),
+                        dataTableOutput("engagetable_3"))
                ),
              
              fluidRow(
@@ -953,11 +959,11 @@ body <- {dashboardBody(
                    i18n$t("to "), 
                    a(i18n$t("faculty research projects that engage with "), href="https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues"),
                    a(i18n$t("“Racial and Social Equity in Local Contexts”, "), href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact"),
-                   i18n$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list includes initiatives that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
-                   a(i18n$t("Duke Office of Durham & Community Affairs, "), href="https://community.duke.edu/"), 
-                   a(i18n$t("Duke CampusGroups, "), href="https://dukegroups.com/home_login"), 
-                   i18n$t("and, "), 
-                   a(i18n$t("NCCU Office of Community Engagement and Service."), href="https://www.nccu.edu/oces")))
+                   i18n$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
+                   a(i18n$t("NCCU, "), href="https://www.nccu.edu/"), 
+                   a(i18n$t("Duke, "), href="https://duke.edu/"), 
+                   i18n$t("and, "),
+                   a(i18n$t("Duke CampusGroups, "), href="https://dukegroups.com/home_login")))
                
              
              #fluidRow(
