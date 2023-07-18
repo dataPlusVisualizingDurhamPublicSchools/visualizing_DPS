@@ -896,9 +896,9 @@ body <- {dashboardBody(
                    br(),
                    fluidRow(
                      column(width = 3,
-                            img(src = "surabhi.jpg")),
+                            img(src = "pragya.png")),
                      column(width = 3,
-                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
+                            p(i18n$t("Pragya Raghuvanshi is a master’s student in Interdisciplinary Data Science at Duke University, originally from India. She is passionate about driving insights for the public sector and education system by applying data science techniques to solve real world problems.  Back in India, besides working as a data analyst, she also worked as a volunteer in an organization to educate and empower the local village communities. This summer she is working at a solar finance tech firm as a Data Science intern to assist in the growth of solar power in Nigeria by harnessing the power of data.")))))),
              
              fluidRow(
                box(width = 12,
@@ -930,7 +930,7 @@ body <- {dashboardBody(
                      column(width = 3,
                             img(src = "surabhi.jpg")),
                      column(width = 3,
-                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with this project. Allyson Ashekun is a junior at Duke University from Clearwater, Florida. Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science.")))))),
+                            p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
              
              fluidRow(
                box(width = 12,
