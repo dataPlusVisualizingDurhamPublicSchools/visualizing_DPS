@@ -84,8 +84,8 @@ body <- {dashboardBody(
   #   )
   # ), 
   navbarPage("Visualizing DPS",
-               tabPanel("Home",icon = icon("fas fa-home") ),
-               tabPanel("Maps",icon = icon("fas fa-map-marked-alt")),
+               tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
+               tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
                tabPanel("School Statistics", icon = icon("fas fa-chart-bar")),
                tabPanel("Data Insights", icon = icon("fas fa-chart-line")),
                tabPanel("Courses", icon = icon("book")),
@@ -940,7 +940,7 @@ body <- {dashboardBody(
                                         "Undergraduate Students"),
                          multiple = FALSE),
                         br(),
-                        dataTableOutput("engagetable")),
+                        dataTableOutput("engagetable_1")),
                tabPanel(i18n$t("Teaching and Learning")),
                tabPanel(i18n$t("Research"))
                ),
