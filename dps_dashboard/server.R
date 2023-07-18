@@ -219,7 +219,7 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     pharmacies = makeIcon("https://img.icons8.com/ios-filled/50/000000/pharmacy.png", iconWidth=20, iconHeight=20),
     shelters = makeIcon("https://img.icons8.com/ios-filled/50/000000/roofing.png", iconWidth=20, iconHeight=20), 
     sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20),
-    restaurants = makeIcon("https://img.icons8.com/ios-filled/50/000000/Restaurant.png", iconWidth=20, iconHeight=20)
+    restaurants = makeIcon("https://img.icons8.com/ios-filled/50/000000/restaurant.png", iconWidth=20, iconHeight=20)
   )
 }
 
@@ -3111,7 +3111,7 @@ function(input, output, session) {
            "After-School Care Programs" = afterschool,
            "Community Arts" = commarts,
            "Pharmacies" = pharmacies,
-           "Restuarants" = restaurants, 
+           "Restaurants" = restaurants, 
            "Homeless Shelters" = shelters,
            "Community Sports" = sports)
   })
@@ -4355,7 +4355,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Homeless Shelters")
                      paste(h4(HTML(paste0(strong(i18n()$t("Homeless Shelters"))))))
                  })
-                 output$restaurants <- renderText({
+                 output$restaurant <- renderText({
                    if(input$var == "After-School Care Programs")
                      paste(h4(i18n()$t("Restaurants")))
                    else if (input$var == "Parks")

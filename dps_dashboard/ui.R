@@ -472,7 +472,7 @@ body <- {dashboardBody(
                       column(width = 1,
                              img(src = "restaurant.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
-                      column(width = 8, htmlOutput("restaurants")
+                      column(width = 8, htmlOutput("restaurant")
                       )),
                     br(),
                     fluidRow(
