@@ -26,7 +26,6 @@ library(DT)
 i18n <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 i18n$set_translation_language("English")
 
-
 sidebar <- {dashboardSidebar(
   
   tags$head(tags$script(HTML('
@@ -53,19 +52,6 @@ sidebar <- {dashboardSidebar(
              tabPanel("Meet the Team", icon = icon("fas fa-users")),
              collapsible = FALSE,
              position = ("fixed-top")
-  ),
-  sidebarMenu(
-    id = "TabItems",
-    menuItem(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
-    menuItem(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
-    menuItem(i18n$t("School Statistics"), tabName = "statstab", icon = icon("fas fa-chart-bar")),
-    menuItem(i18n$t("Data Insights"), tabName = "insightstab", icon = icon("fas fa-chart-line")),
-    menuItem(i18n$t("AP & CTE Courses"), tabName = "coursestab", icon = icon("book")),
-    menuItem(i18n$t("School Sports"), tabName = "sportstab", icon = icon("basketball-ball")),
-    menuItem(i18n$t("Arts Programs"), tabName = "artstab", icon = icon("paint-brush")),
-    menuItem(i18n$t("Duke/NCCU Engagement"), tabName = "engagementtab", icon = icon("fas fa-handshake-angle")),
-    menuItem(i18n$t("Feedback"), tabName = "feedback", icon = icon("fas fa-comment")),
-    menuItem(i18n$t("Meet The Team"), tabName = "teamstab", icon = icon("fas fa-users"))
   )
   
 )
