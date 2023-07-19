@@ -211,13 +211,6 @@ body <- {dashboardBody(
              
              fluidRow(
                class = "text-center",
-               box(h3(strong(i18n$t("Visualizing Durham Public Schools"))),
-                   width = 12,
-                   background = "navy",
-                   htmlOutput("home_text"),
-                   )),
-             fluidRow(
-               class = "text-center",
                box(
                  solidHeader = TRUE,
                  br(),
@@ -633,12 +626,11 @@ body <- {dashboardBody(
              fluidRow(class= 'text-center',
                       box(width = 12,
                           solidHeader = TRUE,
-                          title = strong("Resources in Selected School Zone"),
-                          p(h4(align="left",i18n$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance.")), br()),
+                          htmlOutput("datainsights_text"),
                           fluidRow(
                             box(width = 2,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("School Zone")),
+                                htmlOutput("datainsights_text"),
                                 selectInput("insights_zone",
                                             label = em(i18n$t("Choose a school zone to display")),
                                             choices = c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
