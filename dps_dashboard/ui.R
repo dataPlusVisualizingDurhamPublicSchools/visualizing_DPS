@@ -60,7 +60,7 @@ body <- {dashboardBody(
   shiny.i18n::usei18n(i18n),
   div(style = "float: right;",
       selectInput('selected_language',
-                  i18n$t("Change Language"),
+                  htmlOutput("change"),
                   choices = i18n$get_languages(),
                   selected = i18n$get_key_translation())
   ),
@@ -206,7 +206,7 @@ body <- {dashboardBody(
              
              fluidRow(
                class = "text-center",
-               box(h3(strong(i18n$t("Visualizing Durham Public Schools"))),
+               box(h3(strong(htmlOutput("header1"))),
                    width = 12,
                    background = "navy",
                    htmlOutput("home_text1"),
@@ -218,13 +218,13 @@ body <- {dashboardBody(
                  solidHeader = TRUE,
                  br(),
                  width = 12,
-                 valueBox(17, i18n$t("Geospatial Variables"), icon = icon("map"), color = "light-blue", width = 4),
-                 valueBox(41, i18n$t("School-Specific Variables"), icon = icon("pencil"), color = "light-blue", width = 4),
-                 valueBox(1, i18n$t("Centralized Web Application"), icon = icon("window-restore"), color = "light-blue", width = 4))),
+                 valueBox(17, htmlOutput("header2"), icon = icon("map"), color = "light-blue", width = 4),
+                 valueBox(41, htmlOutput("header3"), icon = icon("pencil"), color = "light-blue", width = 4),
+                 valueBox(1, htmlOutput("header4"), icon = icon("window-restore"), color = "light-blue", width = 4))),
              
              fluidRow(
                class = "text-center",
-               box(title = strong(i18n$t("2 Universities, 50 Public Schools")),
+               box(title = strong(htmlOutput("header5")),
                    solidHeader = TRUE,
                    width = 7,
                    htmlOutput("home_text2")),
@@ -234,16 +234,16 @@ body <- {dashboardBody(
                    leafletOutput("home"))),
              
              fluidRow(class = "text-center",
-                      box(title = strong(i18n$t("View Our 50 Schools")),
+                      box(title = strong(htmlOutput("header6")),
                           width = 12,
                           background = "light-blue",
-                          actionButton("viewMap", i18n$t("View Geospatial Data")),
-                          actionButton("viewStat", i18n$t("View School Statistics")))),
+                          actionButton("viewMap", htmlOutput("header7")),
+                          actionButton("viewStat", htmlOutput("header8")))),
              
              fluidRow(class = "text-center",
                       box(width = 12,
                           solidHeader = TRUE,
-                          title = strong(i18n$t("Our Partners")),
+                          title = strong(htmlOutput("header9")),
                           column(class = 'text-center', width = 2,
                                  tags$a(
                                    href="https://www.dpsnc.net/", 

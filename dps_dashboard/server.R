@@ -248,6 +248,64 @@ function(input, output, session) {
   
   
   #Home Page
+  #headers
+  observeEvent(i18n(),
+               output$header1<- renderText({
+                 paste(i18n()$t("Visualizing Durham Public Schools"))
+               }))
+  
+  observeEvent(i18n(),
+               output$change<- renderText({
+                 paste(i18n()$t("Change Language"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header2<- renderText({
+                 paste(i18n()$t("Geospatial Variables"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header3<- renderText({
+                 paste(i18n()$t("School-Specific Variables"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header4<- renderText({
+                 paste(i18n()$t("Centralized Web Application"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header5<- renderText({
+                 paste(i18n()$t("2 Universities, 50 Public Schools"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header6<- renderText({
+                 paste(i18n()$t("View Our 50 Schools"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header7<- renderText({
+                 paste(i18n()$t("View Geospatial Data"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header8<- renderText({
+                 paste(i18n()$t("View School Statistics"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header9<- renderText({
+                 paste(i18n()$t("Our Partners"))
+               }))
+  
+  observeEvent(i18n(),
+               output$header9<- renderText({
+                 paste(i18n()$t("Our Partners"))
+               }))
+  
+  
+  #body
   observeEvent(i18n(),
                output$home_text1 <- renderText({
                  paste(i18n()$t("The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high."),
