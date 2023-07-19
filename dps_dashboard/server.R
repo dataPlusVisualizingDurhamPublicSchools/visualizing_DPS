@@ -230,11 +230,7 @@ schoolstats$name <- c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding
 translator <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 
 function(input, output, session) {
-  
-  #observeEvent(input$selected_language, {
-  # Here is where we update language in session
-  #shiny.i18n::update_lang(session, input$selected_language)
-  #})
+
   
   i18n <- reactive({
     selected <- input$selected_language
@@ -243,6 +239,17 @@ function(input, output, session) {
     }
     translator
   })
+  
+  observeEvent(i18n(),
+    output$home_text <- renderText({
+      paste(i18n()$t("The inspiration for this project is rooted in the inter-institutional Bass Connections team from Duke University and North Carolina Central University, which is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. This project aims to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. In addition, our application aims to inform future pre-service training for university students, support local neighborhood schools in visualizing their communities, and help various university offices articulate what “community” actually looks like."), 
+            i18n()$t("Using spatial and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets."),
+            i18n()$t("Visit the"), 
+            a(i18n()$t("Durham UACS Research Collective website"),
+              href = "https://sites.duke.edu/uacs/"),
+            i18n()$t("for more information!"))
+      
+      }))
   
   # SchoolStats - GGPlots
   {

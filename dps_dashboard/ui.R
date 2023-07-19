@@ -206,6 +206,13 @@ body <- {dashboardBody(
                class = "text-center",
                box(h3(strong(i18n$t("Visualizing Durham Public Schools"))),
                    width = 12,
+                   background = "navy", 
+                   htmlOutput("home_text"))),
+             
+             fluidRow(
+               class = "text-center",
+               box(h3(strong(i18n$t("Visualizing Durham Public Schools"))),
+                   width = 12,
                    background = "navy",
                    br(),
                    p(i18n$t("The inspiration for this project is rooted in the inter-institutional Bass Connections team from Duke University and North Carolina Central University, which is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. This project aims to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. In addition, our application aims to inform future pre-service training for university students, support local neighborhood schools in visualizing their communities, and help various university offices articulate what “community” actually looks like.")),
