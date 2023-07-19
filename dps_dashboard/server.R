@@ -98,7 +98,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   sports_22 <- read.csv("./data/2022/school_stats_data/sports.csv")
   
   #data for engagement tab
-  faculty <- read.csv("./data/2023/Faculty_Resources.csv") 
+  faculty_service <- read.csv("./data/2023/Faculty_Resources.csv")
+  student_service <- read.csv("./data/2023/us_service.csv") 
   
   
 }
@@ -183,16 +184,20 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   sports <- read.csv("./data/2021/spatial_data/renamed_Community Sports.csv")
   pharmacies <- read.csv("./data/2023/spatial_data/pharmacies.csv")
   shelters <- read.csv("./data/2023/spatial_data/homeless_shelter.csv")
+  restaurants <- read.csv("./data/2023/spatial_data/restaurants.csv")
+  
 }
 
 # Load/Rename Schools' Names
-schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
-                      "E.K. Powe Elementary", "Fayetteville Street Elementary", 
-                      "Forest View Elementary", "Lakewood Elementary", "Parkwood Elementary",
-                      "Southwest Elementary", "Hillside High","Jordan High", "All",
-                      "Club Boulevard Elementary", "Hillandale Elementary",
-                      "Brogden Middle", "Lakewood Montessori Middle", "Lowes Grove Middle",
-                      "Riverside High")
+schoolstats$name <- c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
+                      "Eastway Elementary", "Easley Elementary", "Eno Valley Elementary", "E.K. Powe Elementary", "Fayetteville Street Elementary", 
+                      "Forest View Elementary", "George Watts Elementary", "Glenn Elementary",  "Holt Elementary","Hope Valley Elementary",
+                      "Hillandale Elementary","Lakewood Elementary", "Mangum Elementary","Merrick-Moore Elementary","Oak Grove Elementary","Pearsontown Elementary","Parkwood Elementary","R.N. Harris Elementary","Southwest Elementary",
+                      "Sandy Ridge Elementary","Spring Valley Elementary","W.G. Pearson Elementary", "Y.E. Smith Elementary","Brogden Middle", 
+                      "Carrington Middle","Lucas Middle","Lakewood Montessori Middle", "Lowes Grove Middle", "Neal Middle","Rogers Herr Middle", 
+                      "Shepard Middle", "Sherwood Githens Middle","City of Medicine Academy", "Durham School of the Arts","Durham School of Technology","J.D. Clement Early College",
+                      "Hillside High","Holton Career","Jordan High","Lakewiew High","Middle College", "Morehead Montessori School",
+                      "Northern High","Riverside High","Southern High", "School for Creative Studies")
 
 # Load/Rename Icons
 {
@@ -215,7 +220,8 @@ schoolstats$name <- c("C.C. Spaulding Elementary", "Eastway Elementary",
     commarts = makeIcon("https://img.icons8.com/ios-filled/50/000000/theatre-mask.png",iconWidth = 20, iconHeight = 20),
     pharmacies = makeIcon("https://img.icons8.com/ios-filled/50/000000/pharmacy.png", iconWidth=20, iconHeight=20),
     shelters = makeIcon("https://img.icons8.com/ios-filled/50/000000/roofing.png", iconWidth=20, iconHeight=20), 
-    sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20)
+    sports = makeIcon("https://img.icons8.com/android/24/000000/basketball.png",iconWidth = 20, iconHeight = 20),
+    restaurants = makeIcon("https://img.icons8.com/ios-filled/50/000000/restaurant.png", iconWidth=20, iconHeight=20)
   )
 }
 
@@ -3107,6 +3113,7 @@ function(input, output, session) {
            "After-School Care Programs" = afterschool,
            "Community Arts" = commarts,
            "Pharmacies" = pharmacies,
+           "Restaurants" = restaurants, 
            "Homeless Shelters" = shelters,
            "Community Sports" = sports)
   })
@@ -3129,6 +3136,7 @@ function(input, output, session) {
            "After-School Care Programs" = iconSet$afterschool,
            "Community Arts" = iconSet$commarts,
            "Pharmacies" = iconSet$pharmacies,
+           "Restaurants" = iconSet$restaurants,
            "Homeless Shelters" = iconSet$shelters,
            "Community Sports" = iconSet$sports)
   })
@@ -3338,6 +3346,12 @@ function(input, output, session) {
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("name", "ADDRESS", "URL")]
     }
+    else if(input$var == "Restaurants")
+    {
+      temp_df <- restaurants[grepl(input$zone, restaurants$school_zones), ]
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("NAME","TYPE", "ADDRESS", "URL")]
+    }
     else if(input$var == "Community Sports")
     {
       temp_df <- sports[grepl(input$zone, sports$school_zones), ]
@@ -3350,14 +3364,22 @@ function(input, output, session) {
   
   
   #Engagement tab plots
-  output$engagetable <- renderDataTable({
+  #Engagement tab plots
+  output$engagetable_1 <- renderDataTable({
     if(input$tab == "Staff/Faculty")
     {
-      temp_df <- faculty
+      temp_df <- faculty_service
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("School","Name","URL","Subject")]
     }
-    }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
+    
+    else if(input$tab == "Undergraduate Students"){
+      temp_df <- student_service
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("SCHOOL","CLUB_NAME","URL","SUBJECT")]
+    }
+    
+  }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
   
   
   #Engagement Tab - Carousal
@@ -3654,6 +3676,15 @@ Moreover, pharmacies contribute to public health by offering services like immun
                          a(i18n()$t("The Benefits of Religiosity and Spirituality on Mental Health"),
                            href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
                  }
+                 else if(input$var == "Restaurants"){
+                   paste(i18n()$t("Restaurants are vital to communities, offering much more than just meals. They serve as social hubs where people connect, fostering a sense of belonging. Culinary diversity is celebrated as restaurants showcase a wide range of cuisines, promoting cultural exchange and appreciation. Additionally, restaurants often prioritize sourcing from local farmers and producers, supporting the community's food system. Through community engagement, sponsorships, and collaborations, restaurants strengthen the social fabric."),
+                         "<br>",
+                         "<br>",
+                         i18n()$t("Below is more information about restaurants:"),
+                         "<br>",
+                         a(i18n()$t("The Importance of Restaurants to Local Community"),
+                           href = "https://nowcomment.com/documents/297471?scroll_to=2644186"))
+                 }
                }))
   
   
@@ -3696,6 +3727,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("After-School Care Programs")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("After-School Care Programs")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("After-School Care Programs")))
                    
                    
                  })
@@ -3735,6 +3768,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Bus Stops")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Bus Stops")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Bus Stops")))
                    
                  })
                  
@@ -3770,6 +3805,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Childcare Centers")))
                    else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Childcare Centers")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Childcare Centers")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Childcare Centers")))
@@ -3808,6 +3845,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Parks")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Parks")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Parks")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Parks")))
                  })
@@ -3844,6 +3883,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Recreation Centers")))
                    else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Recreation Centers")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Recreation Centers")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Recreation Centers")))
@@ -3882,6 +3923,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Gardens")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Gardens")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Gardens")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Gardens")))
                  })
@@ -3918,6 +3961,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Community and Cultural Centers")))
                    else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Community and Cultural Centers")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Community and Cultural Centers")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Community and Cultural Centers")))
@@ -3956,6 +4001,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Community Arts")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Community Arts")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Community Arts")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Community Arts")))
                  })
@@ -3992,6 +4039,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Grocery Stores")))
                    else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Grocery Stores")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Grocery Stores")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Grocery Stores")))
@@ -4030,6 +4079,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Libraries")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Libraries")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Libraries")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Libraries")))
                  })
@@ -4066,6 +4117,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Religious Centers")))
                    else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Religious Centers")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Religious Centers")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Religious Centers")))
@@ -4104,6 +4157,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Hospitals & Clinics")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Hospitals & Clinics")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Hospitals & Clinics")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Hospitals & Clinics")))
                  })
@@ -4140,6 +4195,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Food Pantries")))
                    else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Food Pantries")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Food Pantries")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Food Pantries")))
@@ -4178,6 +4235,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Farmers' Markets")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Farmers' Markets")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Farmers' Markets")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Farmers' Markets")))
                  })
@@ -4215,6 +4274,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(HTML(paste0(strong(i18n()$t("Community Sports"))))))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Community Sports")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Community Sports")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(i18n()$t("Community Sports")))
                  })
@@ -4247,6 +4308,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$var == "Farmers' Markets")
                      paste(h4(i18n()$t("Pharmacies")))
                    else if(input$var == "Community Arts")
+                     paste(h4(i18n()$t("Pharmacies")))
+                   else if(input$var == "Restaurants")
                      paste(h4(i18n()$t("Pharmacies")))
                    else if(input$var == "Community Sports")
                      paste(h4(i18n()$t("Pharmacies")))
@@ -4289,8 +4352,48 @@ Moreover, pharmacies contribute to public health by offering services like immun
                      paste(h4(i18n()$t("Homeless Shelters")))
                    else if(input$var == "Pharmacies")
                      paste(h4(i18n()$t("Homeless Shelters")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(i18n()$t("Homeless Shelters")))
                    else if(input$var == "Homeless Shelters")
                      paste(h4(HTML(paste0(strong(i18n()$t("Homeless Shelters"))))))
+                 })
+                 output$restaurant <- renderText({
+                   if(input$var == "After-School Care Programs")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if (input$var == "Parks")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Recreation Centers")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Gardens")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Bus Stops")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Childcare Centers")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Community and Cultural Centers")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Grocery Stores")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Libraries")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Religious Centers")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Hospitals and Clinics")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Food Pantries")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Farmers' Markets")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Community Arts")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Community Sports")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Pharmacies")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Homeless Shelters")
+                     paste(h4(i18n()$t("Restaurants")))
+                   else if(input$var == "Restaurants")
+                     paste(h4(HTML(paste0(strong(i18n()$t("Restaurants"))))))
                  })
                  
                })
@@ -4298,10 +4401,11 @@ Moreover, pharmacies contribute to public health by offering services like immun
   #Home Page - Leaflet Map showing Duke, NCCU, and the Ten Schools
   output$home <- renderLeaflet({
     leaflet() %>%
+      setView(lng = -78.8970, lat = 35.9940, zoom = 10.5) %>%
       addProviderTiles("CartoDB.Positron") %>%
       addMarkers(lat = 36.0015926872104, lng = -78.93823945048538, icon = iconSet$uni, label = "Duke University") %>%
       addMarkers(lat = 35.97521590491441, lng = -78.89962935390885, icon = iconSet$uni, label = "North Carolina Central University") %>%
-      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = schoolstats23$NAME)
+      addMarkers(data = schools, lng = ~LONGITUDE, lat = ~LATITUDE, icon = iconSet$schools, label = ~NAME)
   })
   
   #Home Page - Got to Maps tab button
