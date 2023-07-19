@@ -247,6 +247,7 @@ function(input, output, session) {
   })
   
   
+  #Home Page
   observeEvent(i18n(),
                output$home_text1 <- renderText({
                  paste(i18n()$t("The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high."),
@@ -267,7 +268,95 @@ function(input, output, session) {
                        strong(i18n()$t("Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.")))
                }))
   
-  
+  #Meet the Team
+  #Headers
+  observeEvent(i18n(),
+               output$team23<- renderText({
+                 paste(i18n()$t("Meet Our Team - Data+ 2023"))
+               }))
+  observeEvent(i18n(),
+               output$team22 <- renderText({
+                 paste(i18n()$t("Meet Our Team - Data+ 2022"))
+               }))
+  observeEvent(i18n(),
+               output$team21 <- renderText({
+                 paste(i18n()$t("Meet Our Team - Data+ 2021"))
+               }))
+  #Ethan
+  observeEvent(i18n(),
+               output$ethan <- renderText({
+                 paste(i18n()$t("Ethan Shang is a rising sophomore at Duke University from Chapel Hill, North Carolina. Currently, he is studying Data Science, with a minor in Economics. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and to support a vibrant community that has surrounded him from an early age."))
+               }))
+  #Sreya
+  observeEvent(i18n(),
+               output$sreya <- renderText({
+                 paste(i18n()$t("Sreya Gnanavel is a sophomore at Duke University originally from Cary, North Carolina. She intends to major in Data Science and minor in Finance. Sreya is passionate about using data science to help uncover meaningful insights and use to make informed decisions. She hopes this project will bring more awareness to the available resources in the Durham Public System and help expand the reach to other community schools. She was motivated to join this project as it aligns with her goal of applying her data science skills to create positive change particularly by promoting equal access to resources and opportunities for all students."))
+               }))
+  #Unzila
+  observeEvent(i18n(),
+               output$unzila <- renderText({
+                 paste(i18n()$t("Unzila Sakina Babar, a sophomore at Duke University, is a passionate computer and data scientist hailing from Lahore, Pakistan. Alongside her academic pursuits, she possesses a keen interest in the education system. Unzila's deep-rooted desire to revolutionize the schooling system in her home country fuels her involvement in this project. She envisions fostering a robust sense of community within Pakistan School Systems while raising awareness about the abundant resources and communities available in the Public Schools of Durham County.  She seeks to synergize her own expertise with the capabilities of this dashboard to create a lasting impact on Durham Public Schools and extend this influence beyond its boundaries."))
+               }))
+  #Pragya
+  observeEvent(i18n(),
+               output$pragya <- renderText({
+                 paste(i18n()$t("Pragya Raghuvanshi is a master’s student in Interdisciplinary Data Science at Duke University, originally from India. She is passionate about driving insights for the public sector and education system by applying data science techniques to solve real world problems.  Back in India, besides working as a data analyst, she also worked as a volunteer in an organization to educate and empower the local village communities. This summer she is working at a solar finance tech firm as a Data Science intern to assist in the growth of solar power in Nigeria by harnessing the power of data."))
+               }))
+  #Lauren
+  observeEvent(i18n(),
+               output$lauren <- renderText({
+                 paste(i18n()$t("Lauren Walker is a Junior at Duke University from Needham, Massachusetts. She is studying Computer Science with a minor in Statistics. Lauren joined this Data+ project team because she is eager to strengthen the relationship and partnership between Durham Public Schools and local universities. She also enjoys coding and is looking forward to improving her data science skills. She hopes that this dashboard will serve as a valuable resource for those looking to learn more about the resources offered throughout the Durham Public School system and make education more accessible and equitable."))
+               }))
+  #Emily
+  observeEvent(i18n(),
+               output$emily <- renderText({
+                 paste(i18n()$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro, North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our education and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))
+               }))
+  #Aryan
+  observeEvent(i18n(),
+               output$aryan <- renderText({
+                 paste(i18n()$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently, he is studying Data Science with a minor in Political Science. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools and find better paths to their improvement."))
+               }))
+  #Patience
+  observeEvent(i18n(),
+               output$patience1 <- renderText({
+                 paste(i18n()$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team in hopes of improving the dashboard to make it more accessible. With her background in education policy, she hopes to integrate her own knowledge with the dashboard to make an impact on Durham Public Schools and beyond."))
+               }))
+  #Melanie
+  observeEvent(i18n(),
+               output$melanie <- renderText({
+                 paste(i18n()$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina. She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the existing research and efforts that have equipped the Bass Connections team with organized information  to pinpoint the resources that would be most beneficial for schools. Melanie hopes this dashboard will help increase equity within schools and promote a greater sense of community throughout Durham."))
+               }))
+  #Surabhi
+  observeEvent(i18n(),
+               output$surabhi <- renderText({
+                 paste(i18n()$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with this project."))
+               }))
+  #Allyson
+  observeEvent(i18n(),
+               output$allyson <- renderText({
+                 paste(i18n()$t("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ project team because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering Durham Public Schools, and will help improve the quality of partnerships."))
+               }))
+  #Drew
+  observeEvent(i18n(),
+               output$drew <- renderText({
+                 paste(i18n()$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help Durham residents to locate the myriad resources accessible to help form an even stronger community built around public schools."))
+               }))
+  #Patience
+  observeEvent(i18n(),
+               output$patience2 <- renderText({
+                 paste(i18n()$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into education policy. She hopes this dashboard makes an impact on students in all Durham Public Schools and beyond, in hopes of making education more accessible to all students."))
+               }))
+  #Rhea
+  observeEvent(i18n(),
+               output$rhea <- renderText({
+                 paste(i18n()$t("Rhea Tejwani is a junior at Duke University from Demarest, New Jersey. She is studying Computer Science and Economics. Rhea decided to join this project team because she has a passion for data science and hopes that this app will help local universities maintain a productive relationship with the community. She is proud of the work the team has accomplished, and is excited to see the long term impacts it has!"))
+               }))
+  #Nico
+  observeEvent(i18n(),
+               output$nico <- renderText({
+                 paste(i18n()$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))
+               }))
   
   
   # SchoolStats - GGPlots
