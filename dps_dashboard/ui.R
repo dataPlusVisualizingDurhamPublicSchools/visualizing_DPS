@@ -327,7 +327,7 @@ body <- {dashboardBody(
                                            "Carrington Middle","Lucas Middle","Lakewood Montessori Middle", "Lowes Grove Middle", "Neal Middle","Rogers Herr Middle", 
                                            "Shepard Middle", "Sherwood Githens Middle","City of Medicine Academy", "Durham School of the Arts","J.D. Clement Early College",
                                            "Hillside High","Holton Career","Jordan High","Lakewiew High","Middle College", "Morehead Montessori School",
-                                           "Northern High","Riverside High","School for Creative Studies", 
+                                           "Northern High","Riverside High","School for Creative Studies",
                                            "Southern School of Energy and Sustainability"   
                                             
                                            
@@ -467,7 +467,7 @@ body <- {dashboardBody(
                       column(width = 1,
                              img(src = "restaurant.png", width = 40, height = 40, align = "left")),
                       column(width = 1),
-                      column(width = 8, htmlOutput("restaurants")
+                      column(width = 8, htmlOutput("restaurant")
                       )),
                     br(),
                     fluidRow(
