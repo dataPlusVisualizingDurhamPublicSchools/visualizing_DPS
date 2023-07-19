@@ -475,6 +475,9 @@
      
      {"English": "English as a Second Language (ESL) Student Enrollment",
      "Spanish": "Inglés como segunda lengua"},
+
+    {"English": "Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”",
+    "Spanish": "Duke y NCCU tienen como objetivo promover asociaciones equitativas con las Escuelas Públicas de Durham. Investigaciones previas de Bass Connections se enfocaron en comprender cómo lograr este objetivo y descubrieron que una de las principales barreras para una participación significativa entre Duke, NCCU y las escuelas públicas de Durham es que “muchos estudiantes universitarios carecen de comprensión sobre la dinámica de la ciudad y la comunidad". Además, encontraron que hay una "falta de capacitación voluntaria para los estudiantes en el contexto de Durham, especialmente en áreas como la historia, las características demográficas específicas de las escuelas y los sesgos implícitos y las dinámicas de poder que pueden manifestarse en las escuelas”."}
      
      {"English": "This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are created to help children learn English along with other subjects necessary to complete each grade.",
      "Spanish": "Esta gráfica demuestra el número de estudiantes que están inscritos en el programa “Inglés como segunda lengua” (English as a Second Language: ESL, o English Language Learners: ELL). Este programa es disponible para cualquier estudiante que es un hablante de inglés no nativo, a pesar de su etnicidad, orígen, raza, edad, etc. Programas como ESL y ELL ayudan a que estos estudiantes aprendan inglés y otras materias requeridas para pasar al próximo grado."},
@@ -1756,7 +1759,17 @@
 "Spanish": "Refugios para desamparados"},
 
 {"English": "Pharmacies",
-"Spanish": "Farmacias"}
+"Spanish": "Farmacias"},
+
+{"English": "The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high.",
+"Spanish": "El Distrito Escolar de Durham tiene 50 escuelas públicas: 27 de primaria, 11 de secundaria y 12 de preparatoria."},
+
+{"English": "Durham UACS Research Collective website",
+"Spanish": "Durham UACS Research Collective sitio web"},
+
+{"English": "Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.",
+"Spanish": "Motivado por esta investigación, nuestro proyecto explora una forma de visualizar las escuelas como centros de la comunidad que reúnen bajo un mismo techo lo académico, los servicios sociales y de salud, la juventud y el desarrollo comunitario, y la participación comunitaria."}
+
     
 ]
 }
