@@ -6010,4 +6010,32 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
                  
                }) 
+  
+  #Feedback Tab
+  observeEvent(i18n(),
+               output$feedback1<- renderText({
+                 paste(tags$a(href = "https://forms.gle/eQ5vUEz3W99CmMa4A", target="_blank", i18n()$t("We want to hear your feedback!"), style = "color:black;font-size:30px;text-decoration:underline"))
+               }))
+  
+  observeEvent(i18n(),
+               output$feedback2<- renderText({
+                 paste(i18n()$t("Click the text above to fill out our feedback form"))
+               }))
+  
+  observeEvent(i18n(),
+               output$links<- renderText({
+                 paste(i18n()$t("Learn More!"),
+                       br(),
+                       tags$a(href = "https://sites.duke.edu/uacs/outputs/", target="_blank", i18n()$t("Community School Partnership"), style = "color:black;font-size:18px;text-decoration:underline"),
+                       br(),
+                       tags$a(href ="https://bigdata.duke.edu/projects/strengthening-partnerships-durham-schools-local-universities/",  target="_blank", i18n()$t("Data+ 2023"), style = "color:black;font-size:18px;text-decoration:underline"),
+                       br(),
+                       tags$a(href = "https://bassconnections.duke.edu/project-teams/strengthening-partnerships-between-durham-public-schools-and-local-universities-2022",  target="_blank", i18n()$t("Bass Connecions 2022-2023"), style = "color:black;font-size:18px;text-decoration:underline"),
+                       br(),
+                       tags$a(href ="https://community.duke.edu/impact-story/duke-public-school-collaboration-published-in-journal/", target="_blank", i18n()$t("Duke and NCCU Collaboration Published in Community Schooling Journal"), style = "color:black;font-size:18px;text-decoration:underline"),
+                       br(),
+                       tags$a(href ="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), style = "color:black;font-size:18px;text-decoration:underline"),
+                       br()
+                    )
+               }))
 }
