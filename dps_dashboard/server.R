@@ -3682,8 +3682,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                          "<br>",
                          i18n()$t("Below is more information about restaurants:"),
                          "<br>",
-                         a(i18n()$t("The Benefits of Religiosity and Spirituality on Mental Health"),
-                           href = "https://www.forbes.com/sites/alicegwalton/2018/09/17/raising-kids-with-religion-or-spirituality-may-protect-their-mental-health-study/?sh=647ed7d13287"))
+                         a(i18n()$t("The Importance of Restaurants to Local Community"),
+                           href = "https://nowcomment.com/documents/297471?scroll_to=2644186"))
                  }
                }))
   
