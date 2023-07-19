@@ -99,7 +99,9 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   
   #data for engagement tab
   faculty_service <- read.csv("./data/2023/Faculty_Resources.csv")
-  student_service <- read.csv("./data/2023/us_service.csv") 
+  student_service <- read.csv("./data/2023/us_service.csv")
+  faculty_research <- read.csv("./data/2023/sf_research.csv")
+  student_research <- read.csv("./data/2023/us_research.csv")
   
   
 }
@@ -3377,19 +3379,36 @@ function(input, output, session) {
   
   
   #Engagement tab plots
-  #Engagement tab plots
+  #service
   output$engagetable_1 <- renderDataTable({
-    if(input$tab == "Staff/Faculty")
+    if(input$tab1 == "Staff/Faculty")
     {
       temp_df <- faculty_service
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("School","Name","URL","Subject")]
     }
     
-    else if(input$tab == "Undergraduate Students"){
+    else if(input$tab1 == "Undergraduate Students"){
       temp_df <- student_service
       temp_df$URL <- createLink(temp_df$URL)
-      temp_df[c("SCHOOL","CLUB_NAME","URL","SUBJECT")]
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    
+  }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
+  
+  #research
+  output$engagetable_3 <- renderDataTable({
+    if(input$tab3 == "Staff/Faculty")
+    {
+      temp_df <- faculty_research
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    
+    else if(input$tab3 == "Undergraduate Students"){
+      temp_df <- student_research
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Program")]
     }
     
   }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
