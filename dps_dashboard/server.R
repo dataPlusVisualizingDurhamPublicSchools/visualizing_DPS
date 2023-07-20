@@ -3536,7 +3536,46 @@ function(input, output, session) {
   
   
   
-  #Engagement tab plots
+  #Engagement tab
+  ##text
+  
+  observeEvent(i18n(),
+               output$engage_choose<- renderText({
+                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities"))
+               }))
+  
+  observeEvent(i18n(),
+               output$engage_context<- renderText({
+                 paste(title = strong(i18n()$t("Context")),
+                       br(),
+                       i18n()$t("From "),
+                       tags$a(href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("creating free math workshops for girls who attend Durham Public Schools ")),
+                       i18n()$t("to "),
+                       tags$a(href = "https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues", target="_blank", i18n()$t("faculty research projects that engage with ")),
+                       tags$a(href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact", target="_blank", i18n()$t("“Racial and Social Equity in Local Contexts”, ")),
+                       i18n()$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
+                       tags$a(href = "https://www.nccu.edu/", target="_blank", i18n()$t("NCCU, ")),
+                       tags$a(href = "https://duke.edu/", target="_blank", i18n()$t("Duke, ")),
+                       i18n()$t("and, "),
+                       tags$a(href = "https://dukegroups.com/home_login", target="_blank", i18n()$t("Duke CampusGroups, ")))
+               }))
+  
+  observeEvent(i18n(),
+               output$engage_research<- renderText({
+                 paste(i18n()$t("Research"))
+               }))
+  
+  observeEvent(i18n(),
+               output$engage_service<- renderText({
+                 paste(i18n()$t("Service"))
+               }))
+  
+  observeEvent(i18n(),
+               output$engage_teach<- renderText({
+                 paste(i18n()$t("Teaching and Learning"))
+               }))
+  
+  ##plots
   #service
   output$engagetable_1 <- renderDataTable({
     if(input$tab1 == "Staff/Faculty")
