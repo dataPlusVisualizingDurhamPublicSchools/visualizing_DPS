@@ -258,6 +258,15 @@ function(input, output, session) {
                        i18n()$t("for more information!"))
                }))
   
+  observeEvent(i18n(),
+               output$datainsights_text <- renderText({
+                 paste(i18n()$t("Resources in Selected School Zone"),
+                       br(),
+                       i18n()$t("Using spatial and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets."),
+                       p(h4(align="left",i18n()$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance.")), br()),
+                       i18n()$t("Choose a school zone to display"))
+               }))
+  
   
   # SchoolStats - GGPlots
   {
