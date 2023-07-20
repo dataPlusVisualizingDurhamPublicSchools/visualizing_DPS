@@ -82,7 +82,6 @@ body <- {dashboardBody(
   #     )
   #   )
   # ), 
- 
    navbarPage("Visualizing DPS",
                tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
                tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),

@@ -6034,7 +6034,8 @@ Moreover, pharmacies contribute to public health by offering services like immun
                        br(),
                        tags$a(href ="https://community.duke.edu/impact-story/duke-public-school-collaboration-published-in-journal/", target="_blank", i18n()$t("Duke and NCCU Collaboration Published in Community Schooling Journal"), style = "color:black;font-size:18px;text-decoration:underline"),
                        br(),
-                       tags$a(href ="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), style = "color:black;font-size:18px;text-decoration:underline")
+                       tags$a(href ="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), style = "color:black;font-size:18px;text-decoration:underline"),
+                       br()
                     )
                }))
 }
