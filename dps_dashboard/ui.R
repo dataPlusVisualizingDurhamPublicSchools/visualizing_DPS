@@ -26,7 +26,6 @@ library(DT)
 i18n <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 i18n$set_translation_language("English")
 
-
 sidebar <- {dashboardSidebar(
   
   tags$head(tags$script(HTML('
@@ -84,114 +83,114 @@ body <- {dashboardBody(
   #   )
   # ), 
   navbarPage("Visualizing DPS",
-               tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
-               tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
-               tabPanel("School Statistics", icon = icon("fas fa-chart-bar")),
-               tabPanel("Data Insights", icon = icon("fas fa-chart-line")),
-               tabPanel("Courses", icon = icon("book")),
-               tabPanel("Sports", icon = icon("basketball-ball")),
-               tabPanel("Arts", icon = icon("paint-brush")),
-               tabPanel("Duke/NCCU Engagement", icon = icon("fas fa-handshake-angle")),
-               tabPanel("Feedback", icon = icon("fas fa-comment")),
-               tabPanel("Meet the Team", icon = icon("fas fa-users"),
-                        fluidRow(
-                          box(width = 12,
-                              background = "navy",
-                              class = "text-center",
-                              h3(strong(i18n$t("Meet Our Team - Data+ 2023"))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(align = "center", src = "ethan.jpg")),
-                                column(width =3,
-                                       p(i18n$t("Ethan Shang is a rising sophomore at Duke University from Chapel Hill, North Carolina. Currently, he is studying Data Science, with a minor in Economics. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and to support a vibrant community that has surrounded him from an early age."))),
-                                column(width = 3,
-                                       img(src = "sreya.jpeg")),
-                                column(width = 3,
-                                       p(i18n$t("Sreya Gnanavel is a sophomore at Duke University originally from Cary, North Carolina. She intends to major in Data Science and minor in Finance. Sreya is passionate about using data science to help uncover meaningful insights and use to make informed decisions. She hopes this project will bring more awareness to the available resources in the Durham Public System and help expand the reach to other community schools. She was motivated to join this project as it aligns with her goal of applying her data science skills to create positive change particularly by promoting equal access to resources and opportunities for all students.")))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "unzila.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Unzila Sakina Babar, a sophomore at Duke University, is a passionate computer and data scientist hailing from Lahore, Pakistan. Alongside her academic pursuits, she possesses a keen interest in the education system. Unzila's deep-rooted desire to revolutionize the schooling system in her home country fuels her involvement in this project. She envisions fostering a robust sense of community within Pakistan School Systems while raising awareness about the abundant resources and communities available in the Public Schools of Durham County.  She seeks to synergize her own expertise with the capabilities of this dashboard to create a lasting impact on Durham Public Schools and extend this influence beyond its boundaries. "))),
-                                column(width = 3,
-                                       img(src = "lauren.jpeg")),
-                                column(width = 3,
-                                       p(i18n$t("Lauren Walker is a Junior at Duke University from Needham, Massachusetts. She is studying Computer Science with a minor in Statistics. Lauren joined this Data+ project team because she is eager to strengthen the relationship and partnership between Durham Public Schools and local universities. She also enjoys coding and is looking forward to improving her data science skills. She hopes that this dashboard will serve as a valuable resource for those looking to learn more about the resources offered throughout the Durham Public School system and make education more accessible and equitable.")))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "pragya.png")),
-                                column(width = 3,
-                                       p(i18n$t("Pragya Raghuvanshi is a master’s student in Interdisciplinary Data Science at Duke University, originally from India. She is passionate about driving insights for the public sector and education system by applying data science techniques to solve real world problems.  Back in India, besides working as a data analyst, she also worked as a volunteer in an organization to educate and empower the local village communities. This summer she is working at a solar finance tech firm as a Data Science intern to assist in the growth of solar power in Nigeria by harnessing the power of data.")))))),
-                        
-                        fluidRow(
-                          box(width = 12,
-                              background = "light-blue",
-                              class = "text-center",
-                              h3(strong(i18n$t("Meet Our Team - Data+ 2022"))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(align = "center", src = "emily250.jpg")),
-                                column(width =3,
-                                       p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro, North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our education and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
-                                column(width = 3,
-                                       img(src = "aryan250.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently, he is studying Data Science with a minor in Political Science. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools and find better paths to their improvement.")))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "patience3.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team in hopes of improving the dashboard to make it more accessible. With her background in education policy, she hopes to integrate her own knowledge with the dashboard to make an impact on Durham Public Schools and beyond."))),
-                                column(width = 3,
-                                       img(src = "mel250.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina. She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the existing research and efforts that have equipped the Bass Connections team with organized information  to pinpoint the resources that would be most beneficial for schools. Melanie hopes this dashboard will help increase equity within schools and promote a greater sense of community throughout Durham.")))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "surabhi.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
-                        
-                        fluidRow(
-                          box(width = 12,
-                              background = "navy",
-                              class = "text-center",
-                              h3(strong(i18n$t("Meet Our Team - Data+ 2021"))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "ally3.jpg")),
-                                column(width =3,
-                                       p(i18n$t("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ project team because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering Durham Public Schools, and will help improve the quality of partnerships."))),
-                                column(width = 3,
-                                       img(src = "drewheadshot3 copy.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help Durham residents to locate the myriad resources accessible to help form an even stronger community built around public schools.")))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "patience3.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into education policy. She hopes this dashboard makes an impact on students in all Durham Public Schools and beyond, in hopes of making education more accessible to all students."))),
-                                column(width = 3,
-                                       img(src = "rhea3.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Rhea decided to join this project team because she has a passion for data science and hopes that this app will help local universities maintain a productive relationship with the community. She is proud of the work the team has accomplished, and is excited to see the long term impacts it has!")))),
-                              br(),
-                              fluidRow(
-                                column(width = 3,
-                                       img(src = "nico3.jpg")),
-                                column(width = 3,
-                                       p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
-               ),
-               collapsible = FALSE,
-               position = ("fixed-top")
+             tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
+             tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
+             tabPanel("School Statistics", icon = icon("fas fa-chart-bar")),
+             tabPanel("Data Insights", icon = icon("fas fa-chart-line")),
+             tabPanel("Courses", icon = icon("book")),
+             tabPanel("Sports", icon = icon("basketball-ball")),
+             tabPanel("Arts", icon = icon("paint-brush")),
+             tabPanel("Duke/NCCU Engagement", icon = icon("fas fa-handshake-angle")),
+             tabPanel("Feedback", icon = icon("fas fa-comment")),
+             tabPanel("Meet the Team", icon = icon("fas fa-users"),
+                      fluidRow(
+                        box(width = 12,
+                            background = "navy",
+                            class = "text-center",
+                            h3(strong(i18n$t("Meet Our Team - Data+ 2023"))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(align = "center", src = "ethan.jpg")),
+                              column(width =3,
+                                     p(i18n$t("Ethan Shang is a rising sophomore at Duke University from Chapel Hill, North Carolina. Currently, he is studying Data Science, with a minor in Economics. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools, and to support a vibrant community that has surrounded him from an early age."))),
+                              column(width = 3,
+                                     img(src = "sreya.jpeg")),
+                              column(width = 3,
+                                     p(i18n$t("Sreya Gnanavel is a sophomore at Duke University originally from Cary, North Carolina. She intends to major in Data Science and minor in Finance. Sreya is passionate about using data science to help uncover meaningful insights and use to make informed decisions. She hopes this project will bring more awareness to the available resources in the Durham Public System and help expand the reach to other community schools. She was motivated to join this project as it aligns with her goal of applying her data science skills to create positive change particularly by promoting equal access to resources and opportunities for all students.")))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "unzila.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Unzila Sakina Babar, a sophomore at Duke University, is a passionate computer and data scientist hailing from Lahore, Pakistan. Alongside her academic pursuits, she possesses a keen interest in the education system. Unzila's deep-rooted desire to revolutionize the schooling system in her home country fuels her involvement in this project. She envisions fostering a robust sense of community within Pakistan School Systems while raising awareness about the abundant resources and communities available in the Public Schools of Durham County.  She seeks to synergize her own expertise with the capabilities of this dashboard to create a lasting impact on Durham Public Schools and extend this influence beyond its boundaries. "))),
+                              column(width = 3,
+                                     img(src = "lauren.jpeg")),
+                              column(width = 3,
+                                     p(i18n$t("Lauren Walker is a Junior at Duke University from Needham, Massachusetts. She is studying Computer Science with a minor in Statistics. Lauren joined this Data+ project team because she is eager to strengthen the relationship and partnership between Durham Public Schools and local universities. She also enjoys coding and is looking forward to improving her data science skills. She hopes that this dashboard will serve as a valuable resource for those looking to learn more about the resources offered throughout the Durham Public School system and make education more accessible and equitable.")))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "pragya.png")),
+                              column(width = 3,
+                                     p(i18n$t("Pragya Raghuvanshi is a master’s student in Interdisciplinary Data Science at Duke University, originally from India. She is passionate about driving insights for the public sector and education system by applying data science techniques to solve real world problems.  Back in India, besides working as a data analyst, she also worked as a volunteer in an organization to educate and empower the local village communities. This summer she is working at a solar finance tech firm as a Data Science intern to assist in the growth of solar power in Nigeria by harnessing the power of data.")))))),
+                      
+                      fluidRow(
+                        box(width = 12,
+                            background = "light-blue",
+                            class = "text-center",
+                            h3(strong(i18n$t("Meet Our Team - Data+ 2022"))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(align = "center", src = "emily250.jpg")),
+                              column(width =3,
+                                     p(i18n$t("Emily McReynolds is a sophomore at Duke University originally from Greensboro, North Carolina. She intends to major in Public Policy and obtain a certificate in Markets and Management Studies. Emily is passionate about policy reform, specifically in our education and healthcare systems. She hopes this project will bring more awareness to the available resources and community centers in Durham County that can support our public schools. Emily is eager to see how this partnership can build a stronger sense of unity for all."))),
+                              column(width = 3,
+                                     img(src = "aryan250.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Aryan Poonacha is a rising senior at Duke University from Bangalore, India. Currently, he is studying Data Science with a minor in Political Science. He is especially interested in using big data analyses to reveal politically and socially relevant insights to key issues in policy and social justice. He joined the Data+ team to provide a clearer picture of Durham Public Schools and find better paths to their improvement.")))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "patience3.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience continued the Data+ project team in hopes of improving the dashboard to make it more accessible. With her background in education policy, she hopes to integrate her own knowledge with the dashboard to make an impact on Durham Public Schools and beyond."))),
+                              column(width = 3,
+                                     img(src = "mel250.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Melanie Kaye Moseley is a senior at North Carolina Central University from Oxford, North Carolina. She is studying Music with a concentration in Instrumental Performance. Melanie joined the Data+ project team to contribute to the existing research and efforts that have equipped the Bass Connections team with organized information  to pinpoint the resources that would be most beneficial for schools. Melanie hopes this dashboard will help increase equity within schools and promote a greater sense of community throughout Durham.")))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "surabhi.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Surabhi Trivedi is a masters student in Interdisciplinary Data Science at Duke University. Her interest lies at the intersection of data science and public policy, and specifically social policy. For the summer, she is interning at the World Bank and the Urban Institute as a data scientist while volunteering to help with the project.")))))),
+                      
+                      fluidRow(
+                        box(width = 12,
+                            background = "navy",
+                            class = "text-center",
+                            h3(strong(i18n$t("Meet Our Team - Data+ 2021"))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "ally3.jpg")),
+                              column(width =3,
+                                     p(i18n$t("Allyson Ashekun is a junior at Duke University from Clearwater, Florida. Currently, she is studying Public Policy and Computer Science, and her academic interests focus primarily on the intersection of those two disciplines in areas such as Data Science. Allyson joined the Data+ project team because she is passionate about equitable education and enjoys coding. She hopes this dashboard will be a helpful tool for those entering Durham Public Schools, and will help improve the quality of partnerships."))),
+                              column(width = 3,
+                                     img(src = "drewheadshot3 copy.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Drew Greene is a sophomore at Duke University from Richmond, Virginia. He intends to study Public Policy with minors in Education and Inequality Studies. His academic interests include educational equity and the school-to-prison pipeline. Drew joined this project because of the opportunity to develop his data science skills. He hopes this project will help Durham residents to locate the myriad resources accessible to help form an even stronger community built around public schools.")))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "patience3.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Patience Jones is a senior at North Carolina Central University from Durham, North Carolina. Currently, she is studying English, Secondary Education, and General Psychology. Patience joined the Data+ project team because she was interested in learning more about data science and its integration into education policy. She hopes this dashboard makes an impact on students in all Durham Public Schools and beyond, in hopes of making education more accessible to all students."))),
+                              column(width = 3,
+                                     img(src = "rhea3.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Rhea decided to join this project team because she has a passion for data science and hopes that this app will help local universities maintain a productive relationship with the community. She is proud of the work the team has accomplished, and is excited to see the long term impacts it has!")))),
+                            br(),
+                            fluidRow(
+                              column(width = 3,
+                                     img(src = "nico3.jpg")),
+                              column(width = 3,
+                                     p(i18n$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))))))
+             ),
+             collapsible = FALSE,
+             position = ("fixed-top")
   ),
   tabItems(
     #Home Page
@@ -210,7 +209,7 @@ body <- {dashboardBody(
                    width = 12,
                    background = "navy",
                    htmlOutput("home_text1"),
-                   )),
+               )),
              
              fluidRow(
                class = "text-center",
@@ -328,7 +327,7 @@ body <- {dashboardBody(
                                            "Hillside High","Holton Career","Jordan High","Lakewiew High","Middle College", "Morehead Montessori School",
                                            "Northern High","Riverside High","School for Creative Studies",
                                            "Southern School of Energy and Sustainability"   
-                                            
+                                           
                                            
                                ),
                                
@@ -894,7 +893,7 @@ body <- {dashboardBody(
                         i18n$t("promotes and provides access to various opportunities and resources for those in the arts. The Durham Arts Council also offers a directory of artists to network with one another through the "),
                         a(i18n$t("Durham Arts Network"), href="https://www.durhamartsnetwork.org/"),
                         i18n$t(". In addition, the city of Durham funded the"), a("Cultural & Public Art Program ", 
-                                                                     href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
+                                                                                  href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
                         i18n$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work. "),
                         a(i18n$t("Discover Durham"), href="https://www.discoverdurham.com/things-to-do/arts/"),
                         i18n$t("provides an extensive list of events for visitors and residents to do around the arts: including festivals, concerts, performances, museums, art shows, etc. "),
@@ -921,45 +920,55 @@ body <- {dashboardBody(
              ) 
     )},
     
-   
+    
     ##NCCU/DUKE engagement tab
     {tabItem(tabName = "engagementtab",
              tabBox(
                # The id lets us use input$tabset1 on the server to find the current tab
                id = "tabset1", width = "auto",
                #Table Outputs
-               tabPanel(htmlOutput("engage_service"),
-                        selectInput("tab1", em(htmlOutput("engage_choose")),
-                         choices = list("Staff/Faculty",
-                                        "Undergraduate Students"),
-                         multiple = FALSE),
+               tabPanel(i18n$t("Service"),
+                        selectInput("tab1", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                                    choices = list("Staff/Faculty",
+                                                   "Undergraduate Students"),
+                                    multiple = FALSE),
                         br(),
                         dataTableOutput("engagetable_1")),
                tabPanel(i18n$t("Teaching and Learning")),
                tabPanel(i18n$t("Research"),
-                        selectInput("tab3", em((htmlOutput("engage_choose")),
+                        selectInput("tab3", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
                                     choices = list("Staff/Faculty",
                                                    "Undergraduate Students"),
                                     multiple = FALSE),
                         br(),
                         dataTableOutput("engagetable_3"))
-               ),
+             ),
              
              fluidRow(
                box(width = 12,
-                   htmlOutput("engage_context")))
-               
+                   title = strong(i18n$t("Context")),
+                   i18n$t("From "),
+                   a(i18n$t("creating free math workshops for girls who attend Durham Public Schools "), href="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools"), 
+                   i18n$t("to "), 
+                   a(i18n$t("faculty research projects that engage with "), href="https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues"),
+                   a(i18n$t("“Racial and Social Equity in Local Contexts”, "), href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact"),
+                   i18n$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
+                   a(i18n$t("NCCU, "), href="https://www.nccu.edu/"), 
+                   a(i18n$t("Duke, "), href="https://duke.edu/"), 
+                   i18n$t("and, "),
+                   a(i18n$t("Duke CampusGroups, "), href="https://dukegroups.com/home_login")))
+             
              
              #fluidRow(
-               #box(width = 12,
-                   #background = "light-blue",
-                   #solidHeader = TRUE,
-                   #slickROutput("carou", width = "auto", height = "auto"),
-                   #use_gotop(color = "black")),
+             #box(width = 12,
+             #background = "light-blue",
+             #solidHeader = TRUE,
+             #slickROutput("carou", width = "auto", height = "auto"),
+             #use_gotop(color = "black")),
              #),
-  
-                  
-    ))},
+             
+             
+    )},
     
     #Meet the team tab
     {tabItem(tabName = "teamstab",
@@ -1028,43 +1037,43 @@ body <- {dashboardBody(
                             img(src = "surabhi.jpg")),
                      column(width = 3,
                             htmlOutput("surabhi")))),
-             
-             fluidRow(
-               box(width = 12,
-                   background = "navy",
-                   class = "text-center",
-                   h3(strong(htmlOutput("team21"))),
-                   br(),
-                   fluidRow(
-                     column(width = 3,
-                            img(src = "ally3.jpg")),
-                     column(width =3,
-                            htmlOutput("allyson")),
-                     column(width = 3,
-                            img(src = "drewheadshot3 copy.jpg")),
-                     column(width = 3,
-                            htmlOutput("drew"))),
-                   br(),
-                   fluidRow(
-                     column(width = 3,
-                            img(src = "patience3.jpg")),
-                     column(width = 3,
-                            htmlOutput("patience2")),
-                     column(width = 3,
-                            img(src = "rhea3.jpg")),
-                     column(width = 3,
-                            htmlOutput("rhea"))),
-                   br(),
-                   fluidRow(
-                     column(width = 3,
-                            img(src = "nico3.jpg")),
-                     column(width = 3,
-                            htmlOutput("nico")))))
-    ))},
+               
+               fluidRow(
+                 box(width = 12,
+                     background = "navy",
+                     class = "text-center",
+                     h3(strong(htmlOutput("team21"))),
+                     br(),
+                     fluidRow(
+                       column(width = 3,
+                              img(src = "ally3.jpg")),
+                       column(width =3,
+                              htmlOutput("allyson")),
+                       column(width = 3,
+                              img(src = "drewheadshot3 copy.jpg")),
+                       column(width = 3,
+                              htmlOutput("drew"))),
+                     br(),
+                     fluidRow(
+                       column(width = 3,
+                              img(src = "patience3.jpg")),
+                       column(width = 3,
+                              htmlOutput("patience2")),
+                       column(width = 3,
+                              img(src = "rhea3.jpg")),
+                       column(width = 3,
+                              htmlOutput("rhea"))),
+                     br(),
+                     fluidRow(
+                       column(width = 3,
+                              img(src = "nico3.jpg")),
+                       column(width = 3,
+                              htmlOutput("nico")))))
+             ))},
     
     #feedback
     {tabItem(tabName = "feedback",
-          
+             
              fluidRow(
                class = "text-center",
                size = 20,

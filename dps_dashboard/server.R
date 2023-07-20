@@ -162,7 +162,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   oakgrove <- geojsonio::geojson_read("./data/2023/map_data/Oak Grove Elementary.geojson", what = "sp")
   
   
-
+  
 }
 
 # Load/Rename Spatial Data
@@ -234,7 +234,7 @@ translator <- Translator$new(translation_json_path = "./data/Translations/fullTr
 function(input, output, session) {
   
   #observeEvent(input$selected_language, {
-   #Here is where we update language in session
+  #Here is where we update language in session
   #shiny.i18n::update_lang(session, input$selected_language)
   #})
   
@@ -3536,46 +3536,7 @@ function(input, output, session) {
   
   
   
-  #Engagement tab
-  ##text
-  
-  observeEvent(i18n(),
-               output$engage_choose<- renderText({
-                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities"))
-               }))
-  
-  observeEvent(i18n(),
-               output$engage_context<- renderText({
-                 paste(title = strong(i18n()$t("Context")),
-                       br(),
-                       i18n()$t("From "),
-                       tags$a(href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("creating free math workshops for girls who attend Durham Public Schools ")),
-                       i18n()$t("to "),
-                       tags$a(href = "https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues", target="_blank", i18n()$t("faculty research projects that engage with ")),
-                       tags$a(href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact", target="_blank", i18n()$t("“Racial and Social Equity in Local Contexts”, ")),
-                       i18n()$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
-                       tags$a(href = "https://www.nccu.edu/", target="_blank", i18n()$t("NCCU, ")),
-                       tags$a(href = "https://duke.edu/", target="_blank", i18n()$t("Duke, ")),
-                       i18n()$t("and, "),
-                       tags$a(href = "https://dukegroups.com/home_login", target="_blank", i18n()$t("Duke CampusGroups, ")))
-               }))
-  
-  observeEvent(i18n(),
-               output$engage_research<- renderText({
-                 paste(i18n()$t("Research"))
-               }))
-  
-  observeEvent(i18n(),
-               output$engage_service<- renderText({
-                 paste(i18n()$t("Service"))
-               }))
-  
-  observeEvent(i18n(),
-               output$engage_teach<- renderText({
-                 paste(i18n()$t("Teaching and Learning"))
-               }))
-  
-  ##plots
+  #Engagement tab plots
   #service
   output$engagetable_1 <- renderDataTable({
     if(input$tab1 == "Staff/Faculty")
@@ -5154,7 +5115,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                            h4(i18n()$t("Women's Tennis"))
                      )
                    }
-                  else if(input$school_sports == "Riverside High"){
+                   else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
@@ -5198,9 +5159,9 @@ Moreover, pharmacies contribute to public health by offering services like immun
                            h4(i18n()$t("Football")),
                            h4(i18n()$t("Men’s Soccer")),
                            h4(i18n()$t("Volleyball"))
-                    )
+                     )
                    }
-            
+                   
                    else if(input$school_sports == "Rogers Herr Middle"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Football")),
@@ -5340,7 +5301,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$school_sports == "Shepard Middle"){
                      paste(h4(i18n()$t("Boy’s Basketball")),
                            h4(i18n()$t("Girl’s Basketball"))
-                           )
+                     )
                    }
                    else if(input$school_sports == "Durham School of the Arts Middle"){
                      paste(h4(i18n()$t("Boy’s Basketball")),
@@ -6075,6 +6036,6 @@ Moreover, pharmacies contribute to public health by offering services like immun
                        br(),
                        tags$a(href ="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), style = "color:black;font-size:18px;text-decoration:underline"),
                        br()
-                    )
+                 )
                }))
 }
