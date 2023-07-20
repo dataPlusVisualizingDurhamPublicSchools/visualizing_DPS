@@ -1795,7 +1795,16 @@
 "Spanish": "el personal y el profesorado de Duke y NCCU, junto con estudiantes universitarios, lideran iniciativas dirigidas a DPS para formar asociaciones significativas entre Duke, NCCU y DPS. Esta lista, que ha sido categorizada por iniciativas orientadas al servicio, iniciativas orientadas a la enseñanza/aprendizaje e iniciativas orientadas a la investigación, incluye oportunidades que respaldan el marco de escuelas comunitarias centradas en el bienestar integral del niño y de toda la comunidad, tanto dentro como fuera de los programas de educación. Todos los datos fueron obtenidos de "},
 
 {"English": "and, ",
-"Spanish": "y, "}
+"Spanish": "y, "},
+
+{"English": "Service",
+"Spanish": "Servicio"},
+
+{"English": "Teaching and Learning",
+"Spanish": "Enseñanza y Aprendizaje"},
+
+{"English": "Research",
+"Spanish": "Investigación"}
     
 ]
 }
