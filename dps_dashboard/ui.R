@@ -26,7 +26,6 @@ library(DT)
 i18n <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 i18n$set_translation_language("English")
 
-
 sidebar <- {dashboardSidebar(
   
   tags$head(tags$script(HTML('
@@ -83,7 +82,8 @@ body <- {dashboardBody(
   #     )
   #   )
   # ), 
-  navbarPage("Visualizing DPS",
+ 
+   navbarPage("Visualizing DPS",
                tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home")),
                tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt")),
                tabPanel("School Statistics", icon = icon("fas fa-chart-bar")),
