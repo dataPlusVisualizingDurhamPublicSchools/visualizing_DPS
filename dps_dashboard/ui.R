@@ -758,31 +758,29 @@ body <- {dashboardBody(
                  fluidRow(
                    box(width = 4,
                        background = "olive",
-                       htmlOutput("fall", style = "font-size:20px"),
+                       htmlOutput("fall", style = "solid-header:TRUE"),
                        htmlOutput("fallsports", align="center")),
                    box(width = 4,
                        background = "aqua",
-                       htmlOutput("winter", style = "font-size:20px"),
+                       htmlOutput("winter", style = "solid-header:TRUE"),
                        htmlOutput("wintersports", align="center")),
                    box(width = 4,
                        background = "light-blue",
-                       htmlOutput("spring", style = "font-size:20px"),
+                       htmlOutput("spring", style = "solid-header:TRUE"),
                        htmlOutput("springsports", align="center"))),
                  fluidRow(
                    box(width = 6,
                        background = "navy",
-                       htmlOutput("available_men", style = "font-size:20px"),
+                       htmlOutput("available_men", style = "solid-header:TRUE"),
                        htmlOutput("male_sports_list", align="center")),
                    box(width = 6,
                        background = "navy",
-                       htmlOutput("available_women", style = "font-size:20px"),
+                       htmlOutput("available_women", style = "solid-header:TRUE"),
                        htmlOutput("female_sports_list", align="center")),
                  ),
                  fluidRow(
                    box(width = 12,
-                       #solidHeader = TRUE,
-                       #title = strong(i18n$t("Context")),
-                       htmlOutput("sports_context"))
+                       htmlOutput("sports_context", , style = "solid-header:TRUE"))
                  )
                )
              )
@@ -844,16 +842,15 @@ body <- {dashboardBody(
     {tabItem(tabName = "artstab",
              fluidRow(
                box(width = 12,
-                   title = strong(i18n$t("Available Arts Programs In Each School")), background = "navy", solidHeader = TRUE,
+                   background = "navy",
+                   htmlOutput("arts_header"),
                    column(12, align="center", tableOutput("available_arts")))
              ),
              fluidRow(
-               box(width = 6, title = strong(i18n$t("Durham Public Schools and the Arts")), status = "primary", solidHeader = TRUE,
-                   p(h4(i18n$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curriculum for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit"), 
-                        a(i18n$t("Arts at DPS"), href="https://www.dpsnc.net/Arts#:~:text=Arts%20Education%20at%20Durham%20Public,body%20of%20knowledge%20and%20skills."),
-                        i18n$t("to learn more."))),
-                   br(),
-                   p(h4(em(strong(i18n$t("Learn more about some of the schools' arts programs by clicking on their logos below:"))))),
+               box(width = 6, 
+                   #title = strong(htmlOutput("arts_dps_header"), status = "primary", solidHeader = TRUE),
+                   htmlOutput("arts_dps_header"),
+                   htmlOutput("arts_dps"),
                    column(class = 'text-center', width = 4,
                           tags$a(
                             href="https://vimeo.com/718773555", 
@@ -892,35 +889,8 @@ body <- {dashboardBody(
                                      title="Riverside Logo",
                                      class= "img-responsive")))
                ),
-               box(width = 6, title = strong(i18n$t("Durham County and the Arts")), status = "primary", solidHeader = TRUE,
-                   p(h4(i18n$t("Durham has a rich history of highlighting the arts. Durham has a rich history of highlighting the arts. Founded in the mid-20th century, the non-profit organization "),
-                        a(i18n$t("Durham Arts Council"), href="https://durhamarts.org/"),
-                        i18n$t("promotes and provides access to various opportunities and resources for those in the arts. The Durham Arts Council also offers a directory of artists to network with one another through the "),
-                        a(i18n$t("Durham Arts Network"), href="https://www.durhamartsnetwork.org/"),
-                        i18n$t(". In addition, the city of Durham funded the"), a("Cultural & Public Art Program ", 
-                                                                                  href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development"),
-                        i18n$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work. "),
-                        a(i18n$t("Discover Durham"), href="https://www.discoverdurham.com/things-to-do/arts/"),
-                        i18n$t("provides an extensive list of events for visitors and residents to do around the arts: including festivals, concerts, performances, museums, art shows, etc. "),
-                        br(),br(),
-                        a(i18n$t("The Nasher Museum of Art at Duke University"),
-                          href="https://nasher.duke.edu/"),
-                        i18n$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream art institutions and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art, and ancient American art."),
-                        i18n$t("North Carolina Central University students host various musical ensembles, such as the"),
-                        a(i18n$t("NCCU Jazz Vocal Ensemble"),
-                          href="https://www.nccu.edu/cash/music/ensembles/vocal-jazz"),
-                        i18n$t("and the"),
-                        a(i18n$t("NCCU Sound Machine Marching Band"),
-                          href="https://www.nccusoundmachine.com/"),
-                        i18n$t(", that perform throughout the city of Durham, North Carolina, and the United States."),
-                        a(i18n$t("WNCU 90.7 FM is Central’s Jazz radio station"),
-                          href="https://www.wncu.org/"),
-                        i18n$t("providing “diverse music entertainment and serving as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"),
-                        a(i18n$t("KidzNotes program"),
-                          href="https://kidznotes.org/"),
-                        i18n$t("via Fayetteville Street Elementary’s AT&T Believe Program.")
-                        
-                   ))
+               box(width = 6, 
+                   htmlOutput("arts_durham")
                )
              ) 
     )},
