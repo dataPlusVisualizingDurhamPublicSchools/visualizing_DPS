@@ -3537,6 +3537,7 @@ function(input, output, session) {
   
   
   #Engagement tab plots
+  
   #service
   output$engagetable_1 <- renderDataTable({
     if(input$tab1 == "Staff/Faculty")
@@ -5004,6 +5005,32 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   
   #Sports - Static
+  
+  observeEvent(i18n(),
+               output$fall<- renderText({
+                 paste(title = strong(i18n()$t("Fall Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$spring<- renderText({
+                 paste(title = strong(i18n()$t("Spring Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$winter<- renderText({
+                 paste(title = strong(i18n()$t("Winter Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$available_women<- renderText({
+                 paste(title = strong(i18n()$t("Available Girl's/Women's Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$available_men<- renderText({
+                 paste(title = strong(i18n()$t("Available Boy's/Men's Sports")))
+               }))
+  
   observeEvent(i18n(), 
                {
                  output$fallsports <- renderText({
@@ -5926,7 +5953,9 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  })
                  
                  output$sports_context <- renderText({
-                   paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
+                   paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
+                         br(),
+                        i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
                          a(i18n()$t("CDC guidelines."), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
                          i18n()$t("The Office of Disease Prevention and Health Promotion"), 
                          i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
@@ -5998,6 +6027,9 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   
   #Arts Programs
+  #Translations
+  
+  
   observeEvent(i18n(),
                {
                  output$available_arts <- renderTable ({

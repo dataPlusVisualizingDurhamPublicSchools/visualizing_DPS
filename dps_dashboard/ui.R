@@ -757,26 +757,31 @@ body <- {dashboardBody(
                  ),
                  fluidRow(
                    box(width = 4,
-                       title = strong(i18n$t("Fall Sports")), background = "olive", solidHeader = TRUE,
+                       background = "olive",
+                       htmlOutput("fall", style = "font-size:20px"),
                        htmlOutput("fallsports", align="center")),
                    box(width = 4,
-                       title = strong(i18n$t("Winter Sports")), background = "aqua", solidHeader = TRUE,
+                       background = "aqua",
+                       htmlOutput("winter", style = "font-size:20px"),
                        htmlOutput("wintersports", align="center")),
                    box(width = 4,
-                       title = strong(i18n$t("Spring Sports")), background = "light-blue", solidHeader = TRUE,
+                       background = "light-blue",
+                       htmlOutput("spring", style = "font-size:20px"),
                        htmlOutput("springsports", align="center"))),
                  fluidRow(
                    box(width = 6,
-                       title = strong(i18n$t("Available Boy's/Men's Sports")), background = "navy", solidHeader = TRUE,
+                       background = "navy",
+                       htmlOutput("available_men", style = "font-size:20px"),
                        htmlOutput("male_sports_list", align="center")),
                    box(width = 6,
-                       title = strong(i18n$t("Available Girl's/Women's Sports")), background = "navy", solidHeader = TRUE,
+                       background = "navy",
+                       htmlOutput("available_women", style = "font-size:20px"),
                        htmlOutput("female_sports_list", align="center")),
                  ),
                  fluidRow(
                    box(width = 12,
-                       solidHeader = TRUE,
-                       title = strong(i18n$t("Context")),
+                       #solidHeader = TRUE,
+                       #title = strong(i18n$t("Context")),
                        htmlOutput("sports_context"))
                  )
                )
