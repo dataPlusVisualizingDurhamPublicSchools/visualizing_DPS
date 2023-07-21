@@ -3532,7 +3532,6 @@ function(input, output, session) {
   ##text
   
   observeEvent(i18n(),
-<<<<<<< HEAD
                output$engage_context <- renderText({
                  paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
                        br(),
@@ -3576,7 +3575,6 @@ function(input, output, session) {
                  paste(i18n()$t("Teaching and Learning"))
                }))
   
-=======
   output$engage_context <- renderText({
     paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
           br(),
@@ -3620,7 +3618,6 @@ observeEvent(i18n(),
                paste(i18n()$t("Teaching and Learning"))
              }))
 
->>>>>>> ca3768a5fd20d82feee65ac131a2994069436a22
   ##plots
   #service
   output$engagetable_1 <- renderDataTable({
