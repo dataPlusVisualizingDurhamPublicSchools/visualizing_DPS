@@ -6139,7 +6139,6 @@ observeEvent(i18n(),
                  paste(i18n()$t("Click the text above to fill out our feedback form"))
                }))
   
-  
   observeEvent(i18n(),
                output$links<- renderText({
                  paste(i18n()$t("Learn More!"),
