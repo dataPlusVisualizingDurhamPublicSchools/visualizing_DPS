@@ -6053,6 +6053,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  paste(i18n()$t("Click the text above to fill out our feedback form"))
                }))
   
+  
   observeEvent(i18n(),
                output$links<- renderText({
                  paste(i18n()$t("Learn More!"),
