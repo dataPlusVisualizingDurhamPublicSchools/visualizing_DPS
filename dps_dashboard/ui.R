@@ -903,7 +903,7 @@ body <- {dashboardBody(
                id = "tabset1", width = "auto",
                #Table Outputs
                tabPanel(htmlOutput("engage_service"),
-                        selectInput("tab1", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                        selectInput("tab1", em(htmlOutput("choose2")),
                                     choices = list("Staff/Faculty",
                                                    "Undergraduate Students"),
                                     multiple = FALSE),
@@ -911,7 +911,7 @@ body <- {dashboardBody(
                         dataTableOutput("engagetable_1")),
                tabPanel(htmlOutput("engage_teach")),
                tabPanel(htmlOutput("engage_research"),
-                        selectInput("tab3", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
+                        selectInput("tab3", em(htmlOutput("choose1")),
                                     choices = list("Staff/Faculty",
                                                    "Undergraduate Students"),
                                     multiple = FALSE),
