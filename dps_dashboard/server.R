@@ -3547,18 +3547,6 @@ function(input, output, session) {
           a(i18n()$t("Duke CampusGroups."), href="https://dukegroups.com/home_login"))
     
   }))
-  
-  observeEvent(i18n(),
-               output$choose1 <- renderText({
-                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities")
-                 )
-               }))
-  
-  observeEvent(i18n(),
-               output$choose2 <- renderText({
-                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities")
-                 )
-               }))
 
 observeEvent(i18n(),
   output$engage_service <- renderText({
