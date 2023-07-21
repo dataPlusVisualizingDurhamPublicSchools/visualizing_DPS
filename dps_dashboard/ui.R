@@ -626,8 +626,7 @@ body <- {dashboardBody(
              fluidRow(class= 'text-center',
                       box(width = 12,
                           solidHeader = TRUE,
-                          title = strong("Resources in Selected School Zone"),
-                          p(h4(align="left",i18n$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance.")), br()),
+                          htmlOutput("datainsights_text"),
                           fluidRow(
                             box(width = 2,
                                 solidHeader = TRUE,
