@@ -19,7 +19,7 @@
  "Spanish": "¡Visita la pagina"},
 
 {"English": "for more information!",
- "Spanish": "para más información!"},
+ "Spanish": "¡para más información!"},
 
 {"English": "Geospatial Variables",
  "Spanish": "Variables Geográficos"},
@@ -30,8 +30,8 @@
 {"English": "Centralized Web Application",
  "Spanish": "Aplicación Centralizada"},
 
-{"English": "2 Universities, 16 Public Schools",
- "Spanish": "2 Universidades, 16 Escuelas Públicas"},
+{"English": "2 Universities, 50 Public Schools",
+ "Spanish": "2 Universidades, 50 Escuelas Públicas"},
 
 {"English": "The Durham Public Schools District contains 54 public schools: 30 elementary, 9 middle, 2 secondary, 11 high, 1 alternative, and 1 hospital. Our project focuses on the 16 schools that most frequently partner with Duke University and North Carolina Central University",
  "Spanish": "El distrito de Durham contiene 54 escuelas públicas: 30 escuelas primarias, 11 escuelas secundarias, 11 escuelas preparatorias, 1 escuela alternativa, y 1 escuela del hospital. Nuestro proyecto se enfoca en 16 escuelas que frecuentemente trabajan con Duke y North Carolina Central"},
@@ -51,8 +51,8 @@
 {"English": "Motivated by this research, our project explores a way of visualizing schools as the center of the community that brings together academics, health and social services, youth and community development, and community engagement under one roof.",
  "Spanish": "Motivados por estas conclusiones, nuestro proyecto explora una manera de visualizar las escuelas como el centro de la comunidad que junta los estudios, servicios sociales y de la salud, el desarrollo de la juventud y la comunidad, y la participación de la comunidad… todo bajo una aplicación."},
 
-{"English": "View Our 16 Schools",
- "Spanish": "Aprende sobre nuestras 16 escuelas"},
+{"English": "View Our 50 Schools",
+ "Spanish": "Aprende sobre nuestras 50 escuelas"},
 
 {"English": "View Geospatial Data",
  "Spanish": "Visita la Información Geográfica"},
@@ -475,6 +475,9 @@
      
      {"English": "English as a Second Language (ESL) Student Enrollment",
      "Spanish": "Inglés como segunda lengua"},
+
+    {"English": "Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”",
+    "Spanish": "Duke y NCCU tienen como objetivo promover asociaciones equitativas con las Escuelas Públicas de Durham. Investigaciones previas de Bass Connections se enfocaron en comprender cómo lograr este objetivo y descubrieron que una de las principales barreras para una participación significativa entre Duke, NCCU y las escuelas públicas de Durham es que “muchos estudiantes universitarios carecen de comprensión sobre la dinámica de la ciudad y la comunidad”. Además, encontraron que hay una “falta de capacitación voluntaria para los estudiantes en el contexto de Durham, especialmente en áreas como la historia, las características demográficas específicas de las escuelas y los sesgos implícitos y las dinámicas de poder que pueden manifestarse en las escuelas”."},
      
      {"English": "This graph shows the number of students enrolled in the English as a Second Language (ESL) or English Language Learners (ELL) Program. ESL students consist of any student regardless of ethnicity, origin, race, age, etc. who is a non-native English speaker. These programs are created to help children learn English along with other subjects necessary to complete each grade.",
      "Spanish": "Esta gráfica demuestra el número de estudiantes que están inscritos en el programa “Inglés como segunda lengua” (English as a Second Language: ESL, o English Language Learners: ELL). Este programa es disponible para cualquier estudiante que es un hablante de inglés no nativo, a pesar de su etnicidad, orígen, raza, edad, etc. Programas como ESL y ELL ayudan a que estos estudiantes aprendan inglés y otras materias requeridas para pasar al próximo grado."},
@@ -1232,8 +1235,8 @@
     {"English": "Durham Public Schools and the Arts",
      "Spanish": "Los artes en las escuelas públicas de Durham"},
     
-    {"English": "Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curricula for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Vist",
-     "Spanish": "La apreciación del arte es aparente en las escuelas públicas en Durham. Estas escuelas tienen currículos sobre los artes, varias actuaciones en las escuela, recursos para cualquier estudiante interesado en los artes (desde el kinder hasta el doceavo), y noticias sobre diferentes programas de arte a través del condado."},
+    {"English": "Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curriculum for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit ",
+     "Spanish": "Las Escuelas Públicas de Durham demuestran un gran aprecio por las artes en todas sus instituciones públicas. Ofrecen currículos para las artes, eventos próximos en el sistema escolar, recursos para estudiantes de K-12 interesados en las artes y noticias sobre programas artísticos en DPS. Visita "},
     
     {"English": "Arts at DPS",
      "Spanish": "Los artes en el condado de Durham"},
@@ -1301,7 +1304,7 @@
     {"English": "NCCU Sound Machine Marching Band",
      "Spanish": "NCCU Sound Machine Marching Band"},
     
-    {"English": ", that perform throughout the city of Durham, North Carolina and the United States.",
+    {"English": ", that perform throughout the city of Durham, North Carolina, and the United States.",
      "Spanish": ", que se presentan en toda la ciudad de Durham, Carolina del Norte y los Estados Unidos"},
     
     {"English": "WNCU 90.7 FM is Central’s Jazz radio station",
@@ -1371,7 +1374,7 @@
 "Spanish": "¡Ponle clic en el"},
 
 {"English": "icon to search any address!",
-"Spanish": "ícono para buscar cualquier dirección!"},
+"Spanish": "¡ícono para buscar cualquier dirección!"},
 
 {"English": "Selected Variable Resources",
 "Spanish": "Los Recursos Disponibles"},
@@ -1756,7 +1759,52 @@
 "Spanish": "Refugios para desamparados"},
 
 {"English": "Pharmacies",
-"Spanish": "Farmacias"}
+"Spanish": "Farmacias"},
+
+{"English": "The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high.",
+"Spanish": "El Distrito Escolar de Durham tiene 50 escuelas públicas: 27 de primaria, 11 de secundaria y 12 de preparatoria."},
+
+{"English": "Durham UACS Research Collective website",
+"Spanish": "Durham UACS Research Collective sitio web"},
+
+{"English": "Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.",
+"Spanish": "Motivado por esta investigación, nuestro proyecto explora una forma de visualizar las escuelas como centros de la comunidad que reúnen bajo un mismo techo lo académico, los servicios sociales y de salud, la juventud y el desarrollo comunitario, y la participación comunitaria."},
+
+{"English": "Pragya Raghuvanshi is a master’s student in Interdisciplinary Data Science at Duke University, originally from India. She is passionate about driving insights for the public sector and education system by applying data science techniques to solve real world problems.  Back in India, besides working as a data analyst, she also worked as a volunteer in an organization to educate and empower the local village communities. This summer she is working at a solar finance tech firm as a Data Science intern to assist in the growth of solar power in Nigeria by harnessing the power of data.",
+"Spanish": "Pragya Raghuvanshi es una estudiante de maestría en Ciencias de Datos Interdisciplinarios en la Universidad de Duke, originaria de la India. Le apasiona generar conocimientos para el sector público y el sistema educativo mediante la aplicación de técnicas de ciencia de datos para resolver problemas del mundo real. En India, además de trabajar como analista de datos, también colaboró como voluntaria en una organización para educar y empoderar a las comunidades locales de pueblos. Este verano está trabajando en una empresa tecnológica de financiamiento solar como pasante de Ciencias de Datos para ayudar en el crecimiento de la energía solar en Nigeria, aprovechando el poder de los datos."},
+
+{"English": "Learn More!",
+"Spanish": "¡Más información!"},
+
+{"English": "From ",
+"Spanish": "Desde "},
+
+{"English": "creating free math workshops for girls who attend Durham Public Schools ",
+"Spanish": "la creación de talleres de matemáticas gratuitos para niñas que asisten a las Escuelas Públicas de Durham "},  
+
+{"English": "to ",
+"Spanish": "hasta "},
+
+{"English": "faculty research projects that engage with ",
+"Spanish": "proyectos de investigación del cuerpo docente que abordan "},
+
+{"English": "“Racial and Social Equity in Local Contexts”, ",
+"Spanish": "“Equidad Racial y Social en Contextos Locales”, "},
+
+{"English": "Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from ",
+"Spanish": "el personal y el profesorado de Duke y NCCU, junto con estudiantes universitarios, lideran iniciativas dirigidas a DPS para formar asociaciones significativas entre Duke, NCCU y DPS. Esta lista, que ha sido categorizada por iniciativas orientadas al servicio, iniciativas orientadas a la enseñanza/aprendizaje e iniciativas orientadas a la investigación, incluye oportunidades que respaldan el marco de escuelas comunitarias centradas en el bienestar integral del niño y de toda la comunidad, tanto dentro como fuera de los programas de educación. Todos los datos fueron obtenidos de "},
+
+{"English": "and, ",
+"Spanish": "y, "},
+
+{"English": "Service",
+"Spanish": "Servicio"},
+
+{"English": "Teaching and Learning",
+"Spanish": "Enseñanza y Aprendizaje"},
+
+{"English": "Research",
+"Spanish": "Investigación"}
     
 ]
 }
