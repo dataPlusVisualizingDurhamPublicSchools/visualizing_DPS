@@ -408,7 +408,59 @@ function(input, output, session) {
                  
                }))
   
+  #Maps tab
+  #map
+  observeEvent(i18n(),
+               output$mapshead<- renderText({
+                 paste(i18n()$t("Interactive Map"))
+               }))
   
+   observeEvent(i18n(),
+                output$mapsdescription<- renderText({
+                 paste(i18n()$t("Hover over the icon to see the name. Click on the icon to reveal its link."))
+                }))
+
+   observeEvent(i18n(),
+                output$mapsdesc2<- renderText({
+                  paste(i18n()$t("Click the "))
+                }))
+   observeEvent(i18n(),
+                output$mapsdesc3<- renderText({
+                  paste(i18n()$t("icon to search any address!"))
+                }))
+  #context
+  observeEvent(i18n(),
+               output$mapscontext<- renderText({
+                 paste(i18n()$t("Context"))
+               }))
+  #measurement
+  observeEvent(i18n(),
+               output$mapsmeasure<- renderText({
+                 paste(i18n()$t("Measurement"))
+               }))
+  observeEvent(i18n(),
+               output$mapsdrop1<- renderText({
+                 paste(i18n()$t("Choose a school zone to display"))
+               }))
+  
+  observeEvent(i18n(),
+               output$mapsdrop2<- renderText({
+                 paste(i18n()$t("Choose a variable to display"))
+               }))
+  #selected variable resources
+  observeEvent(i18n(),
+               output$mapsvariable<- renderText({
+                 paste(i18n()$t("Selected Variable Resources"))
+               }))
+  observeEvent(i18n(),
+               output$mapsvardesc<- renderText({
+                 paste(i18n()$t("Select a variable to see a list of all the resources with the selected school zone."))
+               }))
+  #legend
+  observeEvent(i18n(),
+               output$mapsicon<- renderText({
+                 paste(i18n()$t("Icon Legend"))
+               }))
   
   
   # SchoolStats - GGPlots
