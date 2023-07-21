@@ -248,6 +248,27 @@ function(input, output, session) {
   
   
   #Home Page
+  
+  observeEvent(i18n(),
+               output$home_text1 <- renderText({
+                 paste(i18n()$t("The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high."),
+                       br(),
+                       i18n()$t("Using spatial and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets."),
+                       i18n()$t("Visit the"), 
+                       tags$a(href = "https://sites.duke.edu/uacs/", target="_blank", i18n()$t("Durham UACS Research Collective website")),
+                       #a(i18n()$t("Durham UACS Research Collective website", href = "https://sites.duke.edu/uacs/")),
+                       i18n()$t("for more information!"))
+               }))
+  
+  observeEvent(i18n(),
+               output$home_text2 <- renderText({
+                 paste(i18n()$t("The inspiration for this project is rooted in the inter-institutional Bass Connections team from Duke University and North Carolina Central University, which is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. This project aims to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. In addition, our application aims to inform future pre-service training for university students, support local neighborhood schools in visualizing their communities, and help various university offices articulate what “community” actually looks like."),
+                       br(),
+                       i18n()$t("Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”"),
+                       br(),
+                       strong(i18n()$t("Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.")))
+               }))
+  
   #headers
   observeEvent(i18n(),
                output$header1<- renderText({
