@@ -162,7 +162,7 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   oakgrove <- geojsonio::geojson_read("./data/2023/map_data/Oak Grove Elementary.geojson", what = "sp")
   
   
-
+  
 }
 
 # Load/Rename Spatial Data
@@ -232,7 +232,7 @@ schoolstats$name <- c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding
 translator <- Translator$new(translation_json_path = "./data/Translations/fullTranslation.json")
 
 function(input, output, session) {
-
+  
   
   i18n <- reactive({
     selected <- input$selected_language
@@ -242,12 +242,11 @@ function(input, output, session) {
     translator
   })
   
-<<<<<<< HEAD
-=======
+  
   
   #Home Page
   #headers
->>>>>>> main
+  
   observeEvent(i18n(),
                output$header1<- renderText({
                  paste(i18n()$t("Visualizing Durham Public Schools"))
@@ -316,16 +315,8 @@ function(input, output, session) {
                        i18n()$t("for more information!"))
                }))
   
-<<<<<<< HEAD
-  observeEvent(i18n(),
-               output$datainsights_text <- renderText({
-                 paste(i18n()$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance."),
-                       br(),
-                       i18n()$t("Resources in Selected School Zone"),
-                       i18n()$t("School Zone"), 
-                       i18n()$t("Choose a school zone to display"))
-               }))
-=======
+  
+  
   #Meet the Team
   #Headers
   observeEvent(i18n(),
@@ -414,12 +405,12 @@ function(input, output, session) {
   observeEvent(i18n(),
                output$nico <- renderText({
                  paste(i18n()$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))
-
+                 
                }))
   
->>>>>>> main
   
-
+  
+  
   # SchoolStats - GGPlots
   {
     output$es_barplots <- renderPlotly({
@@ -5157,7 +5148,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                            h4(i18n()$t("Women's Tennis"))
                      )
                    }
-                  else if(input$school_sports == "Riverside High"){
+                   else if(input$school_sports == "Riverside High"){
                      paste(h4(i18n()$t("Cheerleading")),
                            h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Field Hockey")),
@@ -5201,9 +5192,9 @@ Moreover, pharmacies contribute to public health by offering services like immun
                            h4(i18n()$t("Football")),
                            h4(i18n()$t("Men’s Soccer")),
                            h4(i18n()$t("Volleyball"))
-                    )
+                     )
                    }
-            
+                   
                    else if(input$school_sports == "Rogers Herr Middle"){
                      paste(h4(i18n()$t("Cross Country")),
                            h4(i18n()$t("Football")),
@@ -5343,7 +5334,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                    else if(input$school_sports == "Shepard Middle"){
                      paste(h4(i18n()$t("Boy’s Basketball")),
                            h4(i18n()$t("Girl’s Basketball"))
-                           )
+                     )
                    }
                    else if(input$school_sports == "Durham School of the Arts Middle"){
                      paste(h4(i18n()$t("Boy’s Basketball")),
@@ -6078,6 +6069,6 @@ Moreover, pharmacies contribute to public health by offering services like immun
                        br(),
                        tags$a(href ="https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("How Trinity Faculty and Students Are Sharing Resources in Support of Durham Public Schools"), style = "color:black;font-size:18px;text-decoration:underline"),
                        br()
-                    )
+                 )
                }))
 }
