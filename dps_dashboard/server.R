@@ -5098,6 +5098,32 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   
   #Sports - Static
+  
+  observeEvent(i18n(),
+               output$fall<- renderText({
+                 paste(title = strong(i18n()$t("Fall Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$spring<- renderText({
+                 paste(title = strong(i18n()$t("Spring Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$winter<- renderText({
+                 paste(title = strong(i18n()$t("Winter Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$available_women<- renderText({
+                 paste(title = strong(i18n()$t("Available Girl's/Women's Sports")))
+               }))
+  
+  observeEvent(i18n(),
+               output$available_men<- renderText({
+                 paste(title = strong(i18n()$t("Available Boy's/Men's Sports")))
+               }))
+  
   observeEvent(i18n(), 
                {
                  output$fallsports <- renderText({
@@ -6020,7 +6046,9 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  })
                  
                  output$sports_context <- renderText({
-                   paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
+                   paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
+                         br(),
+                         i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
                          a(i18n()$t("CDC guidelines."), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
                          i18n()$t("The Office of Disease Prevention and Health Promotion"), 
                          i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
@@ -6093,6 +6121,59 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   #Arts Programs
   observeEvent(i18n(),
+               output$arts_header<- renderText({
+                 paste(title = strong(i18n()$t("Available Arts Programs In Each School"), style = "font-size:20px;solid-header:TRUE"),
+                       br(),
+                       br())
+               }))
+  
+  observeEvent(i18n(), 
+               output$arts_dps <- renderText({
+                 paste(title = strong(i18n()$t("Durham Public Schools and the Arts"), style = "font-size:20px;solid-header:TRUE"),
+                       br(),
+                       br(),
+                       tags$span(i18n()$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curriculum for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit "), style = "font-size: 17px;"),
+                       tags$a(href = "https://sites.duke.edu/uacs/outputs/", target = "_blank", tags$span(i18n()$t("Arts at DPS"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("to learn more."), style = "font-size: 17px;"),
+                       br(),
+                       br(),
+                       tags$strong(i18n()$t("Learn more about some of the schools' arts programs by clicking on their logos below:"), style = "font-size: 17px;")
+                 )
+               }))
+  
+  observeEvent(i18n(), 
+               output$arts_durham <- renderText({
+                 paste(title = strong(i18n()$t("Durham County and the Arts"), style = "font-size:20px;solid-header:TRUE"),
+                       br(),
+                       br(),
+                       tags$span(i18n()$t("Durham has a rich history of highlighting the arts. Founded in the mid-20th century, the non-profit organization "), style = "font-size: 17px;"),
+                       tags$a(href = "https://durhamarts.org/", target = "_blank", tags$span(i18n()$t("Durham Arts Council"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("promotes and provides access to various opportunities and resources for those in the arts. The Durham Arts Council also offers a directory of artists to network with one another through the "), style = "font-size: 17px;"),
+                       tags$a(href = "https://www.durhamartsnetwork.org/", target = "_blank", tags$span(i18n()$t("Durham Arts Network"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t(". In addition, the city of Durham funded the"), style = "font-size: 17px;"),
+                       tags$a(href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development", target = "_blank", tags$span(i18n()$t("Cultural & Public Art Program "), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work. "), style = "font-size: 17px;"),
+                       tags$a(href="https://www.discoverdurham.com/things-to-do/arts/", target = "_blank", tags$span(i18n()$t("Discover Durham"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("provides an extensive list of events for visitors and residents to do around the arts: including festivals, concerts, performances, museums, art shows, etc. "), style = "font-size: 17px;"),
+                       br(),
+                       br(),
+                       tags$a(href="https://nasher.duke.edu/", target = "_blank", tags$span(i18n()$t("The Nasher Museum of Art at Duke University"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream art institutions and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art, and ancient American art."), style = "font-size: 17px;"),
+                       tags$span(i18n()$t("North Carolina Central University students host various musical ensembles, such as the"), style = "font-size: 17px;"),
+                       tags$a(href="https://www.nccu.edu/cash/music/ensembles/vocal-jazz", target = "_blank", tags$span(i18n()$t("NCCU Jazz Vocal Ensemble"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("and the"), style = "font-size: 17px;"),
+                       tags$a(href="https://www.nccusoundmachine.com/", target = "_blank", tags$span(i18n()$t("NCCU Sound Machine Marching Band"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t(", that perform throughout the city of Durham, North Carolina, and the United States."), style = "font-size: 17px;"),
+                       tags$a(href="https://www.wncu.org/", target = "_blank", tags$span(i18n()$t("WNCU 90.7 FM is Central’s Jazz radio station"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("providing “diverse music entertainment and serving as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"), style = "font-size: 17px;"),
+                       tags$a(href="https://kidznotes.org/", target = "_blank", tags$span(i18n()$t("KidzNotes program"), style = "font-size: 17px;")),
+                       tags$span(i18n()$t("via Fayetteville Street Elementary’s AT&T Believe Program."), style = "font-size: 17px;")
+                       
+                 )
+               }))
+  
+  
+  observeEvent(i18n(),
                {
                  output$available_arts <- renderTable ({
                    schoolstats23 <- schoolstats23 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
@@ -6104,6 +6185,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
                  
                }) 
+  
   
   #Feedback Tab
   observeEvent(i18n(),
