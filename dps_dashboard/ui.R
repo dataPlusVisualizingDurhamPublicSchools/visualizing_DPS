@@ -59,14 +59,9 @@ body <- {dashboardBody(
   shiny.i18n::usei18n(i18n),
   div(style = "float: right;",
       selectInput('selected_language',
-<<<<<<< HEAD
-                  i18n$t("Change Language"),
-                  choices = c("English", "Spanish"))
-=======
                   htmlOutput("change"),
                   choices = i18n$get_languages(),
                   selected = i18n$get_key_translation())
->>>>>>> main
   ),
   # fluidRow(
   #   column(
@@ -212,14 +207,9 @@ body <- {dashboardBody(
                class = "text-center",
                box(h3(strong(htmlOutput("header1"))),
                    width = 12,
-<<<<<<< HEAD
-                   background = "navy", 
-                   htmlOutput("home_text"))),
-=======
                    background = "navy",
                    htmlOutput("home_text1"),
                )),
->>>>>>> main
              
              fluidRow(
                class = "text-center",
@@ -640,7 +630,7 @@ body <- {dashboardBody(
                           fluidRow(
                             box(width = 2,
                                 solidHeader = TRUE,
-                                htmlOutput("datainsights_text"),
+                                title = strong(i18n$t("School Zone")),
                                 selectInput("insights_zone",
                                             label = em(i18n$t("Choose a school zone to display")),
                                             choices = c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
