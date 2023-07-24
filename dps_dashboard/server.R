@@ -3654,18 +3654,13 @@ function(input, output, session) {
   ##text
   
   observeEvent(i18n(),
-<<<<<<< HEAD
                output$engage_choose<- renderText({
                  paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities"))
                }))
   
   observeEvent(i18n(),
-               output$engage_context<- renderText({
-                 paste(title = strong(i18n()$t("Context")),
-=======
                output$engage_context <- renderText({
                  paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
->>>>>>> main
                        br(),
                        i18n()$t("From "),
                        tags$a(href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("creating free math workshops for girls who attend Durham Public Schools ")),
@@ -3694,8 +3689,6 @@ function(input, output, session) {
                  paste(i18n()$t("Teaching and Learning"))
                }))
   
-<<<<<<< HEAD
-=======
   output$engage_context <- renderText({
     paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
           br(),
@@ -3727,7 +3720,6 @@ observeEvent(i18n(),
                paste(i18n()$t("Teaching and Learning"))
              }))
 
->>>>>>> main
   ##plots
   #service
   output$engagetable_1 <- renderDataTable({
