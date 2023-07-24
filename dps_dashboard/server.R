@@ -3738,7 +3738,7 @@ function(input, output, session) {
           i18n()$t("and, "),
           a(i18n()$t("Duke CampusGroups."), href="https://dukegroups.com/home_login"))
     
-  }))
+  })
 
 observeEvent(i18n(),
   output$engage_service <- renderText({
