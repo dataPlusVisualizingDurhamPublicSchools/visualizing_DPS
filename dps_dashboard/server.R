@@ -233,11 +233,6 @@ translator <- Translator$new(translation_json_path = "./data/Translations/fullTr
 
 function(input, output, session) {
   
-
-  #observeEvent(input$selected_language, {
-  #Here is where we update language in session
-  #shiny.i18n::update_lang(session, input$selected_language)
-
   
   i18n <- reactive({
     selected <- input$selected_language
@@ -250,27 +245,6 @@ function(input, output, session) {
   
   
   #Home Page
-  
-  observeEvent(i18n(),
-               output$home_text1 <- renderText({
-                 paste(i18n()$t("The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high."),
-                       br(),
-                       i18n()$t("Using spatial and school-specific data, along with contextual resources, we hope to provide a holistic view of Durham Public Schools and their communities while highlighting their resources and assets."),
-                       i18n()$t("Visit the"), 
-                       tags$a(href = "https://sites.duke.edu/uacs/", target="_blank", i18n()$t("Durham UACS Research Collective website")),
-                       #a(i18n()$t("Durham UACS Research Collective website", href = "https://sites.duke.edu/uacs/")),
-                       i18n()$t("for more information!"))
-               }))
-  
-  observeEvent(i18n(),
-               output$home_text2 <- renderText({
-                 paste(i18n()$t("The inspiration for this project is rooted in the inter-institutional Bass Connections team from Duke University and North Carolina Central University, which is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. This project aims to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. In addition, our application aims to inform future pre-service training for university students, support local neighborhood schools in visualizing their communities, and help various university offices articulate what “community” actually looks like."),
-                       br(),
-                       i18n()$t("Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”"),
-                       br(),
-                       strong(i18n()$t("Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.")))
-               }))
-  
   #headers
   
   observeEvent(i18n(),
@@ -441,19 +415,19 @@ function(input, output, session) {
                  paste(i18n()$t("Interactive Map"))
                }))
   
-   observeEvent(i18n(),
-                output$mapsdescription<- renderText({
+  observeEvent(i18n(),
+               output$mapsdescription<- renderText({
                  paste(i18n()$t("Hover over the icon to see the name. Click on the icon to reveal its link."))
-                }))
-
-   observeEvent(i18n(),
-                output$mapsdesc2<- renderText({
-                  paste(i18n()$t("Click the "))
-                }))
-   observeEvent(i18n(),
-                output$mapsdesc3<- renderText({
-                  paste(i18n()$t("icon to search any address!"))
-                }))
+               }))
+  
+  observeEvent(i18n(),
+               output$mapsdesc2<- renderText({
+                 paste(i18n()$t("Click the "))
+               }))
+  observeEvent(i18n(),
+               output$mapsdesc3<- renderText({
+                 paste(i18n()$t("icon to search any address!"))
+               }))
   #context
   observeEvent(i18n(),
                output$mapscontext<- renderText({
@@ -517,7 +491,6 @@ function(input, output, session) {
   observeEvent(i18n(),
                output$statsdrop2m<- renderText({
                  paste(i18n()$t("Click the drop down menu to select which year of data collection you would like to view."))
-
                }))
   
   observeEvent(i18n(),
@@ -3681,81 +3654,41 @@ function(input, output, session) {
   ##text
   
   observeEvent(i18n(),
-
-               output$engage_context <- renderText({
-                 paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
+               output$engage_choose<- renderText({
+                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities"))
+               }))
+  
+  observeEvent(i18n(),
+               output$engage_context<- renderText({
+                 paste(title = strong(i18n()$t("Context")),
                        br(),
                        i18n()$t("From "),
-                       a(i18n()$t("creating free math workshops for girls who attend Durham Public Schools "), href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools"),
-                       i18n()$t("to "), 
-                       a(i18n()$t("faculty research projects that engage with "), href = "https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues"),
-                       a(i18n()$t("“Racial and Social Equity in Local Contexts”, "), href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact"),
+                       tags$a(href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("creating free math workshops for girls who attend Durham Public Schools ")),
+                       i18n()$t("to "),
+                       tags$a(href = "https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues", target="_blank", i18n()$t("faculty research projects that engage with ")),
+                       tags$a(href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact", target="_blank", i18n()$t("“Racial and Social Equity in Local Contexts”, ")),
                        i18n()$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
-                       a(i18n()$t("NCCU, "), href="https://www.nccu.edu/"),
-                       a(i18n()$t("Duke, "), href="https://duke.edu/"),
+                       tags$a(href = "https://www.nccu.edu/", target="_blank", i18n()$t("NCCU, ")),
+                       tags$a(href = "https://duke.edu/", target="_blank", i18n()$t("Duke, ")),
                        i18n()$t("and, "),
-                       a(i18n()$t("Duke CampusGroups."), href="https://dukegroups.com/home_login"))
-                 
+                       tags$a(href = "https://dukegroups.com/home_login", target="_blank", i18n()$t("Duke CampusGroups, ")))
                }))
   
   observeEvent(i18n(),
-               output$choose1 <- renderText({
-                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities")
-                 )
-               }))
-  
-  observeEvent(i18n(),
-               output$choose2 <- renderText({
-                 paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities")
-                 )
-               }))
-  
-  observeEvent(i18n(),
-               output$engage_service <- renderText({
-                 paste(i18n()$t("Service"))
-               }))
-  
-  observeEvent(i18n(),
-               output$engage_research <- renderText({
+               output$engage_research<- renderText({
                  paste(i18n()$t("Research"))
                }))
   
   observeEvent(i18n(),
-               output$engage_teach <- renderText({
+               output$engage_service<- renderText({
+                 paste(i18n()$t("Service"))
+               }))
+  
+  observeEvent(i18n(),
+               output$engage_teach<- renderText({
                  paste(i18n()$t("Teaching and Learning"))
                }))
   
-  output$engage_context <- renderText({
-    paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
-          br(),
-          i18n()$t("From "),
-          a(i18n()$t("creating free math workshops for girls who attend Durham Public Schools "), href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools"),
-          i18n()$t("to "), 
-          a(i18n()$t("faculty research projects that engage with "), href = "https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues"),
-          a(i18n()$t("“Racial and Social Equity in Local Contexts”, "), href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact"),
-          i18n()$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
-          a(i18n()$t("NCCU, "), href="https://www.nccu.edu/"),
-          a(i18n()$t("Duke, "), href="https://duke.edu/"),
-          i18n()$t("and, "),
-          a(i18n()$t("Duke CampusGroups."), href="https://dukegroups.com/home_login"))
-    
-  }))
-
-observeEvent(i18n(),
-  output$engage_service <- renderText({
-    paste(i18n()$t("Service"))
-  }))
-
-observeEvent(i18n(),
-             output$engage_research <- renderText({
-               paste(i18n()$t("Research"))
-             }))
-
-observeEvent(i18n(),
-             output$engage_teach <- renderText({
-               paste(i18n()$t("Teaching and Learning"))
-             }))
-
   ##plots
   #service
   output$engagetable_1 <- renderDataTable({
@@ -5222,32 +5155,6 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   
   #Sports - Static
-  
-  observeEvent(i18n(),
-               output$fall<- renderText({
-                 paste(title = strong(i18n()$t("Fall Sports")))
-               }))
-  
-  observeEvent(i18n(),
-               output$spring<- renderText({
-                 paste(title = strong(i18n()$t("Spring Sports")))
-               }))
-  
-  observeEvent(i18n(),
-               output$winter<- renderText({
-                 paste(title = strong(i18n()$t("Winter Sports")))
-               }))
-  
-  observeEvent(i18n(),
-               output$available_women<- renderText({
-                 paste(title = strong(i18n()$t("Available Girl's/Women's Sports")))
-               }))
-  
-  observeEvent(i18n(),
-               output$available_men<- renderText({
-                 paste(title = strong(i18n()$t("Available Boy's/Men's Sports")))
-               }))
-  
   observeEvent(i18n(), 
                {
                  output$fallsports <- renderText({
@@ -6170,9 +6077,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  })
                  
                  output$sports_context <- renderText({
-                   paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
-                         br(),
-                         i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
+                   paste(i18n()$t("DPS provides a wide range of sports across middle and high schools to promote teambuilding, responsibility, discipline, and leadership. Participation in school sports provides students with the daily exercise requirements suggested in the"),
                          a(i18n()$t("CDC guidelines."), href = "https://www.cdc.gov/physicalactivity/basics/children/index.htm"),
                          i18n()$t("The Office of Disease Prevention and Health Promotion"), 
                          i18n()$t(" concluded that “higher amounts of physical activity are associated with more favorable status for multiple health indicators, including cardiorespiratory and muscular fitness, bone health, and weight status or adiposity,” in their"),
@@ -6245,59 +6150,6 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   #Arts Programs
   observeEvent(i18n(),
-               output$arts_header<- renderText({
-                 paste(title = strong(i18n()$t("Available Arts Programs In Each School"), style = "font-size:20px;solid-header:TRUE"),
-                       br(),
-                       br())
-               }))
-  
-  observeEvent(i18n(), 
-               output$arts_dps <- renderText({
-                 paste(title = strong(i18n()$t("Durham Public Schools and the Arts"), style = "font-size:20px;solid-header:TRUE"),
-                       br(),
-                       br(),
-                       tags$span(i18n()$t("Durham Public Schools’ appreciation for the arts is apparent throughout their public institutions. They provide curriculum for the arts, upcoming events in the school system, resources for K-12 students interested in the arts, and news about arts programs in DPS. Visit "), style = "font-size: 17px;"),
-                       tags$a(href = "https://sites.duke.edu/uacs/outputs/", target = "_blank", tags$span(i18n()$t("Arts at DPS"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("to learn more."), style = "font-size: 17px;"),
-                       br(),
-                       br(),
-                       tags$strong(i18n()$t("Learn more about some of the schools' arts programs by clicking on their logos below:"), style = "font-size: 17px;")
-                 )
-               }))
-  
-  observeEvent(i18n(), 
-               output$arts_durham <- renderText({
-                 paste(title = strong(i18n()$t("Durham County and the Arts"), style = "font-size:20px;solid-header:TRUE"),
-                       br(),
-                       br(),
-                       tags$span(i18n()$t("Durham has a rich history of highlighting the arts. Founded in the mid-20th century, the non-profit organization "), style = "font-size: 17px;"),
-                       tags$a(href = "https://durhamarts.org/", target = "_blank", tags$span(i18n()$t("Durham Arts Council"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("promotes and provides access to various opportunities and resources for those in the arts. The Durham Arts Council also offers a directory of artists to network with one another through the "), style = "font-size: 17px;"),
-                       tags$a(href = "https://www.durhamartsnetwork.org/", target = "_blank", tags$span(i18n()$t("Durham Arts Network"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t(". In addition, the city of Durham funded the"), style = "font-size: 17px;"),
-                       tags$a(href="https://www.durhamnc.gov/450/Cultural-Public-Art-Development", target = "_blank", tags$span(i18n()$t("Cultural & Public Art Program "), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("to “ illuminate residents’ history” and highlight Durham’s “rich cultural heritage”. Durham provides many opportunities for the public to indulge in cultural arts and for artists to showcase their work. "), style = "font-size: 17px;"),
-                       tags$a(href="https://www.discoverdurham.com/things-to-do/arts/", target = "_blank", tags$span(i18n()$t("Discover Durham"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("provides an extensive list of events for visitors and residents to do around the arts: including festivals, concerts, performances, museums, art shows, etc. "), style = "font-size: 17px;"),
-                       br(),
-                       br(),
-                       tags$a(href="https://nasher.duke.edu/", target = "_blank", tags$span(i18n()$t("The Nasher Museum of Art at Duke University"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("emphasizes works by diverse artists who have been historically underrepresented, or excluded, by mainstream art institutions and maintains a particular focus on artists of African descent, as well as European medieval art, European and American paintings, Outsider art, classical antiquities, African art, and ancient American art."), style = "font-size: 17px;"),
-                       tags$span(i18n()$t("North Carolina Central University students host various musical ensembles, such as the"), style = "font-size: 17px;"),
-                       tags$a(href="https://www.nccu.edu/cash/music/ensembles/vocal-jazz", target = "_blank", tags$span(i18n()$t("NCCU Jazz Vocal Ensemble"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("and the"), style = "font-size: 17px;"),
-                       tags$a(href="https://www.nccusoundmachine.com/", target = "_blank", tags$span(i18n()$t("NCCU Sound Machine Marching Band"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t(", that perform throughout the city of Durham, North Carolina, and the United States."), style = "font-size: 17px;"),
-                       tags$a(href="https://www.wncu.org/", target = "_blank", tags$span(i18n()$t("WNCU 90.7 FM is Central’s Jazz radio station"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("providing “diverse music entertainment and serving as an educational resource for our community and abroad.” NCCU also provides volunteer opportunities for their students in the"), style = "font-size: 17px;"),
-                       tags$a(href="https://kidznotes.org/", target = "_blank", tags$span(i18n()$t("KidzNotes program"), style = "font-size: 17px;")),
-                       tags$span(i18n()$t("via Fayetteville Street Elementary’s AT&T Believe Program."), style = "font-size: 17px;")
-                       
-                 )
-               }))
-  
-  
-  observeEvent(i18n(),
                {
                  output$available_arts <- renderTable ({
                    schoolstats23 <- schoolstats23 %>% select(SCHOOL_NAME, ARTS_PROGRAMS) %>% drop_na()
@@ -6309,7 +6161,6 @@ Moreover, pharmacies contribute to public health by offering services like immun
                  }, sanitize.text.function = function(x) x, align = 'c', bordered = TRUE)
                  
                }) 
-  
   
   #Feedback Tab
   observeEvent(i18n(),
