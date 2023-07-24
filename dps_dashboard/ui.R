@@ -292,22 +292,22 @@ body <- {dashboardBody(
              fluidRow(
                box(width  = 7,
                    solidHeader = TRUE,
-                   title = strong(i18n$t("Interactive Map")),
-                   h4(i18n$t("Hover over the icon to see the name. Click on the icon to reveal its link.")),
-                   h4(i18n$t("Click the"), icon('search'), i18n$t("icon to search any address!")),
+                   title = strong(htmlOutput("mapshead")),
+                   h4(htmlOutput("mapsdescription")),
+                   h4(htmlOutput("mapsdesc2"), icon('search'), htmlOutput("mapsdesc3")),
                    leafletOutput("map")),
                box(width = 5,
                    solidHeader = TRUE,
-                   title = strong(i18n$t("Context")),
+                   title = strong(htmlOutput("mapscontext")),
                    htmlOutput("context")),
                
              ),
              fluidRow( 
                box(width = 4,
                    solidHeader = TRUE,
-                   title = strong(i18n$t("Measurement")),
+                   title = strong(htmlOutput("mapsmeasure")),
                    selectInput("zone",
-                               label = em(i18n$t("Choose a school zone to display")),
+                               label = em(htmlOutput("mapsdrop1")),
                                choices = c("All", "Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
                                            "Eastway Elementary", "Easley Elementary", "Eno Valley Elementary", "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                            "Forest View Elementary", "George Watts Elementary", "Glenn Elementary",  "Holt Elementary","Hope Valley Elementary",
@@ -324,7 +324,7 @@ body <- {dashboardBody(
                                
                                multiple = FALSE),
                    selectInput("var",
-                               label = em(i18n$t("Choose a variable to display")),
+                               label = em(htmlOutput("mapsdrop2")),
                                choices = c("After-School Care Programs", "Bus Stops", 
                                            "Childcare Centers", "Community and Cultural Centers", "Community Arts", "Community Sports","Farmers' Markets", "Food Pantries", "Gardens",
                                            "Grocery Stores", "Hospitals and Clinics","Libraries", "Homeless Shelters", "Parks", "Pharmacies",  
@@ -334,8 +334,8 @@ body <- {dashboardBody(
                ),
                box(width = 4,
                    solidHeader = TRUE,
-                   title = strong(i18n$t("Selected Variable Resources")),
-                   em(i18n$t("Select a variable to see a list of all the resources with the selected school zone.")),
+                   title = strong(htmlOutput("mapsvariable")),
+                   em(htmlOutput("mapsvardesc")),
                    br(),
                    br(),
                    dataTableOutput("list"),
@@ -344,7 +344,7 @@ body <- {dashboardBody(
                #Icon Legend
                {box(width = 4,
                     solidHeader = TRUE,
-                    title = strong(i18n$t("Icon Legend")),
+                    title = strong(htmlOutput("mapsicon")),
                     htmlOutput("legend"),
                     br(),
                     fluidRow(
@@ -488,7 +488,7 @@ body <- {dashboardBody(
                           box(width = 12,
                               background = "navy", 
                               solidHeader = TRUE, 
-                              title = strong(i18n$t("Elementary School Charts")),
+                              title = strong(htmlOutput("statselem")),
                               plotlyOutput("es_barplots",
                                            width="auto",
                                            height = "750px"),
@@ -503,8 +503,8 @@ body <- {dashboardBody(
                             #Drop Down Widget for Box Plots
                             box(width = 6,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("Select a Measurement")),
-                                selectInput("es_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
+                                title = strong(htmlOutput("statshead")),
+                                selectInput("es_select", em(htmlOutput("statsdrop1e")), 
                                             choices = list("Average Class Size","Bachelor Degree Rate",
                                                            "BIPOC Students per School",
                                                            "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -514,13 +514,13 @@ body <- {dashboardBody(
                                                            "Students Per Device","Student-Teacher Ratio, Elementary School", 
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
-                                selectInput("es_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+                                selectInput("es_year", em(htmlOutput("statsdrop2e")), 
                                             choices = list("Summer 2021", "Summer 2022", "Summer 2023")
                                 )
                             ),
                             box(width = 6,
                                 solidHeader = TRUE,
-                                title = strong("Context & Resources"),
+                                title = strong(htmlOutput("statshead2")),
                                 htmlOutput("es_resources")
                             )
                           )
@@ -528,7 +528,7 @@ body <- {dashboardBody(
                  tabPanel(i18n$t("Middle School"), box(width = 12,
                                                        background = "navy", 
                                                        solidHeader = TRUE, 
-                                                       title = strong(i18n$t("Middle School Charts")),
+                                                       title = strong(htmlOutput("statsmiddle")),
                                                        plotlyOutput("ms_barplots",
                                                                     width="auto",
                                                                     height = "auto"),
@@ -543,8 +543,8 @@ body <- {dashboardBody(
                             #Drop Down Widget for Box Plots
                             box(width = 6,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("Select a Measurement")),
-                                selectInput("ms_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
+                                title = strong("Select a Measurement"),
+                                selectInput("ms_select", em(htmlOutput("statsdrop1m")), 
                                             choices = list("Average Class Size","Bachelor Degree Rate",
                                                            "BIPOC Students per School","CTE Course Enrollment Rate, Middle School", 
                                                            "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -554,7 +554,7 @@ body <- {dashboardBody(
                                                            "Students Per Device","Student-Teacher Ratio, Middle School", 
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
-                                selectInput("ms_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+                                selectInput("ms_year", em(htmlOutput("statsdrop2m")), 
                                             choices = list("Summer 2022", "Summer 2023")
                                 )
                             ),
@@ -567,7 +567,7 @@ body <- {dashboardBody(
                  tabPanel(i18n$t("High School"), box(width = 12,
                                                      background = "navy", 
                                                      solidHeader = TRUE, 
-                                                     title = strong(i18n$t("High School Charts")),
+                                                     title = strong(htmlOutput("statshigh")),
                                                      plotlyOutput("hs_barplots",
                                                                   width="auto",
                                                                   height = "auto"),
@@ -583,7 +583,7 @@ body <- {dashboardBody(
                             box(width = 6,
                                 solidHeader = TRUE,
                                 title = strong(i18n$t("Select a Measurement")),
-                                selectInput("hs_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
+                                selectInput("hs_select", em(htmlOutput("statsdrop1h")), 
                                             choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
                                                            "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
                                                            "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -593,7 +593,7 @@ body <- {dashboardBody(
                                                            "Students Per Device","Student-Teacher Ratio, High School", 
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
-                                selectInput("hs_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+                                selectInput("hs_year", em(htmlOutput("statsdrop2h")), 
                                             choices = list("Summer 2021", "Summer 2022", "Summer 2023")
                                 )
                             ),
@@ -617,13 +617,13 @@ body <- {dashboardBody(
              fluidRow(class= 'text-center',
                       box(width = 12,
                           solidHeader = TRUE,
-                          htmlOutput("datainsights_text"),
+                          title = strong(htmlOutput("datainsights_text")),
                           fluidRow(
                             box(width = 2,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("School Zone")),
+                                title = strong(htmlOutput("insightshead")),
                                 selectInput("insights_zone",
-                                            label = em(i18n$t("Choose a school zone to display")),
+                                            label = em(htmlOutput("insightsdesc")),
                                             choices = c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
                                                         "Eastway Elementary", "Easley Elementary", "Eno Valley Elementary", "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                                         "Forest View Elementary", "George Watts Elementary", "Glenn Elementary",  "Holt Elementary","Hope Valley Elementary",

@@ -233,10 +233,11 @@ translator <- Translator$new(translation_json_path = "./data/Translations/fullTr
 
 function(input, output, session) {
   
+
   #observeEvent(input$selected_language, {
   #Here is where we update language in session
   #shiny.i18n::update_lang(session, input$selected_language)
-  #})
+
   
   i18n <- reactive({
     selected <- input$selected_language
@@ -245,6 +246,7 @@ function(input, output, session) {
     }
     translator
   })
+  
   
   
   #Home Page
@@ -270,6 +272,7 @@ function(input, output, session) {
                }))
   
   #headers
+  
   observeEvent(i18n(),
                output$header1<- renderText({
                  paste(i18n()$t("Visualizing Durham Public Schools"))
@@ -337,6 +340,8 @@ function(input, output, session) {
                        #a(i18n()$t("Durham UACS Research Collective website", href = "https://sites.duke.edu/uacs/")),
                        i18n()$t("for more information!"))
                }))
+  
+  
   
   #Meet the Team
   #Headers
@@ -428,6 +433,129 @@ function(input, output, session) {
                  paste(i18n()$t("Nico Restrepo Ochoa is a PhD candidate at Duke's sociology department. He's interested in how habits and beliefs change, both at the individual and collective level, and uses longitudinal data, networks, and simulations to try to get at this question. He had the privilege to be the project manager for this team, and believes the team was efficient and industrious so his job was easy. The team claims he was helpful, and he likes to believe that is true."))
                  
                }))
+  
+  #Maps tab
+  #map
+  observeEvent(i18n(),
+               output$mapshead<- renderText({
+                 paste(i18n()$t("Interactive Map"))
+               }))
+  
+   observeEvent(i18n(),
+                output$mapsdescription<- renderText({
+                 paste(i18n()$t("Hover over the icon to see the name. Click on the icon to reveal its link."))
+                }))
+
+   observeEvent(i18n(),
+                output$mapsdesc2<- renderText({
+                  paste(i18n()$t("Click the "))
+                }))
+   observeEvent(i18n(),
+                output$mapsdesc3<- renderText({
+                  paste(i18n()$t("icon to search any address!"))
+                }))
+  #context
+  observeEvent(i18n(),
+               output$mapscontext<- renderText({
+                 paste(i18n()$t("Context"))
+               }))
+  #measurement
+  observeEvent(i18n(),
+               output$mapsmeasure<- renderText({
+                 paste(i18n()$t("Measurement"))
+               }))
+  observeEvent(i18n(),
+               output$mapsdrop1<- renderText({
+                 paste(i18n()$t("Choose a school zone to display"))
+               }))
+  
+  observeEvent(i18n(),
+               output$mapsdrop2<- renderText({
+                 paste(i18n()$t("Choose a variable to display"))
+               }))
+  #selected variable resources
+  observeEvent(i18n(),
+               output$mapsvariable<- renderText({
+                 paste(i18n()$t("Selected Variable Resources"))
+               }))
+  observeEvent(i18n(),
+               output$mapsvardesc<- renderText({
+                 paste(i18n()$t("Select a variable to see a list of all the resources with the selected school zone."))
+               }))
+  #legend
+  observeEvent(i18n(),
+               output$mapsicon<- renderText({
+                 paste(i18n()$t("Icon Legend"))
+               }))
+  
+  
+  
+  #SchoolStats tab
+  observeEvent(i18n(),
+               output$statshead<- renderText({
+                 paste(i18n()$t("Select a Measurement"))
+               }))
+  
+  observeEvent(i18n(),
+               output$statselem<- renderText({
+                 paste(i18n()$t("Elementary School Charts"))
+               }))
+  observeEvent(i18n(),
+               output$statsmiddle<- renderText({
+                 paste(i18n()$t("Middle School Charts"))
+               }))
+  observeEvent(i18n(),
+               output$statshigh<- renderText({
+                 paste(i18n()$t("High School Charts"))
+               }))
+  
+  observeEvent(i18n(),
+               output$statsdrop1e<- renderText({
+                 paste(i18n()$t("Click the drop down menu to select which measurement you would like to view."))
+               }))
+  
+  observeEvent(i18n(),
+               output$statsdrop2m<- renderText({
+                 paste(i18n()$t("Click the drop down menu to select which year of data collection you would like to view."))
+
+               }))
+  
+  observeEvent(i18n(),
+               output$statsdrop1m<- renderText({
+                 paste(i18n()$t("Click the drop down menu to select which measurement you would like to view."))
+               }))
+  
+  observeEvent(i18n(),
+               output$statsdrop2h<- renderText({
+                 paste(i18n()$t("Click the drop down menu to select which year of data collection you would like to view."))
+               }))
+  observeEvent(i18n(),
+               output$statsdrop1h<- renderText({
+                 paste(i18n()$t("Click the drop down menu to select which measurement you would like to view."))
+               }))
+  
+  observeEvent(i18n(),
+               output$statsdrop2e<- renderText({
+                 paste(i18n()$t("Click the drop down menu to select which year of data collection you would like to view."))
+               }))
+  observeEvent(i18n(),
+               output$statshead2<- renderText({
+                 paste(i18n()$t("Context & Resources"))
+               }))
+  observeEvent(i18n(),
+               output$insightshead<- renderText({
+                 paste(i18n()$t("School Zone"))
+               }))
+  observeEvent(i18n(),
+               output$insightsdesc<- renderText({
+                 paste(i18n()$t("Choose a school zone to display"))
+               }))
+  observeEvent(i18n(),
+               output$datainsights_text<- renderText({
+                 paste(i18n()$t("Resources in Selected School Zone"))
+               }))
+  
+  
   
   
   # SchoolStats - GGPlots
@@ -3553,7 +3681,7 @@ function(input, output, session) {
   ##text
   
   observeEvent(i18n(),
-<<<<<<< HEAD
+
                output$engage_context <- renderText({
                  paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
                        br(),
@@ -3597,7 +3725,6 @@ function(input, output, session) {
                  paste(i18n()$t("Teaching and Learning"))
                }))
   
-=======
   output$engage_context <- renderText({
     paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
           br(),
@@ -3629,7 +3756,6 @@ observeEvent(i18n(),
                paste(i18n()$t("Teaching and Learning"))
              }))
 
->>>>>>> ca3768a5fd20d82feee65ac131a2994069436a22
   ##plots
   #service
   output$engagetable_1 <- renderDataTable({
@@ -3940,9 +4066,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
                            href = "https://psnet.ahrq.gov/perspective/role-community-pharmacists-patient-safety"))
                  }
                  else if(input$var == "Homeless Shelters"){
-                   paste(i18n()$t("Homeless shelters provide immediate assistance and support to individuals facing homelessness. They offer temporary housing, meals, clothing, and hygiene facilities. These shelters also collaborate with social workers, counselors, and job placement agencies to provide comprehensive support for individuals seeking to transition out of homelessness. Programs such as job training, education, mental health counseling, and substance abuse rehabilitation are offered to address the underlying causes of homelessness. Homeless shelters also contribute to the community by providing employment opportunities, vocational training, and community engagement programs. They serve as vital hubs for support, facilitating access to essential services and creating opportunities for both individuals experiencing homelessness and the community at large.
-
-."),
+                   paste(i18n()$t("Homeless shelters provide immediate assistance and support to individuals facing homelessness. They offer temporary housing, meals, clothing, and hygiene facilities. These shelters also collaborate with social workers, counselors, and job placement agencies to provide comprehensive support for individuals seeking to transition out of homelessness. Programs such as job training, education, mental health counseling, and substance abuse rehabilitation are offered to address the underlying causes of homelessness. Homeless shelters also contribute to the community by providing employment opportunities, vocational training, and community engagement programs. They serve as vital hubs for support, facilitating access to essential services and creating opportunities for both individuals experiencing homelessness and the community at large."),
                          "<br>",
                          "<br>",
                          
