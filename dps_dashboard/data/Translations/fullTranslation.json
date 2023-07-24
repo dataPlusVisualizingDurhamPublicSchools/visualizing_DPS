@@ -1761,6 +1761,9 @@
 {"English": "Pharmacies",
 "Spanish": "Farmacias"},
 
+{"English": "Pharmacies are essential for several reasons. They provide convenient access to prescribed medications and over-the-counter drugs, ensuring patients have timely access to the treatments they need. Pharmacists, as highly trained healthcare professionals, offer expertise and guidance on medication usage, potential side effects, and drug interactions, promoting the safe and effective use of medications. Moreover, pharmacies contribute to public health by offering services like immunizations, health screenings, and wellness programs. They play a critical role in disease prevention and early detection. During public health emergencies, pharmacies are crucial for the distribution of vaccines and medications, supporting community health and well-being. Overall, pharmacies are vital healthcare destinations, ensuring medication access and providing expert advice to improve patient outcomes and promote community health. Below is more information about pharmacies: The Role of Community Pharmacists in Patient Safety",
+"Spanish": "Las farmacias son esenciales por varias razones. Brindan acceso conveniente a medicamentos recetados y medicamentos de venta libre, asegurando que los pacientes tengan acceso oportuno a los tratamientos que necesitan. Los farmacéuticos, como profesionales de la salud altamente capacitados, ofrecen experiencia y orientación sobre el uso de medicamentos, los posibles efectos secundarios y las interacciones entre medicamentos, promoviendo el uso seguro y eficaz de los medicamentos. Además, las farmacias contribuyen a la salud pública al ofrecer servicios como inmunizaciones, exámenes de salud y programas de bienestar. Desempeñan un papel fundamental en la prevención de enfermedades y la detección temprana. Durante emergencias de salud pública, las farmacias son cruciales para la distribución de vacunas y medicamentos, apoyando la salud y el bienestar de la comunidad. En general, las farmacias son destinos de atención médica vitales, ya que garantizan el acceso a los medicamentos y brindan asesoramiento experto para mejorar los resultados de los pacientes y promover la salud de la comunidad. A continuación encontrará más información sobre las farmacias: El papel de los farmacéuticos comunitarios en la seguridad del paciente"},
+
 {"English": "The Durham Public School District has 50 public schools: 27 elementary, 11 middle, 12 high.",
 "Spanish": "El Distrito Escolar de Durham tiene 50 escuelas públicas: 27 de primaria, 11 de secundaria y 12 de preparatoria."},
 
@@ -1803,13 +1806,27 @@
 {"English": "Teaching and Learning",
 "Spanish": "Enseñanza y Aprendizaje"},
 
+{"English": "Homeless shelters provide immediate assistance and support to individuals facing homelessness. They offer temporary housing, meals, clothing, and hygiene facilities. These shelters also collaborate with social workers, counselors, and job placement agencies to provide comprehensive support for individuals seeking to transition out of homelessness. Programs such as job training, education, mental health counseling, and substance abuse rehabilitation are offered to address the underlying causes of homelessness. Homeless shelters also contribute to the community by providing employment opportunities, vocational training, and community engagement programs. They serve as vital hubs for support, facilitating access to essential services and creating opportunities for both individuals experiencing homelessness and the community at large. Below is more information about homeless shelters: Emergency Shelters",
+"Spanish": "Los refugios para personas sin hogar brindan asistencia y apoyo inmediatos a las personas que se enfrentan a la falta de vivienda. Ofrecen alojamiento temporal, comidas, ropa e instalaciones de higiene. Estos refugios también colaboran con trabajadores sociales, consejeros y agencias de colocación laboral para brindar apoyo integral a las personas que buscan salir de la falta de vivienda. Se ofrecen programas como capacitación laboral, educación, asesoramiento sobre salud mental y rehabilitación por abuso de sustancias para abordar las causas subyacentes de la falta de vivienda. Los refugios para personas sin hogar también contribuyen a la comunidad al brindar oportunidades de empleo, capacitación vocacional y programas de participación comunitaria. Sirven como centros vitales de apoyo, facilitan el acceso a servicios esenciales y crean oportunidades tanto para las personas sin hogar como para la comunidad en general. A continuación hay más información sobre los refugios para personas sin hogar: Refugios de emergencia"},
+
 {"English": "Research",
 "Spanish": "Investigación"}, 
+<<<<<<< HEAD
  
+=======
+
+{"English": "Restaurants",
+"Spanish": "Restaurantes"}, 
+
+{"English": "Restaurants are vital to communities, offering much more than just meals. They serve as social hubs where people connect, fostering a sense of belonging. Culinary diversity is celebrated as restaurants showcase a wide range of cuisines, promoting cultural exchange and appreciation. Additionally, restaurants often prioritize sourcing from local farmers and producers, supporting the community's food system. Through community engagement, sponsorships, and collaborations, restaurants strengthen the social fabric. Below is more information about restaurants: The Importance of Restaurants to Local Community",
+"Spanish": "Los restaurantes son vitales para las comunidades, ya que ofrecen mucho más que solo comidas. Sirven como centros sociales donde las personas se conectan, fomentando un sentido de pertenencia. La diversidad culinaria se celebra cuando los restaurantes exhiben una amplia gama de cocinas, promoviendo el intercambio cultural y la apreciación. Además, los restaurantes a menudo priorizan el abastecimiento de agricultores y productores locales, lo que apoya el sistema alimentario de la comunidad. A través de la participación de la comunidad, patrocinios y colaboraciones, los restaurantes fortalecen el tejido social. A continuación hay más información sobre restaurantes: La importancia de los restaurantes para la comunidad local"},
+    
+{"English": "Hover over the icon to see the name. Click on the icon to reveal its link." ,
+"Spanish": "Pase el cursor sobre el icono para ver el nombre. Haga clic en el icono para revelar su enlace."}, 
+>>>>>>> 5a8f0423d375d5e963e3490800d499ffce0e642a
 
 {"English": "Click the icon to search any address!", 
 "Spanish": "Haga clic en el icono para buscar cualquier dirección!"}
-
 
 ]
 }
