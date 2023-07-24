@@ -3654,6 +3654,7 @@ function(input, output, session) {
   ##text
   
   observeEvent(i18n(),
+<<<<<<< HEAD
                output$engage_choose<- renderText({
                  paste(i18n()$t("Choose a Division to View Community Engagement Oppurtunities"))
                }))
@@ -3661,6 +3662,10 @@ function(input, output, session) {
   observeEvent(i18n(),
                output$engage_context<- renderText({
                  paste(title = strong(i18n()$t("Context")),
+=======
+               output$engage_context <- renderText({
+                 paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
+>>>>>>> main
                        br(),
                        i18n()$t("From "),
                        tags$a(href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools", target="_blank", i18n()$t("creating free math workshops for girls who attend Durham Public Schools ")),
@@ -3689,6 +3694,40 @@ function(input, output, session) {
                  paste(i18n()$t("Teaching and Learning"))
                }))
   
+<<<<<<< HEAD
+=======
+  output$engage_context <- renderText({
+    paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
+          br(),
+          i18n()$t("From "),
+          a(i18n()$t("creating free math workshops for girls who attend Durham Public Schools "), href = "https://trinity.duke.edu/news/how-trinity-faculty-and-students-are-sharing-resources-support-durham-public-schools"),
+          i18n()$t("to "), 
+          a(i18n()$t("faculty research projects that engage with "), href = "https://facultyadvancement.duke.edu/seven-faculty-projects-community-impact-racial-and-social-equity-issues"),
+          a(i18n()$t("“Racial and Social Equity in Local Contexts”, "), href = "https://facultyadvancement.duke.edu/racial-and-social-equity-local-context-engaging-durhams-priority-areas-community-impact"),
+          i18n()$t("Duke and NCCU staff and faculty and undergraduate students are leading DPS-facing initiatives to form purposeful partnerships between Duke, NCCU, and DPS. This list - which has been categorized by service-oriented initiatives, teaching/learning-oriented initiatives, and research-oriented initiatives - includes opportunities that support the whole-child and whole-community framework of community schools, both inside and outside programs of education. All data was derived from "),
+          a(i18n()$t("NCCU, "), href="https://www.nccu.edu/"),
+          a(i18n()$t("Duke, "), href="https://duke.edu/"),
+          i18n()$t("and, "),
+          a(i18n()$t("Duke CampusGroups."), href="https://dukegroups.com/home_login"))
+    
+  })
+
+observeEvent(i18n(),
+  output$engage_service <- renderText({
+    paste(i18n()$t("Service"))
+  }))
+
+observeEvent(i18n(),
+             output$engage_research <- renderText({
+               paste(i18n()$t("Research"))
+             }))
+
+observeEvent(i18n(),
+             output$engage_teach <- renderText({
+               paste(i18n()$t("Teaching and Learning"))
+             }))
+
+>>>>>>> main
   ##plots
   #service
   output$engagetable_1 <- renderDataTable({
