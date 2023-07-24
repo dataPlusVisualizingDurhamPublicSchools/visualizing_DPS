@@ -497,7 +497,7 @@ body <- {dashboardBody(
                           box(width = 12,
                               background = "navy", 
                               solidHeader = TRUE, 
-                              title = strong(i18n$t("Elementary School Charts")),
+                              title = strong(htmlOutput("statselem")),
                               plotlyOutput("es_barplots",
                                            width="auto",
                                            height = "750px"),
@@ -512,8 +512,8 @@ body <- {dashboardBody(
                             #Drop Down Widget for Box Plots
                             box(width = 6,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("Select a Measurement")),
-                                selectInput("es_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
+                                title = strong(htmlOutput("statshead")),
+                                selectInput("es_select", em(htmlOutput("statsdrop1e")), 
                                             choices = list("Average Class Size","Bachelor Degree Rate",
                                                            "BIPOC Students per School",
                                                            "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -523,13 +523,13 @@ body <- {dashboardBody(
                                                            "Students Per Device","Student-Teacher Ratio, Elementary School", 
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
-                                selectInput("es_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+                                selectInput("es_year", em(htmlOutput("statsdrop2e")), 
                                             choices = list("Summer 2021", "Summer 2022", "Summer 2023")
                                 )
                             ),
                             box(width = 6,
                                 solidHeader = TRUE,
-                                title = strong("Context & Resources"),
+                                title = strong(htmlOutput("statshead2")),
                                 htmlOutput("es_resources")
                             )
                           )
@@ -537,7 +537,7 @@ body <- {dashboardBody(
                  tabPanel(i18n$t("Middle School"), box(width = 12,
                                                        background = "navy", 
                                                        solidHeader = TRUE, 
-                                                       title = strong(i18n$t("Middle School Charts")),
+                                                       title = strong(htmlOutput("statsmiddle")),
                                                        plotlyOutput("ms_barplots",
                                                                     width="auto",
                                                                     height = "auto"),
@@ -552,8 +552,8 @@ body <- {dashboardBody(
                             #Drop Down Widget for Box Plots
                             box(width = 6,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("Select a Measurement")),
-                                selectInput("ms_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
+                                title = strong("Select a Measurement"),
+                                selectInput("ms_select", em(htmlOutput("statsdrop1m")), 
                                             choices = list("Average Class Size","Bachelor Degree Rate",
                                                            "BIPOC Students per School","CTE Course Enrollment Rate, Middle School", 
                                                            "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -563,7 +563,7 @@ body <- {dashboardBody(
                                                            "Students Per Device","Student-Teacher Ratio, Middle School", 
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
-                                selectInput("ms_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+                                selectInput("ms_year", em(htmlOutput("statsdrop2m")), 
                                             choices = list("Summer 2022", "Summer 2023")
                                 )
                             ),
@@ -576,7 +576,7 @@ body <- {dashboardBody(
                  tabPanel(i18n$t("High School"), box(width = 12,
                                                      background = "navy", 
                                                      solidHeader = TRUE, 
-                                                     title = strong(i18n$t("High School Charts")),
+                                                     title = strong(htmlOutput("statshigh")),
                                                      plotlyOutput("hs_barplots",
                                                                   width="auto",
                                                                   height = "auto"),
@@ -592,7 +592,7 @@ body <- {dashboardBody(
                             box(width = 6,
                                 solidHeader = TRUE,
                                 title = strong(i18n$t("Select a Measurement")),
-                                selectInput("hs_select", em(i18n$t("Click the drop down menu to select which measurement you would like to view.")), 
+                                selectInput("hs_select", em(htmlOutput("statsdrop1h")), 
                                             choices = list("Advanced Placement (AP) Course Enrollment", "Average Class Size","Bachelor Degree Rate",
                                                            "BIPOC Students per School","CTE Course Enrollment Rate, High School", 
                                                            "English as a Second Language (ESL) Student Enrollment","Enrollment","Experienced Teacher Ratio",
@@ -602,7 +602,7 @@ body <- {dashboardBody(
                                                            "Students Per Device","Student-Teacher Ratio, High School", 
                                                            "Students With Disabilities", "Titles Per Student", "WiFi Access Points Per Classroom")
                                 ),
-                                selectInput("hs_year", em(i18n$t("Click the drop down menu to select which year of data collection you would like to view.")), 
+                                selectInput("hs_year", em(htmlOutput("statsdrop2h")), 
                                             choices = list("Summer 2021", "Summer 2022", "Summer 2023")
                                 )
                             ),
@@ -626,13 +626,13 @@ body <- {dashboardBody(
              fluidRow(class= 'text-center',
                       box(width = 12,
                           solidHeader = TRUE,
-                          htmlOutput("datainsights_text"),
+                          title = strong(htmlOutput("datainsights_text")),
                           fluidRow(
                             box(width = 2,
                                 solidHeader = TRUE,
-                                title = strong(i18n$t("School Zone")),
+                                title = strong(htmlOutput("insightshead")),
                                 selectInput("insights_zone",
-                                            label = em(i18n$t("Choose a school zone to display")),
+                                            label = em(htmlOutput("insightsdesc")),
                                             choices = c("Bethesda Elementary", "Burton Elementary","C.C. Spaulding Elementary","Club Boulevard Elementary","Creekside Elementary",
                                                         "Eastway Elementary", "Easley Elementary", "Eno Valley Elementary", "E.K. Powe Elementary", "Fayetteville Street Elementary", 
                                                         "Forest View Elementary", "George Watts Elementary", "Glenn Elementary",  "Holt Elementary","Hope Valley Elementary",
