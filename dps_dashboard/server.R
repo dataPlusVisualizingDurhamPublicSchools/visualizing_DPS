@@ -3681,10 +3681,6 @@ function(input, output, session) {
   ##text
   
   observeEvent(i18n(),
-<<<<<<< HEAD
-=======
-
->>>>>>> 5a8f0423d375d5e963e3490800d499ffce0e642a
                output$engage_context <- renderText({
                  paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
                        br(),
