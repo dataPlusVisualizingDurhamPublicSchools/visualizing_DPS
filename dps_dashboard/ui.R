@@ -68,101 +68,106 @@ body <- {dashboardBody(
   navbarPage("Visualizing DPS",
              #Home Page
              tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home"),
-                      fluidRow(
-                        class = "text-center",
-                        column(width = 12,
-                               img(src = "landing.jpg"))
-                      ),
-                      br(), 
-                      
-                      fluidRow(
-                        class = "text-center",
-                        box(h3(strong(htmlOutput("header1"))),
-                            width = 12,
-                            background = "navy",
-                            htmlOutput("home_text1"))),
-                      fluidRow(
-                        class = "text-center",
-                        box(
-                          solidHeader = TRUE,
-                          br(),
-                          width = 12,
-                          valueBox(17, htmlOutput("header2"), icon = icon("map"), color = "light-blue", width = 4),
-                          valueBox(41, htmlOutput("header3"), icon = icon("pencil"), color = "light-blue", width = 4),
-                          valueBox(1, htmlOutput("header4"), icon = icon("window-restore"), color = "light-blue", width = 4))),
-                      fluidRow(
-                        class = "text-center",
-                        box(title = strong(htmlOutput("header5")),
-                            solidHeader = TRUE,
-                            width = 7,
-                            htmlOutput("home_text2"),
-                        box(width = 5,
-                            background = "light-blue",
-                            solidHeader = TRUE,
-                            leafletOutput("home"))),
-                      fluidRow(class = "text-center",
-                               box(title = htmlOutput("header6")),
-                                   width = 12,
-                                   background = "light-blue",
-                                   actionButton("viewMap", htmlOutput("header7")),
-                                   actionButton("viewStat", htmlOutput("header8")))),
-                      
-                      fluidRow(class = "text-center",
-                               box(width = 12,
-                                   solidHeader = TRUE,
-                                   title = strong(htmlOutput("header9")),
-                                   column(class = 'text-center', width = 2,
-                                          tags$a(
-                                            href="https://www.dpsnc.net/", 
-                                            tags$img(src="dpsnc.png", 
-                                                     title="DPSNC Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 2,
-                                          tags$a(
-                                            href="https://www.bullcityschools.org/", 
-                                            tags$img(src="dpsf.jpg", 
-                                                     title="DPSF Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 2,
-                                          tags$a(
-                                            href="https://duke.edu/", 
-                                            tags$img(src="duke.png", 
-                                                     title="Duke Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 2,
-                                          tags$a(
-                                            href="https://www.nccu.edu/", 
-                                            tags$img(src="nccu.png", 
-                                                     title="NCCU Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 2,
-                                          tags$a(
-                                            href="https://bigdata.duke.edu/", 
-                                            tags$img(src="data+.jpg", 
-                                                     title="Data+ Logo",
-                                                     class= "img-responsive")
-                                          )),
-                                   column(class = 'text-center', width = 2,
-                                          tags$a(
-                                            href="https://sites.duke.edu/uacs/", 
-                                            tags$img(src="bass connections.png", 
-                                                     title="Bass Connections Logo",
-                                                     class= "img-responsive")
-                                          ))),
-                      ),
-                      
-                      fluidRow(
-                        box(width = 12,
-                            background = "light-blue",
-                            solidHeader = TRUE,
-                            slickROutput("slickr", width = "auto"),
-                            use_gotop(color = "black"))
-                      )
+             
+             fluidRow(
+               class = "text-center",
+               column(width = 12,
+                      img(src = "landing.jpg"))
              ),
+             br(), 
+             
+             fluidRow(
+               class = "text-center",
+               box(h3(strong(htmlOutput("header1"))),
+                   width = 12,
+                   background = "navy",
+                   htmlOutput("home_text1"),
+               )),
+             
+             fluidRow(
+               class = "text-center",
+               box(
+                 solidHeader = TRUE,
+                 br(),
+                 width = 12,
+                 valueBox(17, htmlOutput("header2"), icon = icon("map"), color = "light-blue", width = 4),
+                 valueBox(41, htmlOutput("header3"), icon = icon("pencil"), color = "light-blue", width = 4),
+                 valueBox(1, htmlOutput("header4"), icon = icon("window-restore"), color = "light-blue", width = 4))),
+             
+             fluidRow(
+               class = "text-center",
+               box(title = strong(htmlOutput("header5")),
+                   solidHeader = TRUE,
+                   width = 7,
+                   htmlOutput("home_text2")),
+               box(width = 5,
+                   background = "light-blue",
+                   solidHeader = TRUE,
+                   leafletOutput("home"))),
+             
+             fluidRow(class = "text-center",
+                      box(title = strong(htmlOutput("header6")),
+                          width = 12,
+                          background = "light-blue",
+                          actionButton("viewMap", htmlOutput("header7")),
+                          actionButton("viewStat", htmlOutput("header8")))),
+             
+             fluidRow(class = "text-center",
+                      box(width = 12,
+                          solidHeader = TRUE,
+                          title = strong(htmlOutput("header9")),
+                          column(class = 'text-center', width = 2,
+                                 tags$a(
+                                   href="https://www.dpsnc.net/", 
+                                   tags$img(src="dpsnc.png", 
+                                            title="DPSNC Logo",
+                                            class= "img-responsive")
+                                 )),
+                          column(class = 'text-center', width = 2,
+                                 tags$a(
+                                   href="https://www.bullcityschools.org/", 
+                                   tags$img(src="dpsf.jpg", 
+                                            title="DPSF Logo",
+                                            class= "img-responsive")
+                                 )),
+                          column(class = 'text-center', width = 2,
+                                 tags$a(
+                                   href="https://duke.edu/", 
+                                   tags$img(src="duke.png", 
+                                            title="Duke Logo",
+                                            class= "img-responsive")
+                                 )),
+                          column(class = 'text-center', width = 2,
+                                 tags$a(
+                                   href="https://www.nccu.edu/", 
+                                   tags$img(src="nccu.png", 
+                                            title="NCCU Logo",
+                                            class= "img-responsive")
+                                 )),
+                          column(class = 'text-center', width = 2,
+                                 tags$a(
+                                   href="https://bigdata.duke.edu/", 
+                                   tags$img(src="data+.jpg", 
+                                            title="Data+ Logo",
+                                            class= "img-responsive")
+                                 )),
+                          column(class = 'text-center', width = 2,
+                                 tags$a(
+                                   href="https://sites.duke.edu/uacs/", 
+                                   tags$img(src="bass connections.png", 
+                                            title="Bass Connections Logo",
+                                            class= "img-responsive")
+                                 ))),
+             ),
+             
+             fluidRow(
+               box(width = 12,
+                   background = "light-blue",
+                   solidHeader = TRUE,
+                   slickROutput("slickr", width = "auto"),
+                   use_gotop(color = "black"))
+             )
+    ),
              
              #Maps Tab
              tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt"),
