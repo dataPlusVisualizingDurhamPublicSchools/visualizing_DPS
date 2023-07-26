@@ -527,7 +527,10 @@ function(input, output, session) {
                output$datainsights_text<- renderText({
                  paste(i18n()$t("Resources in Selected School Zone"))
                }))
-  
+  observeEvent(i18n(),
+               output$datainsightsdesc<- renderText({
+                 paste(i18n()$t("These plots reveal the total number of selected resources in each school zone. These plots are useful for getting a sense of the different types of resources available in each zone at a glance."))
+               }))
   
   
   
