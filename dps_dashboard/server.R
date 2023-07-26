@@ -3689,6 +3689,7 @@ function(input, output, session) {
                  paste(i18n()$t("Teaching and Learning"))
                }))
   
+  observeEvent(i18n(),
   output$engage_context <- renderText({
     paste(title = strong(i18n()$t("Context"), style = "font-size:20px"),
           br(),
@@ -3703,7 +3704,7 @@ function(input, output, session) {
           i18n()$t("and, "),
           a(i18n()$t("Duke CampusGroups."), href="https://dukegroups.com/home_login"))
     
-  })
+  }))
 
 observeEvent(i18n(),
   output$engage_service <- renderText({
@@ -4805,6 +4806,95 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   #AP Table
   output$APTable <- renderTable(APCourses, bordered = TRUE, striped = TRUE, width = "150%", align = "c", digits = 0)
+  
+  #AP translations
+  
+  observeEvent(i18n(),
+               output$ap<- renderText({
+                 paste(i18n()$t("Advanced Placement Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte<- renderText({
+                 paste(i18n()$t("CTE Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_eng<- renderText({
+                 paste(i18n()$t("English AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_math<- renderText({
+                 paste(i18n()$t("Math AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_socsci<- renderText({
+                 paste(i18n()$t("Social Sciences AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_sci<- renderText({
+                 paste(i18n()$t("Science AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_lang<- renderText({
+                 paste(i18n()$t("World Languages AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_arts<- renderText({
+                 paste(i18n()$t("Music and Arts AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$ap_engineering<- renderText({
+                 paste(i18n()$t("Engineneering AP Courses"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte_bus<- renderText({
+                 paste(i18n()$t("Business, Marketing, and Finance"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte_cs<- renderText({
+                 paste(i18n()$t("Computer Science and Information Technology Education"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte_health<- renderText({
+                 paste(i18n()$t("Health Science Education"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte_fam<- renderText({
+                 paste(i18n()$t("Family and Consumer Sciences Education"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte_trade<- renderText({
+                 paste(i18n()$t("Trade, Technology, Engineering, and Industrial Education"))
+               }))
+  
+  observeEvent(i18n(),
+               output$cte_ag<- renderText({
+                 paste(i18n()$t("Agricultural Education"))
+               }))
+  
+  observeEvent(i18n(),
+               output$choose_cte<- renderText({
+                 paste(i18n()$t("Choose a school to view the CTE Courses available."))
+               }))
+  
+  observeEvent(i18n(),
+               output$choose_ap<- renderText({
+                 paste(i18n()$t("Choose a school to view the AP Courses available."))
+               }))
+  
+  
   
   #AP Courses
   observeEvent(i18n(), {

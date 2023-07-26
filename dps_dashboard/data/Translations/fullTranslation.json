@@ -1017,25 +1017,25 @@
      "Spanish": "Comercio, Tecnología, Ingeniería, y Eduación Industrial"},
      
      {"English": "English AP Courses",
-     "Spanish": "Ciencia de la Salud"},
+     "Spanish": "Cursos AP de inglés"},
      
      {"English": "Math AP Courses",
-     "Spanish": "Ciencia de la Salud"},
+     "Spanish": "Cursos AP de Matemáticas"},
      
      {"English": "Science AP Courses",
-     "Spanish": "Ciencia de la Salud"},
+     "Spanish": "Cursos AP de Ciencias"},
      
      {"English": "Social Sciences AP Courses",
      "Spanish": "Ciencia de la Salud"},
      
      {"English": "World Languages AP Courses",
-     "Spanish": "Ciencia de la Salud"},
+     "Spanish": "Cursos AP de Ciencias Sociales"},
      
      {"English": "Music and Arts AP Courses",
-     "Spanish": "Ciencia de la Salud"},
+     "Spanish": "Cursos AP de Música y Artes"},
      
      {"English": "Engineneering AP Courses",
-     "Spanish": "Ciencia de la Salud"},
+     "Spanish": "Cursos AP de ingeniería"},
      
      {"English": "Baseball",
    "Spanish": "El Béisbol"},
@@ -1415,6 +1415,9 @@
 {"English": "Choose a school to view the AP Courses available.",
 "Spanish": "Escoge una escuela para ver los Cursos Avanzados (AP) ofrecidos."},
 
+{"English": "Choose a school to view the CTE Courses available.",
+"Spanish": "Escoge una escuela para ver las Carreras Técnicas (CTE) ofrecidos."},
+
 {"English": "Choose a school to view the sports available.",
 "Spanish": "Escoge una escuela para ver los deportes ofrecidos."},
 
@@ -1778,6 +1781,9 @@
 
 {"English": "Learn More!",
 "Spanish": "¡Más información!"},
+
+{"English": "Trade, Technology, Engineering, and Industrial Education",
+"Spanish": "Comercio, Tecnología, Ingeniería y Educación Industrial"},
 
 {"English": "From ",
 "Spanish": "Desde "},
