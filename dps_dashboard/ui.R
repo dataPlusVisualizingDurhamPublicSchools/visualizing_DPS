@@ -643,11 +643,13 @@ body <- {dashboardBody(
              tabPanel("Arts", icon = icon("paint-brush"),
                       fluidRow(
                         box(width = 12,
-                            title = strong(htmlOutput("arts_header")), background = "navy", solidHeader = TRUE,
+                            background = "navy",
+                            htmlOutput("arts_header"),
                             column(12, align="center", tableOutput("available_arts")))
                       ),
                       fluidRow(
                         box(width = 6, 
+                            #title = strong(htmlOutput("arts_dps_header"), status = "primary", solidHeader = TRUE),
                             htmlOutput("arts_dps_header"),
                             htmlOutput("arts_dps"),
                             column(class = 'text-center', width = 4,
@@ -688,6 +690,7 @@ body <- {dashboardBody(
                                               title="Riverside Logo",
                                               class= "img-responsive")))
                         ),
+                        
                         box(width = 6, 
                             htmlOutput("arts_durham")
                         )
