@@ -54,25 +54,6 @@ body <- {dashboardBody(
                   choices = i18n$get_languages(),
                   selected = i18n$get_key_translation())
   ),
-  # fluidRow(
-  #   column(
-  #     width = 12,
-  #     tabsetPanel(
-  #       type = "tabs",
-  #       id = "navTabs",
-  #       tabPanel("Home", icon = icon("fas fa-home")),
-  #       tabPanel("Maps", icon = icon("fas fa-map-marked-alt")),
-  #       tabPanel("School Statistics", icon = icon("fas fa-chart-bar")), 
-  #       tabPanel("Data Insights", icon = icon("fas fa-chart-line")),
-  #       tabPanel("Courses", icon = icon("book")),
-  #       tabPanel("Sports", icon = icon("basketball-ball")),
-  #       tabPanel("Arts", icon = icon("paint-brush")),
-  #       tabPanel("Duke/NCCU Engagement", icon = icon("fas fa-handshake-angle")),
-  #       tabPanel("Feedback", icon = icon("fas fa-comment")),
-  #       tabPanel("Meet the Team", icon = icon("fas fa-users"))
-  #     )
-  #   )
-  # ), 
   
   tabItems(
     #Home Page
