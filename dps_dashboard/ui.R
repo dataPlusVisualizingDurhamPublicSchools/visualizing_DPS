@@ -1,12 +1,3 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(shinydashboard)
 library(slickR)
@@ -64,9 +55,10 @@ body <- {dashboardBody(
                   selected = i18n$get_key_translation())
   ),
   
-  navbarPage("Visualizing DPS",
+  tabItems(
     #Home Page
-    tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home"),             
+    {tabItem(tabName = "home",
+             
              fluidRow(
                class = "text-center",
                column(width = 12,
@@ -165,10 +157,10 @@ body <- {dashboardBody(
                    slickROutput("slickr", width = "auto"),
                    use_gotop(color = "black"))
              )
-    ),
+    )},
     
     #Maps Tab
-    tabPanel(i18n$t("Maps"), tabName = "mapstab", icon = icon("fas fa-map-marked-alt"),
+    {tabItem(tabName = "mapstab",
              fluidRow(
                box(width  = 7,
                    solidHeader = TRUE,
@@ -355,10 +347,10 @@ body <- {dashboardBody(
                )}
              )  
              
-    ),
+    )},
     
     #School Stats Tab
-    tabPanel("School Statistics", icon = icon("fas fa-chart-bar"),
+    {tabItem(tabName = "statstab",
              fluidRow(
                tabBox(
                  # The id lets us use input$tabset1 on the server to find the current tab
@@ -483,9 +475,17 @@ body <- {dashboardBody(
                                 htmlOutput("hs_resources")
                             )
                           ))
-               ))),
+               )))},
     #Data Insights tab
-    tabPanel("Data Insights", icon = icon("fas fa-chart-line"),             
+    {tabItem(tabName = "insightstab",
+             
+             # fluidRow(
+             #   box(width  = 12,
+             #       solidHeader = TRUE,
+             #       title = strong("Map Comparison Of School Districts"),
+             #       h4("Different school districts are differently colored according to the variable selected."),
+             #       leafletOutput("choropleth")),
+             # ), 
              fluidRow(class= 'text-center',
                       box(width = 12,
                           solidHeader = TRUE,
@@ -519,10 +519,10 @@ body <- {dashboardBody(
              
              
              
-    ),
+    )},
     
     #AP & CTE Tab
-    tabPanel("Courses", icon = icon("book"),
+    {tabItem(tabName = "coursestab",
              fluidRow(
                tabBox(
                  id = "tabset2", width = "auto", 
@@ -592,10 +592,10 @@ body <- {dashboardBody(
                                 htmlOutput("TradeCTE", align="left"))))
                )
              )
-    ),
+    )},
     
     #Sports Tab - static
-    tabPanel("Sports", icon = icon("basketball-ball"),
+    {tabItem(tabName = "sportstab",
              fluidRow(
                tabBox(
                  id = "tabset3", width = "auto", 
@@ -642,13 +642,11 @@ body <- {dashboardBody(
                  ),
                  fluidRow(
                    box(width = 12,
-                       solidHeader = TRUE,
-                       title = strong(i18n$t("Context")),
-                       htmlOutput("sports_context"))
+                       htmlOutput("sports_context", , style = "solid-header:TRUE"))
                  )
                )
              )
-    ),
+    )},
     
     #Sports Tab - dynamic
     # {tabItem(tabName = "sportstab",
@@ -703,7 +701,7 @@ body <- {dashboardBody(
     
     #Arts Tab
     
-    tabPanel("Arts", icon = icon("paint-brush"),
+    {tabItem(tabName = "artstab",
              fluidRow(
                box(width = 12,
                    background = "navy",
@@ -757,11 +755,11 @@ body <- {dashboardBody(
                    htmlOutput("arts_durham")
                )
              ) 
-    ),
+    )},
     
     
     ##NCCU/DUKE engagement tab
-    tabPanel("Duke/NCCU Engagement", icon = icon("fas fa-handshake-angle"),
+    {tabItem(tabName = "engagementtab",
              tabBox(
                # The id lets us use input$tabset1 on the server to find the current tab
                id = "tabset1", width = "auto",
@@ -797,10 +795,10 @@ body <- {dashboardBody(
              #),
              
              
-    ),
+    )},
     
     #Meet the team tab
-    tabPanel("Duke/NCCU Engagement", icon = icon("fas fa-handshake-angle"),
+    {tabItem(tabName = "teamstab",
              
              fluidRow(
                box(width = 12,
@@ -897,10 +895,10 @@ body <- {dashboardBody(
                             img(src = "nico3.jpg")),
                      column(width = 3,
                             p(htmlOutput("nico"))))))
-    ),
+    )},
     
     #feedback
-    tabPanel("Feedback", icon = icon("fas fa-comment"),
+    {tabItem(tabName = "feedback",
              
              fluidRow(
                class = "text-center",
@@ -919,7 +917,7 @@ body <- {dashboardBody(
                    style = "color:black;font-size:30px",
                    htmlOutput("links"),
                    img(src = "project_logo.png", align="center"))),
-    )
+    )}
     
     
   )
@@ -930,6 +928,6 @@ dashboardPage(
   skin = "black",
   dashboardHeader(
     title = i18n$t("Visualizing DPS")),
-  dashboardSidebar(disable = TRUE), 
+  sidebar, 
   body
 )
