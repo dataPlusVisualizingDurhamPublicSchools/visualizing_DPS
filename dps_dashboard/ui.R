@@ -71,8 +71,11 @@ body <- {dashboardBody(
              
              fluidRow(
                class = "text-center",
-               column(width = 12,
-                      img(src = "landing.jpg"))
+               box(width = 12, 
+                   background = "navy", 
+                   column(width = 12, 
+                          img(src = "landing.jpg")))
+              
              ),
              br(), 
              
