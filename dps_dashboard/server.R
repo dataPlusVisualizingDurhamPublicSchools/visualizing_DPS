@@ -325,6 +325,7 @@ function(input, output, session) {
                        br(),
                        i18n()$t("Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”"),
                        br(),
+                       br(),
                        strong(i18n()$t("Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.")))
                }))
   
