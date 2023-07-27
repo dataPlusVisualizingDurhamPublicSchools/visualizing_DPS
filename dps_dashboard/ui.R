@@ -169,6 +169,11 @@ body <- {dashboardBody(
                             solidHeader = TRUE,
                             slickROutput("slickr", width = "auto"),
                             use_gotop(color = "black"))
+                      ),
+                      tags$head(
+                        tags$style(
+                          HTML(".navbar { min-height: 60px; }")  # Adjust the height as desired
+                        )
                       )
              ),
              
