@@ -68,62 +68,14 @@ body <- {dashboardBody(
   navbarPage("Visualizing DPS",
              #Home Page
              tabPanel(i18n$t("Home"), tabName = "home", icon = icon("fas fa-home"),
-<<<<<<< HEAD
-             
-             fluidRow(
-               class = "text-center",
-               box(width = 12, 
-                   background = "navy", 
-                   column(width = 12, 
-                          img(src = "landing.jpg")))
-              
-             ),
-             br(), 
-             
-             fluidRow(
-               class = "text-center",
-               box(h3(strong(htmlOutput("header1"))),
-                   width = 12,
-                   background = "navy",
-                   htmlOutput("home_text1"),
-               )),
-             
-             fluidRow(
-               class = "text-center",
-               box(
-                 solidHeader = TRUE,
-                 br(),
-                 width = 12,
-                 valueBox(17, htmlOutput("header2"), icon = icon("map"), color = "light-blue", width = 4),
-                 valueBox(41, htmlOutput("header3"), icon = icon("pencil"), color = "light-blue", width = 4),
-                 valueBox(1, htmlOutput("header4"), icon = icon("window-restore"), color = "light-blue", width = 4))),
-             
-             fluidRow(
-               class = "text-center",
-               box(title = strong(htmlOutput("header5")),
-                   solidHeader = TRUE,
-                   width = 7,
-                   htmlOutput("home_text2")),
-               box(width = 5,
-                   background = "light-blue",
-                   solidHeader = TRUE,
-                   leafletOutput("home"))),
-             
-             fluidRow(class = "text-center",
-                      box(title = strong(htmlOutput("header6")),
-                          width = 12,
-                          background = "light-blue",
-                          actionButton("viewMap", htmlOutput("header7")),
-                          actionButton("viewStat", htmlOutput("header8")))),
-             
-             fluidRow(class = "text-center",
-                      box(width = 12,
-=======
                       
                       fluidRow(
                         class = "text-center",
-                        column(width = 12,
-                               img(src = "landing.jpg"))
+                        box(width = 12, 
+                            background = "navy", 
+                            column(width = 12, 
+                                   img(src = "landing.jpg")))
+                        
                       ),
                       br(), 
                       
@@ -138,7 +90,6 @@ body <- {dashboardBody(
                       fluidRow(
                         class = "text-center",
                         box(
->>>>>>> 9762725ac332753e009193faf82b5764aa9c9310
                           solidHeader = TRUE,
                           br(),
                           width = 12,
@@ -767,13 +718,7 @@ body <- {dashboardBody(
                                              multiple = FALSE),
                                  br(),
                                  dataTableOutput("engagetable_1")),
-                        tabPanel(htmlOutput("engage_teach"),
-                                 selectInput("tab2", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
-                                             choices = list("Staff/Faculty",
-                                                            "Undergraduate Students"),
-                                             multiple = FALSE),
-                                 br(),
-                                 dataTableOutput("engagetable_2")),
+                        tabPanel(htmlOutput("engage_teach")),
                         tabPanel(htmlOutput("engage_research"),
                                  selectInput("tab3", em(i18n$t("Choose a Division to View Community Engagement Oppurtunities")),
                                              choices = list("Staff/Faculty",
@@ -814,6 +759,7 @@ body <- {dashboardBody(
                         box(width = 12,
                             #background = "white",
                             solidHeader = TRUE,
+                            title = a(i18n$t("Learn More!"), style = "color:black;font-size:30px"),
                             htmlOutput("links"),
                             img(src = "project_logo.png", align="center"))),
              ),
