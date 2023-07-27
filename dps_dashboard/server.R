@@ -102,6 +102,10 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   student_service <- read.csv("./data/2023/us_service.csv")
   faculty_research <- read.csv("./data/2023/sf_research.csv")
   student_research <- read.csv("./data/2023/us_research.csv")
+  student_learn <- read.csv("./data/2023/us_learn.csv")
+  faculty_teach <- read.csv("./data/2023/sf_teach.csv")
+  
+
   
   
 }
@@ -320,6 +324,7 @@ function(input, output, session) {
                  paste(i18n()$t("The inspiration for this project is rooted in the inter-institutional Bass Connections team from Duke University and North Carolina Central University, which is committed to developing more responsible and imaginative ways of partnering with Durham Public Schools. This project aims to provide a centralized web application that will serve as a tool for those entering Durham Public Schools. In addition, our application aims to inform future pre-service training for university students, support local neighborhood schools in visualizing their communities, and help various university offices articulate what “community” actually looks like."),
                        br(),
                        i18n()$t("Duke and NCCU both aim to foster equitable partnerships with Durham Public Schools. Prior Bass Connections research focused on understanding how to achieve this goal and found that one of the main barriers to meaningful engagement between Duke, NCCU, and Durham public schools is that “many university students lack an understanding of city and community dynamics.” Additionally, they found that there is a “lack of student volunteer training with Durham’s context, particularly in the areas of history, school-specific demographics, and implicit bias and power dynamics that may manifest in schools.”"),
+                       br(),
                        br(),
                        strong(i18n()$t("Motivated by this research, our project explores a way of visualizing schools as centers of the community that bring academics, health and social services, youth and community development, and community engagement together under one roof.")))
                }))
@@ -3768,6 +3773,23 @@ observeEvent(i18n(),
     
   }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
   
+  #teach/learn
+  output$engagetable_2 <- renderDataTable({
+    if(input$tab2 == "Staff/Faculty")
+    {
+      temp_df <- faculty_teach
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    
+    else if(input$tab2 == "Undergraduate Students"){
+      temp_df <- student_learn
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    
+  }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
+  
   
   #Engagement Tab - Carousal
   output$carou <- renderSlickR({
@@ -6377,7 +6399,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   observeEvent(i18n(),
                output$links<- renderText({
-                 paste(i18n()$t("Learn More!"),
+                 paste(tags$span(i18n()$t("Learn More!"), style = "font-size:30px;solid-header:TRUE"),
                        br(),
                        tags$a(href = "https://sites.duke.edu/uacs/outputs/", target="_blank", i18n()$t("Community School Partnership"), style = "color:black;font-size:18px;text-decoration:underline"),
                        br(),
