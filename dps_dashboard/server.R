@@ -102,6 +102,10 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
   student_service <- read.csv("./data/2023/us_service.csv")
   faculty_research <- read.csv("./data/2023/sf_research.csv")
   student_research <- read.csv("./data/2023/us_research.csv")
+  student_learn <- read.csv("./data/2023/us_learn.csv")
+  faculty_teach <- read.csv("./data/2023/sf_teach.csv")
+  
+
   
   
 }
@@ -3764,6 +3768,23 @@ observeEvent(i18n(),
       temp_df <- student_research
       temp_df$URL <- createLink(temp_df$URL)
       temp_df[c("School","Name","URL","Program")]
+    }
+    
+  }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
+  
+  #teach/learn
+  output$engagetable_2 <- renderDataTable({
+    if(input$tab2 == "Staff/Faculty")
+    {
+      temp_df <- faculty_teach
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
+    }
+    
+    else if(input$tab2 == "Undergraduate Students"){
+      temp_df <- student_learn
+      temp_df$URL <- createLink(temp_df$URL)
+      temp_df[c("School","Name","URL","Subject")]
     }
     
   }, escape = FALSE, options = list(pageLength = 10, scrollX = TRUE))
