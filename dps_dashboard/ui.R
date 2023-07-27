@@ -762,7 +762,6 @@ body <- {dashboardBody(
                         box(width = 12,
                             #background = "white",
                             solidHeader = TRUE,
-                            title = a(i18n$t("Learn More!"), style = "color:black;font-size:30px"),
                             htmlOutput("links"),
                             img(src = "project_logo.png", align="center"))),
              ),

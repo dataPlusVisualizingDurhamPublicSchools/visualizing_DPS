@@ -6398,7 +6398,7 @@ Moreover, pharmacies contribute to public health by offering services like immun
   
   observeEvent(i18n(),
                output$links<- renderText({
-                 paste(i18n()$t("Learn More!"),
+                 paste(tags$span(i18n()$t("Learn More!"), style = "font-size:30px;solid-header:TRUE"),
                        br(),
                        tags$a(href = "https://sites.duke.edu/uacs/outputs/", target="_blank", i18n()$t("Community School Partnership"), style = "color:black;font-size:18px;text-decoration:underline"),
                        br(),
