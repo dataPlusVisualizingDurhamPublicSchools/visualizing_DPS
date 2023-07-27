@@ -172,7 +172,11 @@ body <- {dashboardBody(
                       ),
                       tags$head(
                         tags$style(
-                          HTML(".navbar { min-height: 60px; }")  # Adjust the height as desired
+                          HTML(".navbar { min-height: 60px; 
+                               background-color: #ffffff;}
+                               .nav-tabs > li > a { 
+                            color: #333333; /* Set the text color to black */
+                          }")  # Adjust the height as desired
                         )
                       )
              ),
